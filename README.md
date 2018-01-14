@@ -1,4 +1,4 @@
-# prototype.js
+# prototyped.js
 
 Some common **Typescript ready** prototypes
 
