@@ -15,4 +15,9 @@ npm i -s prototyped.js
 ```
 
 ## Usage
+```javascript
+require('prototyped.js');
+import 'prototyped.js';
+```
+
 All documents are available at [API.md](https://github.com/ardalanamini/prototyped.js/blob/master/API.md)
