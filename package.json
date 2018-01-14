@@ -1,25 +1,45 @@
 {
-  "name": "array.prototype",
-  "version": "0.0.0",
-  "description": "Some common array prototypes",
-  "main": "index.js",
+  "name": "prototyped.js",
+  "version": "0.1.0",
+  "description": "Some common prototypes",
+  "main": "dist/index.js",
   "scripts": {
+    "doc": "tsc && jsdoc2md dist/*.js --example-lang javascript > API.md",
+    "build": "node ./scripts/build.js",
+    "prepare": "npm run doc && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ardalanamini/array.prototype.git"
+    "url": "git+https://github.com/ardalanamini/prototyped.js.git"
   },
-  "keywords": [],
+  "keywords": [
+    "server",
+    "client",
+    "side",
+    "common",
+    "prototype",
+    "array",
+    "string",
+    "object"
+  ],
   "author": "Ardalan Amini <ardalanamini22@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ardalanamini/array.prototype/issues"
+    "url": "https://github.com/ardalanamini/prototyped.js/issues"
   },
-  "homepage": "https://github.com/ardalanamini/array.prototype#readme",
+  "homepage": "https://github.com/ardalanamini/prototyped.js#readme",
   "devDependencies": {
     "@types/node": "^9.3.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "fs-readdir-recursive": "^1.1.0",
     "jsdoc-to-markdown": "^3.0.4",
-    "typescript": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "typescript": "^2.6.2",
+    "uglify-js": "^3.3.7"
   }
 }
