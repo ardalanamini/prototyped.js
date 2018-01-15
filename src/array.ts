@@ -56,7 +56,13 @@ interface Array<T> {
   union(array: Array<T>): Array<T>
   zip(...arrays: Array<Array<T>>): Array<T>
   zipObject(array: Array<T>): OBJ
-  pluck(key: string): Array<T>
+  pluck(key: String): Array<T>
+  average(key?: String): number
+  contains(value: T): boolean
+  crossJoin(array: Array<any>): Array<Array<any>>
+  get(index: number, def?: T | any): T | any
+  implode(key: String, separator?: string): String
+  clone(): Array<T>
 }
 
 if (!Array.prototype.first) {
@@ -397,7 +403,8 @@ if (!Array.prototype.pluck) {
    * @param {string} key
    * @returns {Array}
    * @example
-   * [1, 2, 3].intersect([4, 3, 2]); // [2,3]
+   * [{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].pluck('a'); // [{b: 1}, {b: 2}, {b: 3}]
+   * [{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].pluck('a.b'); // [1, 2, 3]
    */
   Array.prototype.pluck = function(key) {
     let keys = key.split('.')
@@ -407,5 +414,125 @@ if (!Array.prototype.pluck) {
 
       return item
     })
+  }
+}
+
+if (!Array.prototype.average) {
+  /**
+   * Returns the average value of a given key
+   * @param {String} [key]
+   * @returns {number}
+   * @example
+   * [1, 2, 3].average(); // 2
+   * [{a: 1}, {a: 2}, {a: 3}].average('a'); // 2
+   * [{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].average('a.b'); // 2
+   */
+  Array.prototype.average = function(key) {
+    let sum = 0
+
+    if (key) {
+      let keys = key.split('.')
+
+      this.map((item) => {
+        keys.map((k) => item = item && item[k] || 0)
+
+        sum += item
+      })
+
+      return sum / this.length
+    }
+
+    this.map((number) => sum += number)
+
+    return sum / this.length
+  }
+}
+
+if (!Array.prototype.contains) {
+  /**
+   * Determines whether the collection contains a given item
+   * @param {*} value
+   * @returns {boolean}
+   * @example
+   * [1, 2, 3].contains(2); // true
+   */
+  Array.prototype.contains = function(value) {
+    return this.indexOf(value) !== -1
+  }
+}
+
+if (!Array.prototype.crossJoin) {
+  /**
+   * Cross joins the array's values among the given arrays, returning a Cartesian product with all possible permutations
+   * @param {Array} array
+   * @returns {Array[]}
+   * @example
+   * [1, 2].crossJoin(['a', 'b']); // [[1, 'a'], [1, 'b'], [2, 'a'], [2, 'b']]
+   */
+  Array.prototype.crossJoin = function(array) {
+    let joined: Array<Array<any>> = []
+
+    this.map((item) => {
+      array.map((value) => {
+        joined.push([
+          item,
+          value
+        ])
+      })
+    })
+
+    return joined
+  }
+}
+
+if (!Array.prototype.get) {
+  /**
+   * Returns the item at a given index. If the index does not exist, def is returned
+   * @param {number} index
+   * @param {*} [def=null]
+   * @returns {*}
+   * @example
+   * [1, 2, 3].get(0, 'default value'); // 1
+   * [1, 2, 3].get(4, 0); // 0
+   */
+  Array.prototype.get = function(index, def = null) {
+    if (index >= this.length) return def
+
+    return this[index]
+  }
+}
+
+if (!Array.prototype.implode) {
+  /**
+   * It's like join but u get to git it which keys to join
+   * @param {String} key
+   * @param {String} [separator=", "]
+   * @returns {String}
+   * @example
+   * [{a: {b: 'fisrt'}}, {a: {b: 'second'}}, {a: {b: 'third'}}].implode('a.b', ', '); // 'first, second, third'
+   */
+  Array.prototype.implode = function(key, separator = ', ') {
+    let keys = key.split('.')
+    let array: Array<string> = []
+
+    this.map((item) => {
+      keys.map((k) => item = item && item[k] || undefined)
+
+      array.push(item)
+    })
+
+    return array.compact().join(separator)
+  }
+}
+
+if (!Array.prototype.clone) {
+  /**
+   * Returns the cloned array
+   * @returns {Array}
+   * @example
+   * [1, 2, 3].clone(); // [1, 2, 3]
+   */
+  Array.prototype.clone = function() {
+    return [...this]
   }
 }

@@ -38,6 +38,12 @@
         * [.zip(array)](#Array+zip) ⇒ [<code>Array</code>](#Array)
         * [.zipObject(array)](#Array+zipObject) ⇒ [<code>Array</code>](#Array)
         * [.pluck(key)](#Array+pluck) ⇒ [<code>Array</code>](#Array)
+        * [.average([key])](#Array+average) ⇒ <code>number</code>
+        * [.contains(value)](#Array+contains) ⇒ <code>boolean</code>
+        * [.crossJoin(array)](#Array+crossJoin) ⇒ [<code>Array.&lt;Array&gt;</code>](#Array)
+        * [.get(index, [def])](#Array+get) ⇒ <code>\*</code>
+        * [.implode(key, [separator])](#Array+implode) ⇒ [<code>String</code>](#String)
+        * [.clone()](#Array+clone) ⇒ [<code>Array</code>](#Array)
     * _static_
         * [.range(end, [start], [step])](#Array.range) ⇒ <code>Array.&lt;number&gt;</code>
         * [.repeat(n, [value])](#Array.repeat) ⇒ [<code>Array</code>](#Array)
@@ -343,7 +349,98 @@ Returns all of the values for the given key
 
 **Example**  
 ```javascript
-[1, 2, 3].intersect([4, 3, 2]); // [2,3]
+[{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].pluck('a'); // [{b: 1}, {b: 2}, {b: 3}]
+[{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].pluck('a.b'); // [1, 2, 3]
+```
+<a name="Array+average"></a>
+
+### array.average([key]) ⇒ <code>number</code>
+Returns the average value of a given key
+
+**Kind**: instance method of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| [key] | [<code>String</code>](#String) | 
+
+**Example**  
+```javascript
+[1, 2, 3].average(); // 2
+[{a: 1}, {a: 2}, {a: 3}].average('a'); // 2
+[{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].average('a.b'); // 2
+```
+<a name="Array+contains"></a>
+
+### array.contains(value) ⇒ <code>boolean</code>
+Determines whether the collection contains a given item
+
+**Kind**: instance method of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| value | <code>\*</code> | 
+
+**Example**  
+```javascript
+[1, 2, 3].contains(2); // true
+```
+<a name="Array+crossJoin"></a>
+
+### array.crossJoin(array) ⇒ [<code>Array.&lt;Array&gt;</code>](#Array)
+Cross joins the array's values among the given arrays, returning a Cartesian product with all possible permutations
+
+**Kind**: instance method of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| array | [<code>Array</code>](#Array) | 
+
+**Example**  
+```javascript
+[1, 2].crossJoin(['a', 'b']); // [[1, 'a'], [1, 'b'], [2, 'a'], [2, 'b']]
+```
+<a name="Array+get"></a>
+
+### array.get(index, [def]) ⇒ <code>\*</code>
+Returns the item at a given index. If the index does not exist, def is returned
+
+**Kind**: instance method of [<code>Array</code>](#Array)  
+
+| Param | Type | Default |
+| --- | --- | --- |
+| index | <code>number</code> |  | 
+| [def] | <code>\*</code> | <code></code> | 
+
+**Example**  
+```javascript
+[1, 2, 3].get(0, 'default value'); // 1
+[1, 2, 3].get(4, 0); // 0
+```
+<a name="Array+implode"></a>
+
+### array.implode(key, [separator]) ⇒ [<code>String</code>](#String)
+It's like join but u get to git it which keys to join
+
+**Kind**: instance method of [<code>Array</code>](#Array)  
+
+| Param | Type | Default |
+| --- | --- | --- |
+| key | [<code>String</code>](#String) |  | 
+| [separator] | [<code>String</code>](#String) | <code>&quot;, &quot;</code> | 
+
+**Example**  
+```javascript
+[{a: {b: 'fisrt'}}, {a: {b: 'second'}}, {a: {b: 'third'}}].implode('a.b', ', '); // 'first, second, third'
+```
+<a name="Array+clone"></a>
+
+### array.clone() ⇒ [<code>Array</code>](#Array)
+Returns the cloned array
+
+**Kind**: instance method of [<code>Array</code>](#Array)  
+**Example**  
+```javascript
+[1, 2, 3].clone(); // [1, 2, 3]
 ```
 <a name="Array.range"></a>
 
