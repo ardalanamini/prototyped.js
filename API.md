@@ -18,7 +18,7 @@
     * _instance_
         * [.first()](#Array+first) ⇒ <code>\*</code>
         * [.last()](#Array+last) ⇒ <code>\*</code>
-        * [.chunck(size)](#Array+chunck) ⇒ [<code>Array.&lt;Array&gt;</code>](#Array)
+        * [.chunk(size)](#Array+chunk) ⇒ [<code>Array.&lt;Array&gt;</code>](#Array)
         * [.compact()](#Array+compact) ⇒ [<code>Array</code>](#Array)
         * [.count([value])](#Array+count) ⇒ <code>number</code>
         * [.countBy(fn)](#Array+countBy) ⇒ [<code>Array.&lt;Array&gt;</code>](#Array)
@@ -68,9 +68,9 @@ Returns the last item of the array
 ```javascript
 [1, 2, 3].last(); // 3
 ```
-<a name="Array+chunck"></a>
+<a name="Array+chunk"></a>
 
-### array.chunck(size) ⇒ [<code>Array.&lt;Array&gt;</code>](#Array)
+### array.chunk(size) ⇒ [<code>Array.&lt;Array&gt;</code>](#Array)
 Chunks the array into smaller arrays of a specified size
 
 **Kind**: instance method of [<code>Array</code>](#Array)  
@@ -406,10 +406,10 @@ Returns the item at a given index. If the index does not exist, def is returned
 
 **Kind**: instance method of [<code>Array</code>](#Array)  
 
-| Param | Type | Default |
-| --- | --- | --- |
-| index | <code>number</code> |  | 
-| [def] | <code>\*</code> | <code></code> | 
+| Param | Type |
+| --- | --- |
+| index | <code>number</code> | 
+| [def] | <code>\*</code> | 
 
 **Example**  
 ```javascript
@@ -430,7 +430,7 @@ It's like join but u get to git it which keys to join
 
 **Example**  
 ```javascript
-[{a: {b: 'fisrt'}}, {a: {b: 'second'}}, {a: {b: 'third'}}].implode('a.b', ', '); // 'first, second, third'
+[{a: {b: 'first'}}, {a: {b: 'second'}}, {a: {b: 'third'}}].implode('a.b', ', '); // 'first, second, third'
 ```
 <a name="Array+clone"></a>
 
@@ -711,7 +711,7 @@ Converts a string to kebab case
 'some text'.kebabCase(); // 'some-text'
 'some-mixed_string With spaces_underscores-and-hyphens'.kebabCase(); // 'some-mixed-string-with-spaces-underscores-and-hyphens'
 'AllThe-small Things'.kebabCase(); // "all-the-small-things"
-'IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML'.kebabCase(); // 'i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-xml-and-html'
+'IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML'.kebabCase(); // 'i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-some-xml-and-html'
 ```
 <a name="String+snakeCase"></a>
 
@@ -724,7 +724,7 @@ Converts a string to snake case
 'camelCase'.snakeCase(); // 'camel_case'
 'some text'.snakeCase(); // 'some_text'
 'some-mixed_string With spaces_underscores-and-hyphens'.snakeCase(); // 'some_mixed_string_with_spaces_underscores_and_hyphens'
-'AllThe-small Things'.snakeCase(); // "all_the_smal_things"
+'AllThe-small Things'.snakeCase(); // "all_the_small_things"
 'IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML'.snakeCase(); // 'i_am_listening_to_fm_while_loading_different_url_on_my_browser_and_also_editing_some_xml_and_html'
 ```
 <a name="String+truncate"></a>

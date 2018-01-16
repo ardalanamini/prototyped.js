@@ -42,9 +42,9 @@ if (!String.prototype.decapitalize) {
    * 'Hello World'.decapitalize(true); // 'hello world'
    */
   String.prototype.decapitalize = function(allWords = false) {
-    if (allWords) return this.replace(/\b[a-z]/g, (char) => char.toLowerCase())
+    if (allWords) return this.replace(/\b[A-Z]/g, (char) => char.toLowerCase())
 
-    return this.replace(/^[a-z]/, (char) => char.toLowerCase())
+    return this.replace(/^[A-Z]/, (char) => char.toLowerCase())
   }
 }
 
@@ -137,7 +137,7 @@ if (!String.prototype.kebabCase) {
    * 'some text'.kebabCase(); // 'some-text'
    * 'some-mixed_string With spaces_underscores-and-hyphens'.kebabCase(); // 'some-mixed-string-with-spaces-underscores-and-hyphens'
    * 'AllThe-small Things'.kebabCase(); // "all-the-small-things"
-   * 'IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML'.kebabCase(); // 'i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-xml-and-html'
+   * 'IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML'.kebabCase(); // 'i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-some-xml-and-html'
    */
   String.prototype.kebabCase = function() {
     let s = this.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
@@ -156,7 +156,7 @@ if (!String.prototype.snakeCase) {
    * 'camelCase'.snakeCase(); // 'camel_case'
    * 'some text'.snakeCase(); // 'some_text'
    * 'some-mixed_string With spaces_underscores-and-hyphens'.snakeCase(); // 'some_mixed_string_with_spaces_underscores_and_hyphens'
-   * 'AllThe-small Things'.snakeCase(); // "all_the_smal_things"
+   * 'AllThe-small Things'.snakeCase(); // "all_the_small_things"
    * 'IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML'.snakeCase(); // 'i_am_listening_to_fm_while_loading_different_url_on_my_browser_and_also_editing_some_xml_and_html'
    */
   String.prototype.snakeCase = function() {

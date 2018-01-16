@@ -37,7 +37,7 @@ if (!Array.repeat) {
 interface Array<T> {
   first(): T
   last(): T
-  chunck(size: number): Array<Array<T>>
+  chunk(size: number): Array<Array<T>>
   compact(): Array<T>
   count(value?: T): number
   countBy(fn: string | (() => any)): { [key: string]: Array<T> }
@@ -89,7 +89,7 @@ if (!Array.prototype.last) {
   }
 }
 
-if (!Array.prototype.chunck) {
+if (!Array.prototype.chunk) {
   /**
    * Chunks the array into smaller arrays of a specified size
    * @param {number} size
@@ -97,7 +97,7 @@ if (!Array.prototype.chunck) {
    * @example
    * [1, 2, 3, 4, 5].chunk(2); // [[1,2],[3,4],[5]]
    */
-  Array.prototype.chunck = function(size: number) {
+  Array.prototype.chunk = function(size: number) {
     return Array.from({ length: Math.ceil(this.length / size) }, (value: any, index: number) => this.slice(index * size, index * size + size))
   }
 }
@@ -489,13 +489,13 @@ if (!Array.prototype.get) {
   /**
    * Returns the item at a given index. If the index does not exist, def is returned
    * @param {number} index
-   * @param {*} [def=null]
+   * @param {*} [def=undefined]
    * @returns {*}
    * @example
    * [1, 2, 3].get(0, 'default value'); // 1
    * [1, 2, 3].get(4, 0); // 0
    */
-  Array.prototype.get = function(index, def = null) {
+  Array.prototype.get = function(index, def = undefined) {
     if (index >= this.length) return def
 
     return this[index]
@@ -509,7 +509,7 @@ if (!Array.prototype.implode) {
    * @param {String} [separator=", "]
    * @returns {String}
    * @example
-   * [{a: {b: 'fisrt'}}, {a: {b: 'second'}}, {a: {b: 'third'}}].implode('a.b', ', '); // 'first, second, third'
+   * [{a: {b: 'first'}}, {a: {b: 'second'}}, {a: {b: 'third'}}].implode('a.b', ', '); // 'first, second, third'
    */
   Array.prototype.implode = function(key, separator = ', ') {
     let keys = key.split('.')
