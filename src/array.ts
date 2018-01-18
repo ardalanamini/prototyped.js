@@ -57,12 +57,18 @@ interface Array<T> {
   zip(...arrays: Array<Array<T>>): Array<T>
   zipObject(array: Array<T>): OBJ
   pluck(key: String): Array<T>
+  sum(key?: String): number
   average(key?: String): number
+  max(key?: String): number
+  min(key?: String): number
   contains(value: T): boolean
   crossJoin(array: Array<any>): Array<Array<any>>
   get(index: number, def?: T | any): T | any
   implode(key: String, separator?: string): String
   clone(): Array<T>
+  median(key?: String): number
+  pad(size: number, value?: any): Array<any>
+  prepend(value?: any): void
 }
 
 if (!Array.prototype.first) {
@@ -417,17 +423,17 @@ if (!Array.prototype.pluck) {
   }
 }
 
-if (!Array.prototype.average) {
+if (!Array.prototype.sum) {
   /**
-   * Returns the average value of a given key
+   * Returns the minimum value of a given key
    * @param {String} [key]
    * @returns {number}
    * @example
-   * [1, 2, 3].average(); // 2
-   * [{a: 1}, {a: 2}, {a: 3}].average('a'); // 2
-   * [{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].average('a.b'); // 2
+   * [1, 2, 3].sum(); // 6
+   * [{a: 1}, {a: 2}, {a: 3}].sum('a'); // 6
+   * [{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].sum('a.b'); // 6
    */
-  Array.prototype.average = function(key) {
+  Array.prototype.sum = function(key) {
     let sum = 0
 
     if (key) {
@@ -439,12 +445,89 @@ if (!Array.prototype.average) {
         sum += item
       })
 
-      return sum / this.length
+      return sum
     }
 
     this.map((number) => sum += number)
 
-    return sum / this.length
+    return sum
+  }
+}
+
+if (!Array.prototype.average) {
+  /**
+   * Returns the average value of a given key
+   * @param {String} [key]
+   * @returns {number}
+   * @example
+   * [1, 2, 3].average(); // 2
+   * [{a: 1}, {a: 2}, {a: 3}].average('a'); // 2
+   * [{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].average('a.b'); // 2
+   */
+  Array.prototype.average = function(key) {
+    return this.sum(key) / this.length
+  }
+}
+
+if (!Array.prototype.max) {
+  /**
+   * Returns the maximum value of a given key
+   * @param {String} [key]
+   * @returns {number}
+   * @example
+   * [1, 2, 3].max(); // 3
+   * [{a: 1}, {a: 2}, {a: 3}].max('a'); // 3
+   * [{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].max('a.b'); // 3
+   */
+  Array.prototype.max = function(key) {
+    let max: number = -Infinity
+
+    if (key) {
+      let keys = key.split('.')
+
+      this.map((item) => {
+        keys.map((k) => item = item && item[k] || 0)
+
+        max = Math.max(item, max)
+      })
+
+      return max
+    }
+
+    this.map((number) => max = Math.max(number, max))
+
+    return max
+  }
+}
+
+if (!Array.prototype.min) {
+  /**
+   * Returns the minimum value of a given key
+   * @param {String} [key]
+   * @returns {number}
+   * @example
+   * [1, 2, 3].min(); // 1
+   * [{a: 1}, {a: 2}, {a: 3}].min('a'); // 1
+   * [{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].min('a.b'); // 1
+   */
+  Array.prototype.min = function(key) {
+    let min: number = +Infinity
+
+    if (key) {
+      let keys = key.split('.')
+
+      this.map((item) => {
+        keys.map((k) => item = item && item[k] || 0)
+
+        min = Math.min(item, min)
+      })
+
+      return min
+    }
+
+    this.map((number) => min = Math.min(number, min))
+
+    return min
   }
 }
 
@@ -534,5 +617,86 @@ if (!Array.prototype.clone) {
    */
   Array.prototype.clone = function() {
     return [...this]
+  }
+}
+
+if (!Array.prototype.median) {
+  /**
+   * Returns the median value of a given key
+   * @returns {Array}
+   * @example
+   * [1, 1, 2, 4].median(); // 1.5
+   * [{foo: 10}, {foo: 10}, {foo: 20}, {foo: 40}].median('foo'); // 15
+   */
+  Array.prototype.median = function(key) {
+    let array = this
+
+    array.sort((a, b) => a - b)
+
+    let half = Math.floor(array.length / 2)
+
+    if (key) {
+      let keys = key.split('.')
+
+      if (array.length % 2) {
+        let value = array[half]
+
+        keys.map((k) => value = value && value[k] || value)
+
+        return value
+      }
+
+      let value1 = array[half - 1]
+      let value2 = array[half]
+
+      keys.map((k) => value1 = value1 && value1[k] || value1)
+      keys.map((k) => value2 = value2 && value2[k] || value2)
+
+      return (value1 + value2) / 2
+    }
+
+    if (array.length % 2) return array[half]
+
+    return (array[half - 1] + array[half]) / 2
+  }
+}
+
+if (!Array.prototype.pad) {
+  /**
+   * FillS the array with the given value until the array reaches the specified size
+   * @param {number} size
+   * @param {*} [value=0]
+   * @returns {Array}
+   * @example
+   * [1, 2, 3].pad(5, 0); // [1, 2, 3, 0, 0]
+   * [1, 2, 3].pad(-5, 0); // [0, 0, 1, 2, 3]
+   */
+  Array.prototype.pad = function(size, value = 0) {
+    let s = Math.abs(size)
+
+    if (s <= this.length) return this
+
+    let array = Array.repeat(s - this.length, value)
+
+    if (size < 0) return array.concat(this)
+
+    return this.concat(array)
+  }
+}
+
+if (!Array.prototype.prepend) {
+  /**
+   * Adds an item to the beginning of the array
+   * @param {*} value
+   * @example
+   * var myArray = [1, 2, 3]
+   * myArray.prepend(0); // myArray => [0, 1, 2, 3]
+   */
+  Array.prototype.prepend = function(value) {
+    let array = this.clone()
+
+    this.length = 0
+
+    this.push(...[value].concat(array))
   }
 }

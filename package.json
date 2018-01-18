@@ -1,6 +1,6 @@
 {
   "name": "prototyped.js",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Some common prototypes",
   "main": "dist/index.js",
   "scripts": {
@@ -23,6 +23,8 @@
     "common",
     "prototype",
     "array",
+    "range",
+    "repeat",
     "string",
     "object"
   ],

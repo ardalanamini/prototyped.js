@@ -194,6 +194,20 @@ describe("Array.prototype.pluck", () => {
   })
 })
 
+describe("Array.prototype.sum", () => {
+  test("[1, 2, 3].sum() returns 6", () => {
+    expect([1, 2, 3].sum()).toBe(6)
+  })
+
+  test("[{a: 1}, {a: 2}, {a: 3}].sum('a') returns 6", () => {
+    expect([{a: 1}, {a: 2}, {a: 3}].sum('a')).toBe(6)
+  })
+
+  test("[{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].sum('a.b') returns 6", () => {
+    expect([{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].sum('a.b')).toBe(6)
+  })
+})
+
 describe("Array.prototype.average", () => {
   test("[1, 2, 3].average() returns 2", () => {
     expect([1, 2, 3].average()).toBe(2)
@@ -205,6 +219,34 @@ describe("Array.prototype.average", () => {
 
   test("[{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].average('a.b') returns 2", () => {
     expect([{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].average('a.b')).toBe(2)
+  })
+})
+
+describe("Array.prototype.max", () => {
+  test("[1, 2, 3].max() returns 3", () => {
+    expect([1, 2, 3].max()).toBe(3)
+  })
+
+  test("[{a: 1}, {a: 2}, {a: 3}].max('a') returns 3", () => {
+    expect([{a: 1}, {a: 2}, {a: 3}].max('a')).toBe(3)
+  })
+
+  test("[{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].max('a.b') returns 3", () => {
+    expect([{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].max('a.b')).toBe(3)
+  })
+})
+
+describe("Array.prototype.min", () => {
+  test("[1, 2, 3].min() returns 1", () => {
+    expect([1, 2, 3].min()).toBe(1)
+  })
+
+  test("[{a: 1}, {a: 2}, {a: 3}].min('a') returns 1", () => {
+    expect([{a: 1}, {a: 2}, {a: 3}].min('a')).toBe(1)
+  })
+
+  test("[{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].min('a.b') returns 1", () => {
+    expect([{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].min('a.b')).toBe(1)
   })
 })
 
@@ -239,5 +281,35 @@ describe("Array.prototype.implode", () => {
 describe("Array.prototype.clone", () => {
   test("[1, 2, 3].clone() returns [1, 2, 3]", () => {
     expect([1, 2, 3].clone()).toEqual([1, 2, 3])
+  })
+})
+
+describe("Array.prototype.median", () => {
+  test("[1, 1, 2, 4].median() returns 1.5", () => {
+    expect([1, 1, 2, 4].median()).toBe(1.5)
+  })
+
+  test("[{foo: 10}, {foo: 10}, {foo: 20}, {foo: 40}].median('foo') returns 15", () => {
+    expect([{foo: 10}, {foo: 10}, {foo: 20}, {foo: 40}].median('foo')).toBe(15)
+  })
+})
+
+describe("Array.prototype.pad", () => {
+  test("[1, 2, 3].pad(5, 0) returns [1, 2, 3, 0, 0]", () => {
+    expect([1, 2, 3].pad(5, 0)).toEqual([1, 2, 3, 0, 0])
+  })
+
+  test("[1, 2, 3].pad(-5, 0) returns [0, 0, 1, 2, 3]", () => {
+    expect([1, 2, 3].pad(-5, 0)).toEqual([0, 0, 1, 2, 3])
+  })
+})
+
+describe("Array.prototype.prepend", () => {
+  test("[1, 2, 3].prepend(0) returns [0, 1, 2, 3]", () => {
+    expect((() => {
+      let myArray = [1, 2, 3]
+      myArray.prepend(0)
+      return myArray
+    })()).toEqual([0, 1, 2, 3])
   })
 })
