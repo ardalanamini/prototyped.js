@@ -38,12 +38,18 @@
         * [.zip(array)](#Array+zip) ⇒ [<code>Array</code>](#Array)
         * [.zipObject(array)](#Array+zipObject) ⇒ [<code>Array</code>](#Array)
         * [.pluck(key)](#Array+pluck) ⇒ [<code>Array</code>](#Array)
+        * [.sum([key])](#Array+sum) ⇒ <code>number</code>
         * [.average([key])](#Array+average) ⇒ <code>number</code>
+        * [.max([key])](#Array+max) ⇒ <code>number</code>
+        * [.min([key])](#Array+min) ⇒ <code>number</code>
         * [.contains(value)](#Array+contains) ⇒ <code>boolean</code>
         * [.crossJoin(array)](#Array+crossJoin) ⇒ [<code>Array.&lt;Array&gt;</code>](#Array)
         * [.get(index, [def])](#Array+get) ⇒ <code>\*</code>
         * [.implode(key, [separator])](#Array+implode) ⇒ [<code>String</code>](#String)
         * [.clone()](#Array+clone) ⇒ [<code>Array</code>](#Array)
+        * [.median()](#Array+median) ⇒ [<code>Array</code>](#Array)
+        * [.pad(size, [value])](#Array+pad) ⇒ [<code>Array</code>](#Array)
+        * [.prepend(value)](#Array+prepend)
     * _static_
         * [.range(end, [start], [step])](#Array.range) ⇒ <code>Array.&lt;number&gt;</code>
         * [.repeat(n, [value])](#Array.repeat) ⇒ [<code>Array</code>](#Array)
@@ -352,6 +358,23 @@ Returns all of the values for the given key
 [{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].pluck('a'); // [{b: 1}, {b: 2}, {b: 3}]
 [{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].pluck('a.b'); // [1, 2, 3]
 ```
+<a name="Array+sum"></a>
+
+### array.sum([key]) ⇒ <code>number</code>
+Returns the minimum value of a given key
+
+**Kind**: instance method of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| [key] | [<code>String</code>](#String) | 
+
+**Example**  
+```javascript
+[1, 2, 3].sum(); // 6
+[{a: 1}, {a: 2}, {a: 3}].sum('a'); // 6
+[{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].sum('a.b'); // 6
+```
 <a name="Array+average"></a>
 
 ### array.average([key]) ⇒ <code>number</code>
@@ -368,6 +391,40 @@ Returns the average value of a given key
 [1, 2, 3].average(); // 2
 [{a: 1}, {a: 2}, {a: 3}].average('a'); // 2
 [{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].average('a.b'); // 2
+```
+<a name="Array+max"></a>
+
+### array.max([key]) ⇒ <code>number</code>
+Returns the maximum value of a given key
+
+**Kind**: instance method of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| [key] | [<code>String</code>](#String) | 
+
+**Example**  
+```javascript
+[1, 2, 3].max(); // 3
+[{a: 1}, {a: 2}, {a: 3}].max('a'); // 3
+[{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].max('a.b'); // 3
+```
+<a name="Array+min"></a>
+
+### array.min([key]) ⇒ <code>number</code>
+Returns the minimum value of a given key
+
+**Kind**: instance method of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| [key] | [<code>String</code>](#String) | 
+
+**Example**  
+```javascript
+[1, 2, 3].min(); // 1
+[{a: 1}, {a: 2}, {a: 3}].min('a'); // 1
+[{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].min('a.b'); // 1
 ```
 <a name="Array+contains"></a>
 
@@ -441,6 +498,50 @@ Returns the cloned array
 **Example**  
 ```javascript
 [1, 2, 3].clone(); // [1, 2, 3]
+```
+<a name="Array+median"></a>
+
+### array.median() ⇒ [<code>Array</code>](#Array)
+Returns the median value of a given key
+
+**Kind**: instance method of [<code>Array</code>](#Array)  
+**Example**  
+```javascript
+[1, 1, 2, 4].median(); // 1.5
+[{foo: 10}, {foo: 10}, {foo: 20}, {foo: 40}].median('foo'); // 15
+```
+<a name="Array+pad"></a>
+
+### array.pad(size, [value]) ⇒ [<code>Array</code>](#Array)
+FillS the array with the given value until the array reaches the specified size
+
+**Kind**: instance method of [<code>Array</code>](#Array)  
+
+| Param | Type | Default |
+| --- | --- | --- |
+| size | <code>number</code> |  | 
+| [value] | <code>\*</code> | <code>0</code> | 
+
+**Example**  
+```javascript
+[1, 2, 3].pad(5, 0); // [1, 2, 3, 0, 0]
+[1, 2, 3].pad(-5, 0); // [0, 0, 1, 2, 3]
+```
+<a name="Array+prepend"></a>
+
+### array.prepend(value)
+Adds an item to the beginning of the array
+
+**Kind**: instance method of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| value | <code>\*</code> | 
+
+**Example**  
+```javascript
+var myArray = [1, 2, 3]
+myArray.prepend(0); // myArray => [0, 1, 2, 3]
 ```
 <a name="Array.range"></a>
 
