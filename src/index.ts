@@ -1,3 +1,5 @@
-import './object'
-import './array'
+import './math'
 import './string'
+import './array'
+import './object'
+import './function'

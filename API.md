@@ -3,6 +3,10 @@
 <dl>
 <dt><a href="#Array">Array</a> : <code>object</code></dt>
 <dd></dd>
+<dt><a href="#Function">Function</a> : <code>object</code></dt>
+<dd></dd>
+<dt><a href="#Math">Math</a> : <code>object</code></dt>
+<dd></dd>
 <dt><a href="#Object">Object</a> : <code>object</code></dt>
 <dd></dd>
 <dt><a href="#String">String</a> : <code>object</code></dt>
@@ -577,6 +581,188 @@ Initializes and fills an array with the specified value
 **Example**  
 ```javascript
 Array.repeat(5, 2); // [2,2,2,2,2]
+```
+<a name="Function"></a>
+
+## Function : <code>object</code>
+**Kind**: global namespace  
+
+* [Function](#Function) : <code>object</code>
+    * [.once(args)](#Function+once) ⇒ <code>\*</code>
+    * [.defer(args)](#Function+defer) ⇒ <code>\*</code>
+    * [.cache(args)](#Function+cache) ⇒ <code>\*</code>
+
+<a name="Function+once"></a>
+
+### function.once(args) ⇒ <code>\*</code>
+Ensures a function is called only once
+
+**Kind**: instance method of [<code>Function</code>](#Function)  
+
+| Param | Type |
+| --- | --- |
+| args | [<code>Array</code>](#Array) | 
+
+**Example**  
+```javascript
+const test = (msg) => console.log(msg);
+test.once('a'); // logs 'a'
+test.once('b'); // no log this time
+```
+<a name="Function+defer"></a>
+
+### function.defer(args) ⇒ <code>\*</code>
+Defers invoking the function until the current call stack has cleared
+
+**Kind**: instance method of [<code>Function</code>](#Function)  
+
+| Param | Type |
+| --- | --- |
+| args | [<code>Array</code>](#Array) | 
+
+**Example**  
+```javascript
+const test = (msg) => console.log(msg);
+test.defer('a'), test('b'); // logs 'b' then 'a'
+```
+<a name="Function+cache"></a>
+
+### function.cache(args) ⇒ <code>\*</code>
+Returns the cached function results if already runned with this method
+
+**Kind**: instance method of [<code>Function</code>](#Function)  
+
+| Param | Type |
+| --- | --- |
+| args | [<code>Array</code>](#Array) | 
+
+**Example**  
+```javascript
+const test = () => setTimeout(console.log, 1000, `test`);
+test.cache(); // takes a second to log 'test'
+test.cache(); // instantly logs the second 'test'
+```
+<a name="Math"></a>
+
+## Math : <code>object</code>
+**Kind**: global namespace  
+
+* [Math](#Math) : <code>object</code>
+    * [.average(nums)](#Math.average) ⇒ <code>number</code>
+    * [.factorial(num)](#Math.factorial) ⇒ <code>number</code>
+    * [.fibonacci(num)](#Math.fibonacci) ⇒ <code>Array.&lt;number&gt;</code>
+    * [.gcd(nums)](#Math.gcd) ⇒ <code>number</code>
+    * [.lcm(nums)](#Math.lcm) ⇒ <code>number</code>
+    * [.isEven(num)](#Math.isEven) ⇒ <code>boolean</code>
+    * [.isPrime(num)](#Math.isPrime) ⇒ <code>boolean</code>
+
+<a name="Math.average"></a>
+
+### Math.average(nums) ⇒ <code>number</code>
+Returns the average of an of two or more numbers
+
+**Kind**: static method of [<code>Math</code>](#Math)  
+
+| Param | Type |
+| --- | --- |
+| nums | <code>Array.&lt;number&gt;</code> | 
+
+**Example**  
+```javascript
+Math.average(...[1, 2, 3]); // 2
+Math.average(1, 2, 3); // 2
+```
+<a name="Math.factorial"></a>
+
+### Math.factorial(num) ⇒ <code>number</code>
+Calculates the factorial of a number
+
+**Kind**: static method of [<code>Math</code>](#Math)  
+
+| Param | Type |
+| --- | --- |
+| num | <code>number</code> | 
+
+**Example**  
+```javascript
+Math.factorial(6); // 720
+```
+<a name="Math.fibonacci"></a>
+
+### Math.fibonacci(num) ⇒ <code>Array.&lt;number&gt;</code>
+Generates an array, containing the Fibonacci sequence, up until the nth term
+
+**Kind**: static method of [<code>Math</code>](#Math)  
+
+| Param | Type |
+| --- | --- |
+| num | <code>number</code> | 
+
+**Example**  
+```javascript
+Math.fibonacci(6); // [0, 1, 1, 2, 3, 5]
+```
+<a name="Math.gcd"></a>
+
+### Math.gcd(nums) ⇒ <code>number</code>
+Calculates the greatest common divisor between two or more numbers
+
+**Kind**: static method of [<code>Math</code>](#Math)  
+
+| Param | Type |
+| --- | --- |
+| nums | <code>Array.&lt;number&gt;</code> | 
+
+**Example**  
+```javascript
+Math.gcd(8, 36); // 4
+Math.gcd(...[12, 8, 32]); // 4
+```
+<a name="Math.lcm"></a>
+
+### Math.lcm(nums) ⇒ <code>number</code>
+Returns the least common multiple of two or more numbers
+
+**Kind**: static method of [<code>Math</code>](#Math)  
+
+| Param | Type |
+| --- | --- |
+| nums | <code>Array.&lt;number&gt;</code> | 
+
+**Example**  
+```javascript
+Math.lcm(12, 7); // 84
+Math.lcm(...[1, 3, 4, 5]); // 60
+```
+<a name="Math.isEven"></a>
+
+### Math.isEven(num) ⇒ <code>boolean</code>
+Returns true if the given number is even, false otherwise
+
+**Kind**: static method of [<code>Math</code>](#Math)  
+
+| Param | Type |
+| --- | --- |
+| num | <code>number</code> | 
+
+**Example**  
+```javascript
+Math.isEven(3); // false
+```
+<a name="Math.isPrime"></a>
+
+### Math.isPrime(num) ⇒ <code>boolean</code>
+Checks if the provided integer is a prime number
+
+**Kind**: static method of [<code>Math</code>](#Math)  
+
+| Param | Type |
+| --- | --- |
+| num | <code>number</code> | 
+
+**Example**  
+```javascript
+Math.isPrime(11); // true
 ```
 <a name="Object"></a>
 
