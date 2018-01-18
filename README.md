@@ -5,6 +5,7 @@ Some common **Typescript ready** prototypes
 [![npm](https://img.shields.io/npm/v/prototyped.js.svg)](https://www.npmjs.com/package/prototyped.js)
 [![npm](https://img.shields.io/npm/dm/prototyped.js.svg)](https://www.npmjs.com/package/prototyped.js)
 [![GitHub stars](https://img.shields.io/github/stars/ardalanamini/prototyped.js.svg)](https://github.com/ardalanamini/prototyped.js/stargazers)
+[![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
 [![license](https://img.shields.io/github/license/ardalanamini/prototyped.js.svg)](https://github.com/ardalanamini/prototyped.js/blob/master/LICENSE)
 
 [TOC]
