@@ -3,6 +3,7 @@
  */
 
 interface Object {
+  is(type: StringConstructor | NumberConstructor | ObjectConstructor | ArrayConstructor | DateConstructor): boolean
   invert(): Object
   lowerCaseKeys(): Object
   map(fn: (value: any, key: string | number, object: Object) => any): Object
@@ -12,6 +13,21 @@ interface Object {
 }
 
 let prototypes: OBJ = {
+}
+
+
+/**
+ * Returns true if type is Object
+ * @param {*} type
+ * @returns {boolean}
+ * @example
+ * {foo: 'bar'}.is(String); // false
+ * {foo: 'bar'}.is(Object); // true
+ */
+prototypes.is = function(type) {
+  if (type.name === 'Object') return true
+
+  return false
 }
 
 /**

@@ -1,8 +1,12 @@
 require('../dist/object.js')
 
-describe("Object.prototype.invert", () => {
-  test("{ name: 'John', age: 20 }.invert() returns { 20: 'age', John: 'name' }", () => {
-    expect({ name: 'John', age: 20 }.invert()).toEqual({ 20: 'age', John: 'name' })
+describe("Object.prototype.is", () => {
+  test("{foo: 'bar'}.is(String) returns false", () => {
+    expect({foo: 'bar'}.is(String)).toBe(false)
+  })
+
+  test("{foo: 'bar'}.is(Object) returns true", () => {
+    expect({foo: 'bar'}.is(Object)).toBe(true)
   })
 })
 

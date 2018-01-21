@@ -20,6 +20,7 @@
 
 * [Array](#Array) : <code>object</code>
     * _instance_
+        * [.is(type)](#Array+is) ⇒ <code>boolean</code>
         * [.first()](#Array+first) ⇒ <code>\*</code>
         * [.last()](#Array+last) ⇒ <code>\*</code>
         * [.chunk(size)](#Array+chunk) ⇒ [<code>Array.&lt;Array&gt;</code>](#Array)
@@ -58,6 +59,22 @@
         * [.range(end, [start], [step])](#Array.range) ⇒ <code>Array.&lt;number&gt;</code>
         * [.repeat(n, [value])](#Array.repeat) ⇒ [<code>Array</code>](#Array)
 
+<a name="Array+is"></a>
+
+### array.is(type) ⇒ <code>boolean</code>
+Returns true if type is Array
+
+**Kind**: instance method of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| type | <code>\*</code> | 
+
+**Example**  
+```javascript
+[7, 3].is(Object); // false
+[7, 3].is(Array); // true
+```
 <a name="Array+first"></a>
 
 ### array.first() ⇒ <code>\*</code>
@@ -872,6 +889,7 @@ Get size of the object
 **Kind**: global namespace  
 
 * [String](#String) : <code>object</code>
+    * [.is(type)](#String+is) ⇒ <code>boolean</code>
     * [.capitalize([allWords])](#String+capitalize) ⇒ <code>string</code>
     * [.decapitalize([allWords])](#String+decapitalize) ⇒ <code>string</code>
     * [.mask([num], [mask])](#String+mask) ⇒ <code>string</code>
@@ -884,6 +902,22 @@ Get size of the object
     * [.truncate(num)](#String+truncate) ⇒ <code>string</code>
     * [.words(pattern)](#String+words) ⇒ <code>Array.&lt;string&gt;</code>
 
+<a name="String+is"></a>
+
+### string.is(type) ⇒ <code>boolean</code>
+Returns true if type is String
+
+**Kind**: instance method of [<code>String</code>](#String)  
+
+| Param | Type |
+| --- | --- |
+| type | <code>\*</code> | 
+
+**Example**  
+```javascript
+'foo bar'.is(Object); // false
+'foo bar'.is(String); // true
+```
 <a name="String+capitalize"></a>
 
 ### string.capitalize([allWords]) ⇒ <code>string</code>

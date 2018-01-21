@@ -1,3 +1,1 @@
-interface OBJ {
-  [key: string]: any
-}
+interface OBJ { [key: string]: any }

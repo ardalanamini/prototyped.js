@@ -1,5 +1,17 @@
 require('../dist/string.js')
 
+describe("String.prototype.is", () => {
+  test("'foo bar'.is(Object) returns false", () => {
+    expect('foo bar'.is(Object))
+      .toBe(false)
+  })
+
+  test("'foo bar'.is(String) returns true", () => {
+    expect('foo bar'.is(String))
+      .toBe(true)
+  })
+})
+
 describe("String.prototype.capitalize", () => {
   test("'foo bar'.capitalize() returns 'Foo bar'", () => {
     expect('foo bar'.capitalize())

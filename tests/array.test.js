@@ -20,6 +20,16 @@ describe("Array.repeat", () => {
   })
 })
 
+describe("Array.prototype.is", () => {
+  test("[7, 3].is(Object) returns false", () => {
+    expect([7, 3].is(Object)).toBe(false)
+  })
+
+  test("[7, 3].is(Array) returns true", () => {
+    expect([7, 3].is(Array)).toBe(true)
+  })
+})
+
 describe("Array.prototype.first", () => {
   test("[1, 2, 3].first() returns 1", () => {
     expect([1,2,3].first()).toBe(1)

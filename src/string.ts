@@ -3,6 +3,7 @@
  */
 
 interface String {
+  is(type: StringConstructor | NumberConstructor | ObjectConstructor | ArrayConstructor | DateConstructor): boolean
   capitalize(allWords?: boolean): String
   decapitalize(allWords?: boolean): String
   mask(num?: number, mask?: string): String
@@ -14,6 +15,22 @@ interface String {
   snakeCase(): String
   truncate(num: number): String
   words(pattern?: RegExp): Array<String>
+}
+
+if (!String.prototype.is) {
+  /**
+   * Returns true if type is String
+   * @param {*} type
+   * @returns {boolean}
+   * @example
+   * 'foo bar'.is(Object); // false
+   * 'foo bar'.is(String); // true
+   */
+  String.prototype.is = function(type) {
+    if (type.name === 'String') return true
+
+    return false
+  }
 }
 
 if (!String.prototype.capitalize) {

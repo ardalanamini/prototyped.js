@@ -35,6 +35,7 @@ if (!Array.repeat) {
 }
 
 interface Array<T> {
+  is(type: StringConstructor | NumberConstructor | ObjectConstructor | ArrayConstructor | DateConstructor): boolean
   first(): T
   last(): T
   chunk(size: number): Array<Array<T>>
@@ -69,6 +70,22 @@ interface Array<T> {
   median(key?: String): number
   pad(size: number, value?: any): Array<any>
   prepend(value?: any): void
+}
+
+if (!Array.prototype.is) {
+  /**
+   * Returns true if type is Array
+   * @param {*} type
+   * @returns {boolean}
+   * @example
+   * [7, 3].is(Object); // false
+   * [7, 3].is(Array); // true
+   */
+  Array.prototype.is = function(type) {
+    if (type.name === 'Array') return true
+
+    return false
+  }
 }
 
 if (!Array.prototype.first) {
