@@ -3,9 +3,15 @@
 <dl>
 <dt><a href="#Array">Array</a> : <code>object</code></dt>
 <dd></dd>
+<dt><a href="#Boolean">Boolean</a> : <code>object</code></dt>
+<dd></dd>
+<dt><a href="#Date">Date</a> : <code>object</code></dt>
+<dd></dd>
 <dt><a href="#Function">Function</a> : <code>object</code></dt>
 <dd></dd>
 <dt><a href="#Math">Math</a> : <code>object</code></dt>
+<dd></dd>
+<dt><a href="#Number">Number</a> : <code>object</code></dt>
 <dd></dd>
 <dt><a href="#Object">Object</a> : <code>object</code></dt>
 <dd></dd>
@@ -20,7 +26,7 @@
 
 * [Array](#Array) : <code>object</code>
     * _instance_
-        * [.is(type)](#Array+is) ⇒ <code>boolean</code>
+        * [.avg](#Array+avg) ⇒ <code>number</code>
         * [.first()](#Array+first) ⇒ <code>\*</code>
         * [.last()](#Array+last) ⇒ <code>\*</code>
         * [.chunk(size)](#Array+chunk) ⇒ [<code>Array.&lt;Array&gt;</code>](#Array)
@@ -56,24 +62,26 @@
         * [.pad(size, [value])](#Array+pad) ⇒ [<code>Array</code>](#Array)
         * [.prepend(value)](#Array+prepend)
     * _static_
+        * [.isInstance](#Array.isInstance) ⇒ <code>boolean</code>
         * [.range(end, [start], [step])](#Array.range) ⇒ <code>Array.&lt;number&gt;</code>
         * [.repeat(n, [value])](#Array.repeat) ⇒ [<code>Array</code>](#Array)
 
-<a name="Array+is"></a>
+<a name="Array+avg"></a>
 
-### array.is(type) ⇒ <code>boolean</code>
-Returns true if type is Array
+### array.avg ⇒ <code>number</code>
+An alias of Array.prototype.average
 
-**Kind**: instance method of [<code>Array</code>](#Array)  
+**Kind**: instance property of [<code>Array</code>](#Array)  
 
 | Param | Type |
 | --- | --- |
-| type | <code>\*</code> | 
+| [key] | [<code>String</code>](#String) | 
 
 **Example**  
 ```javascript
-[7, 3].is(Object); // false
-[7, 3].is(Array); // true
+[1, 2, 3].avg(); // 2
+[{a: 1}, {a: 2}, {a: 3}].avg('a'); // 2
+[{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].avg('a.b'); // 2
 ```
 <a name="Array+first"></a>
 
@@ -564,6 +572,22 @@ Adds an item to the beginning of the array
 var myArray = [1, 2, 3]
 myArray.prepend(0); // myArray => [0, 1, 2, 3]
 ```
+<a name="Array.isInstance"></a>
+
+### Array.isInstance ⇒ <code>boolean</code>
+An alias of Array.isArray
+
+**Kind**: static property of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| arg | <code>\*</code> | 
+
+**Example**  
+```javascript
+Array.isInstance(2); // false
+Array.isInstance([7, 3]); // true
+```
 <a name="Array.range"></a>
 
 ### Array.range(end, [start], [step]) ⇒ <code>Array.&lt;number&gt;</code>
@@ -599,15 +623,58 @@ Initializes and fills an array with the specified value
 ```javascript
 Array.repeat(5, 2); // [2,2,2,2,2]
 ```
+<a name="Boolean"></a>
+
+## Boolean : <code>object</code>
+**Kind**: global namespace  
+<a name="Boolean.isInstance"></a>
+
+### Boolean.isInstance(arg) ⇒ <code>boolean</code>
+Returns true if the given argument is a boolean
+
+**Kind**: static method of [<code>Boolean</code>](#Boolean)  
+
+| Param | Type |
+| --- | --- |
+| arg | <code>\*</code> | 
+
+**Example**  
+```javascript
+Boolean.isInstance('foo bar'); // false
+Boolean.isInstance(flase); // true
+```
+<a name="Date"></a>
+
+## Date : <code>object</code>
+**Kind**: global namespace  
+<a name="Date.isInstance"></a>
+
+### Date.isInstance(arg) ⇒ <code>boolean</code>
+Returns true if the given argument is an instance of Date
+
+**Kind**: static method of [<code>Date</code>](#Date)  
+
+| Param | Type |
+| --- | --- |
+| arg | <code>\*</code> | 
+
+**Example**  
+```javascript
+Date.isInstance('foo bar'); // false
+Date.isInstance(new Date()); // true
+```
 <a name="Function"></a>
 
 ## Function : <code>object</code>
 **Kind**: global namespace  
 
 * [Function](#Function) : <code>object</code>
-    * [.once(args)](#Function+once) ⇒ <code>\*</code>
-    * [.defer(args)](#Function+defer) ⇒ <code>\*</code>
-    * [.cache(args)](#Function+cache) ⇒ <code>\*</code>
+    * _instance_
+        * [.once(args)](#Function+once) ⇒ <code>\*</code>
+        * [.defer(args)](#Function+defer) ⇒ <code>\*</code>
+        * [.cache(args)](#Function+cache) ⇒ <code>\*</code>
+    * _static_
+        * [.isInstance(arg)](#Function.isInstance) ⇒ <code>boolean</code>
 
 <a name="Function+once"></a>
 
@@ -659,12 +726,29 @@ const test = () => setTimeout(console.log, 1000, `test`);
 test.cache(); // takes a second to log 'test'
 test.cache(); // instantly logs the second 'test'
 ```
+<a name="Function.isInstance"></a>
+
+### Function.isInstance(arg) ⇒ <code>boolean</code>
+Returns true if the given argument is a function
+
+**Kind**: static method of [<code>Function</code>](#Function)  
+
+| Param | Type |
+| --- | --- |
+| arg | <code>\*</code> | 
+
+**Example**  
+```javascript
+Function.isInstance(2); // false
+Function.isInstance((() => {})); // true
+```
 <a name="Math"></a>
 
 ## Math : <code>object</code>
 **Kind**: global namespace  
 
 * [Math](#Math) : <code>object</code>
+    * [.avg](#Math.avg) ⇒ <code>number</code>
     * [.average(nums)](#Math.average) ⇒ <code>number</code>
     * [.factorial(num)](#Math.factorial) ⇒ <code>number</code>
     * [.fibonacci(num)](#Math.fibonacci) ⇒ <code>Array.&lt;number&gt;</code>
@@ -673,6 +757,22 @@ test.cache(); // instantly logs the second 'test'
     * [.isEven(num)](#Math.isEven) ⇒ <code>boolean</code>
     * [.isPrime(num)](#Math.isPrime) ⇒ <code>boolean</code>
 
+<a name="Math.avg"></a>
+
+### Math.avg ⇒ <code>number</code>
+An alias of Math.average
+
+**Kind**: static property of [<code>Math</code>](#Math)  
+
+| Param | Type |
+| --- | --- |
+| nums | <code>Array.&lt;number&gt;</code> | 
+
+**Example**  
+```javascript
+Math.avg(...[1, 2, 3]); // 2
+Math.avg(1, 2, 3); // 2
+```
 <a name="Math.average"></a>
 
 ### Math.average(nums) ⇒ <code>number</code>
@@ -781,18 +881,41 @@ Checks if the provided integer is a prime number
 ```javascript
 Math.isPrime(11); // true
 ```
+<a name="Number"></a>
+
+## Number : <code>object</code>
+**Kind**: global namespace  
+<a name="Number.isInstance"></a>
+
+### Number.isInstance(arg) ⇒ <code>boolean</code>
+Returns true if the given argument is a number
+
+**Kind**: static method of [<code>Number</code>](#Number)  
+
+| Param | Type |
+| --- | --- |
+| arg | <code>\*</code> | 
+
+**Example**  
+```javascript
+Number.isInstance('foo bar'); // false
+Number.isInstance(2); // true
+```
 <a name="Object"></a>
 
 ## Object : <code>object</code>
 **Kind**: global namespace  
 
 * [Object](#Object) : <code>object</code>
-    * [.s.invert()](#Object+s.invert) ⇒ [<code>Object</code>](#Object)
-    * [.s.lowerCaseKeys()](#Object+s.lowerCaseKeys) ⇒ [<code>Object</code>](#Object)
-    * [.s.map(fn)](#Object+s.map) ⇒ [<code>Object</code>](#Object)
-    * [.s.mapKeys(fn)](#Object+s.mapKeys) ⇒ [<code>Object</code>](#Object)
-    * [.s.merge(objects)](#Object+s.merge) ⇒ [<code>Object</code>](#Object)
-    * [.s.size()](#Object+s.size) ⇒ [<code>Object</code>](#Object)
+    * _instance_
+        * [.s.invert()](#Object+s.invert) ⇒ [<code>Object</code>](#Object)
+        * [.s.lowerCaseKeys()](#Object+s.lowerCaseKeys) ⇒ [<code>Object</code>](#Object)
+        * [.s.map(fn)](#Object+s.map) ⇒ [<code>Object</code>](#Object)
+        * [.s.mapKeys(fn)](#Object+s.mapKeys) ⇒ [<code>Object</code>](#Object)
+        * [.s.merge(objects)](#Object+s.merge) ⇒ [<code>Object</code>](#Object)
+        * [.s.size()](#Object+s.size) ⇒ [<code>Object</code>](#Object)
+    * _static_
+        * [.isInstance(arg)](#Object.isInstance) ⇒ <code>boolean</code>
 
 <a name="Object+s.invert"></a>
 
@@ -883,41 +1006,43 @@ Get size of the object
 ```javascript
 { one: 1, two: 2, three: 3 }.size(); // 3
 ```
+<a name="Object.isInstance"></a>
+
+### Object.isInstance(arg) ⇒ <code>boolean</code>
+Returns true if the given argument is an object
+
+**Kind**: static method of [<code>Object</code>](#Object)  
+
+| Param | Type |
+| --- | --- |
+| arg | <code>\*</code> | 
+
+**Example**  
+```javascript
+Object.isInstance(2); // false
+Object.isInstance({foo: 'bar'}); // true
+```
 <a name="String"></a>
 
 ## String : <code>object</code>
 **Kind**: global namespace  
 
 * [String](#String) : <code>object</code>
-    * [.is(type)](#String+is) ⇒ <code>boolean</code>
-    * [.capitalize([allWords])](#String+capitalize) ⇒ <code>string</code>
-    * [.decapitalize([allWords])](#String+decapitalize) ⇒ <code>string</code>
-    * [.mask([num], [mask])](#String+mask) ⇒ <code>string</code>
-    * [.pluralize(value, [plural])](#String+pluralize) ⇒ <code>string</code>
-    * [.reverse()](#String+reverse) ⇒ <code>string</code>
-    * [.lines()](#String+lines) ⇒ <code>Array.&lt;string&gt;</code>
-    * [.camelCase()](#String+camelCase) ⇒ <code>string</code>
-    * [.kebabCase()](#String+kebabCase) ⇒ <code>string</code>
-    * [.snakeCase()](#String+snakeCase) ⇒ <code>string</code>
-    * [.truncate(num)](#String+truncate) ⇒ <code>string</code>
-    * [.words(pattern)](#String+words) ⇒ <code>Array.&lt;string&gt;</code>
+    * _instance_
+        * [.capitalize([allWords])](#String+capitalize) ⇒ <code>string</code>
+        * [.decapitalize([allWords])](#String+decapitalize) ⇒ <code>string</code>
+        * [.mask([num], [mask])](#String+mask) ⇒ <code>string</code>
+        * [.pluralize(value, [plural])](#String+pluralize) ⇒ <code>string</code>
+        * [.reverse()](#String+reverse) ⇒ <code>string</code>
+        * [.lines()](#String+lines) ⇒ <code>Array.&lt;string&gt;</code>
+        * [.camelCase()](#String+camelCase) ⇒ <code>string</code>
+        * [.kebabCase()](#String+kebabCase) ⇒ <code>string</code>
+        * [.snakeCase()](#String+snakeCase) ⇒ <code>string</code>
+        * [.truncate(num)](#String+truncate) ⇒ <code>string</code>
+        * [.words(pattern)](#String+words) ⇒ <code>Array.&lt;string&gt;</code>
+    * _static_
+        * [.isInstance(arg)](#String.isInstance) ⇒ <code>boolean</code>
 
-<a name="String+is"></a>
-
-### string.is(type) ⇒ <code>boolean</code>
-Returns true if type is String
-
-**Kind**: instance method of [<code>String</code>](#String)  
-
-| Param | Type |
-| --- | --- |
-| type | <code>\*</code> | 
-
-**Example**  
-```javascript
-'foo bar'.is(Object); // false
-'foo bar'.is(String); // true
-```
 <a name="String+capitalize"></a>
 
 ### string.capitalize([allWords]) ⇒ <code>string</code>
@@ -1078,4 +1203,20 @@ Converts a given string into an array of words
 ```javascript
 'I love javaScript!!'.words(); // ["I", "love", "javaScript"]
 'python, javaScript & coffee'.words(); // ["python", "javaScript", "coffee"]
+```
+<a name="String.isInstance"></a>
+
+### String.isInstance(arg) ⇒ <code>boolean</code>
+Returns true if the given argument is an string
+
+**Kind**: static method of [<code>String</code>](#String)  
+
+| Param | Type |
+| --- | --- |
+| arg | <code>\*</code> | 
+
+**Example**  
+```javascript
+String.isInstance(2); // false
+String.isInstance('foo bar'); // true
 ```
