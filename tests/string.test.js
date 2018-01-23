@@ -1,13 +1,13 @@
 require('../dist/string.js')
 
-describe("String.prototype.is", () => {
-  test("'foo bar'.is(Object) returns false", () => {
-    expect('foo bar'.is(Object))
+describe("String.isInstance", () => {
+  test("String.isInstance(2) returns false", () => {
+    expect(String.isInstance(2))
       .toBe(false)
   })
 
-  test("'foo bar'.is(String) returns true", () => {
-    expect('foo bar'.is(String))
+  test("String.isInstance('foo bar') returns true", () => {
+    expect(String.isInstance('foo bar'))
       .toBe(true)
   })
 })

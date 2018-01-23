@@ -2,11 +2,27 @@
  * @namespace Function
  */
 
+interface FunctionConstructor {
+  isInstance(arg: any): boolean
+}
+
+if (!Function.isInstance) {
+  /**
+   * Returns true if the given argument is a function
+   * @param {*} arg
+   * @returns {boolean}
+   * @example
+   * Function.isInstance(2); // false
+   * Function.isInstance((() => {})); // true
+   */
+  Function.isInstance = (arg) => arg instanceof Function
+}
+
 interface Function {
   called?: boolean
   once(...args: Array<any>): any
   defer(...args: Array<any>): any
-  cached?: Array<{ key: String, result: any }>
+  cached?: Array<{ key: string, result: any }>
   cache(...args: Array<any>): any
 }
 
@@ -57,7 +73,7 @@ if (!Function.prototype.cache) {
     let key = JSON.stringify(args)
     let cached = this.cached || []
 
-    let index = cached.findIndex((c: OBJ) => c.key === args)
+    let index = cached.findIndex((c: { [key: string]: any }) => c.key === args)
     if (index !== -1) return cached[index].result
 
     let result = this.call(this, ...args)

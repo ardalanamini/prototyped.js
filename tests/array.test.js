@@ -1,5 +1,15 @@
 require('../dist/array.js')
 
+describe("Array.isInstance", () => {
+  test("Array.isInstance(2) returns false", () => {
+    expect(Array.isInstance(2)).toBe(false)
+  })
+
+  test("Array.isInstance([7, 3]) returns true", () => {
+    expect(Array.isInstance([7, 3])).toBe(true)
+  })
+})
+
 describe("Array.range", () => {
   test("Array.range(5) returns [0,1,2,3,4,5]", () => {
     expect(Array.range(5)).toEqual([0,1,2,3,4,5])
@@ -17,16 +27,6 @@ describe("Array.range", () => {
 describe("Array.repeat", () => {
   test("Array.repeat(5, 2) returns [2,2,2,2,2]", () => {
     expect(Array.repeat(5, 2)).toEqual([2,2,2,2,2])
-  })
-})
-
-describe("Array.prototype.is", () => {
-  test("[7, 3].is(Object) returns false", () => {
-    expect([7, 3].is(Object)).toBe(false)
-  })
-
-  test("[7, 3].is(Array) returns true", () => {
-    expect([7, 3].is(Array)).toBe(true)
   })
 })
 

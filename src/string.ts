@@ -2,35 +2,34 @@
  * @namespace String
  */
 
-interface String {
-  is(type: StringConstructor | NumberConstructor | ObjectConstructor | ArrayConstructor | DateConstructor): boolean
-  capitalize(allWords?: boolean): String
-  decapitalize(allWords?: boolean): String
-  mask(num?: number, mask?: string): String
-  pluralize(value: number, plural?: String): String
-  reverse(): String
-  lines(): Array<String>
-  camelCase(): String
-  kebabCase(): String
-  snakeCase(): String
-  truncate(num: number): String
-  words(pattern?: RegExp): Array<String>
+interface StringConstructor {
+  isInstance(arg: any): boolean
 }
 
-if (!String.prototype.is) {
+if (!String.isInstance) {
   /**
-   * Returns true if type is String
-   * @param {*} type
+   * Returns true if the given argument is an string
+   * @param {*} arg
    * @returns {boolean}
    * @example
-   * 'foo bar'.is(Object); // false
-   * 'foo bar'.is(String); // true
+   * String.isInstance(2); // false
+   * String.isInstance('foo bar'); // true
    */
-  String.prototype.is = function(type) {
-    if (type.name === 'String') return true
+  String.isInstance = (arg) => typeof arg === 'string'
+}
 
-    return false
-  }
+interface String {
+  capitalize(allWords?: boolean): string
+  decapitalize(allWords?: boolean): string
+  mask(num?: number, mask?: string): string
+  pluralize(value: number, plural?: string): String
+  reverse(): string
+  lines(): Array<string>
+  camelCase(): string
+  kebabCase(): string
+  snakeCase(): string
+  truncate(num: number): String
+  words(pattern?: RegExp): Array<string>
 }
 
 if (!String.prototype.capitalize) {

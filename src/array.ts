@@ -3,8 +3,21 @@
  */
 
 interface ArrayConstructor {
+  isInstance(arg: any): boolean
   range(end: number, start?: number, step?: number): Array<number>
   repeat(n: number, value?: any): Array<any>
+}
+
+if (!Array.isInstance) {
+  /**
+   * An alias of Array.isArray
+   * @param {*} arg
+   * @returns {boolean}
+   * @example
+   * Array.isInstance(2); // false
+   * Array.isInstance([7, 3]); // true
+   */
+  Array.isInstance = Array.isArray
 }
 
 if (!Array.range) {
@@ -35,7 +48,6 @@ if (!Array.repeat) {
 }
 
 interface Array<T> {
-  is(type: StringConstructor | NumberConstructor | ObjectConstructor | ArrayConstructor | DateConstructor): boolean
   first(): T
   last(): T
   chunk(size: number): Array<Array<T>>
@@ -56,36 +68,21 @@ interface Array<T> {
   shuffle(): Array<T>
   union(array: Array<T>): Array<T>
   zip(...arrays: Array<Array<T>>): Array<T>
-  zipObject(array: Array<T>): OBJ
+  zipObject(array: Array<T>): object
   pluck(key: String): Array<T>
   sum(key?: String): number
   average(key?: String): number
+  avg(key?: String): number
   max(key?: String): number
   min(key?: String): number
   contains(value: T): boolean
   crossJoin(array: Array<any>): Array<Array<any>>
   get(index: number, def?: T | any): T | any
-  implode(key: String, separator?: string): String
+  implode(key: string, separator?: string): String
   clone(): Array<T>
-  median(key?: String): number
+  median(key?: string): number
   pad(size: number, value?: any): Array<any>
   prepend(value?: any): void
-}
-
-if (!Array.prototype.is) {
-  /**
-   * Returns true if type is Array
-   * @param {*} type
-   * @returns {boolean}
-   * @example
-   * [7, 3].is(Object); // false
-   * [7, 3].is(Array); // true
-   */
-  Array.prototype.is = function(type) {
-    if (type.name === 'Array') return true
-
-    return false
-  }
 }
 
 if (!Array.prototype.first) {
@@ -163,7 +160,7 @@ if (!Array.prototype.countBy) {
    * ['one', 'two', 'three'].countBy('length'); // {3: 2, 5: 1}
    */
   Array.prototype.countBy = function(fn) {
-    return this.map(typeof fn === 'function' ? fn : (val) => val[fn]).reduce((acc: OBJ, val: string, i) => {
+    return this.map(typeof fn === 'function' ? fn : (val) => val[fn]).reduce((acc: { [key: string]: any }, val: string, i) => {
       acc[val] = (acc[val] || 0) + 1
 
       return acc
@@ -484,6 +481,19 @@ if (!Array.prototype.average) {
   Array.prototype.average = function(key) {
     return this.sum(key) / this.length
   }
+}
+
+if (!Array.prototype.avg) {
+  /**
+   * An alias of Array.prototype.average
+   * @param {String} [key]
+   * @returns {number}
+   * @example
+   * [1, 2, 3].avg(); // 2
+   * [{a: 1}, {a: 2}, {a: 3}].avg('a'); // 2
+   * [{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].avg('a.b'); // 2
+   */
+  Array.prototype.avg = Array.prototype.average
 }
 
 if (!Array.prototype.max) {

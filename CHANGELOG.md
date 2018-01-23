@@ -1,21 +1,32 @@
 # Changelog
 
-## [next](...) *(....-..-..)*
+## [v0.3.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.3.0) *(2018-01-24)*
 **Implemented enhancements:**
-- `Array.prototype`
-	- function `is` added
-- `String.prototype`
-	- function `is` added
-- `Object.prototype`
-	- function `is` added
-- `Function.prototype`
-	- method `called` added
-	- function `once` added
-	- function `defer` added
-	- method `cached` added
-	- function `cache` added
+- `Array`
+	- function `isInstance` added
+	- `prototype`
+		- function `avg` added (alias of `Math.average`)
+- `String`
+	- function `isInstance` added
+- `Object`
+	- function `isInstance` added
+- `Function`
+	- function `isInstance` added
+	- `prototype`
+		- method `called` added
+		- function `once` added
+		- function `defer` added
+		- method `cached` added
+		- function `cache` added
+- `Boolean`
+	- function `isInstance` added
+- `Number`
+	- function `isInstance` added
+- `Date`
+	- function `isInstance` added
 - `Math`
 	- function `average` added
+	- function `avg` added (alias of `Math.average`)
 	- function `factorial` added
 	- function `fibonacci` added
 	- function `gcd` added

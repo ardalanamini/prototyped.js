@@ -4,6 +4,7 @@
 
 interface Math {
   average(...nums: Array<number>): number
+  avg(...nums: Array<number>): number
   factorial(n: number): number
   fibonacci(nth: number): Array<number>
   gcd(...nums: Array<number>): number
@@ -22,6 +23,18 @@ if (!Math.average) {
    * Math.average(1, 2, 3); // 2
    */
   Math.average = (...nums) => [...nums].reduce((acc, val) => acc + val, 0) / nums.length
+}
+
+if (!Math.avg) {
+  /**
+   * An alias of Math.average
+   * @param {number[]} nums
+   * @returns {number}
+   * @example
+   * Math.avg(...[1, 2, 3]); // 2
+   * Math.avg(1, 2, 3); // 2
+   */
+  Math.avg = Math.average
 }
 
 if (!Math.factorial) {

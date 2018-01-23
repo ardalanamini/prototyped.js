@@ -2,32 +2,32 @@
  * @namespace Object
  */
 
+interface ObjectConstructor {
+  isInstance(arg: any): boolean
+}
+
+if (!Object.isInstance) {
+  /**
+   * Returns true if the given argument is an object
+   * @param {*} arg
+   * @returns {boolean}
+   * @example
+   * Object.isInstance(2); // false
+   * Object.isInstance({foo: 'bar'}); // true
+   */
+  Object.isInstance = (arg) => arg instanceof Object
+}
+
 interface Object {
-  is(type: StringConstructor | NumberConstructor | ObjectConstructor | ArrayConstructor | DateConstructor): boolean
-  invert(): Object
-  lowerCaseKeys(): Object
-  map(fn: (value: any, key: string | number, object: Object) => any): Object
-  mapKeys(fn: (value: any, key: string | number, object: Object) => any): Object
-  merge(...objects: Array<Object>): Object
+  invert(): object
+  lowerCaseKeys(): object
+  map(fn: (value: any, key: string | number, object: object) => any): object
+  mapKeys(fn: (value: any, key: string | number, object: object) => any): object
+  merge(...objects: Array<object>): object
   size(): number
 }
 
-let prototypes: OBJ = {
-}
-
-
-/**
- * Returns true if type is Object
- * @param {*} type
- * @returns {boolean}
- * @example
- * {foo: 'bar'}.is(String); // false
- * {foo: 'bar'}.is(Object); // true
- */
-prototypes.is = function(type) {
-  if (type.name === 'Object') return true
-
-  return false
+let prototypes: { [key: string]: any } = {
 }
 
 /**
@@ -38,7 +38,7 @@ prototypes.is = function(type) {
  * { name: 'John', age: 20 }.invert(); // { 20: 'age', John: 'name' }
  */
 prototypes.invert = function() {
-  return Object.keys(this).reduce((acc: OBJ, key) => {
+  return Object.keys(this).reduce((acc: { [key: string]: any }, key) => {
     acc[this[key]] = key
 
     return acc
@@ -54,7 +54,7 @@ prototypes.invert = function() {
  * const myObjLower = myObj.lowerCaseKeys(); // {name: 'Adam', surname: 'Smith'}
  */
 prototypes.lowerCaseKeys = function() {
-  return Object.keys(this).reduce((acc: OBJ, key) => {
+  return Object.keys(this).reduce((acc: { [key: string]: any }, key) => {
     acc[key.toLowerCase()] = this[key]
 
     return acc
@@ -74,7 +74,7 @@ prototypes.lowerCaseKeys = function() {
  * users.map(u => u.age); // { fred: 40, pebbles: 1 }
  */
 prototypes.map = function(fn) {
-  return Object.keys(this).reduce((acc: OBJ, k) => {
+  return Object.keys(this).reduce((acc: { [key: string]: any }, k) => {
     acc[k] = fn(this[k], k, this)
 
     return acc
@@ -90,7 +90,7 @@ prototypes.map = function(fn) {
  * { a: 1, b: 2 }.mapKeys((val, key) => key + val); // { a1: 1, b2: 2 }
  */
 prototypes.mapKeys = function(fn) {
-  return Object.keys(this).reduce((acc: OBJ, k) => {
+  return Object.keys(this).reduce((acc: { [key: string]: any }, k) => {
     acc[fn(this[k], k, this)] = this[k]
 
     return acc
@@ -118,7 +118,7 @@ prototypes.merge = function(...objects) {
   objects = [this, ...objects]
 
   return [...objects].reduce(
-    (acc: OBJ, obj: OBJ) =>
+    (acc: { [key: string]: any }, obj: { [key: string]: any }) =>
       Object.keys(obj).reduce((a, k) => {
         acc[k] = acc.hasOwnProperty(k) ? [].concat(acc[k]).concat(obj[k]) : obj[k]
 
@@ -139,7 +139,7 @@ prototypes.size = function() {
   return Object.keys(this).length
 }
 
-const addPrototypes = (extension: OBJ) => {
+const addPrototypes = (extension: { [key: string]: any }) => {
   for (let key in extension) {
     if (Object.prototype.hasOwnProperty(key)) continue
 

@@ -1,12 +1,12 @@
 require('../dist/object.js')
 
-describe("Object.prototype.is", () => {
-  test("{foo: 'bar'}.is(String) returns false", () => {
-    expect({foo: 'bar'}.is(String)).toBe(false)
+describe("Object.isInstance", () => {
+  test("Object.isInstance(2) returns false", () => {
+    expect(Object.isInstance(2)).toBe(false)
   })
 
-  test("{foo: 'bar'}.is(Object) returns true", () => {
-    expect({foo: 'bar'}.is(Object)).toBe(true)
+  test("Object.isInstance({foo: 'bar'}) returns true", () => {
+    expect(Object.isInstance({foo: 'bar'})).toBe(true)
   })
 })
 
