@@ -2,8 +2,12 @@
  * @namespace Boolean
  */
 
-interface BooleanConstructor {
-  isInstance(arg: any): boolean
+export { }
+
+declare global {
+  interface BooleanConstructor {
+    isInstance(arg: any): arg is boolean
+  }
 }
 
 if (!Boolean.isInstance) {
@@ -15,5 +19,5 @@ if (!Boolean.isInstance) {
    * Boolean.isInstance('foo bar'); // false
    * Boolean.isInstance(flase); // true
    */
-  Boolean.isInstance = (arg) => typeof arg === 'boolean'
+  Boolean.isInstance = (arg: any): arg is boolean => typeof arg === 'boolean'
 }

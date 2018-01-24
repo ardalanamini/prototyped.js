@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.3.1](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.3.1) *(2018-01-24)*
+**Implemented enhancements:**
+- es6 usage is now available along side es5 (dist)
+
+**Fixed bugs:**
+- typescript usage
+
+
 ## [v0.3.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.3.0) *(2018-01-24)*
 **Implemented enhancements:**
 - `Array`

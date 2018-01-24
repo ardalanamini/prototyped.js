@@ -2,8 +2,12 @@
  * @namespace Number
  */
 
-interface NumberConstructor {
-  isInstance(arg: any): boolean
+export { }
+
+declare global {
+  interface NumberConstructor {
+    isInstance(arg: any): arg is Number
+  }
 }
 
 if (!Number.isInstance) {
@@ -15,5 +19,5 @@ if (!Number.isInstance) {
    * Number.isInstance('foo bar'); // false
    * Number.isInstance(2); // true
    */
-  Number.isInstance = (arg) => !isNaN(arg)
+  Number.isInstance = (arg: any): arg is Number => !isNaN(arg)
 }

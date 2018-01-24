@@ -2,10 +2,52 @@
  * @namespace Array
  */
 
-interface ArrayConstructor {
-  isInstance(arg: any): boolean
-  range(end: number, start?: number, step?: number): Array<number>
-  repeat(n: number, value?: any): Array<any>
+export { }
+
+declare global {
+  interface ArrayConstructor {
+    isInstance(arg: any): arg is Array<any>
+    range(end: number, start?: number, step?: number): Array<number>
+    repeat(n: number, value?: any): Array<any>
+  }
+
+  interface Array<T> {
+    first(): T
+    last(): T
+    chunk(size: number): Array<Array<T>>
+    compact(): Array<T>
+    count(value?: T): number
+    countBy(fn: string | (() => any)): { [key: string]: any }
+    flatten(depth?: number): Array<T>
+    deepFlatten(): Array<T>
+    diff(array: Array<T>, comp?: (a: T, b: T) => boolean): Array<T>
+    distinct(): Array<T>
+    everyNth(nth: number): Array<T>
+    groupBy(fn: string | (() => any)): { [key: string]: Array<T> }
+    indexOfAll(value: T): Array<number>
+    intersect(array: Array<T>): Array<T>
+    partition(fn: (value: T, index: number, array: Array<T>) => boolean): Array<T>
+    pull(...args: Array<T>): void
+    sample(): T
+    shuffle(): Array<T>
+    union(array: Array<T>): Array<T>
+    zip(...arrays: Array<Array<any>>): Array<Array<any>>
+    zipObject(array: Array<T>): object
+    pluck(key: String): Array<T>
+    sum(key?: String): number
+    average(key?: String): number
+    avg(key?: String): number
+    max(key?: String): number
+    min(key?: String): number
+    contains(value: T): boolean
+    crossJoin(array: Array<any>): Array<[T, any]>
+    get(index: number, def?: T | any): T | any
+    implode(key: string, separator?: string): string
+    clone(): Array<T>
+    median(key?: string): number
+    pad(size: number, value?: any): Array<any>
+    prepend(value?: any): void
+  }
 }
 
 if (!Array.isInstance) {
@@ -32,7 +74,7 @@ if (!Array.range) {
    * Array.range(7, 3); // [3,4,5,6,7]
    * Array.range(9, 0, 2); // [0,2,4,6,8]
    */
-  Array.range = (end, start = 0, step = 1) => Array.from({ length: Math.ceil((end + 1 - start) / step) }).map((v, i) => i * step + start)
+  Array.range = (end: number, start = 0, step = 1): Array<number> => Array.from({ length: Math.ceil((end + 1 - start) / step) }).map((v, i) => i * step + start)
 }
 
 if (!Array.repeat) {
@@ -44,45 +86,7 @@ if (!Array.repeat) {
    * @example
    * Array.repeat(5, 2); // [2,2,2,2,2]
    */
-  Array.repeat = (n, value = 0) => Array(n).fill(value)
-}
-
-interface Array<T> {
-  first(): T
-  last(): T
-  chunk(size: number): Array<Array<T>>
-  compact(): Array<T>
-  count(value?: T): number
-  countBy(fn: string | (() => any)): { [key: string]: Array<T> }
-  flatten(depth?: number): Array<T>
-  deepFlatten(): Array<T>
-  diff(array: Array<T>, comp?: (a: T, b: T) => boolean): Array<T>
-  distinct(): Array<T>
-  everyNth(nth: number): Array<T>
-  groupBy(fn: string | (() => any)): { [key: string]: Array<T> }
-  indexOfAll(value: T): Array<number>
-  intersect(array: Array<T>): Array<T>
-  partition(fn: (value: T, index: number, array: Array<T>) => boolean): Array<T>
-  pull(...args: Array<T>): void
-  sample(): T
-  shuffle(): Array<T>
-  union(array: Array<T>): Array<T>
-  zip(...arrays: Array<Array<T>>): Array<T>
-  zipObject(array: Array<T>): object
-  pluck(key: String): Array<T>
-  sum(key?: String): number
-  average(key?: String): number
-  avg(key?: String): number
-  max(key?: String): number
-  min(key?: String): number
-  contains(value: T): boolean
-  crossJoin(array: Array<any>): Array<Array<any>>
-  get(index: number, def?: T | any): T | any
-  implode(key: string, separator?: string): String
-  clone(): Array<T>
-  median(key?: string): number
-  pad(size: number, value?: any): Array<any>
-  prepend(value?: any): void
+  Array.repeat = (n: number, value = 0): Array<any> => Array(n).fill(value)
 }
 
 if (!Array.prototype.first) {
@@ -92,7 +96,7 @@ if (!Array.prototype.first) {
    * @example
    * [1, 2, 3].first(); // 1
    */
-  Array.prototype.first = function() {
+  Array.prototype.first = function(): any {
     return this[0]
   }
 }
@@ -104,7 +108,7 @@ if (!Array.prototype.last) {
    * @example
    * [1, 2, 3].last(); // 3
    */
-  Array.prototype.last = function() {
+  Array.prototype.last = function(): any {
     return this[this.length - 1]
   }
 }
@@ -117,7 +121,7 @@ if (!Array.prototype.chunk) {
    * @example
    * [1, 2, 3, 4, 5].chunk(2); // [[1,2],[3,4],[5]]
    */
-  Array.prototype.chunk = function(size: number) {
+  Array.prototype.chunk = function(size: number): Array<Array<any>> {
     return Array.from({ length: Math.ceil(this.length / size) }, (value: any, index: number) => this.slice(index * size, index * size + size))
   }
 }
@@ -129,7 +133,7 @@ if (!Array.prototype.compact) {
    * @example
    * [0, 1, false, 2, '', 3, 'a', 'e' * 23, NaN, 's', 34].compact(); // [ 1, 2, 3, 'a', 's', 34 ]
    */
-  Array.prototype.compact = function() {
+  Array.prototype.compact = function(): Array<any> {
     return this.filter(Boolean)
   }
 }
@@ -143,7 +147,7 @@ if (!Array.prototype.count) {
    * [1, 1, 2, 1, 2, 3].count(); // 6
    * [1, 1, 2, 1, 2, 3].count(1); // 3
    */
-  Array.prototype.count = function(value) {
+  Array.prototype.count = function(value: any): number {
     if (!value) return this.length
 
     return this.reduce((a, v) => (v === value ? a + 1 : a + 0), 0)
@@ -154,12 +158,12 @@ if (!Array.prototype.countBy) {
   /**
    * Groups the elements of an array based on the given function and returns the count of elements in each group
    * @param {String|Function} fn
-   * @returns {Array[]}
+   * @returns {Object}
    * @example
    * [6.1, 4.2, 6.3].countBy(Math.floor); // {4: 1, 6: 2}
    * ['one', 'two', 'three'].countBy('length'); // {3: 2, 5: 1}
    */
-  Array.prototype.countBy = function(fn) {
+  Array.prototype.countBy = function(fn: string | (() => any)): { [key: string]: any } {
     return this.map(typeof fn === 'function' ? fn : (val) => val[fn]).reduce((acc: { [key: string]: any }, val: string, i) => {
       acc[val] = (acc[val] || 0) + 1
 
@@ -177,7 +181,7 @@ if (!Array.prototype.flatten) {
    * [1, [2], 3, 4].flatten(); // [1, 2, 3, 4]
    * [1, [2, [3, [4, 5], 6], 7], 8].flatten(2); // [1, 2, 3, [4, 5], 6, 7, 8]
    */
-  Array.prototype.flatten = function(depth = 1) {
+  Array.prototype.flatten = function(depth = 1): Array<any> {
     const _flatten: (arr: Array<any>, depth?: number) => Array<any> = (arr, depth = 1) =>
       depth != 1
         ? arr.reduce((a, v) => a.concat(Array.isArray(v) ? _flatten(v, depth - 1) : v), [])
@@ -194,7 +198,7 @@ if (!Array.prototype.deepFlatten) {
    * @example
    * [1, [2], [[3], 4], 5].deepFlatten(); // [1,2,3,4,5]
    */
-  Array.prototype.deepFlatten = function() {
+  Array.prototype.deepFlatten = function(): Array<any> {
     const _deepFlatten: (arr: Array<any>) => Array<any> = (arr) => [].concat(...arr.map(v => (Array.isArray(v) ? _deepFlatten(v) : v)))
 
     return _deepFlatten(this)
@@ -212,7 +216,7 @@ if (!Array.prototype.diff) {
    * [1, 2, 3].diff([1, 2, 4]); // [3]
    * [1, 1.2, 1.5, 3, 0].diff([1.9, 3, 0], (a, b) => Math.round(a) === Math.round(b)); // [1, 1.2]
    */
-  Array.prototype.diff = function(array, comp) {
+  Array.prototype.diff = function(array: Array<any>, comp?: (a: any, b: any) => boolean): Array<any> {
     if (comp) return this.filter((a) => array.findIndex((b) => comp(a, b)) === -1)
 
     const set = new Set(array)
@@ -228,7 +232,7 @@ if (!Array.prototype.distinct) {
    * @example
    * [1, 2, 2, 3, 4, 4, 5].distinct(); // [1,2,3,4,5]
    */
-  Array.prototype.distinct = function() {
+  Array.prototype.distinct = function(): Array<any> {
     return [...new Set(this)]
   }
 }
@@ -240,7 +244,7 @@ if (!Array.prototype.everyNth) {
    * @example
    * [1, 2, 3, 4, 5, 6].everyNth(2); // [ 2, 4, 6 ]
    */
-  Array.prototype.everyNth = function(nth) {
+  Array.prototype.everyNth = function(nth: number): Array<any> {
     return this.filter((e, i) => i % nth === nth - 1)
   }
 }
@@ -254,7 +258,7 @@ if (!Array.prototype.groupBy) {
    * [6.1, 4.2, 6.3].groupBy(Math.floor); // {4: [4.2], 6: [6.1, 6.3]}
    * ['one', 'two', 'three'].groupBy('length'); // {3: ['one', 'two'], 5: ['three']}
    */
-  Array.prototype.groupBy = function(fn) {
+  Array.prototype.groupBy = function(fn: string | (() => any)): { [key: string]: any } {
     return this.map(typeof fn === 'function' ? fn : val => val[fn]).reduce((acc, val, i) => {
       acc[val] = (acc[val] || []).concat(this[i])
 
@@ -272,7 +276,7 @@ if (!Array.prototype.indexOfAll) {
    * [1, 2, 3, 1, 2, 3].indexOfAll(1); // [0,3]
    * [1, 2, 3].indexOfAll(4); // []
    */
-  Array.prototype.indexOfAll = function(value) {
+  Array.prototype.indexOfAll = function(value: any): Array<number> {
     let indices: Array<number> = []
 
     this.forEach((item, index) => item === value && indices.push(index))
@@ -289,7 +293,7 @@ if (!Array.prototype.intersect) {
    * @example
    * [1, 2, 3].intersect([4, 3, 2]); // [2,3]
    */
-  Array.prototype.intersect = function(array) {
+  Array.prototype.intersect = function(array: Array<any>): Array<any> {
     const set = new Set(array)
 
     return this.filter(item => set.has(item))
@@ -305,7 +309,7 @@ if (!Array.prototype.partition) {
    * const users = [{ user: 'barney', age: 36, active: false }, { user: 'fred', age: 40, active: true }];
    * users.partition(o => o.active); // [[{ 'user': 'fred',    'age': 40, 'active': true }],[{ 'user': 'barney',  'age': 36, 'active': false }]]
    */
-  Array.prototype.partition = function(fn) {
+  Array.prototype.partition = function(fn: (value: any, index: number, array: Array<any>) => boolean): Array<any> {
     return this.reduce(
       (acc, val, i, arr) => {
         acc[fn(val, i, arr) ? 0 : 1].push(val);
@@ -324,7 +328,7 @@ if (!Array.prototype.pull) {
    * let myArray = ['a', 'b', 'c', 'a', 'b', 'c'];
    * myArray.pull('a', 'c'); // myArray = [ 'b', 'b' ];
    */
-  Array.prototype.pull = function(...args) {
+  Array.prototype.pull = function(...args: Array<any>): void {
     let argState = Array.isArray(args[0]) ? args[0] : args
     let pulled = this.filter((value: any) => !argState.includes(value))
 
@@ -341,7 +345,7 @@ if (!Array.prototype.sample) {
    * @example
    * [3, 7, 9, 11].sample(); // 9
    */
-  Array.prototype.sample = function() {
+  Array.prototype.sample = function(): any {
     return this[Math.floor(Math.random() * this.length)]
   }
 }
@@ -354,7 +358,7 @@ if (!Array.prototype.shuffle) {
    * const foo = [1, 2, 3];
    * foo.shuffle(); // [2,3,1], foo = [1,2,3]
    */
-  Array.prototype.shuffle = function() {
+  Array.prototype.shuffle = function(): Array<any> {
     const _shuffle = ([...arr]) => {
       let m = arr.length
 
@@ -378,7 +382,7 @@ if (!Array.prototype.union) {
    * @example
    * [1, 2, 3].union([4, 3, 2]); // [1,2,3,4]
    */
-  Array.prototype.union = function(array) {
+  Array.prototype.union = function(array: Array<any>): Array<any> {
     return Array.from(new Set([...this, ...array]))
   }
 }
@@ -392,7 +396,7 @@ if (!Array.prototype.zip) {
    * ['a', 'b'].zip([1, 2], [true, false]); // [['a', 1, true], ['b', 2, false]]
    * ['a'].zip([1, 2], [true, false]); // [['a', 1, true], [undefined, 2, false]]
    */
-  Array.prototype.zip = function(...arrays) {
+  Array.prototype.zip = function(...arrays: Array<Array<any>>): Array<Array<any>> {
     arrays = [this, ...arrays]
 
     const maxLength = Math.max(...arrays.map(x => x.length))
@@ -412,7 +416,7 @@ if (!Array.prototype.zipObject) {
    * ['a', 'b', 'c'].zipObject([1, 2]); // {a: 1, b: 2, c: undefined}
    * ['a', 'b'].zipObject([1, 2, 3]); // {a: 1, b: 2}
    */
-  Array.prototype.zipObject = function(array) {
+  Array.prototype.zipObject = function(array: Array<any>): object {
     return this.reduce((obj, prop, index) => ((obj[prop] = array[index]), obj), {})
   }
 }
@@ -426,7 +430,7 @@ if (!Array.prototype.pluck) {
    * [{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].pluck('a'); // [{b: 1}, {b: 2}, {b: 3}]
    * [{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].pluck('a.b'); // [1, 2, 3]
    */
-  Array.prototype.pluck = function(key) {
+  Array.prototype.pluck = function(key: string): Array<any> {
     let keys = key.split('.')
 
     return this.map((item) => {
@@ -447,7 +451,7 @@ if (!Array.prototype.sum) {
    * [{a: 1}, {a: 2}, {a: 3}].sum('a'); // 6
    * [{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].sum('a.b'); // 6
    */
-  Array.prototype.sum = function(key) {
+  Array.prototype.sum = function(key?: string): number {
     let sum = 0
 
     if (key) {
@@ -478,7 +482,7 @@ if (!Array.prototype.average) {
    * [{a: 1}, {a: 2}, {a: 3}].average('a'); // 2
    * [{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].average('a.b'); // 2
    */
-  Array.prototype.average = function(key) {
+  Array.prototype.average = function(key?: string): number {
     return this.sum(key) / this.length
   }
 }
@@ -506,7 +510,7 @@ if (!Array.prototype.max) {
    * [{a: 1}, {a: 2}, {a: 3}].max('a'); // 3
    * [{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].max('a.b'); // 3
    */
-  Array.prototype.max = function(key) {
+  Array.prototype.max = function(key?: string): number {
     let max: number = -Infinity
 
     if (key) {
@@ -537,7 +541,7 @@ if (!Array.prototype.min) {
    * [{a: 1}, {a: 2}, {a: 3}].min('a'); // 1
    * [{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].min('a.b'); // 1
    */
-  Array.prototype.min = function(key) {
+  Array.prototype.min = function(key?: string): number {
     let min: number = +Infinity
 
     if (key) {
@@ -566,7 +570,7 @@ if (!Array.prototype.contains) {
    * @example
    * [1, 2, 3].contains(2); // true
    */
-  Array.prototype.contains = function(value) {
+  Array.prototype.contains = function(value: any): boolean {
     return this.indexOf(value) !== -1
   }
 }
@@ -579,8 +583,8 @@ if (!Array.prototype.crossJoin) {
    * @example
    * [1, 2].crossJoin(['a', 'b']); // [[1, 'a'], [1, 'b'], [2, 'a'], [2, 'b']]
    */
-  Array.prototype.crossJoin = function(array) {
-    let joined: Array<Array<any>> = []
+  Array.prototype.crossJoin = function(array: Array<any>): Array<[any, any]> {
+    let joined: Array<[any, any]> = []
 
     this.map((item) => {
       array.map((value) => {
@@ -605,7 +609,7 @@ if (!Array.prototype.get) {
    * [1, 2, 3].get(0, 'default value'); // 1
    * [1, 2, 3].get(4, 0); // 0
    */
-  Array.prototype.get = function(index, def = undefined) {
+  Array.prototype.get = function(index: number, def = undefined): any {
     if (index >= this.length) return def
 
     return this[index]
@@ -621,7 +625,7 @@ if (!Array.prototype.implode) {
    * @example
    * [{a: {b: 'first'}}, {a: {b: 'second'}}, {a: {b: 'third'}}].implode('a.b', ', '); // 'first, second, third'
    */
-  Array.prototype.implode = function(key, separator = ', ') {
+  Array.prototype.implode = function(key: string, separator = ', '): string {
     let keys = key.split('.')
     let array: Array<string> = []
 
@@ -642,7 +646,7 @@ if (!Array.prototype.clone) {
    * @example
    * [1, 2, 3].clone(); // [1, 2, 3]
    */
-  Array.prototype.clone = function() {
+  Array.prototype.clone = function(): Array<any> {
     return [...this]
   }
 }
@@ -655,7 +659,7 @@ if (!Array.prototype.median) {
    * [1, 1, 2, 4].median(); // 1.5
    * [{foo: 10}, {foo: 10}, {foo: 20}, {foo: 40}].median('foo'); // 15
    */
-  Array.prototype.median = function(key) {
+  Array.prototype.median = function(key?: string): number {
     let array = this
 
     array.sort((a, b) => a - b)
@@ -698,7 +702,7 @@ if (!Array.prototype.pad) {
    * [1, 2, 3].pad(5, 0); // [1, 2, 3, 0, 0]
    * [1, 2, 3].pad(-5, 0); // [0, 0, 1, 2, 3]
    */
-  Array.prototype.pad = function(size, value = 0) {
+  Array.prototype.pad = function(size: number, value: any = 0): Array<any> {
     let s = Math.abs(size)
 
     if (s <= this.length) return this
@@ -719,7 +723,7 @@ if (!Array.prototype.prepend) {
    * var myArray = [1, 2, 3]
    * myArray.prepend(0); // myArray => [0, 1, 2, 3]
    */
-  Array.prototype.prepend = function(value) {
+  Array.prototype.prepend = function(value: any): void {
     let array = this.clone()
 
     this.length = 0

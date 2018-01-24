@@ -2,8 +2,12 @@
  * @namespace Date
  */
 
-interface DateConstructor {
-  isInstance(arg: any): boolean
+export { }
+
+declare global {
+  interface DateConstructor {
+    isInstance(arg: any): arg is Date
+  }
 }
 
 if (!Date.isInstance) {
@@ -15,5 +19,5 @@ if (!Date.isInstance) {
    * Date.isInstance('foo bar'); // false
    * Date.isInstance(new Date()); // true
    */
-  Date.isInstance = (arg) => arg instanceof Date
+  Date.isInstance = (arg: any): arg is Date => arg instanceof Date
 }

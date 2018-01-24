@@ -2,8 +2,21 @@
  * @namespace Object
  */
 
-interface ObjectConstructor {
-  isInstance(arg: any): boolean
+export { }
+
+declare global {
+  interface ObjectConstructor {
+    isInstance(arg: any): arg is object
+  }
+
+  interface Object {
+    invert(): object
+    lowerCaseKeys(): object
+    map(fn: (value: any, key: string | number, object: object) => any): object
+    mapKeys(fn: (value: any, key: string | number, object: object) => any): object
+    merge(...objects: Array<object>): object
+    size(): number
+  }
 }
 
 if (!Object.isInstance) {
@@ -15,16 +28,7 @@ if (!Object.isInstance) {
    * Object.isInstance(2); // false
    * Object.isInstance({foo: 'bar'}); // true
    */
-  Object.isInstance = (arg) => arg instanceof Object
-}
-
-interface Object {
-  invert(): object
-  lowerCaseKeys(): object
-  map(fn: (value: any, key: string | number, object: object) => any): object
-  mapKeys(fn: (value: any, key: string | number, object: object) => any): object
-  merge(...objects: Array<object>): object
-  size(): number
+  Object.isInstance = (arg: any): arg is object => arg instanceof Object
 }
 
 let prototypes: { [key: string]: any } = {
@@ -37,7 +41,7 @@ let prototypes: { [key: string]: any } = {
  * @example
  * { name: 'John', age: 20 }.invert(); // { 20: 'age', John: 'name' }
  */
-prototypes.invert = function() {
+prototypes.invert = function(): object {
   return Object.keys(this).reduce((acc: { [key: string]: any }, key) => {
     acc[this[key]] = key
 
@@ -53,7 +57,7 @@ prototypes.invert = function() {
  * const myObj = { Name: 'Adam', sUrnAME: 'Smith' };
  * const myObjLower = myObj.lowerCaseKeys(); // {name: 'Adam', surname: 'Smith'}
  */
-prototypes.lowerCaseKeys = function() {
+prototypes.lowerCaseKeys = function(): object {
   return Object.keys(this).reduce((acc: { [key: string]: any }, key) => {
     acc[key.toLowerCase()] = this[key]
 
@@ -73,7 +77,7 @@ prototypes.lowerCaseKeys = function() {
  * };
  * users.map(u => u.age); // { fred: 40, pebbles: 1 }
  */
-prototypes.map = function(fn) {
+prototypes.map = function(fn: (value: any, key: string | number, object: object) => any): object {
   return Object.keys(this).reduce((acc: { [key: string]: any }, k) => {
     acc[k] = fn(this[k], k, this)
 
@@ -89,7 +93,7 @@ prototypes.map = function(fn) {
  * @example
  * { a: 1, b: 2 }.mapKeys((val, key) => key + val); // { a1: 1, b2: 2 }
  */
-prototypes.mapKeys = function(fn) {
+prototypes.mapKeys = function(fn: (value: any, key: string | number, object: object) => any): object {
   return Object.keys(this).reduce((acc: { [key: string]: any }, k) => {
     acc[fn(this[k], k, this)] = this[k]
 
@@ -114,7 +118,7 @@ prototypes.mapKeys = function(fn) {
  * };
  * object.merge(other); // { a: [ { x: 2 }, { y: 4 }, { z: 3 } ], b: [ 1, 2, 3 ], c: 'foo' }
  */
-prototypes.merge = function(...objects) {
+prototypes.merge = function(...objects: Array<object>): object {
   objects = [this, ...objects]
 
   return [...objects].reduce(
@@ -135,7 +139,7 @@ prototypes.merge = function(...objects) {
  * @example
  * { one: 1, two: 2, three: 3 }.size(); // 3
  */
-prototypes.size = function() {
+prototypes.size = function(): number {
   return Object.keys(this).length
 }
 

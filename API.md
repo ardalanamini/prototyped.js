@@ -32,7 +32,7 @@
         * [.chunk(size)](#Array+chunk) ⇒ [<code>Array.&lt;Array&gt;</code>](#Array)
         * [.compact()](#Array+compact) ⇒ [<code>Array</code>](#Array)
         * [.count([value])](#Array+count) ⇒ <code>number</code>
-        * [.countBy(fn)](#Array+countBy) ⇒ [<code>Array.&lt;Array&gt;</code>](#Array)
+        * [.countBy(fn)](#Array+countBy) ⇒ [<code>Object</code>](#Object)
         * [.flatten([depth])](#Array+flatten) ⇒ [<code>Array</code>](#Array)
         * [.deepFlatten()](#Array+deepFlatten) ⇒ [<code>Array</code>](#Array)
         * [.diff(array, [comp])](#Array+diff) ⇒ [<code>Array</code>](#Array)
@@ -146,7 +146,7 @@ Counts the occurrences of a value in an array
 ```
 <a name="Array+countBy"></a>
 
-### array.countBy(fn) ⇒ [<code>Array.&lt;Array&gt;</code>](#Array)
+### array.countBy(fn) ⇒ [<code>Object</code>](#Object)
 Groups the elements of an array based on the given function and returns the count of elements in each group
 
 **Kind**: instance method of [<code>Array</code>](#Array)  

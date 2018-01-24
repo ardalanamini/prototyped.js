@@ -2,8 +2,20 @@
  * @namespace Function
  */
 
-interface FunctionConstructor {
-  isInstance(arg: any): boolean
+export { }
+
+declare global {
+  interface FunctionConstructor {
+    isInstance(arg: any): arg is Function
+  }
+
+  interface Function {
+    called?: boolean
+    once(...args: Array<any>): any
+    defer(...args: Array<any>): any
+    cached?: Array<{ key: string, result: any }>
+    cache(...args: Array<any>): any
+  }
 }
 
 if (!Function.isInstance) {
@@ -15,15 +27,7 @@ if (!Function.isInstance) {
    * Function.isInstance(2); // false
    * Function.isInstance((() => {})); // true
    */
-  Function.isInstance = (arg) => arg instanceof Function
-}
-
-interface Function {
-  called?: boolean
-  once(...args: Array<any>): any
-  defer(...args: Array<any>): any
-  cached?: Array<{ key: string, result: any }>
-  cache(...args: Array<any>): any
+  Function.isInstance = (arg: any): arg is Function => arg instanceof Function
 }
 
 if (!Function.prototype.once) {
@@ -36,7 +40,7 @@ if (!Function.prototype.once) {
    * test.once('a'); // logs 'a'
    * test.once('b'); // no log this time
    */
-  Function.prototype.once = function(...args) {
+  Function.prototype.once = function(...args: Array<any>): any {
     if (this.called) return;
 
     this.called = true
@@ -54,7 +58,7 @@ if (!Function.prototype.defer) {
    * const test = (msg) => console.log(msg);
    * test.defer('a'), test('b'); // logs 'b' then 'a'
    */
-  Function.prototype.defer = function(...args) {
+  Function.prototype.defer = function(...args: Array<any>): any {
     return setTimeout(this, 1, ...args)
   }
 }
@@ -69,7 +73,7 @@ if (!Function.prototype.cache) {
    * test.cache(); // takes a second to log 'test'
    * test.cache(); // instantly logs the second 'test'
    */
-  Function.prototype.cache = function(...args) {
+  Function.prototype.cache = function(...args: Array<any>): any {
     let key = JSON.stringify(args)
     let cached = this.cached || []
 

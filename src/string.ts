@@ -2,8 +2,26 @@
  * @namespace String
  */
 
-interface StringConstructor {
-  isInstance(arg: any): boolean
+export { }
+
+declare global {
+  interface StringConstructor {
+    isInstance(arg: any): arg is string
+  }
+
+  interface String {
+    capitalize(allWords?: boolean): string
+    decapitalize(allWords?: boolean): string
+    mask(num?: number, mask?: string): string
+    pluralize(value: number, plural?: string): String
+    reverse(): string
+    lines(): Array<string>
+    camelCase(): string
+    kebabCase(): string
+    snakeCase(): string
+    truncate(num: number): String
+    words(pattern?: RegExp): Array<string>
+  }
 }
 
 if (!String.isInstance) {
@@ -15,21 +33,7 @@ if (!String.isInstance) {
    * String.isInstance(2); // false
    * String.isInstance('foo bar'); // true
    */
-  String.isInstance = (arg) => typeof arg === 'string'
-}
-
-interface String {
-  capitalize(allWords?: boolean): string
-  decapitalize(allWords?: boolean): string
-  mask(num?: number, mask?: string): string
-  pluralize(value: number, plural?: string): String
-  reverse(): string
-  lines(): Array<string>
-  camelCase(): string
-  kebabCase(): string
-  snakeCase(): string
-  truncate(num: number): String
-  words(pattern?: RegExp): Array<string>
+  String.isInstance = (arg: any): arg is string => typeof arg === 'string'
 }
 
 if (!String.prototype.capitalize) {
@@ -41,7 +45,7 @@ if (!String.prototype.capitalize) {
    * 'foo bar'.capitalize(); // 'Foo bar'
    * 'hello world'.capitalize(true); // 'Hello World'
    */
-  String.prototype.capitalize = function(allWords = false) {
+  String.prototype.capitalize = function(allWords = false): string {
     if (allWords) return this.replace(/\b[a-z]/g, (char) => char.toUpperCase())
 
     return this.replace(/^[a-z]/, (char) => char.toUpperCase())
@@ -57,7 +61,7 @@ if (!String.prototype.decapitalize) {
    * 'Foo Bar'.decapitalize(); // 'foo Bar'
    * 'Hello World'.decapitalize(true); // 'hello world'
    */
-  String.prototype.decapitalize = function(allWords = false) {
+  String.prototype.decapitalize = function(allWords = false): string {
     if (allWords) return this.replace(/\b[A-Z]/g, (char) => char.toLowerCase())
 
     return this.replace(/^[A-Z]/, (char) => char.toLowerCase())
@@ -75,7 +79,7 @@ if (!String.prototype.mask) {
    * '1234567890'.mask(3); // '*******890'
    * '1234567890'.mask(-4, '$'); // '$$$$567890'
    */
-  String.prototype.mask = function(num = 4, mask = '*') {
+  String.prototype.mask = function(num = 4, mask = '*'): string {
     return this.slice(0, -num).replace(/./g, mask) + this.slice(-num)
   }
 }
@@ -92,7 +96,7 @@ if (!String.prototype.pluralize) {
    * 'apple'.pluralize(2); // 'apples'
    * 'person'.pluralize(2, 'people'); // 'people'
    */
-  String.prototype.pluralize = function(value, plural?) {
+  String.prototype.pluralize = function(value: number, plural?: string): String {
     if (!plural) plural = `${this}s`
 
     return value === 1 ? this : plural
@@ -106,7 +110,7 @@ if (!String.prototype.reverse) {
    * @example
    * 'foobar'.reverse(); // 'raboof'
    */
-  String.prototype.reverse = function() {
+  String.prototype.reverse = function(): string {
     return [...this].reverse().join('')
   }
 }
@@ -118,7 +122,7 @@ if (!String.prototype.lines) {
    * @example
    * 'This\nis a\nmultiline\nstring.\n'.lines(); // ['This', 'is a', 'multiline', 'string.' , '']
    */
-  String.prototype.lines = function() {
+  String.prototype.lines = function(): Array<string> {
     return this.split(/\r?\n/)
   }
 }
@@ -133,7 +137,7 @@ if (!String.prototype.camelCase) {
    * 'some-javascript-property'.camelCase(); // 'someJavascriptProperty'
    * 'some-mixed_string with spaces_underscores-and-hyphens'.camelCase(); // 'someMixedStringWithSpacesUnderscoresAndHyphens'
    */
-  String.prototype.camelCase = function() {
+  String.prototype.camelCase = function(): string {
     let s = this.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
 
     if (!s) s = ['']
@@ -155,7 +159,7 @@ if (!String.prototype.kebabCase) {
    * 'AllThe-small Things'.kebabCase(); // "all-the-small-things"
    * 'IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML'.kebabCase(); // 'i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-some-xml-and-html'
    */
-  String.prototype.kebabCase = function() {
+  String.prototype.kebabCase = function(): string {
     let s = this.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
 
     if (!s) s = ['']
@@ -175,7 +179,7 @@ if (!String.prototype.snakeCase) {
    * 'AllThe-small Things'.snakeCase(); // "all_the_small_things"
    * 'IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML'.snakeCase(); // 'i_am_listening_to_fm_while_loading_different_url_on_my_browser_and_also_editing_some_xml_and_html'
    */
-  String.prototype.snakeCase = function() {
+  String.prototype.snakeCase = function(): string {
     let s = this.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
 
     if (!s) s = ['']
@@ -192,7 +196,7 @@ if (!String.prototype.truncate) {
    * @example
    * 'boomerang'.truncate(7); // 'boom...'
    */
-  String.prototype.truncate = function(num) {
+  String.prototype.truncate = function(num: number): String {
     return this.length > num ? this.slice(0, num > 3 ? num - 3 : num) + '...' : this
   }
 }
@@ -206,7 +210,7 @@ if (!String.prototype.words) {
    * 'I love javaScript!!'.words(); // ["I", "love", "javaScript"]
    * 'python, javaScript & coffee'.words(); // ["python", "javaScript", "coffee"]
    */
-  String.prototype.words = function(pattern = /[^a-zA-Z-]+/) {
+  String.prototype.words = function(pattern = /[^a-zA-Z-]+/): Array<string> {
     return this.split(pattern).filter(Boolean)
   }
 }
