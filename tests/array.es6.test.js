@@ -42,6 +42,18 @@ describe("Array.prototype.last", () => {
   })
 })
 
+describe("Array.prototype.initial", () => {
+  test("[1, 2, 3].initial() returns [1, 2]", () => {
+    expect([1,2,3].initial()).toEqual([1, 2])
+  })
+})
+
+describe("Array.prototype.tail", () => {
+  test("[1, 2, 3].tail() returns [2, 3]", () => {
+    expect([1,2,3].tail()).toEqual([2, 3])
+  })
+})
+
 describe("Array.prototype.chunk", () => {
   test("[1, 2, 3, 4, 5].chunk(2) returns [[1,2],[3,4],[5]]", () => {
     expect([1,2,3,4,5].chunk(2)).toEqual([[1,2],[3,4],[5]])
@@ -314,8 +326,18 @@ describe("Array.prototype.pad", () => {
   })
 })
 
+describe("Array.prototype.append", () => {
+  test("myArray = [1, 2, 3] & myArray.append(0) results myArray to be [1, 2, 3, 0]", () => {
+    expect((() => {
+      let myArray = [1, 2, 3]
+      myArray.append(0)
+      return myArray
+    })()).toEqual([1, 2, 3, 0])
+  })
+})
+
 describe("Array.prototype.prepend", () => {
-  test("[1, 2, 3].prepend(0) returns [0, 1, 2, 3]", () => {
+  test("myArray = [1, 2, 3] & myArray.prepend(0) results myArray to be [0, 1, 2, 3]", () => {
     expect((() => {
       let myArray = [1, 2, 3]
       myArray.prepend(0)

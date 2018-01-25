@@ -21,6 +21,7 @@ declare global {
     snakeCase(): string
     truncate(num: number): String
     words(pattern?: RegExp): Array<string>
+    contains(str: string): boolean
   }
 }
 
@@ -212,5 +213,21 @@ if (!String.prototype.words) {
    */
   String.prototype.words = function(pattern = /[^a-zA-Z-]+/): Array<string> {
     return this.split(pattern).filter(Boolean)
+  }
+}
+
+if (!String.prototype.contains) {
+  /**
+   * Find out if the string contains the argument at any position
+   * @param {RegExp} pattern
+   * @returns {string[]}
+   * @example
+   * 'javaScript & typescript'.contains('Typescript'); // true
+   * 'javaScript & typescript'.contains('Typescript', true); // false
+   */
+  String.prototype.contains = function(str: string, sensitive = false): boolean {
+    if (sensitive) return this.indexOf(str) !== -1
+
+    return this.toLowerCase().indexOf(str.toLowerCase()) !== -1
   }
 }

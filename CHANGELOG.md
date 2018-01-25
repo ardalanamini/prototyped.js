@@ -1,5 +1,15 @@
 # Changelog
 
+## [v0.3.2](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.3.2) *(2018-01-25)*
+**Implemented enhancements:**
+- `Array.prototype`
+	- function `initial` added
+	- function `tail` added
+	- function `append` added
+- `String.prototype`
+	- function `contains` added
+
+
 ## [v0.3.1](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.3.1) *(2018-01-24)*
 **Implemented enhancements:**
 - es6 usage is now available along side es5 (dist)

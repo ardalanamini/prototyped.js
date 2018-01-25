@@ -29,6 +29,8 @@
         * [.avg](#Array+avg) ⇒ <code>number</code>
         * [.first()](#Array+first) ⇒ <code>\*</code>
         * [.last()](#Array+last) ⇒ <code>\*</code>
+        * [.initial()](#Array+initial) ⇒ [<code>Array</code>](#Array)
+        * [.tail()](#Array+tail) ⇒ [<code>Array</code>](#Array)
         * [.chunk(size)](#Array+chunk) ⇒ [<code>Array.&lt;Array&gt;</code>](#Array)
         * [.compact()](#Array+compact) ⇒ [<code>Array</code>](#Array)
         * [.count([value])](#Array+count) ⇒ <code>number</code>
@@ -60,6 +62,7 @@
         * [.clone()](#Array+clone) ⇒ [<code>Array</code>](#Array)
         * [.median()](#Array+median) ⇒ [<code>Array</code>](#Array)
         * [.pad(size, [value])](#Array+pad) ⇒ [<code>Array</code>](#Array)
+        * [.append(value)](#Array+append)
         * [.prepend(value)](#Array+prepend)
     * _static_
         * [.isInstance](#Array.isInstance) ⇒ <code>boolean</code>
@@ -102,6 +105,26 @@ Returns the last item of the array
 **Example**  
 ```javascript
 [1, 2, 3].last(); // 3
+```
+<a name="Array+initial"></a>
+
+### array.initial() ⇒ [<code>Array</code>](#Array)
+Returns all the elements of an array except the last one
+
+**Kind**: instance method of [<code>Array</code>](#Array)  
+**Example**  
+```javascript
+[1, 2, 3].initial(); // [1, 2]
+```
+<a name="Array+tail"></a>
+
+### array.tail() ⇒ [<code>Array</code>](#Array)
+Returns all elements in an array except for the first one
+
+**Kind**: instance method of [<code>Array</code>](#Array)  
+**Example**  
+```javascript
+[1, 2, 3].tail(); // [2, 3]
 ```
 <a name="Array+chunk"></a>
 
@@ -555,6 +578,22 @@ FillS the array with the given value until the array reaches the specified size
 ```javascript
 [1, 2, 3].pad(5, 0); // [1, 2, 3, 0, 0]
 [1, 2, 3].pad(-5, 0); // [0, 0, 1, 2, 3]
+```
+<a name="Array+append"></a>
+
+### array.append(value)
+Same as push but uses concat
+
+**Kind**: instance method of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| value | <code>\*</code> | 
+
+**Example**  
+```javascript
+var myArray = [1, 2, 3]
+myArray.append(0); // myArray => [1, 2, 3, 0]
 ```
 <a name="Array+prepend"></a>
 
@@ -1040,6 +1079,7 @@ Object.isInstance({foo: 'bar'}); // true
         * [.snakeCase()](#String+snakeCase) ⇒ <code>string</code>
         * [.truncate(num)](#String+truncate) ⇒ <code>string</code>
         * [.words(pattern)](#String+words) ⇒ <code>Array.&lt;string&gt;</code>
+        * [.contains(pattern)](#String+contains) ⇒ <code>Array.&lt;string&gt;</code>
     * _static_
         * [.isInstance(arg)](#String.isInstance) ⇒ <code>boolean</code>
 
@@ -1203,6 +1243,22 @@ Converts a given string into an array of words
 ```javascript
 'I love javaScript!!'.words(); // ["I", "love", "javaScript"]
 'python, javaScript & coffee'.words(); // ["python", "javaScript", "coffee"]
+```
+<a name="String+contains"></a>
+
+### string.contains(pattern) ⇒ <code>Array.&lt;string&gt;</code>
+Find out if the string contains the argument at any position
+
+**Kind**: instance method of [<code>String</code>](#String)  
+
+| Param | Type |
+| --- | --- |
+| pattern | <code>RegExp</code> | 
+
+**Example**  
+```javascript
+'javaScript & typescript'.contains('Typescript'); // true
+'javaScript & typescript'.contains('Typescript', true); // false
 ```
 <a name="String.isInstance"></a>
 

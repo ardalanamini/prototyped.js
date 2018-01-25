@@ -14,6 +14,8 @@ declare global {
   interface Array<T> {
     first(): T
     last(): T
+    initial(): Array<T>
+    tail(): Array<T>
     chunk(size: number): Array<Array<T>>
     compact(): Array<T>
     count(value?: T): number
@@ -46,6 +48,7 @@ declare global {
     clone(): Array<T>
     median(key?: string): number
     pad(size: number, value?: any): Array<any>
+    append(value?: any): void
     prepend(value?: any): void
   }
 }
@@ -110,6 +113,30 @@ if (!Array.prototype.last) {
    */
   Array.prototype.last = function(): any {
     return this[this.length - 1]
+  }
+}
+
+if (!Array.prototype.initial) {
+  /**
+   * Returns all the elements of an array except the last one
+   * @returns {Array}
+   * @example
+   * [1, 2, 3].initial(); // [1, 2]
+   */
+  Array.prototype.initial = function(): Array<any> {
+    return this.slice(0, -1)
+  }
+}
+
+if (!Array.prototype.tail) {
+  /**
+   * Returns all elements in an array except for the first one
+   * @returns {Array}
+   * @example
+   * [1, 2, 3].tail(); // [2, 3]
+   */
+  Array.prototype.tail = function(): Array<any> {
+    return this.length > 1 ? this.slice(1) : []
   }
 }
 
@@ -712,6 +739,23 @@ if (!Array.prototype.pad) {
     if (size < 0) return array.concat(this)
 
     return this.concat(array)
+  }
+}
+
+if (!Array.prototype.append) {
+  /**
+   * Same as push but uses concat
+   * @param {*} value
+   * @example
+   * var myArray = [1, 2, 3]
+   * myArray.append(0); // myArray => [1, 2, 3, 0]
+   */
+  Array.prototype.append = function(value: any): void {
+    let array = this.concat([value])
+
+    this.length = 0
+
+    this.push(...array)
   }
 }
 
