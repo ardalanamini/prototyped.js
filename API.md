@@ -1070,14 +1070,17 @@ Object.isInstance({foo: 'bar'}); // true
     * _instance_
         * [.camelCase()](#String+camelCase) ⇒ <code>string</code>
         * [.capitalize([allWords])](#String+capitalize) ⇒ <code>string</code>
+        * [.chars()](#String+chars) ⇒ <code>Array.&lt;string&gt;</code>
         * [.contains(pattern)](#String+contains) ⇒ <code>Array.&lt;string&gt;</code>
         * [.decapitalize([allWords])](#String+decapitalize) ⇒ <code>string</code>
+        * [.humanize()](#String+humanize) ⇒ <code>string</code>
         * [.kebabCase()](#String+kebabCase) ⇒ <code>string</code>
         * [.lines()](#String+lines) ⇒ <code>Array.&lt;string&gt;</code>
         * [.mask([num], [mask])](#String+mask) ⇒ <code>string</code>
         * [.pluralize(value, [plural])](#String+pluralize) ⇒ <code>string</code>
         * [.reverse()](#String+reverse) ⇒ <code>string</code>
         * [.snakeCase()](#String+snakeCase) ⇒ <code>string</code>
+        * [.swapCase()](#String+swapCase) ⇒ <code>string</code>
         * [.truncate(num, [truncateString])](#String+truncate) ⇒ <code>string</code>
         * [.words(pattern)](#String+words) ⇒ <code>Array.&lt;string&gt;</code>
     * _static_
@@ -1112,6 +1115,16 @@ Returns the capitalized string
 'foo bar'.capitalize(); // 'Foo bar'
 'hello world'.capitalize(true); // 'Hello World'
 ```
+<a name="String+chars"></a>
+
+### string.chars() ⇒ <code>Array.&lt;string&gt;</code>
+Returns an array of the string's character
+
+**Kind**: instance method of [<code>String</code>](#String)  
+**Example**  
+```javascript
+'Hello'.chars(); // ['H', 'e', 'l', 'l', 'o']
+```
 <a name="String+contains"></a>
 
 ### string.contains(pattern) ⇒ <code>Array.&lt;string&gt;</code>
@@ -1143,6 +1156,16 @@ Returns the decapitalized string
 ```javascript
 'Foo Bar'.decapitalize(); // 'foo Bar'
 'Hello World'.decapitalize(true); // 'hello world'
+```
+<a name="String+humanize"></a>
+
+### string.humanize() ⇒ <code>string</code>
+Converts an underscored, camelized, or dasherized string into a humanized one. Also removes beginning and ending whitespace
+
+**Kind**: instance method of [<code>String</code>](#String)  
+**Example**  
+```javascript
+'  capitalize dash-CamelCase_underscore trim  '.humanize(); // 'Capitalize dash camel case underscore trim'
 ```
 <a name="String+kebabCase"></a>
 
@@ -1229,6 +1252,16 @@ Converts a string to snake case
 'AllThe-small Things'.snakeCase(); // "all_the_small_things"
 'IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML'.snakeCase(); // 'i_am_listening_to_fm_while_loading_different_url_on_my_browser_and_also_editing_some_xml_and_html'
 ```
+<a name="String+swapCase"></a>
+
+### string.swapCase() ⇒ <code>string</code>
+Returns a copy of the string in which all the case-based characters have had their case swapped
+
+**Kind**: instance method of [<code>String</code>](#String)  
+**Example**  
+```javascript
+'Hello'.swapCase(); // 'hELLO'
+```
 <a name="String+truncate"></a>
 
 ### string.truncate(num, [truncateString]) ⇒ <code>string</code>
@@ -1239,7 +1272,7 @@ Truncates a string up to a specified length
 | Param | Type | Default |
 | --- | --- | --- |
 | num | <code>number</code> |  | 
-| [truncateString] | <code>string</code> | <code>&quot;\&quot;...\&quot;&quot;</code> | 
+| [truncateString] | <code>string</code> | <code>&quot;...&quot;</code> | 
 
 **Example**  
 ```javascript

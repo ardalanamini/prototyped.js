@@ -1,10 +1,13 @@
 # Changelog
 
-## [next](https://github.com/ardalanamini/prototyped.js/releases/tag/next) *(2018-__-__)*
+## [v0.4.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.4.0) *(2018-01-28)*
 **Implemented enhancements:**
 - more customizable usage
 - `String.prototype`
 	- function `truncate` parameter `truncateString` added
+	- function `chars` added
+	- function `swapCase` added
+	- function `humanize` added
 
 
 ## [v0.3.2](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.3.2) *(2018-01-25)*

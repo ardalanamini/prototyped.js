@@ -1,6 +1,6 @@
 <div align="center">
 	<h1>Prototyped.JS</h1>
-	<p>Common <b>Typescript ready</b> prototypes available in both <b>ES6</b> and <b>ES5</b></p>
+	<p>Common <b>Typescript ready</b> prototypes available in <b>ES5</b> and <b>ES6</b>, <b>Server-Side</b> and <b>Client-Side</b></p>
 	<a href="https://www.npmjs.com/package/prototyped.js" target="_blank">
 	   <img src="https://img.shields.io/npm/v/prototyped.js.svg" alt="npm version">
 	</a>
@@ -16,9 +16,12 @@
 	<a href="https://github.com/ardalanamini/prototyped.js/blob/master/LICENSE" target="_blank">
 	   <img src="https://img.shields.io/github/license/ardalanamini/prototyped.js.svg" alt="tested with jest">
 	</a>
+	<br>
 </div>
 
-[TOC]
+- - -
+
+> if you have a method you think needs to be a part of this package, feel free to contribute
 
 ## Installation
 
