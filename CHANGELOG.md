@@ -1,5 +1,12 @@
 # Changelog
 
+## [next](https://github.com/ardalanamini/prototyped.js/releases/tag/next) *(2018-__-__)*
+**Implemented enhancements:**
+- more customizable usage
+- `String.prototype`
+	- function `truncate` parameter `truncateString` added
+
+
 ## [v0.3.2](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.3.2) *(2018-01-25)*
 **Implemented enhancements:**
 - `Array.prototype`

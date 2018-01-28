@@ -1,0 +1,3 @@
+/** @namespace Date */
+
+import './isInstance'

@@ -1,0 +1,15 @@
+/** @namespace String */
+
+import './camelCase'
+import './capitalize'
+import './contains'
+import './decapitalize'
+import './isInstance'
+import './kebabCase'
+import './lines'
+import './mask'
+import './pluralize'
+import './reverse'
+import './snakeCase'
+import './truncate'
+import './words'

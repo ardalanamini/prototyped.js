@@ -1,7 +1,7 @@
 {
   "name": "prototyped.js",
   "version": "0.3.2",
-  "description": "Some common typescript ready prototypes available in both es6 and es5",
+  "description": "Common typescript ready prototypes available in both es6 and es5",
   "author": "Ardalan Amini <ardalanamini22@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/ardalanamini/prototyped.js#readme",
@@ -100,7 +100,7 @@
     "es6"
   ],
   "scripts": {
-    "doc": "tsc && jsdoc2md es6/*.js --example-lang javascript > API.md",
+    "doc": "tsc && jsdoc2md es6/*.js es6/**/*.js es6/**/**/*.js --example-lang javascript > API.md",
     "build": "node scripts/build.js",
     "prepare": "npm run build && npm test",
     "test": "jest"
@@ -109,6 +109,7 @@
     "@types/node": "^9.3.0",
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
+    "fs-extra": "^5.0.0",
     "fs-readdir-recursive": "^1.1.0",
     "jest": "^22.1.4",
     "jsdoc-to-markdown": "^3.0.4",

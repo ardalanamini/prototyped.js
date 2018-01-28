@@ -4,6 +4,7 @@ const path = require('path')
 const rimraf = require('rimraf')
 const {spawn} = require('child_process')
 const fs = require('fs')
+const fse = require('fs-extra')
 const readdir = require('fs-readdir-recursive')
 const babel = require('babel-core')
 const UglifyJs = require('uglify-js')
@@ -24,12 +25,16 @@ tsc.stdout.on('data', (data) => console.log(`stdout: ${data}`))
 tsc.stderr.on('data', (data) => console.log(`stderr: ${data}`))
 
 tsc.on('close', (code) => {
-  const dtsFileNames = readdir(es6Dir, (filename) => /\.d\.ts$/.test(filename))
+  const dtsFileNames = readdir(es6Dir, (filename) => filename.indexOf('.') === -1 || /\.d\.ts$/.test(filename))
 
   fs.mkdirSync(distDir)
 
   dtsFileNames.map((filename) => {
-    fs.copyFileSync(path.join(es6Dir, filename), path.join(distDir, filename))
+    let distPath = path.join(distDir, filename)
+
+    if (!fs.existsSync(path.dirname(distPath))) fse.mkdirsSync(path.dirname(distPath))
+
+    fs.copyFileSync(path.join(es6Dir, filename), distPath)
   })
 
   const distFileNames = readdir(es6Dir, (filename) => /(?<!\.ts)$/.test(filename))
@@ -40,21 +45,6 @@ tsc.on('close', (code) => {
     let content = fs.readFileSync(filePath, 'utf8')
 
     content = content.replace('Object.defineProperty(exports, "__esModule", { value: true });', '')
-
-    const jsonFiles = content.match(/require\("(.*\.json)"\)/g)
-    if (jsonFiles) {
-      for (let jsonFile of jsonFiles) {
-        let jsonContent = fs.readFileSync(
-          path.join(
-            path.dirname(filePath.replace(/\/es6\//, '/src/')),
-            /"(.*\.json)"/.exec(jsonFile)[1]
-          ),
-         'utf8'
-       )
-
-       content = content.replace(jsonFile, jsonContent)
-      }
-    }
 
     content = babel.transform(content, {
       presets: 'env'
