@@ -1,8 +1,10 @@
-export { }
+import * as method from "./method";
+
+export { };
 
 declare global {
   interface Array<T> {
-    countBy(fn: string | (() => any)): { [key: string]: any }
+    countBy(fn: string | ((value: any) => any)): { [key: string]: any };
   }
 }
 
@@ -15,10 +17,6 @@ declare global {
  * [6.1, 4.2, 6.3].countBy(Math.floor); // {4: 1, 6: 2}
  * ['one', 'two', 'three'].countBy('length'); // {3: 2, 5: 1}
  */
-Array.prototype.countBy = function(fn: string | (() => any)): { [key: string]: any } {
-  return this.map(typeof fn === 'function' ? fn : (val) => val[fn]).reduce((acc: { [key: string]: any }, val: string, i) => {
-    acc[val] = (acc[val] || 0) + 1
-
-    return acc
-  }, {})
-  }
+Array.prototype.countBy = function(fn) {
+  return method(this, fn);
+};

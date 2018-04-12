@@ -100,6 +100,7 @@
     "size"
   ],
   "main": "dist/index.js",
+  "types": "dist/index.d.js",
   "files": [
     "dist",
     "es6"

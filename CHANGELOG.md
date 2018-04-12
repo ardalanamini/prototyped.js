@@ -12,10 +12,10 @@
 	- function `merge` renamed into `$merge`
 	- function `size` renamed into `$size`
 - `String.prototype`
-	- function `pluralize` improved
 	- function `base64` added
 	- function `base64Decode` added
 	- function `map` added
+	- function `pluralize` improved
 - some general enhancements
 
 

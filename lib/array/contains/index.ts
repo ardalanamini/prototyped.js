@@ -1,8 +1,10 @@
-export { }
+import * as method from "./method";
+
+export { };
 
 declare global {
   interface Array<T> {
-    contains(value: any): boolean
+    contains(value: any): boolean;
   }
 }
 
@@ -14,6 +16,6 @@ declare global {
  * @example
  * [1, 2, 3].contains(2); // true
  */
-Array.prototype.contains = function(value: any): boolean {
-  return this.indexOf(value) !== -1
-}
+Array.prototype.contains = function(value) {
+  return method(this, value);
+};

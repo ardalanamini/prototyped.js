@@ -1,8 +1,10 @@
-export { }
+import * as method from "./method";
+
+export { };
 
 declare global {
   interface Array<T> {
-    compact(): Array<T>
+    compact(): T[];
   }
 }
 
@@ -13,6 +15,6 @@ declare global {
  * @example
  * [0, 1, false, 2, '', 3, 'a', 'e' * 23, NaN, 's', 34].compact(); // [ 1, 2, 3, 'a', 's', 34 ]
  */
-Array.prototype.compact = function(): Array<any> {
-  return this.filter(Boolean)
-}
+Array.prototype.compact = function() {
+  return method(this);
+};
