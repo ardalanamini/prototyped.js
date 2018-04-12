@@ -1,9 +1,11 @@
-export { }
+import * as method from "./method";
+
+export { };
 
 declare global {
   interface Array<T> {
-    average(key?: string): number
-    avg(key?: string): number
+    average(key?: string): number;
+    avg(key?: string): number;
   }
 }
 
@@ -14,28 +16,12 @@ declare global {
  * @returns {number}
  * @example
  * [1, 2, 3].average(); // 2
- * [{a: 1}, {a: 2}, {a: 3}].average('a'); // 2
- * [{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].average('a.b'); // 2
+ * [{a: 1}, {a: 2}, {a: 3}].average("a"); // 2
+ * [{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].average("a.b"); // 2
  */
-Array.prototype.average = function(key?: string): number {
-  let sum = 0
-
-  if (key) {
-    let keys = key.split('.')
-
-    this.map((item) => {
-      keys.map((k) => item = item && item[k] || 0)
-
-      sum += item
-    })
-
-    return sum / this.length
-  }
-
-  this.map((number) => sum += number)
-
-  return sum / this.length
-}
+Array.prototype.average = function(key) {
+  return method(this, key);
+};
 
 /**
  * An alias of Array.prototype.average
@@ -44,7 +30,7 @@ Array.prototype.average = function(key?: string): number {
  * @returns {number}
  * @example
  * [1, 2, 3].avg(); // 2
- * [{a: 1}, {a: 2}, {a: 3}].avg('a'); // 2
- * [{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].avg('a.b'); // 2
+ * [{a: 1}, {a: 2}, {a: 3}].avg("a"); // 2
+ * [{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].avg("a.b"); // 2
  */
-Array.prototype.avg = Array.prototype.average
+Array.prototype.avg = Array.prototype.average;

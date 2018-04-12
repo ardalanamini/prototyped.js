@@ -4,7 +4,7 @@ export { }
 
 declare global {
   interface Object {
-    merge(...objects: Array<object>): object
+    $merge(...objects: Array<object>): object
   }
 }
 
@@ -23,9 +23,9 @@ declare global {
  *   b: [2, 3],
  *   c: 'foo'
  * };
- * object.merge(other); // { a: [ { x: 2 }, { y: 4 }, { z: 3 } ], b: [ 1, 2, 3 ], c: 'foo' }
+ * object.$merge(other); // { a: [ { x: 2 }, { y: 4 }, { z: 3 } ], b: [ 1, 2, 3 ], c: 'foo' }
  */
-function merge(this: { [key: string]: any }, ...objects: Array<object>): object {
+function $merge(this: { [key: string]: any }, ...objects: Array<object>): object {
   objects = [this, ...objects]
 
   return [...objects].reduce(
@@ -39,4 +39,4 @@ function merge(this: { [key: string]: any }, ...objects: Array<object>): object 
   )
 }
 
-addPrototype('merge', merge)
+addPrototype('$merge', $merge)

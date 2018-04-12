@@ -1,5 +1,24 @@
 # Changelog
 
+## [next](https://github.com/ardalanamini/prototyped.js/releases/tag/next) *(2018-__-__)*
+**Implemented enhancements:**
+- `Array.prototype`
+	- function `all` added
+	- function `any` added
+- `Object.prototype`
+	- function `invert` renamed into `$invert`
+	- function `lowerCaseKeys` renamed into `$lowerCaseKeys`
+	- function `mapKeys` renamed into `$mapKeys`
+	- function `merge` renamed into `$merge`
+	- function `size` renamed into `$size`
+- `String.prototype`
+	- function `pluralize` improved
+	- function `base64` added
+	- function `base64Decode` added
+	- function `map` added
+- some general enhancements
+
+
 ## [v0.4.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.4.0) *(2018-01-28)*
 **Implemented enhancements:**
 - more customizable usage

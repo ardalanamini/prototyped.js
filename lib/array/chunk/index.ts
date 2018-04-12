@@ -1,8 +1,10 @@
-export { }
+import * as method from "./method";
+
+export { };
 
 declare global {
   interface Array<T> {
-    chunk(size: number): Array<Array<T>>
+    chunk(size: number): T[][];
   }
 }
 
@@ -14,6 +16,6 @@ declare global {
  * @example
  * [1, 2, 3, 4, 5].chunk(2); // [[1,2],[3,4],[5]]
  */
-Array.prototype.chunk = function(size: number): Array<Array<any>> {
-  return Array.from({ length: Math.ceil(this.length / size) }, (value: any, index: number) => this.slice(index * size, index * size + size))
-}
+Array.prototype.chunk = function(size) {
+  return method(this, size);
+};

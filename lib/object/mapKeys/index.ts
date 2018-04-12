@@ -4,7 +4,7 @@ export { }
 
 declare global {
   interface Object {
-    mapKeys(fn: (value: any, key: string | number, object: object) => any): object
+    $mapKeys(fn: (value: any, key: string | number, object: object) => any): object
   }
 }
 
@@ -14,9 +14,9 @@ declare global {
  * @param {function} fn
  * @returns {Object}
  * @example
- * { a: 1, b: 2 }.mapKeys((val, key) => key + val); // { a1: 1, b2: 2 }
+ * { a: 1, b: 2 }.$mapKeys((val, key) => key + val); // { a1: 1, b2: 2 }
  */
-function mapKeys(this: { [key: string]: any }, fn: (value: any, key: string | number, object: object) => any): object {
+function $mapKeys(this: { [key: string]: any }, fn: (value: any, key: string | number, object: object) => any): object {
   return Object.keys(this).reduce((acc: { [key: string]: any }, k) => {
     acc[fn(this[k], k, this)] = this[k]
 
@@ -24,4 +24,4 @@ function mapKeys(this: { [key: string]: any }, fn: (value: any, key: string | nu
   }, {})
 }
 
-addPrototype('mapKeys', mapKeys)
+addPrototype('$mapKeys', $mapKeys)

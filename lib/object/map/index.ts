@@ -4,7 +4,7 @@ export { }
 
 declare global {
   interface Object {
-    map(fn: (value: any, key: string | number, object: object) => any): object
+    $map(fn: (value: any, key: string | number, object: object) => any): object
   }
 }
 
@@ -18,9 +18,9 @@ declare global {
  *   fred: { user: 'fred', age: 40 },
  *   pebbles: { user: 'pebbles', age: 1 }
  * };
- * users.map(u => u.age); // { fred: 40, pebbles: 1 }
+ * users.$map(u => u.age); // { fred: 40, pebbles: 1 }
  */
-function map(this: { [key: string]: any }, fn: (value: any, key: string | number, object: object) => any): object {
+function $map(this: { [key: string]: any }, fn: (value: any, key: string | number, object: object) => any): object {
   return Object.keys(this).reduce((acc: { [key: string]: any }, k) => {
     acc[k] = fn(this[k], k, this)
 
@@ -28,4 +28,4 @@ function map(this: { [key: string]: any }, fn: (value: any, key: string | number
   }, {})
 }
 
-addPrototype('map', map)
+addPrototype('$map', $map)

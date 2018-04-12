@@ -1,11 +1,13 @@
-require('../../../es6/array/append')
+import "./index";
 
 describe("Array.prototype.append", () => {
   test("myArray = [1, 2, 3] & myArray.append(0) results myArray to be [1, 2, 3, 0]", () => {
     expect((() => {
-      let myArray = [1, 2, 3]
-      myArray.append(0)
-      return myArray
-    })()).toEqual([1, 2, 3, 0])
-  })
-})
+      const myArray = [1, 2, 3];
+
+      myArray.append(0);
+
+      return myArray;
+    })()).toEqual([1, 2, 3, 0]);
+  });
+});

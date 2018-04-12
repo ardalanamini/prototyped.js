@@ -4,7 +4,7 @@ export { }
 
 declare global {
   interface Object {
-    size(): number
+    $size(): number
   }
 }
 
@@ -13,10 +13,10 @@ declare global {
  * @memberof Object.prototype
  * @returns {Object}
  * @example
- * { one: 1, two: 2, three: 3 }.size(); // 3
+ * { one: 1, two: 2, three: 3 }.$size(); // 3
  */
-function size(this: { [key: string]: any }): number {
+function $size(this: { [key: string]: any }): number {
   return Object.keys(this).length
 }
 
-addPrototype('size', size)
+addPrototype('$size', $size)

@@ -4,7 +4,7 @@ export { }
 
 declare global {
   interface Object {
-    lowerCaseKeys(): object
+    $lowerCaseKeys(): object
   }
 }
 
@@ -14,9 +14,9 @@ declare global {
  * @returns {Object}
  * @example
  * const myObj = { Name: 'Adam', sUrnAME: 'Smith' };
- * const myObjLower = myObj.lowerCaseKeys(); // {name: 'Adam', surname: 'Smith'}
+ * const myObjLower = myObj.$lowerCaseKeys(); // {name: 'Adam', surname: 'Smith'}
  */
-function lowerCaseKeys(this: { [key: string]: any }): object {
+function $lowerCaseKeys(this: { [key: string]: any }): object {
   return Object.keys(this).reduce((acc: { [key: string]: any }, key) => {
     acc[key.toLowerCase()] = this[key]
 
@@ -24,4 +24,4 @@ function lowerCaseKeys(this: { [key: string]: any }): object {
   }, {})
 }
 
-addPrototype('lowerCaseKeys', lowerCaseKeys)
+addPrototype('$lowerCaseKeys', $lowerCaseKeys)

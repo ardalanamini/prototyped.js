@@ -1,8 +1,10 @@
-export { }
+import * as pluralize from "./method";
+
+export { };
 
 declare global {
   interface String {
-    pluralize(value: number, plural?: string): String
+    pluralize(value: number, plural?: string): string;
   }
 }
 
@@ -18,8 +20,6 @@ declare global {
  * 'apple'.pluralize(2); // 'apples'
  * 'person'.pluralize(2, 'people'); // 'people'
  */
-String.prototype.pluralize = function(value: number, plural?: string): String {
-  if (!plural) plural = `${this}s`
-
-  return value === 1 ? this : plural
-}
+String.prototype.pluralize = function(value: number, plural?: string): string {
+  return pluralize(this as string, value, plural);
+};
