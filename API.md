@@ -27,6 +27,8 @@
 * [Array](#Array) : <code>object</code>
     * _instance_
         * [.avg](#Array+avg) ⇒ <code>number</code>
+        * [.all([fn])](#Array+all) ⇒ <code>boolean</code>
+        * [.any([fn])](#Array+any) ⇒ <code>boolean</code>
         * [.append(value)](#Array+append)
         * [.average([key])](#Array+average) ⇒ <code>number</code>
         * [.chunk(size)](#Array+chunk) ⇒ [<code>Array.&lt;Array&gt;</code>](#Array)
@@ -66,8 +68,8 @@
         * [.zipObject(array)](#Array+zipObject) ⇒ [<code>Array</code>](#Array)
     * _static_
         * [.isInstance](#Array.isInstance) ⇒ <code>boolean</code>
-        * [.range(end, [start], [step])](#Array.range) ⇒ <code>Array.&lt;number&gt;</code>
-        * [.repeat(n, [value])](#Array.repeat) ⇒ [<code>Array</code>](#Array)
+        * [.range](#Array.range) ⇒ <code>Array.&lt;number&gt;</code>
+        * [.repeat](#Array.repeat) ⇒ [<code>Array</code>](#Array)
 
 <a name="Array+avg"></a>
 
@@ -83,8 +85,41 @@ An alias of Array.prototype.average
 **Example**  
 ```javascript
 [1, 2, 3].avg(); // 2
-[{a: 1}, {a: 2}, {a: 3}].avg('a'); // 2
-[{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].avg('a.b'); // 2
+[{a: 1}, {a: 2}, {a: 3}].avg("a"); // 2
+[{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].avg("a.b"); // 2
+```
+<a name="Array+all"></a>
+
+### array.all([fn]) ⇒ <code>boolean</code>
+Returns `true` if the provided predicate function returns `true` for all elements in a collection, `false` otherwise
+
+**Kind**: instance method of [<code>Array</code>](#Array)  
+
+| Param | Type | Default |
+| --- | --- | --- |
+| [fn] | <code>function</code> | <code>Boolean</code> | 
+
+**Example**  
+```javascript
+[4, 2, 3].all((x) => x > 1); // true
+[1, 2, 3].all(); // true
+```
+<a name="Array+any"></a>
+
+### array.any([fn]) ⇒ <code>boolean</code>
+Returns `true` if the provided predicate function returns `true` for at least one element in a collection,
+`false` otherwise
+
+**Kind**: instance method of [<code>Array</code>](#Array)  
+
+| Param | Type | Default |
+| --- | --- | --- |
+| [fn] | <code>function</code> | <code>Boolean</code> | 
+
+**Example**  
+```javascript
+[0, 1, 2, 0].any((x) => x >= 2); // true
+[0, 0, 1, 0].any(); // true
 ```
 <a name="Array+append"></a>
 
@@ -116,8 +151,8 @@ Returns the average value of a given key
 **Example**  
 ```javascript
 [1, 2, 3].average(); // 2
-[{a: 1}, {a: 2}, {a: 3}].average('a'); // 2
-[{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].average('a.b'); // 2
+[{a: 1}, {a: 2}, {a: 3}].average("a"); // 2
+[{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].average("a.b"); // 2
 ```
 <a name="Array+chunk"></a>
 
@@ -466,7 +501,10 @@ Groups the elements into two arrays, depending on the provided function's truthi
 **Example**  
 ```javascript
 const users = [{ user: 'barney', age: 36, active: false }, { user: 'fred', age: 40, active: true }];
-users.partition(o => o.active); // [[{ 'user': 'fred',    'age': 40, 'active': true }],[{ 'user': 'barney',  'age': 36, 'active': false }]]
+users.partition(o => o.active); // [
+  [{ 'user': 'fred',    'age': 40, 'active': true }],
+  [{ 'user': 'barney',  'age': 36, 'active': false }]
+]
 ```
 <a name="Array+pluck"></a>
 
@@ -629,10 +667,11 @@ Array.isInstance([7, 3]); // true
 ```
 <a name="Array.range"></a>
 
-### Array.range(end, [start], [step]) ⇒ <code>Array.&lt;number&gt;</code>
-Initializes an array containing the numbers in the specified range where start and end are inclusive with there common difference step
+### Array.range ⇒ <code>Array.&lt;number&gt;</code>
+Initializes an array containing the numbers in the specified range where start
+and end are inclusive with there common difference step
 
-**Kind**: static method of [<code>Array</code>](#Array)  
+**Kind**: static property of [<code>Array</code>](#Array)  
 
 | Param | Type | Default |
 | --- | --- | --- |
@@ -648,10 +687,10 @@ Array.range(9, 0, 2); // [0,2,4,6,8]
 ```
 <a name="Array.repeat"></a>
 
-### Array.repeat(n, [value]) ⇒ [<code>Array</code>](#Array)
+### Array.repeat ⇒ [<code>Array</code>](#Array)
 Initializes and fills an array with the specified value
 
-**Kind**: static method of [<code>Array</code>](#Array)  
+**Kind**: static property of [<code>Array</code>](#Array)  
 
 | Param | Type | Default |
 | --- | --- | --- |
@@ -668,10 +707,10 @@ Array.repeat(5, 2); // [2,2,2,2,2]
 **Kind**: global namespace  
 <a name="Boolean.isInstance"></a>
 
-### Boolean.isInstance(arg) ⇒ <code>boolean</code>
+### Boolean.isInstance ⇒ <code>boolean</code>
 Returns true if the given argument is a boolean
 
-**Kind**: static method of [<code>Boolean</code>](#Boolean)  
+**Kind**: static property of [<code>Boolean</code>](#Boolean)  
 
 | Param | Type |
 | --- | --- |
@@ -688,10 +727,10 @@ Boolean.isInstance(flase); // true
 **Kind**: global namespace  
 <a name="Date.isInstance"></a>
 
-### Date.isInstance(arg) ⇒ <code>boolean</code>
+### Date.isInstance ⇒ <code>boolean</code>
 Returns true if the given argument is an instance of Date
 
-**Kind**: static method of [<code>Date</code>](#Date)  
+**Kind**: static property of [<code>Date</code>](#Date)  
 
 | Param | Type |
 | --- | --- |
@@ -713,7 +752,7 @@ Date.isInstance(new Date()); // true
         * [.defer(args)](#Function+defer) ⇒ <code>\*</code>
         * [.once(args)](#Function+once) ⇒ <code>\*</code>
     * _static_
-        * [.isInstance(arg)](#Function.isInstance) ⇒ <code>boolean</code>
+        * [.isInstance](#Function.isInstance) ⇒ <code>boolean</code>
 
 <a name="Function+cache"></a>
 
@@ -767,10 +806,10 @@ test.once('b'); // no log this time
 ```
 <a name="Function.isInstance"></a>
 
-### Function.isInstance(arg) ⇒ <code>boolean</code>
+### Function.isInstance ⇒ <code>boolean</code>
 Returns true if the given argument is a function
 
-**Kind**: static method of [<code>Function</code>](#Function)  
+**Kind**: static property of [<code>Function</code>](#Function)  
 
 | Param | Type |
 | --- | --- |
@@ -787,15 +826,31 @@ Function.isInstance((() => {})); // true
 **Kind**: global namespace  
 
 * [Math](#Math) : <code>object</code>
+    * [.average](#Math.average) ⇒ <code>number</code>
     * [.avg](#Math.avg) ⇒ <code>number</code>
-    * [.average(nums)](#Math.average) ⇒ <code>number</code>
-    * [.factorial(num)](#Math.factorial) ⇒ <code>number</code>
-    * [.fibonacci(num)](#Math.fibonacci) ⇒ <code>Array.&lt;number&gt;</code>
-    * [.gcd(nums)](#Math.gcd) ⇒ <code>number</code>
-    * [.isEven(num)](#Math.isEven) ⇒ <code>boolean</code>
-    * [.isPrime(num)](#Math.isPrime) ⇒ <code>boolean</code>
-    * [.lcm(nums)](#Math.lcm) ⇒ <code>number</code>
+    * [.factorial](#Math.factorial) ⇒ <code>number</code>
+    * [.fibonacci](#Math.fibonacci) ⇒ <code>Array.&lt;number&gt;</code>
+    * [.gcd](#Math.gcd) ⇒ <code>number</code>
+    * [.isEven](#Math.isEven) ⇒ <code>boolean</code>
+    * [.isPrime](#Math.isPrime) ⇒ <code>boolean</code>
+    * [.lcm](#Math.lcm) ⇒ <code>number</code>
 
+<a name="Math.average"></a>
+
+### Math.average ⇒ <code>number</code>
+Returns the average of an of two or more numbers
+
+**Kind**: static property of [<code>Math</code>](#Math)  
+
+| Param | Type |
+| --- | --- |
+| nums | <code>Array.&lt;number&gt;</code> | 
+
+**Example**  
+```javascript
+Math.average(...[1, 2, 3]); // 2
+Math.average(1, 2, 3); // 2
+```
 <a name="Math.avg"></a>
 
 ### Math.avg ⇒ <code>number</code>
@@ -812,28 +867,12 @@ Returns the average of an of two or more numbers
 Math.avg(...[1, 2, 3]); // 2
 Math.avg(1, 2, 3); // 2
 ```
-<a name="Math.average"></a>
-
-### Math.average(nums) ⇒ <code>number</code>
-Returns the average of an of two or more numbers
-
-**Kind**: static method of [<code>Math</code>](#Math)  
-
-| Param | Type |
-| --- | --- |
-| nums | <code>Array.&lt;number&gt;</code> | 
-
-**Example**  
-```javascript
-Math.average(...[1, 2, 3]); // 2
-Math.average(1, 2, 3); // 2
-```
 <a name="Math.factorial"></a>
 
-### Math.factorial(num) ⇒ <code>number</code>
+### Math.factorial ⇒ <code>number</code>
 Calculates the factorial of a number
 
-**Kind**: static method of [<code>Math</code>](#Math)  
+**Kind**: static property of [<code>Math</code>](#Math)  
 
 | Param | Type |
 | --- | --- |
@@ -845,10 +884,10 @@ Math.factorial(6); // 720
 ```
 <a name="Math.fibonacci"></a>
 
-### Math.fibonacci(num) ⇒ <code>Array.&lt;number&gt;</code>
+### Math.fibonacci ⇒ <code>Array.&lt;number&gt;</code>
 Generates an array, containing the Fibonacci sequence, up until the nth term
 
-**Kind**: static method of [<code>Math</code>](#Math)  
+**Kind**: static property of [<code>Math</code>](#Math)  
 
 | Param | Type |
 | --- | --- |
@@ -860,10 +899,10 @@ Math.fibonacci(6); // [0, 1, 1, 2, 3, 5]
 ```
 <a name="Math.gcd"></a>
 
-### Math.gcd(nums) ⇒ <code>number</code>
+### Math.gcd ⇒ <code>number</code>
 Calculates the greatest common divisor between two or more numbers
 
-**Kind**: static method of [<code>Math</code>](#Math)  
+**Kind**: static property of [<code>Math</code>](#Math)  
 
 | Param | Type |
 | --- | --- |
@@ -876,10 +915,10 @@ Math.gcd(...[12, 8, 32]); // 4
 ```
 <a name="Math.isEven"></a>
 
-### Math.isEven(num) ⇒ <code>boolean</code>
+### Math.isEven ⇒ <code>boolean</code>
 Returns true if the given number is even, false otherwise
 
-**Kind**: static method of [<code>Math</code>](#Math)  
+**Kind**: static property of [<code>Math</code>](#Math)  
 
 | Param | Type |
 | --- | --- |
@@ -891,10 +930,10 @@ Math.isEven(3); // false
 ```
 <a name="Math.isPrime"></a>
 
-### Math.isPrime(num) ⇒ <code>boolean</code>
+### Math.isPrime ⇒ <code>boolean</code>
 Checks if the provided integer is a prime number
 
-**Kind**: static method of [<code>Math</code>](#Math)  
+**Kind**: static property of [<code>Math</code>](#Math)  
 
 | Param | Type |
 | --- | --- |
@@ -906,10 +945,10 @@ Math.isPrime(11); // true
 ```
 <a name="Math.lcm"></a>
 
-### Math.lcm(nums) ⇒ <code>number</code>
+### Math.lcm ⇒ <code>number</code>
 Returns the least common multiple of two or more numbers
 
-**Kind**: static method of [<code>Math</code>](#Math)  
+**Kind**: static property of [<code>Math</code>](#Math)  
 
 | Param | Type |
 | --- | --- |
@@ -926,10 +965,10 @@ Math.lcm(...[1, 3, 4, 5]); // 60
 **Kind**: global namespace  
 <a name="Number.isInstance"></a>
 
-### Number.isInstance(arg) ⇒ <code>boolean</code>
+### Number.isInstance ⇒ <code>boolean</code>
 Returns true if the given argument is a number
 
-**Kind**: static method of [<code>Number</code>](#Number)  
+**Kind**: static property of [<code>Number</code>](#Number)  
 
 | Param | Type |
 | --- | --- |
@@ -947,40 +986,41 @@ Number.isInstance(2); // true
 
 * [Object](#Object) : <code>object</code>
     * _instance_
-        * [.invert()](#Object+invert) ⇒ [<code>Object</code>](#Object)
-        * [.lowerCaseKeys()](#Object+lowerCaseKeys) ⇒ [<code>Object</code>](#Object)
-        * [.map(fn)](#Object+map) ⇒ [<code>Object</code>](#Object)
-        * [.mapKeys(fn)](#Object+mapKeys) ⇒ [<code>Object</code>](#Object)
-        * [.merge(...objects)](#Object+merge) ⇒ [<code>Object</code>](#Object)
-        * [.size()](#Object+size) ⇒ [<code>Object</code>](#Object)
+        * [.$invert()](#Object+$invert) ⇒ [<code>Object</code>](#Object)
+        * [.$lowerCaseKeys()](#Object+$lowerCaseKeys) ⇒ [<code>Object</code>](#Object)
+        * [.$map(fn)](#Object+$map) ⇒ [<code>Object</code>](#Object)
+        * [.$mapKeys(fn)](#Object+$mapKeys) ⇒ [<code>Object</code>](#Object)
+        * [.$merge(...objects)](#Object+$merge) ⇒ [<code>Object</code>](#Object)
+        * [.$size()](#Object+$size) ⇒ [<code>Object</code>](#Object)
     * _static_
-        * [.isInstance(arg)](#Object.isInstance) ⇒ <code>boolean</code>
+        * [.isInstance](#Object.isInstance) ⇒ <code>boolean</code>
 
-<a name="Object+invert"></a>
+<a name="Object+$invert"></a>
 
-### object.invert() ⇒ [<code>Object</code>](#Object)
+### object.$invert() ⇒ [<code>Object</code>](#Object)
 Inverts the key-value pairs of the object, without mutating it
 
 **Kind**: instance method of [<code>Object</code>](#Object)  
 **Example**  
 ```javascript
-{ name: 'John', age: 20 }.invert(); // { 20: 'age', John: 'name' }
+{ name: "John", age: 20 }.$invert(); // { 20: "age", John: "name" }
 ```
-<a name="Object+lowerCaseKeys"></a>
+<a name="Object+$lowerCaseKeys"></a>
 
-### object.lowerCaseKeys() ⇒ [<code>Object</code>](#Object)
+### object.$lowerCaseKeys() ⇒ [<code>Object</code>](#Object)
 Creates a new object from the specified object, where all the keys are in lowercase
 
 **Kind**: instance method of [<code>Object</code>](#Object)  
 **Example**  
 ```javascript
-const myObj = { Name: 'Adam', sUrnAME: 'Smith' };
-const myObjLower = myObj.lowerCaseKeys(); // {name: 'Adam', surname: 'Smith'}
+const myObj = { Name: "Adam", sUrnAME: "Smith" };
+const myObjLower = myObj.$lowerCaseKeys(); // {name: "Adam", surname: "Smith"}
 ```
-<a name="Object+map"></a>
+<a name="Object+$map"></a>
 
-### object.map(fn) ⇒ [<code>Object</code>](#Object)
-Creates an object with the same keys as the provided object and values generated by running the provided function for each value
+### object.$map(fn) ⇒ [<code>Object</code>](#Object)
+Creates an object with the same keys as the provided object and values
+generated by running the provided function for each value
 
 **Kind**: instance method of [<code>Object</code>](#Object)  
 
@@ -991,15 +1031,16 @@ Creates an object with the same keys as the provided object and values generated
 **Example**  
 ```javascript
 const users = {
-  fred: { user: 'fred', age: 40 },
-  pebbles: { user: 'pebbles', age: 1 }
+  fred: { user: "fred", age: 40 },
+  pebbles: { user: "pebbles", age: 1 }
 };
-users.map(u => u.age); // { fred: 40, pebbles: 1 }
+users.$map(u => u.age); // { fred: 40, pebbles: 1 }
 ```
-<a name="Object+mapKeys"></a>
+<a name="Object+$mapKeys"></a>
 
-### object.mapKeys(fn) ⇒ [<code>Object</code>](#Object)
-Creates an object with keys generated by running the provided function for each key and the same values as the provided object
+### object.$mapKeys(fn) ⇒ [<code>Object</code>](#Object)
+Creates an object with keys generated by running the provided function for each key
+and the same values as the provided object
 
 **Kind**: instance method of [<code>Object</code>](#Object)  
 
@@ -1009,11 +1050,11 @@ Creates an object with keys generated by running the provided function for each 
 
 **Example**  
 ```javascript
-{ a: 1, b: 2 }.mapKeys((val, key) => key + val); // { a1: 1, b2: 2 }
+{ a: 1, b: 2 }.$mapKeys((val, key) => key + val); // { a1: 1, b2: 2 }
 ```
-<a name="Object+merge"></a>
+<a name="Object+$merge"></a>
 
-### object.merge(...objects) ⇒ [<code>Object</code>](#Object)
+### object.$merge(...objects) ⇒ [<code>Object</code>](#Object)
 Creates a new object from the combination of two or more objects
 
 **Kind**: instance method of [<code>Object</code>](#Object)  
@@ -1031,26 +1072,26 @@ const object = {
 const other = {
   a: { z: 3 },
   b: [2, 3],
-  c: 'foo'
+  c: "foo"
 };
-object.merge(other); // { a: [ { x: 2 }, { y: 4 }, { z: 3 } ], b: [ 1, 2, 3 ], c: 'foo' }
+object.$merge(other); // { a: [ { x: 2 }, { y: 4 }, { z: 3 } ], b: [ 1, 2, 3 ], c: "foo" }
 ```
-<a name="Object+size"></a>
+<a name="Object+$size"></a>
 
-### object.size() ⇒ [<code>Object</code>](#Object)
+### object.$size() ⇒ [<code>Object</code>](#Object)
 Get size of the object
 
 **Kind**: instance method of [<code>Object</code>](#Object)  
 **Example**  
 ```javascript
-{ one: 1, two: 2, three: 3 }.size(); // 3
+{ one: 1, two: 2, three: 3 }.$size(); // 3
 ```
 <a name="Object.isInstance"></a>
 
-### Object.isInstance(arg) ⇒ <code>boolean</code>
+### Object.isInstance ⇒ <code>boolean</code>
 Returns true if the given argument is an object
 
-**Kind**: static method of [<code>Object</code>](#Object)  
+**Kind**: static property of [<code>Object</code>](#Object)  
 
 | Param | Type |
 | --- | --- |
@@ -1068,6 +1109,8 @@ Object.isInstance({foo: 'bar'}); // true
 
 * [String](#String) : <code>object</code>
     * _instance_
+        * [.base64()](#String+base64) ⇒ <code>string</code>
+        * [.base64Decode()](#String+base64Decode) ⇒ <code>string</code>
         * [.camelCase()](#String+camelCase) ⇒ <code>string</code>
         * [.capitalize([allWords])](#String+capitalize) ⇒ <code>string</code>
         * [.chars()](#String+chars) ⇒ <code>Array.&lt;string&gt;</code>
@@ -1076,6 +1119,7 @@ Object.isInstance({foo: 'bar'}); // true
         * [.humanize()](#String+humanize) ⇒ <code>string</code>
         * [.kebabCase()](#String+kebabCase) ⇒ <code>string</code>
         * [.lines()](#String+lines) ⇒ <code>Array.&lt;string&gt;</code>
+        * [.map(fn)](#String+map) ⇒ <code>Array.&lt;string&gt;</code>
         * [.mask([num], [mask])](#String+mask) ⇒ <code>string</code>
         * [.pluralize(value, [plural])](#String+pluralize) ⇒ <code>string</code>
         * [.reverse()](#String+reverse) ⇒ <code>string</code>
@@ -1084,8 +1128,28 @@ Object.isInstance({foo: 'bar'}); // true
         * [.truncate(num, [truncateString])](#String+truncate) ⇒ <code>string</code>
         * [.words(pattern)](#String+words) ⇒ <code>Array.&lt;string&gt;</code>
     * _static_
-        * [.isInstance(arg)](#String.isInstance) ⇒ <code>boolean</code>
+        * [.isInstance](#String.isInstance) ⇒ <code>boolean</code>
 
+<a name="String+base64"></a>
+
+### string.base64() ⇒ <code>string</code>
+Encodes data with MIME base64
+
+**Kind**: instance method of [<code>String</code>](#String)  
+**Example**  
+```javascript
+'prototyped.js'.base64(); // 'cHJvdG90eXBlZC5qcw=='
+```
+<a name="String+base64Decode"></a>
+
+### string.base64Decode() ⇒ <code>string</code>
+Decodes data encoded with MIME base64
+
+**Kind**: instance method of [<code>String</code>](#String)  
+**Example**  
+```javascript
+"cHJvdG90eXBlZC5qcw==".base64Decode(); // "prototyped.js"
+```
 <a name="String+camelCase"></a>
 
 ### string.camelCase() ⇒ <code>string</code>
@@ -1094,10 +1158,11 @@ Converts the string to camelcase
 **Kind**: instance method of [<code>String</code>](#String)  
 **Example**  
 ```javascript
-'some_database_field_name'.camelCase(); // 'someDatabaseFieldName'
-'Some label that needs to be camelized'.camelCase(); // 'someLabelThatNeedsToBeCamelized'
-'some-javascript-property'.camelCase(); // 'someJavascriptProperty'
-'some-mixed_string with spaces_underscores-and-hyphens'.camelCase(); // 'someMixedStringWithSpacesUnderscoresAndHyphens'
+"some_database_field_name".camelCase(); // "someDatabaseFieldName"
+"Some label that needs to be camelized".camelCase(); // "someLabelThatNeedsToBeCamelized"
+"some-javascript-property".camelCase(); // "someJavascriptProperty"
+"some-mixed_string with spaces_underscores-and-hyphens".camelCase();
+// "someMixedStringWithSpacesUnderscoresAndHyphens"
 ```
 <a name="String+capitalize"></a>
 
@@ -1123,7 +1188,7 @@ Returns an array of the string's character
 **Kind**: instance method of [<code>String</code>](#String)  
 **Example**  
 ```javascript
-'Hello'.chars(); // ['H', 'e', 'l', 'l', 'o']
+"Hello".chars(); // ["H", "e", "l", "l", "o"]
 ```
 <a name="String+contains"></a>
 
@@ -1160,7 +1225,8 @@ Returns the decapitalized string
 <a name="String+humanize"></a>
 
 ### string.humanize() ⇒ <code>string</code>
-Converts an underscored, camelized, or dasherized string into a humanized one. Also removes beginning and ending whitespace
+Converts an underscored, camelized, or dasherized string into a humanized one.
+Also removes beginning and ending whitespace
 
 **Kind**: instance method of [<code>String</code>](#String)  
 **Example**  
@@ -1175,11 +1241,13 @@ Converts a string to kebab case
 **Kind**: instance method of [<code>String</code>](#String)  
 **Example**  
 ```javascript
-'camelCase'.kebabCase(); // 'camel-case'
-'some text'.kebabCase(); // 'some-text'
-'some-mixed_string With spaces_underscores-and-hyphens'.kebabCase(); // 'some-mixed-string-with-spaces-underscores-and-hyphens'
-'AllThe-small Things'.kebabCase(); // "all-the-small-things"
-'IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML'.kebabCase(); // 'i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-some-xml-and-html'
+"camelCase".kebabCase(); // "camel-case"
+"some text".kebabCase(); // "some-text"
+"some-mixed_string With spaces_underscores-and-hyphens".kebabCase();
+// "some-mixed-string-with-spaces-underscores-and-hyphens"
+"AllThe-small Things".kebabCase(); // "all-the-small-things"
+"IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML".kebabCase();
+// "i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-some-xml-and-html"
 ```
 <a name="String+lines"></a>
 
@@ -1190,6 +1258,21 @@ Splits a multiline string into an array of lines
 **Example**  
 ```javascript
 'This\nis a\nmultiline\nstring.\n'.lines(); // ['This', 'is a', 'multiline', 'string.' , '']
+```
+<a name="String+map"></a>
+
+### string.map(fn) ⇒ <code>Array.&lt;string&gt;</code>
+Just like array.map
+
+**Kind**: instance method of [<code>String</code>](#String)  
+
+| Param | Type |
+| --- | --- |
+| fn | <code>function</code> | 
+
+**Example**  
+```javascript
+'Hello'.map((char) => char == 'o' ? 'O' : char); // 'HellO'
 ```
 <a name="String+mask"></a>
 
@@ -1236,7 +1319,7 @@ Reverses the string
 **Kind**: instance method of [<code>String</code>](#String)  
 **Example**  
 ```javascript
-'foobar'.reverse(); // 'raboof'
+"foobar".reverse(); // "raboof"
 ```
 <a name="String+snakeCase"></a>
 
@@ -1248,9 +1331,11 @@ Converts a string to snake case
 ```javascript
 'camelCase'.snakeCase(); // 'camel_case'
 'some text'.snakeCase(); // 'some_text'
-'some-mixed_string With spaces_underscores-and-hyphens'.snakeCase(); // 'some_mixed_string_with_spaces_underscores_and_hyphens'
+'some-mixed_string With spaces_underscores-and-hyphens'.snakeCase();
+// 'some_mixed_string_with_spaces_underscores_and_hyphens'
 'AllThe-small Things'.snakeCase(); // "all_the_small_things"
-'IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML'.snakeCase(); // 'i_am_listening_to_fm_while_loading_different_url_on_my_browser_and_also_editing_some_xml_and_html'
+'IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML'.snakeCase();
+// 'i_am_listening_to_fm_while_loading_different_url_on_my_browser_and_also_editing_some_xml_and_html'
 ```
 <a name="String+swapCase"></a>
 
@@ -1297,10 +1382,10 @@ Converts a given string into an array of words
 ```
 <a name="String.isInstance"></a>
 
-### String.isInstance(arg) ⇒ <code>boolean</code>
+### String.isInstance ⇒ <code>boolean</code>
 Returns true if the given argument is an string
 
-**Kind**: static method of [<code>String</code>](#String)  
+**Kind**: static property of [<code>String</code>](#String)  
 
 | Param | Type |
 | --- | --- |
@@ -1309,5 +1394,5 @@ Returns true if the given argument is an string
 **Example**  
 ```javascript
 String.isInstance(2); // false
-String.isInstance('foo bar'); // true
+String.isInstance("foo bar"); // true
 ```
