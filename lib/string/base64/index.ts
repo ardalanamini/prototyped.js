@@ -1,8 +1,8 @@
-export { }
+import * as method from "./method";
 
 declare global {
   interface String {
-    base64(): string
+    base64(): string;
   }
 }
 
@@ -13,6 +13,6 @@ declare global {
  * @example
  * 'prototyped.js'.base64(); // 'cHJvdG90eXBlZC5qcw=='
  */
-String.prototype.base64 = function(): string {
-  return new Buffer(`${this}`).toString('base64')
-}
+String.prototype.base64 = function() {
+  return method(this as string);
+};

@@ -1,8 +1,8 @@
-export { }
+import * as method from "./method";
 
 declare global {
   interface String {
-    swapCase(): string
+    swapCase(): string;
   }
 }
 
@@ -13,6 +13,6 @@ declare global {
  * @example
  * 'Hello'.swapCase(); // 'hELLO'
  */
-String.prototype.swapCase = function(): string {
-  return this.replace(/\S/g, (c) => c === c.toUpperCase() ? c.toLowerCase() : c.toUpperCase())
-}
+String.prototype.swapCase = function() {
+  return method(this as string);
+};

@@ -1,3 +1,3 @@
 /** @namespace Boolean */
 
-import './isInstance'
+import "./isInstance";

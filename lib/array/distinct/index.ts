@@ -1,8 +1,8 @@
-export { }
+import * as method from "./method";
 
 declare global {
   interface Array<T> {
-    distinct(): Array<T>
+    distinct(): T[];
   }
 }
 
@@ -13,6 +13,6 @@ declare global {
  * @example
  * [1, 2, 2, 3, 4, 4, 5].distinct(); // [1,2,3,4,5]
  */
-Array.prototype.distinct = function(): Array<any> {
-  return [...new Set(this)]
-}
+Array.prototype.distinct = function() {
+  return method(this);
+};

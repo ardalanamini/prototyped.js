@@ -1,8 +1,8 @@
-export { }
+import * as method from "./method";
 
 declare global {
   interface Array<T> {
-    intersect(array: Array<any>): Array<T>
+    intersect(array: any[]): T[];
   }
 }
 
@@ -14,8 +14,6 @@ declare global {
  * @example
  * [1, 2, 3].intersect([4, 3, 2]); // [2,3]
  */
-Array.prototype.intersect = function(array: Array<any>): Array<any> {
-  const set = new Set(array)
-
-  return this.filter(item => set.has(item))
-}
+Array.prototype.intersect = function(array) {
+  return method(this, array);
+};

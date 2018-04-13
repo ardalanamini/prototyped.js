@@ -1,8 +1,8 @@
-export { }
+import * as method from "./method";
 
 declare global {
   interface String {
-    chars(): Array<string>
+    chars(): string[];
   }
 }
 
@@ -11,8 +11,8 @@ declare global {
  * @memberof String
  * @returns {string[]}
  * @example
- * 'Hello'.chars(); // ['H', 'e', 'l', 'l', 'o']
+ * "Hello".chars(); // ["H", "e", "l", "l", "o"]
  */
-String.prototype.chars = function(): Array<string> {
-  return this.split('')
-}
+String.prototype.chars = function() {
+  return method(this as string);
+};

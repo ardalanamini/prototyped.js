@@ -1,8 +1,8 @@
-export { }
+import * as method from "./method";
 
 declare global {
   interface ArrayConstructor {
-    repeat(n: number, value?: any): Array<any>
+    repeat(n: number, value?: any): any[];
   }
 }
 
@@ -15,4 +15,4 @@ declare global {
  * @example
  * Array.repeat(5, 2); // [2,2,2,2,2]
  */
-Array.repeat = (n: number, value = 0): Array<any> => Array(n).fill(value)
+Array.repeat = method;

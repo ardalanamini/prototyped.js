@@ -1,8 +1,8 @@
-export { }
+import * as method from "./method";
 
 declare global {
   interface String {
-    contains(str: string): boolean
+    contains(str: string, sensitive?: boolean): boolean;
   }
 }
 
@@ -15,8 +15,6 @@ declare global {
  * 'javaScript & typescript'.contains('Typescript'); // true
  * 'javaScript & typescript'.contains('Typescript', true); // false
  */
-String.prototype.contains = function(str: string, sensitive = false): boolean {
-  if (sensitive) return this.indexOf(str) !== -1
-
-  return this.toLowerCase().indexOf(str.toLowerCase()) !== -1
-}
+String.prototype.contains = function(str, sensitive) {
+  return method(this as string, str, sensitive);
+};

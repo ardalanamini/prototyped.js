@@ -1,8 +1,8 @@
-export { }
+import * as method from "./method";
 
 declare global {
   interface Math {
-    factorial(n: number): number
+    factorial(n: number): number;
   }
 }
 
@@ -14,4 +14,4 @@ declare global {
  * @example
  * Math.factorial(6); // 720
  */
-Math.factorial = (n: number): number => n <= 1 ? 1 : n * Math.factorial(n - 1)
+Math.factorial = method;

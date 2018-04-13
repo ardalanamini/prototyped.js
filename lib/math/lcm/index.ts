@@ -1,8 +1,8 @@
-export { }
+import * as method from "./method";
 
 declare global {
   interface Math {
-    lcm(...nums: Array<number>): number
+    lcm(...nums: number[]): number;
   }
 }
 
@@ -15,10 +15,4 @@ declare global {
  * Math.lcm(12, 7); // 84
  * Math.lcm(...[1, 3, 4, 5]); // 60
  */
-Math.lcm = (...nums: Array<number>): number => {
-  const gcd: (x: number, y: number) => number = (x, y) => (!y ? x : gcd(y, x % y))
-
-  const lcm: (x: number, y: number) => number = (x, y) => x * y / gcd(x, y)
-
-  return [...nums].reduce((a, b) => lcm(a, b))
-}
+Math.lcm = method;

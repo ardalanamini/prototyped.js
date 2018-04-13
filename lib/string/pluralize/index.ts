@@ -1,6 +1,4 @@
-import * as pluralize from "./method";
-
-export { };
+import * as method from "./method";
 
 declare global {
   interface String {
@@ -20,6 +18,6 @@ declare global {
  * 'apple'.pluralize(2); // 'apples'
  * 'person'.pluralize(2, 'people'); // 'people'
  */
-String.prototype.pluralize = function(value: number, plural?: string): string {
-  return pluralize(this as string, value, plural);
+String.prototype.pluralize = function(value, plural) {
+  return method(this as string, value, plural);
 };

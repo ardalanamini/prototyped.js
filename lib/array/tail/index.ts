@@ -1,8 +1,8 @@
-export { }
+import * as method from "./method";
 
 declare global {
   interface Array<T> {
-    tail(): Array<T>
+    tail(): T[];
   }
 }
 
@@ -13,6 +13,6 @@ declare global {
  * @example
  * [1, 2, 3].tail(); // [2, 3]
  */
-Array.prototype.tail = function(): Array<any> {
-  return this.length > 1 ? this.slice(1) : []
-}
+Array.prototype.tail = function() {
+  return method(this);
+};

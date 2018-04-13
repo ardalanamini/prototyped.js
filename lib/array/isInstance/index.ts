@@ -1,8 +1,8 @@
-export { }
+import * as method from "./method";
 
 declare global {
   interface ArrayConstructor {
-    isInstance(arg: any): arg is Array<any>
+    isInstance(arg: any): arg is any[];
   }
 }
 
@@ -15,4 +15,4 @@ declare global {
  * Array.isInstance(2); // false
  * Array.isInstance([7, 3]); // true
  */
-Array.isInstance = Array.isArray
+Array.isInstance = method;

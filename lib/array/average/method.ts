@@ -1,15 +1,5 @@
-const method = (arr: any[], key?: string) => {
-  if (key) {
-    const keys = key.split(".");
+import * as sum from "../sum/method";
 
-    return arr.map((item) => {
-      keys.map((k) => item = (item && item[k]) || 0);
-
-      return item;
-    }).reduce((acc, val) => acc + val, 0) / arr.length;
-  }
-
-  return arr.reduce((acc, val) => acc + val, 0) / arr.length;
-};
+const method = (arr: any[], key?: string) => sum(arr, key) / arr.length;
 
 export = method;

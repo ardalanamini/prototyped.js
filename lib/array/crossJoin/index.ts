@@ -1,7 +1,5 @@
 import * as method from "./method";
 
-export { };
-
 declare global {
   interface Array<T> {
     crossJoin(array: any[]): Array<[T, any]>;

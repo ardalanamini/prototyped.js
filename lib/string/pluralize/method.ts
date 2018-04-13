@@ -145,7 +145,7 @@ const IRREGULAR_PLURALS: { [word: string]: string } = {
   "woman": "women",
 };
 
-const pluralize = (str: string, value: number, plural?: string): string => {
+const method = (str: string, value: number, plural?: string): string => {
   if (value === 1) return str;
 
   if (!plural)
@@ -162,4 +162,4 @@ const pluralize = (str: string, value: number, plural?: string): string => {
   return plural;
 };
 
-export = pluralize;
+export = method;

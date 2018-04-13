@@ -1,8 +1,8 @@
-export { }
+import * as method from "./method";
 
 declare global {
   interface Array<T> {
-    pad(size: number, value?: any): Array<any>
+    pad(size: number, value?: any): any[];
   }
 }
 
@@ -16,14 +16,6 @@ declare global {
  * [1, 2, 3].pad(5, 0); // [1, 2, 3, 0, 0]
  * [1, 2, 3].pad(-5, 0); // [0, 0, 1, 2, 3]
  */
-Array.prototype.pad = function(size: number, value: any = 0): Array<any> {
-  let s = Math.abs(size)
-
-  if (s <= this.length) return this
-
-  let array = Array(s - this.length).fill(value)
-
-  if (size < 0) return array.concat(this)
-
-  return this.concat(array)
-}
+Array.prototype.pad = function(size, value) {
+  return method(this, size, value);
+};

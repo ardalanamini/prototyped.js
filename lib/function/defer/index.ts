@@ -1,8 +1,8 @@
-export { }
+import * as method from "./method";
 
 declare global {
   interface Function {
-    defer(...args: Array<any>): any
+    defer(...args: any[]): any;
   }
 }
 
@@ -15,6 +15,6 @@ declare global {
  * const test = (msg) => console.log(msg);
  * test.defer('a'), test('b'); // logs 'b' then 'a'
  */
-Function.prototype.defer = function(...args: Array<any>): any {
-  return setTimeout(this, 1, ...args)
-}
+Function.prototype.defer = function(...args) {
+  return method(this, ...args);
+};

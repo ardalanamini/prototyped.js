@@ -1,8 +1,8 @@
-export { }
+import * as method from "./method";
 
 declare global {
   interface NumberConstructor {
-    isInstance(arg: any): arg is Number
+    isInstance(arg: any): arg is number;
   }
 }
 
@@ -15,4 +15,4 @@ declare global {
  * Number.isInstance('foo bar'); // false
  * Number.isInstance(2); // true
  */
-Number.isInstance = (arg: any): arg is Number => !isNaN(arg)
+Number.isInstance = method;

@@ -1,6 +1,6 @@
 # Changelog
 
-## [next](https://github.com/ardalanamini/prototyped.js/releases/tag/next) *(2018-__-__)*
+## [v0.5.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.5.0) *(2018-04-13)*
 **Implemented enhancements:**
 - `Array.prototype`
 	- function `all` added
@@ -17,6 +17,9 @@
 	- function `map` added
 	- function `pluralize` improved
 - some general enhancements
+
+**Fixed bugs:**
+- typescript usage
 
 
 ## [v0.4.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.4.0) *(2018-01-28)*

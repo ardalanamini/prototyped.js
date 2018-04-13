@@ -1,7 +1,5 @@
 import * as method from "./method";
 
-export { };
-
 declare global {
   interface Array<T> {
     count(value?: T): number;

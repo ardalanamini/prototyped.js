@@ -1,8 +1,8 @@
-export { }
+import * as method from "./method";
 
 declare global {
   interface Array<T> {
-    union(array: Array<T>): Array<T>
+    union(array: T[]): T[];
   }
 }
 
@@ -14,6 +14,6 @@ declare global {
  * @example
  * [1, 2, 3].union([4, 3, 2]); // [1,2,3,4]
  */
-Array.prototype.union = function(array: Array<any>): Array<any> {
-  return Array.from(new Set([...this, ...array]))
-}
+Array.prototype.union = function(array) {
+  return method(this, array);
+};

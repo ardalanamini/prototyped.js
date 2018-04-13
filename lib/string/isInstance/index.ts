@@ -1,8 +1,8 @@
-export { }
+import * as method from "./method";
 
 declare global {
   interface StringConstructor {
-    isInstance(arg: any): arg is string
+    isInstance(arg: any): arg is string;
   }
 }
 
@@ -13,6 +13,6 @@ declare global {
  * @returns {boolean}
  * @example
  * String.isInstance(2); // false
- * String.isInstance('foo bar'); // true
+ * String.isInstance("foo bar"); // true
  */
-String.isInstance = (arg: any): arg is string => typeof arg === 'string'
+String.isInstance = method;

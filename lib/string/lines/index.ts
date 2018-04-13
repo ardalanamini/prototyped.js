@@ -1,8 +1,8 @@
-export { }
+import * as method from "./method";
 
 declare global {
   interface String {
-    lines(): Array<string>
+    lines(): string[];
   }
 }
 
@@ -13,6 +13,6 @@ declare global {
  * @example
  * 'This\nis a\nmultiline\nstring.\n'.lines(); // ['This', 'is a', 'multiline', 'string.' , '']
  */
-String.prototype.lines = function(): Array<string> {
-  return this.split(/\r?\n/)
-}
+String.prototype.lines = function() {
+  return method(this as string);
+};

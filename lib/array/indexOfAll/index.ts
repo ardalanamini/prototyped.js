@@ -1,8 +1,8 @@
-export { }
+import * as method from "./method";
 
 declare global {
   interface Array<T> {
-    indexOfAll(value: any): Array<number>
+    indexOfAll(value: any): number[];
   }
 }
 
@@ -15,10 +15,6 @@ declare global {
  * [1, 2, 3, 1, 2, 3].indexOfAll(1); // [0,3]
  * [1, 2, 3].indexOfAll(4); // []
  */
-Array.prototype.indexOfAll = function(value: any): Array<number> {
-  let indices: Array<number> = []
-
-  this.forEach((item, index) => item === value && indices.push(index))
-
-  return indices
-}
+Array.prototype.indexOfAll = function(value) {
+  return method(this, value);
+};

@@ -1,8 +1,8 @@
-export { }
+import * as method from "./method";
 
 declare global {
   interface Array<T> {
-    zip(...arrays: Array<Array<any>>): Array<Array<any>>
+    zip(...arrays: any[][]): any[][];
   }
 }
 
@@ -15,12 +15,6 @@ declare global {
  * ['a', 'b'].zip([1, 2], [true, false]); // [['a', 1, true], ['b', 2, false]]
  * ['a'].zip([1, 2], [true, false]); // [['a', 1, true], [undefined, 2, false]]
  */
-Array.prototype.zip = function(...arrays: Array<Array<any>>): Array<Array<any>> {
-  arrays = [this, ...arrays]
-
-  const maxLength = Math.max(...arrays.map(x => x.length))
-
-  return Array.from({ length: maxLength }).map((_, i) => {
-    return Array.from({ length: arrays.length }, (_, k) => arrays[k][i]);
-  })
-}
+Array.prototype.zip = function(...arrays) {
+  return method(this, ...arrays);
+};

@@ -1,12 +1,14 @@
-export const addPrototype = (key: string, extension: any) => {
-  if (Object.prototype.hasOwnProperty(key)) return
+export const addPrototype = (extension: any) => {
+  const key = extension.name;
+
+  if (Object.prototype.hasOwnProperty(key)) return;
 
   Object.defineProperty(
     Object.prototype,
     key,
     {
       value: extension,
-      writable: true
-    }
-  )
-}
+      writable: true,
+    },
+  );
+};

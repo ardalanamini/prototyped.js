@@ -1,8 +1,8 @@
-export { }
+import * as method from "./method";
 
 declare global {
   interface Array<T> {
-    diff(array: Array<any>, comp?: (a: T, b: any) => boolean): Array<T>
+    diff(array: any[], comp?: (a: T, b: any) => boolean): T[];
   }
 }
 
@@ -17,10 +17,6 @@ declare global {
  * [1, 2, 3].diff([1, 2, 4]); // [3]
  * [1, 1.2, 1.5, 3, 0].diff([1.9, 3, 0], (a, b) => Math.round(a) === Math.round(b)); // [1, 1.2]
  */
-Array.prototype.diff = function(array: Array<any>, comp?: (a: any, b: any) => boolean): Array<any> {
-  if (comp) return this.filter((a) => array.findIndex((b) => comp(a, b)) === -1)
-
-  const set = new Set(array)
-
-  return this.filter((item: any) => !set.has(item))
-}
+Array.prototype.diff = function(array, comp) {
+  return method(this, array, comp);
+};

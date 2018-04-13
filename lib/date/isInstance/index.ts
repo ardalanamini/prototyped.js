@@ -1,8 +1,8 @@
-export { }
+import * as method from "./method";
 
 declare global {
   interface DateConstructor {
-    isInstance(arg: any): arg is Date
+    isInstance(arg: any): arg is Date;
   }
 }
 
@@ -15,4 +15,4 @@ declare global {
  * Date.isInstance('foo bar'); // false
  * Date.isInstance(new Date()); // true
  */
-Date.isInstance = (arg: any): arg is Date => arg instanceof Date
+Date.isInstance = method;

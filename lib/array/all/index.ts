@@ -1,7 +1,5 @@
 import * as method from "./method";
 
-export {};
-
 declare global {
   interface Array<T> {
     all(fn?: (value: T, index: number, array: T[]) => boolean): boolean;
