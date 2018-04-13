@@ -1,8 +1,9 @@
-export { }
+import * as method from "./method";
 
 declare global {
   interface FunctionConstructor {
-    isInstance(arg: any): arg is Function
+    // tslint:disable-next-line:ban-types
+    isInstance(arg: any): arg is Function;
   }
 }
 
@@ -15,4 +16,4 @@ declare global {
  * Function.isInstance(2); // false
  * Function.isInstance((() => {})); // true
  */
-Function.isInstance = (arg: any): arg is Function => arg instanceof Function
+Function.isInstance = method;

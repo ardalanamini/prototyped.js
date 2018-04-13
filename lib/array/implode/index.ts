@@ -1,8 +1,8 @@
-export { }
+import * as method from "./method";
 
 declare global {
   interface Array<T> {
-    implode(key: string, separator?: string): string
+    implode(key: string, separator?: string): string;
   }
 }
 
@@ -15,15 +15,6 @@ declare global {
  * @example
  * [{a: {b: 'first'}}, {a: {b: 'second'}}, {a: {b: 'third'}}].implode('a.b', ', '); // 'first, second, third'
  */
-Array.prototype.implode = function(key: string, separator = ', '): string {
-  let keys = key.split('.')
-  let array: Array<string> = []
-
-  this.map((item) => {
-    keys.map((k) => item = item && item[k] || undefined)
-
-    array.push(item)
-  })
-
-  return array.filter(Boolean).join(separator)
-}
+Array.prototype.implode = function(key, separator) {
+  return method(this, key, separator);
+};

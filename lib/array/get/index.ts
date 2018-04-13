@@ -1,8 +1,8 @@
-export { }
+import * as method from "./method";
 
 declare global {
   interface Array<T> {
-    get(index: number, def?: any): any
+    get(index: number, def?: any): T | null;
   }
 }
 
@@ -16,8 +16,6 @@ declare global {
  * [1, 2, 3].get(0, 'default value'); // 1
  * [1, 2, 3].get(4, 0); // 0
  */
-Array.prototype.get = function(index: number, def = undefined): any {
-  if (index >= this.length) return def
-
-  return this[index]
-}
+Array.prototype.get = function(index, def) {
+  return method(this, index, def);
+};

@@ -1,8 +1,8 @@
-export { }
+import * as method from "./method";
 
 declare global {
   interface Array<T> {
-    prepend(value?: any): void
+    prepend(value?: any): void;
   }
 }
 
@@ -14,10 +14,6 @@ declare global {
  * var myArray = [1, 2, 3]
  * myArray.prepend(0); // myArray => [0, 1, 2, 3]
  */
-Array.prototype.prepend = function(value: any): void {
-  let array = [...this]
-
-  this.length = 0
-
-  this.push(...[value].concat(array))
-}
+Array.prototype.prepend = function(value) {
+  return method(this, value);
+};

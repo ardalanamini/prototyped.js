@@ -1,9 +1,9 @@
-export { }
+import * as method from "./method";
 
 declare global {
   interface Function {
-    cached?: Array<{ key: string, result: any }>
-    cache(...args: Array<any>): any
+    cached?: Map<string, any>;
+    cache(...args: any[]): any;
   }
 }
 
@@ -17,21 +17,6 @@ declare global {
  * test.cache(); // takes a second to log 'test'
  * test.cache(); // instantly logs the second 'test'
  */
-Function.prototype.cache = function(...args: Array<any>): any {
-  let key = JSON.stringify(args)
-  let cached = this.cached || []
-
-  let index = cached.findIndex((c: { [key: string]: any }) => c.key === args)
-  if (index !== -1) return cached[index].result
-
-  let result = this.call(this, ...args)
-
-  cached.push({
-    key,
-    result
-  })
-
-  this.cached = cached
-
-  return result
-}
+Function.prototype.cache = function(...args) {
+  return method(this)(...args);
+};

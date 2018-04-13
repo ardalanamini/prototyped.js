@@ -1,8 +1,8 @@
-export { }
+import * as method from "./method";
 
 declare global {
   interface Array<T> {
-    sample(): T
+    sample(): T;
   }
 }
 
@@ -13,6 +13,6 @@ declare global {
  * @example
  * [3, 7, 9, 11].sample(); // 9
  */
-Array.prototype.sample = function(): any {
-  return this[Math.floor(Math.random() * this.length)]
-}
+Array.prototype.sample = function() {
+  return method(this);
+};

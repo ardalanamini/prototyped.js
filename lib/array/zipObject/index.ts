@@ -1,8 +1,8 @@
-export { }
+import * as method from "./method";
 
 declare global {
   interface Array<T> {
-    zipObject(array: Array<T>): object
+    zipObject(array: any[]): object;
   }
 }
 
@@ -15,6 +15,6 @@ declare global {
  * ['a', 'b', 'c'].zipObject([1, 2]); // {a: 1, b: 2, c: undefined}
  * ['a', 'b'].zipObject([1, 2, 3]); // {a: 1, b: 2}
  */
-Array.prototype.zipObject = function(array: Array<any>): object {
-  return this.reduce((obj, prop, index) => ((obj[prop] = array[index]), obj), {})
-}
+Array.prototype.zipObject = function(array) {
+  return method(this, array);
+};

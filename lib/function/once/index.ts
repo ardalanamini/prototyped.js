@@ -1,9 +1,9 @@
-export { }
+import * as method from "./method";
 
 declare global {
   interface Function {
-    called?: boolean
-    once(...args: Array<any>): any
+    called?: boolean;
+    once(...args: any[]): any;
   }
 }
 
@@ -17,10 +17,6 @@ declare global {
  * test.once('a'); // logs 'a'
  * test.once('b'); // no log this time
  */
-Function.prototype.once = function(...args: Array<any>): any {
-  if (this.called) return;
-
-  this.called = true
-
-  return this.call(this, ...args)
-}
+Function.prototype.once = function(...args) {
+  return method(this, ...args);
+};

@@ -1,8 +1,8 @@
-export { }
+import * as method from "./method";
 
 declare global {
   interface String {
-    truncate(num: number): String
+    truncate(num: number, truncateString?: string): string;
   }
 }
 
@@ -16,8 +16,6 @@ declare global {
  * 'boomerang'.truncate(7); // 'boom...'
  * 'boomerang'.truncate(7, '....'); // 'boo....'
  */
-String.prototype.truncate = function(num: number, truncateString = '...'): String {
-  let length = truncateString.length
-
-  return this.length > num ? this.slice(0, num > length ? num - length : num) + truncateString : this
-}
+String.prototype.truncate = function(num, truncateString) {
+  return method(this as string, num, truncateString);
+};

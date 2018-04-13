@@ -1,8 +1,8 @@
-export { }
+import * as method from "./method";
 
 declare global {
   interface String {
-    decapitalize(allWords?: boolean): string
+    decapitalize(allWords?: boolean): string;
   }
 }
 
@@ -15,8 +15,6 @@ declare global {
  * 'Foo Bar'.decapitalize(); // 'foo Bar'
  * 'Hello World'.decapitalize(true); // 'hello world'
  */
-String.prototype.decapitalize = function(allWords = false): string {
-  if (allWords) return this.replace(/\b[A-Z]/g, (char) => char.toLowerCase())
-
-  return this.replace(/^[A-Z]/, (char) => char.toLowerCase())
-}
+String.prototype.decapitalize = function(allWords) {
+  return method(this as string, allWords);
+};

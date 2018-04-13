@@ -1,8 +1,8 @@
-export { }
+import * as method from "./method";
 
 declare global {
   interface ObjectConstructor {
-    isInstance(arg: any): arg is object
+    isInstance(arg: any): arg is object;
   }
 }
 
@@ -15,4 +15,4 @@ declare global {
  * Object.isInstance(2); // false
  * Object.isInstance({foo: 'bar'}); // true
  */
-Object.isInstance = (arg: any): arg is object => arg instanceof Object
+Object.isInstance = method;

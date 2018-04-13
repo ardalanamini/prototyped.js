@@ -1,8 +1,8 @@
-export { }
+import * as method from "./method";
 
 declare global {
   interface Array<T> {
-    pull(...args: Array<any>): void
+    pull(...args: T[]): void;
   }
 }
 
@@ -14,11 +14,6 @@ declare global {
  * let myArray = ['a', 'b', 'c', 'a', 'b', 'c'];
  * myArray.pull('a', 'c'); // myArray = [ 'b', 'b' ];
  */
-Array.prototype.pull = function(...args: Array<any>): void {
-  let argState = Array.isArray(args[0]) ? args[0] : args
-  let pulled = this.filter((value: any) => !argState.includes(value))
-
-  this.length = 0
-
-  pulled.forEach((value) => this.push(value))
-}
+Array.prototype.pull = function(...args) {
+  return method(this, ...args);
+};

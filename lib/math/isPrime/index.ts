@@ -1,8 +1,8 @@
-export { }
+import * as method from "./method";
 
 declare global {
   interface Math {
-    isPrime(num: number): boolean
+    isPrime(num: number): boolean;
   }
 }
 
@@ -14,10 +14,4 @@ declare global {
  * @example
  * Math.isPrime(11); // true
  */
-Math.isPrime = (num: number): boolean => {
-  const boundary = Math.floor(Math.sqrt(num))
-
-  for (let i = 2; i <= boundary; i++) if (num % i == 0) return false
-
-  return num >= 2
-}
+Math.isPrime = method;

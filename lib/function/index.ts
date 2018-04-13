@@ -1,6 +1,6 @@
 /** @namespace Function */
 
-import './cache'
-import './defer'
-import './isInstance'
-import './once'
+import "./cache";
+import "./defer";
+import "./isInstance";
+import "./once";

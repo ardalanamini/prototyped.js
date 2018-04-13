@@ -1,8 +1,8 @@
-export { }
+import * as method from "./method";
 
 declare global {
   interface BooleanConstructor {
-    isInstance(arg: any): arg is boolean
+    isInstance(arg: any): arg is boolean;
   }
 }
 
@@ -15,4 +15,4 @@ declare global {
  * Boolean.isInstance('foo bar'); // false
  * Boolean.isInstance(flase); // true
  */
-Boolean.isInstance = (arg: any): arg is boolean => typeof arg === 'boolean'
+Boolean.isInstance = method;

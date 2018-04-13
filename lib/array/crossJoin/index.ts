@@ -1,8 +1,8 @@
-export { }
+import * as method from "./method";
 
 declare global {
   interface Array<T> {
-    crossJoin(array: Array<any>): Array<[T, any]>
+    crossJoin(array: any[]): Array<[T, any]>;
   }
 }
 
@@ -14,17 +14,6 @@ declare global {
  * @example
  * [1, 2].crossJoin(['a', 'b']); // [[1, 'a'], [1, 'b'], [2, 'a'], [2, 'b']]
  */
-Array.prototype.crossJoin = function(array: Array<any>): Array<[any, any]> {
-  let joined: Array<[any, any]> = []
-
-  this.map((item) => {
-    array.map((value) => {
-      joined.push([
-        item,
-        value
-      ])
-    })
-  })
-
-  return joined
-}
+Array.prototype.crossJoin = function(array) {
+  return method(this, array);
+};

@@ -1,8 +1,8 @@
-export { }
+import * as method from "./method";
 
 declare global {
   interface String {
-    reverse(): string
+    reverse(): string;
   }
 }
 
@@ -11,8 +11,8 @@ declare global {
  * @memberof String
  * @returns {string}
  * @example
- * 'foobar'.reverse(); // 'raboof'
+ * "foobar".reverse(); // "raboof"
  */
-String.prototype.reverse = function(): string {
-  return [...this].reverse().join('')
-}
+String.prototype.reverse = function() {
+  return method(this as string);
+};

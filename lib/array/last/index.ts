@@ -1,8 +1,8 @@
-export { }
+import * as method from "./method";
 
 declare global {
   interface Array<T> {
-    last(): T
+    last(): T;
   }
 }
 
@@ -13,6 +13,6 @@ declare global {
  * @example
  * [1, 2, 3].last(); // 3
  */
-Array.prototype.last = function(): any {
-  return this[this.length - 1]
-}
+Array.prototype.last = function() {
+  return method(this);
+};

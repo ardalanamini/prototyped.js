@@ -1,10 +1,9 @@
-import { addPrototype } from '../utils'
-
-export { }
+import * as method from "./method";
+import { addPrototype } from "../utils";
 
 declare global {
   interface Object {
-    lowerCaseKeys(): object
+    $lowerCaseKeys(): object;
   }
 }
 
@@ -13,15 +12,11 @@ declare global {
  * @memberof Object.prototype
  * @returns {Object}
  * @example
- * const myObj = { Name: 'Adam', sUrnAME: 'Smith' };
- * const myObjLower = myObj.lowerCaseKeys(); // {name: 'Adam', surname: 'Smith'}
+ * const myObj = { Name: "Adam", sUrnAME: "Smith" };
+ * const myObjLower = myObj.$lowerCaseKeys(); // {name: "Adam", surname: "Smith"}
  */
-function lowerCaseKeys(this: { [key: string]: any }): object {
-  return Object.keys(this).reduce((acc: { [key: string]: any }, key) => {
-    acc[key.toLowerCase()] = this[key]
-
-    return acc
-  }, {})
+function $lowerCaseKeys(this: object): object {
+  return method(this);
 }
 
-addPrototype('lowerCaseKeys', lowerCaseKeys)
+addPrototype($lowerCaseKeys);

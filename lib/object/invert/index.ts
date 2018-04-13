@@ -1,10 +1,9 @@
-import { addPrototype } from '../utils'
-
-export { }
+import * as method from "./method";
+import { addPrototype } from "../utils";
 
 declare global {
   interface Object {
-    invert(): object
+    $invert(): object;
   }
 }
 
@@ -13,14 +12,10 @@ declare global {
  * @memberof Object.prototype
  * @returns {Object}
  * @example
- * { name: 'John', age: 20 }.invert(); // { 20: 'age', John: 'name' }
+ * { name: "John", age: 20 }.$invert(); // { 20: "age", John: "name" }
  */
-function invert(this: { [key: string]: any }): object {
-  return Object.keys(this).reduce((acc: { [key: string]: any }, key) => {
-    acc[this[key]] = key
-
-    return acc
-  }, {})
+function $invert(this: object): object {
+  return method(this);
 }
 
-addPrototype('invert', invert)
+addPrototype($invert);

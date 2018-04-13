@@ -4,17 +4,43 @@
 	<a href="https://www.npmjs.com/package/prototyped.js" target="_blank">
 	   <img src="https://img.shields.io/npm/v/prototyped.js.svg" alt="npm version">
 	</a>
+	<a href="https://www.typescriptlang.org" target="_blank">
+		<img src="https://img.shields.io/npm/types/prototyped.js.svg" alt="typescript version">
+	</a>
+	<a href="http://packagequality.com/#?package=prototyped.js" target="_blank">
+		<img src="http://npm.packagequality.com/shield/prototyped.js.svg" alt="package quality">
+	</a>
+	<a href="https://www.npmjs.com/package/prototyped.js" target="_blank">
+		<img src="https://img.shields.io/npm/dt/prototyped.js.svg" alt="npm downloads">
+	</a>
 	<a href="https://www.npmjs.com/package/prototyped.js" target="_blank">
 	   <img src="https://img.shields.io/npm/dm/prototyped.js.svg" alt="npm monthly downloads">
 	</a>
-	<a href="https://github.com/ardalanamini/prototyped.js/stargazers" target="_blank">
-	   <img src="https://img.shields.io/github/stars/ardalanamini/prototyped.js.svg" alt="github stars">
+	<a href="https://github.com/ardalanamini/prototyped.js/issues?q=is%3Aopen+is%3Aissue" target="_blank">
+		<img src="https://img.shields.io/github/issues-raw/ardalanamini/prototyped.js.svg" alt="open issues">
+	</a>
+	<a href="https://github.com/ardalanamini/prototyped.js/issues?q=is%3Aissue+is%3Aclosed" target="_blank">
+		<img src="https://img.shields.io/github/issues-closed-raw/ardalanamini/prototyped.js.svg" alt="closed issues">
 	</a>
 	<a href="https://github.com/facebook/jest" target="_blank">
 	   <img src="https://img.shields.io/badge/tested_with-jest-99424f.svg" alt="tested with jest">
+	</a><a href="https://snyk.io/test/github/ardalanamini/prototyped.js?targetFile=package.json" target="_blank">
+		<img src="https://snyk.io/test/github/ardalanamini/prototyped.js/badge.svg?targetFile=package.json" alt="known vulnerabilities" data-canonical-src="https://snyk.io/test/github/ardalanamini/prototyped.js?targetFile=package.json" style="max-width:100%;">
+	</a>
+	<a href="https://david-dm.org/ardalanamini/prototyped.js" target="_blank">
+		<img src="https://david-dm.org/ardalanamini/prototyped.js.svg" alt="dependencies status">
+	</a>
+	<a href="https://github.com/ardalanamini/prototyped.js/pulls" target="_blank">
+		<img src="https://img.shields.io/badge/PRs-Welcome-brightgreen.svg" alt="pull requests">
 	</a>
 	<a href="https://github.com/ardalanamini/prototyped.js/blob/master/LICENSE" target="_blank">
-	   <img src="https://img.shields.io/github/license/ardalanamini/prototyped.js.svg" alt="tested with jest">
+		<img src="https://img.shields.io/github/license/ardalanamini/prototyped.js.svg" alt="license">
+	</a>
+	<a href="https://github.com/ardalanamini/prototyped.js" target="_blank">
+		<img src="https://img.shields.io/github/stars/ardalanamini/prototyped.js.svg?style=social&label=Stars" alt="github stars">
+	</a>
+	<a href="https://github.com/ardalanamini/prototyped.js" target="_blank">
+		<img src="https://img.shields.io/github/forks/ardalanamini/prototyped.js.svg?style=social&label=Fork" alt="github stars">
 	</a>
 	<br>
 </div>
@@ -55,4 +81,20 @@ require('prototyped.js/dist/string/words');
 console.log('hello world!'.words()); // ['hello', 'world']
 ```
 
+even better, just import the method you want
+
+```javascript
+const words = require('prototyped.js/dist/string/words/method');
+
+console.log(words('hello world!')); // ['hello', 'world']
+```
+
 All documents are available at [API.md](https://github.com/ardalanamini/prototyped.js/blob/master/API.md)
+
+## Support
+
+If my work helps you, please consider
+
+<a href="https://www.buymeacoffee.com/ardalanamini" target="_blank">
+	<img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;">
+</a>

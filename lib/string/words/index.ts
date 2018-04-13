@@ -1,8 +1,8 @@
-export { }
+import * as method from "./method";
 
 declare global {
   interface String {
-    words(pattern?: RegExp): Array<string>
+    words(pattern?: RegExp): string[];
   }
 }
 
@@ -15,6 +15,6 @@ declare global {
  * 'I love javaScript!!'.words(); // ["I", "love", "javaScript"]
  * 'python, javaScript & coffee'.words(); // ["python", "javaScript", "coffee"]
  */
-String.prototype.words = function(pattern = /[^a-zA-Z-]+/): Array<string> {
-  return this.split(pattern).filter(Boolean)
-}
+String.prototype.words = function(pattern) {
+  return method(this as string, pattern);
+};

@@ -1,8 +1,8 @@
-export { }
+import * as method from "./method";
 
 declare global {
   interface Array<T> {
-    deepFlatten(): Array<any>
+    deepFlatten(): any[];
   }
 }
 
@@ -13,8 +13,6 @@ declare global {
  * @example
  * [1, [2], [[3], 4], 5].deepFlatten(); // [1,2,3,4,5]
  */
-Array.prototype.deepFlatten = function(): Array<any> {
-  const _deepFlatten: (arr: Array<any>) => Array<any> = (arr) => [].concat(...arr.map(v => (Array.isArray(v) ? _deepFlatten(v) : v)))
-
-  return _deepFlatten(this)
-}
+Array.prototype.deepFlatten = function() {
+  return method(this);
+};

@@ -1,9 +1,9 @@
-export { }
+import * as method from "./method";
 
 declare global {
   interface Math {
-    average(...nums: Array<number>): number
-    avg(...nums: Array<number>): number
+    average(...nums: number[]): number;
+    avg(...nums: number[]): number;
   }
 }
 
@@ -16,7 +16,7 @@ declare global {
  * Math.average(...[1, 2, 3]); // 2
  * Math.average(1, 2, 3); // 2
  */
-Math.average = (...nums: Array<number>): number => [...nums].reduce((prev, val) => prev + val, 0) / nums.length
+Math.average = method;
 
 /**
  * Returns the average of an of two or more numbers
@@ -27,4 +27,4 @@ Math.average = (...nums: Array<number>): number => [...nums].reduce((prev, val) 
  * Math.avg(...[1, 2, 3]); // 2
  * Math.avg(1, 2, 3); // 2
  */
-Math.avg = Math.average
+Math.avg = Math.average;

@@ -1,9 +1,8 @@
-export { }
+import * as method from "./method";
 
 declare global {
   interface Math {
-    isEven(num: number): boolean
-    isPrime(num: number): boolean
+    isEven(num: number): boolean;
   }
 }
 
@@ -15,4 +14,4 @@ declare global {
  * @example
  * Math.isEven(3); // false
  */
-Math.isEven = (num: number): boolean => num % 2 === 0
+Math.isEven = method;

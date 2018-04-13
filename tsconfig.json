@@ -3,9 +3,15 @@
   "compilerOptions": {
     "module": "commonjs",
     "target": "es6",
-    "rootDir": "./lib",
-    "outDir": "./es6",
+    "rootDir": "lib",
+    "outDir": "es6",
     "declaration": true,
     "strict": true
-  }
+  },
+  "include": [
+    "lib/**/*"
+  ],
+  "exclude": [
+    "**/test.ts"
+  ]
 }
