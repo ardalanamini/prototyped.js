@@ -1,6 +1,6 @@
 {
   "name": "prototyped.js",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Common typescript ready prototypes available in both es5 and es6",
   "author": "Ardalan Amini <ardalanamini22@gmail.com>",
   "license": "MIT",
@@ -106,9 +106,9 @@
     "es6"
   ],
   "scripts": {
-    "doc": "tsc && jsdoc2md es6/*.js es6/**/*.js es6/**/**/*.js --example-lang javascript > API.md",
+    "prepare": "npm test && npm run lint && npm run doc && npm run build",
     "build": "node scripts/build.js",
-    "prepare": "npm test && npm run build",
+    "doc": "tsc && jsdoc2md es6/*.js es6/**/*.js es6/**/**/*.js --example-lang javascript > API.md",
     "lint": "tslint -p tsconfig.json -c tslint.json --exclude '**/*.d.ts'",
     "test": "jest"
   },

@@ -18,4 +18,4 @@ function $invert(this: object): object {
   return method(this);
 }
 
-addPrototype($invert);
+addPrototype("$invert", $invert);
