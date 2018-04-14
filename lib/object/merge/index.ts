@@ -28,4 +28,4 @@ function $merge(this: object, ...objects: object[]): object {
   return method(this, ...objects);
 }
 
-addPrototype($merge);
+addPrototype("$merge", $merge);

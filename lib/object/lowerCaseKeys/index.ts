@@ -19,4 +19,4 @@ function $lowerCaseKeys(this: object): object {
   return method(this);
 }
 
-addPrototype($lowerCaseKeys);
+addPrototype("$lowerCaseKeys", $lowerCaseKeys);

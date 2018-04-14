@@ -18,4 +18,4 @@ function $size(this: object): number {
   return method(this);
 }
 
-addPrototype($size);
+addPrototype("$size", $size);

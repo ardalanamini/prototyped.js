@@ -20,4 +20,4 @@ function $mapKeys(this: object, fn: (value: any, key: string | number, object: o
   return method(this, fn);
 }
 
-addPrototype($mapKeys);
+addPrototype("$mapKeys", $mapKeys);

@@ -24,4 +24,4 @@ function $map(this: object, fn: (value: any, key: string | number, object: objec
   return method(this, fn);
 }
 
-addPrototype($map);
+addPrototype("$map", $map);
