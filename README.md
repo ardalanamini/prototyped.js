@@ -87,6 +87,10 @@ even better, just import the method you want
 const words = require('prototyped.js/dist/string/words/method');
 
 console.log(words('hello world!')); // ['hello', 'world']
+
+const methods = require('prototyped.js/dist/methods');
+
+console.log(methods.string.words('hello world!')); // ['hello', 'world']
 ```
 
 All documents are available at [API.md](https://github.com/ardalanamini/prototyped.js/blob/master/API.md)
