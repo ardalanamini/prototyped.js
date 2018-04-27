@@ -1,3 +1,5 @@
-/** @namespace Number */
+import * as isInstance from "./isInstance/method";
 
-import "./isInstance";
+export {
+  isInstance,
+};

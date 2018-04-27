@@ -1,6 +1,6 @@
 {
   "name": "prototyped.js",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "description": "Common typescript ready prototypes available in both es5 and es6",
   "author": "Ardalan Amini <ardalanamini22@gmail.com>",
   "license": "MIT",

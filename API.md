@@ -13,8 +13,6 @@
 <dd></dd>
 <dt><a href="#Number">Number</a> : <code>object</code></dt>
 <dd></dd>
-<dt><a href="#Number">Number</a> : <code>object</code></dt>
-<dd></dd>
 <dt><a href="#Object">Object</a> : <code>object</code></dt>
 <dd></dd>
 <dt><a href="#String">String</a> : <code>object</code></dt>
@@ -960,26 +958,6 @@ Returns the least common multiple of two or more numbers
 ```javascript
 Math.lcm(12, 7); // 84
 Math.lcm(...[1, 3, 4, 5]); // 60
-```
-<a name="Number"></a>
-
-## Number : <code>object</code>
-**Kind**: global namespace  
-<a name="Number.isInstance"></a>
-
-### Number.isInstance ⇒ <code>boolean</code>
-Returns true if the given argument is a number
-
-**Kind**: static property of [<code>Number</code>](#Number)  
-
-| Param | Type |
-| --- | --- |
-| arg | <code>\*</code> | 
-
-**Example**  
-```javascript
-Number.isInstance('foo bar'); // false
-Number.isInstance(2); // true
 ```
 <a name="Number"></a>
 
