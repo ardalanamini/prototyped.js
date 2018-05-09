@@ -13,6 +13,7 @@ import * as map from "./map/method";
 import * as mask from "./mask/method";
 import * as pluralize from "./pluralize/method";
 import * as reverse from "./reverse/method";
+import * as singularize from "./singularize/method";
 import * as snakeCase from "./snakeCase/method";
 import * as swapCase from "./swapCase/method";
 import * as truncate from "./truncate/method";
@@ -34,6 +35,7 @@ export {
   mask,
   pluralize,
   reverse,
+  singularize,
   snakeCase,
   swapCase,
   truncate,
