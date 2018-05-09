@@ -1121,8 +1121,9 @@ Object.isInstance({foo: 'bar'}); // true
         * [.lines()](#String+lines) ⇒ <code>Array.&lt;string&gt;</code>
         * [.map(fn)](#String+map) ⇒ <code>Array.&lt;string&gt;</code>
         * [.mask([num], [mask])](#String+mask) ⇒ <code>string</code>
-        * [.pluralize(value, [plural])](#String+pluralize) ⇒ <code>string</code>
+        * [.pluralize([value])](#String+pluralize) ⇒ <code>string</code>
         * [.reverse()](#String+reverse) ⇒ <code>string</code>
+        * [.singularize()](#String+singularize) ⇒ <code>string</code>
         * [.snakeCase()](#String+snakeCase) ⇒ <code>string</code>
         * [.swapCase()](#String+swapCase) ⇒ <code>string</code>
         * [.truncate(num, [truncateString])](#String+truncate) ⇒ <code>string</code>
@@ -1294,22 +1295,23 @@ Replaces all but the last num of characters with the specified mask character
 ```
 <a name="String+pluralize"></a>
 
-### string.pluralize(value, [plural]) ⇒ <code>string</code>
+### string.pluralize([value]) ⇒ <code>string</code>
 Returns the singular or plural form of the word based on the input number
 
 **Kind**: instance method of [<code>String</code>](#String)  
 
 | Param | Type |
 | --- | --- |
-| value | <code>number</code> | 
-| [plural] | <code>string</code> | 
+| [value] | <code>number</code> | 
 
 **Example**  
 ```javascript
+'apple'.pluralize(); // 'apples'
 'apple'.pluralize(0); // 'apples'
 'apple'.pluralize(1); // 'apple'
 'apple'.pluralize(2); // 'apples'
-'person'.pluralize(2, 'people'); // 'people'
+'person'.pluralize(2); // 'people'
+'people'.pluralize(1); // 'person'
 ```
 <a name="String+reverse"></a>
 
@@ -1320,6 +1322,19 @@ Reverses the string
 **Example**  
 ```javascript
 "foobar".reverse(); // "raboof"
+```
+<a name="String+singularize"></a>
+
+### string.singularize() ⇒ <code>string</code>
+Returns the singular form of the word
+
+**Kind**: instance method of [<code>String</code>](#String)  
+**Example**  
+```javascript
+'apple'.singularize(); // 'apple'
+'apples'.singularize(); // 'apple'
+'person'.singularize(); // 'person'
+'people'.singularize(); // 'person'
 ```
 <a name="String+snakeCase"></a>
 

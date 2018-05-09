@@ -2,22 +2,23 @@ import * as method from "./method";
 
 declare global {
   interface String {
-    pluralize(value: number, plural?: string): string;
+    pluralize(value?: number): string;
   }
 }
 
 /**
  * Returns the singular or plural form of the word based on the input number
  * @memberof String
- * @param {number} value
- * @param {string} [plural]
+ * @param {number} [value]
  * @returns {string}
  * @example
+ * 'apple'.pluralize(); // 'apples'
  * 'apple'.pluralize(0); // 'apples'
  * 'apple'.pluralize(1); // 'apple'
  * 'apple'.pluralize(2); // 'apples'
- * 'person'.pluralize(2, 'people'); // 'people'
+ * 'person'.pluralize(2); // 'people'
+ * 'people'.pluralize(1); // 'person'
  */
-String.prototype.pluralize = function(value, plural) {
-  return method(this as string, value, plural);
+String.prototype.pluralize = function(value) {
+  return method(this as string, value);
 };

@@ -15,6 +15,7 @@ import "./map";
 import "./mask";
 import "./pluralize";
 import "./reverse";
+import "./singularize";
 import "./snakeCase";
 import "./swapCase";
 import "./truncate";
