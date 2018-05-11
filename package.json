@@ -1,6 +1,6 @@
 {
   "name": "prototyped.js",
-  "version": "0.5.4",
+  "version": "0.6.0",
   "description": "Common typescript ready prototypes available in both es5 and es6",
   "author": "Ardalan Amini <ardalanamini22@gmail.com>",
   "license": "MIT",
@@ -44,7 +44,18 @@
     "pull",
     "sample",
     "shuffle",
+    "skip",
+    "offset",
     "union",
+    "where",
+    "whereBetween",
+    "whereIn",
+    "whereLike",
+    "whereNotBetween",
+    "whereNotIn",
+    "whereNotLike",
+    "whereNotNull",
+    "whereNull",
     "zip",
     "zipObject",
     "pluck",
@@ -113,12 +124,15 @@
     "lint": "tslint -p tsconfig.json -c tslint.json --exclude '**/*.d.ts'",
     "test": "jest"
   },
+  "dependencies": {
+    "pluralize": "^7.0.0"
+  },
   "devDependencies": {
     "@types/jest": "^22.2.3",
-    "@types/node": "^9.6.14",
+    "@types/node": "^9.6.15",
     "@types/pluralize": "0.0.28",
     "babel-core": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
+    "babel-preset-env": "^1.7.0",
     "fs-extra": "^5.0.0",
     "fs-readdir-recursive": "^1.1.0",
     "jest": "^22.4.3",
@@ -140,8 +154,5 @@
     "testMatch": [
       "<rootDir>/lib/**/test\\.ts"
     ]
-  },
-  "dependencies": {
-    "pluralize": "^7.0.0"
   }
 }

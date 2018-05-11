@@ -23,9 +23,11 @@ import * as initial from "./initial/method";
 import * as intersect from "./intersect/method";
 import * as isInstance from "./isInstance/method";
 import * as last from "./last/method";
+import * as limit from "./limit/method";
 import * as max from "./max/method";
 import * as median from "./median/method";
 import * as min from "./min/method";
+import * as orderBy from "./orderBy/method";
 import * as pad from "./pad/method";
 import * as partition from "./partition/method";
 import * as pluck from "./pluck/method";
@@ -35,9 +37,19 @@ import * as range from "./range/method";
 import * as repeat from "./repeat/method";
 import * as sample from "./sample/method";
 import * as shuffle from "./shuffle/method";
+import * as skip from "./skip/method";
 import * as sum from "./sum/method";
 import * as tail from "./tail/method";
 import * as union from "./union/method";
+import * as where from "./where/method";
+import * as whereBetween from "./whereBetween/method";
+import * as whereIn from "./whereIn/method";
+import * as whereLike from "./whereLike/method";
+import * as whereNotBetween from "./whereNotBetween/method";
+import * as whereNotIn from "./whereNotIn/method";
+import * as whereNotLike from "./whereNotLike/method";
+import * as whereNotNull from "./whereNotNull/method";
+import * as whereNull from "./whereNull/method";
 import * as zip from "./zip/method";
 import * as zipObject from "./zipObject/method";
 
@@ -67,9 +79,11 @@ export {
   intersect,
   isInstance,
   last,
+  limit,
   max,
   median,
   min,
+  orderBy,
   pad,
   partition,
   pluck,
@@ -79,9 +93,19 @@ export {
   repeat,
   sample,
   shuffle,
+  skip,
   sum,
   tail,
   union,
+  where,
+  whereBetween,
+  whereIn,
+  whereLike,
+  whereNotBetween,
+  whereNotIn,
+  whereNotLike,
+  whereNotNull,
+  whereNull,
   zip,
   zipObject,
 };
