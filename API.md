@@ -27,6 +27,8 @@
 * [Array](#Array) : <code>object</code>
     * _instance_
         * [.avg](#Array+avg) ⇒ <code>number</code>
+        * [.take](#Array+take) ⇒ [<code>Array</code>](#Array)
+        * [.offset](#Array+offset) ⇒ [<code>Array</code>](#Array)
         * [.all([fn])](#Array+all) ⇒ <code>boolean</code>
         * [.any([fn])](#Array+any) ⇒ <code>boolean</code>
         * [.append(value)](#Array+append)
@@ -51,9 +53,11 @@
         * [.initial()](#Array+initial) ⇒ [<code>Array</code>](#Array)
         * [.intersect(array)](#Array+intersect) ⇒ [<code>Array</code>](#Array)
         * [.last()](#Array+last) ⇒ <code>\*</code>
+        * [.limit([limit])](#Array+limit) ⇒ [<code>Array</code>](#Array)
         * [.max([key])](#Array+max) ⇒ <code>number</code>
         * [.median()](#Array+median) ⇒ [<code>Array</code>](#Array)
         * [.min([key])](#Array+min) ⇒ <code>number</code>
+        * [.orderBy([field], [order])](#Array+orderBy) ⇒ [<code>Array</code>](#Array)
         * [.pad(size, [value])](#Array+pad) ⇒ [<code>Array</code>](#Array)
         * [.partition(fn)](#Array+partition) ⇒ [<code>Array</code>](#Array)
         * [.pluck(key)](#Array+pluck) ⇒ [<code>Array</code>](#Array)
@@ -61,9 +65,19 @@
         * [.pull(args)](#Array+pull)
         * [.sample()](#Array+sample) ⇒ <code>\*</code>
         * [.shuffle()](#Array+shuffle) ⇒ [<code>Array</code>](#Array)
+        * [.skip([offset])](#Array+skip) ⇒ [<code>Array</code>](#Array)
         * [.sum([key])](#Array+sum) ⇒ <code>number</code>
         * [.tail()](#Array+tail) ⇒ [<code>Array</code>](#Array)
         * [.union(array)](#Array+union) ⇒ [<code>Array</code>](#Array)
+        * [.where(field, [operator], [value])](#Array+where) ⇒ [<code>Array</code>](#Array)
+        * [.whereBetween(field, start, [end])](#Array+whereBetween) ⇒ [<code>Array</code>](#Array)
+        * [.whereIn(field, [value])](#Array+whereIn) ⇒ [<code>Array</code>](#Array)
+        * [.whereLike(field, [value])](#Array+whereLike) ⇒ [<code>Array</code>](#Array)
+        * [.whereNotBetween(field, start, [end])](#Array+whereNotBetween) ⇒ [<code>Array</code>](#Array)
+        * [.whereNotIn(field, [value])](#Array+whereNotIn) ⇒ [<code>Array</code>](#Array)
+        * [.whereNotLike(field, [value])](#Array+whereNotLike) ⇒ [<code>Array</code>](#Array)
+        * [.whereNotNull([field])](#Array+whereNotNull) ⇒ [<code>Array</code>](#Array)
+        * [.whereNull([field])](#Array+whereNull) ⇒ [<code>Array</code>](#Array)
         * [.zip(array)](#Array+zip) ⇒ [<code>Array</code>](#Array)
         * [.zipObject(array)](#Array+zipObject) ⇒ [<code>Array</code>](#Array)
     * _static_
@@ -87,6 +101,36 @@ An alias of Array.prototype.average
 [1, 2, 3].avg(); // 2
 [{a: 1}, {a: 2}, {a: 3}].avg("a"); // 2
 [{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].avg("a.b"); // 2
+```
+<a name="Array+take"></a>
+
+### array.take ⇒ [<code>Array</code>](#Array)
+An alias of Array.prototype.skip
+
+**Kind**: instance property of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| [limit] | [<code>Number</code>](#Number) | 
+
+**Example**  
+```javascript
+[2, 1, 2, 5].take(2); // [2,1]
+```
+<a name="Array+offset"></a>
+
+### array.offset ⇒ [<code>Array</code>](#Array)
+An alias of Array.prototype.skip
+
+**Kind**: instance property of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| [offset] | [<code>Number</code>](#Number) | 
+
+**Example**  
+```javascript
+[2, 1, 2, 5].offset(1); // [1,2,5]
 ```
 <a name="Array+all"></a>
 
@@ -425,6 +469,21 @@ Returns the last item of the array
 ```javascript
 [1, 2, 3].last(); // 3
 ```
+<a name="Array+limit"></a>
+
+### array.limit([limit]) ⇒ [<code>Array</code>](#Array)
+limits the array
+
+**Kind**: instance method of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| [limit] | [<code>Number</code>](#Number) | 
+
+**Example**  
+```javascript
+[2, 1, 2, 5].limit(2); // [2,1]
+```
 <a name="Array+max"></a>
 
 ### array.max([key]) ⇒ <code>number</code>
@@ -469,6 +528,24 @@ Returns the minimum value of a given key
 [1, 2, 3].min(); // 1
 [{a: 1}, {a: 2}, {a: 3}].min('a'); // 1
 [{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].min('a.b'); // 1
+```
+<a name="Array+orderBy"></a>
+
+### array.orderBy([field], [order]) ⇒ [<code>Array</code>](#Array)
+sorts the array
+
+**Kind**: instance method of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| [field] | [<code>String</code>](#String) | 
+| [order] | <code>&quot;asc&quot;</code> \| <code>&quot;desc&quot;</code> | 
+
+**Example**  
+```javascript
+[2, 1, 2, 5].orderBy(); // [1,2,2,5]
+[2, 1, 2, 5].orderBy("desc"); // [5,2,2,1]
+[{count:1}, {count:20}, {count:15}].orderBy("count", "asc"); // [{count:1},{count:15},{count:20}]
 ```
 <a name="Array+pad"></a>
 
@@ -575,6 +652,21 @@ Randomizes the order of the values of an array, returning a new array
 const foo = [1, 2, 3];
 foo.shuffle(); // [2,3,1], foo = [1,2,3]
 ```
+<a name="Array+skip"></a>
+
+### array.skip([offset]) ⇒ [<code>Array</code>](#Array)
+skips the array
+
+**Kind**: instance method of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| [offset] | [<code>Number</code>](#Number) | 
+
+**Example**  
+```javascript
+[2, 1, 2, 5].skip(1); // [1,2,5]
+```
 <a name="Array+sum"></a>
 
 ### array.sum([key]) ⇒ <code>number</code>
@@ -616,6 +708,162 @@ Returns every element that exists in any of the two arrays once
 **Example**  
 ```javascript
 [1, 2, 3].union([4, 3, 2]); // [1,2,3,4]
+```
+<a name="Array+where"></a>
+
+### array.where(field, [operator], [value]) ⇒ [<code>Array</code>](#Array)
+Filters the array
+
+**Kind**: instance method of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| field | [<code>String</code>](#String) \| <code>\*</code> | 
+| [operator] | [<code>String</code>](#String) \| <code>\*</code> | 
+| [value] | <code>\*</code> | 
+
+**Example**  
+```javascript
+[1, 2, 2, 3, 4, 4, 5].where(4); // [4,4]
+[{count:1}, {count:20}, {count:15}].where("count", 15); // [{count:15}]
+[1, 2, 2, 3, 4, 4, 5].where("<", 4); // [1,2,2,3]
+[{count:1}, {count:20}, {count:15}].where("count", ">=", 15); // [{count:20},{count:15}]
+```
+<a name="Array+whereBetween"></a>
+
+### array.whereBetween(field, start, [end]) ⇒ [<code>Array</code>](#Array)
+Filters the array
+
+**Kind**: instance method of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| field | [<code>String</code>](#String) \| <code>any</code> | 
+| start | <code>any</code> | 
+| [end] | <code>any</code> | 
+
+**Example**  
+```javascript
+[1, 2, 2, 3, 4, 4, 5].whereBetween(3,4); // [3,4,4]
+[{count:1}, {count:20}, {count:15}].whereBetween("count", 1, 15); // [{count:1},{count:15}]
+```
+<a name="Array+whereIn"></a>
+
+### array.whereIn(field, [value]) ⇒ [<code>Array</code>](#Array)
+Filters the array
+
+**Kind**: instance method of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| field | [<code>String</code>](#String) \| [<code>Array</code>](#Array) | 
+| [value] | [<code>Array</code>](#Array) | 
+
+**Example**  
+```javascript
+[1, 2, 2, 3, 4, 4, 5].whereIn([3,4]); // [3,4,4]
+[{count:1}, {count:20}, {count:15}].whereIn("count", [1, 15]); // [{count:1},{count:15}]
+```
+<a name="Array+whereLike"></a>
+
+### array.whereLike(field, [value]) ⇒ [<code>Array</code>](#Array)
+Filters the array
+
+**Kind**: instance method of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| field | [<code>String</code>](#String) \| <code>RegExp</code> | 
+| [value] | [<code>String</code>](#String) \| <code>RegExp</code> | 
+
+**Example**  
+```javascript
+["foo", "bar", "hello", "world"].whereLike("o"); // ["foo","hello","world"]
+[{foo:"hello"}, {foo:"bar"}, {foo:"world"}].whereLike("foo", /o/i); // [{foo:"hello"},{foo:"world"}]
+```
+<a name="Array+whereNotBetween"></a>
+
+### array.whereNotBetween(field, start, [end]) ⇒ [<code>Array</code>](#Array)
+Filters the array
+
+**Kind**: instance method of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| field | [<code>String</code>](#String) \| <code>any</code> | 
+| start | <code>any</code> | 
+| [end] | <code>any</code> | 
+
+**Example**  
+```javascript
+[1, 2, 2, 3, 4, 4, 5].whereNotBetween(3,4); // [1,2,2,5]
+[{count:1}, {count:20}, {count:15}].whereNotBetween("count", 1, 15); // [{count:20}]
+```
+<a name="Array+whereNotIn"></a>
+
+### array.whereNotIn(field, [value]) ⇒ [<code>Array</code>](#Array)
+Filters the array
+
+**Kind**: instance method of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| field | [<code>String</code>](#String) \| [<code>Array</code>](#Array) | 
+| [value] | [<code>Array</code>](#Array) | 
+
+**Example**  
+```javascript
+[1, 2, 2, 3, 4, 4, 5].whereNotIn([3,4]); // [1,2,2,5]
+[{count:1}, {count:20}, {count:15}].whereNotIn("count", [1, 15]); // [{count:20}]
+```
+<a name="Array+whereNotLike"></a>
+
+### array.whereNotLike(field, [value]) ⇒ [<code>Array</code>](#Array)
+Filters the array
+
+**Kind**: instance method of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| field | [<code>String</code>](#String) \| <code>RegExp</code> | 
+| [value] | [<code>String</code>](#String) \| <code>RegExp</code> | 
+
+**Example**  
+```javascript
+["foo", "bar", "hello", "world"].whereNotLike("o"); // ["bar"]
+[{foo:"hello"}, {foo:"bar"}, {foo:"world"}].whereNotLike("foo", /o/i); // [{foo:"bar"}]
+```
+<a name="Array+whereNotNull"></a>
+
+### array.whereNotNull([field]) ⇒ [<code>Array</code>](#Array)
+Filters the array
+
+**Kind**: instance method of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| [field] | [<code>String</code>](#String) | 
+
+**Example**  
+```javascript
+[1, 2, 2, 3, null, undefined, 5].whereNotNull(); // [1,2,2,3,5]
+[{count:1}, {count:null}, {foo:15}].whereNotNull("count"); // [{count:1}]
+```
+<a name="Array+whereNull"></a>
+
+### array.whereNull([field]) ⇒ [<code>Array</code>](#Array)
+Filters the array
+
+**Kind**: instance method of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| [field] | [<code>String</code>](#String) | 
+
+**Example**  
+```javascript
+[1, 2, 2, 3, null, undefined, 5].whereNull(); // [null, undefined]
+[{count:1}, {count:null}, {foo:15}].whereNull("count"); // [{count:null},{foo:15}]
 ```
 <a name="Array+zip"></a>
 

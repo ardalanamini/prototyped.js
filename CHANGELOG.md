@@ -1,5 +1,24 @@
 # Changelog
 
+## [v0.6.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.6.0) *(2018-05-11)*
+**Implemented enhancements:**
+- `Array.prototype`
+	- function `limit` added
+	- function `take` added
+	- function `orderBy` added
+	- function `skip` added
+	- function `offset` added
+	- function `where` added
+	- function `whereBetween` added
+	- function `whereIn` added
+	- function `whereLike` added
+	- function `whereNotBetween` added
+	- function `whereNotIn` added
+	- function `whereNotLike` added
+	- function `whereNotNull` added
+	- function `whereNull` added
+
+
 ## [v0.5.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.5.0) *(2018-04-13)*
 **Implemented enhancements:**
 - `Array.prototype`
