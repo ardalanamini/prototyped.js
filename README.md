@@ -7,6 +7,9 @@
 	<a href="https://www.typescriptlang.org" target="_blank">
 		<img src="https://img.shields.io/npm/types/prototyped.js.svg" alt="typescript version">
 	</a>
+	<a href="https://travis-ci.com/ardalanamini/prototyped.js" target="_blank">
+		<img src="https://api.travis-ci.com/ardalanamini/prototyped.js.svg?branch=master" alt="build status">
+	</a>
 	<a href="http://packagequality.com/#?package=prototyped.js" target="_blank">
 		<img src="http://npm.packagequality.com/shield/prototyped.js.svg" alt="package quality">
 	</a>
