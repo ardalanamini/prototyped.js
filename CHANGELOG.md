@@ -1,5 +1,14 @@
 # Changelog
 
+
+## [v0.7.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.7.0) *(2018-05-20)*
+**Implemented enhancements:**
+- `Object.prototype`
+	- function `camelCaseKeys` added
+	- function `kebabCaseKeys` added
+	- function `snakeCaseKeys` added
+
+
 ## [v0.6.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.6.0) *(2018-05-11)*
 **Implemented enhancements:**
 - `Array.prototype`

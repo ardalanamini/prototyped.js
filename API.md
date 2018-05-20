@@ -1234,15 +1234,29 @@ Number.isInstance(2); // true
 
 * [Object](#Object) : <code>object</code>
     * _instance_
+        * [.$camelCaseKeys()](#Object+$camelCaseKeys) ⇒ [<code>Object</code>](#Object)
         * [.$invert()](#Object+$invert) ⇒ [<code>Object</code>](#Object)
+        * [.$kebabCaseKeys()](#Object+$kebabCaseKeys) ⇒ [<code>Object</code>](#Object)
         * [.$lowerCaseKeys()](#Object+$lowerCaseKeys) ⇒ [<code>Object</code>](#Object)
         * [.$map(fn)](#Object+$map) ⇒ [<code>Object</code>](#Object)
         * [.$mapKeys(fn)](#Object+$mapKeys) ⇒ [<code>Object</code>](#Object)
         * [.$merge(...objects)](#Object+$merge) ⇒ [<code>Object</code>](#Object)
         * [.$size()](#Object+$size) ⇒ [<code>Object</code>](#Object)
+        * [.$snakeCaseKeys()](#Object+$snakeCaseKeys) ⇒ [<code>Object</code>](#Object)
     * _static_
         * [.isInstance](#Object.isInstance) ⇒ <code>boolean</code>
 
+<a name="Object+$camelCaseKeys"></a>
+
+### object.$camelCaseKeys() ⇒ [<code>Object</code>](#Object)
+Creates a new object from the specified object, where all the keys are in camel-case
+
+**Kind**: instance method of [<code>Object</code>](#Object)  
+**Example**  
+```javascript
+const myObj = { First_name: "Adam", "last-name": "Smith" };
+const myObjLower = myObj.$camelCaseKeys(); // {firstName: "Adam", lastName: "Smith"}
+```
 <a name="Object+$invert"></a>
 
 ### object.$invert() ⇒ [<code>Object</code>](#Object)
@@ -1252,6 +1266,17 @@ Inverts the key-value pairs of the object, without mutating it
 **Example**  
 ```javascript
 { name: "John", age: 20 }.$invert(); // { 20: "age", John: "name" }
+```
+<a name="Object+$kebabCaseKeys"></a>
+
+### object.$kebabCaseKeys() ⇒ [<code>Object</code>](#Object)
+Creates a new object from the specified object, where all the keys are in kebab-case
+
+**Kind**: instance method of [<code>Object</code>](#Object)  
+**Example**  
+```javascript
+const myObj = { First_name: "Adam", lastName: "Smith" };
+const myObjLower = myObj.$kebabCaseKeys(); // {first-name: "Adam", last-name: "Smith"}
 ```
 <a name="Object+$lowerCaseKeys"></a>
 
@@ -1333,6 +1358,17 @@ Get size of the object
 **Example**  
 ```javascript
 { one: 1, two: 2, three: 3 }.$size(); // 3
+```
+<a name="Object+$snakeCaseKeys"></a>
+
+### object.$snakeCaseKeys() ⇒ [<code>Object</code>](#Object)
+Creates a new object from the specified object, where all the keys are in snake-case
+
+**Kind**: instance method of [<code>Object</code>](#Object)  
+**Example**  
+```javascript
+const myObj = { FirstName: "Adam", "last-name": "Smith" };
+const myObjLower = myObj.$snakeCaseKeys(); // {first_name: "Adam", last_name: "Smith"}
 ```
 <a name="Object.isInstance"></a>
 
