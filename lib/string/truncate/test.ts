@@ -10,4 +10,14 @@ describe("String.prototype.truncate", () => {
     expect("boomerang".truncate(7, "...."))
       .toBe("boo....");
   });
+
+  test("\"boomerang\".truncate(10) returns \"boomerang\"", () => {
+    expect("boomerang".truncate(10))
+      .toBe("boomerang");
+  });
+
+  test("\"boomerang\".truncate(2) returns \"bo...\"", () => {
+    expect("boomerang".truncate(2))
+      .toBe("bo...");
+  });
 });

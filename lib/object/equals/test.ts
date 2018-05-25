@@ -17,4 +17,19 @@ describe("Object.prototype.$equals", () => {
     expect(date.$equals({ a: 1 }))
       .toBe(false);
   });
+
+  test("date.$equals(date) returns true", () => {
+    const date = new Date();
+
+    expect(date.$equals(new Date()))
+      .toBe(true);
+  });
+
+  test("false.$equals(null) returns false", () => {
+    expect(false.$equals(null)).toBe(false);
+  });
+
+  test("Date.$equals(Object) returns false", () => {
+    expect(Date.$equals(Object)).toBe(false);
+  });
 });

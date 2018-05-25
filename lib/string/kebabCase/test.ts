@@ -29,4 +29,9 @@ describe("String.prototype.kebabCase", () => {
       expect("IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML".kebabCase())
         .toBe("i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-some-xml-and-html");
     });
+
+  test("\"\".kebabCase() returns \"\"", () => {
+    expect("".kebabCase())
+      .toBe("");
+  });
 });

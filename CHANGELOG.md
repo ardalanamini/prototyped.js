@@ -1,6 +1,12 @@
 # Changelog
 
 
+## [next](https://github.com/ardalanamini/prototyped.js/releases/tag/next) *(2018-__-__)*
+**Implemented enhancements:**
+- `Number`
+	- function `digitize` added
+
+
 ## [v0.8.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.8.0) *(2018-05-25)*
 **Implemented enhancements:**
 - `Array.prototype`

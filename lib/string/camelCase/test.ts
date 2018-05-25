@@ -21,4 +21,9 @@ describe("String.prototype.camelCase", () => {
       expect("some-mixed_string with spaces_underscores-and-hyphens".camelCase())
         .toBe("someMixedStringWithSpacesUnderscoresAndHyphens");
     });
+
+  test("\"\".camelCase() returns \"\"", () => {
+    expect("".camelCase())
+      .toBe("");
+  });
 });

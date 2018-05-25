@@ -5,7 +5,11 @@ describe("Array.prototype.get", () => {
     expect([1, 2, 3].get(0, "default value")).toBe(1);
   });
 
-  test("[1, 2, 3].get(4, -10) returns 0", () => {
+  test("[1, 2, 3].get(4, -10) returns -10", () => {
     expect([1, 2, 3].get(4, -10)).toBe(-10);
+  });
+
+  test("[1, 2, 3].get(4) returns null", () => {
+    expect([1, 2, 3].get(4)).toBe(null);
   });
 });

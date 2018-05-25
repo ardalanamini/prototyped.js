@@ -1,6 +1,6 @@
 // tslint:disable-next-line:ban-types
 const method = (func: Function): any => {
-  const cache = new Map();
+  const cache = func.cached || new Map();
 
   const cached = (...args: any[]) => {
     const key = JSON.stringify(args);
@@ -8,7 +8,7 @@ const method = (func: Function): any => {
     return cache.has(key) ? cache.get(key) : cache.set(key, func.call(func, ...args)) && cache.get(key);
   };
 
-  cached.cached = cache;
+  func.cached = cache;
 
   return cached;
 };

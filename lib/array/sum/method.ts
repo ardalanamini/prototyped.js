@@ -1,18 +1,13 @@
 const method = (arr: any[], key?: string): number => {
   if (key) {
     const keys = key.split(".");
-    let sum = 0;
 
-    arr.map((item) => {
-      keys.map((k) => item = (item && item[k]) || 0);
+    const reducer = (item: any) => keys.reduce((prev, curr) => (prev && prev[curr]) || 0, item);
 
-      sum += item;
-    });
-
-    return sum;
+    return arr.reduce((prev, cur) => prev + reducer(cur), 0);
   }
 
-  return arr.reduce((acc, val) => acc + val, 0);
+  return arr.reduce((prev, cur) => prev + cur, 0);
 };
 
 export = method;

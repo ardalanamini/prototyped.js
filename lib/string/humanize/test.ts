@@ -8,4 +8,9 @@ describe("String.prototype.humanize", () => {
       expect("  capitalize dash-CamelCase_underscore trim  ".humanize())
         .toBe("Capitalize dash camel case underscore trim");
     });
+
+  test("\"\".humanize() returns \"\"", () => {
+    expect("".humanize())
+      .toBe("");
+  });
 });

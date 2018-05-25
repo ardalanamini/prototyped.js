@@ -10,4 +10,9 @@ describe("Array.prototype.pluck", () => {
     expect([{ a: { b: 1 } }, { a: { b: 2 } }, { a: { b: 3 } }].pluck("a.b"))
       .toEqual([1, 2, 3]);
   });
+
+  test("[{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].pluck(\"a.c\") returns [undefined, undefined, undefined]", () => {
+    expect([{ a: { b: 1 } }, { a: { b: 2 } }, { a: { b: 3 } }].pluck("a.c"))
+      .toEqual([undefined, undefined, undefined]);
+  });
 });

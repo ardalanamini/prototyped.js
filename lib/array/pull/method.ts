@@ -1,5 +1,5 @@
 const method = (arr: any[], ...args: any[]): void => {
-  const pulled = arr.filter((value: any) => !(Array.isArray(args[0]) ? args[0] : args).includes(value));
+  const pulled = arr.filter((value: any) => !(args as any).includes(value));
 
   arr.length = 0;
 

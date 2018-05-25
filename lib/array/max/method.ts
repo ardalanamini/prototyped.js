@@ -1,21 +1,13 @@
 const method = (arr: any[], key?: string): number => {
-  let max: number = -Infinity;
+  let reducer = (item: any) => item;
 
   if (key) {
     const keys = key.split(".");
 
-    arr.map((item) => {
-      keys.map((k) => item = (item && item[k]) || 0);
-
-      max = Math.max(item, max);
-    });
-
-    return max;
+    reducer = (item: any) => keys.reduce((prev, curr) => (prev && prev[curr]) || -Infinity, item);
   }
 
-  arr.map((num) => max = Math.max(num, max));
-
-  return max;
+  return arr.reduce((prev, cur) => Math.max(prev, reducer(cur)), -Infinity);
 };
 
 export = method;

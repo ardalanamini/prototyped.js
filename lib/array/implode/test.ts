@@ -8,4 +8,12 @@ describe("Array.prototype.implode", () => {
       expect([{ a: { b: "first" } }, { a: { b: "second" } }, { a: { b: "third" } }].implode("a.b", ", "))
         .toBe("first, second, third");
     });
+
+  test(
+    "[{a: {b: \"first\"}}, {a: {b: \"second\"}}, {a: {b: \"third\"}}].implode(\"a.c\")" +
+    " returns \"\"",
+    () => {
+      expect([{ a: { b: "first" } }, { a: { b: "second" } }, { a: { b: "third" } }].implode("a.c"))
+        .toBe("");
+    });
 });

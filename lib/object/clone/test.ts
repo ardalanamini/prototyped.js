@@ -16,4 +16,12 @@ describe("Object.prototype.$clone", () => {
     expect(a).not.toBe(b);
     expect(a.obj).not.toBe((b as any).obj);
   });
+
+  test("{ foo: 'bar', arr: [ 1, 2 ] }.$clone(true)", () => {
+    const a = { foo: "bar", arr: [1, 2] };
+    const b = a.$clone(true); // a !== b, a.obj !== b.obj
+
+    expect(a).not.toBe(b);
+    expect(a.arr).not.toBe((b as any).arr);
+  });
 });

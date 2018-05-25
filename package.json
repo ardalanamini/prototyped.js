@@ -123,7 +123,7 @@
     "doc": "tsc && jsdoc2md es6/*.js es6/**/*.js es6/**/**/*.js --example-lang javascript > API.md",
     "lint": "tslint -p tsconfig.json -c tslint.json --exclude '**/*.d.ts'",
     "test": "jest",
-    "coveralls": "npm test -- --coverage && cat ./coverage/lcov.info | coveralls"
+    "coveralls": "npm test -- --coverage --coverageReporters=text-lcov | coveralls"
   },
   "dependencies": {
     "pluralize": "^7.0.0"

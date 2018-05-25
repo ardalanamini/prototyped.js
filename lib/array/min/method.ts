@@ -1,21 +1,13 @@
 const method = (arr: any[], key?: string): number => {
-  let min: number = +Infinity;
+  let reducer = (item: any) => item;
 
   if (key) {
     const keys = key.split(".");
 
-    arr.map((item) => {
-      keys.map((k) => item = item && item[k] || 0);
-
-      min = Math.min(item, min);
-    });
-
-    return min;
+    reducer = (item: any) => keys.reduce((prev, curr) => (prev && prev[curr]) || +Infinity, item);
   }
 
-  arr.map((num) => min = Math.min(num, min));
-
-  return min;
+  return arr.reduce((prev, cur) => Math.min(prev, reducer(cur)), +Infinity);
 };
 
 export = method;

@@ -13,6 +13,10 @@ describe("Array.prototype.median", () => {
     expect([{ foo: 10 }, { foo: 10 }, { foo: 20 }, { foo: 40 }].median("foo")).toBe(15);
   });
 
+  test("[{foo: 10}, {foo: 10}, {foo: 20}, {foo: 40}].median(\"bar\") returns NaN", () => {
+    expect([{ foo: 10 }, { foo: 10 }, { foo: 20 }, { foo: 40 }].median("bar")).toBe(NaN);
+  });
+
   test("[{foo: 10}, {foo: 10}, {foo: 20}].median(\"foo\") returns 10", () => {
     expect([{ foo: 10 }, { foo: 10 }, { foo: 20 }].median("foo")).toBe(10);
   });
