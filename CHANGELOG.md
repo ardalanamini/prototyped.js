@@ -1,6 +1,18 @@
 # Changelog
 
 
+## [v0.8.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.8.0) *(2018-05-25)*
+**Implemented enhancements:**
+- `Array.prototype`
+	- function `nest` added
+- `Object.prototype`
+	- function `merge` improved
+	- function `clone` added
+	- function `equals` added
+	- function `get` added
+	- function `omit` added
+
+
 ## [v0.7.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.7.0) *(2018-05-20)*
 **Implemented enhancements:**
 - `Object.prototype`

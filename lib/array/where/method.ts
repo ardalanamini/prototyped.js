@@ -1,4 +1,5 @@
 import * as types from "../../types";
+import { filter } from "../utils";
 
 const method = (arr: any[], field: string | types.Operator | any, operator?: types.Operator | any, value?: any) => {
     if (operator === undefined) {
@@ -39,14 +40,7 @@ const method = (arr: any[], field: string | types.Operator | any, operator?: typ
             throw new TypeError(`Expected 'operator' to be one of ['<', '<=', '=', '<>', '>=', '>'], got ${operator}`);
     }
 
-    if (field) {
-        const keys = (field as string).split(".");
-        const reducer = (item: any) => keys.reduce((prev, curr) => prev[curr], item);
-
-        return arr.filter((item) => iterator(reducer(item)));
-    }
-
-    return arr.filter(iterator);
+    return filter(arr, field, iterator);
 };
 
 export = method;

@@ -57,6 +57,7 @@
         * [.max([key])](#Array+max) ⇒ <code>number</code>
         * [.median()](#Array+median) ⇒ [<code>Array</code>](#Array)
         * [.min([key])](#Array+min) ⇒ <code>number</code>
+        * [.nest(id, link)](#Array+nest) ⇒ [<code>Array.&lt;Object&gt;</code>](#Object)
         * [.orderBy([field], [order])](#Array+orderBy) ⇒ [<code>Array</code>](#Array)
         * [.pad(size, [value])](#Array+pad) ⇒ [<code>Array</code>](#Array)
         * [.partition(fn)](#Array+partition) ⇒ [<code>Array</code>](#Array)
@@ -528,6 +529,29 @@ Returns the minimum value of a given key
 [1, 2, 3].min(); // 1
 [{a: 1}, {a: 2}, {a: 3}].min('a'); // 1
 [{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].min('a.b'); // 1
+```
+<a name="Array+nest"></a>
+
+### array.nest(id, link) ⇒ [<code>Array.&lt;Object&gt;</code>](#Object)
+Given a flat array of objects linked to one another, it will nest them recursively
+
+**Kind**: instance method of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| id | <code>\*</code> | 
+| link | <code>string</code> | 
+
+**Example**  
+```javascript
+const comments = [
+  { id: 1, parent_id: null },
+  { id: 2, parent_id: 1 },
+  { id: 3, parent_id: 1 },
+  { id: 4, parent_id: 2 },
+  { id: 5, parent_id: 4 }
+];
+comments.nest(); // [{ id: 1, parent_id: null, children: [...] }]
 ```
 <a name="Array+orderBy"></a>
 
@@ -1235,12 +1259,16 @@ Number.isInstance(2); // true
 * [Object](#Object) : <code>object</code>
     * _instance_
         * [.$camelCaseKeys()](#Object+$camelCaseKeys) ⇒ [<code>Object</code>](#Object)
+        * [.$clone(deep)](#Object+$clone) ⇒ [<code>Object</code>](#Object)
+        * [.$equals(obj)](#Object+$equals) ⇒ <code>boolean</code>
+        * [.$get(key)](#Object+$get) ⇒ <code>\*</code>
         * [.$invert()](#Object+$invert) ⇒ [<code>Object</code>](#Object)
         * [.$kebabCaseKeys()](#Object+$kebabCaseKeys) ⇒ [<code>Object</code>](#Object)
         * [.$lowerCaseKeys()](#Object+$lowerCaseKeys) ⇒ [<code>Object</code>](#Object)
         * [.$map(fn)](#Object+$map) ⇒ [<code>Object</code>](#Object)
         * [.$mapKeys(fn)](#Object+$mapKeys) ⇒ [<code>Object</code>](#Object)
         * [.$merge(...objects)](#Object+$merge) ⇒ [<code>Object</code>](#Object)
+        * [.$omit(arr)](#Object+$omit) ⇒ [<code>Object</code>](#Object)
         * [.$size()](#Object+$size) ⇒ [<code>Object</code>](#Object)
         * [.$snakeCaseKeys()](#Object+$snakeCaseKeys) ⇒ [<code>Object</code>](#Object)
     * _static_
@@ -1256,6 +1284,52 @@ Creates a new object from the specified object, where all the keys are in camel-
 ```javascript
 const myObj = { First_name: "Adam", "last-name": "Smith" };
 const myObjLower = myObj.$camelCaseKeys(); // {firstName: "Adam", lastName: "Smith"}
+```
+<a name="Object+$clone"></a>
+
+### object.$clone(deep) ⇒ [<code>Object</code>](#Object)
+Creates a (deep) clone of the object
+
+**Kind**: instance method of [<code>Object</code>](#Object)  
+
+| Param | Type |
+| --- | --- |
+| deep | <code>boolean</code> | 
+
+**Example**  
+```javascript
+const a = { foo: 'bar', obj: { a: 1, b: 2 } };
+const b = a.$clone(true); // a !== b, a.obj !== b.obj
+```
+<a name="Object+$equals"></a>
+
+### object.$equals(obj) ⇒ <code>boolean</code>
+Performs a deep comparison between two values to determine if they are equivalent
+
+**Kind**: instance method of [<code>Object</code>](#Object)  
+
+| Param | Type |
+| --- | --- |
+| obj | <code>\*</code> | 
+
+**Example**  
+```javascript
+{ a: [2, { e: 3 }], b: [4], c: 'foo' }.$equals({ a: [2, { e: 3 }], b: [4], c: 'foo' }); // true
+```
+<a name="Object+$get"></a>
+
+### object.$get(key) ⇒ <code>\*</code>
+Retrieve the property indicated by the given selector from the object
+
+**Kind**: instance method of [<code>Object</code>](#Object)  
+
+| Param | Type |
+| --- | --- |
+| key | <code>string</code> | 
+
+**Example**  
+```javascript
+{ selector: { to: { val: 'val to select' } } }.$get('selector.to.val'); // 'val to select'
 ```
 <a name="Object+$invert"></a>
 
@@ -1348,6 +1422,24 @@ const other = {
   c: "foo"
 };
 object.$merge(other); // { a: [ { x: 2 }, { y: 4 }, { z: 3 } ], b: [ 1, 2, 3 ], c: "foo" }
+```
+<a name="Object+$omit"></a>
+
+### object.$omit(arr) ⇒ [<code>Object</code>](#Object)
+Omits the key-value pairs corresponding to the given keys from an object; or
+Creates an object composed of the properties the given function returns falsey for.
+The function is invoked with two arguments: (value, key)
+
+**Kind**: instance method of [<code>Object</code>](#Object)  
+
+| Param | Type |
+| --- | --- |
+| arr | <code>Array.&lt;string&gt;</code> \| <code>function</code> | 
+
+**Example**  
+```javascript
+{ a: 1, b: '2', c: 3 }.$omit(['b']); // { a: 1, c: 3 }
+{ a: 1, b: '2', c: 3 }.$omit((x) => typeof x === 'number'); // { b: '2' }
 ```
 <a name="Object+$size"></a>
 

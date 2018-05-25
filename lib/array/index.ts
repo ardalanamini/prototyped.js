@@ -29,6 +29,7 @@ import "./limit";
 import "./max";
 import "./median";
 import "./min";
+import "./nest";
 import "./orderBy";
 import "./pad";
 import "./partition";

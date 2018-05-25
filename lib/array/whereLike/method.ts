@@ -1,4 +1,5 @@
 import * as isString from "../../string/isInstance/method";
+import { filter } from "../utils";
 
 const method = (arr: any[], field: string | RegExp, value?: string | RegExp) => {
     if (value === undefined) {
@@ -10,14 +11,7 @@ const method = (arr: any[], field: string | RegExp, value?: string | RegExp) => 
 
     const iterator = (item: any) => (value as RegExp).test(item);
 
-    if (field) {
-        const keys = (field as string).split(".");
-        const reducer = (item: any) => keys.reduce((prev, curr) => prev[curr], item);
-
-        return arr.filter((item) => iterator(reducer(item)));
-    }
-
-    return arr.filter(iterator);
+    return filter(arr, field as string, iterator);
 };
 
 export = method;
