@@ -53,6 +53,10 @@
 
 - - -
 
+**More than `100` useful methods collected in one place**
+
+- - -
+
 > if you have a method you think needs to be a part of this package, feel free to contribute
 
 ## Installation

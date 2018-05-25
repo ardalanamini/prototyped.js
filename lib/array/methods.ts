@@ -27,6 +27,7 @@ import * as limit from "./limit/method";
 import * as max from "./max/method";
 import * as median from "./median/method";
 import * as min from "./min/method";
+import * as nest from "./nest/method";
 import * as orderBy from "./orderBy/method";
 import * as pad from "./pad/method";
 import * as partition from "./partition/method";
@@ -83,6 +84,7 @@ export {
   max,
   median,
   min,
+  nest,
   orderBy,
   pad,
   partition,
