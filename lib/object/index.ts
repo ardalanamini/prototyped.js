@@ -2,6 +2,7 @@
 
 import "./camelCaseKeys";
 import "./clone";
+import "./empty";
 import "./equals";
 import "./get";
 import "./invert";

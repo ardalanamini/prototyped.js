@@ -1,5 +1,6 @@
 import * as camelCaseKeys from "./camelCaseKeys/method";
 import * as clone from "./clone/method";
+import * as empty from "./empty/method";
 import * as equals from "./equals/method";
 import * as get from "./get/method";
 import * as invert from "./invert/method";
@@ -16,6 +17,7 @@ import * as snakeCaseKeys from "./snakeCaseKeys/method";
 export {
   camelCaseKeys,
   clone,
+  empty,
   equals,
   get,
   invert,

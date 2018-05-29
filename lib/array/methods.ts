@@ -12,6 +12,7 @@ import * as crossJoin from "./crossJoin/method";
 import * as deepFlatten from "./deepFlatten/method";
 import * as diff from "./diff/method";
 import * as distinct from "./distinct/method";
+import * as empty from "./empty/method";
 import * as everyNth from "./everyNth/method";
 import * as first from "./first/method";
 import * as flatten from "./flatten/method";
@@ -69,6 +70,7 @@ export {
   deepFlatten,
   diff,
   distinct,
+  empty,
   everyNth,
   first,
   flatten,

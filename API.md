@@ -43,6 +43,7 @@
         * [.deepFlatten()](#Array+deepFlatten) ⇒ [<code>Array</code>](#Array)
         * [.diff(array, [comp])](#Array+diff) ⇒ [<code>Array</code>](#Array)
         * [.distinct()](#Array+distinct) ⇒ [<code>Array</code>](#Array)
+        * [.empty()](#Array+empty) ⇒ <code>boolean</code>
         * [.everyNth()](#Array+everyNth) ⇒ [<code>Array</code>](#Array)
         * [.first()](#Array+first) ⇒ <code>\*</code>
         * [.flatten([depth])](#Array+flatten) ⇒ [<code>Array</code>](#Array)
@@ -333,6 +334,17 @@ Returns all the distinct values of an array
 **Example**  
 ```javascript
 [1, 2, 2, 3, 4, 4, 5].distinct(); // [1,2,3,4,5]
+```
+<a name="Array+empty"></a>
+
+### array.empty() ⇒ <code>boolean</code>
+Checks if the array is empty
+
+**Kind**: instance method of [<code>Array</code>](#Array)  
+**Example**  
+```javascript
+[1,2].empty(); // false
+[].empty(); // true
 ```
 <a name="Array+everyNth"></a>
 
@@ -1235,6 +1247,26 @@ Math.lcm(...[1, 3, 4, 5]); // 60
 
 ## Number : <code>object</code>
 **Kind**: global namespace  
+
+* [Number](#Number) : <code>object</code>
+    * [.digitize](#Number.digitize) ⇒ <code>Array.&lt;number&gt;</code>
+    * [.isInstance](#Number.isInstance) ⇒ <code>boolean</code>
+
+<a name="Number.digitize"></a>
+
+### Number.digitize ⇒ <code>Array.&lt;number&gt;</code>
+Converts the number to an array of digits
+
+**Kind**: static property of [<code>Number</code>](#Number)  
+
+| Param | Type |
+| --- | --- |
+| num | <code>number</code> | 
+
+**Example**  
+```javascript
+Number.digitize(123); // [1, 2, 3]
+```
 <a name="Number.isInstance"></a>
 
 ### Number.isInstance ⇒ <code>boolean</code>
@@ -1260,6 +1292,7 @@ Number.isInstance(2); // true
     * _instance_
         * [.$camelCaseKeys()](#Object+$camelCaseKeys) ⇒ [<code>Object</code>](#Object)
         * [.$clone(deep)](#Object+$clone) ⇒ [<code>Object</code>](#Object)
+        * [.$empty()](#Object+$empty) ⇒ <code>boolean</code>
         * [.$equals(obj)](#Object+$equals) ⇒ <code>boolean</code>
         * [.$get(key)](#Object+$get) ⇒ <code>\*</code>
         * [.$invert()](#Object+$invert) ⇒ [<code>Object</code>](#Object)
@@ -1300,6 +1333,17 @@ Creates a (deep) clone of the object
 ```javascript
 const a = { foo: 'bar', obj: { a: 1, b: 2 } };
 const b = a.$clone(true); // a !== b, a.obj !== b.obj
+```
+<a name="Object+$empty"></a>
+
+### object.$empty() ⇒ <code>boolean</code>
+Checks if the object is empty
+
+**Kind**: instance method of [<code>Object</code>](#Object)  
+**Example**  
+```javascript
+{ a: 1 }.$empty(); // false
+{}.$empty(); // true
 ```
 <a name="Object+$equals"></a>
 
@@ -1492,11 +1536,13 @@ Object.isInstance({foo: 'bar'}); // true
         * [.chars()](#String+chars) ⇒ <code>Array.&lt;string&gt;</code>
         * [.contains(pattern)](#String+contains) ⇒ <code>Array.&lt;string&gt;</code>
         * [.decapitalize([allWords])](#String+decapitalize) ⇒ <code>string</code>
+        * [.empty()](#String+empty) ⇒ <code>boolean</code>
         * [.humanize()](#String+humanize) ⇒ <code>string</code>
         * [.kebabCase()](#String+kebabCase) ⇒ <code>string</code>
         * [.lines()](#String+lines) ⇒ <code>Array.&lt;string&gt;</code>
         * [.map(fn)](#String+map) ⇒ <code>Array.&lt;string&gt;</code>
         * [.mask([num], [mask])](#String+mask) ⇒ <code>string</code>
+        * [.pad(size, [value])](#String+pad) ⇒ [<code>String</code>](#String)
         * [.pluralize([value])](#String+pluralize) ⇒ <code>string</code>
         * [.reverse()](#String+reverse) ⇒ <code>string</code>
         * [.singularize()](#String+singularize) ⇒ <code>string</code>
@@ -1506,6 +1552,7 @@ Object.isInstance({foo: 'bar'}); // true
         * [.words(pattern)](#String+words) ⇒ <code>Array.&lt;string&gt;</code>
     * _static_
         * [.isInstance](#String.isInstance) ⇒ <code>boolean</code>
+        * [.repeat](#String.repeat) ⇒ [<code>String</code>](#String)
 
 <a name="String+base64"></a>
 
@@ -1599,6 +1646,17 @@ Returns the decapitalized string
 'Foo Bar'.decapitalize(); // 'foo Bar'
 'Hello World'.decapitalize(true); // 'hello world'
 ```
+<a name="String+empty"></a>
+
+### string.empty() ⇒ <code>boolean</code>
+Checks if the string is empty
+
+**Kind**: instance method of [<code>String</code>](#String)  
+**Example**  
+```javascript
+"123".empty(); // false
+"".empty(); // true
+```
 <a name="String+humanize"></a>
 
 ### string.humanize() ⇒ <code>string</code>
@@ -1668,6 +1726,23 @@ Replaces all but the last num of characters with the specified mask character
 '1234567890'.mask(); // '******7890'
 '1234567890'.mask(3); // '*******890'
 '1234567890'.mask(-4, '$'); // '$$$$567890'
+```
+<a name="String+pad"></a>
+
+### string.pad(size, [value]) ⇒ [<code>String</code>](#String)
+FillS the string with the given value until the string reaches the specified size
+
+**Kind**: instance method of [<code>String</code>](#String)  
+
+| Param | Type | Default |
+| --- | --- | --- |
+| size | <code>number</code> |  | 
+| [value] | [<code>String</code>](#String) | <code>&quot; &quot;</code> | 
+
+**Example**  
+```javascript
+"123".pad(5, 0); // "12300"
+"123".pad(-5, 0); // "00123"
 ```
 <a name="String+pluralize"></a>
 
@@ -1786,4 +1861,20 @@ Returns true if the given argument is an string
 ```javascript
 String.isInstance(2); // false
 String.isInstance("foo bar"); // true
+```
+<a name="String.repeat"></a>
+
+### String.repeat ⇒ [<code>String</code>](#String)
+Initializes and fills an string with the specified value
+
+**Kind**: static property of [<code>String</code>](#String)  
+
+| Param | Type | Default |
+| --- | --- | --- |
+| n | <code>number</code> |  | 
+| [value] | <code>string</code> | <code>&quot;\&quot; \&quot;&quot;</code> | 
+
+**Example**  
+```javascript
+String.repeat(5, "2"); // "22222"
 ```
