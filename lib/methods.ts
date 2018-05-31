@@ -2,6 +2,7 @@ import * as array from "./array/methods";
 import * as boolean from "./boolean/methods";
 import * as date from "./date/methods";
 import * as func from "./function/methods";
+import * as globals from "./globals/methods";
 import * as math from "./math/methods";
 import * as number from "./number/methods";
 import * as object from "./object/methods";
@@ -12,6 +13,7 @@ export {
   boolean,
   date,
   func as function,
+  globals,
   math,
   number,
   object,
