@@ -2,51 +2,52 @@
 	<h1>Prototyped.JS</h1>
 	<p>Common <b>Typescript ready</b> prototypes available in <b>ES5</b> and <b>ES6</b>, <b>Server-Side</b> and <b>Client-Side</b></p>
 	<a href="https://www.npmjs.com/package/prototyped.js" target="_blank">
-	   <img src="https://img.shields.io/npm/v/prototyped.js.svg" alt="npm version">
+	   <img src="https://img.shields.io/npm/v/prototyped.js.svg" alt="npm version" />
 	</a>
 	<a href="https://www.typescriptlang.org" target="_blank">
-		<img src="https://img.shields.io/npm/types/prototyped.js.svg" alt="typescript version">
+		<img src="https://img.shields.io/npm/types/prototyped.js.svg" alt="typescript version" />
 	</a>
 	<a href="https://travis-ci.com/ardalanamini/prototyped.js" target="_blank">
-		<img src="https://api.travis-ci.com/ardalanamini/prototyped.js.svg?branch=master" alt="build status">
+		<img src="https://api.travis-ci.com/ardalanamini/prototyped.js.svg?branch=master" alt="build status" />
 	</a>
-	<a href='https://coveralls.io/github/ardalanamini/prototyped.js?branch=master'  target="_blank">
-		<img src='https://coveralls.io/repos/github/ardalanamini/prototyped.js/badge.svg?branch=master' alt='Coverage Status'>
+	<a href="https://codecov.io/gh/ardalanamini/prototyped.js" target="_blank">
+		<img src="https://codecov.io/gh/ardalanamini/prototyped.js/branch/master/graph/badge.svg" alt='Coverage Status' />
 	</a>
-	<a href="http://packagequality.com/#?package=prototyped.js" target="_blank">
-		<img src="http://npm.packagequality.com/shield/prototyped.js.svg" alt="package quality">
-	</a>
-	<a href="https://www.npmjs.com/package/prototyped.js" target="_blank">
-		<img src="https://img.shields.io/npm/dt/prototyped.js.svg" alt="npm downloads">
+	<a href="https://packagequality.com/#?package=prototyped.js" target="_blank">
+		<img src="https://npm.packagequality.com/shield/prototyped.js.svg" alt="package quality" />
 	</a>
 	<a href="https://www.npmjs.com/package/prototyped.js" target="_blank">
-	   <img src="https://img.shields.io/npm/dm/prototyped.js.svg" alt="npm monthly downloads">
+		<img src="https://img.shields.io/npm/dt/prototyped.js.svg" alt="npm downloads" />
+	</a>
+	<a href="https://www.npmjs.com/package/prototyped.js" target="_blank">
+	   <img src="https://img.shields.io/npm/dm/prototyped.js.svg" alt="npm monthly downloads" />
 	</a>
 	<a href="https://github.com/ardalanamini/prototyped.js/issues?q=is%3Aopen+is%3Aissue" target="_blank">
-		<img src="https://img.shields.io/github/issues-raw/ardalanamini/prototyped.js.svg" alt="open issues">
+		<img src="https://img.shields.io/github/issues-raw/ardalanamini/prototyped.js.svg" alt="open issues" />
 	</a>
 	<a href="https://github.com/ardalanamini/prototyped.js/issues?q=is%3Aissue+is%3Aclosed" target="_blank">
-		<img src="https://img.shields.io/github/issues-closed-raw/ardalanamini/prototyped.js.svg" alt="closed issues">
+		<img src="https://img.shields.io/github/issues-closed-raw/ardalanamini/prototyped.js.svg" alt="closed issues" />
 	</a>
 	<a href="https://github.com/facebook/jest" target="_blank">
-	   <img src="https://img.shields.io/badge/tested_with-jest-99424f.svg" alt="tested with jest">
-	</a><a href="https://snyk.io/test/github/ardalanamini/prototyped.js?targetFile=package.json" target="_blank">
-		<img src="https://snyk.io/test/github/ardalanamini/prototyped.js/badge.svg?targetFile=package.json" alt="known vulnerabilities" data-canonical-src="https://snyk.io/test/github/ardalanamini/prototyped.js?targetFile=package.json" style="max-width:100%;">
+	   <img src="https://img.shields.io/badge/tested_with-jest-99424f.svg" alt="tested with jest" />
+	</a>
+	<a href="https://snyk.io/test/github/ardalanamini/prototyped.js?targetFile=package.json" target="_blank">
+		<img src="https://snyk.io/test/github/ardalanamini/prototyped.js/badge.svg?targetFile=package.json" alt="known vulnerabilities" data-canonical-src="https://snyk.io/test/github/ardalanamini/prototyped.js?targetFile=package.json" style="max-width:100%;" />
 	</a>
 	<a href="https://david-dm.org/ardalanamini/prototyped.js" target="_blank">
-		<img src="https://david-dm.org/ardalanamini/prototyped.js.svg" alt="dependencies status">
+		<img src="https://david-dm.org/ardalanamini/prototyped.js.svg" alt="dependencies status" />
 	</a>
 	<a href="https://github.com/ardalanamini/prototyped.js/pulls" target="_blank">
-		<img src="https://img.shields.io/badge/PRs-Welcome-brightgreen.svg" alt="pull requests">
+		<img src="https://img.shields.io/badge/PRs-Welcome-brightgreen.svg" alt="pull requests" />
 	</a>
 	<a href="https://github.com/ardalanamini/prototyped.js/blob/master/LICENSE" target="_blank">
-		<img src="https://img.shields.io/github/license/ardalanamini/prototyped.js.svg" alt="license">
+		<img src="https://img.shields.io/github/license/ardalanamini/prototyped.js.svg" alt="license" />
 	</a>
 	<a href="https://github.com/ardalanamini/prototyped.js" target="_blank">
-		<img src="https://img.shields.io/github/stars/ardalanamini/prototyped.js.svg?style=social&label=Stars" alt="github stars">
+		<img src="https://img.shields.io/github/stars/ardalanamini/prototyped.js.svg?style=social&label=Stars" alt="github stars" />
 	</a>
 	<a href="https://github.com/ardalanamini/prototyped.js" target="_blank">
-		<img src="https://img.shields.io/github/forks/ardalanamini/prototyped.js.svg?style=social&label=Fork" alt="github stars">
+		<img src="https://img.shields.io/github/forks/ardalanamini/prototyped.js.svg?style=social&label=Fork" alt="github stars" />
 	</a>
 	<br>
 </div>

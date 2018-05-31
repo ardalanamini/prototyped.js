@@ -1,3 +1,3 @@
 /** @namespace Date */
 
-import "./isInstance";
+import "./isDate";

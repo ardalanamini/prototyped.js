@@ -2,5 +2,5 @@
 
 import "./cache";
 import "./defer";
-import "./isInstance";
+import "./isFunction";
 import "./once";

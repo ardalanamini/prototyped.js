@@ -4,7 +4,7 @@ import * as empty from "./empty/method";
 import * as equals from "./equals/method";
 import * as get from "./get/method";
 import * as invert from "./invert/method";
-import * as isInstance from "./isInstance/method";
+import * as isObject from "./isObject/method";
 import * as kebabCaseKeys from "./kebabCaseKeys/method";
 import * as lowerCaseKeys from "./lowerCaseKeys/method";
 import * as map from "./map/method";
@@ -22,7 +22,7 @@ export {
   equals,
   get,
   invert,
-  isInstance,
+  isObject,
   kebabCaseKeys,
   lowerCaseKeys,
   map,
