@@ -154,7 +154,8 @@
       "^.+\\.ts$": "<rootDir>/scripts/preprocessor.js"
     },
     "testMatch": [
-      "<rootDir>/lib/**/test\\.ts"
+      "<rootDir>/lib/**/test\\.ts",
+      "<rootDir>/lib/**/*\\.test\\.ts"
     ]
   }
 }

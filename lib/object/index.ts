@@ -13,5 +13,6 @@ import "./map";
 import "./mapKeys";
 import "./merge";
 import "./omit";
+import "./set";
 import "./size";
 import "./snakeCaseKeys";
