@@ -1,5 +1,8 @@
+import * as contains from "../contains/method";
+import { pathToKeys } from "../../utils";
+
 const method = (arr: any[], field?: string, order?: "asc" | "desc") => {
-    if (field && (["asc", "desc"].indexOf(field) !== -1)) {
+    if (field && contains(["asc", "desc"], field)) {
         order = field as ("asc" | "desc");
         field = undefined;
     }
@@ -12,8 +15,8 @@ const method = (arr: any[], field?: string, order?: "asc" | "desc") => {
             ((a, b) => (a < b ? 1 : (a > b ? -1 : 0)));
 
     if (field) {
-        const keys = (field as string).split(".");
-        const reducer = (item: any) => keys.reduce((prev, curr) => prev[curr], item);
+        const keys = pathToKeys(field as string);
+        const reducer = (item: any) => keys.reduce((prev, cur) => prev[cur], item);
 
         return arr.sort((a, b) => iterator(reducer(a), reducer(b)));
     }

@@ -1,8 +1,10 @@
-const method = (arr: any[], key?: string): number => {
-  if (key) {
-    const keys = key.split(".");
+import { pathToKeys } from "../../utils";
 
-    const reducer = (item: any) => keys.reduce((prev, curr) => (prev && prev[curr]) || 0, item);
+const method = (arr: any[], path?: string): number => {
+  if (path) {
+    const keys = pathToKeys(path);
+
+    const reducer = (item: any) => keys.reduce((prev, cur) => (prev && prev[cur]) || 0, item);
 
     return arr.reduce((prev, cur) => prev + reducer(cur), 0);
   }

@@ -1,11 +1,12 @@
-const method = (arr: any[], key: string, separator = ", "): string => {
-  const keys = key.split(".");
+import { pathToKeys } from "../../utils";
 
-  return arr.map((item) => {
-    keys.map((k) => item = item && item[k] || undefined);
+const method = (arr: any[], path: string, separator = ", "): string => {
+  const keys = pathToKeys(path);
 
-    return item;
-  }).filter(Boolean).join(separator);
+  return arr
+    .map((item) => keys.reduce((prev, cur) => (prev && prev[cur]) || undefined, item))
+    .filter(Boolean)
+    .join(separator);
 };
 
 export = method;

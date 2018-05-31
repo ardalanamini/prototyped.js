@@ -2,19 +2,19 @@ import * as method from "./method";
 
 declare global {
   interface Array<T> {
-    pluck(key: string): any[];
+    pluck(path: string): any[];
   }
 }
 
 /**
- * Returns all of the values for the given key
+ * Returns all of the values for the given path
  * @memberof Array
- * @param {string} key
+ * @param {string} path
  * @returns {Array}
  * @example
  * [{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].pluck('a'); // [{b: 1}, {b: 2}, {b: 3}]
  * [{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].pluck('a.b'); // [1, 2, 3]
  */
-Array.prototype.pluck = function(key) {
-  return method(this, key);
+Array.prototype.pluck = function(path) {
+  return method(this, path);
 };

@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [next](https://github.com/ardalanamini/prototyped.js/releases/tag/next) *(2018-__-__)*
+**Implemented enhancements:**
+- better object value path handling
+- `Object.prototype`
+	- function `$set` added
+
+
 ## [v0.9.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.9.0) *(2018-05-29)*
 **Implemented enhancements:**
 - `Array.prototype`

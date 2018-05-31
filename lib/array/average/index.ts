@@ -2,29 +2,29 @@ import * as method from "./method";
 
 declare global {
   interface Array<T> {
-    average(key?: string): number;
-    avg(key?: string): number;
+    average(path?: string): number;
+    avg(path?: string): number;
   }
 }
 
 /**
- * Returns the average value of a given key
+ * Returns the average value of a given path
  * @memberof Array
- * @param {String} [key]
+ * @param {String} [path]
  * @returns {number}
  * @example
  * [1, 2, 3].average(); // 2
  * [{a: 1}, {a: 2}, {a: 3}].average("a"); // 2
  * [{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].average("a.b"); // 2
  */
-Array.prototype.average = function(key) {
-  return method(this, key);
+Array.prototype.average = function(path) {
+  return method(this, path);
 };
 
 /**
  * An alias of Array.prototype.average
  * @memberof Array
- * @param {String} [key]
+ * @param {String} [path]
  * @returns {number}
  * @example
  * [1, 2, 3].avg(); // 2
