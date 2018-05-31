@@ -9,7 +9,7 @@ import "./contains";
 import "./decapitalize";
 import "./empty";
 import "./humanize";
-import "./isInstance";
+import "./isString";
 import "./kebabCase";
 import "./lines";
 import "./map";

@@ -1,7 +1,7 @@
 import * as digitize from "./digitize/method";
-import * as isInstance from "./isInstance/method";
+import * as isNumber from "./isNumber/method";
 
 export {
   digitize,
-  isInstance,
+  isNumber,
 };

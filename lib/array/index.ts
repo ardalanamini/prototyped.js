@@ -24,7 +24,6 @@ import "./implode";
 import "./indexOfAll";
 import "./initial";
 import "./intersect";
-import "./isInstance";
 import "./last";
 import "./limit";
 import "./max";

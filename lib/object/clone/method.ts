@@ -1,4 +1,4 @@
-import * as isObject from "../isInstance/method";
+import * as isObject from "../isObject/method";
 
 const method = (obj: { [key: string]: any }, deep: boolean = false): object => {
   if (!deep) return { ...obj };

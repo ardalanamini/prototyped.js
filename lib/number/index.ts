@@ -1,4 +1,4 @@
 /** @namespace Number */
 
 import "./digitize";
-import "./isInstance";
+import "./isNumber";

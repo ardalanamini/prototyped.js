@@ -2,7 +2,7 @@ import * as method from "./method";
 
 declare global {
   interface DateConstructor {
-    isInstance(arg: any): arg is Date;
+    isDate(arg: any): arg is Date;
   }
 }
 
@@ -12,7 +12,7 @@ declare global {
  * @param {*} arg
  * @returns {boolean}
  * @example
- * Date.isInstance('foo bar'); // false
- * Date.isInstance(new Date()); // true
+ * Date.isDate('foo bar'); // false
+ * Date.isDate(new Date()); // true
  */
-Date.isInstance = method;
+Date.isDate = method;

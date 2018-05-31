@@ -1,4 +1,4 @@
-import * as isString from "../../string/isInstance/method";
+import * as isString from "../../string/isString/method";
 import { filter } from "../utils";
 
 const method = (arr: any[], field: string | RegExp, value?: string | RegExp) => {

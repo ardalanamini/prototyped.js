@@ -7,7 +7,7 @@ import * as contains from "./contains/method";
 import * as decapitalize from "./decapitalize/method";
 import * as empty from "./empty/method";
 import * as humanize from "./humanize/method";
-import * as isInstance from "./isInstance/method";
+import * as isString from "./isString/method";
 import * as kebabCase from "./kebabCase/method";
 import * as lines from "./lines/method";
 import * as map from "./map/method";
@@ -32,7 +32,7 @@ export {
   decapitalize,
   empty,
   humanize,
-  isInstance,
+  isString,
   kebabCase,
   lines,
   map,

@@ -4,6 +4,20 @@
 ## [next](https://github.com/ardalanamini/prototyped.js/releases/tag/next) *(2018-__-__)*
 **Implemented enhancements:**
 - better object value path handling
+- `Array`
+	- removed function `isInstance`
+- `Boolean`
+	- renamed `isInstance` to `isBoolean`
+- `Date`
+	- renamed `isInstance` to `isDate`
+- `Function`
+	- renamed `isInstance` to `isFunction`
+- `Number`
+	- renamed `isInstance` to `isNumber`
+- `Object`
+	- renamed `isInstance` to `isObject`
+- `String`
+	- renamed `isInstance` to `isString`
 - `Object.prototype`
 	- function `$set` added
 

@@ -3,7 +3,7 @@ import * as method from "./method";
 declare global {
   interface FunctionConstructor {
     // tslint:disable-next-line:ban-types
-    isInstance(arg: any): arg is Function;
+    isFunction(arg: any): arg is Function;
   }
 }
 
@@ -13,7 +13,7 @@ declare global {
  * @param {*} arg
  * @returns {boolean}
  * @example
- * Function.isInstance(2); // false
- * Function.isInstance((() => {})); // true
+ * Function.isFunction(2); // false
+ * Function.isFunction((() => {})); // true
  */
-Function.isInstance = method;
+Function.isFunction = method;

@@ -22,7 +22,6 @@ import * as implode from "./implode/method";
 import * as indexOfAll from "./indexOfAll/method";
 import * as initial from "./initial/method";
 import * as intersect from "./intersect/method";
-import * as isInstance from "./isInstance/method";
 import * as last from "./last/method";
 import * as limit from "./limit/method";
 import * as max from "./max/method";
@@ -80,7 +79,6 @@ export {
   indexOfAll,
   initial,
   intersect,
-  isInstance,
   last,
   limit,
   max,

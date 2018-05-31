@@ -2,7 +2,7 @@ import * as method from "./method";
 
 declare global {
   interface NumberConstructor {
-    isInstance(arg: any): arg is number;
+    isNumber(arg: any): arg is number;
   }
 }
 
@@ -12,7 +12,7 @@ declare global {
  * @param {*} arg
  * @returns {boolean}
  * @example
- * Number.isInstance('foo bar'); // false
- * Number.isInstance(2); // true
+ * Number.isNumber('foo bar'); // false
+ * Number.isNumber(2); // true
  */
-Number.isInstance = method;
+Number.isNumber = method;

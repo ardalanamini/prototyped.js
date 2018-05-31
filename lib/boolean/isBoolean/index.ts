@@ -2,7 +2,7 @@ import * as method from "./method";
 
 declare global {
   interface BooleanConstructor {
-    isInstance(arg: any): arg is boolean;
+    isBoolean(arg: any): arg is boolean;
   }
 }
 
@@ -12,7 +12,7 @@ declare global {
  * @param {*} arg
  * @returns {boolean}
  * @example
- * Boolean.isInstance('foo bar'); // false
- * Boolean.isInstance(flase); // true
+ * Boolean.isBoolean('foo bar'); // false
+ * Boolean.isBoolean(flase); // true
  */
-Boolean.isInstance = method;
+Boolean.isBoolean = method;

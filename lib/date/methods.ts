@@ -1,5 +1,5 @@
-import * as isInstance from "./isInstance/method";
+import * as isDate from "./isDate/method";
 
 export {
-  isInstance,
+  isDate,
 };

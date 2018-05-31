@@ -1,5 +1,5 @@
-import * as isInstance from "./isInstance/method";
+import * as isBoolean from "./isBoolean/method";
 
 export {
-  isInstance,
+  isBoolean,
 };

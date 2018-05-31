@@ -2,7 +2,7 @@ import * as method from "./method";
 
 declare global {
   interface ObjectConstructor {
-    isInstance(arg: any): arg is object;
+    isObject(arg: any): arg is object;
   }
 }
 
@@ -12,7 +12,7 @@ declare global {
  * @param {*} arg
  * @returns {boolean}
  * @example
- * Object.isInstance(2); // false
- * Object.isInstance({foo: 'bar'}); // true
+ * Object.isObject(2); // false
+ * Object.isObject({foo: 'bar'}); // true
  */
-Object.isInstance = method;
+Object.isObject = method;

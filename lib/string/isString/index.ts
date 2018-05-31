@@ -2,7 +2,7 @@ import * as method from "./method";
 
 declare global {
   interface StringConstructor {
-    isInstance(arg: any): arg is string;
+    isString(arg: any): arg is string;
   }
 }
 
@@ -12,7 +12,7 @@ declare global {
  * @param {*} arg
  * @returns {boolean}
  * @example
- * String.isInstance(2); // false
- * String.isInstance("foo bar"); // true
+ * String.isString(2); // false
+ * String.isString("foo bar"); // true
  */
-String.isInstance = method;
+String.isString = method;
