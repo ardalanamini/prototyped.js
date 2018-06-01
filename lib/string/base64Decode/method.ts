@@ -1,3 +1,3 @@
-const method = (str: string) => new Buffer(str, "base64").toString();
+const method = (str: string) => Buffer.from(str, "base64").toString();
 
 export = method;
