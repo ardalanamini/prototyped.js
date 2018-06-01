@@ -1,3 +1,3 @@
-/** @namespace Global */
+/** @namespace global */
 
 import "./isBrowser";

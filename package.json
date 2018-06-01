@@ -1,6 +1,6 @@
 {
   "name": "prototyped.js",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "description": "Common typescript ready prototypes available in both es5 and es6",
   "author": "Ardalan Amini <ardalanamini22@gmail.com>",
   "license": "MIT",
@@ -131,7 +131,7 @@
   },
   "devDependencies": {
     "@types/jest": "^22.2.3",
-    "@types/node": "^10.1.4",
+    "@types/node": "^10.3.0",
     "@types/pluralize": "0.0.28",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
@@ -142,7 +142,7 @@
     "jsdoc-to-markdown": "^4.0.1",
     "rimraf": "^2.6.2",
     "tslint": "^5.10.0",
-    "typescript": "^2.8.4",
+    "typescript": "^2.9.1",
     "uglify-es": "^3.3.9",
     "uglify-js": "^3.3.28"
   },

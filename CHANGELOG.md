@@ -1,7 +1,7 @@
 # Changelog
 
 
-## [next](https://github.com/ardalanamini/prototyped.js/releases/tag/next) *(2018-__-__)*
+## [v0.10.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.10.0) *(2018-06-01)*
 **Implemented enhancements:**
 - better object value path handling
 - `Array`
@@ -12,6 +12,8 @@
 	- renamed `isInstance` to `isDate`
 - `Function`
 	- renamed `isInstance` to `isFunction`
+- `Global`
+	- Added `isBrowser`
 - `Number`
 	- renamed `isInstance` to `isNumber`
 - `Object`
