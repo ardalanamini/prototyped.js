@@ -6,7 +6,7 @@ import "./empty";
 import "./equals";
 import "./get";
 import "./invert";
-import "./isInstance";
+import "./isObject";
 import "./kebabCaseKeys";
 import "./lowerCaseKeys";
 import "./map";

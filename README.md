@@ -1,64 +1,33 @@
-<div align="center">
-	<h1>Prototyped.JS</h1>
-	<p>Common <b>Typescript ready</b> prototypes available in <b>ES5</b> and <b>ES6</b>, <b>Server-Side</b> and <b>Client-Side</b></p>
-	<a href="https://www.npmjs.com/package/prototyped.js" target="_blank">
-	   <img src="https://img.shields.io/npm/v/prototyped.js.svg" alt="npm version" />
-	</a>
-	<a href="https://www.typescriptlang.org" target="_blank">
-		<img src="https://img.shields.io/npm/types/prototyped.js.svg" alt="typescript version" />
-	</a>
-	<a href="https://travis-ci.com/ardalanamini/prototyped.js" target="_blank">
-		<img src="https://api.travis-ci.com/ardalanamini/prototyped.js.svg?branch=master" alt="build status" />
-	</a>
-	<a href="https://codecov.io/gh/ardalanamini/prototyped.js" target="_blank">
-		<img src="https://codecov.io/gh/ardalanamini/prototyped.js/branch/master/graph/badge.svg" alt='Coverage Status' />
-	</a>
-	<a href="https://packagequality.com/#?package=prototyped.js" target="_blank">
-		<img src="https://npm.packagequality.com/shield/prototyped.js.svg" alt="package quality" />
-	</a>
-	<a href="https://www.npmjs.com/package/prototyped.js" target="_blank">
-		<img src="https://img.shields.io/npm/dt/prototyped.js.svg" alt="npm downloads" />
-	</a>
-	<a href="https://www.npmjs.com/package/prototyped.js" target="_blank">
-	   <img src="https://img.shields.io/npm/dm/prototyped.js.svg" alt="npm monthly downloads" />
-	</a>
-	<a href="https://github.com/ardalanamini/prototyped.js/issues?q=is%3Aopen+is%3Aissue" target="_blank">
-		<img src="https://img.shields.io/github/issues-raw/ardalanamini/prototyped.js.svg" alt="open issues" />
-	</a>
-	<a href="https://github.com/ardalanamini/prototyped.js/issues?q=is%3Aissue+is%3Aclosed" target="_blank">
-		<img src="https://img.shields.io/github/issues-closed-raw/ardalanamini/prototyped.js.svg" alt="closed issues" />
-	</a>
-	<a href="https://github.com/facebook/jest" target="_blank">
-	   <img src="https://img.shields.io/badge/tested_with-jest-99424f.svg" alt="tested with jest" />
-	</a>
-	<a href="https://snyk.io/test/github/ardalanamini/prototyped.js?targetFile=package.json" target="_blank">
-		<img src="https://snyk.io/test/github/ardalanamini/prototyped.js/badge.svg?targetFile=package.json" alt="known vulnerabilities" data-canonical-src="https://snyk.io/test/github/ardalanamini/prototyped.js?targetFile=package.json" style="max-width:100%;" />
-	</a>
-	<a href="https://david-dm.org/ardalanamini/prototyped.js" target="_blank">
-		<img src="https://david-dm.org/ardalanamini/prototyped.js.svg" alt="dependencies status" />
-	</a>
-	<a href="https://github.com/ardalanamini/prototyped.js/pulls" target="_blank">
-		<img src="https://img.shields.io/badge/PRs-Welcome-brightgreen.svg" alt="pull requests" />
-	</a>
-	<a href="https://github.com/ardalanamini/prototyped.js/blob/master/LICENSE" target="_blank">
-		<img src="https://img.shields.io/github/license/ardalanamini/prototyped.js.svg" alt="license" />
-	</a>
-	<a href="https://github.com/ardalanamini/prototyped.js" target="_blank">
-		<img src="https://img.shields.io/github/stars/ardalanamini/prototyped.js.svg?style=social&label=Stars" alt="github stars" />
-	</a>
-	<a href="https://github.com/ardalanamini/prototyped.js" target="_blank">
-		<img src="https://img.shields.io/github/forks/ardalanamini/prototyped.js.svg?style=social&label=Fork" alt="github stars" />
-	</a>
-	<br>
-</div>
+# Prototyped.js
 
-- - -
+Common **Typescript ready** prototypes available in **ES5** and **ES6**, **Server-Side** and **Client-Side**
+
+[![Npm Version](https://img.shields.io/npm/v/prototyped.js.svg)](https://www.npmjs.com/package/prototyped.js)
+[![TypeScript Version](https://img.shields.io/npm/types/prototyped.js.svg)](https://www.typescriptlang.org)
+[![Build Status](https://api.travis-ci.com/ardalanamini/prototyped.js.svg?branch=master)](https://travis-ci.com/ardalanamini/prototyped.js)
+[![Coverage Status](https://codecov.io/gh/ardalanamini/prototyped.js/branch/master/graph/badge.svg)](https://codecov.io/gh/ardalanamini/prototyped.js)
+[![Package Quality](https://npm.packagequality.com/shield/prototyped.js.svg)](https://packagequality.com/#?package=prototyped.js)
+[![Npm Total Downloads](https://img.shields.io/npm/dt/prototyped.js.svg)](https://www.npmjs.com/package/prototyped.js)
+[![Npm Monthly Downloads](https://img.shields.io/npm/dm/prototyped.js.svg)](https://www.npmjs.com/package/prototyped.js)
+[![Open Issues](https://img.shields.io/github/issues-raw/ardalanamini/prototyped.js.svg)](https://github.com/ardalanamini/prototyped.js/issues?q=is%3Aopen+is%3Aissue)
+[![Closed Issues](https://img.shields.io/github/issues-closed-raw/ardalanamini/prototyped.js.svg)](https://github.com/ardalanamini/prototyped.js/issues?q=is%3Aissue+is%3Aclosed)
+[![Tested With Jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
+[![Known Vulnerabilities](https://snyk.io/test/github/ardalanamini/prototyped.js/badge.svg?targetFile=package.json)](https://snyk.io/test/github/ardalanamini/prototyped.js?targetFile=package.json)
+[![Dependencies Status](https://david-dm.org/ardalanamini/prototyped.js.svg)](https://david-dm.org/ardalanamini/prototyped.js)
+[![Pull Requests](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://github.com/ardalanamini/prototyped.js/pulls)
+[![License](https://img.shields.io/github/license/ardalanamini/prototyped.js.svg)](https://github.com/ardalanamini/prototyped.js/blob/master/LICENSE)
+[![Github Stars](https://img.shields.io/github/stars/ardalanamini/prototyped.js.svg?style=social&label=Stars)](https://github.com/ardalanamini/prototyped.js)
+[![Github Forks](https://img.shields.io/github/forks/ardalanamini/prototyped.js.svg?style=social&label=Fork)](https://github.com/ardalanamini/prototyped.js)
 
 **More than `100` useful methods collected in one place**
 
-- - -
-
 > if you have a method you think needs to be a part of this package, feel free to contribute
+
+## Table of Content <!-- omit in toc -->
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Support](#support)
 
 ## Installation
 
@@ -110,6 +79,5 @@ All documents are available at [API.md](https://github.com/ardalanamini/prototyp
 
 If my work helps you, please consider
 
-<a href="https://www.buymeacoffee.com/ardalanamini" target="_blank">
-	<img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;">
-</a>
+[![Buy Me A Coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/ardalanamini)
+[![Become A Patron](https://c5.patreon.com/external/logo/become_a_patron_button.png)](https://www.patreon.com/ardalanamini)
