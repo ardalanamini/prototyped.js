@@ -141,6 +141,7 @@
     "jest": "^23.1.0",
     "jsdoc-to-markdown": "^4.0.1",
     "rimraf": "^2.6.2",
+    "ts-jest": "^23.0.0",
     "tslint": "^5.10.0",
     "typescript": "^2.9.1",
     "uglify-es": "^3.3.9",
@@ -152,11 +153,11 @@
       "js"
     ],
     "transform": {
-      "^.+\\.ts$": "<rootDir>/scripts/preprocessor.js"
+      "^.+\\.ts$": "ts-jest"
     },
     "testMatch": [
-      "<rootDir>/lib/**/test\\.ts",
-      "<rootDir>/lib/**/*\\.test\\.ts"
+      "<rootDir>/src/**/test\\.ts",
+      "<rootDir>/src/**/*\\.test\\.ts"
     ]
   }
 }
