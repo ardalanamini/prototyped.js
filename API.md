@@ -979,6 +979,12 @@ Array.repeat(5, 2); // [2,2,2,2,2]
 
 ## Boolean : <code>object</code>
 **Kind**: global namespace  
+
+* [Boolean](#Boolean) : <code>object</code>
+    * [.isBoolean](#Boolean.isBoolean) ⇒ <code>boolean</code>
+    * [.Array#equals(value)](#Boolean.Array+equals) ⇒ <code>boolean</code>
+    * [.Date#equals(value)](#Boolean.Date+equals) ⇒ <code>boolean</code>
+
 <a name="Boolean.isBoolean"></a>
 
 ### Boolean.isBoolean ⇒ <code>boolean</code>
@@ -994,6 +1000,36 @@ Returns true if the given argument is a boolean
 ```javascript
 Boolean.isBoolean('foo bar'); // false
 Boolean.isBoolean(flase); // true
+```
+<a name="Boolean.Array+equals"></a>
+
+### Boolean.Array#equals(value) ⇒ <code>boolean</code>
+Checks if the array is equal to the given value
+
+**Kind**: static method of [<code>Boolean</code>](#Boolean)  
+
+| Param | Type |
+| --- | --- |
+| value | <code>\*</code> | 
+
+**Example**  
+```javascript
+[1,2,3].equals([2,1,3]); // false
+```
+<a name="Boolean.Date+equals"></a>
+
+### Boolean.Date#equals(value) ⇒ <code>boolean</code>
+Checks if the date is equal to the given value
+
+**Kind**: static method of [<code>Boolean</code>](#Boolean)  
+
+| Param | Type |
+| --- | --- |
+| value | <code>\*</code> | 
+
+**Example**  
+```javascript
+(new Date()).equals(new Date()); // false
 ```
 <a name="Date"></a>
 
@@ -1255,6 +1291,7 @@ Math.lcm(...[1, 3, 4, 5]); // 60
 
 * [Number](#Number) : <code>object</code>
     * [.digitize](#Number.digitize) ⇒ <code>Array.&lt;number&gt;</code>
+    * [.inRange](#Number.inRange) ⇒ <code>boolean</code>
     * [.isNumber](#Number.isNumber) ⇒ <code>boolean</code>
 
 <a name="Number.digitize"></a>
@@ -1271,6 +1308,23 @@ Converts the number to an array of digits
 **Example**  
 ```javascript
 Number.digitize(123); // [1, 2, 3]
+```
+<a name="Number.inRange"></a>
+
+### Number.inRange ⇒ <code>boolean</code>
+Checks if n is between start and up to end
+
+**Kind**: static property of [<code>Number</code>](#Number)  
+
+| Param | Type | Default |
+| --- | --- | --- |
+| num | <code>number</code> |  | 
+| end | <code>number</code> |  | 
+| [start] | <code>number</code> | <code>0</code> | 
+
+**Example**  
+```javascript
+Number.inRange(4, 8); // true
 ```
 <a name="Number.isNumber"></a>
 
@@ -1561,12 +1615,14 @@ Object.isObject({foo: 'bar'}); // true
         * [.contains(pattern)](#String+contains) ⇒ <code>Array.&lt;string&gt;</code>
         * [.decapitalize([allWords])](#String+decapitalize) ⇒ <code>string</code>
         * [.empty()](#String+empty) ⇒ <code>boolean</code>
+        * [.equals(value)](#String+equals) ⇒ <code>boolean</code>
         * [.humanize()](#String+humanize) ⇒ <code>string</code>
         * [.kebabCase()](#String+kebabCase) ⇒ <code>string</code>
         * [.lines()](#String+lines) ⇒ <code>Array.&lt;string&gt;</code>
         * [.map(fn)](#String+map) ⇒ <code>Array.&lt;string&gt;</code>
         * [.mask([num], [mask])](#String+mask) ⇒ <code>string</code>
         * [.pad(size, [value])](#String+pad) ⇒ [<code>String</code>](#String)
+        * [.parseInt([radix])](#String+parseInt) ⇒ <code>number</code>
         * [.pluralize([value])](#String+pluralize) ⇒ <code>string</code>
         * [.reverse()](#String+reverse) ⇒ <code>string</code>
         * [.singularize()](#String+singularize) ⇒ <code>string</code>
@@ -1681,6 +1737,21 @@ Checks if the string is empty
 "123".empty(); // false
 "".empty(); // true
 ```
+<a name="String+equals"></a>
+
+### string.equals(value) ⇒ <code>boolean</code>
+Checks if the string is equal to the given value
+
+**Kind**: instance method of [<code>String</code>](#String)  
+
+| Param | Type |
+| --- | --- |
+| value | <code>\*</code> | 
+
+**Example**  
+```javascript
+"hello".equals("Hello"); // false
+```
 <a name="String+humanize"></a>
 
 ### string.humanize() ⇒ <code>string</code>
@@ -1767,6 +1838,21 @@ FillS the string with the given value until the string reaches the specified siz
 ```javascript
 "123".pad(5, 0); // "12300"
 "123".pad(-5, 0); // "00123"
+```
+<a name="String+parseInt"></a>
+
+### string.parseInt([radix]) ⇒ <code>number</code>
+Converts string to an integer of the specified radix
+
+**Kind**: instance method of [<code>String</code>](#String)  
+
+| Param | Type |
+| --- | --- |
+| [radix] | <code>number</code> | 
+
+**Example**  
+```javascript
+"08".parseInt(); // 8
 ```
 <a name="String+pluralize"></a>
 

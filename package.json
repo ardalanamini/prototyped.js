@@ -1,6 +1,6 @@
 {
   "name": "prototyped.js",
-  "version": "0.10.1",
+  "version": "0.11.0",
   "description": "Common typescript ready prototypes available in both es5 and es6",
   "author": "Ardalan Amini <ardalanamini22@gmail.com>",
   "license": "MIT",
@@ -118,7 +118,7 @@
     "es6"
   ],
   "scripts": {
-    "prepare": "npm test && npm run lint && npm run doc && npm run build",
+    "prepare": "npm test && npm run lint && npm run build && npm run doc",
     "build": "node scripts/build.js",
     "doc": "tsc && jsdoc2md es6/*.js es6/**/*.js es6/**/**/*.js --example-lang javascript > API.md",
     "lint": "tslint -p tsconfig.json -c tslint.json --exclude '**/*.d.ts'",
@@ -130,22 +130,22 @@
     "pluralize": "^7.0.0"
   },
   "devDependencies": {
-    "@types/jest": "^23.0.0",
-    "@types/node": "^10.3.2",
-    "@types/pluralize": "0.0.28",
+    "@types/jest": "^23.1.6",
+    "@types/node": "^10.5.2",
+    "@types/pluralize": "0.0.29",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
-    "codecov": "^3.0.2",
+    "codecov": "^3.0.4",
     "fs-extra": "^6.0.1",
     "fs-readdir-recursive": "^1.1.0",
-    "jest": "^23.1.0",
+    "jest": "^23.4.1",
     "jsdoc-to-markdown": "^4.0.1",
     "rimraf": "^2.6.2",
     "ts-jest": "^23.0.0",
     "tslint": "^5.10.0",
-    "typescript": "^2.9.1",
+    "typescript": "^2.9.2",
     "uglify-es": "^3.3.9",
-    "uglify-js": "^3.4.0"
+    "uglify-js": "^3.4.4"
   },
   "jest": {
     "moduleFileExtensions": [

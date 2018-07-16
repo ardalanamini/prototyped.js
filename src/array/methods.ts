@@ -13,6 +13,7 @@ import * as deepFlatten from "./deepFlatten/method";
 import * as diff from "./diff/method";
 import * as distinct from "./distinct/method";
 import * as empty from "./empty/method";
+import * as equals from "./equals/method";
 import * as everyNth from "./everyNth/method";
 import * as first from "./first/method";
 import * as flatten from "./flatten/method";
@@ -70,6 +71,7 @@ export {
   diff,
   distinct,
   empty,
+  equals,
   everyNth,
   first,
   flatten,
