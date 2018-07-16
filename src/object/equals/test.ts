@@ -14,15 +14,14 @@ describe("Object.prototype.$equals", () => {
   test("date.$equals({ a: 1 }) returns false", () => {
     const date = new Date();
 
-    expect(date.$equals({ a: 1 }))
-      .toBe(false);
+    expect(date.$equals({ a: 1 })).toBe(false);
   });
 
   test("date.$equals(date) returns true", () => {
-    const date = new Date();
+    const date1 = new Date();
+    const date2 = date1;
 
-    expect(date.$equals(new Date()))
-      .toBe(true);
+    expect(date1.$equals(date2)).toBe(true);
   });
 
   test("false.$equals(null) returns false", () => {

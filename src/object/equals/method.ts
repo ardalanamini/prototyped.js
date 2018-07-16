@@ -1,9 +1,11 @@
 import * as isObject from "../isObject/method";
+import * as isDate from "../../date/isDate/method";
+import * as dateEquals from "../../date/equals/method";
 
 const method = (obj: { [key: string]: any }, obj2: any): boolean => {
   if (obj === obj2) return true;
 
-  if (obj instanceof Date && obj2 instanceof Date) return obj.getTime() === obj2.getTime();
+  if (isDate(obj)) return dateEquals(obj, obj2);
 
   if (!obj || !obj2 || !isObject(obj2)) return obj === obj2;
 
@@ -13,7 +15,7 @@ const method = (obj: { [key: string]: any }, obj2: any): boolean => {
 
   if (keys.length !== Object.keys(obj2).length) return false;
 
-  return keys.every((k) => method((obj as any)[k], (obj2 as any)[k]));
+  return keys.every((k) => method(obj[k], (obj2 as any)[k]));
 };
 
 export = method;

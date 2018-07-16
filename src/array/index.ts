@@ -15,6 +15,7 @@ import "./deepFlatten";
 import "./diff";
 import "./distinct";
 import "./empty";
+import "./equals";
 import "./everyNth";
 import "./first";
 import "./flatten";
