@@ -12,4 +12,12 @@ describe("Array.prototype.equals", () => {
   test("[1,2,3].equals([2,1,3]) returns false", () => {
     expect([1, 2, 3].equals([2, 1, 3])).toBe(false);
   });
+
+  test("[1,2,3].equals([1,2,3,4]) returns false", () => {
+    expect([1, 2, 3].equals([1, 2, 3, 4])).toBe(false);
+  });
+
+  test("[1,2,3].equals({ 0: 1, 1: 2, 2: 3}) returns false", () => {
+    expect([1, 2, 3].equals({ 0: 1, 1: 2, 2: 3 })).toBe(false);
+  });
 });

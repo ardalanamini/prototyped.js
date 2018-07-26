@@ -9,7 +9,7 @@ declare global {
 /**
  * Creates an array of elements, grouped based on the position in the original arrays
  * @memberof Array
- * @param {Array[]} array
+ * @param {Array[]} arrays
  * @returns {Array}
  * @example
  * ['a', 'b'].zip([1, 2], [true, false]); // [['a', 1, true], ['b', 2, false]]
