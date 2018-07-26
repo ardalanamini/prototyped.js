@@ -82,7 +82,7 @@
         * [.whereNotLike(field, [value])](#Array+whereNotLike) ⇒ [<code>Array</code>](#Array)
         * [.whereNotNull([field])](#Array+whereNotNull) ⇒ [<code>Array</code>](#Array)
         * [.whereNull([field])](#Array+whereNull) ⇒ [<code>Array</code>](#Array)
-        * [.zip(array)](#Array+zip) ⇒ [<code>Array</code>](#Array)
+        * [.zip(arrays)](#Array+zip) ⇒ [<code>Array</code>](#Array)
         * [.zipObject(array)](#Array+zipObject) ⇒ [<code>Array</code>](#Array)
     * _static_
         * [.range](#Array.range) ⇒ <code>Array.&lt;number&gt;</code>
@@ -909,14 +909,14 @@ Filters the array
 ```
 <a name="Array+zip"></a>
 
-### array.zip(array) ⇒ [<code>Array</code>](#Array)
+### array.zip(arrays) ⇒ [<code>Array</code>](#Array)
 Creates an array of elements, grouped based on the position in the original arrays
 
 **Kind**: instance method of [<code>Array</code>](#Array)  
 
 | Param | Type |
 | --- | --- |
-| array | [<code>Array.&lt;Array&gt;</code>](#Array) | 
+| arrays | [<code>Array.&lt;Array&gt;</code>](#Array) | 
 
 **Example**  
 ```javascript
@@ -1349,13 +1349,16 @@ Number.isNumber(2); // true
 
 * [Object](#Object) : <code>object</code>
     * _instance_
+        * [.$assign(...sources)](#Object+$assign) ⇒ [<code>Object</code>](#Object)
         * [.$camelCaseKeys()](#Object+$camelCaseKeys) ⇒ [<code>Object</code>](#Object)
         * [.$clone(deep)](#Object+$clone) ⇒ [<code>Object</code>](#Object)
+        * [.$defaults(...sources)](#Object+$defaults) ⇒ [<code>Object</code>](#Object)
         * [.$empty()](#Object+$empty) ⇒ <code>boolean</code>
         * [.$equals(obj)](#Object+$equals) ⇒ <code>boolean</code>
         * [.$get(key)](#Object+$get) ⇒ <code>\*</code>
         * [.$invert()](#Object+$invert) ⇒ [<code>Object</code>](#Object)
         * [.$kebabCaseKeys()](#Object+$kebabCaseKeys) ⇒ [<code>Object</code>](#Object)
+        * [.$keys()](#Object+$keys) ⇒ [<code>Object</code>](#Object)
         * [.$lowerCaseKeys()](#Object+$lowerCaseKeys) ⇒ [<code>Object</code>](#Object)
         * [.$map(fn)](#Object+$map) ⇒ [<code>Object</code>](#Object)
         * [.$mapKeys(fn)](#Object+$mapKeys) ⇒ [<code>Object</code>](#Object)
@@ -1367,6 +1370,21 @@ Number.isNumber(2); // true
     * _static_
         * [.isObject](#Object.isObject) ⇒ <code>boolean</code>
 
+<a name="Object+$assign"></a>
+
+### object.$assign(...sources) ⇒ [<code>Object</code>](#Object)
+Assigns object like Object.assign
+
+**Kind**: instance method of [<code>Object</code>](#Object)  
+
+| Param | Type |
+| --- | --- |
+| ...sources | [<code>Array.&lt;Object&gt;</code>](#Object) | 
+
+**Example**  
+```javascript
+{ a: 0 }.$assign({ a: 1 }, { b: 2 }); // { a: 1, b: 2 }
+```
 <a name="Object+$camelCaseKeys"></a>
 
 ### object.$camelCaseKeys() ⇒ [<code>Object</code>](#Object)
@@ -1393,6 +1411,21 @@ Creates a (deep) clone of the object
 ```javascript
 const a = { foo: 'bar', obj: { a: 1, b: 2 } };
 const b = a.$clone(true); // a !== b, a.obj !== b.obj
+```
+<a name="Object+$defaults"></a>
+
+### object.$defaults(...sources) ⇒ [<code>Object</code>](#Object)
+Assigns object in reverse by Object.assign
+
+**Kind**: instance method of [<code>Object</code>](#Object)  
+
+| Param | Type |
+| --- | --- |
+| ...sources | [<code>Array.&lt;Object&gt;</code>](#Object) | 
+
+**Example**  
+```javascript
+{ a: 0 }.$defaults({ a: 1, b: 2 }, { b: 3 }); // { a: 0, b: 2 }
 ```
 <a name="Object+$empty"></a>
 
@@ -1455,6 +1488,16 @@ Creates a new object from the specified object, where all the keys are in kebab-
 ```javascript
 const myObj = { First_name: "Adam", lastName: "Smith" };
 const myObjLower = myObj.$kebabCaseKeys(); // {first-name: "Adam", last-name: "Smith"}
+```
+<a name="Object+$keys"></a>
+
+### object.$keys() ⇒ [<code>Object</code>](#Object)
+Get keys of the object
+
+**Kind**: instance method of [<code>Object</code>](#Object)  
+**Example**  
+```javascript
+{ one: 1, two: 2, three: 3 }.$keys(); // ["one", "two", "three"]
 ```
 <a name="Object+$lowerCaseKeys"></a>
 

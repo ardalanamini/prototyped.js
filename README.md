@@ -9,6 +9,8 @@ Common **Typescript ready** prototypes available in **ES5** and **ES6**, **Serve
 [![Package Quality](https://npm.packagequality.com/shield/prototyped.js.svg)](https://packagequality.com/#?package=prototyped.js)
 [![Npm Total Downloads](https://img.shields.io/npm/dt/prototyped.js.svg)](https://www.npmjs.com/package/prototyped.js)
 [![Npm Monthly Downloads](https://img.shields.io/npm/dm/prototyped.js.svg)](https://www.npmjs.com/package/prototyped.js)
+[![npm bundle size (minified)](https://img.shields.io/bundlephobia/min/prototyped.js.svg)](https://www.npmjs.com/package/prototyped.js)
+[![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/prototyped.js.svg)](https://www.npmjs.com/package/prototyped.js)
 [![Open Issues](https://img.shields.io/github/issues-raw/ardalanamini/prototyped.js.svg)](https://github.com/ardalanamini/prototyped.js/issues?q=is%3Aopen+is%3Aissue)
 [![Closed Issues](https://img.shields.io/github/issues-closed-raw/ardalanamini/prototyped.js.svg)](https://github.com/ardalanamini/prototyped.js/issues?q=is%3Aissue+is%3Aclosed)
 [![Tested With Jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
