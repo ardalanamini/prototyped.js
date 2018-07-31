@@ -60,7 +60,7 @@
         * [.max([path])](#Array+max) ⇒ <code>number</code>
         * [.median([path])](#Array+median) ⇒ <code>number</code>
         * [.min([path])](#Array+min) ⇒ <code>number</code>
-        * [.nest(id, link)](#Array+nest) ⇒ [<code>Array.&lt;Object&gt;</code>](#Object)
+        * [.nest(link, id)](#Array+nest) ⇒ [<code>Array.&lt;Object&gt;</code>](#Object)
         * [.orderBy([field], [order])](#Array+orderBy) ⇒ [<code>Array</code>](#Array)
         * [.pad(size, [value])](#Array+pad) ⇒ [<code>Array</code>](#Array)
         * [.partition(fn)](#Array+partition) ⇒ [<code>Array</code>](#Array)
@@ -550,26 +550,26 @@ Returns the minimum value of a given path
 ```
 <a name="Array+nest"></a>
 
-### array.nest(id, link) ⇒ [<code>Array.&lt;Object&gt;</code>](#Object)
+### array.nest(link, id) ⇒ [<code>Array.&lt;Object&gt;</code>](#Object)
 Given a flat array of objects linked to one another, it will nest them recursively
 
 **Kind**: instance method of [<code>Array</code>](#Array)  
 
 | Param | Type |
 | --- | --- |
-| id | <code>\*</code> | 
 | link | <code>string</code> | 
+| id | <code>string</code> | 
 
 **Example**  
 ```javascript
 const comments = [
-  { id: 1, parent_id: null },
-  { id: 2, parent_id: 1 },
-  { id: 3, parent_id: 1 },
-  { id: 4, parent_id: 2 },
-  { id: 5, parent_id: 4 }
+  { id: 1, comment_id: null },
+  { id: 2, comment_id: 1 },
+  { id: 3, comment_id: 1 },
+  { id: 4, comment_id: 2 },
+  { id: 5, comment_id: 4 }
 ];
-comments.nest(); // [{ id: 1, parent_id: null, children: [...] }]
+comments.nest("comment_id"); // [{ id: 1, comment_id: null, children: [...] }]
 ```
 <a name="Array+orderBy"></a>
 
