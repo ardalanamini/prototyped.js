@@ -1,5 +1,12 @@
 # Changelog
 
+## [v0.12.1](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.12.1) *(2018-07-31)*
+
+**Fixed bugs:**
+
+- `Array.prototype.nest`
+  - fixed finding children of children bug
+
 ## [v0.12.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.12.0) *(2018-07-26)*
 
 **Implemented enhancements:**
