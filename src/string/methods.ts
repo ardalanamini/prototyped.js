@@ -5,9 +5,9 @@ import * as capitalize from "./capitalize/method";
 import * as chars from "./chars/method";
 import * as contains from "./contains/method";
 import * as decapitalize from "./decapitalize/method";
-import * as empty from "./empty/method";
 import * as equals from "./equals/method";
 import * as humanize from "./humanize/method";
+import * as isEmpty from "./isEmpty/method";
 import * as isString from "./isString/method";
 import * as kebabCase from "./kebabCase/method";
 import * as lines from "./lines/method";
@@ -32,9 +32,9 @@ export {
   chars,
   contains,
   decapitalize,
-  empty,
   equals,
   humanize,
+  isEmpty,
   isString,
   kebabCase,
   lines,

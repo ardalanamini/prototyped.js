@@ -6,6 +6,7 @@ import * as empty from "./empty/method";
 import * as equals from "./equals/method";
 import * as get from "./get/method";
 import * as invert from "./invert/method";
+import * as isEmpty from "./isEmpty/method";
 import * as isObject from "./isObject/method";
 import * as kebabCaseKeys from "./kebabCaseKeys/method";
 import * as keys from "./keys/method";
@@ -27,6 +28,7 @@ export {
   equals,
   get,
   invert,
+  isEmpty,
   isObject,
   kebabCaseKeys,
   keys,

@@ -8,6 +8,7 @@ import "./empty";
 import "./equals";
 import "./get";
 import "./invert";
+import "./isEmpty";
 import "./isObject";
 import "./kebabCaseKeys";
 import "./keys";

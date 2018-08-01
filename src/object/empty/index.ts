@@ -3,19 +3,19 @@ import { addPrototype } from "../utils";
 
 declare global {
   interface Object {
-    $empty(): boolean;
+    $empty(): void;
   }
 }
 
 /**
- * Checks if the object is empty
+ * Empty the object
  * @memberof Object.prototype
- * @returns {boolean}
  * @example
- * { a: 1 }.$empty(); // false
- * {}.$empty(); // true
+ * const obj = { a: 1 };
+ * obj.$empty();
+ * // obj = {};
  */
-function $empty(this: object): boolean {
+function $empty(this: object): void {
   return method(this);
 }
 
