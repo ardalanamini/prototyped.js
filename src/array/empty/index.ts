@@ -2,17 +2,17 @@ import * as method from "./method";
 
 declare global {
   interface Array<T> {
-    empty(): boolean;
+    empty(): void;
   }
 }
 
 /**
- * Checks if the array is empty
+ * Empty the array
  * @memberof Array
- * @returns {boolean}
  * @example
- * [1,2].empty(); // false
- * [].empty(); // true
+ * const arr = [1,3];
+ * arr.empty();
+ * // arr = []
  */
 Array.prototype.empty = function() {
   return method(this);

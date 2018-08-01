@@ -2,7 +2,7 @@ import * as method from "./method";
 
 declare global {
   interface String {
-    empty(): boolean;
+    isEmpty(): boolean;
   }
 }
 
@@ -11,9 +11,9 @@ declare global {
  * @memberof String
  * @returns {boolean}
  * @example
- * "123".empty(); // false
- * "".empty(); // true
+ * "123".isEmpty(); // false
+ * "".isEmpty(); // true
  */
-String.prototype.empty = function() {
+String.prototype.isEmpty = function() {
   return method(this as string);
 };

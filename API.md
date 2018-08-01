@@ -45,7 +45,7 @@
         * [.deepFlatten()](#Array+deepFlatten) ⇒ [<code>Array</code>](#Array)
         * [.diff(array, [comp])](#Array+diff) ⇒ [<code>Array</code>](#Array)
         * [.distinct()](#Array+distinct) ⇒ [<code>Array</code>](#Array)
-        * [.empty()](#Array+empty) ⇒ <code>boolean</code>
+        * [.empty()](#Array+empty)
         * [.everyNth()](#Array+everyNth) ⇒ [<code>Array</code>](#Array)
         * [.first()](#Array+first) ⇒ <code>\*</code>
         * [.flatten([depth])](#Array+flatten) ⇒ [<code>Array</code>](#Array)
@@ -55,6 +55,7 @@
         * [.indexOfAll(value)](#Array+indexOfAll) ⇒ <code>Array.&lt;number&gt;</code>
         * [.initial()](#Array+initial) ⇒ [<code>Array</code>](#Array)
         * [.intersect(array)](#Array+intersect) ⇒ [<code>Array</code>](#Array)
+        * [.isEmpty()](#Array+isEmpty) ⇒ <code>boolean</code>
         * [.last()](#Array+last) ⇒ <code>\*</code>
         * [.limit([limit])](#Array+limit) ⇒ [<code>Array</code>](#Array)
         * [.max([path])](#Array+max) ⇒ <code>number</code>
@@ -338,14 +339,15 @@ Returns all the distinct values of an array
 ```
 <a name="Array+empty"></a>
 
-### array.empty() ⇒ <code>boolean</code>
-Checks if the array is empty
+### array.empty()
+Empty the array
 
 **Kind**: instance method of [<code>Array</code>](#Array)  
 **Example**  
 ```javascript
-[1,2].empty(); // false
-[].empty(); // true
+const arr = [1,3];
+arr.empty();
+// arr = []
 ```
 <a name="Array+everyNth"></a>
 
@@ -472,6 +474,17 @@ Returns a list of elements that exist in both arrays
 **Example**  
 ```javascript
 [1, 2, 3].intersect([4, 3, 2]); // [2,3]
+```
+<a name="Array+isEmpty"></a>
+
+### array.isEmpty() ⇒ <code>boolean</code>
+Checks if the array is empty
+
+**Kind**: instance method of [<code>Array</code>](#Array)  
+**Example**  
+```javascript
+[1,2].isEmpty(); // false
+[].isEmpty(); // true
 ```
 <a name="Array+last"></a>
 
@@ -1354,9 +1367,11 @@ Number.isNumber(2); // true
         * [.$clone(deep)](#Object+$clone) ⇒ [<code>Object</code>](#Object)
         * [.$defaults(...sources)](#Object+$defaults) ⇒ [<code>Object</code>](#Object)
         * [.$empty()](#Object+$empty) ⇒ <code>boolean</code>
+        * [.$empty()](#Object+$empty)
         * [.$equals(obj)](#Object+$equals) ⇒ <code>boolean</code>
         * [.$get(key)](#Object+$get) ⇒ <code>\*</code>
         * [.$invert()](#Object+$invert) ⇒ [<code>Object</code>](#Object)
+        * [.$isEmpty()](#Object+$isEmpty) ⇒ <code>boolean</code>
         * [.$kebabCaseKeys()](#Object+$kebabCaseKeys) ⇒ [<code>Object</code>](#Object)
         * [.$keys()](#Object+$keys) ⇒ [<code>Object</code>](#Object)
         * [.$lowerCaseKeys()](#Object+$lowerCaseKeys) ⇒ [<code>Object</code>](#Object)
@@ -1438,6 +1453,18 @@ Checks if the object is empty
 { a: 1 }.$empty(); // false
 {}.$empty(); // true
 ```
+<a name="Object+$empty"></a>
+
+### object.$empty()
+Empty the object
+
+**Kind**: instance method of [<code>Object</code>](#Object)  
+**Example**  
+```javascript
+const obj = { a: 1 };
+obj.$empty();
+// obj = {};
+```
 <a name="Object+$equals"></a>
 
 ### object.$equals(obj) ⇒ <code>boolean</code>
@@ -1477,6 +1504,17 @@ Inverts the key-value pairs of the object, without mutating it
 **Example**  
 ```javascript
 { name: "John", age: 20 }.$invert(); // { 20: "age", John: "name" }
+```
+<a name="Object+$isEmpty"></a>
+
+### object.$isEmpty() ⇒ <code>boolean</code>
+Checks if the object is empty
+
+**Kind**: instance method of [<code>Object</code>](#Object)  
+**Example**  
+```javascript
+{ a: 1 }.$isEmpty(); // false
+{}.$isEmpty(); // true
 ```
 <a name="Object+$kebabCaseKeys"></a>
 
@@ -1658,8 +1696,10 @@ Object.isObject({foo: 'bar'}); // true
         * [.contains(pattern)](#String+contains) ⇒ <code>Array.&lt;string&gt;</code>
         * [.decapitalize([allWords])](#String+decapitalize) ⇒ <code>string</code>
         * [.empty()](#String+empty) ⇒ <code>boolean</code>
+        * [.empty()](#String+empty) ⇒ <code>boolean</code>
         * [.equals(value)](#String+equals) ⇒ <code>boolean</code>
         * [.humanize()](#String+humanize) ⇒ <code>string</code>
+        * [.isEmpty()](#String+isEmpty) ⇒ <code>boolean</code>
         * [.kebabCase()](#String+kebabCase) ⇒ <code>string</code>
         * [.lines()](#String+lines) ⇒ <code>Array.&lt;string&gt;</code>
         * [.map(fn)](#String+map) ⇒ <code>Array.&lt;string&gt;</code>
@@ -1780,6 +1820,17 @@ Checks if the string is empty
 "123".empty(); // false
 "".empty(); // true
 ```
+<a name="String+empty"></a>
+
+### string.empty() ⇒ <code>boolean</code>
+Checks if the string is empty
+
+**Kind**: instance method of [<code>String</code>](#String)  
+**Example**  
+```javascript
+"123".empty(); // false
+"".empty(); // true
+```
 <a name="String+equals"></a>
 
 ### string.equals(value) ⇒ <code>boolean</code>
@@ -1805,6 +1856,17 @@ Also removes beginning and ending whitespace
 **Example**  
 ```javascript
 '  capitalize dash-CamelCase_underscore trim  '.humanize(); // 'Capitalize dash camel case underscore trim'
+```
+<a name="String+isEmpty"></a>
+
+### string.isEmpty() ⇒ <code>boolean</code>
+Checks if the string is empty
+
+**Kind**: instance method of [<code>String</code>](#String)  
+**Example**  
+```javascript
+"123".isEmpty(); // false
+"".isEmpty(); // true
 ```
 <a name="String+kebabCase"></a>
 

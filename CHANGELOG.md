@@ -1,5 +1,23 @@
 # Changelog
 
+## [v0.13.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.13.0) *(2018-08-01)*
+
+**Implemented enhancements:**
+
+- `String.prototype`
+  - renamed `$empty` to `$isEmpty`
+- `Array.prototype`
+  - renamed `$empty` to `$isEmpty`
+  - Added `$empty`
+- `Object.prototype`
+  - renamed `$empty` to `$isEmpty`
+  - Added `$empty`
+
+**Fixed bugs:**
+
+- `Number.isNumber`
+  - fixed considering numeral strings as number
+
 ## [v0.12.1](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.12.1) *(2018-07-31)*
 
 **Fixed bugs:**

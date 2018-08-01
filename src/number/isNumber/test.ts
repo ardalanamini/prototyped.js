@@ -6,6 +6,17 @@ describe("Number.isNumber", () => {
       .toBe(false);
   });
 
+  test("Number.isNumber(\"2\") returns false", () => {
+    expect(Number.isNumber("2"))
+      .toBe(false);
+  });
+
+  test("Number.isNumber(new Number(2)) returns true", () => {
+    // tslint:disable-next-line
+    expect(Number.isNumber(new Number(2)))
+      .toBe(true);
+  });
+
   test("Number.isNumber(2) returns true", () => {
     expect(Number.isNumber(2))
       .toBe(true);
