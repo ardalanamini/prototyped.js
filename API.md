@@ -1366,7 +1366,6 @@ Number.isNumber(2); // true
         * [.$camelCaseKeys()](#Object+$camelCaseKeys) ⇒ [<code>Object</code>](#Object)
         * [.$clone(deep)](#Object+$clone) ⇒ [<code>Object</code>](#Object)
         * [.$defaults(...sources)](#Object+$defaults) ⇒ [<code>Object</code>](#Object)
-        * [.$empty()](#Object+$empty) ⇒ <code>boolean</code>
         * [.$empty()](#Object+$empty)
         * [.$equals(obj)](#Object+$equals) ⇒ <code>boolean</code>
         * [.$get(key)](#Object+$get) ⇒ <code>\*</code>
@@ -1441,17 +1440,6 @@ Assigns object in reverse by Object.assign
 **Example**  
 ```javascript
 { a: 0 }.$defaults({ a: 1, b: 2 }, { b: 3 }); // { a: 0, b: 2 }
-```
-<a name="Object+$empty"></a>
-
-### object.$empty() ⇒ <code>boolean</code>
-Checks if the object is empty
-
-**Kind**: instance method of [<code>Object</code>](#Object)  
-**Example**  
-```javascript
-{ a: 1 }.$empty(); // false
-{}.$empty(); // true
 ```
 <a name="Object+$empty"></a>
 
@@ -1695,8 +1683,6 @@ Object.isObject({foo: 'bar'}); // true
         * [.chars()](#String+chars) ⇒ <code>Array.&lt;string&gt;</code>
         * [.contains(pattern)](#String+contains) ⇒ <code>Array.&lt;string&gt;</code>
         * [.decapitalize([allWords])](#String+decapitalize) ⇒ <code>string</code>
-        * [.empty()](#String+empty) ⇒ <code>boolean</code>
-        * [.empty()](#String+empty) ⇒ <code>boolean</code>
         * [.equals(value)](#String+equals) ⇒ <code>boolean</code>
         * [.humanize()](#String+humanize) ⇒ <code>string</code>
         * [.isEmpty()](#String+isEmpty) ⇒ <code>boolean</code>
@@ -1808,28 +1794,6 @@ Returns the decapitalized string
 ```javascript
 'Foo Bar'.decapitalize(); // 'foo Bar'
 'Hello World'.decapitalize(true); // 'hello world'
-```
-<a name="String+empty"></a>
-
-### string.empty() ⇒ <code>boolean</code>
-Checks if the string is empty
-
-**Kind**: instance method of [<code>String</code>](#String)  
-**Example**  
-```javascript
-"123".empty(); // false
-"".empty(); // true
-```
-<a name="String+empty"></a>
-
-### string.empty() ⇒ <code>boolean</code>
-Checks if the string is empty
-
-**Kind**: instance method of [<code>String</code>](#String)  
-**Example**  
-```javascript
-"123".empty(); // false
-"".empty(); // true
 ```
 <a name="String+equals"></a>
 
