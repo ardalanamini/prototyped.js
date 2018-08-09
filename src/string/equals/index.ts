@@ -10,7 +10,7 @@ declare global {
  * Checks if the string is equal to the given value
  * @memberof String
  * @param {*} value
- * @returns {boolean}
+ * @returns {Boolean}
  * @example
  * "hello".equals("Hello"); // false
  */

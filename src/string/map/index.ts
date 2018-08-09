@@ -12,7 +12,7 @@ declare global {
  * Just like array.map
  * @memberof String
  * @param {Function} fn
- * @returns {string[]}
+ * @returns {String[]}
  * @example
  * 'Hello'.map((char) => char == 'o' ? 'O' : char); // 'HellO'
  */

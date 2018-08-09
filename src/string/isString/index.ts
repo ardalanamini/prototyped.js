@@ -10,7 +10,7 @@ declare global {
  * Returns true if the given argument is an string
  * @memberof String
  * @param {*} arg
- * @returns {boolean}
+ * @returns {Boolean}
  * @example
  * String.isString(2); // false
  * String.isString("foo bar"); // true

@@ -9,7 +9,7 @@ declare global {
 /**
  * Chunks the array into smaller arrays of a specified size
  * @memberof Array
- * @param {number} size
+ * @param {Number} size
  * @returns {Array[]}
  * @example
  * [1, 2, 3, 4, 5].chunk(2); // [[1,2],[3,4],[5]]

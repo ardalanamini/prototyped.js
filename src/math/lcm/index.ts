@@ -9,8 +9,8 @@ declare global {
 /**
  * Returns the least common multiple of two or more numbers
  * @memberof Math
- * @param {number[]} nums
- * @returns {number}
+ * @param {Number[]} nums
+ * @returns {Number}
  * @example
  * Math.lcm(12, 7); // 84
  * Math.lcm(...[1, 3, 4, 5]); // 60

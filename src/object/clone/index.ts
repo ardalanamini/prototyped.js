@@ -10,7 +10,7 @@ declare global {
 /**
  * Creates a (deep) clone of the object
  * @memberof Object.prototype
- * @param {boolean} deep
+ * @param {Boolean} deep
  * @returns {Object}
  * @example
  * const a = { foo: 'bar', obj: { a: 1, b: 2 } };

@@ -9,7 +9,7 @@ declare global {
 /**
  * Returns the item at a given index. If the index does not exist, def is returned
  * @memberof Array
- * @param {number} index
+ * @param {Number} index
  * @param {*} [def=undefined]
  * @returns {*}
  * @example

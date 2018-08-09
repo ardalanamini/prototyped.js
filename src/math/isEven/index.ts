@@ -9,8 +9,8 @@ declare global {
 /**
  * Returns true if the given number is even, false otherwise
  * @memberof Math
- * @param {number} num
- * @returns {boolean}
+ * @param {Number} num
+ * @returns {Boolean}
  * @example
  * Math.isEven(3); // false
  */

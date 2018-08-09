@@ -9,7 +9,7 @@ declare global {
 /**
  * Encodes data with MIME base64
  * @memberof String
- * @returns {string}
+ * @returns {String}
  * @example
  * 'prototyped.js'.base64(); // 'cHJvdG90eXBlZC5qcw=='
  */

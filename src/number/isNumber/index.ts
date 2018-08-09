@@ -10,7 +10,7 @@ declare global {
  * Returns true if the given argument is a number
  * @memberof Number
  * @param {*} arg
- * @returns {boolean}
+ * @returns {Boolean}
  * @example
  * Number.isNumber('foo bar'); // false
  * Number.isNumber(2); // true

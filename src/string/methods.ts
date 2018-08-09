@@ -6,6 +6,7 @@ import * as chars from "./chars/method";
 import * as contains from "./contains/method";
 import * as decapitalize from "./decapitalize/method";
 import * as equals from "./equals/method";
+import * as forEach from "./forEach/method";
 import * as humanize from "./humanize/method";
 import * as isEmpty from "./isEmpty/method";
 import * as isString from "./isString/method";
@@ -33,6 +34,7 @@ export {
   contains,
   decapitalize,
   equals,
+  forEach,
   humanize,
   isEmpty,
   isString,

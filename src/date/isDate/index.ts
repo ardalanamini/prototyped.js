@@ -10,7 +10,7 @@ declare global {
  * Returns true if the given argument is an instance of Date
  * @memberof Date
  * @param {*} arg
- * @returns {boolean}
+ * @returns {Boolean}
  * @example
  * Date.isDate('foo bar'); // false
  * Date.isDate(new Date()); // true

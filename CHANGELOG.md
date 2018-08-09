@@ -1,5 +1,28 @@
 # Changelog
 
+## [v0.14.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.14.0) *(2018-08-10)*
+
+**Implemented enhancements:**
+
+- `Date`
+  - Added `today`
+  - Added `tomorrow`
+  - Added `yesterday`
+- `Math`
+  - Added `degreesToRads`
+  - Added `isDivisible`
+  - Added `primes`
+  - Added `radsToDegrees`
+- `Object.prototype`
+  - Renamed `$map` to `$mapValues`
+  - Added `$map`
+  - Added `$isObjectLike`
+  - Added `$isPlainObject`
+  - Added `$values`
+- `String.prototype`
+  - Added `forEach`
+- Improved documents
+
 ## [v0.13.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.13.0) *(2018-08-01)*
 
 **Implemented enhancements:**

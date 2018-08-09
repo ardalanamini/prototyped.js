@@ -10,7 +10,7 @@ declare global {
  * Returns all indices of value in the array. If value never occurs, returns []
  * @memberof Array
  * @param {*} value
- * @returns {number[]}
+ * @returns {Number[]}
  * @example
  * [1, 2, 3, 1, 2, 3].indexOfAll(1); // [0,3]
  * [1, 2, 3].indexOfAll(4); // []

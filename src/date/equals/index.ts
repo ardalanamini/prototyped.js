@@ -8,9 +8,9 @@ declare global {
 
 /**
  * Checks if the date is equal to the given value
- * @memberof Boolean
+ * @memberof Date
  * @param {*} value
- * @returns {boolean}
+ * @returns {Boolean}
  * @example
  * (new Date()).equals(new Date()); // false
  */

@@ -10,7 +10,7 @@ declare global {
 /**
  * Puts the property value indicated by the given selector into the object
  * @memberof Object.prototype
- * @param {string} path
+ * @param {String} path
  * @param {*} value
  * @example
  * const obj = { selector: { to: { val: 'val to select' } } };

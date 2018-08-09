@@ -9,7 +9,7 @@ declare global {
 /**
  * Converts the string to camelcase
  * @memberof String
- * @returns {string}
+ * @returns {String}
  * @example
  * "some_database_field_name".camelCase(); // "someDatabaseFieldName"
  * "Some label that needs to be camelized".camelCase(); // "someLabelThatNeedsToBeCamelized"

@@ -10,7 +10,7 @@ declare global {
  * Converts an underscored, camelized, or dasherized string into a humanized one.
  * Also removes beginning and ending whitespace
  * @memberof String
- * @returns {string}
+ * @returns {String}
  * @example
  * '  capitalize dash-CamelCase_underscore trim  '.humanize(); // 'Capitalize dash camel case underscore trim'
  */

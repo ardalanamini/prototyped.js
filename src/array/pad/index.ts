@@ -9,7 +9,7 @@ declare global {
 /**
  * FillS the array with the given value until the array reaches the specified size
  * @memberof Array
- * @param {number} size
+ * @param {Number} size
  * @param {*} [value=0]
  * @returns {Array}
  * @example

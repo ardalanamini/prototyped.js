@@ -9,7 +9,7 @@ declare global {
 /**
  * Returns all of the values for the given path
  * @memberof Array
- * @param {string} path
+ * @param {String} path
  * @returns {Array}
  * @example
  * [{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].pluck('a'); // [{b: 1}, {b: 2}, {b: 3}]

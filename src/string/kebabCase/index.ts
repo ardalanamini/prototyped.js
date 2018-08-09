@@ -9,7 +9,7 @@ declare global {
 /**
  * Converts a string to kebab case
  * @memberof String
- * @returns {string}
+ * @returns {String}
  * @example
  * "camelCase".kebabCase(); // "camel-case"
  * "some text".kebabCase(); // "some-text"

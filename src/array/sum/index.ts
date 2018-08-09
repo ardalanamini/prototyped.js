@@ -10,7 +10,7 @@ declare global {
  * Returns the minimum value of a given path
  * @memberof Array
  * @param {String} [path]
- * @returns {number}
+ * @returns {Number}
  * @example
  * [1, 2, 3].sum(); // 6
  * [{a: 1}, {a: 2}, {a: 3}].sum('a'); // 6

@@ -10,7 +10,7 @@ declare global {
  * Returns true if the given argument is an object
  * @memberof Object
  * @param {*} arg
- * @returns {boolean}
+ * @returns {Boolean}
  * @example
  * Object.isObject(2); // false
  * Object.isObject({foo: 'bar'}); // true

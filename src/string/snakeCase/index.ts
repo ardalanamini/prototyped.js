@@ -9,7 +9,7 @@ declare global {
 /**
  * Converts a string to snake case
  * @memberof String
- * @returns {string}
+ * @returns {String}
  * @example
  * 'camelCase'.snakeCase(); // 'camel_case'
  * 'some text'.snakeCase(); // 'some_text'
