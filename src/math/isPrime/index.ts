@@ -9,8 +9,8 @@ declare global {
 /**
  * Checks if the provided integer is a prime number
  * @memberof Math
- * @param {number} num
- * @returns {boolean}
+ * @param {Number} num
+ * @returns {Boolean}
  * @example
  * Math.isPrime(11); // true
  */

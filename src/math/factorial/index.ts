@@ -9,8 +9,8 @@ declare global {
 /**
  * Calculates the factorial of a number
  * @memberof Math
- * @param {number} num
- * @returns {number}
+ * @param {Number} num
+ * @returns {Number}
  * @example
  * Math.factorial(6); // 720
  */

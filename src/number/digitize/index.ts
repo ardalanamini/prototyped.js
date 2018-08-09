@@ -9,8 +9,8 @@ declare global {
 /**
  * Converts the number to an array of digits
  * @memberof Number
- * @param {number} num
- * @returns {number[]}
+ * @param {Number} num
+ * @returns {Number[]}
  * @example
  * Number.digitize(123); // [1, 2, 3]
  */

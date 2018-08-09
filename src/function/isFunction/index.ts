@@ -11,7 +11,7 @@ declare global {
  * Returns true if the given argument is a function
  * @memberof Function
  * @param {*} arg
- * @returns {boolean}
+ * @returns {Boolean}
  * @example
  * Function.isFunction(2); // false
  * Function.isFunction((() => {})); // true

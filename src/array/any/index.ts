@@ -11,7 +11,7 @@ declare global {
  * `false` otherwise
  * @memberof Array
  * @param {function} [fn=Boolean]
- * @returns {boolean}
+ * @returns {Boolean}
  * @example
  * [0, 1, 2, 0].any((x) => x >= 2); // true
  * [0, 0, 1, 0].any(); // true

@@ -10,7 +10,7 @@ declare global {
  * Converts a given string into an array of words
  * @memberof String
  * @param {RegExp} pattern
- * @returns {string[]}
+ * @returns {String[]}
  * @example
  * 'I love javaScript!!'.words(); // ["I", "love", "javaScript"]
  * 'python, javaScript & coffee'.words(); // ["python", "javaScript", "coffee"]

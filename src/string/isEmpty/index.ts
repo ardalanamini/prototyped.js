@@ -9,7 +9,7 @@ declare global {
 /**
  * Checks if the string is empty
  * @memberof String
- * @returns {boolean}
+ * @returns {Boolean}
  * @example
  * "123".isEmpty(); // false
  * "".isEmpty(); // true

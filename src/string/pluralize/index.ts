@@ -9,8 +9,8 @@ declare global {
 /**
  * Returns the singular or plural form of the word based on the input number
  * @memberof String
- * @param {number} [value]
- * @returns {string}
+ * @param {Number} [value]
+ * @returns {String}
  * @example
  * 'apple'.pluralize(); // 'apples'
  * 'apple'.pluralize(0); // 'apples'

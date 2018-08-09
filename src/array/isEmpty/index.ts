@@ -9,7 +9,7 @@ declare global {
 /**
  * Checks if the array is empty
  * @memberof Array
- * @returns {boolean}
+ * @returns {Boolean}
  * @example
  * [1,2].isEmpty(); // false
  * [].isEmpty(); // true

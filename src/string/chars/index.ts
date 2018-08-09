@@ -9,7 +9,7 @@ declare global {
 /**
  * Returns an array of the string's character
  * @memberof String
- * @returns {string[]}
+ * @returns {String[]}
  * @example
  * "Hello".chars(); // ["H", "e", "l", "l", "o"]
  */

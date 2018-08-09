@@ -9,8 +9,8 @@ declare global {
 /**
  * Converts string to an integer of the specified radix
  * @memberof String
- * @param {number} [radix]
- * @returns {number}
+ * @param {Number} [radix]
+ * @returns {Number}
  * @example
  * "08".parseInt(); // 8
  */

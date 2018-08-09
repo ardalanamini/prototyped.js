@@ -28,18 +28,18 @@
 
 * [Array](#Array) : <code>object</code>
     * _instance_
-        * [.avg](#Array+avg) ⇒ <code>number</code>
+        * [.avg](#Array+avg) ⇒ [<code>Number</code>](#Number)
         * [.take](#Array+take) ⇒ [<code>Array</code>](#Array)
         * [.offset](#Array+offset) ⇒ [<code>Array</code>](#Array)
-        * [.all([fn])](#Array+all) ⇒ <code>boolean</code>
-        * [.any([fn])](#Array+any) ⇒ <code>boolean</code>
+        * [.all([fn])](#Array+all) ⇒ [<code>Boolean</code>](#Boolean)
+        * [.any([fn])](#Array+any) ⇒ [<code>Boolean</code>](#Boolean)
         * [.append(value)](#Array+append)
-        * [.average([path])](#Array+average) ⇒ <code>number</code>
+        * [.average([path])](#Array+average) ⇒ [<code>Number</code>](#Number)
         * [.chunk(size)](#Array+chunk) ⇒ [<code>Array.&lt;Array&gt;</code>](#Array)
         * [.clone()](#Array+clone) ⇒ [<code>Array</code>](#Array)
         * [.compact()](#Array+compact) ⇒ [<code>Array</code>](#Array)
-        * [.contains(value)](#Array+contains) ⇒ <code>boolean</code>
-        * [.count([value])](#Array+count) ⇒ <code>number</code>
+        * [.contains(value)](#Array+contains) ⇒ [<code>Boolean</code>](#Boolean)
+        * [.count([value])](#Array+count) ⇒ [<code>Number</code>](#Number)
         * [.countBy(fn)](#Array+countBy) ⇒ [<code>Object</code>](#Object)
         * [.crossJoin(array)](#Array+crossJoin) ⇒ [<code>Array.&lt;Array&gt;</code>](#Array)
         * [.deepFlatten()](#Array+deepFlatten) ⇒ [<code>Array</code>](#Array)
@@ -52,15 +52,15 @@
         * [.get(index, [def])](#Array+get) ⇒ <code>\*</code>
         * [.groupBy(fn)](#Array+groupBy) ⇒ [<code>Object</code>](#Object)
         * [.implode(path, [separator])](#Array+implode) ⇒ [<code>String</code>](#String)
-        * [.indexOfAll(value)](#Array+indexOfAll) ⇒ <code>Array.&lt;number&gt;</code>
+        * [.indexOfAll(value)](#Array+indexOfAll) ⇒ [<code>Array.&lt;Number&gt;</code>](#Number)
         * [.initial()](#Array+initial) ⇒ [<code>Array</code>](#Array)
         * [.intersect(array)](#Array+intersect) ⇒ [<code>Array</code>](#Array)
-        * [.isEmpty()](#Array+isEmpty) ⇒ <code>boolean</code>
+        * [.isEmpty()](#Array+isEmpty) ⇒ [<code>Boolean</code>](#Boolean)
         * [.last()](#Array+last) ⇒ <code>\*</code>
         * [.limit([limit])](#Array+limit) ⇒ [<code>Array</code>](#Array)
-        * [.max([path])](#Array+max) ⇒ <code>number</code>
-        * [.median([path])](#Array+median) ⇒ <code>number</code>
-        * [.min([path])](#Array+min) ⇒ <code>number</code>
+        * [.max([path])](#Array+max) ⇒ [<code>Number</code>](#Number)
+        * [.median([path])](#Array+median) ⇒ [<code>Number</code>](#Number)
+        * [.min([path])](#Array+min) ⇒ [<code>Number</code>](#Number)
         * [.nest(link, id)](#Array+nest) ⇒ [<code>Array.&lt;Object&gt;</code>](#Object)
         * [.orderBy([field], [order])](#Array+orderBy) ⇒ [<code>Array</code>](#Array)
         * [.pad(size, [value])](#Array+pad) ⇒ [<code>Array</code>](#Array)
@@ -71,7 +71,7 @@
         * [.sample()](#Array+sample) ⇒ <code>\*</code>
         * [.shuffle()](#Array+shuffle) ⇒ [<code>Array</code>](#Array)
         * [.skip([offset])](#Array+skip) ⇒ [<code>Array</code>](#Array)
-        * [.sum([path])](#Array+sum) ⇒ <code>number</code>
+        * [.sum([path])](#Array+sum) ⇒ [<code>Number</code>](#Number)
         * [.tail()](#Array+tail) ⇒ [<code>Array</code>](#Array)
         * [.union(array)](#Array+union) ⇒ [<code>Array</code>](#Array)
         * [.where(field, [operator], [value])](#Array+where) ⇒ [<code>Array</code>](#Array)
@@ -86,12 +86,12 @@
         * [.zip(arrays)](#Array+zip) ⇒ [<code>Array</code>](#Array)
         * [.zipObject(array)](#Array+zipObject) ⇒ [<code>Array</code>](#Array)
     * _static_
-        * [.range](#Array.range) ⇒ <code>Array.&lt;number&gt;</code>
+        * [.range](#Array.range) ⇒ [<code>Array.&lt;Number&gt;</code>](#Number)
         * [.repeat](#Array.repeat) ⇒ [<code>Array</code>](#Array)
 
 <a name="Array+avg"></a>
 
-### array.avg ⇒ <code>number</code>
+### array.avg ⇒ [<code>Number</code>](#Number)
 An alias of Array.prototype.average
 
 **Kind**: instance property of [<code>Array</code>](#Array)  
@@ -138,7 +138,7 @@ An alias of Array.prototype.skip
 ```
 <a name="Array+all"></a>
 
-### array.all([fn]) ⇒ <code>boolean</code>
+### array.all([fn]) ⇒ [<code>Boolean</code>](#Boolean)
 Returns `true` if the provided predicate function returns `true` for all elements in a collection, `false` otherwise
 
 **Kind**: instance method of [<code>Array</code>](#Array)  
@@ -154,7 +154,7 @@ Returns `true` if the provided predicate function returns `true` for all element
 ```
 <a name="Array+any"></a>
 
-### array.any([fn]) ⇒ <code>boolean</code>
+### array.any([fn]) ⇒ [<code>Boolean</code>](#Boolean)
 Returns `true` if the provided predicate function returns `true` for at least one element in a collection,
 `false` otherwise
 
@@ -187,7 +187,7 @@ myArray.append(0); // myArray => [1, 2, 3, 0]
 ```
 <a name="Array+average"></a>
 
-### array.average([path]) ⇒ <code>number</code>
+### array.average([path]) ⇒ [<code>Number</code>](#Number)
 Returns the average value of a given path
 
 **Kind**: instance method of [<code>Array</code>](#Array)  
@@ -211,7 +211,7 @@ Chunks the array into smaller arrays of a specified size
 
 | Param | Type |
 | --- | --- |
-| size | <code>number</code> | 
+| size | [<code>Number</code>](#Number) | 
 
 **Example**  
 ```javascript
@@ -239,7 +239,7 @@ Removes falsey values from the array
 ```
 <a name="Array+contains"></a>
 
-### array.contains(value) ⇒ <code>boolean</code>
+### array.contains(value) ⇒ [<code>Boolean</code>](#Boolean)
 Determines whether the collection contains a given item
 
 **Kind**: instance method of [<code>Array</code>](#Array)  
@@ -254,7 +254,7 @@ Determines whether the collection contains a given item
 ```
 <a name="Array+count"></a>
 
-### array.count([value]) ⇒ <code>number</code>
+### array.count([value]) ⇒ [<code>Number</code>](#Number)
 Counts the occurrences of a value in an array
 
 **Kind**: instance method of [<code>Array</code>](#Array)  
@@ -378,7 +378,7 @@ Flattens an array up to the specified depth
 
 | Param | Type | Default |
 | --- | --- | --- |
-| [depth] | <code>number</code> | <code>1</code> | 
+| [depth] | [<code>Number</code>](#Number) | <code>1</code> | 
 
 **Example**  
 ```javascript
@@ -394,7 +394,7 @@ Returns the item at a given index. If the index does not exist, def is returned
 
 | Param | Type |
 | --- | --- |
-| index | <code>number</code> | 
+| index | [<code>Number</code>](#Number) | 
 | [def] | <code>\*</code> | 
 
 **Example**  
@@ -436,7 +436,7 @@ It's like join but u get to git it which keys to join
 ```
 <a name="Array+indexOfAll"></a>
 
-### array.indexOfAll(value) ⇒ <code>Array.&lt;number&gt;</code>
+### array.indexOfAll(value) ⇒ [<code>Array.&lt;Number&gt;</code>](#Number)
 Returns all indices of value in the array. If value never occurs, returns []
 
 **Kind**: instance method of [<code>Array</code>](#Array)  
@@ -477,7 +477,7 @@ Returns a list of elements that exist in both arrays
 ```
 <a name="Array+isEmpty"></a>
 
-### array.isEmpty() ⇒ <code>boolean</code>
+### array.isEmpty() ⇒ [<code>Boolean</code>](#Boolean)
 Checks if the array is empty
 
 **Kind**: instance method of [<code>Array</code>](#Array)  
@@ -513,7 +513,7 @@ limits the array
 ```
 <a name="Array+max"></a>
 
-### array.max([path]) ⇒ <code>number</code>
+### array.max([path]) ⇒ [<code>Number</code>](#Number)
 Returns the maximum value of a given path
 
 **Kind**: instance method of [<code>Array</code>](#Array)  
@@ -530,14 +530,14 @@ Returns the maximum value of a given path
 ```
 <a name="Array+median"></a>
 
-### array.median([path]) ⇒ <code>number</code>
+### array.median([path]) ⇒ [<code>Number</code>](#Number)
 Returns the median value of a given path
 
 **Kind**: instance method of [<code>Array</code>](#Array)  
 
 | Param | Type |
 | --- | --- |
-| [path] | <code>string</code> | 
+| [path] | [<code>String</code>](#String) | 
 
 **Example**  
 ```javascript
@@ -546,7 +546,7 @@ Returns the median value of a given path
 ```
 <a name="Array+min"></a>
 
-### array.min([path]) ⇒ <code>number</code>
+### array.min([path]) ⇒ [<code>Number</code>](#Number)
 Returns the minimum value of a given path
 
 **Kind**: instance method of [<code>Array</code>](#Array)  
@@ -570,8 +570,8 @@ Given a flat array of objects linked to one another, it will nest them recursive
 
 | Param | Type |
 | --- | --- |
-| link | <code>string</code> | 
-| id | <code>string</code> | 
+| link | [<code>String</code>](#String) | 
+| id | [<code>String</code>](#String) | 
 
 **Example**  
 ```javascript
@@ -611,7 +611,7 @@ FillS the array with the given value until the array reaches the specified size
 
 | Param | Type | Default |
 | --- | --- | --- |
-| size | <code>number</code> |  | 
+| size | [<code>Number</code>](#Number) |  | 
 | [value] | <code>\*</code> | <code>0</code> | 
 
 **Example**  
@@ -647,7 +647,7 @@ Returns all of the values for the given path
 
 | Param | Type |
 | --- | --- |
-| path | <code>string</code> | 
+| path | [<code>String</code>](#String) | 
 
 **Example**  
 ```javascript
@@ -724,7 +724,7 @@ skips the array
 ```
 <a name="Array+sum"></a>
 
-### array.sum([path]) ⇒ <code>number</code>
+### array.sum([path]) ⇒ [<code>Number</code>](#Number)
 Returns the minimum value of a given path
 
 **Kind**: instance method of [<code>Array</code>](#Array)  
@@ -954,7 +954,7 @@ Creates an array of elements, grouped based on the position in the original arra
 ```
 <a name="Array.range"></a>
 
-### Array.range ⇒ <code>Array.&lt;number&gt;</code>
+### Array.range ⇒ [<code>Array.&lt;Number&gt;</code>](#Number)
 Initializes an array containing the numbers in the specified range where start
 and end are inclusive with there common difference step
 
@@ -962,9 +962,9 @@ and end are inclusive with there common difference step
 
 | Param | Type | Default |
 | --- | --- | --- |
-| end | <code>number</code> |  | 
-| [start] | <code>number</code> | <code>0</code> | 
-| [step] | <code>number</code> | <code>1</code> | 
+| end | [<code>Number</code>](#Number) |  | 
+| [start] | [<code>Number</code>](#Number) | <code>0</code> | 
+| [step] | [<code>Number</code>](#Number) | <code>1</code> | 
 
 **Example**  
 ```javascript
@@ -981,7 +981,7 @@ Initializes and fills an array with the specified value
 
 | Param | Type | Default |
 | --- | --- | --- |
-| n | <code>number</code> |  | 
+| n | [<code>Number</code>](#Number) |  | 
 | [value] | <code>\*</code> | <code>0</code> | 
 
 **Example**  
@@ -994,13 +994,12 @@ Array.repeat(5, 2); // [2,2,2,2,2]
 **Kind**: global namespace  
 
 * [Boolean](#Boolean) : <code>object</code>
-    * [.isBoolean](#Boolean.isBoolean) ⇒ <code>boolean</code>
-    * [.Array#equals(value)](#Boolean.Array+equals) ⇒ <code>boolean</code>
-    * [.Date#equals(value)](#Boolean.Date+equals) ⇒ <code>boolean</code>
+    * [.isBoolean](#Boolean.isBoolean) ⇒ [<code>Boolean</code>](#Boolean)
+    * [.Array#equals(value)](#Boolean.Array+equals) ⇒ [<code>Boolean</code>](#Boolean)
 
 <a name="Boolean.isBoolean"></a>
 
-### Boolean.isBoolean ⇒ <code>boolean</code>
+### Boolean.isBoolean ⇒ [<code>Boolean</code>](#Boolean)
 Returns true if the given argument is a boolean
 
 **Kind**: static property of [<code>Boolean</code>](#Boolean)  
@@ -1016,7 +1015,7 @@ Boolean.isBoolean(flase); // true
 ```
 <a name="Boolean.Array+equals"></a>
 
-### Boolean.Array#equals(value) ⇒ <code>boolean</code>
+### Boolean.Array#equals(value) ⇒ [<code>Boolean</code>](#Boolean)
 Checks if the array is equal to the given value
 
 **Kind**: static method of [<code>Boolean</code>](#Boolean)  
@@ -1029,12 +1028,26 @@ Checks if the array is equal to the given value
 ```javascript
 [1,2,3].equals([2,1,3]); // false
 ```
-<a name="Boolean.Date+equals"></a>
+<a name="Date"></a>
 
-### Boolean.Date#equals(value) ⇒ <code>boolean</code>
+## Date : <code>object</code>
+**Kind**: global namespace  
+
+* [Date](#Date) : <code>object</code>
+    * _instance_
+        * [.equals(value)](#Date+equals) ⇒ [<code>Boolean</code>](#Boolean)
+    * _static_
+        * [.isDate](#Date.isDate) ⇒ [<code>Boolean</code>](#Boolean)
+        * [.today](#Date.today) ⇒ [<code>String</code>](#String)
+        * [.tomorrow](#Date.tomorrow) ⇒ [<code>String</code>](#String)
+        * [.yesterday](#Date.yesterday) ⇒ [<code>String</code>](#String)
+
+<a name="Date+equals"></a>
+
+### date.equals(value) ⇒ [<code>Boolean</code>](#Boolean)
 Checks if the date is equal to the given value
 
-**Kind**: static method of [<code>Boolean</code>](#Boolean)  
+**Kind**: instance method of [<code>Date</code>](#Date)  
 
 | Param | Type |
 | --- | --- |
@@ -1044,13 +1057,9 @@ Checks if the date is equal to the given value
 ```javascript
 (new Date()).equals(new Date()); // false
 ```
-<a name="Date"></a>
-
-## Date : <code>object</code>
-**Kind**: global namespace  
 <a name="Date.isDate"></a>
 
-### Date.isDate ⇒ <code>boolean</code>
+### Date.isDate ⇒ [<code>Boolean</code>](#Boolean)
 Returns true if the given argument is an instance of Date
 
 **Kind**: static property of [<code>Date</code>](#Date)  
@@ -1064,6 +1073,36 @@ Returns true if the given argument is an instance of Date
 Date.isDate('foo bar'); // false
 Date.isDate(new Date()); // true
 ```
+<a name="Date.today"></a>
+
+### Date.today ⇒ [<code>String</code>](#String)
+Returns today's date in `YYYY-MM-DD` format
+
+**Kind**: static property of [<code>Date</code>](#Date)  
+**Example**  
+```javascript
+Date.today(); // "2018-08-10"
+```
+<a name="Date.tomorrow"></a>
+
+### Date.tomorrow ⇒ [<code>String</code>](#String)
+Returns tomorrow's date in `YYYY-MM-DD` format
+
+**Kind**: static property of [<code>Date</code>](#Date)  
+**Example**  
+```javascript
+Date.tomorrow(); // "2018-08-11"
+```
+<a name="Date.yesterday"></a>
+
+### Date.yesterday ⇒ [<code>String</code>](#String)
+Returns yesterday's date in `YYYY-MM-DD` format
+
+**Kind**: static property of [<code>Date</code>](#Date)  
+**Example**  
+```javascript
+Date.yesterday(); // "2018-08-11"
+```
 <a name="Function"></a>
 
 ## Function : <code>object</code>
@@ -1075,7 +1114,7 @@ Date.isDate(new Date()); // true
         * [.defer(args)](#Function+defer) ⇒ <code>\*</code>
         * [.once(args)](#Function+once) ⇒ <code>\*</code>
     * _static_
-        * [.isFunction](#Function.isFunction) ⇒ <code>boolean</code>
+        * [.isFunction](#Function.isFunction) ⇒ [<code>Boolean</code>](#Boolean)
 
 <a name="Function+cache"></a>
 
@@ -1129,7 +1168,7 @@ test.once('b'); // no log this time
 ```
 <a name="Function.isFunction"></a>
 
-### Function.isFunction ⇒ <code>boolean</code>
+### Function.isFunction ⇒ [<code>Boolean</code>](#Boolean)
 Returns true if the given argument is a function
 
 **Kind**: static property of [<code>Function</code>](#Function)  
@@ -1149,7 +1188,7 @@ Function.isFunction((() => {})); // true
 **Kind**: global namespace  
 <a name="global.isBrowser"></a>
 
-### global.isBrowser ⇒ <code>boolean</code>
+### global.isBrowser ⇒ [<code>Boolean</code>](#Boolean)
 Determines if the current runtime environment is a browser,
 so that front-end modules can run on the server (Node) without throwing errors
 
@@ -1164,25 +1203,29 @@ isBrowser(); // false
 **Kind**: global namespace  
 
 * [Math](#Math) : <code>object</code>
-    * [.average](#Math.average) ⇒ <code>number</code>
-    * [.avg](#Math.avg) ⇒ <code>number</code>
-    * [.factorial](#Math.factorial) ⇒ <code>number</code>
-    * [.fibonacci](#Math.fibonacci) ⇒ <code>Array.&lt;number&gt;</code>
-    * [.gcd](#Math.gcd) ⇒ <code>number</code>
-    * [.isEven](#Math.isEven) ⇒ <code>boolean</code>
-    * [.isPrime](#Math.isPrime) ⇒ <code>boolean</code>
-    * [.lcm](#Math.lcm) ⇒ <code>number</code>
+    * [.average](#Math.average) ⇒ [<code>Number</code>](#Number)
+    * [.avg](#Math.avg) ⇒ [<code>Number</code>](#Number)
+    * [.degreesToRads](#Math.degreesToRads) ⇒ [<code>Number</code>](#Number)
+    * [.factorial](#Math.factorial) ⇒ [<code>Number</code>](#Number)
+    * [.fibonacci](#Math.fibonacci) ⇒ [<code>Array.&lt;Number&gt;</code>](#Number)
+    * [.gcd](#Math.gcd) ⇒ [<code>Number</code>](#Number)
+    * [.isDivisible](#Math.isDivisible) ⇒ [<code>Boolean</code>](#Boolean)
+    * [.isEven](#Math.isEven) ⇒ [<code>Boolean</code>](#Boolean)
+    * [.isPrime](#Math.isPrime) ⇒ [<code>Boolean</code>](#Boolean)
+    * [.lcm](#Math.lcm) ⇒ [<code>Number</code>](#Number)
+    * [.primes](#Math.primes) ⇒ [<code>Array.&lt;Number&gt;</code>](#Number)
+    * [.radsToDegrees](#Math.radsToDegrees) ⇒ [<code>Number</code>](#Number)
 
 <a name="Math.average"></a>
 
-### Math.average ⇒ <code>number</code>
+### Math.average ⇒ [<code>Number</code>](#Number)
 Returns the average of an of two or more numbers
 
 **Kind**: static property of [<code>Math</code>](#Math)  
 
 | Param | Type |
 | --- | --- |
-| nums | <code>Array.&lt;number&gt;</code> | 
+| nums | [<code>Array.&lt;Number&gt;</code>](#Number) | 
 
 **Example**  
 ```javascript
@@ -1191,30 +1234,45 @@ Math.average(1, 2, 3); // 2
 ```
 <a name="Math.avg"></a>
 
-### Math.avg ⇒ <code>number</code>
+### Math.avg ⇒ [<code>Number</code>](#Number)
 Returns the average of an of two or more numbers
 
 **Kind**: static property of [<code>Math</code>](#Math)  
 
 | Param | Type |
 | --- | --- |
-| nums | <code>Array.&lt;number&gt;</code> | 
+| nums | [<code>Array.&lt;Number&gt;</code>](#Number) | 
 
 **Example**  
 ```javascript
 Math.avg(...[1, 2, 3]); // 2
 Math.avg(1, 2, 3); // 2
 ```
+<a name="Math.degreesToRads"></a>
+
+### Math.degreesToRads ⇒ [<code>Number</code>](#Number)
+Converts a decimal degree to radians
+
+**Kind**: static property of [<code>Math</code>](#Math)  
+
+| Param | Type |
+| --- | --- |
+| num | [<code>Number</code>](#Number) | 
+
+**Example**  
+```javascript
+Math.degreesToRads(180); // 3.141592653589793
+```
 <a name="Math.factorial"></a>
 
-### Math.factorial ⇒ <code>number</code>
+### Math.factorial ⇒ [<code>Number</code>](#Number)
 Calculates the factorial of a number
 
 **Kind**: static property of [<code>Math</code>](#Math)  
 
 | Param | Type |
 | --- | --- |
-| num | <code>number</code> | 
+| num | [<code>Number</code>](#Number) | 
 
 **Example**  
 ```javascript
@@ -1222,14 +1280,14 @@ Math.factorial(6); // 720
 ```
 <a name="Math.fibonacci"></a>
 
-### Math.fibonacci ⇒ <code>Array.&lt;number&gt;</code>
+### Math.fibonacci ⇒ [<code>Array.&lt;Number&gt;</code>](#Number)
 Generates an array, containing the Fibonacci sequence, up until the nth term
 
 **Kind**: static property of [<code>Math</code>](#Math)  
 
 | Param | Type |
 | --- | --- |
-| num | <code>number</code> | 
+| num | [<code>Number</code>](#Number) | 
 
 **Example**  
 ```javascript
@@ -1237,30 +1295,46 @@ Math.fibonacci(6); // [0, 1, 1, 2, 3, 5]
 ```
 <a name="Math.gcd"></a>
 
-### Math.gcd ⇒ <code>number</code>
+### Math.gcd ⇒ [<code>Number</code>](#Number)
 Calculates the greatest common divisor between two or more numbers
 
 **Kind**: static property of [<code>Math</code>](#Math)  
 
 | Param | Type |
 | --- | --- |
-| nums | <code>Array.&lt;number&gt;</code> | 
+| nums | [<code>Array.&lt;Number&gt;</code>](#Number) | 
 
 **Example**  
 ```javascript
 Math.gcd(8, 36); // 4
 Math.gcd(...[12, 8, 32]); // 4
 ```
+<a name="Math.isDivisible"></a>
+
+### Math.isDivisible ⇒ [<code>Boolean</code>](#Boolean)
+Checks if the first numeric argument is divisible by the second one
+
+**Kind**: static property of [<code>Math</code>](#Math)  
+
+| Param | Type |
+| --- | --- |
+| dividend | [<code>Number</code>](#Number) | 
+| divisor | [<code>Number</code>](#Number) | 
+
+**Example**  
+```javascript
+Math.isDivisible(6, 3); // true
+```
 <a name="Math.isEven"></a>
 
-### Math.isEven ⇒ <code>boolean</code>
+### Math.isEven ⇒ [<code>Boolean</code>](#Boolean)
 Returns true if the given number is even, false otherwise
 
 **Kind**: static property of [<code>Math</code>](#Math)  
 
 | Param | Type |
 | --- | --- |
-| num | <code>number</code> | 
+| num | [<code>Number</code>](#Number) | 
 
 **Example**  
 ```javascript
@@ -1268,14 +1342,14 @@ Math.isEven(3); // false
 ```
 <a name="Math.isPrime"></a>
 
-### Math.isPrime ⇒ <code>boolean</code>
+### Math.isPrime ⇒ [<code>Boolean</code>](#Boolean)
 Checks if the provided integer is a prime number
 
 **Kind**: static property of [<code>Math</code>](#Math)  
 
 | Param | Type |
 | --- | --- |
-| num | <code>number</code> | 
+| num | [<code>Number</code>](#Number) | 
 
 **Example**  
 ```javascript
@@ -1283,19 +1357,49 @@ Math.isPrime(11); // true
 ```
 <a name="Math.lcm"></a>
 
-### Math.lcm ⇒ <code>number</code>
+### Math.lcm ⇒ [<code>Number</code>](#Number)
 Returns the least common multiple of two or more numbers
 
 **Kind**: static property of [<code>Math</code>](#Math)  
 
 | Param | Type |
 | --- | --- |
-| nums | <code>Array.&lt;number&gt;</code> | 
+| nums | [<code>Array.&lt;Number&gt;</code>](#Number) | 
 
 **Example**  
 ```javascript
 Math.lcm(12, 7); // 84
 Math.lcm(...[1, 3, 4, 5]); // 60
+```
+<a name="Math.primes"></a>
+
+### Math.primes ⇒ [<code>Array.&lt;Number&gt;</code>](#Number)
+Generates primes up to a given number, using the Sieve of Eratosthenes
+
+**Kind**: static property of [<code>Math</code>](#Math)  
+
+| Param | Type |
+| --- | --- |
+| num | [<code>Number</code>](#Number) | 
+
+**Example**  
+```javascript
+Math.primes(10); // [2, 3, 5, 7]
+```
+<a name="Math.radsToDegrees"></a>
+
+### Math.radsToDegrees ⇒ [<code>Number</code>](#Number)
+Converts a radians to decimal degree
+
+**Kind**: static property of [<code>Math</code>](#Math)  
+
+| Param | Type |
+| --- | --- |
+| num | [<code>Number</code>](#Number) | 
+
+**Example**  
+```javascript
+Math.radsToDegrees(Math.PI / 2); // 90
 ```
 <a name="Number"></a>
 
@@ -1303,20 +1407,20 @@ Math.lcm(...[1, 3, 4, 5]); // 60
 **Kind**: global namespace  
 
 * [Number](#Number) : <code>object</code>
-    * [.digitize](#Number.digitize) ⇒ <code>Array.&lt;number&gt;</code>
-    * [.inRange](#Number.inRange) ⇒ <code>boolean</code>
-    * [.isNumber](#Number.isNumber) ⇒ <code>boolean</code>
+    * [.digitize](#Number.digitize) ⇒ [<code>Array.&lt;Number&gt;</code>](#Number)
+    * [.inRange](#Number.inRange) ⇒ [<code>Boolean</code>](#Boolean)
+    * [.isNumber](#Number.isNumber) ⇒ [<code>Boolean</code>](#Boolean)
 
 <a name="Number.digitize"></a>
 
-### Number.digitize ⇒ <code>Array.&lt;number&gt;</code>
+### Number.digitize ⇒ [<code>Array.&lt;Number&gt;</code>](#Number)
 Converts the number to an array of digits
 
 **Kind**: static property of [<code>Number</code>](#Number)  
 
 | Param | Type |
 | --- | --- |
-| num | <code>number</code> | 
+| num | [<code>Number</code>](#Number) | 
 
 **Example**  
 ```javascript
@@ -1324,16 +1428,16 @@ Number.digitize(123); // [1, 2, 3]
 ```
 <a name="Number.inRange"></a>
 
-### Number.inRange ⇒ <code>boolean</code>
+### Number.inRange ⇒ [<code>Boolean</code>](#Boolean)
 Checks if n is between start and up to end
 
 **Kind**: static property of [<code>Number</code>](#Number)  
 
 | Param | Type | Default |
 | --- | --- | --- |
-| num | <code>number</code> |  | 
-| end | <code>number</code> |  | 
-| [start] | <code>number</code> | <code>0</code> | 
+| num | [<code>Number</code>](#Number) |  | 
+| end | [<code>Number</code>](#Number) |  | 
+| [start] | [<code>Number</code>](#Number) | <code>0</code> | 
 
 **Example**  
 ```javascript
@@ -1341,7 +1445,7 @@ Number.inRange(4, 8); // true
 ```
 <a name="Number.isNumber"></a>
 
-### Number.isNumber ⇒ <code>boolean</code>
+### Number.isNumber ⇒ [<code>Boolean</code>](#Boolean)
 Returns true if the given argument is a number
 
 **Kind**: static property of [<code>Number</code>](#Number)  
@@ -1367,22 +1471,27 @@ Number.isNumber(2); // true
         * [.$clone(deep)](#Object+$clone) ⇒ [<code>Object</code>](#Object)
         * [.$defaults(...sources)](#Object+$defaults) ⇒ [<code>Object</code>](#Object)
         * [.$empty()](#Object+$empty)
-        * [.$equals(obj)](#Object+$equals) ⇒ <code>boolean</code>
+        * [.$equals(obj)](#Object+$equals) ⇒ [<code>Boolean</code>](#Boolean)
+        * [.$forEach(fn)](#Object+$forEach)
         * [.$get(key)](#Object+$get) ⇒ <code>\*</code>
         * [.$invert()](#Object+$invert) ⇒ [<code>Object</code>](#Object)
-        * [.$isEmpty()](#Object+$isEmpty) ⇒ <code>boolean</code>
+        * [.$isEmpty()](#Object+$isEmpty) ⇒ [<code>Boolean</code>](#Boolean)
         * [.$kebabCaseKeys()](#Object+$kebabCaseKeys) ⇒ [<code>Object</code>](#Object)
         * [.$keys()](#Object+$keys) ⇒ [<code>Object</code>](#Object)
         * [.$lowerCaseKeys()](#Object+$lowerCaseKeys) ⇒ [<code>Object</code>](#Object)
         * [.$map(fn)](#Object+$map) ⇒ [<code>Object</code>](#Object)
         * [.$mapKeys(fn)](#Object+$mapKeys) ⇒ [<code>Object</code>](#Object)
+        * [.$mapValues(fn)](#Object+$mapValues) ⇒ [<code>Object</code>](#Object)
         * [.$merge(...objects)](#Object+$merge) ⇒ [<code>Object</code>](#Object)
         * [.$omit(arr)](#Object+$omit) ⇒ [<code>Object</code>](#Object)
         * [.$set(path, value)](#Object+$set)
         * [.$size()](#Object+$size) ⇒ [<code>Object</code>](#Object)
         * [.$snakeCaseKeys()](#Object+$snakeCaseKeys) ⇒ [<code>Object</code>](#Object)
+        * [.$values()](#Object+$values) ⇒ [<code>Object</code>](#Object)
     * _static_
-        * [.isObject](#Object.isObject) ⇒ <code>boolean</code>
+        * [.isObject](#Object.isObject) ⇒ [<code>Boolean</code>](#Boolean)
+        * [.isObjectLike](#Object.isObjectLike) ⇒ [<code>Boolean</code>](#Boolean)
+        * [.isPlainObject](#Object.isPlainObject) ⇒ [<code>Boolean</code>](#Boolean)
 
 <a name="Object+$assign"></a>
 
@@ -1419,7 +1528,7 @@ Creates a (deep) clone of the object
 
 | Param | Type |
 | --- | --- |
-| deep | <code>boolean</code> | 
+| deep | [<code>Boolean</code>](#Boolean) | 
 
 **Example**  
 ```javascript
@@ -1455,7 +1564,7 @@ obj.$empty();
 ```
 <a name="Object+$equals"></a>
 
-### object.$equals(obj) ⇒ <code>boolean</code>
+### object.$equals(obj) ⇒ [<code>Boolean</code>](#Boolean)
 Performs a deep comparison between two values to determine if they are equivalent
 
 **Kind**: instance method of [<code>Object</code>](#Object)  
@@ -1468,6 +1577,25 @@ Performs a deep comparison between two values to determine if they are equivalen
 ```javascript
 { a: [2, { e: 3 }], b: [4], c: 'foo' }.$equals({ a: [2, { e: 3 }], b: [4], c: 'foo' }); // true
 ```
+<a name="Object+$forEach"></a>
+
+### object.$forEach(fn)
+Iterates the object by keys
+
+**Kind**: instance method of [<code>Object</code>](#Object)  
+
+| Param | Type |
+| --- | --- |
+| fn | <code>function</code> | 
+
+**Example**  
+```javascript
+const users = {
+  fred: { user: "fred", age: 40 },
+  pebbles: { user: "pebbles", age: 1 }
+};
+users.$forEach(u => console.log(u.age)); // console logs 40 and 1
+```
 <a name="Object+$get"></a>
 
 ### object.$get(key) ⇒ <code>\*</code>
@@ -1477,7 +1605,7 @@ Retrieve the property indicated by the given selector from the object
 
 | Param | Type |
 | --- | --- |
-| key | <code>string</code> | 
+| key | [<code>String</code>](#String) | 
 
 **Example**  
 ```javascript
@@ -1495,7 +1623,7 @@ Inverts the key-value pairs of the object, without mutating it
 ```
 <a name="Object+$isEmpty"></a>
 
-### object.$isEmpty() ⇒ <code>boolean</code>
+### object.$isEmpty() ⇒ [<code>Boolean</code>](#Boolean)
 Checks if the object is empty
 
 **Kind**: instance method of [<code>Object</code>](#Object)  
@@ -1539,7 +1667,7 @@ const myObjLower = myObj.$lowerCaseKeys(); // {name: "Adam", surname: "Smith"}
 <a name="Object+$map"></a>
 
 ### object.$map(fn) ⇒ [<code>Object</code>](#Object)
-Creates an object with the same keys as the provided object and values
+Creates an object with keys and values
 generated by running the provided function for each value
 
 **Kind**: instance method of [<code>Object</code>](#Object)  
@@ -1571,6 +1699,26 @@ and the same values as the provided object
 **Example**  
 ```javascript
 { a: 1, b: 2 }.$mapKeys((val, key) => key + val); // { a1: 1, b2: 2 }
+```
+<a name="Object+$mapValues"></a>
+
+### object.$mapValues(fn) ⇒ [<code>Object</code>](#Object)
+Creates an object with the same keys as the provided object and values
+generated by running the provided function for each value
+
+**Kind**: instance method of [<code>Object</code>](#Object)  
+
+| Param | Type |
+| --- | --- |
+| fn | <code>function</code> | 
+
+**Example**  
+```javascript
+const users = {
+  fred: { user: "fred", age: 40 },
+  pebbles: { user: "pebbles", age: 1 }
+};
+users.$mapValues(u => u.age); // { fred: 40, pebbles: 1 }
 ```
 <a name="Object+$merge"></a>
 
@@ -1607,7 +1755,7 @@ The function is invoked with two arguments: (value, key)
 
 | Param | Type |
 | --- | --- |
-| arr | <code>Array.&lt;string&gt;</code> \| <code>function</code> | 
+| arr | [<code>Array.&lt;String&gt;</code>](#String) \| <code>function</code> | 
 
 **Example**  
 ```javascript
@@ -1623,7 +1771,7 @@ Puts the property value indicated by the given selector into the object
 
 | Param | Type |
 | --- | --- |
-| path | <code>string</code> | 
+| path | [<code>String</code>](#String) | 
 | value | <code>\*</code> | 
 
 **Example**  
@@ -1653,9 +1801,19 @@ Creates a new object from the specified object, where all the keys are in snake-
 const myObj = { FirstName: "Adam", "last-name": "Smith" };
 const myObjLower = myObj.$snakeCaseKeys(); // {first_name: "Adam", last_name: "Smith"}
 ```
+<a name="Object+$values"></a>
+
+### object.$values() ⇒ [<code>Object</code>](#Object)
+Get values of the object
+
+**Kind**: instance method of [<code>Object</code>](#Object)  
+**Example**  
+```javascript
+{ one: 1, two: 2, three: 3 }.$values(); // [1, 2, 3]
+```
 <a name="Object.isObject"></a>
 
-### Object.isObject ⇒ <code>boolean</code>
+### Object.isObject ⇒ [<code>Boolean</code>](#Boolean)
 Returns true if the given argument is an object
 
 **Kind**: static property of [<code>Object</code>](#Object)  
@@ -1669,6 +1827,38 @@ Returns true if the given argument is an object
 Object.isObject(2); // false
 Object.isObject({foo: 'bar'}); // true
 ```
+<a name="Object.isObjectLike"></a>
+
+### Object.isObjectLike ⇒ [<code>Boolean</code>](#Boolean)
+Returns true if the given argument is object like
+
+**Kind**: static property of [<code>Object</code>](#Object)  
+
+| Param | Type |
+| --- | --- |
+| arg | <code>\*</code> | 
+
+**Example**  
+```javascript
+Object.isObjectLike(2); // false
+Object.isObjectLike({foo: 'bar'}); // true
+```
+<a name="Object.isPlainObject"></a>
+
+### Object.isPlainObject ⇒ [<code>Boolean</code>](#Boolean)
+Returns true if the given argument is a plain object
+
+**Kind**: static property of [<code>Object</code>](#Object)  
+
+| Param | Type |
+| --- | --- |
+| arg | <code>\*</code> | 
+
+**Example**  
+```javascript
+Object.isPlainObject(2); // false
+Object.isPlainObject({foo: 'bar'}); // true
+```
 <a name="String"></a>
 
 ## String : <code>object</code>
@@ -1676,36 +1866,37 @@ Object.isObject({foo: 'bar'}); // true
 
 * [String](#String) : <code>object</code>
     * _instance_
-        * [.base64()](#String+base64) ⇒ <code>string</code>
-        * [.base64Decode()](#String+base64Decode) ⇒ <code>string</code>
-        * [.camelCase()](#String+camelCase) ⇒ <code>string</code>
-        * [.capitalize([allWords])](#String+capitalize) ⇒ <code>string</code>
-        * [.chars()](#String+chars) ⇒ <code>Array.&lt;string&gt;</code>
-        * [.contains(pattern)](#String+contains) ⇒ <code>Array.&lt;string&gt;</code>
-        * [.decapitalize([allWords])](#String+decapitalize) ⇒ <code>string</code>
-        * [.equals(value)](#String+equals) ⇒ <code>boolean</code>
-        * [.humanize()](#String+humanize) ⇒ <code>string</code>
-        * [.isEmpty()](#String+isEmpty) ⇒ <code>boolean</code>
-        * [.kebabCase()](#String+kebabCase) ⇒ <code>string</code>
-        * [.lines()](#String+lines) ⇒ <code>Array.&lt;string&gt;</code>
-        * [.map(fn)](#String+map) ⇒ <code>Array.&lt;string&gt;</code>
-        * [.mask([num], [mask])](#String+mask) ⇒ <code>string</code>
+        * [.base64()](#String+base64) ⇒ [<code>String</code>](#String)
+        * [.base64Decode()](#String+base64Decode) ⇒ [<code>String</code>](#String)
+        * [.camelCase()](#String+camelCase) ⇒ [<code>String</code>](#String)
+        * [.capitalize([allWords])](#String+capitalize) ⇒ [<code>String</code>](#String)
+        * [.chars()](#String+chars) ⇒ [<code>Array.&lt;String&gt;</code>](#String)
+        * [.contains(str, [sensitive])](#String+contains) ⇒ [<code>Boolean</code>](#Boolean)
+        * [.decapitalize([allWords])](#String+decapitalize) ⇒ [<code>String</code>](#String)
+        * [.equals(value)](#String+equals) ⇒ [<code>Boolean</code>](#Boolean)
+        * [.forEach(fn)](#String+forEach) ⇒ <code>void</code>
+        * [.humanize()](#String+humanize) ⇒ [<code>String</code>](#String)
+        * [.isEmpty()](#String+isEmpty) ⇒ [<code>Boolean</code>](#Boolean)
+        * [.kebabCase()](#String+kebabCase) ⇒ [<code>String</code>](#String)
+        * [.lines()](#String+lines) ⇒ [<code>Array.&lt;String&gt;</code>](#String)
+        * [.map(fn)](#String+map) ⇒ [<code>Array.&lt;String&gt;</code>](#String)
+        * [.mask([num], [mask])](#String+mask) ⇒ [<code>String</code>](#String)
         * [.pad(size, [value])](#String+pad) ⇒ [<code>String</code>](#String)
-        * [.parseInt([radix])](#String+parseInt) ⇒ <code>number</code>
-        * [.pluralize([value])](#String+pluralize) ⇒ <code>string</code>
-        * [.reverse()](#String+reverse) ⇒ <code>string</code>
-        * [.singularize()](#String+singularize) ⇒ <code>string</code>
-        * [.snakeCase()](#String+snakeCase) ⇒ <code>string</code>
-        * [.swapCase()](#String+swapCase) ⇒ <code>string</code>
-        * [.truncate(num, [truncateString])](#String+truncate) ⇒ <code>string</code>
-        * [.words(pattern)](#String+words) ⇒ <code>Array.&lt;string&gt;</code>
+        * [.parseInt([radix])](#String+parseInt) ⇒ [<code>Number</code>](#Number)
+        * [.pluralize([value])](#String+pluralize) ⇒ [<code>String</code>](#String)
+        * [.reverse()](#String+reverse) ⇒ [<code>String</code>](#String)
+        * [.singularize()](#String+singularize) ⇒ [<code>String</code>](#String)
+        * [.snakeCase()](#String+snakeCase) ⇒ [<code>String</code>](#String)
+        * [.swapCase()](#String+swapCase) ⇒ [<code>String</code>](#String)
+        * [.truncate(num, [truncateString])](#String+truncate) ⇒ [<code>String</code>](#String)
+        * [.words(pattern)](#String+words) ⇒ [<code>Array.&lt;String&gt;</code>](#String)
     * _static_
-        * [.isString](#String.isString) ⇒ <code>boolean</code>
+        * [.isString](#String.isString) ⇒ [<code>Boolean</code>](#Boolean)
         * [.repeat](#String.repeat) ⇒ [<code>String</code>](#String)
 
 <a name="String+base64"></a>
 
-### string.base64() ⇒ <code>string</code>
+### string.base64() ⇒ [<code>String</code>](#String)
 Encodes data with MIME base64
 
 **Kind**: instance method of [<code>String</code>](#String)  
@@ -1715,7 +1906,7 @@ Encodes data with MIME base64
 ```
 <a name="String+base64Decode"></a>
 
-### string.base64Decode() ⇒ <code>string</code>
+### string.base64Decode() ⇒ [<code>String</code>](#String)
 Decodes data encoded with MIME base64
 
 **Kind**: instance method of [<code>String</code>](#String)  
@@ -1725,7 +1916,7 @@ Decodes data encoded with MIME base64
 ```
 <a name="String+camelCase"></a>
 
-### string.camelCase() ⇒ <code>string</code>
+### string.camelCase() ⇒ [<code>String</code>](#String)
 Converts the string to camelcase
 
 **Kind**: instance method of [<code>String</code>](#String)  
@@ -1739,14 +1930,14 @@ Converts the string to camelcase
 ```
 <a name="String+capitalize"></a>
 
-### string.capitalize([allWords]) ⇒ <code>string</code>
+### string.capitalize([allWords]) ⇒ [<code>String</code>](#String)
 Returns the capitalized string
 
 **Kind**: instance method of [<code>String</code>](#String)  
 
 | Param | Type | Default |
 | --- | --- | --- |
-| [allWords] | <code>boolean</code> | <code>false</code> | 
+| [allWords] | [<code>Boolean</code>](#Boolean) | <code>false</code> | 
 
 **Example**  
 ```javascript
@@ -1755,7 +1946,7 @@ Returns the capitalized string
 ```
 <a name="String+chars"></a>
 
-### string.chars() ⇒ <code>Array.&lt;string&gt;</code>
+### string.chars() ⇒ [<code>Array.&lt;String&gt;</code>](#String)
 Returns an array of the string's character
 
 **Kind**: instance method of [<code>String</code>](#String)  
@@ -1765,14 +1956,15 @@ Returns an array of the string's character
 ```
 <a name="String+contains"></a>
 
-### string.contains(pattern) ⇒ <code>Array.&lt;string&gt;</code>
+### string.contains(str, [sensitive]) ⇒ [<code>Boolean</code>](#Boolean)
 Find out if the string contains the argument at any position
 
 **Kind**: instance method of [<code>String</code>](#String)  
 
-| Param | Type |
-| --- | --- |
-| pattern | <code>RegExp</code> | 
+| Param | Type | Default |
+| --- | --- | --- |
+| str | [<code>String</code>](#String) |  | 
+| [sensitive] | [<code>Boolean</code>](#Boolean) | <code>false</code> | 
 
 **Example**  
 ```javascript
@@ -1781,14 +1973,14 @@ Find out if the string contains the argument at any position
 ```
 <a name="String+decapitalize"></a>
 
-### string.decapitalize([allWords]) ⇒ <code>string</code>
+### string.decapitalize([allWords]) ⇒ [<code>String</code>](#String)
 Returns the decapitalized string
 
 **Kind**: instance method of [<code>String</code>](#String)  
 
 | Param | Type | Default |
 | --- | --- | --- |
-| [allWords] | <code>boolean</code> | <code>false</code> | 
+| [allWords] | [<code>Boolean</code>](#Boolean) | <code>false</code> | 
 
 **Example**  
 ```javascript
@@ -1797,7 +1989,7 @@ Returns the decapitalized string
 ```
 <a name="String+equals"></a>
 
-### string.equals(value) ⇒ <code>boolean</code>
+### string.equals(value) ⇒ [<code>Boolean</code>](#Boolean)
 Checks if the string is equal to the given value
 
 **Kind**: instance method of [<code>String</code>](#String)  
@@ -1810,9 +2002,24 @@ Checks if the string is equal to the given value
 ```javascript
 "hello".equals("Hello"); // false
 ```
+<a name="String+forEach"></a>
+
+### string.forEach(fn) ⇒ <code>void</code>
+Just like array.forEach
+
+**Kind**: instance method of [<code>String</code>](#String)  
+
+| Param | Type |
+| --- | --- |
+| fn | <code>function</code> | 
+
+**Example**  
+```javascript
+'Hello'.forEach((char, index) => char == 'o' && consol.log(index)); // console logs 4
+```
 <a name="String+humanize"></a>
 
-### string.humanize() ⇒ <code>string</code>
+### string.humanize() ⇒ [<code>String</code>](#String)
 Converts an underscored, camelized, or dasherized string into a humanized one.
 Also removes beginning and ending whitespace
 
@@ -1823,7 +2030,7 @@ Also removes beginning and ending whitespace
 ```
 <a name="String+isEmpty"></a>
 
-### string.isEmpty() ⇒ <code>boolean</code>
+### string.isEmpty() ⇒ [<code>Boolean</code>](#Boolean)
 Checks if the string is empty
 
 **Kind**: instance method of [<code>String</code>](#String)  
@@ -1834,7 +2041,7 @@ Checks if the string is empty
 ```
 <a name="String+kebabCase"></a>
 
-### string.kebabCase() ⇒ <code>string</code>
+### string.kebabCase() ⇒ [<code>String</code>](#String)
 Converts a string to kebab case
 
 **Kind**: instance method of [<code>String</code>](#String)  
@@ -1850,7 +2057,7 @@ Converts a string to kebab case
 ```
 <a name="String+lines"></a>
 
-### string.lines() ⇒ <code>Array.&lt;string&gt;</code>
+### string.lines() ⇒ [<code>Array.&lt;String&gt;</code>](#String)
 Splits a multiline string into an array of lines
 
 **Kind**: instance method of [<code>String</code>](#String)  
@@ -1860,7 +2067,7 @@ Splits a multiline string into an array of lines
 ```
 <a name="String+map"></a>
 
-### string.map(fn) ⇒ <code>Array.&lt;string&gt;</code>
+### string.map(fn) ⇒ [<code>Array.&lt;String&gt;</code>](#String)
 Just like array.map
 
 **Kind**: instance method of [<code>String</code>](#String)  
@@ -1875,15 +2082,15 @@ Just like array.map
 ```
 <a name="String+mask"></a>
 
-### string.mask([num], [mask]) ⇒ <code>string</code>
+### string.mask([num], [mask]) ⇒ [<code>String</code>](#String)
 Replaces all but the last num of characters with the specified mask character
 
 **Kind**: instance method of [<code>String</code>](#String)  
 
 | Param | Type | Default |
 | --- | --- | --- |
-| [num] | <code>number</code> | <code>4</code> | 
-| [mask] | <code>string</code> | <code>&quot;&#x27;*&#x27;&quot;</code> | 
+| [num] | [<code>Number</code>](#Number) | <code>4</code> | 
+| [mask] | [<code>String</code>](#String) | <code>&#x27;*&#x27;</code> | 
 
 **Example**  
 ```javascript
@@ -1900,7 +2107,7 @@ FillS the string with the given value until the string reaches the specified siz
 
 | Param | Type | Default |
 | --- | --- | --- |
-| size | <code>number</code> |  | 
+| size | [<code>Number</code>](#Number) |  | 
 | [value] | [<code>String</code>](#String) | <code>&quot; &quot;</code> | 
 
 **Example**  
@@ -1910,14 +2117,14 @@ FillS the string with the given value until the string reaches the specified siz
 ```
 <a name="String+parseInt"></a>
 
-### string.parseInt([radix]) ⇒ <code>number</code>
+### string.parseInt([radix]) ⇒ [<code>Number</code>](#Number)
 Converts string to an integer of the specified radix
 
 **Kind**: instance method of [<code>String</code>](#String)  
 
 | Param | Type |
 | --- | --- |
-| [radix] | <code>number</code> | 
+| [radix] | [<code>Number</code>](#Number) | 
 
 **Example**  
 ```javascript
@@ -1925,14 +2132,14 @@ Converts string to an integer of the specified radix
 ```
 <a name="String+pluralize"></a>
 
-### string.pluralize([value]) ⇒ <code>string</code>
+### string.pluralize([value]) ⇒ [<code>String</code>](#String)
 Returns the singular or plural form of the word based on the input number
 
 **Kind**: instance method of [<code>String</code>](#String)  
 
 | Param | Type |
 | --- | --- |
-| [value] | <code>number</code> | 
+| [value] | [<code>Number</code>](#Number) | 
 
 **Example**  
 ```javascript
@@ -1945,7 +2152,7 @@ Returns the singular or plural form of the word based on the input number
 ```
 <a name="String+reverse"></a>
 
-### string.reverse() ⇒ <code>string</code>
+### string.reverse() ⇒ [<code>String</code>](#String)
 Reverses the string
 
 **Kind**: instance method of [<code>String</code>](#String)  
@@ -1955,7 +2162,7 @@ Reverses the string
 ```
 <a name="String+singularize"></a>
 
-### string.singularize() ⇒ <code>string</code>
+### string.singularize() ⇒ [<code>String</code>](#String)
 Returns the singular form of the word
 
 **Kind**: instance method of [<code>String</code>](#String)  
@@ -1968,7 +2175,7 @@ Returns the singular form of the word
 ```
 <a name="String+snakeCase"></a>
 
-### string.snakeCase() ⇒ <code>string</code>
+### string.snakeCase() ⇒ [<code>String</code>](#String)
 Converts a string to snake case
 
 **Kind**: instance method of [<code>String</code>](#String)  
@@ -1984,7 +2191,7 @@ Converts a string to snake case
 ```
 <a name="String+swapCase"></a>
 
-### string.swapCase() ⇒ <code>string</code>
+### string.swapCase() ⇒ [<code>String</code>](#String)
 Returns a copy of the string in which all the case-based characters have had their case swapped
 
 **Kind**: instance method of [<code>String</code>](#String)  
@@ -1994,15 +2201,15 @@ Returns a copy of the string in which all the case-based characters have had the
 ```
 <a name="String+truncate"></a>
 
-### string.truncate(num, [truncateString]) ⇒ <code>string</code>
+### string.truncate(num, [truncateString]) ⇒ [<code>String</code>](#String)
 Truncates a string up to a specified length
 
 **Kind**: instance method of [<code>String</code>](#String)  
 
 | Param | Type | Default |
 | --- | --- | --- |
-| num | <code>number</code> |  | 
-| [truncateString] | <code>string</code> | <code>&quot;...&quot;</code> | 
+| num | [<code>Number</code>](#Number) |  | 
+| [truncateString] | [<code>String</code>](#String) | <code>...</code> | 
 
 **Example**  
 ```javascript
@@ -2011,7 +2218,7 @@ Truncates a string up to a specified length
 ```
 <a name="String+words"></a>
 
-### string.words(pattern) ⇒ <code>Array.&lt;string&gt;</code>
+### string.words(pattern) ⇒ [<code>Array.&lt;String&gt;</code>](#String)
 Converts a given string into an array of words
 
 **Kind**: instance method of [<code>String</code>](#String)  
@@ -2027,7 +2234,7 @@ Converts a given string into an array of words
 ```
 <a name="String.isString"></a>
 
-### String.isString ⇒ <code>boolean</code>
+### String.isString ⇒ [<code>Boolean</code>](#Boolean)
 Returns true if the given argument is an string
 
 **Kind**: static property of [<code>String</code>](#String)  
@@ -2050,8 +2257,8 @@ Initializes and fills an string with the specified value
 
 | Param | Type | Default |
 | --- | --- | --- |
-| n | <code>number</code> |  | 
-| [value] | <code>string</code> | <code>&quot;\&quot; \&quot;&quot;</code> | 
+| n | [<code>Number</code>](#Number) |  | 
+| [value] | [<code>String</code>](#String) | <code>&quot; &quot;</code> | 
 
 **Example**  
 ```javascript

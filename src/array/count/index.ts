@@ -10,7 +10,7 @@ declare global {
  * Counts the occurrences of a value in an array
  * @memberof Array
  * @param {*} [value]
- * @returns {number}
+ * @returns {Number}
  * @example
  * [1, 1, 2, 1, 2, 3].count(); // 6
  * [1, 1, 2, 1, 2, 3].count(1); // 3

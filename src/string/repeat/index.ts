@@ -9,8 +9,8 @@ declare global {
 /**
  * Initializes and fills an string with the specified value
  * @memberof String
- * @param {number} n
- * @param {string} [value=" "]
+ * @param {Number} n
+ * @param {String} [value=" "]
  * @returns {String}
  * @example
  * String.repeat(5, "2"); // "22222"

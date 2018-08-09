@@ -9,7 +9,7 @@ declare global {
 /**
  * Flattens an array up to the specified depth
  * @memberof Array
- * @param {number} [depth=1]
+ * @param {Number} [depth=1]
  * @returns {Array}
  * @example
  * [1, [2], 3, 4].flatten(); // [1, 2, 3, 4]

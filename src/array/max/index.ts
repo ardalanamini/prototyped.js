@@ -10,7 +10,7 @@ declare global {
  * Returns the maximum value of a given path
  * @memberof Array
  * @param {String} [path]
- * @returns {number}
+ * @returns {Number}
  * @example
  * [1, 2, 3].max(); // 3
  * [{a: 1}, {a: 2}, {a: 3}].max('a'); // 3

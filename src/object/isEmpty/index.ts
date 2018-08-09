@@ -10,7 +10,7 @@ declare global {
 /**
  * Checks if the object is empty
  * @memberof Object.prototype
- * @returns {boolean}
+ * @returns {Boolean}
  * @example
  * { a: 1 }.$isEmpty(); // false
  * {}.$isEmpty(); // true

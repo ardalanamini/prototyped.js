@@ -9,8 +9,9 @@ declare global {
 /**
  * Find out if the string contains the argument at any position
  * @memberof String
- * @param {RegExp} pattern
- * @returns {string[]}
+ * @param {String} str
+ * @param {Boolean} [sensitive=false]
+ * @returns {Boolean}
  * @example
  * 'javaScript & typescript'.contains('Typescript'); // true
  * 'javaScript & typescript'.contains('Typescript', true); // false

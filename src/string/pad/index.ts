@@ -9,7 +9,7 @@ declare global {
 /**
  * FillS the string with the given value until the string reaches the specified size
  * @memberof String
- * @param {number} size
+ * @param {Number} size
  * @param {String} [value=" "]
  * @returns {String}
  * @example

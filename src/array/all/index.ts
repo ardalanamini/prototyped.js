@@ -10,7 +10,7 @@ declare global {
  * Returns `true` if the provided predicate function returns `true` for all elements in a collection, `false` otherwise
  * @memberof Array
  * @param {function} [fn=Boolean]
- * @returns {boolean}
+ * @returns {Boolean}
  * @example
  * [4, 2, 3].all((x) => x > 1); // true
  * [1, 2, 3].all(); // true

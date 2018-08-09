@@ -9,7 +9,7 @@ declare global {
 /**
  * Reverses the string
  * @memberof String
- * @returns {string}
+ * @returns {String}
  * @example
  * "foobar".reverse(); // "raboof"
  */

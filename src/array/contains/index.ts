@@ -10,7 +10,7 @@ declare global {
  * Determines whether the collection contains a given item
  * @memberof Array
  * @param {*} value
- * @returns {boolean}
+ * @returns {Boolean}
  * @example
  * [1, 2, 3].contains(2); // true
  */

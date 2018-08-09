@@ -11,7 +11,7 @@ declare global {
  * Performs a deep comparison between two values to determine if they are equivalent
  * @memberof Object.prototype
  * @param {*} obj
- * @returns {boolean}
+ * @returns {Boolean}
  * @example
  * { a: [2, { e: 3 }], b: [4], c: 'foo' }.$equals({ a: [2, { e: 3 }], b: [4], c: 'foo' }); // true
  */

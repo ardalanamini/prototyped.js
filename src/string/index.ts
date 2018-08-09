@@ -8,6 +8,7 @@ import "./chars";
 import "./contains";
 import "./decapitalize";
 import "./equals";
+import "./forEach";
 import "./humanize";
 import "./isEmpty";
 import "./isString";

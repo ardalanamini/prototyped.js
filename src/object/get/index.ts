@@ -10,7 +10,7 @@ declare global {
 /**
  * Retrieve the property indicated by the given selector from the object
  * @memberof Object.prototype
- * @param {string} key
+ * @param {String} key
  * @returns {*}
  * @example
  * { selector: { to: { val: 'val to select' } } }.$get('selector.to.val'); // 'val to select'

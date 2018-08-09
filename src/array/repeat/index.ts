@@ -9,7 +9,7 @@ declare global {
 /**
  * Initializes and fills an array with the specified value
  * @memberof Array
- * @param {number} n
+ * @param {Number} n
  * @param {*} [value=0]
  * @returns {Array}
  * @example

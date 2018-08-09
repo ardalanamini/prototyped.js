@@ -10,7 +10,7 @@ declare global {
  * Checks if the array is equal to the given value
  * @memberof Boolean
  * @param {*} value
- * @returns {boolean}
+ * @returns {Boolean}
  * @example
  * [1,2,3].equals([2,1,3]); // false
  */

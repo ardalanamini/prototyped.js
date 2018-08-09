@@ -9,7 +9,7 @@ declare global {
 /**
  * Splits a multiline string into an array of lines
  * @memberof String
- * @returns {string[]}
+ * @returns {String[]}
  * @example
  * 'This\nis a\nmultiline\nstring.\n'.lines(); // ['This', 'is a', 'multiline', 'string.' , '']
  */

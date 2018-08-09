@@ -9,8 +9,8 @@ declare global {
 /**
  * Calculates the greatest common divisor between two or more numbers
  * @memberof Math
- * @param {number[]} nums
- * @returns {number}
+ * @param {Number[]} nums
+ * @returns {Number}
  * @example
  * Math.gcd(8, 36); // 4
  * Math.gcd(...[12, 8, 32]); // 4

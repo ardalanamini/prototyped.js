@@ -9,7 +9,7 @@ declare global {
 /**
  * Returns the singular form of the word
  * @memberof String
- * @returns {string}
+ * @returns {String}
  * @example
  * 'apple'.singularize(); // 'apple'
  * 'apples'.singularize(); // 'apple'

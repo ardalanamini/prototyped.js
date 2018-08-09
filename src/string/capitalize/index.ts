@@ -9,8 +9,8 @@ declare global {
 /**
  * Returns the capitalized string
  * @memberof String
- * @param {boolean} [allWords=false]
- * @returns {string}
+ * @param {Boolean} [allWords=false]
+ * @returns {String}
  * @example
  * 'foo bar'.capitalize(); // 'Foo bar'
  * 'hello world'.capitalize(true); // 'Hello World'
