@@ -30,6 +30,11 @@ describe("String.prototype.kebabCase", () => {
         .toBe("i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-some-xml-and-html");
     });
 
+  test("\"foo_Bar22\".kebabCase() returns \"foo-bar-22\"", () => {
+    expect("foo_Bar22".kebabCase())
+      .toBe("foo-bar-22");
+  });
+
   test("\"\".kebabCase() returns \"\"", () => {
     expect("".kebabCase())
       .toBe("");
