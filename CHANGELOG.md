@@ -1,5 +1,14 @@
 # Changelog
 
+## [v0.14.1](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.14.1) *(2018-08-11)*
+
+**Fixed bugs:**
+
+- `String.prototype`
+  - Fixed `camelCase`
+  - Fixed `kebabCase`
+  - Fixed `snakeCase`
+
 ## [v0.14.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.14.0) *(2018-08-10)*
 
 **Implemented enhancements:**
@@ -16,8 +25,8 @@
 - `Object.prototype`
   - Renamed `$map` to `$mapValues`
   - Added `$map`
-  - Added `$isObjectLike`
-  - Added `$isPlainObject`
+  - Added `isObjectLike`
+  - Added `isPlainObject`
   - Added `$values`
 - `String.prototype`
   - Added `forEach`
@@ -28,10 +37,10 @@
 **Implemented enhancements:**
 
 - `String.prototype`
-  - renamed `$empty` to `$isEmpty`
+  - renamed `empty` to `isEmpty`
 - `Array.prototype`
-  - renamed `$empty` to `$isEmpty`
-  - Added `$empty`
+  - renamed `empty` to `isEmpty`
+  - Added `empty`
 - `Object.prototype`
   - renamed `$empty` to `$isEmpty`
   - Added `$empty`
