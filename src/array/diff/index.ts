@@ -11,7 +11,7 @@ declare global {
  * if `comp` is given, filters out all values from an array for which the comparator function does not return true
  * @memberof Array
  * @param {Array} array
- * @param {function} [comp]
+ * @param {Function} [comp]
  * @returns {Array}
  * @example
  * [1, 2, 3].diff([1, 2, 4]); // [3]

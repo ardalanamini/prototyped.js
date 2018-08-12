@@ -11,7 +11,7 @@ declare global {
  * sorts the array
  * @memberof Array
  * @param {String} [field]
- * @param {"asc"|"desc"} [order]
+ * @param {"asc"|"desc"} [order="asc"]
  * @returns {Array}
  * @example
  * [2, 1, 2, 5].orderBy(); // [1,2,2,5]

@@ -36,7 +36,7 @@
         * [.append(value)](#Array+append)
         * [.average([path])](#Array+average) ⇒ [<code>Number</code>](#Number)
         * [.chunk(size)](#Array+chunk) ⇒ [<code>Array.&lt;Array&gt;</code>](#Array)
-        * [.clone()](#Array+clone) ⇒ [<code>Array</code>](#Array)
+        * [.clone([deep])](#Array+clone) ⇒ [<code>Array</code>](#Array)
         * [.compact()](#Array+compact) ⇒ [<code>Array</code>](#Array)
         * [.contains(value)](#Array+contains) ⇒ [<code>Boolean</code>](#Boolean)
         * [.count([value])](#Array+count) ⇒ [<code>Number</code>](#Number)
@@ -46,6 +46,7 @@
         * [.diff(array, [comp])](#Array+diff) ⇒ [<code>Array</code>](#Array)
         * [.distinct()](#Array+distinct) ⇒ [<code>Array</code>](#Array)
         * [.empty()](#Array+empty)
+        * [.equals(value)](#Array+equals) ⇒ [<code>Boolean</code>](#Boolean)
         * [.everyNth()](#Array+everyNth) ⇒ [<code>Array</code>](#Array)
         * [.first()](#Array+first) ⇒ <code>\*</code>
         * [.flatten([depth])](#Array+flatten) ⇒ [<code>Array</code>](#Array)
@@ -61,7 +62,7 @@
         * [.max([path])](#Array+max) ⇒ [<code>Number</code>](#Number)
         * [.median([path])](#Array+median) ⇒ [<code>Number</code>](#Number)
         * [.min([path])](#Array+min) ⇒ [<code>Number</code>](#Number)
-        * [.nest(link, id)](#Array+nest) ⇒ [<code>Array.&lt;Object&gt;</code>](#Object)
+        * [.nest(link, key)](#Array+nest) ⇒ [<code>Array.&lt;Object&gt;</code>](#Object)
         * [.orderBy([field], [order])](#Array+orderBy) ⇒ [<code>Array</code>](#Array)
         * [.pad(size, [value])](#Array+pad) ⇒ [<code>Array</code>](#Array)
         * [.partition(fn)](#Array+partition) ⇒ [<code>Array</code>](#Array)
@@ -84,7 +85,7 @@
         * [.whereNotNull([field])](#Array+whereNotNull) ⇒ [<code>Array</code>](#Array)
         * [.whereNull([field])](#Array+whereNull) ⇒ [<code>Array</code>](#Array)
         * [.zip(arrays)](#Array+zip) ⇒ [<code>Array</code>](#Array)
-        * [.zipObject(array)](#Array+zipObject) ⇒ [<code>Array</code>](#Array)
+        * [.zipObject(array)](#Array+zipObject) ⇒ [<code>Object</code>](#Object)
     * _static_
         * [.range](#Array.range) ⇒ [<code>Array.&lt;Number&gt;</code>](#Number)
         * [.repeat](#Array.repeat) ⇒ [<code>Array</code>](#Array)
@@ -219,10 +220,15 @@ Chunks the array into smaller arrays of a specified size
 ```
 <a name="Array+clone"></a>
 
-### array.clone() ⇒ [<code>Array</code>](#Array)
+### array.clone([deep]) ⇒ [<code>Array</code>](#Array)
 Returns the cloned array
 
 **Kind**: instance method of [<code>Array</code>](#Array)  
+
+| Param | Type | Default |
+| --- | --- | --- |
+| [deep] | [<code>Boolean</code>](#Boolean) | <code>false</code> | 
+
 **Example**  
 ```javascript
 [1, 2, 3].clone(); // [1, 2, 3]
@@ -349,6 +355,21 @@ const arr = [1,3];
 arr.empty();
 // arr = []
 ```
+<a name="Array+equals"></a>
+
+### array.equals(value) ⇒ [<code>Boolean</code>](#Boolean)
+Checks if the array is equal to the given value
+
+**Kind**: instance method of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| value | <code>\*</code> | 
+
+**Example**  
+```javascript
+[1,2,3].equals([2,1,3]); // false
+```
 <a name="Array+everyNth"></a>
 
 ### array.everyNth() ⇒ [<code>Array</code>](#Array)
@@ -411,7 +432,7 @@ Groups the elements of an array based on the given function
 
 | Param | Type |
 | --- | --- |
-| fn | <code>string</code> \| <code>function</code> | 
+| fn | [<code>String</code>](#String) \| <code>function</code> | 
 
 **Example**  
 ```javascript
@@ -563,7 +584,7 @@ Returns the minimum value of a given path
 ```
 <a name="Array+nest"></a>
 
-### array.nest(link, id) ⇒ [<code>Array.&lt;Object&gt;</code>](#Object)
+### array.nest(link, key) ⇒ [<code>Array.&lt;Object&gt;</code>](#Object)
 Given a flat array of objects linked to one another, it will nest them recursively
 
 **Kind**: instance method of [<code>Array</code>](#Array)  
@@ -571,7 +592,7 @@ Given a flat array of objects linked to one another, it will nest them recursive
 | Param | Type |
 | --- | --- |
 | link | [<code>String</code>](#String) | 
-| id | [<code>String</code>](#String) | 
+| key | [<code>String</code>](#String) | 
 
 **Example**  
 ```javascript
@@ -591,10 +612,10 @@ sorts the array
 
 **Kind**: instance method of [<code>Array</code>](#Array)  
 
-| Param | Type |
-| --- | --- |
-| [field] | [<code>String</code>](#String) | 
-| [order] | <code>&quot;asc&quot;</code> \| <code>&quot;desc&quot;</code> | 
+| Param | Type | Default |
+| --- | --- | --- |
+| [field] | [<code>String</code>](#String) |  | 
+| [order] | <code>&quot;asc&quot;</code> \| <code>&quot;desc&quot;</code> | <code>&quot;asc&quot;</code> | 
 
 **Example**  
 ```javascript
@@ -793,9 +814,9 @@ Filters the array
 
 | Param | Type |
 | --- | --- |
-| field | [<code>String</code>](#String) \| <code>any</code> | 
-| start | <code>any</code> | 
-| [end] | <code>any</code> | 
+| field | [<code>String</code>](#String) \| <code>\*</code> | 
+| start | <code>\*</code> | 
+| [end] | <code>\*</code> | 
 
 **Example**  
 ```javascript
@@ -845,9 +866,9 @@ Filters the array
 
 | Param | Type |
 | --- | --- |
-| field | [<code>String</code>](#String) \| <code>any</code> | 
-| start | <code>any</code> | 
-| [end] | <code>any</code> | 
+| field | [<code>String</code>](#String) \| <code>\*</code> | 
+| start | <code>\*</code> | 
+| [end] | <code>\*</code> | 
 
 **Example**  
 ```javascript
@@ -938,8 +959,9 @@ Creates an array of elements, grouped based on the position in the original arra
 ```
 <a name="Array+zipObject"></a>
 
-### array.zipObject(array) ⇒ [<code>Array</code>](#Array)
-Creates an array of elements, grouped based on the position in the original arrays
+### array.zipObject(array) ⇒ [<code>Object</code>](#Object)
+Given an array of valid property identifiers and an array of values,
+return an object associating the properties to the values
 
 **Kind**: instance method of [<code>Array</code>](#Array)  
 
@@ -992,11 +1014,6 @@ Array.repeat(5, 2); // [2,2,2,2,2]
 
 ## Boolean : <code>object</code>
 **Kind**: global namespace  
-
-* [Boolean](#Boolean) : <code>object</code>
-    * [.isBoolean](#Boolean.isBoolean) ⇒ [<code>Boolean</code>](#Boolean)
-    * [.Array#equals(value)](#Boolean.Array+equals) ⇒ [<code>Boolean</code>](#Boolean)
-
 <a name="Boolean.isBoolean"></a>
 
 ### Boolean.isBoolean ⇒ [<code>Boolean</code>](#Boolean)
@@ -1012,21 +1029,6 @@ Returns true if the given argument is a boolean
 ```javascript
 Boolean.isBoolean('foo bar'); // false
 Boolean.isBoolean(flase); // true
-```
-<a name="Boolean.Array+equals"></a>
-
-### Boolean.Array#equals(value) ⇒ [<code>Boolean</code>](#Boolean)
-Checks if the array is equal to the given value
-
-**Kind**: static method of [<code>Boolean</code>](#Boolean)  
-
-| Param | Type |
-| --- | --- |
-| value | <code>\*</code> | 
-
-**Example**  
-```javascript
-[1,2,3].equals([2,1,3]); // false
 ```
 <a name="Date"></a>
 
@@ -1468,7 +1470,7 @@ Number.isNumber(2); // true
     * _instance_
         * [.$assign(...sources)](#Object+$assign) ⇒ [<code>Object</code>](#Object)
         * [.$camelCaseKeys()](#Object+$camelCaseKeys) ⇒ [<code>Object</code>](#Object)
-        * [.$clone(deep)](#Object+$clone) ⇒ [<code>Object</code>](#Object)
+        * [.$clone([deep])](#Object+$clone) ⇒ [<code>Object</code>](#Object)
         * [.$defaults(...sources)](#Object+$defaults) ⇒ [<code>Object</code>](#Object)
         * [.$empty()](#Object+$empty)
         * [.$equals(obj)](#Object+$equals) ⇒ [<code>Boolean</code>](#Boolean)
@@ -1521,14 +1523,14 @@ const myObjLower = myObj.$camelCaseKeys(); // {firstName: "Adam", lastName: "Smi
 ```
 <a name="Object+$clone"></a>
 
-### object.$clone(deep) ⇒ [<code>Object</code>](#Object)
+### object.$clone([deep]) ⇒ [<code>Object</code>](#Object)
 Creates a (deep) clone of the object
 
 **Kind**: instance method of [<code>Object</code>](#Object)  
 
-| Param | Type |
-| --- | --- |
-| deep | [<code>Boolean</code>](#Boolean) | 
+| Param | Type | Default |
+| --- | --- | --- |
+| [deep] | [<code>Boolean</code>](#Boolean) | <code>false</code> | 
 
 **Example**  
 ```javascript
@@ -1889,7 +1891,7 @@ Object.isPlainObject({foo: 'bar'}); // true
         * [.snakeCase()](#String+snakeCase) ⇒ [<code>String</code>](#String)
         * [.swapCase()](#String+swapCase) ⇒ [<code>String</code>](#String)
         * [.truncate(num, [truncateString])](#String+truncate) ⇒ [<code>String</code>](#String)
-        * [.words(pattern)](#String+words) ⇒ [<code>Array.&lt;String&gt;</code>](#String)
+        * [.words([pattern])](#String+words) ⇒ [<code>Array.&lt;String&gt;</code>](#String)
     * _static_
         * [.isString](#String.isString) ⇒ [<code>Boolean</code>](#Boolean)
         * [.repeat](#String.repeat) ⇒ [<code>String</code>](#String)
@@ -2209,7 +2211,7 @@ Truncates a string up to a specified length
 | Param | Type | Default |
 | --- | --- | --- |
 | num | [<code>Number</code>](#Number) |  | 
-| [truncateString] | [<code>String</code>](#String) | <code>...</code> | 
+| [truncateString] | [<code>String</code>](#String) | <code>&quot;...&quot;</code> | 
 
 **Example**  
 ```javascript
@@ -2218,14 +2220,14 @@ Truncates a string up to a specified length
 ```
 <a name="String+words"></a>
 
-### string.words(pattern) ⇒ [<code>Array.&lt;String&gt;</code>](#String)
+### string.words([pattern]) ⇒ [<code>Array.&lt;String&gt;</code>](#String)
 Converts a given string into an array of words
 
 **Kind**: instance method of [<code>String</code>](#String)  
 
-| Param | Type |
-| --- | --- |
-| pattern | <code>RegExp</code> | 
+| Param | Type | Default |
+| --- | --- | --- |
+| [pattern] | <code>RegExp</code> | <code>/[^a-zA-Z-]+/</code> | 
 
 **Example**  
 ```javascript

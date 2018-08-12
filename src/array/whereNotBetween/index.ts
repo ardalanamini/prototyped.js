@@ -10,9 +10,9 @@ declare global {
 /**
  * Filters the array
  * @memberof Array
- * @param {String|any} field
- * @param {any} start
- * @param {any} [end]
+ * @param {String|*} field
+ * @param {*} start
+ * @param {*} [end]
  * @returns {Array}
  * @example
  * [1, 2, 2, 3, 4, 4, 5].whereNotBetween(3,4); // [1,2,2,5]

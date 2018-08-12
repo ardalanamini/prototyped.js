@@ -8,7 +8,7 @@ declare global {
 
 /**
  * Checks if the array is equal to the given value
- * @memberof Boolean
+ * @memberof Array
  * @param {*} value
  * @returns {Boolean}
  * @example

@@ -27,7 +27,7 @@ package.keywords = [
   "es6",
   "typescript",
   "prototype",
-  ...generateKeywords(methods),
+  ...generateKeywords(methods).distinct(),
 ];
 
 fs.writeFileSync(PATH, JSON.stringify(package, undefined, 2));

@@ -9,7 +9,7 @@ declare global {
 /**
  * Converts a given string into an array of words
  * @memberof String
- * @param {RegExp} pattern
+ * @param {RegExp} [pattern=/[^a-zA-Z-]+/]
  * @returns {String[]}
  * @example
  * 'I love javaScript!!'.words(); // ["I", "love", "javaScript"]
