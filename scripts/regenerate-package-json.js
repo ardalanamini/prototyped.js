@@ -30,4 +30,4 @@ package.keywords = [
   ...generateKeywords(methods).distinct(),
 ];
 
-fs.writeFileSync(PATH, JSON.stringify(package, undefined, 2));
+fs.writeFileSync(PATH, `${JSON.stringify(package, undefined, 2)}\n`);

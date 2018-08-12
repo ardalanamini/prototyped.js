@@ -1,5 +1,17 @@
 # Changelog
 
+## [next](https://github.com/ardalanamini/prototyped.js/releases/tag/next) *(2018-__-__)*
+
+**Implemented enhancements:**
+
+- `Array.prototype`
+  - Method `clone` now supports deep cloning
+
+**Fixed bugs:**
+
+- `Object.prototype`
+  - Fixed `$clone` bug fix
+
 ## [v0.14.1](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.14.1) *(2018-08-11)*
 
 **Fixed bugs:**
