@@ -32,6 +32,11 @@ describe("String.prototype.snakeCase", () => {
         .toBe("i_am_listening_to_fm_while_loading_different_url_on_my_browser_and_also_editing_some_xml_and_html");
     });
 
+  test("\"foo-Bar22\".snakeCase() returns \"foo_bar_22\"", () => {
+    expect("foo-Bar22".snakeCase())
+      .toBe("foo_bar_22");
+  });
+
   test("\"\".snakeCase() returns \"\"", () => {
     expect("".snakeCase())
       .toBe("");

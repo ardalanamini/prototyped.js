@@ -22,6 +22,11 @@ describe("String.prototype.camelCase", () => {
         .toBe("someMixedStringWithSpacesUnderscoresAndHyphens");
     });
 
+  test("\"foo_bar-22\".camelCase() returns \"fooBar22\"", () => {
+    expect("foo_bar-22".camelCase())
+      .toBe("fooBar22");
+  });
+
   test("\"\".camelCase() returns \"\"", () => {
     expect("".camelCase())
       .toBe("");
