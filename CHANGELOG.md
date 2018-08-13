@@ -5,6 +5,7 @@
 **Implemented enhancements:**
 
 - `Array.prototype`
+  - Added `sortBy`
   - Method `clone` now supports deep cloning
 
 **Fixed bugs:**
