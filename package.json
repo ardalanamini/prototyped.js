@@ -2,7 +2,7 @@
   "name": "prototyped.js",
   "version": "0.14.1",
   "description": "Common typescript ready prototypes available in both es5 and es6",
-  "author": "Ardalan Amini <ardalanamini22@gmail.com>",
+  "author": "Ardalan Amini <ardalanamini22@gmail.com> [https://github.com/ardalanamini]",
   "license": "MIT",
   "homepage": "https://github.com/ardalanamini/prototyped.js#readme",
   "repository": {
@@ -64,6 +64,7 @@
     "sample",
     "shuffle",
     "skip",
+    "sortBy",
     "sum",
     "tail",
     "union",
@@ -170,7 +171,7 @@
   },
   "devDependencies": {
     "@types/jest": "^23.3.1",
-    "@types/node": "^10.5.8",
+    "@types/node": "^10.7.0",
     "@types/pluralize": "0.0.29",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",

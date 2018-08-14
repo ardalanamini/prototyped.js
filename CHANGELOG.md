@@ -7,11 +7,14 @@
 - `Array.prototype`
   - Added `sortBy`
   - Method `clone` now supports deep cloning
+- `Number`
+  - Moved `digitize` to `Number.prototype`
+  - Moved `inRange` to `Number.prototype`
 
 **Fixed bugs:**
 
 - `Object.prototype`
-  - Fixed `$clone` bug fix
+  - Fixed `$clone` deep cloning bug fix
 
 ## [v0.14.1](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.14.1) *(2018-08-11)*
 

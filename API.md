@@ -72,6 +72,7 @@
         * [.sample()](#Array+sample) ⇒ <code>\*</code>
         * [.shuffle()](#Array+shuffle) ⇒ [<code>Array</code>](#Array)
         * [.skip([offset])](#Array+skip) ⇒ [<code>Array</code>](#Array)
+        * [.sortBy(fn)](#Array+sortBy) ⇒ [<code>Array</code>](#Array)
         * [.sum([path])](#Array+sum) ⇒ [<code>Number</code>](#Number)
         * [.tail()](#Array+tail) ⇒ [<code>Array</code>](#Array)
         * [.union(array)](#Array+union) ⇒ [<code>Array</code>](#Array)
@@ -743,6 +744,22 @@ skips the array
 ```javascript
 [2, 1, 2, 5].skip(1); // [1,2,5]
 ```
+<a name="Array+sortBy"></a>
+
+### array.sortBy(fn) ⇒ [<code>Array</code>](#Array)
+Groups the elements of an array based on the given function and returns the count of elements in each group
+
+**Kind**: instance method of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| fn | [<code>String</code>](#String) \| <code>function</code> | 
+
+**Example**  
+```javascript
+['five', 'three', 'one'].sortBy('length'); // ['one', 'five', 'three']
+['five', 'three', 'one'].sortBy((value) => -value.length); // ['three', 'five', 'one']
+```
 <a name="Array+sum"></a>
 
 ### array.sum([path]) ⇒ [<code>Number</code>](#Number)
@@ -1409,41 +1426,37 @@ Math.radsToDegrees(Math.PI / 2); // 90
 **Kind**: global namespace  
 
 * [Number](#Number) : <code>object</code>
-    * [.digitize](#Number.digitize) ⇒ [<code>Array.&lt;Number&gt;</code>](#Number)
-    * [.inRange](#Number.inRange) ⇒ [<code>Boolean</code>](#Boolean)
-    * [.isNumber](#Number.isNumber) ⇒ [<code>Boolean</code>](#Boolean)
+    * _instance_
+        * [.digitize()](#Number+digitize) ⇒ [<code>Array.&lt;Number&gt;</code>](#Number)
+        * [.inRange(end, [start])](#Number+inRange) ⇒ [<code>Boolean</code>](#Boolean)
+    * _static_
+        * [.isNumber](#Number.isNumber) ⇒ [<code>Boolean</code>](#Boolean)
 
-<a name="Number.digitize"></a>
+<a name="Number+digitize"></a>
 
-### Number.digitize ⇒ [<code>Array.&lt;Number&gt;</code>](#Number)
+### number.digitize() ⇒ [<code>Array.&lt;Number&gt;</code>](#Number)
 Converts the number to an array of digits
 
-**Kind**: static property of [<code>Number</code>](#Number)  
-
-| Param | Type |
-| --- | --- |
-| num | [<code>Number</code>](#Number) | 
-
+**Kind**: instance method of [<code>Number</code>](#Number)  
 **Example**  
 ```javascript
-Number.digitize(123); // [1, 2, 3]
+(123).digitize(); // [1, 2, 3]
 ```
-<a name="Number.inRange"></a>
+<a name="Number+inRange"></a>
 
-### Number.inRange ⇒ [<code>Boolean</code>](#Boolean)
+### number.inRange(end, [start]) ⇒ [<code>Boolean</code>](#Boolean)
 Checks if n is between start and up to end
 
-**Kind**: static property of [<code>Number</code>](#Number)  
+**Kind**: instance method of [<code>Number</code>](#Number)  
 
 | Param | Type | Default |
 | --- | --- | --- |
-| num | [<code>Number</code>](#Number) |  | 
 | end | [<code>Number</code>](#Number) |  | 
 | [start] | [<code>Number</code>](#Number) | <code>0</code> | 
 
 **Example**  
 ```javascript
-Number.inRange(4, 8); // true
+(4).inRange(8); // true
 ```
 <a name="Number.isNumber"></a>
 
