@@ -12,7 +12,7 @@
 
 ---
 
-## [v0.15.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.15.0) - *(2018-08-15)*
+## [v0.16.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.16.0) - *(2018-08-15)*
 
 - `Array`
   - `prototype`
