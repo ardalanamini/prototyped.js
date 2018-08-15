@@ -90,20 +90,20 @@
 
 - `Array`
   - `prototype`
-    - :zip: `equals` Added
+    - :zap: `equals` Added
 - `Date`
   - `prototype`
-    - :zip: `equals` Added
+    - :zap: `equals` Added
 - `Number`
   - `prototype`
-    - :zip: `inRange` Added
+    - :zap: `inRange` Added
 - `Object`
   - `prototype`
-    - :zip: `$equals` Added
+    - :zap: `$equals` Added
 - `String`
   - `prototype`
-    - :zip: `equals` Added
-    - :zip: `parseInt` Added
+    - :zap: `equals` Added
+    - :zap: `parseInt` Added
 
 ## [v0.10.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.10.0) - *(2018-06-01)*
 
@@ -116,79 +116,79 @@
 - `Function`
   - :boom: `isInstance` Renamed to `isFunction`
 - `Global`
-  - :zip: Added `isBrowser`
+  - :zap: Added `isBrowser`
 - `Number`
   - :boom: `isInstance` Renamed to `isNumber`
 - `Object`
   - :boom: `isInstance` Renamed to `isObject`
   - `prototype`
-    - :zip: `$set` Added
+    - :zap: `$set` Added
 - `String`
   - :boom: `isInstance` Renamed to `isString`
-- :zip: Better object value path handling
+- :zap: Better object value path handling
 
 ## [v0.9.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.9.0) - *(2018-05-29)*
 
 - `Array`
   - `prototype`
-    - :zip: `empty` Added
+    - :zap: `empty` Added
 - `Number`
-  - :zip: `digitize` Added
+  - :zap: `digitize` Added
 - `Object`
   - `prototype`
-    - :zip: `$empty` Added
+    - :zap: `$empty` Added
 - `String`
   - `prototype`
-    - :zip: `empty` Added
-    - :zip: `pad` Added
-    - :zip: `repeat` Added
+    - :zap: `empty` Added
+    - :zap: `pad` Added
+    - :zap: `repeat` Added
 
 ## [v0.8.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.8.0) - *(2018-05-25)*
 
 - `Array`
   - `prototype`
-    - :zip: `nest` Added
+    - :zap: `nest` Added
 - `Object`
   - `prototype`
     - :star2: `$merge` Improved
-    - :zip: `$clone` Added
-    - :zip: `$equals` Added
-    - :zip: `$get` Added
-    - :zip: `$omit` Added
+    - :zap: `$clone` Added
+    - :zap: `$equals` Added
+    - :zap: `$get` Added
+    - :zap: `$omit` Added
 
 ## [v0.7.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.7.0) - *(2018-05-20)*
 
 - `Object`
   - `prototype`
-    - :zip: `$camelCaseKeys` Added
-    - :zip: `$kebabCaseKeys` Added
-    - :zip: `$snakeCaseKeys` Added
+    - :zap: `$camelCaseKeys` Added
+    - :zap: `$kebabCaseKeys` Added
+    - :zap: `$snakeCaseKeys` Added
 
 ## [v0.6.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.6.0) - *(2018-05-11)*
 
 - `Array`
   - `prototype`
-    - :zip: `limit` Added
-    - :zip: `take` Added
-    - :zip: `orderBy` Added
-    - :zip: `skip` Added
-    - :zip: `offset` Added
-    - :zip: `where` Added
-    - :zip: `whereBetween` Added
-    - :zip: `whereIn` Added
-    - :zip: `whereLike` Added
-    - :zip: `whereNotBetween` Added
-    - :zip: `whereNotIn` Added
-    - :zip: `whereNotLike` Added
-    - :zip: `whereNotNull` Added
-    - :zip: `whereNull` Added
+    - :zap: `limit` Added
+    - :zap: `take` Added
+    - :zap: `orderBy` Added
+    - :zap: `skip` Added
+    - :zap: `offset` Added
+    - :zap: `where` Added
+    - :zap: `whereBetween` Added
+    - :zap: `whereIn` Added
+    - :zap: `whereLike` Added
+    - :zap: `whereNotBetween` Added
+    - :zap: `whereNotIn` Added
+    - :zap: `whereNotLike` Added
+    - :zap: `whereNotNull` Added
+    - :zap: `whereNull` Added
 
 ## [v0.5.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.5.0) - *(2018-04-13)*
 
 - `Array`
   - `prototype`
-    - :zip: `all` Added
-    - :zip: `any` Added
+    - :zap: `all` Added
+    - :zap: `any` Added
 - `Object`
   - `prototype`
     - :boom: `invert` Renamed to `$invert`
@@ -198,9 +198,9 @@
     - :boom: `size` Renamed to `$size`
 - `String`
   - `prototype`
-    - :zip: `base64` Added
-    - :zip: `base64Decode` Added
-    - :zip: `map` Added
+    - :zap: `base64` Added
+    - :zap: `base64Decode` Added
+    - :zap: `map` Added
     - :star2: `pluralize` Improved
 - :star2: Some general enhancements
 - :beetle: Typescript usage
@@ -210,21 +210,21 @@
 - `String`
   - `prototype`
     - :star2: `truncate` Improved
-    - :zip: `chars` Added
-    - :zip: `swapCase` Added
-    - :zip: `humanize` Added
+    - :zap: `chars` Added
+    - :zap: `swapCase` Added
+    - :zap: `humanize` Added
 - :star2: More customizable usage
 
 ## [v0.3.2](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.3.2) - *(2018-01-25)*
 
 - `Array`
   - `prototype`
-    - :zip: `initial` Added
-    - :zip: `tail` Added
-    - :zip: `append` Added
+    - :zap: `initial` Added
+    - :zap: `tail` Added
+    - :zap: `append` Added
 - `String`
   - `prototype`
-    - :zip: `contains` Added
+    - :zap: `contains` Added
 
 ## [v0.3.1](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.3.1) - *(2018-01-24)*
 
@@ -234,36 +234,36 @@
 ## [v0.3.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.3.0) - *(2018-01-24)*
 
 - `Array`
-  - :zip: `isInstance` Added
+  - :zap: `isInstance` Added
   - `prototype`
-    - :zip: `avg` Added (alias of `Math.average`)
+    - :zap: `avg` Added (alias of `Math.average`)
 - `String`
-  - :zip: `isInstance` Added
+  - :zap: `isInstance` Added
 - `Object`
-  - :zip: `isInstance` Added
+  - :zap: `isInstance` Added
 - `Function`
-  - :zip: `isInstance` Added
+  - :zap: `isInstance` Added
   - `prototype`
-    - :zip: `called` Added
-    - :zip: `once` Added
-    - :zip: `defer` Added
-    - :zip: `cached` Added
-    - :zip: `cache` Added
+    - :zap: `called` Added
+    - :zap: `once` Added
+    - :zap: `defer` Added
+    - :zap: `cached` Added
+    - :zap: `cache` Added
 - `Boolean`
-  - :zip: `isInstance` Added
+  - :zap: `isInstance` Added
 - `Number`
-  - :zip: `isInstance` Added
+  - :zap: `isInstance` Added
 - `Date`
-  - :zip: `isInstance` Added
+  - :zap: `isInstance` Added
 - `Math`
-  - :zip: `average` Added
-  - :zip: `avg` Added (alias of `Math.average`)
-  - :zip: `factorial` Added
-  - :zip: `fibonacci` Added
-  - :zip: `gcd` Added
-  - :zip: `lcm` Added
-  - :zip: `isEven` Added
-  - :zip: `isPrime` Added
+  - :zap: `average` Added
+  - :zap: `avg` Added (alias of `Math.average`)
+  - :zap: `factorial` Added
+  - :zap: `fibonacci` Added
+  - :zap: `gcd` Added
+  - :zap: `lcm` Added
+  - :zap: `isEven` Added
+  - :zap: `isPrime` Added
 
 ## [v0.2.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.2.0) - *(2018-01-18)*
 
