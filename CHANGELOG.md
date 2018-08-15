@@ -1,311 +1,301 @@
 # Changelog
 
-## [next](https://github.com/ardalanamini/prototyped.js/releases/tag/next) *(2018-__-__)*
+## Emojis
 
-**Implemented enhancements:**
+- New Features -> :zap:
+- Enhancements -> :star2:
+- Breaking Changes -> :boom:
+- Bugs -> :beetle:
+- Pull Requests -> :book:
+- Documents -> :mortar_board:
+- Tests -> :eyeglasses:
 
-- `Array.prototype`
-  - Added `sortBy`
-  - Method `clone` now supports deep cloning
-- `Number`
-  - Moved `digitize` to `Number.prototype`
-  - Moved `inRange` to `Number.prototype`
+---
 
-**Fixed bugs:**
+## [v0.15.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.15.0) - *(2018-08-15)*
 
-- `Object.prototype`
-  - Fixed `$clone` deep cloning bug fix
-
-## [v0.14.1](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.14.1) *(2018-08-11)*
-
-**Fixed bugs:**
-
-- `String.prototype`
-  - Fixed `camelCase`
-  - Fixed `kebabCase`
-  - Fixed `snakeCase`
-
-## [v0.14.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.14.0) *(2018-08-10)*
-
-**Implemented enhancements:**
-
-- `Date`
-  - Added `today`
-  - Added `tomorrow`
-  - Added `yesterday`
-- `Math`
-  - Added `degreesToRads`
-  - Added `isDivisible`
-  - Added `primes`
-  - Added `radsToDegrees`
-- `Object.prototype`
-  - Renamed `$map` to `$mapValues`
-  - Added `$map`
-  - Added `isObjectLike`
-  - Added `isPlainObject`
-  - Added `$values`
-- `String.prototype`
-  - Added `forEach`
-- Improved documents
-
-## [v0.13.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.13.0) *(2018-08-01)*
-
-**Implemented enhancements:**
-
-- `String.prototype`
-  - renamed `empty` to `isEmpty`
-- `Array.prototype`
-  - renamed `empty` to `isEmpty`
-  - Added `empty`
-- `Object.prototype`
-  - renamed `$empty` to `$isEmpty`
-  - Added `$empty`
-
-**Fixed bugs:**
-
-- `Number.isNumber`
-  - fixed considering numeral strings as number
-
-## [v0.12.1](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.12.1) *(2018-07-31)*
-
-**Fixed bugs:**
-
-- `Array.prototype.nest`
-  - fixed finding children of children bug
-
-## [v0.12.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.12.0) *(2018-07-26)*
-
-**Implemented enhancements:**
-
-- `Object.prototype`
-  - Added `$assign`
-  - Added `$defaults`
-  - Added `$keys`
-
-## [v0.11.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.11.0) *(2018-07-16)*
-
-**Implemented enhancements:**
-
-- `Array.prototype`
-  - Added `equals`
-- `Date.prototype`
-  - Added `equals`
-- `Number.prototype`
-  - Added `inRange`
-- `Object.prototype`
-  - Added `$equals`
-- `String.prototype`
-  - Added `equals`
-  - Added `parseInt`
-
-## [v0.10.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.10.0) *(2018-06-01)*
-
-**Implemented enhancements:**
-
-- better object value path handling
 - `Array`
-  - removed function `isInstance`
-- `Boolean`
-  - renamed `isInstance` to `isBoolean`
+  - `prototype`
+    - :zap: `sortBy` Added
+    - :star2: `clone` Added support for deep cloning
+- `Number`
+  - :boom: `digitize` Moved to `Number.prototype`
+  - :boom: `inRange` Moved to `Number.prototype`
+- `Object`
+  - `prototype`
+    - :beetle: `$clone` Fixed deep cloning bug
+
+## [v0.14.1](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.14.1) - *(2018-08-11)*
+
+- `String`
+  - `prototype`
+    - :beetle: `camelCase` Fixed regex bug
+    - :beetle: `kebabCase` Fixed regex bug
+    - :beetle: `snakeCase` Fixed regex bug
+
+## [v0.14.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.14.0) - *(2018-08-10)*
+
 - `Date`
-  - renamed `isInstance` to `isDate`
+  - :zap: `today` Added
+  - :zap: `tomorrow` Added
+  - :zap: `yesterday` Added
+- `Math`
+  - :zap: `degreesToRads` Added
+  - :zap: `isDivisible` Added
+  - :zap: `primes` Added
+  - :zap: `radsToDegrees` Added
+- `Object`
+  - `prototype`
+    - :boom: `$map` Renamed to `$mapValues`
+    - :zap: `$map` Added
+    - :zap: `isObjectLike` Added
+    - :zap: `isPlainObject` Added
+    - :zap: `$values` Added
+- `String`
+  - `prototype`
+    - :zap: `forEach` Added
+- :mortar_board: Improved documents
+
+## [v0.13.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.13.0) - *(2018-08-01)*
+
+- `String`
+  - `prototype`
+    - :boom: `empty` Renamed to `isEmpty`
+- `Array`
+  - `prototype`
+    - :boom: `empty` Renamed to `isEmpty`
+    - :zap: `empty` Added
+- `Object`
+  - `prototype`
+    - :boom: `$empty` Renamed to `$isEmpty`
+    - :zap: `$empty` Added
+- `Number`
+  - :beetle: `isNumber` Fixed considering numeral strings as number
+
+## [v0.12.1](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.12.1) - *(2018-07-31)*
+
+- `Array`
+  - `prototype`
+    - :beetle: `nest` Fixed finding children of children bug
+
+## [v0.12.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.12.0) - *(2018-07-26)*
+
+- `Object`
+  - `prototype`
+    - :zap: `$assign` Added
+    - :zap: `$defaults` Added
+    - :zap: `$keys` Added
+
+## [v0.11.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.11.0) - *(2018-07-16)*
+
+- `Array`
+  - `prototype`
+    - :zip: `equals` Added
+- `Date`
+  - `prototype`
+    - :zip: `equals` Added
+- `Number`
+  - `prototype`
+    - :zip: `inRange` Added
+- `Object`
+  - `prototype`
+    - :zip: `$equals` Added
+- `String`
+  - `prototype`
+    - :zip: `equals` Added
+    - :zip: `parseInt` Added
+
+## [v0.10.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.10.0) - *(2018-06-01)*
+
+- `Array`
+  - :boom: `isInstance` Removed
+- `Boolean`
+  - :boom: `isInstance` Renamed to `isBoolean`
+- `Date`
+  - :boom: `isInstance` Renamed to `isDate`
 - `Function`
-  - renamed `isInstance` to `isFunction`
+  - :boom: `isInstance` Renamed to `isFunction`
 - `Global`
-  - Added `isBrowser`
+  - :zip: Added `isBrowser`
 - `Number`
-  - renamed `isInstance` to `isNumber`
+  - :boom: `isInstance` Renamed to `isNumber`
 - `Object`
-  - renamed `isInstance` to `isObject`
+  - :boom: `isInstance` Renamed to `isObject`
+  - `prototype`
+    - :zip: `$set` Added
 - `String`
-  - renamed `isInstance` to `isString`
-- `Object.prototype`
-  - function `$set` added
+  - :boom: `isInstance` Renamed to `isString`
+- :zip: Better object value path handling
 
-## [v0.9.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.9.0) *(2018-05-29)*
-
-**Implemented enhancements:**
-
-- `Array.prototype`
-  - function `empty` added
-- `Number`
-  - function `digitize` added
-- `Object.prototype`
-  - function `$empty` added
-- `String.prototype`
-  - function `empty` added
-  - function `pad` added
-  - function `repeat` added
-
-## [v0.8.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.8.0) *(2018-05-25)*
-
-**Implemented enhancements:**
-
-- `Array.prototype`
-  - function `nest` added
-- `Object.prototype`
-  - function `$merge` improved
-  - function `$clone` added
-  - function `$equals` added
-  - function `$get` added
-  - function `$omit` added
-
-## [v0.7.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.7.0) *(2018-05-20)*
-
-**Implemented enhancements:**
-
-- `Object.prototype`
-  - function `$camelCaseKeys` added
-  - function `$kebabCaseKeys` added
-  - function `$snakeCaseKeys` added
-
-## [v0.6.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.6.0) *(2018-05-11)*
-
-**Implemented enhancements:**
-
-- `Array.prototype`
-  - function `limit` added
-  - function `take` added
-  - function `orderBy` added
-  - function `skip` added
-  - function `offset` added
-  - function `where` added
-  - function `whereBetween` added
-  - function `whereIn` added
-  - function `whereLike` added
-  - function `whereNotBetween` added
-  - function `whereNotIn` added
-  - function `whereNotLike` added
-  - function `whereNotNull` added
-  - function `whereNull` added
-
-## [v0.5.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.5.0) *(2018-04-13)*
-
-**Implemented enhancements:**
-
-- `Array.prototype`
-  - function `all` added
-  - function `any` added
-- `Object.prototype`
-  - function `invert` renamed into `$invert`
-  - function `lowerCaseKeys` renamed into `$lowerCaseKeys`
-  - function `mapKeys` renamed into `$mapKeys`
-    - function `merge` renamed into `$merge`
-    - function `size` renamed into `$size`
-- `String.prototype`
-  - function `base64` added
-  - function `base64Decode` added
-    - function `map` added
-    - function `pluralize` improved
-- some general enhancements
-
-**Fixed bugs:**
-
-- typescript usage
-
-## [v0.4.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.4.0) *(2018-01-28)*
-
-**Implemented enhancements:**
-
-- more customizable usage
-- `String.prototype`
-  - function `truncate` parameter `truncateString` added
-  - function `chars` added
-  - function `swapCase` added
-  - function `humanize` added
-
-## [v0.3.2](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.3.2) *(2018-01-25)*
-
-**Implemented enhancements:**
-
-- `Array.prototype`
-  - function `initial` added
-  - function `tail` added
-  - function `append` added
-- `String.prototype`
-  - function `contains` added
-
-## [v0.3.1](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.3.1) *(2018-01-24)*
-
-**Implemented enhancements:**
-
-- es6 usage is now available along side es5 (dist)
-
-**Fixed bugs:**
-
-- typescript usage
-
-## [v0.3.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.3.0) *(2018-01-24)*
-
-**Implemented enhancements:**
+## [v0.9.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.9.0) - *(2018-05-29)*
 
 - `Array`
-  - function `isInstance` added
   - `prototype`
-    - function `avg` added (alias of `Math.average`)
-- `String`
-  - function `isInstance` added
-- `Object`
-  - function `isInstance` added
-- `Function`
-  - function `isInstance` added
-  - `prototype`
-    - method `called` added
-    - function `once` added
-    - function `defer` added
-    - method `cached` added
-    - function `cache` added
-- `Boolean`
-  - function `isInstance` added
+    - :zip: `empty` Added
 - `Number`
-  - function `isInstance` added
+  - :zip: `digitize` Added
+- `Object`
+  - `prototype`
+    - :zip: `$empty` Added
+- `String`
+  - `prototype`
+    - :zip: `empty` Added
+    - :zip: `pad` Added
+    - :zip: `repeat` Added
+
+## [v0.8.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.8.0) - *(2018-05-25)*
+
+- `Array`
+  - `prototype`
+    - :zip: `nest` Added
+- `Object`
+  - `prototype`
+    - :star2: `$merge` Improved
+    - :zip: `$clone` Added
+    - :zip: `$equals` Added
+    - :zip: `$get` Added
+    - :zip: `$omit` Added
+
+## [v0.7.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.7.0) - *(2018-05-20)*
+
+- `Object`
+  - `prototype`
+    - :zip: `$camelCaseKeys` Added
+    - :zip: `$kebabCaseKeys` Added
+    - :zip: `$snakeCaseKeys` Added
+
+## [v0.6.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.6.0) - *(2018-05-11)*
+
+- `Array`
+  - `prototype`
+    - :zip: `limit` Added
+    - :zip: `take` Added
+    - :zip: `orderBy` Added
+    - :zip: `skip` Added
+    - :zip: `offset` Added
+    - :zip: `where` Added
+    - :zip: `whereBetween` Added
+    - :zip: `whereIn` Added
+    - :zip: `whereLike` Added
+    - :zip: `whereNotBetween` Added
+    - :zip: `whereNotIn` Added
+    - :zip: `whereNotLike` Added
+    - :zip: `whereNotNull` Added
+    - :zip: `whereNull` Added
+
+## [v0.5.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.5.0) - *(2018-04-13)*
+
+- `Array`
+  - `prototype`
+    - :zip: `all` Added
+    - :zip: `any` Added
+- `Object`
+  - `prototype`
+    - :boom: `invert` Renamed to `$invert`
+    - :boom: `lowerCaseKeys` Renamed to `$lowerCaseKeys`
+    - :boom: `mapKeys` Renamed to `$mapKeys`
+    - :boom: `merge` Renamed to `$merge`
+    - :boom: `size` Renamed to `$size`
+- `String`
+  - `prototype`
+    - :zip: `base64` Added
+    - :zip: `base64Decode` Added
+    - :zip: `map` Added
+    - :star2: `pluralize` Improved
+- :star2: Some general enhancements
+- :beetle: Typescript usage
+
+## [v0.4.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.4.0) - *(2018-01-28)*
+
+- `String`
+  - `prototype`
+    - :star2: `truncate` Improved
+    - :zip: `chars` Added
+    - :zip: `swapCase` Added
+    - :zip: `humanize` Added
+- :star2: More customizable usage
+
+## [v0.3.2](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.3.2) - *(2018-01-25)*
+
+- `Array`
+  - `prototype`
+    - :zip: `initial` Added
+    - :zip: `tail` Added
+    - :zip: `append` Added
+- `String`
+  - `prototype`
+    - :zip: `contains` Added
+
+## [v0.3.1](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.3.1) - *(2018-01-24)*
+
+- :star2: `es6` Usage is now available along side `es5` (`dist`)
+- :beetle: Typescript usage
+
+## [v0.3.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.3.0) - *(2018-01-24)*
+
+- `Array`
+  - :zip: `isInstance` Added
+  - `prototype`
+    - :zip: `avg` Added (alias of `Math.average`)
+- `String`
+  - :zip: `isInstance` Added
+- `Object`
+  - :zip: `isInstance` Added
+- `Function`
+  - :zip: `isInstance` Added
+  - `prototype`
+    - :zip: `called` Added
+    - :zip: `once` Added
+    - :zip: `defer` Added
+    - :zip: `cached` Added
+    - :zip: `cache` Added
+- `Boolean`
+  - :zip: `isInstance` Added
+- `Number`
+  - :zip: `isInstance` Added
 - `Date`
-  - function `isInstance` added
+  - :zip: `isInstance` Added
 - `Math`
-  - function `average` added
-  - function `avg` added (alias of `Math.average`)
-  - function `factorial` added
-  - function `fibonacci` added
-  - function `gcd` added
-  - function `lcm` added
-  - function `isEven` added
-  - function `isPrime` added
+  - :zip: `average` Added
+  - :zip: `avg` Added (alias of `Math.average`)
+  - :zip: `factorial` Added
+  - :zip: `fibonacci` Added
+  - :zip: `gcd` Added
+  - :zip: `lcm` Added
+  - :zip: `isEven` Added
+  - :zip: `isPrime` Added
 
-## [v0.2.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.2.0) *(2018-01-18)*
+## [v0.2.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.2.0) - *(2018-01-18)*
 
-**Implemented enhancements:**
+- `Array`
+  - `prototype`
+    - :zap: `sum` Added
+    - :zap: `average` Added
+    - :zap: `max` Added
+    - :zap: `min` Added
+    - :zap: `contains` Added
+    - :zap: `crossJoin` Added
+    - :zap: `get` Added
+    - :zap: `implode` Added
+    - :zap: `clone` Added
+    - :zap: `median` Added
+    - :zap: `pad` Added
+    - :zap: `prepend` Added
+    - :beetle: `pluck` Fixed document examples
+    - :beetle: `chunk` Fixed name
+- `String`
+  - `prototype`
+    - :beetle: `decapitalize` Fixed returning the capitalized string
+- :eyeglasses: Added tests
 
-- added tests
-- `Array.prototype`
-  - function `sum` added
-  - function `average` added
-  - function `max` added
-  - function `min` added
-  - function `contains` added
-  - function `crossJoin` added
-  - function `get` added
-  - function `implode` added
-  - function `clone` added
-  - function `median` added
-  - function `pad` added
-  - function `prepend` added
+## [v0.1.2](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.1.2) - *(2018-01-15)*
 
-**Fixed bugs:**
+- :mortar_board: Fix project name in README.md
 
-- `Array.prototype`
-  - function `pluck` document examples
-  - function `chunk` name
-- `String.prototype`
-  - function `decapitalize` returning the capitalized string
+## [v0.1.1](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.1.1) - *(2018-01-15)*
 
-## [v0.1.2](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.1.2) *(2018-01-15)*
+- :mortar_board: Update README.md usage
 
-- Fix project name in README.md
+## [v0.1.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.1.0) - *(2018-01-15)*
 
-## [v0.1.1](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.1.1) *(2018-01-15)*
-
-- Update README.md usage
-
-## [v0.1.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.1.0) *(2018-01-15)*
-
-- First release
+- :tada: First release
