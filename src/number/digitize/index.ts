@@ -1,17 +1,18 @@
 import * as method from "./method";
 
 declare global {
-  interface NumberConstructor {
-    digitize(num: number): number[];
+  interface Number {
+    digitize(): number[];
   }
 }
 
 /**
  * Converts the number to an array of digits
  * @memberof Number
- * @param {Number} num
  * @returns {Number[]}
  * @example
- * Number.digitize(123); // [1, 2, 3]
+ * (123).digitize(); // [1, 2, 3]
  */
-Number.digitize = method;
+Number.prototype.digitize = function() {
+  return method(this as number);
+};

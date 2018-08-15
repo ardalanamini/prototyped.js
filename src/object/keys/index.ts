@@ -3,7 +3,7 @@ import { addPrototype } from "../utils";
 
 declare global {
   interface Object {
-    $keys(): number;
+    $keys(): string[];
   }
 }
 

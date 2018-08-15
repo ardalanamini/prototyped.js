@@ -1,7 +1,7 @@
 import "./index";
 
 describe("Number.prototype.inRange", () => {
-  test("Number.inRange(4, 8) returns true", () => {
-    expect(Number.inRange(4, 8)).toBe(true);
+  test("(4).inRange(8) returns true", () => {
+    expect((4).inRange(8)).toBe(true);
   });
 });

@@ -10,7 +10,7 @@ declare global {
  * Returns `true` if the provided predicate function returns `true` for at least one element in a collection,
  * `false` otherwise
  * @memberof Array
- * @param {function} [fn=Boolean]
+ * @param {Function} [fn=Boolean]
  * @returns {Boolean}
  * @example
  * [0, 1, 2, 0].any((x) => x >= 2); // true

@@ -43,6 +43,7 @@ import "./repeat";
 import "./sample";
 import "./shuffle";
 import "./skip";
+import "./sortBy";
 import "./sum";
 import "./tail";
 import "./union";

@@ -9,7 +9,7 @@ declare global {
 /**
  * Groups the elements into two arrays, depending on the provided function's truthiness for each element
  * @memberof Array
- * @param {function} fn
+ * @param {Function} fn
  * @returns {Array}
  * @example
  * const users = [{ user: 'barney', age: 36, active: false }, { user: 'fred', age: 40, active: true }];

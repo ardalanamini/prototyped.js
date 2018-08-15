@@ -10,7 +10,7 @@ declare global {
  * Truncates a string up to a specified length
  * @memberof String
  * @param {Number} num
- * @param {String} [truncateString=...]
+ * @param {String} [truncateString="..."]
  * @returns {String}
  * @example
  * 'boomerang'.truncate(7); // 'boom...'

@@ -10,7 +10,7 @@ declare global {
  * Given a flat array of objects linked to one another, it will nest them recursively
  * @memberof Array
  * @param {String} link
- * @param {String} id
+ * @param {String} key
  * @returns {Object[]}
  * @example
  * const comments = [

@@ -41,6 +41,7 @@ import * as repeat from "./repeat/method";
 import * as sample from "./sample/method";
 import * as shuffle from "./shuffle/method";
 import * as skip from "./skip/method";
+import * as sortBy from "./sortBy/method";
 import * as sum from "./sum/method";
 import * as tail from "./tail/method";
 import * as union from "./union/method";
@@ -100,6 +101,7 @@ export {
   sample,
   shuffle,
   skip,
+  sortBy,
   sum,
   tail,
   union,
