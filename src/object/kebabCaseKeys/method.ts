@@ -1,11 +1,12 @@
+import * as forEach from "../forEach/method";
 import * as kebabCase from "../../string/kebabCase/method";
 
-const method = (obj: { [key: string]: any }): object => {
-  return Object.keys(obj).reduce((acc: { [key: string]: any }, key) => {
-    acc[kebabCase(key)] = obj[key];
+const method = (obj: object): object => {
+  const result: { [key: string]: any } = {};
 
-    return acc;
-  }, {});
+  forEach(obj, (value, key) => result[kebabCase(key)] = value);
+
+  return result;
 };
 
 export = method;

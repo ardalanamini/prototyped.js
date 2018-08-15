@@ -1,5 +1,4 @@
 import * as method from "./method";
-import { addPrototype } from "../utils";
 
 declare global {
   interface Object {
@@ -9,13 +8,11 @@ declare global {
 
 /**
  * Get keys of the object
- * @memberof Object.prototype
+ * @memberof Object
  * @returns {Object}
  * @example
- * { one: 1, two: 2, three: 3 }.$keys(); // ["one", "two", "three"]
+ * ({ one: 1, two: 2, three: 3 }).$keys(); // ["one", "two", "three"]
  */
-function $keys(this: object): string[] {
+Object.prototype.$keys = function() {
   return method(this);
-}
-
-addPrototype("$keys", $keys);
+};

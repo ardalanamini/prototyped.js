@@ -1,13 +1,14 @@
 import { pathToKeys } from "../../utils";
 
-const method = (obj: { [key: string]: any }, path: string, value: any): any => {
+const method = (obj: object, path: string, value: any): any => {
   const keys = pathToKeys(path);
+  const length = keys.length;
   let i = 0;
 
-  for (; i < keys.length - 1; i++)
-    obj = obj[keys[i]];
+  for (; i < length - 1; i++)
+    obj = (obj as { [key: string]: any })[keys[i]];
 
-  obj[keys[i]] = value;
+  (obj as { [key: string]: any })[keys[i]] = value;
 };
 
 export = method;

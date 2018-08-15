@@ -125,6 +125,7 @@
     "mapValues",
     "merge",
     "omit",
+    "reduce",
     "set",
     "size",
     "snakeCaseKeys",

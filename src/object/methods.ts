@@ -19,6 +19,7 @@ import * as mapKeys from "./mapKeys/method";
 import * as mapValues from "./mapValues/method";
 import * as merge from "./merge/method";
 import * as omit from "./omit/method";
+import * as reduce from "./reduce/method";
 import * as set from "./set/method";
 import * as size from "./size/method";
 import * as snakeCaseKeys from "./snakeCaseKeys/method";
@@ -46,6 +47,7 @@ export {
   mapValues,
   merge,
   omit,
+  reduce,
   set,
   size,
   snakeCaseKeys,

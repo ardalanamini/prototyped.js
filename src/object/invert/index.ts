@@ -1,5 +1,4 @@
 import * as method from "./method";
-import { addPrototype } from "../utils";
 
 declare global {
   interface Object {
@@ -9,13 +8,11 @@ declare global {
 
 /**
  * Inverts the key-value pairs of the object, without mutating it
- * @memberof Object.prototype
+ * @memberof Object
  * @returns {Object}
  * @example
- * { name: "John", age: 20 }.$invert(); // { 20: "age", John: "name" }
+ * ({ name: "John", age: 20 }).$invert(); // { 20: "age", John: "name" }
  */
-function $invert(this: object): object {
+Object.prototype.$invert = function() {
   return method(this);
-}
-
-addPrototype("$invert", $invert);
+};

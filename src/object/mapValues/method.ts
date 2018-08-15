@@ -1,9 +1,11 @@
-const method = (obj: { [key: string]: any }, fn: (value: any, key: string | number, object: object) => any): object => {
-  return Object.keys(obj).reduce((acc: { [key: string]: any }, k) => {
-    acc[k] = fn(obj[k], k, obj);
+import * as forEach from "../forEach/method";
 
-    return acc;
-  }, {});
+const method = (obj: object, fn: (value: any, key: string, object: object) => any): object => {
+  const result: { [key: string]: any } = {};
+
+  forEach(obj, (value, key, object) => result[key] = fn(value, key, object));
+
+  return result;
 };
 
 export = method;

@@ -1,5 +1,4 @@
 import * as method from "./method";
-import { addPrototype } from "../utils";
 
 declare global {
   interface Object {
@@ -9,14 +8,12 @@ declare global {
 
 /**
  * Assigns object like Object.assign
- * @memberof Object.prototype
- * @param {Object[]} sources
+ * @memberof Object
+ * @param {...Object} sources
  * @returns {Object}
  * @example
- * { a: 0 }.$assign({ a: 1 }, { b: 2 }); // { a: 1, b: 2 }
+ * ({ a: 0 }).$assign({ a: 1 }, { b: 2 }); // { a: 1, b: 2 }
  */
-function $assign(this: object, ...sources: object[]): object {
+Object.prototype.$assign = function(...sources) {
   return method(this, ...sources);
-}
-
-addPrototype("$assign", $assign);
+};

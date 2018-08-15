@@ -1,5 +1,4 @@
 import * as method from "./method";
-import { addPrototype } from "../utils";
 
 declare global {
   interface Object {
@@ -9,14 +8,12 @@ declare global {
 
 /**
  * Creates a new object from the specified object, where all the keys are in lowercase
- * @memberof Object.prototype
+ * @memberof Object
  * @returns {Object}
  * @example
  * const myObj = { Name: "Adam", sUrnAME: "Smith" };
  * const myObjLower = myObj.$lowerCaseKeys(); // {name: "Adam", surname: "Smith"}
  */
-function $lowerCaseKeys(this: object): object {
+Object.prototype.$lowerCaseKeys = function() {
   return method(this);
-}
-
-addPrototype("$lowerCaseKeys", $lowerCaseKeys);
+};

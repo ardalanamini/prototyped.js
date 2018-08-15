@@ -1,5 +1,4 @@
 import * as method from "./method";
-import { addPrototype } from "../utils";
 
 declare global {
   interface Object {
@@ -9,14 +8,12 @@ declare global {
 
 /**
  * Performs a deep comparison between two values to determine if they are equivalent
- * @memberof Object.prototype
+ * @memberof Object
  * @param {*} obj
  * @returns {Boolean}
  * @example
- * { a: [2, { e: 3 }], b: [4], c: 'foo' }.$equals({ a: [2, { e: 3 }], b: [4], c: 'foo' }); // true
+ * ({ a: [2, { e: 3 }], b: [4], c: 'foo' }).$equals({ a: [2, { e: 3 }], b: [4], c: 'foo' }); // true
  */
-function $equals(this: object, obj: any): boolean {
+Object.prototype.$equals = function(obj) {
   return method(this, obj);
-}
-
-addPrototype("$equals", $equals);
+};
