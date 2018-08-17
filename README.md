@@ -1,4 +1,4 @@
-# Prototyped.js
+# Prototyped.js [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Common%20Typescript%20ready%20prototypes%20available%20in%20ES5%20and%20ES6,%20Server-Side%20and%20Client-Side&url=https://github.com/ardalanamini/prototyped.js&via=ardalanamini&hashtags=prototype,nodejs,web,typescript,es5,es6,server-side,client-side,developers,fast)
 
 Common **Typescript ready** prototypes available in **ES5** and **ES6**, **Server-Side** and **Client-Side**
 
@@ -29,6 +29,9 @@ Common **Typescript ready** prototypes available in **ES5** and **ES6**, **Serve
 
 - [Installation](#installation)
 - [Usage](#usage)
+- [Versioning](#versioning)
+- [Authors](#authors)
+- [License](#license)
 - [Support](#support)
 
 ## Installation
@@ -56,7 +59,7 @@ console.log('hello world!'.words()); // ['hello', 'world']
 or simply import the prototypes you want
 
 ```javascript
-require('prototyped.js/dist/string');
+require('prototyped.js/es6/string');
 // or
 require('prototyped.js/dist/string/words');
 
@@ -66,7 +69,7 @@ console.log('hello world!'.words()); // ['hello', 'world']
 even better, just import the method you want
 
 ```javascript
-const words = require('prototyped.js/dist/string/words/method');
+const words = require('prototyped.js/es6/string/words/method');
 
 console.log(words('hello world!')); // ['hello', 'world']
 
@@ -75,7 +78,21 @@ const methods = require('prototyped.js/dist/methods');
 console.log(methods.string.words('hello world!')); // ['hello', 'world']
 ```
 
-All documents are available at [API.md](https://github.com/ardalanamini/prototyped.js/blob/master/API.md)
+All documents are available at [API.md](API.md)
+
+## Versioning
+
+We use [SemVer](http://semver.org) for versioning. For the versions available, see the [tags on this repository](https://github.com/ardalanamini/prototyped.js/tags).
+
+## Authors
+
+- **Ardalan Amini** - *Owner/Developer* - [@ardalanamini](https://github.com/ardalanamini)
+
+See also the list of [contributors](https://github.com/ardalanamini/prototyped.js/contributors) who participated in this project.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
 ## Support
 

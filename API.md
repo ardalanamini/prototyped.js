@@ -44,7 +44,7 @@
         * [.crossJoin(array)](#Array+crossJoin) ⇒ [<code>Array.&lt;Array&gt;</code>](#Array)
         * [.deepFlatten()](#Array+deepFlatten) ⇒ [<code>Array</code>](#Array)
         * [.diff(array, [comp])](#Array+diff) ⇒ [<code>Array</code>](#Array)
-        * [.distinct()](#Array+distinct) ⇒ [<code>Array</code>](#Array)
+        * [.distinct([fn])](#Array+distinct) ⇒ [<code>Array</code>](#Array)
         * [.empty()](#Array+empty)
         * [.equals(value)](#Array+equals) ⇒ [<code>Boolean</code>](#Boolean)
         * [.everyNth()](#Array+everyNth) ⇒ [<code>Array</code>](#Array)
@@ -336,13 +336,20 @@ if `comp` is given, filters out all values from an array for which the comparato
 ```
 <a name="Array+distinct"></a>
 
-### array.distinct() ⇒ [<code>Array</code>](#Array)
+### array.distinct([fn]) ⇒ [<code>Array</code>](#Array)
 Returns all the distinct values of an array
 
 **Kind**: instance method of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| [fn] | [<code>String</code>](#String) \| <code>function</code> | 
+
 **Example**  
 ```javascript
 [1, 2, 2, 3, 4, 4, 5].distinct(); // [1,2,3,4,5]
+[{foo:{bar:[0,1]}}, {foo:{bar:[4,1]}}].distinct("foo.bar[1]"); // [{foo:{bar:[0,1]}}]
+[1, 2, 2.2, 3, 4.9, 4, 5].distinct(Math.floor); // [1,2,3,4.9,5]
 ```
 <a name="Array+empty"></a>
 

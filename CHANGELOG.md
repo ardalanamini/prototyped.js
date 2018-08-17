@@ -12,8 +12,11 @@
 
 ---
 
-## [next](https://github.com/ardalanamini/prototyped.js/releases/tag/next) - *(2018-__-__)*
+## [v0.17.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.17.0) - *(2018-08-17)*
 
+- `Array`
+  - `prototype`
+    - :star2: `distinct` method can get an argument to unique the array by that
 - `Number`
   - `prototype`
     - :zap: `equals` Added
