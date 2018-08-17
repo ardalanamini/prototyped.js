@@ -1,5 +1,4 @@
 import * as method from "./method";
-import { addPrototype } from "../utils";
 
 declare global {
   interface Object {
@@ -9,13 +8,11 @@ declare global {
 
 /**
  * Get size of the object
- * @memberof Object.prototype
+ * @memberof Object
  * @returns {Object}
  * @example
  * { one: 1, two: 2, three: 3 }.$size(); // 3
  */
-function $size(this: object): number {
+Object.prototype.$size = function() {
   return method(this);
-}
-
-addPrototype("$size", $size);
+};

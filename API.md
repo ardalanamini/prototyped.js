@@ -44,7 +44,7 @@
         * [.crossJoin(array)](#Array+crossJoin) ⇒ [<code>Array.&lt;Array&gt;</code>](#Array)
         * [.deepFlatten()](#Array+deepFlatten) ⇒ [<code>Array</code>](#Array)
         * [.diff(array, [comp])](#Array+diff) ⇒ [<code>Array</code>](#Array)
-        * [.distinct()](#Array+distinct) ⇒ [<code>Array</code>](#Array)
+        * [.distinct([fn])](#Array+distinct) ⇒ [<code>Array</code>](#Array)
         * [.empty()](#Array+empty)
         * [.equals(value)](#Array+equals) ⇒ [<code>Boolean</code>](#Boolean)
         * [.everyNth()](#Array+everyNth) ⇒ [<code>Array</code>](#Array)
@@ -336,13 +336,20 @@ if `comp` is given, filters out all values from an array for which the comparato
 ```
 <a name="Array+distinct"></a>
 
-### array.distinct() ⇒ [<code>Array</code>](#Array)
+### array.distinct([fn]) ⇒ [<code>Array</code>](#Array)
 Returns all the distinct values of an array
 
 **Kind**: instance method of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| [fn] | [<code>String</code>](#String) \| <code>function</code> | 
+
 **Example**  
 ```javascript
 [1, 2, 2, 3, 4, 4, 5].distinct(); // [1,2,3,4,5]
+[{foo:{bar:[0,1]}}, {foo:{bar:[4,1]}}].distinct("foo.bar[1]"); // [{foo:{bar:[0,1]}}]
+[1, 2, 2.2, 3, 4.9, 4, 5].distinct(Math.floor); // [1,2,3,4.9,5]
 ```
 <a name="Array+empty"></a>
 
@@ -1428,6 +1435,7 @@ Math.radsToDegrees(Math.PI / 2); // 90
 * [Number](#Number) : <code>object</code>
     * _instance_
         * [.digitize()](#Number+digitize) ⇒ [<code>Array.&lt;Number&gt;</code>](#Number)
+        * [.equals(value)](#Number+equals) ⇒ [<code>Boolean</code>](#Boolean)
         * [.inRange(end, [start])](#Number+inRange) ⇒ [<code>Boolean</code>](#Boolean)
     * _static_
         * [.isNumber](#Number.isNumber) ⇒ [<code>Boolean</code>](#Boolean)
@@ -1441,6 +1449,21 @@ Converts the number to an array of digits
 **Example**  
 ```javascript
 (123).digitize(); // [1, 2, 3]
+```
+<a name="Number+equals"></a>
+
+### number.equals(value) ⇒ [<code>Boolean</code>](#Boolean)
+Checks if the number is equal to the given value
+
+**Kind**: instance method of [<code>Number</code>](#Number)  
+
+| Param | Type |
+| --- | --- |
+| value | <code>\*</code> | 
+
+**Example**  
+```javascript
+(22).equals("22"); // false
 ```
 <a name="Number+inRange"></a>
 
@@ -1499,6 +1522,7 @@ Number.isNumber(2); // true
         * [.$mapValues(fn)](#Object+$mapValues) ⇒ [<code>Object</code>](#Object)
         * [.$merge(...objects)](#Object+$merge) ⇒ [<code>Object</code>](#Object)
         * [.$omit(arr)](#Object+$omit) ⇒ [<code>Object</code>](#Object)
+        * [.$reduce(fn, initialValue)](#Object+$reduce) ⇒ <code>\*</code>
         * [.$set(path, value)](#Object+$set)
         * [.$size()](#Object+$size) ⇒ [<code>Object</code>](#Object)
         * [.$snakeCaseKeys()](#Object+$snakeCaseKeys) ⇒ [<code>Object</code>](#Object)
@@ -1517,11 +1541,11 @@ Assigns object like Object.assign
 
 | Param | Type |
 | --- | --- |
-| ...sources | [<code>Array.&lt;Object&gt;</code>](#Object) | 
+| ...sources | [<code>Object</code>](#Object) | 
 
 **Example**  
 ```javascript
-{ a: 0 }.$assign({ a: 1 }, { b: 2 }); // { a: 1, b: 2 }
+({ a: 0 }).$assign({ a: 1 }, { b: 2 }); // { a: 1, b: 2 }
 ```
 <a name="Object+$camelCaseKeys"></a>
 
@@ -1559,11 +1583,11 @@ Assigns object in reverse by Object.assign
 
 | Param | Type |
 | --- | --- |
-| ...sources | [<code>Array.&lt;Object&gt;</code>](#Object) | 
+| ...sources | [<code>Object</code>](#Object) | 
 
 **Example**  
 ```javascript
-{ a: 0 }.$defaults({ a: 1, b: 2 }, { b: 3 }); // { a: 0, b: 2 }
+({ a: 0 }).$defaults({ a: 1, b: 2 }, { b: 3 }); // { a: 0, b: 2 }
 ```
 <a name="Object+$empty"></a>
 
@@ -1590,7 +1614,7 @@ Performs a deep comparison between two values to determine if they are equivalen
 
 **Example**  
 ```javascript
-{ a: [2, { e: 3 }], b: [4], c: 'foo' }.$equals({ a: [2, { e: 3 }], b: [4], c: 'foo' }); // true
+({ a: [2, { e: 3 }], b: [4], c: 'foo' }).$equals({ a: [2, { e: 3 }], b: [4], c: 'foo' }); // true
 ```
 <a name="Object+$forEach"></a>
 
@@ -1634,7 +1658,7 @@ Inverts the key-value pairs of the object, without mutating it
 **Kind**: instance method of [<code>Object</code>](#Object)  
 **Example**  
 ```javascript
-{ name: "John", age: 20 }.$invert(); // { 20: "age", John: "name" }
+({ name: "John", age: 20 }).$invert(); // { 20: "age", John: "name" }
 ```
 <a name="Object+$isEmpty"></a>
 
@@ -1644,8 +1668,8 @@ Checks if the object is empty
 **Kind**: instance method of [<code>Object</code>](#Object)  
 **Example**  
 ```javascript
-{ a: 1 }.$isEmpty(); // false
-{}.$isEmpty(); // true
+({ a: 1 }).$isEmpty(); // false
+({}).$isEmpty(); // true
 ```
 <a name="Object+$kebabCaseKeys"></a>
 
@@ -1666,7 +1690,7 @@ Get keys of the object
 **Kind**: instance method of [<code>Object</code>](#Object)  
 **Example**  
 ```javascript
-{ one: 1, two: 2, three: 3 }.$keys(); // ["one", "two", "three"]
+({ one: 1, two: 2, three: 3 }).$keys(); // ["one", "two", "three"]
 ```
 <a name="Object+$lowerCaseKeys"></a>
 
@@ -1713,7 +1737,7 @@ and the same values as the provided object
 
 **Example**  
 ```javascript
-{ a: 1, b: 2 }.$mapKeys((val, key) => key + val); // { a1: 1, b2: 2 }
+({ a: 1, b: 2 }).$mapKeys((val, key) => key + val); // { a1: 1, b2: 2 }
 ```
 <a name="Object+$mapValues"></a>
 
@@ -1744,7 +1768,7 @@ Creates a new object from the combination of two or more objects
 
 | Param | Type |
 | --- | --- |
-| ...objects | [<code>Array.&lt;Object&gt;</code>](#Object) | 
+| ...objects | [<code>Object</code>](#Object) | 
 
 **Example**  
 ```javascript
@@ -1776,6 +1800,23 @@ The function is invoked with two arguments: (value, key)
 ```javascript
 { a: 1, b: '2', c: 3 }.$omit(['b']); // { a: 1, c: 3 }
 { a: 1, b: '2', c: 3 }.$omit((x) => typeof x === 'number'); // { b: '2' }
+```
+<a name="Object+$reduce"></a>
+
+### object.$reduce(fn, initialValue) ⇒ <code>\*</code>
+Just like array.reduce
+
+**Kind**: instance method of [<code>Object</code>](#Object)  
+
+| Param | Type |
+| --- | --- |
+| fn | <code>function</code> | 
+| initialValue | <code>\*</code> | 
+
+**Example**  
+```javascript
+({foo: 1, bar: 2}).$reduce((prev, value, key) => [...prev, key + ":" + value], []);
+// ["foo:1", "bar:2"]
 ```
 <a name="Object+$set"></a>
 
@@ -1824,7 +1865,7 @@ Get values of the object
 **Kind**: instance method of [<code>Object</code>](#Object)  
 **Example**  
 ```javascript
-{ one: 1, two: 2, three: 3 }.$values(); // [1, 2, 3]
+({ one: 1, two: 2, three: 3 }).$values(); // [1, 2, 3]
 ```
 <a name="Object.isObject"></a>
 
@@ -1899,6 +1940,7 @@ Object.isPlainObject({foo: 'bar'}); // true
         * [.pad(size, [value])](#String+pad) ⇒ [<code>String</code>](#String)
         * [.parseInt([radix])](#String+parseInt) ⇒ [<code>Number</code>](#Number)
         * [.pluralize([value])](#String+pluralize) ⇒ [<code>String</code>](#String)
+        * [.reduce(fn, initialValue)](#String+reduce) ⇒ <code>\*</code>
         * [.reverse()](#String+reverse) ⇒ [<code>String</code>](#String)
         * [.singularize()](#String+singularize) ⇒ [<code>String</code>](#String)
         * [.snakeCase()](#String+snakeCase) ⇒ [<code>String</code>](#String)
@@ -2164,6 +2206,22 @@ Returns the singular or plural form of the word based on the input number
 'apple'.pluralize(2); // 'apples'
 'person'.pluralize(2); // 'people'
 'people'.pluralize(1); // 'person'
+```
+<a name="String+reduce"></a>
+
+### string.reduce(fn, initialValue) ⇒ <code>\*</code>
+Just like array.reduce
+
+**Kind**: instance method of [<code>String</code>](#String)  
+
+| Param | Type |
+| --- | --- |
+| fn | <code>function</code> | 
+| initialValue | <code>\*</code> | 
+
+**Example**  
+```javascript
+'123'.reduce((prev, char) => prev + (+char), 0); // 6
 ```
 <a name="String+reverse"></a>
 

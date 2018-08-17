@@ -19,6 +19,7 @@ import "./mask";
 import "./pad";
 import "./parseInt";
 import "./pluralize";
+import "./reduce";
 import "./repeat";
 import "./reverse";
 import "./singularize";

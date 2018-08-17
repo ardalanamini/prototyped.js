@@ -1,5 +1,4 @@
 import * as method from "./method";
-import { addPrototype } from "../utils";
 
 declare global {
   interface Object {
@@ -9,14 +8,12 @@ declare global {
 
 /**
  * Empty the object
- * @memberof Object.prototype
+ * @memberof Object
  * @example
  * const obj = { a: 1 };
  * obj.$empty();
  * // obj = {};
  */
-function $empty(this: object): void {
+Object.prototype.$empty = function() {
   return method(this);
-}
-
-addPrototype("$empty", $empty);
+};

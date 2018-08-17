@@ -1,5 +1,4 @@
 import * as method from "./method";
-import { addPrototype } from "../utils";
 
 declare global {
   interface Object {
@@ -9,8 +8,8 @@ declare global {
 
 /**
  * Creates a new object from the combination of two or more objects
- * @memberof Object.prototype
- * @param {Object[]} objects
+ * @memberof Object
+ * @param {...Object} objects
  * @returns {Object}
  * @example
  * const object = {
@@ -24,8 +23,6 @@ declare global {
  * };
  * object.$merge(other); // { a: [ { x: 2 }, { y: 4 }, { z: 3 } ], b: [ 1, 2, 3 ], c: "foo" }
  */
-function $merge(this: object, ...objects: object[]): object {
+Object.prototype.$merge = function(...objects) {
   return method(this, ...objects);
-}
-
-addPrototype("$merge", $merge);
+};

@@ -1,11 +1,12 @@
+import * as forEach from "../forEach/method";
 import * as snakeCase from "../../string/snakeCase/method";
 
-const method = (obj: { [key: string]: any }): object => {
-  return Object.keys(obj).reduce((acc: { [key: string]: any }, key) => {
-    acc[snakeCase(key)] = obj[key];
+const method = (obj: object): object => {
+  const result: { [key: string]: any } = {};
 
-    return acc;
-  }, {});
+  forEach(obj, (value, key) => result[snakeCase(key)] = value);
+
+  return result;
 };
 
 export = method;

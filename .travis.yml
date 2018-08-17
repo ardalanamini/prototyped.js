@@ -12,6 +12,10 @@ node_js:
 script:
   - npm run codecov
 
+cache:
+  directories:
+    - "node_modules"
+
 notifications:
   email:
     on_success: never

@@ -1,4 +1,4 @@
-const method = (obj: { [key: string]: any }, ...objects: object[]): object =>
+const method = (obj: object, ...objects: object[]): object =>
   [obj, ...objects].reduce(
     (acc: { [key: string]: any }, obj: { [key: string]: any }) =>
       Object.keys(obj).reduce((a, k) => {

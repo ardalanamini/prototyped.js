@@ -12,6 +12,22 @@
 
 ---
 
+## [v0.17.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.17.0) - *(2018-08-17)*
+
+- `Array`
+  - `prototype`
+    - :star2: `distinct` method can get an argument to unique the array by that
+- `Number`
+  - `prototype`
+    - :zap: `equals` Added
+- `Object`
+  - `prototype`
+    - :zap: `$reduce` Added
+- `String`
+  - `prototype`
+    - :zap: `reduce` Added
+- :star2: Some general enhancements
+
 ## [v0.16.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.16.0) - *(2018-08-15)*
 
 - `Array`
@@ -125,7 +141,7 @@
     - :zap: `$set` Added
 - `String`
   - :boom: `isInstance` Renamed to `isString`
-- :zap: Better object value path handling
+- :star2: Better object value path handling
 
 ## [v0.9.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.9.0) - *(2018-05-29)*
 

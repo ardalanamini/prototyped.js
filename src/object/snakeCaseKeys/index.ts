@@ -1,5 +1,4 @@
 import * as method from "./method";
-import { addPrototype } from "../utils";
 
 declare global {
   interface Object {
@@ -9,14 +8,12 @@ declare global {
 
 /**
  * Creates a new object from the specified object, where all the keys are in snake-case
- * @memberof Object.prototype
+ * @memberof Object
  * @returns {Object}
  * @example
  * const myObj = { FirstName: "Adam", "last-name": "Smith" };
  * const myObjLower = myObj.$snakeCaseKeys(); // {first_name: "Adam", last_name: "Smith"}
  */
-function $snakeCaseKeys(this: object): object {
+Object.prototype.$snakeCaseKeys = function() {
   return method(this);
-}
-
-addPrototype("$snakeCaseKeys", $snakeCaseKeys);
+};
