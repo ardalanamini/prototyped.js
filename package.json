@@ -164,7 +164,7 @@
     "lint": "tslint -p tsconfig.json -c tslint.json --exclude '**/*.d.ts'",
     "test": "jest",
     "coverage": "npm test -- --coverage",
-    "codecov": "npm run coverage && codecov",
+    "codecov": "npm run coverage -- --runInBand && codecov",
     "regenerate:package.json": "node scripts/regenerate-package-json.js"
   },
   "dependencies": {
