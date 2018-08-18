@@ -1,6 +1,6 @@
 {
   "name": "prototyped.js",
-  "version": "0.17.0",
+  "version": "0.18.0",
   "description": "Common typescript ready prototypes available in both es5 and es6",
   "author": "Ardalan Amini <ardalanamini22@gmail.com> [https://github.com/ardalanamini]",
   "license": "MIT",
@@ -145,7 +145,6 @@
     "parseInt",
     "pluralize",
     "reverse",
-    "singularize",
     "snakeCase",
     "swapCase",
     "truncate",
@@ -167,13 +166,9 @@
     "codecov": "npm run coverage -- --runInBand && codecov",
     "regenerate:package.json": "node scripts/regenerate-package-json.js"
   },
-  "dependencies": {
-    "pluralize": "^7.0.0"
-  },
   "devDependencies": {
     "@types/jest": "^23.3.1",
     "@types/node": "^10.7.1",
-    "@types/pluralize": "0.0.29",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
     "codecov": "^3.0.4",

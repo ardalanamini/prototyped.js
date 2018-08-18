@@ -1,3 +1,4 @@
+import { addPrototype } from "../../utils";
 import * as method from "./method";
 
 declare global {
@@ -8,12 +9,13 @@ declare global {
 
 /**
  * Retrieve the property indicated by the given selector from the object
- * @memberof Object
+ * @memberof Object.prototype
+ * @function $get
  * @param {String} key
  * @returns {*}
  * @example
  * { selector: { to: { val: 'val to select' } } }.$get('selector.to.val'); // 'val to select'
  */
-Object.prototype.$get = function(key) {
+addPrototype(Object, "$get", function(this: object, key: string) {
   return method(this, key);
-};
+});

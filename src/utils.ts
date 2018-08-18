@@ -16,3 +16,27 @@ export const pathToKeys = (path: string) => path
 
     return key;
   });
+
+/**
+ * convert key path string to key array
+ * @private
+ * @param {*} obj
+ * @param {String} key
+ * @param {any} extension
+ * @example
+ * addPrototype(Object, "$size", function() {return this;});
+ */
+export const addPrototype = (obj: any, key: string, extension: any) => {
+  const prototype = obj.prototype;
+
+  if (prototype.hasOwnProperty(key)) return;
+
+  Object.defineProperty(
+    prototype,
+    key,
+    {
+      value: extension,
+      writable: true,
+    },
+  );
+};

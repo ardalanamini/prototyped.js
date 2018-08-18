@@ -1,3 +1,4 @@
+import { addPrototype } from "../../utils";
 import * as method from "./method";
 
 declare global {
@@ -8,12 +9,13 @@ declare global {
 
 /**
  * Creates a new object from the specified object, where all the keys are in camel-case
- * @memberof Object
+ * @memberof Object.prototype
+ * @function $camelCaseKeys
  * @returns {Object}
  * @example
  * const myObj = { First_name: "Adam", "last-name": "Smith" };
  * const myObjLower = myObj.$camelCaseKeys(); // {firstName: "Adam", lastName: "Smith"}
  */
-Object.prototype.$camelCaseKeys = function() {
+addPrototype(Object, "$camelCaseKeys", function(this: object) {
   return method(this);
-};
+});

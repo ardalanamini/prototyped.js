@@ -22,7 +22,6 @@ import "./pluralize";
 import "./reduce";
 import "./repeat";
 import "./reverse";
-import "./singularize";
 import "./snakeCase";
 import "./swapCase";
 import "./truncate";
