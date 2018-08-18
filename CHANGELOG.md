@@ -12,6 +12,15 @@
 
 ---
 
+## [v0.18.1](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.18.1) - *(2018-08-18)*
+
+- `Array`
+  - `prototype`
+    - :beetle: deep `cloning` empty array bug fix
+- `Object`
+  - `prototype`
+    - :beetle: deep `cloning` empty array bug fix
+
 ## [v0.18.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.18.0) - *(2018-08-18)*
 
 - `Object`

@@ -7,7 +7,13 @@ const method = (arr: any[], deep = false) => {
     (key) => (clone[key] = typeof (arr as any)[key] === "object" ? method((arr as any)[key], true) : (arr as any)[key]),
   );
 
-  return Array.isArray(arr) ? (clone.length = arr.length) && Array.from(clone) : clone;
+  if (Array.isArray(arr)) {
+    clone.length = arr.length;
+
+    return Array.from(clone);
+  }
+
+  return clone;
 };
 
 export = method;

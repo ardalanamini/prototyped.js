@@ -1,6 +1,18 @@
 import "./index";
 
 describe("Array.prototype.clone", () => {
+  test("[].clone() returns []", () => {
+    const a = [];
+    const b = a.clone(true);
+
+    expect(a).not.toBe(b);
+    expect(b).toBeInstanceOf(Array);
+
+    a.push(4);
+
+    expect(a).not.toEqual(b);
+  });
+
   test("[1, 2, 3].clone() returns [1, 2, 3]", () => {
     const a = [1, 2, 3];
     const b = a.clone();

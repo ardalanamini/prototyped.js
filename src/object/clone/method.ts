@@ -7,7 +7,13 @@ const method = (obj: { [key: string]: any }, deep: boolean = false): object => {
 
   forEach(clone, (value, key) => (clone[key] = typeof value === "object" ? method(value, true) : value));
 
-  return Array.isArray(obj) ? (clone.length = obj.length) && Array.from(clone) : clone;
+  if (Array.isArray(obj)) {
+    clone.length = obj.length;
+
+    return Array.from(clone);
+  }
+
+  return clone;
 };
 
 export = method;
