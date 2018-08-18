@@ -1939,10 +1939,9 @@ Object.isPlainObject({foo: 'bar'}); // true
         * [.mask([num], [mask])](#String+mask) ⇒ [<code>String</code>](#String)
         * [.pad(size, [value])](#String+pad) ⇒ [<code>String</code>](#String)
         * [.parseInt([radix])](#String+parseInt) ⇒ [<code>Number</code>](#Number)
-        * [.pluralize([value])](#String+pluralize) ⇒ [<code>String</code>](#String)
+        * [.pluralize([count])](#String+pluralize) ⇒ [<code>String</code>](#String)
         * [.reduce(fn, initialValue)](#String+reduce) ⇒ <code>\*</code>
         * [.reverse()](#String+reverse) ⇒ [<code>String</code>](#String)
-        * [.singularize()](#String+singularize) ⇒ [<code>String</code>](#String)
         * [.snakeCase()](#String+snakeCase) ⇒ [<code>String</code>](#String)
         * [.swapCase()](#String+swapCase) ⇒ [<code>String</code>](#String)
         * [.truncate(num, [truncateString])](#String+truncate) ⇒ [<code>String</code>](#String)
@@ -2189,14 +2188,14 @@ Converts string to an integer of the specified radix
 ```
 <a name="String+pluralize"></a>
 
-### string.pluralize([value]) ⇒ [<code>String</code>](#String)
+### string.pluralize([count]) ⇒ [<code>String</code>](#String)
 Returns the singular or plural form of the word based on the input number
 
 **Kind**: instance method of [<code>String</code>](#String)  
 
 | Param | Type |
 | --- | --- |
-| [value] | [<code>Number</code>](#Number) | 
+| [count] | [<code>Number</code>](#Number) | 
 
 **Example**  
 ```javascript
@@ -2232,19 +2231,6 @@ Reverses the string
 **Example**  
 ```javascript
 "foobar".reverse(); // "raboof"
-```
-<a name="String+singularize"></a>
-
-### string.singularize() ⇒ [<code>String</code>](#String)
-Returns the singular form of the word
-
-**Kind**: instance method of [<code>String</code>](#String)  
-**Example**  
-```javascript
-'apple'.singularize(); // 'apple'
-'apples'.singularize(); // 'apple'
-'person'.singularize(); // 'person'
-'people'.singularize(); // 'person'
 ```
 <a name="String+snakeCase"></a>
 

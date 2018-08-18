@@ -2,14 +2,14 @@ import * as method from "./method";
 
 declare global {
   interface String {
-    pluralize(value?: number): string;
+    pluralize(count?: number): string;
   }
 }
 
 /**
  * Returns the singular or plural form of the word based on the input number
  * @memberof String
- * @param {Number} [value]
+ * @param {Number} [count]
  * @returns {String}
  * @example
  * 'apple'.pluralize(); // 'apples'
@@ -19,6 +19,6 @@ declare global {
  * 'person'.pluralize(2); // 'people'
  * 'people'.pluralize(1); // 'person'
  */
-String.prototype.pluralize = function(value) {
-  return method(this as string, value);
+String.prototype.pluralize = function(count) {
+  return method(this as string, count);
 };

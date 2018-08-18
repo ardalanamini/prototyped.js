@@ -1,3 +1,4 @@
+import { addPrototype } from "../../utils";
 import * as method from "./method";
 
 declare global {
@@ -8,7 +9,8 @@ declare global {
 
 /**
  * Iterates the object by keys
- * @memberof Object
+ * @memberof Object.prototype
+ * @function $forEach
  * @param {Function} fn
  * @example
  * const users = {
@@ -17,6 +19,6 @@ declare global {
  * };
  * users.$forEach(u => console.log(u.age)); // console logs 40 and 1
  */
-Object.prototype.$forEach = function(fn) {
+addPrototype(Object, "$forEach", function(this: object, fn: (value: any, key: string, object: object) => void) {
   return method(this, fn);
-};
+});

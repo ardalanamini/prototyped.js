@@ -1,4 +1,4 @@
-
+import { addPrototype } from "../../utils";
 import * as method from "./method";
 
 declare global {
@@ -9,7 +9,8 @@ declare global {
 
 /**
  * Just like array.reduce
- * @memberof Object
+ * @memberof Object.prototype
+ * @function $reduce
  * @param {Function} fn
  * @param {*} initialValue
  * @returns {*}
@@ -17,6 +18,10 @@ declare global {
  * ({foo: 1, bar: 2}).$reduce((prev, value, key) => [...prev, key + ":" + value], []);
  * // ["foo:1", "bar:2"]
  */
-Object.prototype.$reduce = function(fn, initialValue) {
+addPrototype(Object, "$reduce", function(
+  this: object,
+  fn: (prev: any, value: any, key: string, object: object) => any,
+  initialValue?: any,
+) {
   return method(this, fn, initialValue);
-};
+});

@@ -1,3 +1,4 @@
+import { addPrototype } from "../../utils";
 import * as method from "./method";
 
 declare global {
@@ -8,12 +9,13 @@ declare global {
 
 /**
  * Assigns object in reverse by Object.assign
- * @memberof Object
+ * @memberof Object.prototype
+ * @function $defaults
  * @param {...Object} sources
  * @returns {Object}
  * @example
  * ({ a: 0 }).$defaults({ a: 1, b: 2 }, { b: 3 }); // { a: 0, b: 2 }
  */
-Object.prototype.$defaults = function(...sources) {
+addPrototype(Object, "$defaults", function(this: object, ...sources: object[]) {
   return method(this, ...sources);
-};
+});

@@ -20,7 +20,6 @@ import * as pluralize from "./pluralize/method";
 import * as reduce from "./reduce/method";
 import * as repeat from "./repeat/method";
 import * as reverse from "./reverse/method";
-import * as singularize from "./singularize/method";
 import * as snakeCase from "./snakeCase/method";
 import * as swapCase from "./swapCase/method";
 import * as truncate from "./truncate/method";
@@ -49,7 +48,6 @@ export {
   reduce,
   repeat,
   reverse,
-  singularize,
   snakeCase,
   swapCase,
   truncate,

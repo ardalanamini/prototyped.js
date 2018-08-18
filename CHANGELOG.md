@@ -12,6 +12,16 @@
 
 ---
 
+## [v0.18.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.18.0) - *(2018-08-18)*
+
+- `Object`
+  - `prototype`
+    - :beetle: Override bug fix
+- `String`
+  - `prototype`
+    - :boom: `singularize` Removed (use `pluralize(1)` instead)
+- :star2: Removed `pluralize` dependency (no more dependency :sunglasses:)
+
 ## [v0.17.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.17.0) - *(2018-08-17)*
 
 - `Array`
@@ -64,6 +74,7 @@
   - `prototype`
     - :boom: `$map` Renamed to `$mapValues`
     - :zap: `$map` Added
+    - :zap: `$forEach` Added
     - :zap: `isObjectLike` Added
     - :zap: `isPlainObject` Added
     - :zap: `$values` Added

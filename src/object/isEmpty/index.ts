@@ -1,3 +1,4 @@
+import { addPrototype } from "../../utils";
 import * as method from "./method";
 
 declare global {
@@ -8,12 +9,13 @@ declare global {
 
 /**
  * Checks if the object is empty
- * @memberof Object
+ * @memberof Object.prototype
+ * @function $isEmpty
  * @returns {Boolean}
  * @example
  * ({ a: 1 }).$isEmpty(); // false
  * ({}).$isEmpty(); // true
  */
-Object.prototype.$isEmpty = function() {
+addPrototype(Object, "$isEmpty", function(this: object) {
   return method(this);
-};
+});

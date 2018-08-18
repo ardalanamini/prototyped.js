@@ -1,3 +1,4 @@
+import { addPrototype } from "../../utils";
 import * as method from "./method";
 
 declare global {
@@ -8,12 +9,13 @@ declare global {
 
 /**
  * Assigns object like Object.assign
- * @memberof Object
+ * @memberof Object.prototype
+ * @function $assign
  * @param {...Object} sources
  * @returns {Object}
  * @example
  * ({ a: 0 }).$assign({ a: 1 }, { b: 2 }); // { a: 1, b: 2 }
  */
-Object.prototype.$assign = function(...sources) {
+addPrototype(Object, "$assign", function(this: object, ...sources: object[]) {
   return method(this, ...sources);
-};
+});

@@ -1,3 +1,4 @@
+import { addPrototype } from "../../utils";
 import * as method from "./method";
 
 declare global {
@@ -8,7 +9,8 @@ declare global {
 
 /**
  * Creates a new object from the combination of two or more objects
- * @memberof Object
+ * @memberof Object.prototype
+ * @function $merge
  * @param {...Object} objects
  * @returns {Object}
  * @example
@@ -23,6 +25,6 @@ declare global {
  * };
  * object.$merge(other); // { a: [ { x: 2 }, { y: 4 }, { z: 3 } ], b: [ 1, 2, 3 ], c: "foo" }
  */
-Object.prototype.$merge = function(...objects) {
+addPrototype(Object, "$merge", function(this: object, ...objects: object[]) {
   return method(this, ...objects);
-};
+});

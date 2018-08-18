@@ -1,3 +1,4 @@
+import { addPrototype } from "../../utils";
 import * as method from "./method";
 
 declare global {
@@ -8,7 +9,8 @@ declare global {
 
 /**
  * Puts the property value indicated by the given selector into the object
- * @memberof Object
+ * @memberof Object.prototype
+ * @function $set
  * @param {String} path
  * @param {*} value
  * @example
@@ -16,6 +18,6 @@ declare global {
  * obj.$set('selector.to.val');
  * // obj -> { selector: { to: { val: 'val to select' } } }
  */
-Object.prototype.$set = function(path, value) {
+addPrototype(Object, "$set", function(this: object, path: string, value: any) {
   return method(this, path, value);
-};
+});
