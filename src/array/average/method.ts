@@ -1,5 +1,5 @@
 import * as sum from "../sum/method";
 
-const method = (arr: any[], path?: string) => sum(arr, path) / arr.length;
+const method = <T = any>(arr: T[], path?: string) => sum(arr, path) / arr.length;
 
 export = method;

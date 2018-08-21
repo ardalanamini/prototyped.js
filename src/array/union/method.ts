@@ -1,3 +1,3 @@
-const method = (arr: any[], array: any[]): any[] => Array.from(new Set([...arr, ...array]));
+const method = <T = any, P = any>(arr: T[], array: P[]): Array<T | P> => Array.from(new Set([...arr, ...array]));
 
 export = method;

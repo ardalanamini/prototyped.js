@@ -28,6 +28,7 @@ import * as last from "./last/method";
 import * as limit from "./limit/method";
 import * as max from "./max/method";
 import * as median from "./median/method";
+import * as merge from "./merge/method";
 import * as min from "./min/method";
 import * as nest from "./nest/method";
 import * as orderBy from "./orderBy/method";
@@ -88,6 +89,7 @@ export {
   limit,
   max,
   median,
+  merge,
   min,
   nest,
   orderBy,

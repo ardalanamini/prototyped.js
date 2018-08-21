@@ -1,3 +1,3 @@
-const method = (arr: any[], offset: number) => arr.slice(offset);
+const method = <T = any>(arr: T[], offset: number) => arr.slice(offset);
 
 export = method;

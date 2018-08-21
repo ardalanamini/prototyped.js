@@ -1,10 +1,11 @@
-const method = (arr: any[], fn: (value: any, index: number, array: any[]) => boolean): [any[], any[]] => {
+const method = <T = any>(arr: T[], fn: (value: T, index: number, array: T[]) => boolean): [T[], T[]] => {
   return arr.reduce(
-    (acc, val, i, arr) => {
-      acc[fn(val, i, arr) ? 0 : 1].push(val);
-      return acc;
+    (prev: any, value, index, array) => {
+      prev[fn(value, index, array) ? 0 : 1].push(value);
+
+      return prev;
     },
-    [[], []],
+    [[] as T[], [] as T[]],
   );
 };
 

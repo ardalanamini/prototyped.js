@@ -1,9 +1,11 @@
-const method = (arr: any[], fn: string | ((item: any, index: number, array: any[]) => any)): { [key: string]: any } => {
-  return arr.map(typeof fn === "function" ? fn : (val) => val[fn]).reduce((acc, val, i) => {
-    acc[val] = (acc[val] || []).concat(arr[i]);
+const method = <T = any>(
+  arr: T[], fn: string | ((item: T, index: number, array: T[]) => any)): { [key: string]: T[] } => {
+  return arr.map(typeof fn === "function" ? fn : (value) => (value as any)[fn])
+    .reduce((prev, value, i) => {
+      prev[value] = (prev[value] || []).concat(arr[i]);
 
-    return acc;
-  }, {});
+      return prev;
+    }, {});
 };
 
 export = method;

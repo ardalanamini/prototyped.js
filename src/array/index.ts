@@ -30,6 +30,7 @@ import "./last";
 import "./limit";
 import "./max";
 import "./median";
+import "./merge";
 import "./min";
 import "./nest";
 import "./orderBy";

@@ -1,9 +1,9 @@
-const method = (arr: any[], fn: string | ((value: any) => any)) => arr.map(
-  typeof fn === "function" ? fn : (val) => val[fn],
-).reduce((acc: { [key: string]: any }, val: string, i) => {
-  acc[val] = (acc[val] || 0) + 1;
+const method = <T = any>(arr: T[], fn: string | ((value: T, index: number, arr: T[]) => any)) =>
+  arr.map(typeof fn === "function" ? fn : (value) => (value as any)[fn])
+    .reduce((prev: { [key: string]: any }, value: string) => {
+      prev[value] = (prev[value] || 0) + 1;
 
-  return acc;
-}, {});
+      return prev;
+    }, {});
 
 export = method;

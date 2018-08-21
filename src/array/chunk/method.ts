@@ -1,4 +1,4 @@
-const method = (arr: any[], size: number): any[][] => {
+const method = <T = any>(arr: T[], size: number): T[][] => {
   return Array.from(
     {
       length: Math.ceil(arr.length / size),

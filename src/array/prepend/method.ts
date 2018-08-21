@@ -1,4 +1,4 @@
-const method = (arr: any[], value: any): void  => {
+const method = <T = any>(arr: T[], value: any): void  => {
   const array = [...arr];
 
   arr.length = 0;

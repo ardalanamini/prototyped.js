@@ -2,7 +2,7 @@ import * as method from "./method";
 
 declare global {
   interface Array<T> {
-    crossJoin(array: any[]): Array<[T, any]>;
+    crossJoin<P = any>(array: P[]): Array<[T, P]>;
   }
 }
 

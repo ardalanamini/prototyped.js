@@ -4,7 +4,7 @@
   "description": "Common typescript ready prototypes available in both es5 and es6",
   "author": "Ardalan Amini <ardalanamini22@gmail.com> [https://github.com/ardalanamini]",
   "license": "MIT",
-  "homepage": "https://github.com/ardalanamini/prototyped.js#readme",
+  "homepage": "https://prototyped.js.org",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ardalanamini/prototyped.js.git"
@@ -150,16 +150,16 @@
     "truncate",
     "words"
   ],
-  "main": "dist/index.js",
-  "types": "dist/index.d.js",
+  "main": "es6/index.js",
+  "types": "es6/index.d.js",
   "files": [
-    "dist",
+    "es5",
     "es6"
   ],
   "scripts": {
     "prepublishOnly": "npm test && npm run lint && npm run doc && npm run build && npm run regenerate:package.json",
     "build": "node scripts/build.js",
-    "doc": "tsc && jsdoc2md es6/*.js es6/**/*.js es6/**/**/*.js --example-lang javascript > API.md",
+    "doc": "node scripts/doc.js",
     "lint": "tslint -p tsconfig.json -c tslint.json --exclude '**/*.d.ts'",
     "test": "jest",
     "coverage": "npm test -- --coverage",

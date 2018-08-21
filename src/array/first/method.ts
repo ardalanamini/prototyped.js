@@ -1,3 +1,3 @@
-const method = (arr: any[]) => arr[0];
+const method = <T = any>(arr: T[]) => arr[0];
 
 export = method;

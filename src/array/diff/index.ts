@@ -2,7 +2,7 @@ import * as method from "./method";
 
 declare global {
   interface Array<T> {
-    diff(array: any[], comp?: (a: T, b: any) => boolean): T[];
+    diff<P = any>(array: P[], comp?: (a: T, b: P) => boolean): T[];
   }
 }
 
