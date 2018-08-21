@@ -1,4 +1,4 @@
-const method = (arr: any[]) => {
+const method = <T = any>(arr: T[]) => {
   arr.length = 0;
 };
 

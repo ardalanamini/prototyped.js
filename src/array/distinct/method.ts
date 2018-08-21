@@ -1,13 +1,13 @@
 import * as isString from "../../string/isString/method";
 import { pathToKeys } from "../../utils";
 
-const method = (arr: any[], fn?: string | ((value: any, index: number, array: any[]) => any)) => {
+const method = <T = any>(arr: T[], fn?: string | ((value: T, index: number, array: T[]) => any)) => {
   if (!fn) return [...new Set(arr)];
 
   if (isString(fn)) {
     const keys = pathToKeys(fn);
 
-    fn = (value) => keys.reduce((prev, cur) => prev[cur], value);
+    fn = (value) => keys.reduce((prev, cur) => (prev as any)[cur], value);
   }
 
   const length = arr.length;

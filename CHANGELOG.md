@@ -12,14 +12,23 @@
 
 ---
 
+## [next](https://github.com/ardalanamini/prototyped.js/releases/tag/next) - *(2018-__-__)*
+
+- `Array`
+  - `prototype`
+    - :zap: `merge` Added
+- :star2: Improved Typescript usage
+- :boom: Renamed `dist` path to `es5`
+- :boom: Set `es6` as default
+
 ## [v0.18.1](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.18.1) - *(2018-08-18)*
 
 - `Array`
   - `prototype`
-    - :beetle: deep `cloning` empty array bug fix
+    - :beetle: Deep `cloning` empty array bug fix
 - `Object`
   - `prototype`
-    - :beetle: deep `cloning` empty array bug fix
+    - :beetle: Deep `cloning` empty array bug fix
 
 ## [v0.18.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.18.0) - *(2018-08-18)*
 

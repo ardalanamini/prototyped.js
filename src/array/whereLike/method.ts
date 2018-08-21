@@ -1,7 +1,7 @@
 import * as isString from "../../string/isString/method";
 import { filter } from "../utils";
 
-const method = (arr: any[], field: string | RegExp, value?: string | RegExp) => {
+const method = <T = any>(arr: T[], field: string | RegExp, value?: string | RegExp) => {
     if (value === undefined) {
         value = field as string | RegExp;
         field = undefined as any;

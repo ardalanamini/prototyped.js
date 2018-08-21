@@ -1,6 +1,6 @@
 import * as pad from "../../string/pad/method";
 
-const method = (): string => {
+const method = () => {
   const now = new Date();
 
   now.setDate(now.getDate() - 1);

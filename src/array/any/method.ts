@@ -1,3 +1,3 @@
-const method = (arr: any[], fn: (value: any, index: number, array: any[]) => boolean = Boolean) => arr.some(fn);
+const method = <T = any>(arr: T[], fn: (value: T, index: number, array: T[]) => boolean = Boolean) => arr.some(fn);
 
 export = method;

@@ -1,3 +1,3 @@
-const method = (arr: any[]) => arr.filter(Boolean);
+const method = <T = any>(arr: T[]) => arr.filter(Boolean);
 
 export = method;

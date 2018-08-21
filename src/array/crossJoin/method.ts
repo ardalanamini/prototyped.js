@@ -1,14 +1,10 @@
-const method = (arr: any[], arr2: any[]) => {
-  const joined: Array<[any, any]> = [];
+const method = <T = any, P = any>(arr: T[], arr2: P[]) => {
+  const joined: Array<[T, P]> = [];
 
-  arr.map((item) => {
-    arr2.map((value) => {
-      joined.push([
-        item,
-        value,
-      ]);
-    });
-  });
+  arr.forEach((item) => arr2.forEach((value) => joined.push([
+    item,
+    value,
+  ])));
 
   return joined;
 };

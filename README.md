@@ -45,13 +45,13 @@ npm i -s prototyped.js
 import all prototypes
 
 ```javascript
-// es5 (default)
+// es6 (default)
 require('prototyped.js');
 import 'prototyped.js';
 
-// es6
-require('prototyped.js/es6');
-import 'prototyped.js/es6';
+// es5
+require('prototyped.js/es5');
+import 'prototyped.js/es5';
 
 console.log('hello world!'.words()); // ['hello', 'world']
 ```
@@ -61,7 +61,7 @@ or simply import the prototypes you want
 ```javascript
 require('prototyped.js/es6/string');
 // or
-require('prototyped.js/dist/string/words');
+require('prototyped.js/es5/string/words');
 
 console.log('hello world!'.words()); // ['hello', 'world']
 ```
@@ -73,12 +73,12 @@ const words = require('prototyped.js/es6/string/words/method');
 
 console.log(words('hello world!')); // ['hello', 'world']
 
-const methods = require('prototyped.js/dist/methods');
+const methods = require('prototyped.js/es5/methods');
 
 console.log(methods.string.words('hello world!')); // ['hello', 'world']
 ```
 
-All documents are available at [API.md](API.md)
+**All documents are available at [here](https://prototyped.js.org)**
 
 ## Versioning
 

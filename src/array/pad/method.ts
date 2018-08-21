@@ -1,4 +1,4 @@
-const method = (arr: any[], size: number, value: any = 0): any[] => {
+const method = <T = any>(arr: T[], size: number, value: any = 0) => {
   const s = Math.abs(size);
 
   if (s <= arr.length) return arr;

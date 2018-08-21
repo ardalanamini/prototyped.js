@@ -1,13 +1,11 @@
 import * as contains from "../contains/method";
 import { pathToKeys } from "../../utils";
 
-const method = (arr: any[], field?: string, order?: "asc" | "desc") => {
+const method = <T = any>(arr: T[], field?: string, order: "asc" | "desc" = "asc") => {
     if (field && contains(["asc", "desc"], field)) {
         order = field as ("asc" | "desc");
         field = undefined;
     }
-
-    if (order === undefined) order = "asc";
 
     const iterator: (a: any, b: any) => number =
         order === "asc" ?

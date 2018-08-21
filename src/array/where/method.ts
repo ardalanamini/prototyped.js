@@ -1,7 +1,10 @@
 import * as types from "../../types";
 import { filter } from "../utils";
 
-const method = (arr: any[], field: string | types.Operator | any, operator?: types.Operator | any, value?: any) => {
+const method = <T = any>(
+    arr: T[], field: string | types.Operator | any,
+    operator?: types.Operator | any, value?: any,
+) => {
     if (operator === undefined) {
         value = field as any;
         field = undefined;

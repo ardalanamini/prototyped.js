@@ -1,5 +1,3 @@
-const method = (arr: any[]): any => {
-  return arr[Math.floor(Math.random() * arr.length)];
-};
+const method = <T = any>(arr: T[]): T => arr[Math.floor(Math.random() * arr.length)];
 
 export = method;

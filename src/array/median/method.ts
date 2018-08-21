@@ -1,15 +1,15 @@
 import { pathToKeys } from "../../utils";
 
-const method = (arr: any[], path?: string): number => {
-  const items = [...arr].sort((a, b) => a - b);
+const method = <T = any>(arr: T[], path?: string): number => {
+  const items = [...arr].sort((a: any, b: any) => a - b);
   const half = Math.floor(items.length / 2);
 
-  let reducer = (item: any) => item;
+  let reducer = (item: T): any => item;
 
   if (path) {
     const keys = pathToKeys(path);
 
-    reducer = (item: any) => keys.reduce((prev, curr) => (prev && prev[curr]) || prev, item);
+    reducer = (item: T) => keys.reduce((prev, curr) => (prev && (prev as any)[curr]) || prev, item);
   }
 
   if (items.length % 2) return reducer(items[half]);

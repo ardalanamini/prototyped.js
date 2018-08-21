@@ -1,7 +1,7 @@
 import * as range from "../range/method";
 import * as objectEquals from "../../object/equals/method";
 
-const method = (arr: any[], value: any): boolean => {
+const method = <T = any>(arr: T[], value: any): boolean => {
   if (!Array.isArray(value)) return false;
 
   if (arr.length !== value.length) return false;

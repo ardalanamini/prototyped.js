@@ -1,6 +1,6 @@
 import { filter } from "../utils";
 
-const method = (arr: any[], field: string | any, start: any, end?: any) => {
+const method = <T = any>(arr: T[], field: string | any, start: any, end?: any) => {
     if (end === undefined) {
         end = start as any;
         start = field as any;

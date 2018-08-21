@@ -1,4 +1,4 @@
-const method = (arr: any[], deep = false) => {
+const method = <T = any>(arr: T[], deep = false): T[] => {
   if (!deep) return [...arr];
 
   const clone: any = Object.assign({}, arr);

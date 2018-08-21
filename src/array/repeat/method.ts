@@ -1,3 +1,3 @@
-const method = (n: number, value = 0): any[] => Array(n).fill(value);
+const method = <T = 0>(n: number, value: T = 0 as any): T[] => Array(n).fill(value);
 
 export = method;

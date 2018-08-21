@@ -61,6 +61,7 @@
         * [.limit([limit])](#Array+limit) ⇒ [<code>Array</code>](#Array)
         * [.max([path])](#Array+max) ⇒ [<code>Number</code>](#Number)
         * [.median([path])](#Array+median) ⇒ [<code>Number</code>](#Number)
+        * [.merge(value)](#Array+merge)
         * [.min([path])](#Array+min) ⇒ [<code>Number</code>](#Number)
         * [.nest(link, key)](#Array+nest) ⇒ [<code>Array.&lt;Object&gt;</code>](#Object)
         * [.orderBy([field], [order])](#Array+orderBy) ⇒ [<code>Array</code>](#Array)
@@ -572,6 +573,22 @@ Returns the median value of a given path
 ```javascript
 [1, 1, 2, 4].median(); // 1.5
 [{foo: 10}, {foo: 10}, {foo: 20}, {foo: 40}].median('foo'); // 15
+```
+<a name="Array+merge"></a>
+
+### array.merge(value)
+Merges array with the given array
+
+**Kind**: instance method of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| value | <code>\*</code> | 
+
+**Example**  
+```javascript
+var myArray = [1, 2, 3]
+myArray.merge([0, 6 , 2]); // myArray => [1, 2, 3, 0, 6, 2]
 ```
 <a name="Array+min"></a>
 
