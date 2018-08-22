@@ -14,7 +14,8 @@ rimraf.sync(DOCS_DIR);
 
 fs.mkdirSync(DOCS_DIR);
 
-fs.writeFileSync(path.join(DOCS_DIR, "CNAME"), "prototyped.js.org", "utf8");
+fs.writeFileSync(path.resolve(DOCS_DIR, "CNAME"), "prototyped.js.org", "utf8");
+fs.writeFileSync(path.resolve(DOCS_DIR, "_config.yml"), "theme: jekyll-theme-cayman", "utf8");
 
 execSync(path.resolve(__dirname, "..", "node_modules", ".bin", "tsc"));
 
