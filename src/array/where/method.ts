@@ -1,16 +1,17 @@
 import * as types from "../../types";
-import { filter } from "../utils";
+import * as contains from "../contains/method";
+import { filter } from "../../utils";
 
 const method = <T = any>(
     arr: T[], field: string | types.Operator | any,
-    operator?: types.Operator | any, value?: any,
+    operator?: types.Operator | any, value?: any
 ) => {
     if (operator === undefined) {
         value = field as any;
         field = undefined;
         operator = "=";
     } else if (value === undefined)
-        if (["<", "<=", "=", "<>", ">=", ">"].indexOf(field) === -1) {
+        if (!contains(["<", "<=", "=", "<>", ">=", ">"], field)) {
             value = operator as any;
             operator = "=";
         } else {

@@ -1,5 +1,4 @@
-const method = (obj: object): number => (obj as { [key: string]: any }).size ||
-  (obj as { [key: string]: any }).length ||
+const method = (obj: object): number => (obj as any).size || (obj as any).length ||
   Object.keys(obj).length;
 
 export = method;

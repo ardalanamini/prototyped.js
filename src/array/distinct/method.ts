@@ -7,12 +7,12 @@ const method = <T = any>(arr: T[], fn?: string | ((value: T, index: number, arra
   if (isString(fn)) {
     const keys = pathToKeys(fn);
 
-    fn = (value) => keys.reduce((prev, cur) => (prev as any)[cur], value);
+    fn = (value) => keys.reduce((prev: any, cur) => prev[cur], value);
   }
 
   const length = arr.length;
-  const distinct: any[] = [];
-  const found: { [value: string]: boolean | undefined } = {};
+  const found: { [value: string]: true | undefined } = {};
+  const distinct: T[] = [];
 
   for (let i = 0; i < length; i++) {
     const value = arr[i];

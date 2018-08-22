@@ -1,7 +1,5 @@
-const method = <T = any>(arr: T[], index: number, def: any = null) => {
-  if (index >= arr.length) return def;
-
-  return arr[index];
-};
+const method = <T = any, P = null>(arr: T[], index: number, def: P = null as any) => (index >= arr.length) ?
+  def :
+  arr[index];
 
 export = method;

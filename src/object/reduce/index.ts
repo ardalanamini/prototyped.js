@@ -21,7 +21,7 @@ declare global {
 addPrototype(Object, "$reduce", function(
   this: object,
   fn: (prev: any, value: any, key: string, object: object) => any,
-  initialValue?: any,
+  initialValue?: any
 ) {
   return method(this, fn, initialValue);
 });

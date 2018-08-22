@@ -1,5 +1,5 @@
 import * as isString from "../../string/isString/method";
-import { filter } from "../utils";
+import { filter } from "../../utils";
 
 const method = <T = any>(arr: T[], field: string | RegExp, value?: string | RegExp) => {
     if (value === undefined) {
