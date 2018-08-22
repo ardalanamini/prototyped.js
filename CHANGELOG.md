@@ -12,10 +12,11 @@
 
 ---
 
-## [next](https://github.com/ardalanamini/prototyped.js/releases/tag/next) - *(2018-__-__)*
+## [v0.19.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.19.0) - *(2018-__-__)*
 
 - `Array`
   - `prototype`
+    - :zap: `distinctBy` Added
     - :zap: `merge` Added
 - :star2: Improved Typescript usage
 - :boom: Renamed `dist` path to `es5`

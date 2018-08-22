@@ -1,4 +1,4 @@
-import { filter } from "../utils";
+import { filter } from "../../utils";
 
 const method = <T = any>(arr: T[], field: string | any[], value?: any[]) => {
     if (value === undefined) {

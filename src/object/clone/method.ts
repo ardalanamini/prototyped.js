@@ -1,19 +1,7 @@
-import * as forEach from "../forEach/method";
+import { deepClone } from "../../utils";
 
-const method = (obj: { [key: string]: any }, deep: boolean = false): object => {
-  if (!deep) return Object.assign({}, obj);
-
-  const clone: any = Object.assign({}, obj);
-
-  forEach(clone, (value, key) => (clone[key] = typeof value === "object" ? method(value, true) : value));
-
-  if (Array.isArray(obj)) {
-    clone.length = obj.length;
-
-    return Array.from(clone);
-  }
-
-  return clone;
-};
+const method = (obj: object, deep: boolean = false): object => deep ?
+  deepClone(obj) :
+  Object.assign({}, obj);
 
 export = method;

@@ -14,6 +14,7 @@ import "./crossJoin";
 import "./deepFlatten";
 import "./diff";
 import "./distinct";
+import "./distinctBy";
 import "./empty";
 import "./equals";
 import "./everyNth";

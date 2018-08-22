@@ -20,6 +20,6 @@ execSync(path.resolve(__dirname, "..", "node_modules", ".bin", "tsc"));
 
 const DOCS = execSync(path.resolve(__dirname, "..", "node_modules", ".bin", "jsdoc2md") + " es6/*.js es6/**/*.js es6/**/**/*.js --example-lang javascript");
 
-fs.writeFileSync(DOCS_PATH, DOCS.toString(), "utf8");
+fs.writeFileSync(DOCS_PATH, `# Documents\n\n${DOCS.toString()}`, "utf8");
 
 console.log(`finished in ${new Date().getTime() - startTime}ms`);

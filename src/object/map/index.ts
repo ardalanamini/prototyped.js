@@ -23,7 +23,7 @@ declare global {
  */
 addPrototype(Object, "$map", function(
   this: object,
-  fn: (value: any, key: string, object: object) => { [key: string]: any },
+  fn: (value: any, key: string, object: object) => { [key: string]: any }
 ) {
   return method(this, fn);
 });

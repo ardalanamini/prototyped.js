@@ -5,7 +5,7 @@ const method = <T = any>(arr: T[], fn: (value: T, index: number, array: T[]) => 
 
       return prev;
     },
-    [[] as T[], [] as T[]],
+    [[] as T[], [] as T[]]
   );
 };
 
