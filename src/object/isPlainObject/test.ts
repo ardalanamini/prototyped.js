@@ -6,8 +6,8 @@ describe("Object.isPlainObject", () => {
   });
 
   test("Object.isPlainObject(new Foo) returns false", () => {
-    function Foo() {
-       this.a = 1;
+    class Foo {
+       a = 1;
     }
 
     expect(Object.isPlainObject(new Foo())).toBe(false);

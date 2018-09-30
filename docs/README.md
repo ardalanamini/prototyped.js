@@ -80,6 +80,7 @@
         * [.sum([path])](#Array+sum) ⇒ [<code>Number</code>](#Number)
         * [.tail()](#Array+tail) ⇒ [<code>Array</code>](#Array)
         * [.union(array)](#Array+union) ⇒ [<code>Array</code>](#Array)
+        * [.unwind(path)](#Array+unwind) ⇒ <code>\*</code>
         * [.where(field, [operator], [value])](#Array+where) ⇒ [<code>Array</code>](#Array)
         * [.whereBetween(field, start, [end])](#Array+whereBetween) ⇒ [<code>Array</code>](#Array)
         * [.whereIn(field, [value])](#Array+whereIn) ⇒ [<code>Array</code>](#Array)
@@ -843,6 +844,22 @@ Returns every element that exists in any of the two arrays once
 **Example**  
 ```javascript
 [1, 2, 3].union([4, 3, 2]); // [1,2,3,4]
+```
+<a name="Array+unwind"></a>
+
+### array.unwind(path) ⇒ <code>\*</code>
+Returns the item at a given index. If the index does not exist, def is returned
+
+**Kind**: instance method of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| path | [<code>String</code>](#String) | 
+
+**Example**  
+```javascript
+[{ foo: ["bar 1", "bar 2"] }, { foo: ["bar 3", "bar 4", "bar 5"] }].unwind("foo");
+// [{ foo: "bar 1" }, { foo: "bar 2" }, { foo: "bar 3" }, { foo: "bar 4" }, { foo: "bar 5" }]
 ```
 <a name="Array+where"></a>
 

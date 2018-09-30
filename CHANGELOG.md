@@ -12,7 +12,13 @@
 
 ---
 
-## [v0.19.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.19.0) - *(2018-__-__)*
+## [v0.20.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.20.0) - *(2018-09-30)*
+
+- `Array`
+  - `prototype`
+    - :zap: `unwind` Added
+
+## [v0.19.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.19.0) - *(2018-08-22)*
 
 - `Array`
   - `prototype`

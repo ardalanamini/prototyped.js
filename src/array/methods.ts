@@ -47,6 +47,7 @@ import * as sortBy from "./sortBy/method";
 import * as sum from "./sum/method";
 import * as tail from "./tail/method";
 import * as union from "./union/method";
+import * as unwind from "./unwind/method";
 import * as where from "./where/method";
 import * as whereBetween from "./whereBetween/method";
 import * as whereIn from "./whereIn/method";
@@ -109,6 +110,7 @@ export {
   sum,
   tail,
   union,
+  unwind,
   where,
   whereBetween,
   whereIn,

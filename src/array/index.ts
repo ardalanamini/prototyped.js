@@ -49,6 +49,7 @@ import "./sortBy";
 import "./sum";
 import "./tail";
 import "./union";
+import "./unwind";
 import "./where";
 import "./whereBetween";
 import "./whereIn";

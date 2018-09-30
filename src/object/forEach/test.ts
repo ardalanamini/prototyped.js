@@ -6,7 +6,7 @@ describe("Object.prototype.$forEach", () => {
     "{ fred: 40, pebbles: 1 }",
     () => {
       const obj = { fred: { user: "fred", age: 40 }, pebbles: { user: "pebbles", age: 1 } };
-      const result = {};
+      const result: any = {};
 
       obj.$forEach((u, k) => result[k] = u.age);
 
