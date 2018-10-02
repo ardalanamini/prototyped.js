@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -15,6 +16,4 @@ declare global {
  * [1, 2, 3, 1, 2, 3].indexOfAll(1); // [0,3]
  * [1, 2, 3].indexOfAll(4); // []
  */
-Array.prototype.indexOfAll = function(value) {
-  return method(this, value);
-};
+Array.prototype.indexOfAll = utils.methodToPrototype(method);

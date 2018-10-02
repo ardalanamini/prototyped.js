@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 export { };
 
@@ -16,6 +17,4 @@ declare global {
  * @example
  * 'Hello'.map((char) => char == 'o' ? 'O' : char); // 'HellO'
  */
-String.prototype.map = function(fn) {
-  return method(this as string, fn);
-};
+String.prototype.map = utils.methodToPrototype(method);

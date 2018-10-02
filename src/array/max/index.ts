@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -16,6 +17,4 @@ declare global {
  * [{a: 1}, {a: 2}, {a: 3}].max('a'); // 3
  * [{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].max('a.b'); // 3
  */
-Array.prototype.max = function(path) {
-  return method(this, path);
-};
+Array.prototype.max = utils.methodToPrototype(method);

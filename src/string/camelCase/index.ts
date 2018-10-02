@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface String {
@@ -17,6 +18,4 @@ declare global {
  * "some-mixed_string with spaces_underscores-and-hyphens".camelCase();
  * // "someMixedStringWithSpacesUnderscoresAndHyphens"
  */
-String.prototype.camelCase = function(): string {
-  return method(this as string);
-};
+String.prototype.camelCase = utils.methodToPrototype(method);

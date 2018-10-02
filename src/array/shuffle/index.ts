@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -14,6 +15,4 @@ declare global {
  * const foo = [1, 2, 3];
  * foo.shuffle(); // [2,3,1], foo = [1,2,3]
  */
-Array.prototype.shuffle = function() {
-  return method(this);
-};
+Array.prototype.shuffle = utils.methodToPrototype(method);

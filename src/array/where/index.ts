@@ -1,5 +1,6 @@
 import * as method from "./method";
 import * as types from "../../types";
+import * as utils from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -23,6 +24,4 @@ declare global {
  * [1, 2, 2, 3, 4, 4, 5].where("<", 4); // [1,2,2,3]
  * [{count:1}, {count:20}, {count:15}].where("count", ">=", 15); // [{count:20},{count:15}]
  */
-Array.prototype.where = function(field: string | types.Operator | any, operator?: types.Operator | any, value?: any) {
-  return method(this, field, operator, value);
-};
+Array.prototype.where = utils.methodToPrototype(method);

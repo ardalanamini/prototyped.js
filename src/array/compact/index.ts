@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -13,6 +14,4 @@ declare global {
  * @example
  * [0, 1, false, 2, '', 3, 'a', 'e' * 23, NaN, 's', 34].compact(); // [ 1, 2, 3, 'a', 's', 34 ]
  */
-Array.prototype.compact = function() {
-  return method(this);
-};
+Array.prototype.compact = utils.methodToPrototype(method);

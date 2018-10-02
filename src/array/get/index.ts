@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -16,6 +17,4 @@ declare global {
  * [1, 2, 3].get(0, 'default value'); // 1
  * [1, 2, 3].get(4, 0); // 0
  */
-Array.prototype.get = function(index, def) {
-  return method(this, index, def);
-};
+Array.prototype.get = utils.methodToPrototype(method);

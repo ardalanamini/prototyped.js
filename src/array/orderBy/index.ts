@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -18,6 +19,4 @@ declare global {
  * [2, 1, 2, 5].orderBy("desc"); // [5,2,2,1]
  * [{count:1}, {count:20}, {count:15}].orderBy("count", "asc"); // [{count:1},{count:15},{count:20}]
  */
-Array.prototype.orderBy = function(field?: string, order?: "asc" | "desc") {
-  return method(this, field, order);
-};
+Array.prototype.orderBy = utils.methodToPrototype(method);

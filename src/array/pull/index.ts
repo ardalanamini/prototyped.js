@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -14,6 +15,4 @@ declare global {
  * let myArray = ['a', 'b', 'c', 'a', 'b', 'c'];
  * myArray.pull('a', 'c'); // myArray = [ 'b', 'b' ];
  */
-Array.prototype.pull = function(...args) {
-  return method(this, ...args);
-};
+Array.prototype.pull = utils.methodToPrototype(method);

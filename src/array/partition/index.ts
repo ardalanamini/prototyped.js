@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -18,6 +19,4 @@ declare global {
  *   [{ 'user': 'barney',  'age': 36, 'active': false }]
  * ]
  */
-Array.prototype.partition = function(fn) {
-  return method(this, fn);
-};
+Array.prototype.partition = utils.methodToPrototype(method);

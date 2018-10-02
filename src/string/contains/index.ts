@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface String {
@@ -16,6 +17,4 @@ declare global {
  * 'javaScript & typescript'.contains('Typescript'); // true
  * 'javaScript & typescript'.contains('Typescript', true); // false
  */
-String.prototype.contains = function(str, sensitive) {
-  return method(this as string, str, sensitive);
-};
+String.prototype.contains = utils.methodToPrototype(method);

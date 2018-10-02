@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -14,6 +15,4 @@ declare global {
  * var myArray = [1, 2, 3]
  * myArray.prepend(0); // myArray => [0, 1, 2, 3]
  */
-Array.prototype.prepend = function(value) {
-  return method(this, value);
-};
+Array.prototype.prepend = utils.methodToPrototype(method);

@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface String {
@@ -14,6 +15,4 @@ declare global {
  * @example
  * "08".parseInt(); // 8
  */
-String.prototype.parseInt = function(radix) {
-  return method(this as string, radix);
-};
+String.prototype.parseInt = utils.methodToPrototype(method);

@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -16,6 +17,4 @@ declare global {
  * ['a', 'b', 'c'].zipObject([1, 2]); // {a: 1, b: 2, c: undefined}
  * ['a', 'b'].zipObject([1, 2, 3]); // {a: 1, b: 2}
  */
-Array.prototype.zipObject = function(array) {
-  return method(this, array);
-};
+Array.prototype.zipObject = utils.methodToPrototype(method);

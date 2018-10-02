@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface String {
@@ -17,6 +18,4 @@ declare global {
  * '1234567890'.mask(3); // '*******890'
  * '1234567890'.mask(-4, '$'); // '$$$$567890'
  */
-String.prototype.mask = function(num, mask) {
-  return method(this as string, num, mask);
-};
+String.prototype.mask = utils.methodToPrototype(method);

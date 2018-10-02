@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface String {
@@ -13,6 +14,4 @@ declare global {
  * @example
  * 'This\nis a\nmultiline\nstring.\n'.lines(); // ['This', 'is a', 'multiline', 'string.' , '']
  */
-String.prototype.lines = function() {
-  return method(this as string);
-};
+String.prototype.lines = utils.methodToPrototype(method);

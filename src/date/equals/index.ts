@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface Date {
@@ -14,6 +15,4 @@ declare global {
  * @example
  * (new Date()).equals(new Date()); // false
  */
-Date.prototype.equals = function(value) {
-  return method(this, value);
-};
+Date.prototype.equals = utils.methodToPrototype(method);

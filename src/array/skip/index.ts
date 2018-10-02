@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -15,9 +16,7 @@ declare global {
  * @example
  * [2, 1, 2, 5].skip(1); // [1,2,5]
  */
-Array.prototype.skip = function(offset: number) {
-  return method(this, offset);
-};
+Array.prototype.skip = utils.methodToPrototype(method);
 
 /**
  * An alias of Array.prototype.skip

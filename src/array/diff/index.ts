@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -17,6 +18,4 @@ declare global {
  * [1, 2, 3].diff([1, 2, 4]); // [3]
  * [1, 1.2, 1.5, 3, 0].diff([1.9, 3, 0], (a, b) => Math.round(a) === Math.round(b)); // [1, 1.2]
  */
-Array.prototype.diff = function(array, comp) {
-  return method(this, array, comp);
-};
+Array.prototype.diff = utils.methodToPrototype(method);

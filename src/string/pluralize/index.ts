@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface String {
@@ -19,6 +20,4 @@ declare global {
  * 'person'.pluralize(2); // 'people'
  * 'people'.pluralize(1); // 'person'
  */
-String.prototype.pluralize = function(count) {
-  return method(this as string, count);
-};
+String.prototype.pluralize = utils.methodToPrototype(method);

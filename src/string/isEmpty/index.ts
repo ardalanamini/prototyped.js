@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface String {
@@ -14,6 +15,4 @@ declare global {
  * "123".isEmpty(); // false
  * "".isEmpty(); // true
  */
-String.prototype.isEmpty = function() {
-  return method(this as string);
-};
+String.prototype.isEmpty = utils.methodToPrototype(method);

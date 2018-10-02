@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -15,6 +16,4 @@ declare global {
  * [4, 2, 3].all((x) => x > 1); // true
  * [1, 2, 3].all(); // true
  */
-Array.prototype.all = function(fn) {
-  return method(this, fn);
-};
+Array.prototype.all = utils.methodToPrototype(method);

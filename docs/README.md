@@ -30,72 +30,138 @@
 
 * [Array](#Array) : <code>object</code>
     * _instance_
+        * [.all](#Array+all) ⇒ [<code>Boolean</code>](#Boolean)
+        * [.any](#Array+any) ⇒ [<code>Boolean</code>](#Boolean)
+        * [.append](#Array+append)
+        * [.average](#Array+average) ⇒ [<code>Number</code>](#Number)
         * [.avg](#Array+avg) ⇒ [<code>Number</code>](#Number)
+        * [.chunk](#Array+chunk) ⇒ [<code>Array.&lt;Array&gt;</code>](#Array)
+        * [.clone](#Array+clone) ⇒ [<code>Array</code>](#Array)
+        * [.compact](#Array+compact) ⇒ [<code>Array</code>](#Array)
+        * [.contains](#Array+contains) ⇒ [<code>Boolean</code>](#Boolean)
+        * [.count](#Array+count) ⇒ [<code>Number</code>](#Number)
+        * [.countBy](#Array+countBy) ⇒ [<code>Object</code>](#Object)
+        * [.crossJoin](#Array+crossJoin) ⇒ [<code>Array.&lt;Array&gt;</code>](#Array)
+        * [.deepFlatten](#Array+deepFlatten) ⇒ [<code>Array</code>](#Array)
+        * [.diff](#Array+diff) ⇒ [<code>Array</code>](#Array)
+        * [.distinct](#Array+distinct) ⇒ [<code>Array</code>](#Array)
+        * [.distinctBy](#Array+distinctBy) ⇒ [<code>Array</code>](#Array)
+        * [.empty](#Array+empty)
+        * [.equals](#Array+equals) ⇒ [<code>Boolean</code>](#Boolean)
+        * [.everyNth](#Array+everyNth) ⇒ [<code>Array</code>](#Array)
+        * [.first](#Array+first) ⇒ <code>\*</code>
+        * [.flatten](#Array+flatten) ⇒ [<code>Array</code>](#Array)
+        * [.get](#Array+get) ⇒ <code>\*</code>
+        * [.groupBy](#Array+groupBy) ⇒ [<code>Object</code>](#Object)
+        * [.implode](#Array+implode) ⇒ [<code>String</code>](#String)
+        * [.indexOfAll](#Array+indexOfAll) ⇒ [<code>Array.&lt;Number&gt;</code>](#Number)
+        * [.initial](#Array+initial) ⇒ [<code>Array</code>](#Array)
+        * [.intersect](#Array+intersect) ⇒ [<code>Array</code>](#Array)
+        * [.isEmpty](#Array+isEmpty) ⇒ [<code>Boolean</code>](#Boolean)
+        * [.last](#Array+last) ⇒ <code>\*</code>
+        * [.limit](#Array+limit) ⇒ [<code>Array</code>](#Array)
         * [.take](#Array+take) ⇒ [<code>Array</code>](#Array)
+        * [.max](#Array+max) ⇒ [<code>Number</code>](#Number)
+        * [.median](#Array+median) ⇒ [<code>Number</code>](#Number)
+        * [.merge](#Array+merge)
+        * [.min](#Array+min) ⇒ [<code>Number</code>](#Number)
+        * [.nest](#Array+nest) ⇒ [<code>Array.&lt;Object&gt;</code>](#Object)
+        * [.orderBy](#Array+orderBy) ⇒ [<code>Array</code>](#Array)
+        * [.pad](#Array+pad) ⇒ [<code>Array</code>](#Array)
+        * [.partition](#Array+partition) ⇒ [<code>Array</code>](#Array)
+        * [.pluck](#Array+pluck) ⇒ [<code>Array</code>](#Array)
+        * [.prepend](#Array+prepend)
+        * [.pull](#Array+pull)
+        * [.sample](#Array+sample) ⇒ <code>\*</code>
+        * [.shuffle](#Array+shuffle) ⇒ [<code>Array</code>](#Array)
+        * [.skip](#Array+skip) ⇒ [<code>Array</code>](#Array)
         * [.offset](#Array+offset) ⇒ [<code>Array</code>](#Array)
-        * [.all([fn])](#Array+all) ⇒ [<code>Boolean</code>](#Boolean)
-        * [.any([fn])](#Array+any) ⇒ [<code>Boolean</code>](#Boolean)
-        * [.append(value)](#Array+append)
-        * [.average([path])](#Array+average) ⇒ [<code>Number</code>](#Number)
-        * [.chunk(size)](#Array+chunk) ⇒ [<code>Array.&lt;Array&gt;</code>](#Array)
-        * [.clone([deep])](#Array+clone) ⇒ [<code>Array</code>](#Array)
-        * [.compact()](#Array+compact) ⇒ [<code>Array</code>](#Array)
-        * [.contains(value)](#Array+contains) ⇒ [<code>Boolean</code>](#Boolean)
-        * [.count([value])](#Array+count) ⇒ [<code>Number</code>](#Number)
-        * [.countBy(fn)](#Array+countBy) ⇒ [<code>Object</code>](#Object)
-        * [.crossJoin(array)](#Array+crossJoin) ⇒ [<code>Array.&lt;Array&gt;</code>](#Array)
-        * [.deepFlatten()](#Array+deepFlatten) ⇒ [<code>Array</code>](#Array)
-        * [.diff(array, [comp])](#Array+diff) ⇒ [<code>Array</code>](#Array)
-        * [.distinct([fn])](#Array+distinct) ⇒ [<code>Array</code>](#Array)
-        * [.distinctBy(fn)](#Array+distinctBy) ⇒ [<code>Array</code>](#Array)
-        * [.empty()](#Array+empty)
-        * [.equals(value)](#Array+equals) ⇒ [<code>Boolean</code>](#Boolean)
-        * [.everyNth()](#Array+everyNth) ⇒ [<code>Array</code>](#Array)
-        * [.first()](#Array+first) ⇒ <code>\*</code>
-        * [.flatten([depth])](#Array+flatten) ⇒ [<code>Array</code>](#Array)
-        * [.get(index, [def])](#Array+get) ⇒ <code>\*</code>
-        * [.groupBy(fn)](#Array+groupBy) ⇒ [<code>Object</code>](#Object)
-        * [.implode(path, [separator])](#Array+implode) ⇒ [<code>String</code>](#String)
-        * [.indexOfAll(value)](#Array+indexOfAll) ⇒ [<code>Array.&lt;Number&gt;</code>](#Number)
-        * [.initial()](#Array+initial) ⇒ [<code>Array</code>](#Array)
-        * [.intersect(array)](#Array+intersect) ⇒ [<code>Array</code>](#Array)
-        * [.isEmpty()](#Array+isEmpty) ⇒ [<code>Boolean</code>](#Boolean)
-        * [.last()](#Array+last) ⇒ <code>\*</code>
-        * [.limit([limit])](#Array+limit) ⇒ [<code>Array</code>](#Array)
-        * [.max([path])](#Array+max) ⇒ [<code>Number</code>](#Number)
-        * [.median([path])](#Array+median) ⇒ [<code>Number</code>](#Number)
-        * [.merge(value)](#Array+merge)
-        * [.min([path])](#Array+min) ⇒ [<code>Number</code>](#Number)
-        * [.nest(link, key)](#Array+nest) ⇒ [<code>Array.&lt;Object&gt;</code>](#Object)
-        * [.orderBy([field], [order])](#Array+orderBy) ⇒ [<code>Array</code>](#Array)
-        * [.pad(size, [value])](#Array+pad) ⇒ [<code>Array</code>](#Array)
-        * [.partition(fn)](#Array+partition) ⇒ [<code>Array</code>](#Array)
-        * [.pluck(path)](#Array+pluck) ⇒ [<code>Array</code>](#Array)
-        * [.prepend(value)](#Array+prepend)
-        * [.pull(args)](#Array+pull)
-        * [.sample()](#Array+sample) ⇒ <code>\*</code>
-        * [.shuffle()](#Array+shuffle) ⇒ [<code>Array</code>](#Array)
-        * [.skip([offset])](#Array+skip) ⇒ [<code>Array</code>](#Array)
-        * [.sortBy(fn)](#Array+sortBy) ⇒ [<code>Array</code>](#Array)
-        * [.sum([path])](#Array+sum) ⇒ [<code>Number</code>](#Number)
-        * [.tail()](#Array+tail) ⇒ [<code>Array</code>](#Array)
-        * [.union(array)](#Array+union) ⇒ [<code>Array</code>](#Array)
-        * [.unwind(path)](#Array+unwind) ⇒ <code>\*</code>
-        * [.where(field, [operator], [value])](#Array+where) ⇒ [<code>Array</code>](#Array)
-        * [.whereBetween(field, start, [end])](#Array+whereBetween) ⇒ [<code>Array</code>](#Array)
-        * [.whereIn(field, [value])](#Array+whereIn) ⇒ [<code>Array</code>](#Array)
-        * [.whereLike(field, [value])](#Array+whereLike) ⇒ [<code>Array</code>](#Array)
-        * [.whereNotBetween(field, start, [end])](#Array+whereNotBetween) ⇒ [<code>Array</code>](#Array)
-        * [.whereNotIn(field, [value])](#Array+whereNotIn) ⇒ [<code>Array</code>](#Array)
-        * [.whereNotLike(field, [value])](#Array+whereNotLike) ⇒ [<code>Array</code>](#Array)
-        * [.whereNotNull([field])](#Array+whereNotNull) ⇒ [<code>Array</code>](#Array)
-        * [.whereNull([field])](#Array+whereNull) ⇒ [<code>Array</code>](#Array)
-        * [.zip(arrays)](#Array+zip) ⇒ [<code>Array</code>](#Array)
-        * [.zipObject(array)](#Array+zipObject) ⇒ [<code>Object</code>](#Object)
+        * [.sortBy](#Array+sortBy) ⇒ [<code>Array</code>](#Array)
+        * [.sum](#Array+sum) ⇒ [<code>Number</code>](#Number)
+        * [.tail](#Array+tail) ⇒ [<code>Array</code>](#Array)
+        * [.union](#Array+union) ⇒ [<code>Array</code>](#Array)
+        * [.unwind](#Array+unwind) ⇒ <code>\*</code>
+        * [.where](#Array+where) ⇒ [<code>Array</code>](#Array)
+        * [.whereBetween](#Array+whereBetween) ⇒ [<code>Array</code>](#Array)
+        * [.whereIn](#Array+whereIn) ⇒ [<code>Array</code>](#Array)
+        * [.whereLike](#Array+whereLike) ⇒ [<code>Array</code>](#Array)
+        * [.whereNotBetween](#Array+whereNotBetween) ⇒ [<code>Array</code>](#Array)
+        * [.whereNotIn](#Array+whereNotIn) ⇒ [<code>Array</code>](#Array)
+        * [.whereNotLike](#Array+whereNotLike) ⇒ [<code>Array</code>](#Array)
+        * [.whereNotNull](#Array+whereNotNull) ⇒ [<code>Array</code>](#Array)
+        * [.whereNull](#Array+whereNull) ⇒ [<code>Array</code>](#Array)
+        * [.zip](#Array+zip) ⇒ [<code>Array</code>](#Array)
+        * [.zipObject](#Array+zipObject) ⇒ [<code>Object</code>](#Object)
     * _static_
         * [.range](#Array.range) ⇒ [<code>Array.&lt;Number&gt;</code>](#Number)
         * [.repeat](#Array.repeat) ⇒ [<code>Array</code>](#Array)
 
+<a name="Array+all"></a>
+
+### array.all ⇒ [<code>Boolean</code>](#Boolean)
+Returns `true` if the provided predicate function returns `true` for all elements in a collection, `false` otherwise
+
+**Kind**: instance property of [<code>Array</code>](#Array)  
+
+| Param | Type | Default |
+| --- | --- | --- |
+| [fn] | <code>function</code> | <code>Boolean</code> | 
+
+**Example**  
+```javascript
+[4, 2, 3].all((x) => x > 1); // true
+[1, 2, 3].all(); // true
+```
+<a name="Array+any"></a>
+
+### array.any ⇒ [<code>Boolean</code>](#Boolean)
+Returns `true` if the provided predicate function returns `true` for at least one element in a collection,
+`false` otherwise
+
+**Kind**: instance property of [<code>Array</code>](#Array)  
+
+| Param | Type | Default |
+| --- | --- | --- |
+| [fn] | <code>function</code> | <code>Boolean</code> | 
+
+**Example**  
+```javascript
+[0, 1, 2, 0].any((x) => x >= 2); // true
+[0, 0, 1, 0].any(); // true
+```
+<a name="Array+append"></a>
+
+### array.append
+Same as push but uses concat
+
+**Kind**: instance property of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| value | <code>\*</code> | 
+
+**Example**  
+```javascript
+var myArray = [1, 2, 3]
+myArray.append(0); // myArray => [1, 2, 3, 0]
+```
+<a name="Array+average"></a>
+
+### array.average ⇒ [<code>Number</code>](#Number)
+Returns the average value of a given path
+
+**Kind**: instance property of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| [path] | [<code>String</code>](#String) | 
+
+**Example**  
+```javascript
+[1, 2, 3].average(); // 2
+[{a: 1}, {a: 2}, {a: 3}].average("a"); // 2
+[{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].average("a.b"); // 2
+```
 <a name="Array+avg"></a>
 
 ### array.avg ⇒ [<code>Number</code>](#Number)
@@ -113,6 +179,357 @@ An alias of Array.prototype.average
 [{a: 1}, {a: 2}, {a: 3}].avg("a"); // 2
 [{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].avg("a.b"); // 2
 ```
+<a name="Array+chunk"></a>
+
+### array.chunk ⇒ [<code>Array.&lt;Array&gt;</code>](#Array)
+Chunks the array into smaller arrays of a specified size
+
+**Kind**: instance property of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| size | [<code>Number</code>](#Number) | 
+
+**Example**  
+```javascript
+[1, 2, 3, 4, 5].chunk(2); // [[1,2],[3,4],[5]]
+```
+<a name="Array+clone"></a>
+
+### array.clone ⇒ [<code>Array</code>](#Array)
+Returns the cloned array
+
+**Kind**: instance property of [<code>Array</code>](#Array)  
+
+| Param | Type | Default |
+| --- | --- | --- |
+| [deep] | [<code>Boolean</code>](#Boolean) | <code>false</code> | 
+
+**Example**  
+```javascript
+[1, 2, 3].clone(); // [1, 2, 3]
+```
+<a name="Array+compact"></a>
+
+### array.compact ⇒ [<code>Array</code>](#Array)
+Removes falsey values from the array
+
+**Kind**: instance property of [<code>Array</code>](#Array)  
+**Example**  
+```javascript
+[0, 1, false, 2, '', 3, 'a', 'e' * 23, NaN, 's', 34].compact(); // [ 1, 2, 3, 'a', 's', 34 ]
+```
+<a name="Array+contains"></a>
+
+### array.contains ⇒ [<code>Boolean</code>](#Boolean)
+Determines whether the collection contains a given item
+
+**Kind**: instance property of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| value | <code>\*</code> | 
+
+**Example**  
+```javascript
+[1, 2, 3].contains(2); // true
+```
+<a name="Array+count"></a>
+
+### array.count ⇒ [<code>Number</code>](#Number)
+Counts the occurrences of a value in an array
+
+**Kind**: instance property of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| [value] | <code>\*</code> | 
+
+**Example**  
+```javascript
+[1, 1, 2, 1, 2, 3].count(); // 6
+[1, 1, 2, 1, 2, 3].count(1); // 3
+```
+<a name="Array+countBy"></a>
+
+### array.countBy ⇒ [<code>Object</code>](#Object)
+Groups the elements of an array based on the given function and returns the count of elements in each group
+
+**Kind**: instance property of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| fn | [<code>String</code>](#String) \| <code>function</code> | 
+
+**Example**  
+```javascript
+[6.1, 4.2, 6.3].countBy(Math.floor); // {4: 1, 6: 2}
+['one', 'two', 'three'].countBy('length'); // {3: 2, 5: 1}
+```
+<a name="Array+crossJoin"></a>
+
+### array.crossJoin ⇒ [<code>Array.&lt;Array&gt;</code>](#Array)
+Cross joins the array's values among the given arrays, returning a Cartesian product with all possible permutations
+
+**Kind**: instance property of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| array | [<code>Array</code>](#Array) | 
+
+**Example**  
+```javascript
+[1, 2].crossJoin(['a', 'b']); // [[1, 'a'], [1, 'b'], [2, 'a'], [2, 'b']]
+```
+<a name="Array+deepFlatten"></a>
+
+### array.deepFlatten ⇒ [<code>Array</code>](#Array)
+Deep flattens an array
+
+**Kind**: instance property of [<code>Array</code>](#Array)  
+**Example**  
+```javascript
+[1, [2], [[3], 4], 5].deepFlatten(); // [1,2,3,4,5]
+```
+<a name="Array+diff"></a>
+
+### array.diff ⇒ [<code>Array</code>](#Array)
+Returns the difference between this and another array
+if `comp` is given, filters out all values from an array for which the comparator function does not return true
+
+**Kind**: instance property of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| array | [<code>Array</code>](#Array) | 
+| [comp] | <code>function</code> | 
+
+**Example**  
+```javascript
+[1, 2, 3].diff([1, 2, 4]); // [3]
+[1, 1.2, 1.5, 3, 0].diff([1.9, 3, 0], (a, b) => Math.round(a) === Math.round(b)); // [1, 1.2]
+```
+<a name="Array+distinct"></a>
+
+### array.distinct ⇒ [<code>Array</code>](#Array)
+Returns all the distinct values of an array
+
+**Kind**: instance property of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| [fn] | [<code>String</code>](#String) \| <code>function</code> | 
+
+**Example**  
+```javascript
+[1, 2, 2, 3, 4, 4, 5].distinct(); // [1,2,3,4,5]
+[{foo:{bar:[0,1]}}, {foo:{bar:[4,1]}}].distinct("foo.bar[1]"); // [{foo:{bar:[0,1]}}]
+[1, 2, 2.2, 3, 4.9, 4, 5].distinct(Math.floor); // [1,2,3,4.9,5]
+```
+<a name="Array+distinctBy"></a>
+
+### array.distinctBy ⇒ [<code>Array</code>](#Array)
+Returns all the distinct values of an array
+
+**Kind**: instance property of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| fn | <code>function</code> | 
+
+**Example**  
+```javascript
+[1, 2, 2, 3, 4, 4, 5].distinctBy((a, b) => a === b); // [1,2,3,4,5]
+```
+<a name="Array+empty"></a>
+
+### array.empty
+Empty the array
+
+**Kind**: instance property of [<code>Array</code>](#Array)  
+**Example**  
+```javascript
+const arr = [1,3];
+arr.empty();
+// arr = []
+```
+<a name="Array+equals"></a>
+
+### array.equals ⇒ [<code>Boolean</code>](#Boolean)
+Checks if the array is equal to the given value
+
+**Kind**: instance property of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| value | <code>\*</code> | 
+
+**Example**  
+```javascript
+[1,2,3].equals([2,1,3]); // false
+```
+<a name="Array+everyNth"></a>
+
+### array.everyNth ⇒ [<code>Array</code>](#Array)
+Returns every nth element in an array
+
+**Kind**: instance property of [<code>Array</code>](#Array)  
+**Example**  
+```javascript
+[1, 2, 3, 4, 5, 6].everyNth(2); // [ 2, 4, 6 ]
+```
+<a name="Array+first"></a>
+
+### array.first ⇒ <code>\*</code>
+Returns the first item of the array
+
+**Kind**: instance property of [<code>Array</code>](#Array)  
+**Example**  
+```javascript
+[1, 2, 3].first(); // 1
+```
+<a name="Array+flatten"></a>
+
+### array.flatten ⇒ [<code>Array</code>](#Array)
+Flattens an array up to the specified depth
+
+**Kind**: instance property of [<code>Array</code>](#Array)  
+
+| Param | Type | Default |
+| --- | --- | --- |
+| [depth] | [<code>Number</code>](#Number) | <code>1</code> | 
+
+**Example**  
+```javascript
+[1, [2], 3, 4].flatten(); // [1, 2, 3, 4]
+[1, [2, [3, [4, 5], 6], 7], 8].flatten(2); // [1, 2, 3, [4, 5], 6, 7, 8]
+```
+<a name="Array+get"></a>
+
+### array.get ⇒ <code>\*</code>
+Returns the item at a given index. If the index does not exist, def is returned
+
+**Kind**: instance property of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| index | [<code>Number</code>](#Number) | 
+| [def] | <code>\*</code> | 
+
+**Example**  
+```javascript
+[1, 2, 3].get(0, 'default value'); // 1
+[1, 2, 3].get(4, 0); // 0
+```
+<a name="Array+groupBy"></a>
+
+### array.groupBy ⇒ [<code>Object</code>](#Object)
+Groups the elements of an array based on the given function
+
+**Kind**: instance property of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| fn | [<code>String</code>](#String) \| <code>function</code> | 
+
+**Example**  
+```javascript
+[6.1, 4.2, 6.3].groupBy(Math.floor); // {4: [4.2], 6: [6.1, 6.3]}
+['one', 'two', 'three'].groupBy('length'); // {3: ['one', 'two'], 5: ['three']}
+```
+<a name="Array+implode"></a>
+
+### array.implode ⇒ [<code>String</code>](#String)
+It's like join but u get to git it which keys to join
+
+**Kind**: instance property of [<code>Array</code>](#Array)  
+
+| Param | Type | Default |
+| --- | --- | --- |
+| path | [<code>String</code>](#String) |  | 
+| [separator] | [<code>String</code>](#String) | <code>&quot;, &quot;</code> | 
+
+**Example**  
+```javascript
+[{a: {b: 'first'}}, {a: {b: 'second'}}, {a: {b: 'third'}}].implode('a.b', ', '); // 'first, second, third'
+```
+<a name="Array+indexOfAll"></a>
+
+### array.indexOfAll ⇒ [<code>Array.&lt;Number&gt;</code>](#Number)
+Returns all indices of value in the array. If value never occurs, returns []
+
+**Kind**: instance property of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| value | <code>\*</code> | 
+
+**Example**  
+```javascript
+[1, 2, 3, 1, 2, 3].indexOfAll(1); // [0,3]
+[1, 2, 3].indexOfAll(4); // []
+```
+<a name="Array+initial"></a>
+
+### array.initial ⇒ [<code>Array</code>](#Array)
+Returns all the elements of an array except the last one
+
+**Kind**: instance property of [<code>Array</code>](#Array)  
+**Example**  
+```javascript
+[1, 2, 3].initial(); // [1, 2]
+```
+<a name="Array+intersect"></a>
+
+### array.intersect ⇒ [<code>Array</code>](#Array)
+Returns a list of elements that exist in both arrays
+
+**Kind**: instance property of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| array | [<code>Array</code>](#Array) | 
+
+**Example**  
+```javascript
+[1, 2, 3].intersect([4, 3, 2]); // [2,3]
+```
+<a name="Array+isEmpty"></a>
+
+### array.isEmpty ⇒ [<code>Boolean</code>](#Boolean)
+Checks if the array is empty
+
+**Kind**: instance property of [<code>Array</code>](#Array)  
+**Example**  
+```javascript
+[1,2].isEmpty(); // false
+[].isEmpty(); // true
+```
+<a name="Array+last"></a>
+
+### array.last ⇒ <code>\*</code>
+Returns the last item of the array
+
+**Kind**: instance property of [<code>Array</code>](#Array)  
+**Example**  
+```javascript
+[1, 2, 3].last(); // 3
+```
+<a name="Array+limit"></a>
+
+### array.limit ⇒ [<code>Array</code>](#Array)
+limits the array
+
+**Kind**: instance property of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| [limit] | [<code>Number</code>](#Number) | 
+
+**Example**  
+```javascript
+[2, 1, 2, 5].limit(2); // [2,1]
+```
 <a name="Array+take"></a>
 
 ### array.take ⇒ [<code>Array</code>](#Array)
@@ -128,444 +545,12 @@ An alias of Array.prototype.skip
 ```javascript
 [2, 1, 2, 5].take(2); // [2,1]
 ```
-<a name="Array+offset"></a>
-
-### array.offset ⇒ [<code>Array</code>](#Array)
-An alias of Array.prototype.skip
-
-**Kind**: instance property of [<code>Array</code>](#Array)  
-
-| Param | Type |
-| --- | --- |
-| [offset] | [<code>Number</code>](#Number) | 
-
-**Example**  
-```javascript
-[2, 1, 2, 5].offset(1); // [1,2,5]
-```
-<a name="Array+all"></a>
-
-### array.all([fn]) ⇒ [<code>Boolean</code>](#Boolean)
-Returns `true` if the provided predicate function returns `true` for all elements in a collection, `false` otherwise
-
-**Kind**: instance method of [<code>Array</code>](#Array)  
-
-| Param | Type | Default |
-| --- | --- | --- |
-| [fn] | <code>function</code> | <code>Boolean</code> | 
-
-**Example**  
-```javascript
-[4, 2, 3].all((x) => x > 1); // true
-[1, 2, 3].all(); // true
-```
-<a name="Array+any"></a>
-
-### array.any([fn]) ⇒ [<code>Boolean</code>](#Boolean)
-Returns `true` if the provided predicate function returns `true` for at least one element in a collection,
-`false` otherwise
-
-**Kind**: instance method of [<code>Array</code>](#Array)  
-
-| Param | Type | Default |
-| --- | --- | --- |
-| [fn] | <code>function</code> | <code>Boolean</code> | 
-
-**Example**  
-```javascript
-[0, 1, 2, 0].any((x) => x >= 2); // true
-[0, 0, 1, 0].any(); // true
-```
-<a name="Array+append"></a>
-
-### array.append(value)
-Same as push but uses concat
-
-**Kind**: instance method of [<code>Array</code>](#Array)  
-
-| Param | Type |
-| --- | --- |
-| value | <code>\*</code> | 
-
-**Example**  
-```javascript
-var myArray = [1, 2, 3]
-myArray.append(0); // myArray => [1, 2, 3, 0]
-```
-<a name="Array+average"></a>
-
-### array.average([path]) ⇒ [<code>Number</code>](#Number)
-Returns the average value of a given path
-
-**Kind**: instance method of [<code>Array</code>](#Array)  
-
-| Param | Type |
-| --- | --- |
-| [path] | [<code>String</code>](#String) | 
-
-**Example**  
-```javascript
-[1, 2, 3].average(); // 2
-[{a: 1}, {a: 2}, {a: 3}].average("a"); // 2
-[{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].average("a.b"); // 2
-```
-<a name="Array+chunk"></a>
-
-### array.chunk(size) ⇒ [<code>Array.&lt;Array&gt;</code>](#Array)
-Chunks the array into smaller arrays of a specified size
-
-**Kind**: instance method of [<code>Array</code>](#Array)  
-
-| Param | Type |
-| --- | --- |
-| size | [<code>Number</code>](#Number) | 
-
-**Example**  
-```javascript
-[1, 2, 3, 4, 5].chunk(2); // [[1,2],[3,4],[5]]
-```
-<a name="Array+clone"></a>
-
-### array.clone([deep]) ⇒ [<code>Array</code>](#Array)
-Returns the cloned array
-
-**Kind**: instance method of [<code>Array</code>](#Array)  
-
-| Param | Type | Default |
-| --- | --- | --- |
-| [deep] | [<code>Boolean</code>](#Boolean) | <code>false</code> | 
-
-**Example**  
-```javascript
-[1, 2, 3].clone(); // [1, 2, 3]
-```
-<a name="Array+compact"></a>
-
-### array.compact() ⇒ [<code>Array</code>](#Array)
-Removes falsey values from the array
-
-**Kind**: instance method of [<code>Array</code>](#Array)  
-**Example**  
-```javascript
-[0, 1, false, 2, '', 3, 'a', 'e' * 23, NaN, 's', 34].compact(); // [ 1, 2, 3, 'a', 's', 34 ]
-```
-<a name="Array+contains"></a>
-
-### array.contains(value) ⇒ [<code>Boolean</code>](#Boolean)
-Determines whether the collection contains a given item
-
-**Kind**: instance method of [<code>Array</code>](#Array)  
-
-| Param | Type |
-| --- | --- |
-| value | <code>\*</code> | 
-
-**Example**  
-```javascript
-[1, 2, 3].contains(2); // true
-```
-<a name="Array+count"></a>
-
-### array.count([value]) ⇒ [<code>Number</code>](#Number)
-Counts the occurrences of a value in an array
-
-**Kind**: instance method of [<code>Array</code>](#Array)  
-
-| Param | Type |
-| --- | --- |
-| [value] | <code>\*</code> | 
-
-**Example**  
-```javascript
-[1, 1, 2, 1, 2, 3].count(); // 6
-[1, 1, 2, 1, 2, 3].count(1); // 3
-```
-<a name="Array+countBy"></a>
-
-### array.countBy(fn) ⇒ [<code>Object</code>](#Object)
-Groups the elements of an array based on the given function and returns the count of elements in each group
-
-**Kind**: instance method of [<code>Array</code>](#Array)  
-
-| Param | Type |
-| --- | --- |
-| fn | [<code>String</code>](#String) \| <code>function</code> | 
-
-**Example**  
-```javascript
-[6.1, 4.2, 6.3].countBy(Math.floor); // {4: 1, 6: 2}
-['one', 'two', 'three'].countBy('length'); // {3: 2, 5: 1}
-```
-<a name="Array+crossJoin"></a>
-
-### array.crossJoin(array) ⇒ [<code>Array.&lt;Array&gt;</code>](#Array)
-Cross joins the array's values among the given arrays, returning a Cartesian product with all possible permutations
-
-**Kind**: instance method of [<code>Array</code>](#Array)  
-
-| Param | Type |
-| --- | --- |
-| array | [<code>Array</code>](#Array) | 
-
-**Example**  
-```javascript
-[1, 2].crossJoin(['a', 'b']); // [[1, 'a'], [1, 'b'], [2, 'a'], [2, 'b']]
-```
-<a name="Array+deepFlatten"></a>
-
-### array.deepFlatten() ⇒ [<code>Array</code>](#Array)
-Deep flattens an array
-
-**Kind**: instance method of [<code>Array</code>](#Array)  
-**Example**  
-```javascript
-[1, [2], [[3], 4], 5].deepFlatten(); // [1,2,3,4,5]
-```
-<a name="Array+diff"></a>
-
-### array.diff(array, [comp]) ⇒ [<code>Array</code>](#Array)
-Returns the difference between this and another array
-if `comp` is given, filters out all values from an array for which the comparator function does not return true
-
-**Kind**: instance method of [<code>Array</code>](#Array)  
-
-| Param | Type |
-| --- | --- |
-| array | [<code>Array</code>](#Array) | 
-| [comp] | <code>function</code> | 
-
-**Example**  
-```javascript
-[1, 2, 3].diff([1, 2, 4]); // [3]
-[1, 1.2, 1.5, 3, 0].diff([1.9, 3, 0], (a, b) => Math.round(a) === Math.round(b)); // [1, 1.2]
-```
-<a name="Array+distinct"></a>
-
-### array.distinct([fn]) ⇒ [<code>Array</code>](#Array)
-Returns all the distinct values of an array
-
-**Kind**: instance method of [<code>Array</code>](#Array)  
-
-| Param | Type |
-| --- | --- |
-| [fn] | [<code>String</code>](#String) \| <code>function</code> | 
-
-**Example**  
-```javascript
-[1, 2, 2, 3, 4, 4, 5].distinct(); // [1,2,3,4,5]
-[{foo:{bar:[0,1]}}, {foo:{bar:[4,1]}}].distinct("foo.bar[1]"); // [{foo:{bar:[0,1]}}]
-[1, 2, 2.2, 3, 4.9, 4, 5].distinct(Math.floor); // [1,2,3,4.9,5]
-```
-<a name="Array+distinctBy"></a>
-
-### array.distinctBy(fn) ⇒ [<code>Array</code>](#Array)
-Returns all the distinct values of an array
-
-**Kind**: instance method of [<code>Array</code>](#Array)  
-
-| Param | Type |
-| --- | --- |
-| fn | <code>function</code> | 
-
-**Example**  
-```javascript
-[1, 2, 2, 3, 4, 4, 5].distinctBy((a, b) => a === b); // [1,2,3,4,5]
-```
-<a name="Array+empty"></a>
-
-### array.empty()
-Empty the array
-
-**Kind**: instance method of [<code>Array</code>](#Array)  
-**Example**  
-```javascript
-const arr = [1,3];
-arr.empty();
-// arr = []
-```
-<a name="Array+equals"></a>
-
-### array.equals(value) ⇒ [<code>Boolean</code>](#Boolean)
-Checks if the array is equal to the given value
-
-**Kind**: instance method of [<code>Array</code>](#Array)  
-
-| Param | Type |
-| --- | --- |
-| value | <code>\*</code> | 
-
-**Example**  
-```javascript
-[1,2,3].equals([2,1,3]); // false
-```
-<a name="Array+everyNth"></a>
-
-### array.everyNth() ⇒ [<code>Array</code>](#Array)
-Returns every nth element in an array
-
-**Kind**: instance method of [<code>Array</code>](#Array)  
-**Example**  
-```javascript
-[1, 2, 3, 4, 5, 6].everyNth(2); // [ 2, 4, 6 ]
-```
-<a name="Array+first"></a>
-
-### array.first() ⇒ <code>\*</code>
-Returns the first item of the array
-
-**Kind**: instance method of [<code>Array</code>](#Array)  
-**Example**  
-```javascript
-[1, 2, 3].first(); // 1
-```
-<a name="Array+flatten"></a>
-
-### array.flatten([depth]) ⇒ [<code>Array</code>](#Array)
-Flattens an array up to the specified depth
-
-**Kind**: instance method of [<code>Array</code>](#Array)  
-
-| Param | Type | Default |
-| --- | --- | --- |
-| [depth] | [<code>Number</code>](#Number) | <code>1</code> | 
-
-**Example**  
-```javascript
-[1, [2], 3, 4].flatten(); // [1, 2, 3, 4]
-[1, [2, [3, [4, 5], 6], 7], 8].flatten(2); // [1, 2, 3, [4, 5], 6, 7, 8]
-```
-<a name="Array+get"></a>
-
-### array.get(index, [def]) ⇒ <code>\*</code>
-Returns the item at a given index. If the index does not exist, def is returned
-
-**Kind**: instance method of [<code>Array</code>](#Array)  
-
-| Param | Type |
-| --- | --- |
-| index | [<code>Number</code>](#Number) | 
-| [def] | <code>\*</code> | 
-
-**Example**  
-```javascript
-[1, 2, 3].get(0, 'default value'); // 1
-[1, 2, 3].get(4, 0); // 0
-```
-<a name="Array+groupBy"></a>
-
-### array.groupBy(fn) ⇒ [<code>Object</code>](#Object)
-Groups the elements of an array based on the given function
-
-**Kind**: instance method of [<code>Array</code>](#Array)  
-
-| Param | Type |
-| --- | --- |
-| fn | [<code>String</code>](#String) \| <code>function</code> | 
-
-**Example**  
-```javascript
-[6.1, 4.2, 6.3].groupBy(Math.floor); // {4: [4.2], 6: [6.1, 6.3]}
-['one', 'two', 'three'].groupBy('length'); // {3: ['one', 'two'], 5: ['three']}
-```
-<a name="Array+implode"></a>
-
-### array.implode(path, [separator]) ⇒ [<code>String</code>](#String)
-It's like join but u get to git it which keys to join
-
-**Kind**: instance method of [<code>Array</code>](#Array)  
-
-| Param | Type | Default |
-| --- | --- | --- |
-| path | [<code>String</code>](#String) |  | 
-| [separator] | [<code>String</code>](#String) | <code>&quot;, &quot;</code> | 
-
-**Example**  
-```javascript
-[{a: {b: 'first'}}, {a: {b: 'second'}}, {a: {b: 'third'}}].implode('a.b', ', '); // 'first, second, third'
-```
-<a name="Array+indexOfAll"></a>
-
-### array.indexOfAll(value) ⇒ [<code>Array.&lt;Number&gt;</code>](#Number)
-Returns all indices of value in the array. If value never occurs, returns []
-
-**Kind**: instance method of [<code>Array</code>](#Array)  
-
-| Param | Type |
-| --- | --- |
-| value | <code>\*</code> | 
-
-**Example**  
-```javascript
-[1, 2, 3, 1, 2, 3].indexOfAll(1); // [0,3]
-[1, 2, 3].indexOfAll(4); // []
-```
-<a name="Array+initial"></a>
-
-### array.initial() ⇒ [<code>Array</code>](#Array)
-Returns all the elements of an array except the last one
-
-**Kind**: instance method of [<code>Array</code>](#Array)  
-**Example**  
-```javascript
-[1, 2, 3].initial(); // [1, 2]
-```
-<a name="Array+intersect"></a>
-
-### array.intersect(array) ⇒ [<code>Array</code>](#Array)
-Returns a list of elements that exist in both arrays
-
-**Kind**: instance method of [<code>Array</code>](#Array)  
-
-| Param | Type |
-| --- | --- |
-| array | [<code>Array</code>](#Array) | 
-
-**Example**  
-```javascript
-[1, 2, 3].intersect([4, 3, 2]); // [2,3]
-```
-<a name="Array+isEmpty"></a>
-
-### array.isEmpty() ⇒ [<code>Boolean</code>](#Boolean)
-Checks if the array is empty
-
-**Kind**: instance method of [<code>Array</code>](#Array)  
-**Example**  
-```javascript
-[1,2].isEmpty(); // false
-[].isEmpty(); // true
-```
-<a name="Array+last"></a>
-
-### array.last() ⇒ <code>\*</code>
-Returns the last item of the array
-
-**Kind**: instance method of [<code>Array</code>](#Array)  
-**Example**  
-```javascript
-[1, 2, 3].last(); // 3
-```
-<a name="Array+limit"></a>
-
-### array.limit([limit]) ⇒ [<code>Array</code>](#Array)
-limits the array
-
-**Kind**: instance method of [<code>Array</code>](#Array)  
-
-| Param | Type |
-| --- | --- |
-| [limit] | [<code>Number</code>](#Number) | 
-
-**Example**  
-```javascript
-[2, 1, 2, 5].limit(2); // [2,1]
-```
 <a name="Array+max"></a>
 
-### array.max([path]) ⇒ [<code>Number</code>](#Number)
+### array.max ⇒ [<code>Number</code>](#Number)
 Returns the maximum value of a given path
 
-**Kind**: instance method of [<code>Array</code>](#Array)  
+**Kind**: instance property of [<code>Array</code>](#Array)  
 
 | Param | Type |
 | --- | --- |
@@ -579,10 +564,10 @@ Returns the maximum value of a given path
 ```
 <a name="Array+median"></a>
 
-### array.median([path]) ⇒ [<code>Number</code>](#Number)
+### array.median ⇒ [<code>Number</code>](#Number)
 Returns the median value of a given path
 
-**Kind**: instance method of [<code>Array</code>](#Array)  
+**Kind**: instance property of [<code>Array</code>](#Array)  
 
 | Param | Type |
 | --- | --- |
@@ -595,10 +580,10 @@ Returns the median value of a given path
 ```
 <a name="Array+merge"></a>
 
-### array.merge(value)
+### array.merge
 Merges array with the given array
 
-**Kind**: instance method of [<code>Array</code>](#Array)  
+**Kind**: instance property of [<code>Array</code>](#Array)  
 
 | Param | Type |
 | --- | --- |
@@ -611,10 +596,10 @@ myArray.merge([0, 6 , 2]); // myArray => [1, 2, 3, 0, 6, 2]
 ```
 <a name="Array+min"></a>
 
-### array.min([path]) ⇒ [<code>Number</code>](#Number)
+### array.min ⇒ [<code>Number</code>](#Number)
 Returns the minimum value of a given path
 
-**Kind**: instance method of [<code>Array</code>](#Array)  
+**Kind**: instance property of [<code>Array</code>](#Array)  
 
 | Param | Type |
 | --- | --- |
@@ -628,10 +613,10 @@ Returns the minimum value of a given path
 ```
 <a name="Array+nest"></a>
 
-### array.nest(link, key) ⇒ [<code>Array.&lt;Object&gt;</code>](#Object)
+### array.nest ⇒ [<code>Array.&lt;Object&gt;</code>](#Object)
 Given a flat array of objects linked to one another, it will nest them recursively
 
-**Kind**: instance method of [<code>Array</code>](#Array)  
+**Kind**: instance property of [<code>Array</code>](#Array)  
 
 | Param | Type |
 | --- | --- |
@@ -651,10 +636,10 @@ comments.nest("comment_id"); // [{ id: 1, comment_id: null, children: [...] }]
 ```
 <a name="Array+orderBy"></a>
 
-### array.orderBy([field], [order]) ⇒ [<code>Array</code>](#Array)
+### array.orderBy ⇒ [<code>Array</code>](#Array)
 sorts the array
 
-**Kind**: instance method of [<code>Array</code>](#Array)  
+**Kind**: instance property of [<code>Array</code>](#Array)  
 
 | Param | Type | Default |
 | --- | --- | --- |
@@ -669,10 +654,10 @@ sorts the array
 ```
 <a name="Array+pad"></a>
 
-### array.pad(size, [value]) ⇒ [<code>Array</code>](#Array)
+### array.pad ⇒ [<code>Array</code>](#Array)
 FillS the array with the given value until the array reaches the specified size
 
-**Kind**: instance method of [<code>Array</code>](#Array)  
+**Kind**: instance property of [<code>Array</code>](#Array)  
 
 | Param | Type | Default |
 | --- | --- | --- |
@@ -686,10 +671,10 @@ FillS the array with the given value until the array reaches the specified size
 ```
 <a name="Array+partition"></a>
 
-### array.partition(fn) ⇒ [<code>Array</code>](#Array)
+### array.partition ⇒ [<code>Array</code>](#Array)
 Groups the elements into two arrays, depending on the provided function's truthiness for each element
 
-**Kind**: instance method of [<code>Array</code>](#Array)  
+**Kind**: instance property of [<code>Array</code>](#Array)  
 
 | Param | Type |
 | --- | --- |
@@ -705,10 +690,10 @@ users.partition(o => o.active); // [
 ```
 <a name="Array+pluck"></a>
 
-### array.pluck(path) ⇒ [<code>Array</code>](#Array)
+### array.pluck ⇒ [<code>Array</code>](#Array)
 Returns all of the values for the given path
 
-**Kind**: instance method of [<code>Array</code>](#Array)  
+**Kind**: instance property of [<code>Array</code>](#Array)  
 
 | Param | Type |
 | --- | --- |
@@ -721,10 +706,10 @@ Returns all of the values for the given path
 ```
 <a name="Array+prepend"></a>
 
-### array.prepend(value)
+### array.prepend
 Adds an item to the beginning of the array
 
-**Kind**: instance method of [<code>Array</code>](#Array)  
+**Kind**: instance property of [<code>Array</code>](#Array)  
 
 | Param | Type |
 | --- | --- |
@@ -737,10 +722,10 @@ myArray.prepend(0); // myArray => [0, 1, 2, 3]
 ```
 <a name="Array+pull"></a>
 
-### array.pull(args)
+### array.pull
 Mutates the original array to filter out the values specified
 
-**Kind**: instance method of [<code>Array</code>](#Array)  
+**Kind**: instance property of [<code>Array</code>](#Array)  
 
 | Param | Type |
 | --- | --- |
@@ -753,20 +738,20 @@ myArray.pull('a', 'c'); // myArray = [ 'b', 'b' ];
 ```
 <a name="Array+sample"></a>
 
-### array.sample() ⇒ <code>\*</code>
+### array.sample ⇒ <code>\*</code>
 Returns a random element from an array
 
-**Kind**: instance method of [<code>Array</code>](#Array)  
+**Kind**: instance property of [<code>Array</code>](#Array)  
 **Example**  
 ```javascript
 [3, 7, 9, 11].sample(); // 9
 ```
 <a name="Array+shuffle"></a>
 
-### array.shuffle() ⇒ [<code>Array</code>](#Array)
+### array.shuffle ⇒ [<code>Array</code>](#Array)
 Randomizes the order of the values of an array, returning a new array
 
-**Kind**: instance method of [<code>Array</code>](#Array)  
+**Kind**: instance property of [<code>Array</code>](#Array)  
 **Example**  
 ```javascript
 const foo = [1, 2, 3];
@@ -774,10 +759,10 @@ foo.shuffle(); // [2,3,1], foo = [1,2,3]
 ```
 <a name="Array+skip"></a>
 
-### array.skip([offset]) ⇒ [<code>Array</code>](#Array)
+### array.skip ⇒ [<code>Array</code>](#Array)
 skips the array
 
-**Kind**: instance method of [<code>Array</code>](#Array)  
+**Kind**: instance property of [<code>Array</code>](#Array)  
 
 | Param | Type |
 | --- | --- |
@@ -787,12 +772,27 @@ skips the array
 ```javascript
 [2, 1, 2, 5].skip(1); // [1,2,5]
 ```
+<a name="Array+offset"></a>
+
+### array.offset ⇒ [<code>Array</code>](#Array)
+An alias of Array.prototype.skip
+
+**Kind**: instance property of [<code>Array</code>](#Array)  
+
+| Param | Type |
+| --- | --- |
+| [offset] | [<code>Number</code>](#Number) | 
+
+**Example**  
+```javascript
+[2, 1, 2, 5].offset(1); // [1,2,5]
+```
 <a name="Array+sortBy"></a>
 
-### array.sortBy(fn) ⇒ [<code>Array</code>](#Array)
+### array.sortBy ⇒ [<code>Array</code>](#Array)
 Groups the elements of an array based on the given function and returns the count of elements in each group
 
-**Kind**: instance method of [<code>Array</code>](#Array)  
+**Kind**: instance property of [<code>Array</code>](#Array)  
 
 | Param | Type |
 | --- | --- |
@@ -805,10 +805,10 @@ Groups the elements of an array based on the given function and returns the coun
 ```
 <a name="Array+sum"></a>
 
-### array.sum([path]) ⇒ [<code>Number</code>](#Number)
+### array.sum ⇒ [<code>Number</code>](#Number)
 Returns the minimum value of a given path
 
-**Kind**: instance method of [<code>Array</code>](#Array)  
+**Kind**: instance property of [<code>Array</code>](#Array)  
 
 | Param | Type |
 | --- | --- |
@@ -822,20 +822,20 @@ Returns the minimum value of a given path
 ```
 <a name="Array+tail"></a>
 
-### array.tail() ⇒ [<code>Array</code>](#Array)
+### array.tail ⇒ [<code>Array</code>](#Array)
 Returns all elements in an array except for the first one
 
-**Kind**: instance method of [<code>Array</code>](#Array)  
+**Kind**: instance property of [<code>Array</code>](#Array)  
 **Example**  
 ```javascript
 [1, 2, 3].tail(); // [2, 3]
 ```
 <a name="Array+union"></a>
 
-### array.union(array) ⇒ [<code>Array</code>](#Array)
+### array.union ⇒ [<code>Array</code>](#Array)
 Returns every element that exists in any of the two arrays once
 
-**Kind**: instance method of [<code>Array</code>](#Array)  
+**Kind**: instance property of [<code>Array</code>](#Array)  
 
 | Param | Type |
 | --- | --- |
@@ -847,10 +847,10 @@ Returns every element that exists in any of the two arrays once
 ```
 <a name="Array+unwind"></a>
 
-### array.unwind(path) ⇒ <code>\*</code>
+### array.unwind ⇒ <code>\*</code>
 Returns the item at a given index. If the index does not exist, def is returned
 
-**Kind**: instance method of [<code>Array</code>](#Array)  
+**Kind**: instance property of [<code>Array</code>](#Array)  
 
 | Param | Type |
 | --- | --- |
@@ -863,10 +863,10 @@ Returns the item at a given index. If the index does not exist, def is returned
 ```
 <a name="Array+where"></a>
 
-### array.where(field, [operator], [value]) ⇒ [<code>Array</code>](#Array)
+### array.where ⇒ [<code>Array</code>](#Array)
 Filters the array
 
-**Kind**: instance method of [<code>Array</code>](#Array)  
+**Kind**: instance property of [<code>Array</code>](#Array)  
 
 | Param | Type |
 | --- | --- |
@@ -883,10 +883,10 @@ Filters the array
 ```
 <a name="Array+whereBetween"></a>
 
-### array.whereBetween(field, start, [end]) ⇒ [<code>Array</code>](#Array)
+### array.whereBetween ⇒ [<code>Array</code>](#Array)
 Filters the array
 
-**Kind**: instance method of [<code>Array</code>](#Array)  
+**Kind**: instance property of [<code>Array</code>](#Array)  
 
 | Param | Type |
 | --- | --- |
@@ -901,10 +901,10 @@ Filters the array
 ```
 <a name="Array+whereIn"></a>
 
-### array.whereIn(field, [value]) ⇒ [<code>Array</code>](#Array)
+### array.whereIn ⇒ [<code>Array</code>](#Array)
 Filters the array
 
-**Kind**: instance method of [<code>Array</code>](#Array)  
+**Kind**: instance property of [<code>Array</code>](#Array)  
 
 | Param | Type |
 | --- | --- |
@@ -918,10 +918,10 @@ Filters the array
 ```
 <a name="Array+whereLike"></a>
 
-### array.whereLike(field, [value]) ⇒ [<code>Array</code>](#Array)
+### array.whereLike ⇒ [<code>Array</code>](#Array)
 Filters the array
 
-**Kind**: instance method of [<code>Array</code>](#Array)  
+**Kind**: instance property of [<code>Array</code>](#Array)  
 
 | Param | Type |
 | --- | --- |
@@ -935,10 +935,10 @@ Filters the array
 ```
 <a name="Array+whereNotBetween"></a>
 
-### array.whereNotBetween(field, start, [end]) ⇒ [<code>Array</code>](#Array)
+### array.whereNotBetween ⇒ [<code>Array</code>](#Array)
 Filters the array
 
-**Kind**: instance method of [<code>Array</code>](#Array)  
+**Kind**: instance property of [<code>Array</code>](#Array)  
 
 | Param | Type |
 | --- | --- |
@@ -953,10 +953,10 @@ Filters the array
 ```
 <a name="Array+whereNotIn"></a>
 
-### array.whereNotIn(field, [value]) ⇒ [<code>Array</code>](#Array)
+### array.whereNotIn ⇒ [<code>Array</code>](#Array)
 Filters the array
 
-**Kind**: instance method of [<code>Array</code>](#Array)  
+**Kind**: instance property of [<code>Array</code>](#Array)  
 
 | Param | Type |
 | --- | --- |
@@ -970,10 +970,10 @@ Filters the array
 ```
 <a name="Array+whereNotLike"></a>
 
-### array.whereNotLike(field, [value]) ⇒ [<code>Array</code>](#Array)
+### array.whereNotLike ⇒ [<code>Array</code>](#Array)
 Filters the array
 
-**Kind**: instance method of [<code>Array</code>](#Array)  
+**Kind**: instance property of [<code>Array</code>](#Array)  
 
 | Param | Type |
 | --- | --- |
@@ -987,10 +987,10 @@ Filters the array
 ```
 <a name="Array+whereNotNull"></a>
 
-### array.whereNotNull([field]) ⇒ [<code>Array</code>](#Array)
+### array.whereNotNull ⇒ [<code>Array</code>](#Array)
 Filters the array
 
-**Kind**: instance method of [<code>Array</code>](#Array)  
+**Kind**: instance property of [<code>Array</code>](#Array)  
 
 | Param | Type |
 | --- | --- |
@@ -1003,10 +1003,10 @@ Filters the array
 ```
 <a name="Array+whereNull"></a>
 
-### array.whereNull([field]) ⇒ [<code>Array</code>](#Array)
+### array.whereNull ⇒ [<code>Array</code>](#Array)
 Filters the array
 
-**Kind**: instance method of [<code>Array</code>](#Array)  
+**Kind**: instance property of [<code>Array</code>](#Array)  
 
 | Param | Type |
 | --- | --- |
@@ -1019,10 +1019,10 @@ Filters the array
 ```
 <a name="Array+zip"></a>
 
-### array.zip(arrays) ⇒ [<code>Array</code>](#Array)
+### array.zip ⇒ [<code>Array</code>](#Array)
 Creates an array of elements, grouped based on the position in the original arrays
 
-**Kind**: instance method of [<code>Array</code>](#Array)  
+**Kind**: instance property of [<code>Array</code>](#Array)  
 
 | Param | Type |
 | --- | --- |
@@ -1035,11 +1035,11 @@ Creates an array of elements, grouped based on the position in the original arra
 ```
 <a name="Array+zipObject"></a>
 
-### array.zipObject(array) ⇒ [<code>Object</code>](#Object)
+### array.zipObject ⇒ [<code>Object</code>](#Object)
 Given an array of valid property identifiers and an array of values,
 return an object associating the properties to the values
 
-**Kind**: instance method of [<code>Array</code>](#Array)  
+**Kind**: instance property of [<code>Array</code>](#Array)  
 
 | Param | Type |
 | --- | --- |
@@ -1113,7 +1113,7 @@ Boolean.isBoolean(flase); // true
 
 * [Date](#Date) : <code>object</code>
     * _instance_
-        * [.equals(value)](#Date+equals) ⇒ [<code>Boolean</code>](#Boolean)
+        * [.equals](#Date+equals) ⇒ [<code>Boolean</code>](#Boolean)
     * _static_
         * [.isDate](#Date.isDate) ⇒ [<code>Boolean</code>](#Boolean)
         * [.today](#Date.today) ⇒ [<code>String</code>](#String)
@@ -1122,10 +1122,10 @@ Boolean.isBoolean(flase); // true
 
 <a name="Date+equals"></a>
 
-### date.equals(value) ⇒ [<code>Boolean</code>](#Boolean)
+### date.equals ⇒ [<code>Boolean</code>](#Boolean)
 Checks if the date is equal to the given value
 
-**Kind**: instance method of [<code>Date</code>](#Date)  
+**Kind**: instance property of [<code>Date</code>](#Date)  
 
 | Param | Type |
 | --- | --- |
@@ -1188,12 +1188,45 @@ Date.yesterday(); // "2018-08-11"
 
 * [Function](#Function) : <code>object</code>
     * _instance_
+        * [.defer](#Function+defer) ⇒ <code>\*</code>
+        * [.once](#Function+once) ⇒ <code>\*</code>
         * [.cache(args)](#Function+cache) ⇒ <code>\*</code>
-        * [.defer(args)](#Function+defer) ⇒ <code>\*</code>
-        * [.once(args)](#Function+once) ⇒ <code>\*</code>
     * _static_
         * [.isFunction](#Function.isFunction) ⇒ [<code>Boolean</code>](#Boolean)
 
+<a name="Function+defer"></a>
+
+### function.defer ⇒ <code>\*</code>
+Defers invoking the function until the current call stack has cleared
+
+**Kind**: instance property of [<code>Function</code>](#Function)  
+
+| Param | Type |
+| --- | --- |
+| args | [<code>Array</code>](#Array) | 
+
+**Example**  
+```javascript
+const test = (msg) => console.log(msg);
+test.defer('a'), test('b'); // logs 'b' then 'a'
+```
+<a name="Function+once"></a>
+
+### function.once ⇒ <code>\*</code>
+Ensures a function is called only once
+
+**Kind**: instance property of [<code>Function</code>](#Function)  
+
+| Param | Type |
+| --- | --- |
+| args | [<code>Array</code>](#Array) | 
+
+**Example**  
+```javascript
+const test = (msg) => console.log(msg);
+test.once('a'); // logs 'a'
+test.once('b'); // no log this time
+```
 <a name="Function+cache"></a>
 
 ### function.cache(args) ⇒ <code>\*</code>
@@ -1210,39 +1243,6 @@ Returns the cached function results if already runned with this method
 const test = () => setTimeout(console.log, 1000, `test`);
 test.cache(); // takes a second to log 'test'
 test.cache(); // instantly logs the second 'test'
-```
-<a name="Function+defer"></a>
-
-### function.defer(args) ⇒ <code>\*</code>
-Defers invoking the function until the current call stack has cleared
-
-**Kind**: instance method of [<code>Function</code>](#Function)  
-
-| Param | Type |
-| --- | --- |
-| args | [<code>Array</code>](#Array) | 
-
-**Example**  
-```javascript
-const test = (msg) => console.log(msg);
-test.defer('a'), test('b'); // logs 'b' then 'a'
-```
-<a name="Function+once"></a>
-
-### function.once(args) ⇒ <code>\*</code>
-Ensures a function is called only once
-
-**Kind**: instance method of [<code>Function</code>](#Function)  
-
-| Param | Type |
-| --- | --- |
-| args | [<code>Array</code>](#Array) | 
-
-**Example**  
-```javascript
-const test = (msg) => console.log(msg);
-test.once('a'); // logs 'a'
-test.once('b'); // no log this time
 ```
 <a name="Function.isFunction"></a>
 
@@ -1486,28 +1486,28 @@ Math.radsToDegrees(Math.PI / 2); // 90
 
 * [Number](#Number) : <code>object</code>
     * _instance_
-        * [.digitize()](#Number+digitize) ⇒ [<code>Array.&lt;Number&gt;</code>](#Number)
-        * [.equals(value)](#Number+equals) ⇒ [<code>Boolean</code>](#Boolean)
-        * [.inRange(end, [start])](#Number+inRange) ⇒ [<code>Boolean</code>](#Boolean)
+        * [.digitize](#Number+digitize) ⇒ [<code>Array.&lt;Number&gt;</code>](#Number)
+        * [.equals](#Number+equals) ⇒ [<code>Boolean</code>](#Boolean)
+        * [.inRange](#Number+inRange) ⇒ [<code>Boolean</code>](#Boolean)
     * _static_
         * [.isNumber](#Number.isNumber) ⇒ [<code>Boolean</code>](#Boolean)
 
 <a name="Number+digitize"></a>
 
-### number.digitize() ⇒ [<code>Array.&lt;Number&gt;</code>](#Number)
+### number.digitize ⇒ [<code>Array.&lt;Number&gt;</code>](#Number)
 Converts the number to an array of digits
 
-**Kind**: instance method of [<code>Number</code>](#Number)  
+**Kind**: instance property of [<code>Number</code>](#Number)  
 **Example**  
 ```javascript
 (123).digitize(); // [1, 2, 3]
 ```
 <a name="Number+equals"></a>
 
-### number.equals(value) ⇒ [<code>Boolean</code>](#Boolean)
+### number.equals ⇒ [<code>Boolean</code>](#Boolean)
 Checks if the number is equal to the given value
 
-**Kind**: instance method of [<code>Number</code>](#Number)  
+**Kind**: instance property of [<code>Number</code>](#Number)  
 
 | Param | Type |
 | --- | --- |
@@ -1519,10 +1519,10 @@ Checks if the number is equal to the given value
 ```
 <a name="Number+inRange"></a>
 
-### number.inRange(end, [start]) ⇒ [<code>Boolean</code>](#Boolean)
+### number.inRange ⇒ [<code>Boolean</code>](#Boolean)
 Checks if n is between start and up to end
 
-**Kind**: instance method of [<code>Number</code>](#Number)  
+**Kind**: instance property of [<code>Number</code>](#Number)  
 
 | Param | Type | Default |
 | --- | --- | --- |
@@ -1974,60 +1974,60 @@ Object.isPlainObject({foo: 'bar'}); // true
 
 * [String](#String) : <code>object</code>
     * _instance_
-        * [.base64()](#String+base64) ⇒ [<code>String</code>](#String)
-        * [.base64Decode()](#String+base64Decode) ⇒ [<code>String</code>](#String)
-        * [.camelCase()](#String+camelCase) ⇒ [<code>String</code>](#String)
-        * [.capitalize([allWords])](#String+capitalize) ⇒ [<code>String</code>](#String)
-        * [.chars()](#String+chars) ⇒ [<code>Array.&lt;String&gt;</code>](#String)
-        * [.contains(str, [sensitive])](#String+contains) ⇒ [<code>Boolean</code>](#Boolean)
-        * [.decapitalize([allWords])](#String+decapitalize) ⇒ [<code>String</code>](#String)
-        * [.equals(value)](#String+equals) ⇒ [<code>Boolean</code>](#Boolean)
-        * [.forEach(fn)](#String+forEach) ⇒ <code>void</code>
-        * [.humanize()](#String+humanize) ⇒ [<code>String</code>](#String)
-        * [.isEmpty()](#String+isEmpty) ⇒ [<code>Boolean</code>](#Boolean)
-        * [.kebabCase()](#String+kebabCase) ⇒ [<code>String</code>](#String)
-        * [.lines()](#String+lines) ⇒ [<code>Array.&lt;String&gt;</code>](#String)
-        * [.map(fn)](#String+map) ⇒ [<code>Array.&lt;String&gt;</code>](#String)
-        * [.mask([num], [mask])](#String+mask) ⇒ [<code>String</code>](#String)
-        * [.pad(size, [value])](#String+pad) ⇒ [<code>String</code>](#String)
-        * [.parseInt([radix])](#String+parseInt) ⇒ [<code>Number</code>](#Number)
-        * [.pluralize([count])](#String+pluralize) ⇒ [<code>String</code>](#String)
-        * [.reduce(fn, initialValue)](#String+reduce) ⇒ <code>\*</code>
-        * [.reverse()](#String+reverse) ⇒ [<code>String</code>](#String)
-        * [.snakeCase()](#String+snakeCase) ⇒ [<code>String</code>](#String)
-        * [.swapCase()](#String+swapCase) ⇒ [<code>String</code>](#String)
-        * [.truncate(num, [truncateString])](#String+truncate) ⇒ [<code>String</code>](#String)
-        * [.words([pattern])](#String+words) ⇒ [<code>Array.&lt;String&gt;</code>](#String)
+        * [.base64](#String+base64) ⇒ [<code>String</code>](#String)
+        * [.base64Decode](#String+base64Decode) ⇒ [<code>String</code>](#String)
+        * [.camelCase](#String+camelCase) ⇒ [<code>String</code>](#String)
+        * [.capitalize](#String+capitalize) ⇒ [<code>String</code>](#String)
+        * [.chars](#String+chars) ⇒ [<code>Array.&lt;String&gt;</code>](#String)
+        * [.contains](#String+contains) ⇒ [<code>Boolean</code>](#Boolean)
+        * [.decapitalize](#String+decapitalize) ⇒ [<code>String</code>](#String)
+        * [.equals](#String+equals) ⇒ [<code>Boolean</code>](#Boolean)
+        * [.forEach](#String+forEach) ⇒ <code>void</code>
+        * [.humanize](#String+humanize) ⇒ [<code>String</code>](#String)
+        * [.isEmpty](#String+isEmpty) ⇒ [<code>Boolean</code>](#Boolean)
+        * [.kebabCase](#String+kebabCase) ⇒ [<code>String</code>](#String)
+        * [.lines](#String+lines) ⇒ [<code>Array.&lt;String&gt;</code>](#String)
+        * [.map](#String+map) ⇒ [<code>Array.&lt;String&gt;</code>](#String)
+        * [.mask](#String+mask) ⇒ [<code>String</code>](#String)
+        * [.pad](#String+pad) ⇒ [<code>String</code>](#String)
+        * [.parseInt](#String+parseInt) ⇒ [<code>Number</code>](#Number)
+        * [.pluralize](#String+pluralize) ⇒ [<code>String</code>](#String)
+        * [.reduce](#String+reduce) ⇒ <code>\*</code>
+        * [.reverse](#String+reverse) ⇒ [<code>String</code>](#String)
+        * [.snakeCase](#String+snakeCase) ⇒ [<code>String</code>](#String)
+        * [.swapCase](#String+swapCase) ⇒ [<code>String</code>](#String)
+        * [.truncate](#String+truncate) ⇒ [<code>String</code>](#String)
+        * [.words](#String+words) ⇒ [<code>Array.&lt;String&gt;</code>](#String)
     * _static_
         * [.isString](#String.isString) ⇒ [<code>Boolean</code>](#Boolean)
         * [.repeat](#String.repeat) ⇒ [<code>String</code>](#String)
 
 <a name="String+base64"></a>
 
-### string.base64() ⇒ [<code>String</code>](#String)
+### string.base64 ⇒ [<code>String</code>](#String)
 Encodes data with MIME base64
 
-**Kind**: instance method of [<code>String</code>](#String)  
+**Kind**: instance property of [<code>String</code>](#String)  
 **Example**  
 ```javascript
 'prototyped.js'.base64(); // 'cHJvdG90eXBlZC5qcw=='
 ```
 <a name="String+base64Decode"></a>
 
-### string.base64Decode() ⇒ [<code>String</code>](#String)
+### string.base64Decode ⇒ [<code>String</code>](#String)
 Decodes data encoded with MIME base64
 
-**Kind**: instance method of [<code>String</code>](#String)  
+**Kind**: instance property of [<code>String</code>](#String)  
 **Example**  
 ```javascript
 "cHJvdG90eXBlZC5qcw==".base64Decode(); // "prototyped.js"
 ```
 <a name="String+camelCase"></a>
 
-### string.camelCase() ⇒ [<code>String</code>](#String)
+### string.camelCase ⇒ [<code>String</code>](#String)
 Converts the string to camelcase
 
-**Kind**: instance method of [<code>String</code>](#String)  
+**Kind**: instance property of [<code>String</code>](#String)  
 **Example**  
 ```javascript
 "some_database_field_name".camelCase(); // "someDatabaseFieldName"
@@ -2038,10 +2038,10 @@ Converts the string to camelcase
 ```
 <a name="String+capitalize"></a>
 
-### string.capitalize([allWords]) ⇒ [<code>String</code>](#String)
+### string.capitalize ⇒ [<code>String</code>](#String)
 Returns the capitalized string
 
-**Kind**: instance method of [<code>String</code>](#String)  
+**Kind**: instance property of [<code>String</code>](#String)  
 
 | Param | Type | Default |
 | --- | --- | --- |
@@ -2054,20 +2054,20 @@ Returns the capitalized string
 ```
 <a name="String+chars"></a>
 
-### string.chars() ⇒ [<code>Array.&lt;String&gt;</code>](#String)
+### string.chars ⇒ [<code>Array.&lt;String&gt;</code>](#String)
 Returns an array of the string's character
 
-**Kind**: instance method of [<code>String</code>](#String)  
+**Kind**: instance property of [<code>String</code>](#String)  
 **Example**  
 ```javascript
 "Hello".chars(); // ["H", "e", "l", "l", "o"]
 ```
 <a name="String+contains"></a>
 
-### string.contains(str, [sensitive]) ⇒ [<code>Boolean</code>](#Boolean)
+### string.contains ⇒ [<code>Boolean</code>](#Boolean)
 Find out if the string contains the argument at any position
 
-**Kind**: instance method of [<code>String</code>](#String)  
+**Kind**: instance property of [<code>String</code>](#String)  
 
 | Param | Type | Default |
 | --- | --- | --- |
@@ -2081,10 +2081,10 @@ Find out if the string contains the argument at any position
 ```
 <a name="String+decapitalize"></a>
 
-### string.decapitalize([allWords]) ⇒ [<code>String</code>](#String)
+### string.decapitalize ⇒ [<code>String</code>](#String)
 Returns the decapitalized string
 
-**Kind**: instance method of [<code>String</code>](#String)  
+**Kind**: instance property of [<code>String</code>](#String)  
 
 | Param | Type | Default |
 | --- | --- | --- |
@@ -2097,10 +2097,10 @@ Returns the decapitalized string
 ```
 <a name="String+equals"></a>
 
-### string.equals(value) ⇒ [<code>Boolean</code>](#Boolean)
+### string.equals ⇒ [<code>Boolean</code>](#Boolean)
 Checks if the string is equal to the given value
 
-**Kind**: instance method of [<code>String</code>](#String)  
+**Kind**: instance property of [<code>String</code>](#String)  
 
 | Param | Type |
 | --- | --- |
@@ -2112,10 +2112,10 @@ Checks if the string is equal to the given value
 ```
 <a name="String+forEach"></a>
 
-### string.forEach(fn) ⇒ <code>void</code>
+### string.forEach ⇒ <code>void</code>
 Just like array.forEach
 
-**Kind**: instance method of [<code>String</code>](#String)  
+**Kind**: instance property of [<code>String</code>](#String)  
 
 | Param | Type |
 | --- | --- |
@@ -2127,21 +2127,21 @@ Just like array.forEach
 ```
 <a name="String+humanize"></a>
 
-### string.humanize() ⇒ [<code>String</code>](#String)
+### string.humanize ⇒ [<code>String</code>](#String)
 Converts an underscored, camelized, or dasherized string into a humanized one.
 Also removes beginning and ending whitespace
 
-**Kind**: instance method of [<code>String</code>](#String)  
+**Kind**: instance property of [<code>String</code>](#String)  
 **Example**  
 ```javascript
 '  capitalize dash-CamelCase_underscore trim  '.humanize(); // 'Capitalize dash camel case underscore trim'
 ```
 <a name="String+isEmpty"></a>
 
-### string.isEmpty() ⇒ [<code>Boolean</code>](#Boolean)
+### string.isEmpty ⇒ [<code>Boolean</code>](#Boolean)
 Checks if the string is empty
 
-**Kind**: instance method of [<code>String</code>](#String)  
+**Kind**: instance property of [<code>String</code>](#String)  
 **Example**  
 ```javascript
 "123".isEmpty(); // false
@@ -2149,10 +2149,10 @@ Checks if the string is empty
 ```
 <a name="String+kebabCase"></a>
 
-### string.kebabCase() ⇒ [<code>String</code>](#String)
+### string.kebabCase ⇒ [<code>String</code>](#String)
 Converts a string to kebab case
 
-**Kind**: instance method of [<code>String</code>](#String)  
+**Kind**: instance property of [<code>String</code>](#String)  
 **Example**  
 ```javascript
 "camelCase".kebabCase(); // "camel-case"
@@ -2165,20 +2165,20 @@ Converts a string to kebab case
 ```
 <a name="String+lines"></a>
 
-### string.lines() ⇒ [<code>Array.&lt;String&gt;</code>](#String)
+### string.lines ⇒ [<code>Array.&lt;String&gt;</code>](#String)
 Splits a multiline string into an array of lines
 
-**Kind**: instance method of [<code>String</code>](#String)  
+**Kind**: instance property of [<code>String</code>](#String)  
 **Example**  
 ```javascript
 'This\nis a\nmultiline\nstring.\n'.lines(); // ['This', 'is a', 'multiline', 'string.' , '']
 ```
 <a name="String+map"></a>
 
-### string.map(fn) ⇒ [<code>Array.&lt;String&gt;</code>](#String)
+### string.map ⇒ [<code>Array.&lt;String&gt;</code>](#String)
 Just like array.map
 
-**Kind**: instance method of [<code>String</code>](#String)  
+**Kind**: instance property of [<code>String</code>](#String)  
 
 | Param | Type |
 | --- | --- |
@@ -2190,10 +2190,10 @@ Just like array.map
 ```
 <a name="String+mask"></a>
 
-### string.mask([num], [mask]) ⇒ [<code>String</code>](#String)
+### string.mask ⇒ [<code>String</code>](#String)
 Replaces all but the last num of characters with the specified mask character
 
-**Kind**: instance method of [<code>String</code>](#String)  
+**Kind**: instance property of [<code>String</code>](#String)  
 
 | Param | Type | Default |
 | --- | --- | --- |
@@ -2208,10 +2208,10 @@ Replaces all but the last num of characters with the specified mask character
 ```
 <a name="String+pad"></a>
 
-### string.pad(size, [value]) ⇒ [<code>String</code>](#String)
+### string.pad ⇒ [<code>String</code>](#String)
 FillS the string with the given value until the string reaches the specified size
 
-**Kind**: instance method of [<code>String</code>](#String)  
+**Kind**: instance property of [<code>String</code>](#String)  
 
 | Param | Type | Default |
 | --- | --- | --- |
@@ -2225,10 +2225,10 @@ FillS the string with the given value until the string reaches the specified siz
 ```
 <a name="String+parseInt"></a>
 
-### string.parseInt([radix]) ⇒ [<code>Number</code>](#Number)
+### string.parseInt ⇒ [<code>Number</code>](#Number)
 Converts string to an integer of the specified radix
 
-**Kind**: instance method of [<code>String</code>](#String)  
+**Kind**: instance property of [<code>String</code>](#String)  
 
 | Param | Type |
 | --- | --- |
@@ -2240,10 +2240,10 @@ Converts string to an integer of the specified radix
 ```
 <a name="String+pluralize"></a>
 
-### string.pluralize([count]) ⇒ [<code>String</code>](#String)
+### string.pluralize ⇒ [<code>String</code>](#String)
 Returns the singular or plural form of the word based on the input number
 
-**Kind**: instance method of [<code>String</code>](#String)  
+**Kind**: instance property of [<code>String</code>](#String)  
 
 | Param | Type |
 | --- | --- |
@@ -2260,10 +2260,10 @@ Returns the singular or plural form of the word based on the input number
 ```
 <a name="String+reduce"></a>
 
-### string.reduce(fn, initialValue) ⇒ <code>\*</code>
+### string.reduce ⇒ <code>\*</code>
 Just like array.reduce
 
-**Kind**: instance method of [<code>String</code>](#String)  
+**Kind**: instance property of [<code>String</code>](#String)  
 
 | Param | Type |
 | --- | --- |
@@ -2276,20 +2276,20 @@ Just like array.reduce
 ```
 <a name="String+reverse"></a>
 
-### string.reverse() ⇒ [<code>String</code>](#String)
+### string.reverse ⇒ [<code>String</code>](#String)
 Reverses the string
 
-**Kind**: instance method of [<code>String</code>](#String)  
+**Kind**: instance property of [<code>String</code>](#String)  
 **Example**  
 ```javascript
 "foobar".reverse(); // "raboof"
 ```
 <a name="String+snakeCase"></a>
 
-### string.snakeCase() ⇒ [<code>String</code>](#String)
+### string.snakeCase ⇒ [<code>String</code>](#String)
 Converts a string to snake case
 
-**Kind**: instance method of [<code>String</code>](#String)  
+**Kind**: instance property of [<code>String</code>](#String)  
 **Example**  
 ```javascript
 'camelCase'.snakeCase(); // 'camel_case'
@@ -2302,20 +2302,20 @@ Converts a string to snake case
 ```
 <a name="String+swapCase"></a>
 
-### string.swapCase() ⇒ [<code>String</code>](#String)
+### string.swapCase ⇒ [<code>String</code>](#String)
 Returns a copy of the string in which all the case-based characters have had their case swapped
 
-**Kind**: instance method of [<code>String</code>](#String)  
+**Kind**: instance property of [<code>String</code>](#String)  
 **Example**  
 ```javascript
 'Hello'.swapCase(); // 'hELLO'
 ```
 <a name="String+truncate"></a>
 
-### string.truncate(num, [truncateString]) ⇒ [<code>String</code>](#String)
+### string.truncate ⇒ [<code>String</code>](#String)
 Truncates a string up to a specified length
 
-**Kind**: instance method of [<code>String</code>](#String)  
+**Kind**: instance property of [<code>String</code>](#String)  
 
 | Param | Type | Default |
 | --- | --- | --- |
@@ -2329,10 +2329,10 @@ Truncates a string up to a specified length
 ```
 <a name="String+words"></a>
 
-### string.words([pattern]) ⇒ [<code>Array.&lt;String&gt;</code>](#String)
+### string.words ⇒ [<code>Array.&lt;String&gt;</code>](#String)
 Converts a given string into an array of words
 
-**Kind**: instance method of [<code>String</code>](#String)  
+**Kind**: instance property of [<code>String</code>](#String)  
 
 | Param | Type | Default |
 | --- | --- | --- |

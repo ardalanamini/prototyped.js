@@ -1,5 +1,6 @@
 
 import * as method from "./method";
+import * as utils from "../../utils";
 
 export { };
 
@@ -17,6 +18,4 @@ declare global {
  * @example
  * 'Hello'.forEach((char, index) => char == 'o' && consol.log(index)); // console logs 4
  */
-String.prototype.forEach = function(fn) {
-  return method(this as string, fn);
-};
+String.prototype.forEach = utils.methodToPrototype(method);

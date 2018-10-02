@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -17,6 +18,4 @@ declare global {
  * ["foo", "bar", "hello", "world"].whereLike("o"); // ["foo","hello","world"]
  * [{foo:"hello"}, {foo:"bar"}, {foo:"world"}].whereLike("foo", /o/i); // [{foo:"hello"},{foo:"world"}]
  */
-Array.prototype.whereLike = function(field: string | RegExp, value?: string | RegExp) {
-  return method(this, field, value);
-};
+Array.prototype.whereLike = utils.methodToPrototype(method);

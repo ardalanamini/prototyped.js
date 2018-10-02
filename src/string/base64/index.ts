@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface String {
@@ -13,6 +14,4 @@ declare global {
  * @example
  * 'prototyped.js'.base64(); // 'cHJvdG90eXBlZC5qcw=='
  */
-String.prototype.base64 = function() {
-  return method(this as string);
-};
+String.prototype.base64 = utils.methodToPrototype(method);

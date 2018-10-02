@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface Function {
@@ -17,6 +18,4 @@ declare global {
  * test.once('a'); // logs 'a'
  * test.once('b'); // no log this time
  */
-Function.prototype.once = function(...args) {
-  return method(this, ...args);
-};
+Function.prototype.once = utils.methodToPrototype(method);

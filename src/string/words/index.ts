@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface String {
@@ -15,6 +16,4 @@ declare global {
  * 'I love javaScript!!'.words(); // ["I", "love", "javaScript"]
  * 'python, javaScript & coffee'.words(); // ["python", "javaScript", "coffee"]
  */
-String.prototype.words = function(pattern) {
-  return method(this as string, pattern);
-};
+String.prototype.words = utils.methodToPrototype(method);

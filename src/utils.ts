@@ -18,6 +18,17 @@ export const pathToKeys = (path: string) => path
   });
 
 /**
+ * Converts method to prototype function
+ * @private
+ * @param {Function} method
+ * @returns {Function}
+ */
+export const methodToPrototype = (method: (...args: any[]) => any) => function (...args: any[]) {
+  // @ts-ignore
+  return method.apply(0, [this].concat(args));
+};
+
+/**
  *
  * @private
  * @param {*} obj

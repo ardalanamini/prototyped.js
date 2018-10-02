@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface String {
@@ -15,6 +16,4 @@ declare global {
  * 'foo bar'.capitalize(); // 'Foo bar'
  * 'hello world'.capitalize(true); // 'Hello World'
  */
-String.prototype.capitalize = function(allWords) {
-  return method(this as string, allWords);
-};
+String.prototype.capitalize = utils.methodToPrototype(method);

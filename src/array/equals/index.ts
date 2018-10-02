@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -14,6 +15,4 @@ declare global {
  * @example
  * [1,2,3].equals([2,1,3]); // false
  */
-Array.prototype.equals = function(value) {
-  return method(this, value);
-};
+Array.prototype.equals = utils.methodToPrototype(method);

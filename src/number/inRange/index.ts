@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface Number {
@@ -15,6 +16,4 @@ declare global {
  * @example
  * (4).inRange(8); // true
  */
-Number.prototype.inRange = function(end, start) {
-  return method(this as number, end, start);
-};
+Number.prototype.inRange = utils.methodToPrototype(method);

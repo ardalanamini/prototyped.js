@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -15,6 +16,4 @@ declare global {
  * [{ foo: ["bar 1", "bar 2"] }, { foo: ["bar 3", "bar 4", "bar 5"] }].unwind("foo");
  * // [{ foo: "bar 1" }, { foo: "bar 2" }, { foo: "bar 3" }, { foo: "bar 4" }, { foo: "bar 5" }]
  */
-Array.prototype.unwind = function(path) {
-  return method(this, path);
-};
+Array.prototype.unwind = utils.methodToPrototype(method);

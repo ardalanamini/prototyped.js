@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -14,6 +15,4 @@ declare global {
  * @example
  * [1, 2, 3].clone(); // [1, 2, 3]
  */
-Array.prototype.clone = function(deep) {
-  return method(this, deep);
-};
+Array.prototype.clone = utils.methodToPrototype(method);
