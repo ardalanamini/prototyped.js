@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -15,6 +16,4 @@ declare global {
  * [1, 1, 2, 1, 2, 3].count(); // 6
  * [1, 1, 2, 1, 2, 3].count(1); // 3
  */
-Array.prototype.count = function(value) {
-  return method(this, value);
-};
+Array.prototype.count = utils.methodToPrototype(method);

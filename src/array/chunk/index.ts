@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -14,6 +15,4 @@ declare global {
  * @example
  * [1, 2, 3, 4, 5].chunk(2); // [[1,2],[3,4],[5]]
  */
-Array.prototype.chunk = function(size) {
-  return method(this, size);
-};
+Array.prototype.chunk = utils.methodToPrototype(method);

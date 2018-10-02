@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -15,6 +16,4 @@ declare global {
  * @example
  * [{a: {b: 'first'}}, {a: {b: 'second'}}, {a: {b: 'third'}}].implode('a.b', ', '); // 'first, second, third'
  */
-Array.prototype.implode = function(path, separator) {
-  return method(this, path, separator);
-};
+Array.prototype.implode = utils.methodToPrototype(method);

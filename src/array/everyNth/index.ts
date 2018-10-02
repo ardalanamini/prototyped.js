@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -13,6 +14,4 @@ declare global {
  * @example
  * [1, 2, 3, 4, 5, 6].everyNth(2); // [ 2, 4, 6 ]
  */
-Array.prototype.everyNth = function(nth) {
-  return method(this, nth);
-};
+Array.prototype.everyNth = utils.methodToPrototype(method);

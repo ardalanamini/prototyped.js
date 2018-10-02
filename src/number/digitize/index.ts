@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface Number {
@@ -13,6 +14,4 @@ declare global {
  * @example
  * (123).digitize(); // [1, 2, 3]
  */
-Number.prototype.digitize = function() {
-  return method(this as number);
-};
+Number.prototype.digitize = utils.methodToPrototype(method);

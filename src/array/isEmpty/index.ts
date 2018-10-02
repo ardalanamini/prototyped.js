@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -14,6 +15,4 @@ declare global {
  * [1,2].isEmpty(); // false
  * [].isEmpty(); // true
  */
-Array.prototype.isEmpty = function() {
-  return method(this);
-};
+Array.prototype.isEmpty = utils.methodToPrototype(method);

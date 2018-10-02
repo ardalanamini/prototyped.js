@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface Number {
@@ -14,6 +15,4 @@ declare global {
  * @example
  * (22).equals("22"); // false
  */
-Number.prototype.equals = function(value) {
-  return method(this as number, value);
-};
+Number.prototype.equals = utils.methodToPrototype(method);

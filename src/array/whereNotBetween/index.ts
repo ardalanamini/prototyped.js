@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -18,6 +19,4 @@ declare global {
  * [1, 2, 2, 3, 4, 4, 5].whereNotBetween(3,4); // [1,2,2,5]
  * [{count:1}, {count:20}, {count:15}].whereNotBetween("count", 1, 15); // [{count:20}]
  */
-Array.prototype.whereNotBetween = function(field: string | any, start: any, end?: any) {
-  return method(this, field, start, end);
-};
+Array.prototype.whereNotBetween = utils.methodToPrototype(method);

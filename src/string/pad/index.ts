@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface String {
@@ -16,6 +17,4 @@ declare global {
  * "123".pad(5, 0); // "12300"
  * "123".pad(-5, 0); // "00123"
  */
-String.prototype.pad = function(size, value) {
-  return method(this as string, size, value);
-};
+String.prototype.pad = utils.methodToPrototype(method);

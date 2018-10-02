@@ -1,5 +1,5 @@
-
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface String {
@@ -16,6 +16,4 @@ declare global {
  * @example
  * '123'.reduce((prev, char) => prev + (+char), 0); // 6
  */
-String.prototype.reduce = function(fn, initialValue) {
-  return method(this as string, fn, initialValue);
-};
+String.prototype.reduce = utils.methodToPrototype(method);

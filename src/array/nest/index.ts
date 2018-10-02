@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -22,6 +23,4 @@ declare global {
  * ];
  * comments.nest("comment_id"); // [{ id: 1, comment_id: null, children: [...] }]
  */
-Array.prototype.nest = function(link, key): any {
-  return method(this, link, key);
-};
+Array.prototype.nest = utils.methodToPrototype(method);

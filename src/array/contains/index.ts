@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -14,6 +15,4 @@ declare global {
  * @example
  * [1, 2, 3].contains(2); // true
  */
-Array.prototype.contains = function(value) {
-  return method(this, value);
-};
+Array.prototype.contains = utils.methodToPrototype(method);

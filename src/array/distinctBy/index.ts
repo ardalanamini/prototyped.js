@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -14,6 +15,4 @@ declare global {
  * @example
  * [1, 2, 2, 3, 4, 4, 5].distinctBy((a, b) => a === b); // [1,2,3,4,5]
  */
-Array.prototype.distinctBy = function(fn) {
-  return method(this, fn);
-};
+Array.prototype.distinctBy = utils.methodToPrototype(method);

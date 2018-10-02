@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface String {
@@ -13,6 +14,4 @@ declare global {
  * @example
  * "foobar".reverse(); // "raboof"
  */
-String.prototype.reverse = function() {
-  return method(this as string);
-};
+String.prototype.reverse = utils.methodToPrototype(method);

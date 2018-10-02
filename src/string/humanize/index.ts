@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface String {
@@ -14,6 +15,4 @@ declare global {
  * @example
  * '  capitalize dash-CamelCase_underscore trim  '.humanize(); // 'Capitalize dash camel case underscore trim'
  */
-String.prototype.humanize = function() {
-  return method(this as string);
-};
+String.prototype.humanize = utils.methodToPrototype(method);

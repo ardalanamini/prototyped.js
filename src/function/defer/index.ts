@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface Function {
@@ -15,6 +16,4 @@ declare global {
  * const test = (msg) => console.log(msg);
  * test.defer('a'), test('b'); // logs 'b' then 'a'
  */
-Function.prototype.defer = function(...args) {
-  return method(this, ...args);
-};
+Function.prototype.defer = utils.methodToPrototype(method);

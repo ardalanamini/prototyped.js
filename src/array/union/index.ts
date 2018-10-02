@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -14,6 +15,4 @@ declare global {
  * @example
  * [1, 2, 3].union([4, 3, 2]); // [1,2,3,4]
  */
-Array.prototype.union = function(array) {
-  return method(this, array);
-};
+Array.prototype.union = utils.methodToPrototype(method);

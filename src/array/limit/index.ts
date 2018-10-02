@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -15,9 +16,7 @@ declare global {
  * @example
  * [2, 1, 2, 5].limit(2); // [2,1]
  */
-Array.prototype.limit = function(limit: number) {
-  return method(this, limit);
-};
+Array.prototype.limit = utils.methodToPrototype(method);
 
 /**
  * An alias of Array.prototype.skip

@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface String {
@@ -19,6 +20,4 @@ declare global {
  * 'IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML'.snakeCase();
  * // 'i_am_listening_to_fm_while_loading_different_url_on_my_browser_and_also_editing_some_xml_and_html'
  */
-String.prototype.snakeCase = function() {
-  return method(this as string);
-};
+String.prototype.snakeCase = utils.methodToPrototype(method);

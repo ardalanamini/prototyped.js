@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -15,6 +16,4 @@ declare global {
  * ['five', 'three', 'one'].sortBy('length'); // ['one', 'five', 'three']
  * ['five', 'three', 'one'].sortBy((value) => -value.length); // ['three', 'five', 'one']
  */
-Array.prototype.sortBy = function(fn) {
-  return method(this, fn);
-};
+Array.prototype.sortBy = utils.methodToPrototype(method);

@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -15,6 +16,4 @@ declare global {
  * [6.1, 4.2, 6.3].groupBy(Math.floor); // {4: [4.2], 6: [6.1, 6.3]}
  * ['one', 'two', 'three'].groupBy('length'); // {3: ['one', 'two'], 5: ['three']}
  */
-Array.prototype.groupBy = function(fn) {
-  return method(this, fn);
-};
+Array.prototype.groupBy = utils.methodToPrototype(method);

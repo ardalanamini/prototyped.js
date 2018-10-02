@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface String {
@@ -16,6 +17,4 @@ declare global {
  * 'boomerang'.truncate(7); // 'boom...'
  * 'boomerang'.truncate(7, '....'); // 'boo....'
  */
-String.prototype.truncate = function(num, truncateString) {
-  return method(this as string, num, truncateString);
-};
+String.prototype.truncate = utils.methodToPrototype(method);

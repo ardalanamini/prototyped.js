@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface String {
@@ -13,6 +14,4 @@ declare global {
  * @example
  * 'Hello'.swapCase(); // 'hELLO'
  */
-String.prototype.swapCase = function() {
-  return method(this as string);
-};
+String.prototype.swapCase = utils.methodToPrototype(method);

@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -17,9 +18,7 @@ declare global {
  * [{a: 1}, {a: 2}, {a: 3}].average("a"); // 2
  * [{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].average("a.b"); // 2
  */
-Array.prototype.average = function(path) {
-  return method(this, path);
-};
+Array.prototype.average = utils.methodToPrototype(method);
 
 /**
  * An alias of Array.prototype.average

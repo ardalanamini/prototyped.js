@@ -1,4 +1,5 @@
 import * as method from "./method";
+import * as utils from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -14,6 +15,4 @@ declare global {
  * @example
  * [1, 2].crossJoin(['a', 'b']); // [[1, 'a'], [1, 'b'], [2, 'a'], [2, 'b']]
  */
-Array.prototype.crossJoin = function(array) {
-  return method(this, array);
-};
+Array.prototype.crossJoin = utils.methodToPrototype(method);
