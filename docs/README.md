@@ -79,6 +79,7 @@
         * [.sortBy(fn)](#Array+sortBy) ⇒ [<code>Array</code>](#Array)
         * [.sum([path])](#Array+sum) ⇒ [<code>Number</code>](#Number)
         * [.tail()](#Array+tail) ⇒ [<code>Array</code>](#Array)
+        * [.delimiter([delimiter])](#Array+delimiter) ⇒ [<code>String</code>](#String)
         * [.union(array)](#Array+union) ⇒ [<code>Array</code>](#Array)
         * [.unwind(path)](#Array+unwind) ⇒ <code>\*</code>
         * [.where(field, [operator], [value])](#Array+where) ⇒ [<code>Array</code>](#Array)
@@ -830,6 +831,22 @@ Returns all elements in an array except for the first one
 ```javascript
 [1, 2, 3].tail(); // [2, 3]
 ```
+<a name="Array+delimiter"></a>
+
+### array.delimiter([delimiter]) ⇒ [<code>String</code>](#String)
+Converts a 2D array to a comma-separated values (CSV) string
+
+**Kind**: instance method of [<code>Array</code>](#Array)  
+
+| Param | Type | Default |
+| --- | --- | --- |
+| [delimiter] | [<code>String</code>](#String) | <code>&quot;,&quot;</code> | 
+
+**Example**  
+```javascript
+[['a', 'b'], ['c', 'd']].toCSV(); // '"a","b"\n"c","d"'
+[['a', 'b'], ['c', 'd']].toCSV(';'); // '"a";"b"\n"c";"d"'
+```
 <a name="Array+union"></a>
 
 ### array.union(array) ⇒ [<code>Array</code>](#Array)
@@ -1560,6 +1577,7 @@ Number.isNumber(2); // true
         * [.$camelCaseKeys()](#Object+$camelCaseKeys) ⇒ [<code>Object</code>](#Object)
         * [.$clone([deep])](#Object+$clone) ⇒ [<code>Object</code>](#Object)
         * [.$defaults(...sources)](#Object+$defaults) ⇒ [<code>Object</code>](#Object)
+        * [.$dig(target)](#Object+$dig) ⇒ <code>\*</code>
         * [.$empty()](#Object+$empty)
         * [.$equals(obj)](#Object+$equals) ⇒ [<code>Boolean</code>](#Boolean)
         * [.$forEach(fn)](#Object+$forEach)
@@ -1640,6 +1658,29 @@ Assigns object in reverse by Object.assign
 **Example**  
 ```javascript
 ({ a: 0 }).$defaults({ a: 1, b: 2 }, { b: 3 }); // { a: 0, b: 2 }
+```
+<a name="Object+$dig"></a>
+
+### object.$dig(target) ⇒ <code>\*</code>
+Returns the target value in a nested JSON object, based on the given key
+
+**Kind**: instance method of [<code>Object</code>](#Object)  
+
+| Param | Type |
+| --- | --- |
+| target | [<code>String</code>](#String) | 
+
+**Example**  
+```javascript
+const data = {
+ level1: {
+  level2: {
+   level3: 'some data'
+  }
+ }
+};
+dig(data, 'level3'); // 'some data'
+dig(data, 'level4'); // undefined
 ```
 <a name="Object+$empty"></a>
 
