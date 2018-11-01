@@ -4,6 +4,7 @@ import "./assign";
 import "./camelCaseKeys";
 import "./clone";
 import "./defaults";
+import "./dig";
 import "./empty";
 import "./equals";
 import "./forEach";

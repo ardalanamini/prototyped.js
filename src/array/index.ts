@@ -48,6 +48,7 @@ import "./skip";
 import "./sortBy";
 import "./sum";
 import "./tail";
+import "./toCSV";
 import "./union";
 import "./unwind";
 import "./where";

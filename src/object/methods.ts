@@ -2,6 +2,7 @@ import * as assign from "./assign/method";
 import * as camelCaseKeys from "./camelCaseKeys/method";
 import * as clone from "./clone/method";
 import * as defaults from "./defaults/method";
+import * as dig from "./dig/method";
 import * as empty from "./empty/method";
 import * as equals from "./equals/method";
 import * as forEach from "./forEach/method";
@@ -30,6 +31,7 @@ export {
   camelCaseKeys,
   clone,
   defaults,
+  dig,
   empty,
   equals,
   forEach,

@@ -46,6 +46,7 @@ import * as skip from "./skip/method";
 import * as sortBy from "./sortBy/method";
 import * as sum from "./sum/method";
 import * as tail from "./tail/method";
+import * as toCSV from "./toCSV/method";
 import * as union from "./union/method";
 import * as unwind from "./unwind/method";
 import * as where from "./where/method";
@@ -109,6 +110,7 @@ export {
   sortBy,
   sum,
   tail,
+  toCSV,
   union,
   unwind,
   where,
