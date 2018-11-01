@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface String {
@@ -10,9 +10,10 @@ declare global {
 /**
  * Converts an underscored, camelized, or dasherized string into a humanized one.
  * Also removes beginning and ending whitespace
- * @memberof String
+ * @memberof String.prototype
+ * @function humanize
  * @returns {String}
  * @example
  * '  capitalize dash-CamelCase_underscore trim  '.humanize(); // 'Capitalize dash camel case underscore trim'
  */
-String.prototype.humanize = utils.methodToPrototype(method);
+addPrototype(String, "humanize", method);

@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -9,11 +9,12 @@ declare global {
 
 /**
  * Counts the occurrences of a value in an array
- * @memberof Array
+ * @memberof Array.prototype
+ * @function count
  * @param {*} [value]
  * @returns {Number}
  * @example
  * [1, 1, 2, 1, 2, 3].count(); // 6
  * [1, 1, 2, 1, 2, 3].count(1); // 3
  */
-Array.prototype.count = utils.methodToPrototype(method);
+addPrototype(Array, "count", method);

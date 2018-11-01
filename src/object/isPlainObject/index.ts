@@ -9,6 +9,7 @@ declare global {
 /**
  * Returns true if the given argument is a plain object
  * @memberof Object
+ * @function isPlainObject
  * @param {*} arg
  * @returns {Boolean}
  * @example

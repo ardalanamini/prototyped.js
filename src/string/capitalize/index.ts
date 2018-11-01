@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface String {
@@ -9,11 +9,12 @@ declare global {
 
 /**
  * Returns the capitalized string
- * @memberof String
+ * @memberof String.prototype
+ * @function capitalize
  * @param {Boolean} [allWords=false]
  * @returns {String}
  * @example
  * 'foo bar'.capitalize(); // 'Foo bar'
  * 'hello world'.capitalize(true); // 'Hello World'
  */
-String.prototype.capitalize = utils.methodToPrototype(method);
+addPrototype(String, "capitalize", method);

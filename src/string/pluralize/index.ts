@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface String {
@@ -9,7 +9,8 @@ declare global {
 
 /**
  * Returns the singular or plural form of the word based on the input number
- * @memberof String
+ * @memberof String.prototype
+ * @function pluralize
  * @param {Number} [count]
  * @returns {String}
  * @example
@@ -20,4 +21,4 @@ declare global {
  * 'person'.pluralize(2); // 'people'
  * 'people'.pluralize(1); // 'person'
  */
-String.prototype.pluralize = utils.methodToPrototype(method);
+addPrototype(String, "pluralize", method);

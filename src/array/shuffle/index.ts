@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -9,10 +9,11 @@ declare global {
 
 /**
  * Randomizes the order of the values of an array, returning a new array
- * @memberof Array
+ * @memberof Array.prototype
+ * @function shuffle
  * @returns {Array}
  * @example
  * const foo = [1, 2, 3];
  * foo.shuffle(); // [2,3,1], foo = [1,2,3]
  */
-Array.prototype.shuffle = utils.methodToPrototype(method);
+addPrototype(Array, "shuffle", method);

@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface String {
@@ -9,11 +9,12 @@ declare global {
 
 /**
  * Returns the decapitalized string
- * @memberof String
+ * @memberof String.prototype
+ * @function decapitalize
  * @param {Boolean} [allWords=false]
  * @returns {String}
  * @example
  * 'Foo Bar'.decapitalize(); // 'foo Bar'
  * 'Hello World'.decapitalize(true); // 'hello world'
  */
-String.prototype.decapitalize = utils.methodToPrototype(method);
+addPrototype(String, "decapitalize", method);

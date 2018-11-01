@@ -10,6 +10,7 @@ declare global {
  * Initializes an array containing the numbers in the specified range where start
  * and end are inclusive with there common difference step
  * @memberof Array
+ * @function range
  * @param {Number} end
  * @param {Number} [start=0]
  * @param {Number} [step=1]

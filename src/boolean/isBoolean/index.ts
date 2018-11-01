@@ -9,6 +9,7 @@ declare global {
 /**
  * Returns true if the given argument is a boolean
  * @memberof Boolean
+ * @function isBoolean
  * @param {*} arg
  * @returns {Boolean}
  * @example

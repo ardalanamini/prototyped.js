@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -9,9 +9,10 @@ declare global {
 
 /**
  * Deep flattens an array
- * @memberof Array
+ * @memberof Array.prototype
+ * @function deepFlatten
  * @returns {Array}
  * @example
  * [1, [2], [[3], 4], 5].deepFlatten(); // [1,2,3,4,5]
  */
-Array.prototype.deepFlatten = utils.methodToPrototype(method);
+addPrototype(Array, "deepFlatten", method);

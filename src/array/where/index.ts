@@ -1,6 +1,6 @@
 import * as method from "./method";
 import * as types from "../../types";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -13,7 +13,8 @@ declare global {
 
 /**
  * Filters the array
- * @memberof Array
+ * @memberof Array.prototype
+ * @function where
  * @param {String|*} field
  * @param {String|*} [operator]
  * @param {*} [value]
@@ -24,4 +25,4 @@ declare global {
  * [1, 2, 2, 3, 4, 4, 5].where("<", 4); // [1,2,2,3]
  * [{count:1}, {count:20}, {count:15}].where("count", ">=", 15); // [{count:20},{count:15}]
  */
-Array.prototype.where = utils.methodToPrototype(method);
+addPrototype(Array, "where", method);

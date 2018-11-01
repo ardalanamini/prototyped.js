@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -9,9 +9,10 @@ declare global {
 
 /**
  * Returns the last item of the array
- * @memberof Array
+ * @memberof Array.prototype
+ * @function last
  * @returns {*}
  * @example
  * [1, 2, 3].last(); // 3
  */
-Array.prototype.last = utils.methodToPrototype(method);
+addPrototype(Array, "last", method);

@@ -1,6 +1,6 @@
 {
   "name": "prototyped.js",
-  "version": "0.20.1",
+  "version": "0.20.2",
   "description": "Common typescript ready prototypes available in both es5 and es6",
   "author": "Ardalan Amini <ardalanamini22@gmail.com> [https://github.com/ardalanamini]",
   "license": "MIT",
@@ -169,8 +169,8 @@
     "regenerate:package.json": "node scripts/regenerate-package-json.js"
   },
   "devDependencies": {
-    "@types/jest": "^23.3.2",
-    "@types/node": "^10.11.3",
+    "@types/jest": "^23.3.9",
+    "@types/node": "^10.12.2",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
     "codecov": "^3.1.0",
@@ -178,10 +178,11 @@
     "fs-readdir-recursive": "^1.1.0",
     "jest": "^23.6.0",
     "jsdoc-to-markdown": "^4.0.1",
+    "pre-commit": "^1.2.2",
     "rimraf": "^2.6.2",
-    "ts-jest": "^23.10.3",
+    "ts-jest": "^23.10.4",
     "tslint": "^5.11.0",
-    "typescript": "^3.1.1",
+    "typescript": "^3.1.6",
     "uglify-es": "^3.3.9",
     "uglify-js": "^3.4.9"
   },
@@ -197,5 +198,6 @@
       "<rootDir>/src/**/test\\.ts",
       "<rootDir>/src/**/*\\.test\\.ts"
     ]
-  }
+  },
+  "pre-commit": "prepublishOnly"
 }

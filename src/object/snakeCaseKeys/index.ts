@@ -16,6 +16,4 @@ declare global {
  * const myObj = { FirstName: "Adam", "last-name": "Smith" };
  * const myObjLower = myObj.$snakeCaseKeys(); // {first_name: "Adam", last_name: "Smith"}
  */
-addPrototype(Object, "$snakeCaseKeys", function(this: object) {
-  return method(this);
-});
+addPrototype(Object, "$snakeCaseKeys", method);

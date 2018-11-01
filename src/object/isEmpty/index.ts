@@ -16,6 +16,4 @@ declare global {
  * ({ a: 1 }).$isEmpty(); // false
  * ({}).$isEmpty(); // true
  */
-addPrototype(Object, "$isEmpty", function(this: object) {
-  return method(this);
-});
+addPrototype(Object, "$isEmpty", method);

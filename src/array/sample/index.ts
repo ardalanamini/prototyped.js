@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -9,9 +9,10 @@ declare global {
 
 /**
  * Returns a random element from an array
- * @memberof Array
+ * @memberof Array.prototype
+ * @function sample
  * @returns {*}
  * @example
  * [3, 7, 9, 11].sample(); // 9
  */
-Array.prototype.sample = utils.methodToPrototype(method);
+addPrototype(Array, "sample", method);

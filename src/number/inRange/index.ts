@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface Number {
@@ -9,11 +9,12 @@ declare global {
 
 /**
  * Checks if n is between start and up to end
- * @memberof Number
+ * @memberof Number.prototype
+ * @function inRange
  * @param {Number} end
  * @param {Number} [start=0]
  * @returns {Boolean}
  * @example
  * (4).inRange(8); // true
  */
-Number.prototype.inRange = utils.methodToPrototype(method);
+addPrototype(Number, "inRange", method);

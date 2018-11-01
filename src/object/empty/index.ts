@@ -16,6 +16,4 @@ declare global {
  * obj.$empty();
  * // obj = {};
  */
-addPrototype(Object, "$empty", function(this: object) {
-  return method(this);
-});
+addPrototype(Object, "$empty", method);

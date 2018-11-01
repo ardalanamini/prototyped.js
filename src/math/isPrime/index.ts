@@ -9,6 +9,7 @@ declare global {
 /**
  * Checks if the provided integer is a prime number
  * @memberof Math
+ * @function isPrime
  * @param {Number} num
  * @returns {Boolean}
  * @example

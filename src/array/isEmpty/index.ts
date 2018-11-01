@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -9,10 +9,11 @@ declare global {
 
 /**
  * Checks if the array is empty
- * @memberof Array
+ * @memberof Array.prototype
+ * @function isEmpty
  * @returns {Boolean}
  * @example
  * [1,2].isEmpty(); // false
  * [].isEmpty(); // true
  */
-Array.prototype.isEmpty = utils.methodToPrototype(method);
+addPrototype(Array, "isEmpty", method);

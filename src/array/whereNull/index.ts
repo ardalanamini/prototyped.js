@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -10,11 +10,12 @@ declare global {
 
 /**
  * Filters the array
- * @memberof Array
+ * @memberof Array.prototype
+ * @function whereNull
  * @param {String} [field]
  * @returns {Array}
  * @example
  * [1, 2, 2, 3, null, undefined, 5].whereNull(); // [null, undefined]
  * [{count:1}, {count:null}, {foo:15}].whereNull("count"); // [{count:null},{foo:15}]
  */
-Array.prototype.whereNull = utils.methodToPrototype(method);
+addPrototype(Array, "whereNull", method);

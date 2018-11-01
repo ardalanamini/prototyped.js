@@ -19,6 +19,4 @@ declare global {
  * };
  * users.$forEach(u => console.log(u.age)); // console logs 40 and 1
  */
-addPrototype(Object, "$forEach", function(this: object, fn: (value: any, key: string, object: object) => void) {
-  return method(this, fn);
-});
+addPrototype(Object, "$forEach", method);

@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface String {
@@ -9,10 +9,11 @@ declare global {
 
 /**
  * Checks if the string is equal to the given value
- * @memberof String
+ * @memberof String.prototype
+ * @function equals
  * @param {*} value
  * @returns {Boolean}
  * @example
  * "hello".equals("Hello"); // false
  */
-String.prototype.equals = utils.methodToPrototype(method);
+addPrototype(String, "equals", method);

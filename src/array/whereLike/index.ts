@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -10,7 +10,8 @@ declare global {
 
 /**
  * Filters the array
- * @memberof Array
+ * @memberof Array.prototype
+ * @function whereLike
  * @param {String|RegExp} field
  * @param {String|RegExp} [value]
  * @returns {Array}
@@ -18,4 +19,4 @@ declare global {
  * ["foo", "bar", "hello", "world"].whereLike("o"); // ["foo","hello","world"]
  * [{foo:"hello"}, {foo:"bar"}, {foo:"world"}].whereLike("foo", /o/i); // [{foo:"hello"},{foo:"world"}]
  */
-Array.prototype.whereLike = utils.methodToPrototype(method);
+addPrototype(Array, "whereLike", method);

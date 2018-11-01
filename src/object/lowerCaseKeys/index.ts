@@ -16,6 +16,4 @@ declare global {
  * const myObj = { Name: "Adam", sUrnAME: "Smith" };
  * const myObjLower = myObj.$lowerCaseKeys(); // {name: "Adam", surname: "Smith"}
  */
-addPrototype(Object, "$lowerCaseKeys", function(this: object) {
-  return method(this);
-});
+addPrototype(Object, "$lowerCaseKeys", method);

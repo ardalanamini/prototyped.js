@@ -9,6 +9,7 @@ declare global {
 /**
  * Calculates the factorial of a number
  * @memberof Math
+ * @function factorial
  * @param {Number} num
  * @returns {Number}
  * @example

@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -10,7 +10,8 @@ declare global {
 
 /**
  * Returns the average value of a given path
- * @memberof Array
+ * @memberof Array.prototype
+ * @function average
  * @param {String} [path]
  * @returns {Number}
  * @example
@@ -18,11 +19,12 @@ declare global {
  * [{a: 1}, {a: 2}, {a: 3}].average("a"); // 2
  * [{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].average("a.b"); // 2
  */
-Array.prototype.average = utils.methodToPrototype(method);
+addPrototype(Array, "average", method);
 
 /**
  * An alias of Array.prototype.average
- * @memberof Array
+ * @memberof Array.prototype
+ * @function avg
  * @param {String} [path]
  * @returns {Number}
  * @example

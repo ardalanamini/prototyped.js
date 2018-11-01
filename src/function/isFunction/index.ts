@@ -10,6 +10,7 @@ declare global {
 /**
  * Returns true if the given argument is a function
  * @memberof Function
+ * @function isFunction
  * @param {*} arg
  * @returns {Boolean}
  * @example

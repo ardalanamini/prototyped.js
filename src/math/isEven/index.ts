@@ -9,6 +9,7 @@ declare global {
 /**
  * Returns true if the given number is even, false otherwise
  * @memberof Math
+ * @function isEven
  * @param {Number} num
  * @returns {Boolean}
  * @example

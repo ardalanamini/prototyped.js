@@ -9,6 +9,7 @@ declare global {
 /**
  * Converts a radians to decimal degree
  * @memberof Math
+ * @function radsToDegrees
  * @param {Number} num
  * @returns {Number}
  * @example

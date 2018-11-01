@@ -9,6 +9,7 @@ declare global {
 /**
  * Returns the least common multiple of two or more numbers
  * @memberof Math
+ * @function lcm
  * @param {Number[]} nums
  * @returns {Number}
  * @example

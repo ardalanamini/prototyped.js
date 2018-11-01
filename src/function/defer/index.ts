@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface Function {
@@ -9,11 +9,12 @@ declare global {
 
 /**
  * Defers invoking the function until the current call stack has cleared
- * @memberof Function
+ * @memberof Function.prototype
+ * @function defer
  * @param {Array} args
  * @returns {*}
  * @example
  * const test = (msg) => console.log(msg);
  * test.defer('a'), test('b'); // logs 'b' then 'a'
  */
-Function.prototype.defer = utils.methodToPrototype(method);
+addPrototype(Function, "defer", method);

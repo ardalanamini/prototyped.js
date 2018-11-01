@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface String {
@@ -9,9 +9,10 @@ declare global {
 
 /**
  * Returns an array of the string's character
- * @memberof String
+ * @memberof String.prototype
+ * @function chars
  * @returns {String[]}
  * @example
  * "Hello".chars(); // ["H", "e", "l", "l", "o"]
  */
-String.prototype.chars = utils.methodToPrototype(method);
+addPrototype(String, "chars", method);

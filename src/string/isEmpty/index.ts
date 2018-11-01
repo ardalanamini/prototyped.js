@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface String {
@@ -9,10 +9,11 @@ declare global {
 
 /**
  * Checks if the string is empty
- * @memberof String
+ * @memberof String.prototype
+ * @function isEmpty
  * @returns {Boolean}
  * @example
  * "123".isEmpty(); // false
  * "".isEmpty(); // true
  */
-String.prototype.isEmpty = utils.methodToPrototype(method);
+addPrototype(String, "isEmpty", method);

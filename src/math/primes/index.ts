@@ -9,6 +9,7 @@ declare global {
 /**
  * Generates primes up to a given number, using the Sieve of Eratosthenes
  * @memberof Math
+ * @function primes
  * @param {Number} num
  * @returns {Number[]}
  * @example

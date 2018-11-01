@@ -16,6 +16,4 @@ declare global {
  * @example
  * ({ a: 0 }).$assign({ a: 1 }, { b: 2 }); // { a: 1, b: 2 }
  */
-addPrototype(Object, "$assign", function(this: object, ...sources: object[]) {
-  return method(this, ...sources);
-});
+addPrototype(Object, "$assign", method);

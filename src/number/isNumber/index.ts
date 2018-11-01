@@ -9,6 +9,7 @@ declare global {
 /**
  * Returns true if the given argument is a number
  * @memberof Number
+ * @function isNumber
  * @param {*} arg
  * @returns {Boolean}
  * @example

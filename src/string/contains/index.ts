@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface String {
@@ -9,7 +9,8 @@ declare global {
 
 /**
  * Find out if the string contains the argument at any position
- * @memberof String
+ * @memberof String.prototype
+ * @function contains
  * @param {String} str
  * @param {Boolean} [sensitive=false]
  * @returns {Boolean}
@@ -17,4 +18,4 @@ declare global {
  * 'javaScript & typescript'.contains('Typescript'); // true
  * 'javaScript & typescript'.contains('Typescript', true); // false
  */
-String.prototype.contains = utils.methodToPrototype(method);
+addPrototype(String, "contains", method);

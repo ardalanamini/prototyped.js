@@ -18,10 +18,4 @@ declare global {
  * ({foo: 1, bar: 2}).$reduce((prev, value, key) => [...prev, key + ":" + value], []);
  * // ["foo:1", "bar:2"]
  */
-addPrototype(Object, "$reduce", function(
-  this: object,
-  fn: (prev: any, value: any, key: string, object: object) => any,
-  initialValue?: any
-) {
-  return method(this, fn, initialValue);
-});
+addPrototype(Object, "$reduce", method);

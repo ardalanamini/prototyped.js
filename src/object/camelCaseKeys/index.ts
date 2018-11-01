@@ -16,6 +16,4 @@ declare global {
  * const myObj = { First_name: "Adam", "last-name": "Smith" };
  * const myObjLower = myObj.$camelCaseKeys(); // {firstName: "Adam", lastName: "Smith"}
  */
-addPrototype(Object, "$camelCaseKeys", function(this: object) {
-  return method(this);
-});
+addPrototype(Object, "$camelCaseKeys", method);

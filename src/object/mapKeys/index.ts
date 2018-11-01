@@ -17,6 +17,4 @@ declare global {
  * @example
  * ({ a: 1, b: 2 }).$mapKeys((val, key) => key + val); // { a1: 1, b2: 2 }
  */
-addPrototype(Object, "$mapKeys", function(this: object, fn: (value: any, key: string, object: object) => string) {
-  return method(this, fn);
-});
+addPrototype(Object, "$mapKeys", method);

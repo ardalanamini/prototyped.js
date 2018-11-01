@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -9,11 +9,12 @@ declare global {
 
 /**
  * Groups the elements of an array based on the given function
- * @memberof Array
+ * @memberof Array.prototype
+ * @function groupBy
  * @param {String|Function} fn
  * @returns {Object}
  * @example
  * [6.1, 4.2, 6.3].groupBy(Math.floor); // {4: [4.2], 6: [6.1, 6.3]}
  * ['one', 'two', 'three'].groupBy('length'); // {3: ['one', 'two'], 5: ['three']}
  */
-Array.prototype.groupBy = utils.methodToPrototype(method);
+addPrototype(Array, "groupBy", method);

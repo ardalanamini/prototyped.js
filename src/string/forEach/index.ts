@@ -1,8 +1,6 @@
 
 import * as method from "./method";
-import * as utils from "../../utils";
-
-export { };
+import { addPrototype } from "../../utils";
 
 declare global {
   interface String {
@@ -12,10 +10,11 @@ declare global {
 
 /**
  * Just like array.forEach
- * @memberof String
+ * @memberof String.prototype
+ * @function forEach
  * @param {Function} fn
  * @returns {void}
  * @example
  * 'Hello'.forEach((char, index) => char == 'o' && consol.log(index)); // console logs 4
  */
-String.prototype.forEach = utils.methodToPrototype(method);
+addPrototype(String, "forEach", method);

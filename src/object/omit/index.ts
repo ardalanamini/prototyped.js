@@ -19,6 +19,4 @@ declare global {
  * { a: 1, b: '2', c: 3 }.$omit(['b']); // { a: 1, c: 3 }
  * { a: 1, b: '2', c: 3 }.$omit((x) => typeof x === 'number'); // { b: '2' }
  */
-addPrototype(Object, "$omit", function(this: object, arr: string[] | ((value: any, key: string) => any)) {
-  return method(this, arr);
-});
+addPrototype(Object, "$omit", method);

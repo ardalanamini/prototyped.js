@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface Function {
@@ -10,7 +10,8 @@ declare global {
 
 /**
  * Ensures a function is called only once
- * @memberof Function
+ * @memberof Function.prototype
+ * @function once
  * @param {Array} args
  * @returns {*}
  * @example
@@ -18,4 +19,4 @@ declare global {
  * test.once('a'); // logs 'a'
  * test.once('b'); // no log this time
  */
-Function.prototype.once = utils.methodToPrototype(method);
+addPrototype(Function, "once", method);

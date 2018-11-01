@@ -9,6 +9,7 @@ declare global {
 /**
  * Checks if the first numeric argument is divisible by the second one
  * @memberof Math
+ * @function isDivisible
  * @param {Number} dividend
  * @param {Number} divisor
  * @returns {Boolean}

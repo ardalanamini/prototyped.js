@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -9,7 +9,8 @@ declare global {
 
 /**
  * Returns all the distinct values of an array
- * @memberof Array
+ * @memberof Array.prototype
+ * @function distinct
  * @param {String|Function} [fn]
  * @returns {Array}
  * @example
@@ -17,4 +18,4 @@ declare global {
  * [{foo:{bar:[0,1]}}, {foo:{bar:[4,1]}}].distinct("foo.bar[1]"); // [{foo:{bar:[0,1]}}]
  * [1, 2, 2.2, 3, 4.9, 4, 5].distinct(Math.floor); // [1,2,3,4.9,5]
  */
-Array.prototype.distinct = utils.methodToPrototype(method);
+addPrototype(Array, "distinct", method);

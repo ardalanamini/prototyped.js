@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface String {
@@ -9,9 +9,10 @@ declare global {
 
 /**
  * Reverses the string
- * @memberof String
+ * @memberof String.prototype
+ * @function reverse
  * @returns {String}
  * @example
  * "foobar".reverse(); // "raboof"
  */
-String.prototype.reverse = utils.methodToPrototype(method);
+addPrototype(String, "reverse", method);

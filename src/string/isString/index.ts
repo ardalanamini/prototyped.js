@@ -9,6 +9,7 @@ declare global {
 /**
  * Returns true if the given argument is an string
  * @memberof String
+ * @function isString
  * @param {*} arg
  * @returns {Boolean}
  * @example

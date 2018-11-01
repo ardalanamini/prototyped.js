@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface Number {
@@ -9,9 +9,10 @@ declare global {
 
 /**
  * Converts the number to an array of digits
- * @memberof Number
+ * @memberof Number.prototype
+ * @function digitize
  * @returns {Number[]}
  * @example
  * (123).digitize(); // [1, 2, 3]
  */
-Number.prototype.digitize = utils.methodToPrototype(method);
+addPrototype(Number, "digitize", method);

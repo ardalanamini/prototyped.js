@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface String {
@@ -9,11 +9,12 @@ declare global {
 
 /**
  * Just like array.reduce
- * @memberof String
+ * @memberof String.prototype
+ * @function reduce
  * @param {Function} fn
  * @param {*} initialValue
  * @returns {*}
  * @example
  * '123'.reduce((prev, char) => prev + (+char), 0); // 6
  */
-String.prototype.reduce = utils.methodToPrototype(method);
+addPrototype(String, "reduce", method);

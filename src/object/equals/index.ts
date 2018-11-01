@@ -16,6 +16,4 @@ declare global {
  * @example
  * ({ a: [2, { e: 3 }], b: [4], c: 'foo' }).$equals({ a: [2, { e: 3 }], b: [4], c: 'foo' }); // true
  */
-addPrototype(Object, "$equals", function(this: object, obj: any) {
-  return method(this, obj);
-});
+addPrototype(Object, "$equals", method);

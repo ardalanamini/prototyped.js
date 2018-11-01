@@ -17,6 +17,4 @@ declare global {
  * const a = { foo: 'bar', obj: { a: 1, b: 2 } };
  * const b = a.$clone(true); // a !== b, a.obj !== b.obj
  */
-addPrototype(Object, "$clone", function(this: object, deep?: boolean) {
-  return method(this, deep);
-});
+addPrototype(Object, "$clone", method);

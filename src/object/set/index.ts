@@ -18,6 +18,4 @@ declare global {
  * obj.$set('selector.to.val');
  * // obj -> { selector: { to: { val: 'val to select' } } }
  */
-addPrototype(Object, "$set", function(this: object, path: string, value: any) {
-  return method(this, path, value);
-});
+addPrototype(Object, "$set", method);

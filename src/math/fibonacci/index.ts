@@ -9,6 +9,7 @@ declare global {
 /**
  * Generates an array, containing the Fibonacci sequence, up until the nth term
  * @memberof Math
+ * @function fibonacci
  * @param {Number} num
  * @returns {Number[]}
  * @example

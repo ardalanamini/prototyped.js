@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface String {
@@ -9,7 +9,8 @@ declare global {
 
 /**
  * Converts a string to kebab case
- * @memberof String
+ * @memberof String.prototype
+ * @function kebabCase
  * @returns {String}
  * @example
  * "camelCase".kebabCase(); // "camel-case"
@@ -20,4 +21,4 @@ declare global {
  * "IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML".kebabCase();
  * // "i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-some-xml-and-html"
  */
-String.prototype.kebabCase = utils.methodToPrototype(method);
+addPrototype(String, "kebabCase", method);

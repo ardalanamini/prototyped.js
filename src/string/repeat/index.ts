@@ -9,6 +9,7 @@ declare global {
 /**
  * Initializes and fills an string with the specified value
  * @memberof String
+ * @function repeat
  * @param {Number} n
  * @param {String} [value=" "]
  * @returns {String}

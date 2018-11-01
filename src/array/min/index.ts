@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -9,7 +9,8 @@ declare global {
 
 /**
  * Returns the minimum value of a given path
- * @memberof Array
+ * @memberof Array.prototype
+ * @function min
  * @param {String} [path]
  * @returns {Number}
  * @example
@@ -17,4 +18,4 @@ declare global {
  * [{a: 1}, {a: 2}, {a: 3}].min('a'); // 1
  * [{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].min('a.b'); // 1
  */
-Array.prototype.min = utils.methodToPrototype(method);
+addPrototype(Array, "min", method);

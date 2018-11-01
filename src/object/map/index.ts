@@ -21,9 +21,4 @@ declare global {
  * };
  * users.$map(u => u.age); // { fred: 40, pebbles: 1 }
  */
-addPrototype(Object, "$map", function(
-  this: object,
-  fn: (value: any, key: string, object: object) => { [key: string]: any }
-) {
-  return method(this, fn);
-});
+addPrototype(Object, "$map", method);

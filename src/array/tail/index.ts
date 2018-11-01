@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -9,9 +9,10 @@ declare global {
 
 /**
  * Returns all elements in an array except for the first one
- * @memberof Array
+ * @memberof Array.prototype
+ * @function tail
  * @returns {Array}
  * @example
  * [1, 2, 3].tail(); // [2, 3]
  */
-Array.prototype.tail = utils.methodToPrototype(method);
+addPrototype(Array, "tail", method);

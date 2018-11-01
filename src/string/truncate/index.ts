@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface String {
@@ -9,7 +9,8 @@ declare global {
 
 /**
  * Truncates a string up to a specified length
- * @memberof String
+ * @memberof String.prototype
+ * @function truncate
  * @param {Number} num
  * @param {String} [truncateString="..."]
  * @returns {String}
@@ -17,4 +18,4 @@ declare global {
  * 'boomerang'.truncate(7); // 'boom...'
  * 'boomerang'.truncate(7, '....'); // 'boo....'
  */
-String.prototype.truncate = utils.methodToPrototype(method);
+addPrototype(String, "truncate", method);

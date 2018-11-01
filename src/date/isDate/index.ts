@@ -9,6 +9,7 @@ declare global {
 /**
  * Returns true if the given argument is an instance of Date
  * @memberof Date
+ * @function isDate
  * @param {*} arg
  * @returns {Boolean}
  * @example

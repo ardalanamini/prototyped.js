@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -9,10 +9,11 @@ declare global {
 
 /**
  * Checks if the array is equal to the given value
- * @memberof Array
+ * @memberof Array.prototype
+ * @function equals
  * @param {*} value
  * @returns {Boolean}
  * @example
  * [1,2,3].equals([2,1,3]); // false
  */
-Array.prototype.equals = utils.methodToPrototype(method);
+addPrototype(Array, "equals", method);

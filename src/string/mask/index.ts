@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface String {
@@ -9,7 +9,8 @@ declare global {
 
 /**
  * Replaces all but the last num of characters with the specified mask character
- * @memberof String
+ * @memberof String.prototype
+ * @function mask
  * @param {Number} [num=4]
  * @param {String} [mask='*']
  * @returns {String}
@@ -18,4 +19,4 @@ declare global {
  * '1234567890'.mask(3); // '*******890'
  * '1234567890'.mask(-4, '$'); // '$$$$567890'
  */
-String.prototype.mask = utils.methodToPrototype(method);
+addPrototype(String, "mask", method);

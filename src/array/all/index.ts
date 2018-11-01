@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -9,11 +9,12 @@ declare global {
 
 /**
  * Returns `true` if the provided predicate function returns `true` for all elements in a collection, `false` otherwise
- * @memberof Array
+ * @memberof Array.prototype
+ * @function all
  * @param {Function} [fn=Boolean]
  * @returns {Boolean}
  * @example
  * [4, 2, 3].all((x) => x > 1); // true
  * [1, 2, 3].all(); // true
  */
-Array.prototype.all = utils.methodToPrototype(method);
+addPrototype(Array, "all", method);

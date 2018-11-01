@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -9,10 +9,11 @@ declare global {
 
 /**
  * Returns a list of elements that exist in both arrays
- * @memberof Array
+ * @memberof Array.prototype
+ * @function intersect
  * @param {Array} array
  * @returns {Array}
  * @example
  * [1, 2, 3].intersect([4, 3, 2]); // [2,3]
  */
-Array.prototype.intersect = utils.methodToPrototype(method);
+addPrototype(Array, "intersect", method);

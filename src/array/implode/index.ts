@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -9,11 +9,12 @@ declare global {
 
 /**
  * It's like join but u get to git it which keys to join
- * @memberof Array
+ * @memberof Array.prototype
+ * @function implode
  * @param {String} path
  * @param {String} [separator=", "]
  * @returns {String}
  * @example
  * [{a: {b: 'first'}}, {a: {b: 'second'}}, {a: {b: 'third'}}].implode('a.b', ', '); // 'first, second, third'
  */
-Array.prototype.implode = utils.methodToPrototype(method);
+addPrototype(Array, "implode", method);

@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -9,10 +9,11 @@ declare global {
 
 /**
  * Determines whether the collection contains a given item
- * @memberof Array
+ * @memberof Array.prototype
+ * @function contains
  * @param {*} value
  * @returns {Boolean}
  * @example
  * [1, 2, 3].contains(2); // true
  */
-Array.prototype.contains = utils.methodToPrototype(method);
+addPrototype(Array, "contains", method);

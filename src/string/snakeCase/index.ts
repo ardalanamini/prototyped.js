@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface String {
@@ -9,7 +9,8 @@ declare global {
 
 /**
  * Converts a string to snake case
- * @memberof String
+ * @memberof String.prototype
+ * @function snakeCase
  * @returns {String}
  * @example
  * 'camelCase'.snakeCase(); // 'camel_case'
@@ -20,4 +21,4 @@ declare global {
  * 'IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML'.snakeCase();
  * // 'i_am_listening_to_fm_while_loading_different_url_on_my_browser_and_also_editing_some_xml_and_html'
  */
-String.prototype.snakeCase = utils.methodToPrototype(method);
+addPrototype(String, "snakeCase", method);

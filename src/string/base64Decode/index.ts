@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface String {
@@ -9,9 +9,10 @@ declare global {
 
 /**
  * Decodes data encoded with MIME base64
- * @memberof String
+ * @memberof String.prototype
+ * @function base64Decode
  * @returns {String}
  * @example
  * "cHJvdG90eXBlZC5qcw==".base64Decode(); // "prototyped.js"
  */
-String.prototype.base64Decode = utils.methodToPrototype(method);
+addPrototype(String, "base64Decode", method);

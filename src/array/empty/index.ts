@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -9,10 +9,11 @@ declare global {
 
 /**
  * Empty the array
- * @memberof Array
+ * @memberof Array.prototype
+ * @function empty
  * @example
  * const arr = [1,3];
  * arr.empty();
  * // arr = []
  */
-Array.prototype.empty = utils.methodToPrototype(method);
+addPrototype(Array, "empty", method);

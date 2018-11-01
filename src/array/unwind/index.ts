@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -9,11 +9,12 @@ declare global {
 
 /**
  * Returns the item at a given index. If the index does not exist, def is returned
- * @memberof Array
+ * @memberof Array.prototype
+ * @function unwind
  * @param {String} path
  * @returns {*}
  * @example
  * [{ foo: ["bar 1", "bar 2"] }, { foo: ["bar 3", "bar 4", "bar 5"] }].unwind("foo");
  * // [{ foo: "bar 1" }, { foo: "bar 2" }, { foo: "bar 3" }, { foo: "bar 4" }, { foo: "bar 5" }]
  */
-Array.prototype.unwind = utils.methodToPrototype(method);
+addPrototype(Array, "unwind", method);

@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -9,7 +9,8 @@ declare global {
 
 /**
  * Groups the elements into two arrays, depending on the provided function's truthiness for each element
- * @memberof Array
+ * @memberof Array.prototype
+ * @function partition
  * @param {Function} fn
  * @returns {Array}
  * @example
@@ -19,4 +20,4 @@ declare global {
  *   [{ 'user': 'barney',  'age': 36, 'active': false }]
  * ]
  */
-Array.prototype.partition = utils.methodToPrototype(method);
+addPrototype(Array, "partition", method);

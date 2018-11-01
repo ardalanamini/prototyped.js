@@ -9,6 +9,7 @@ declare global {
 /**
  * Calculates the greatest common divisor between two or more numbers
  * @memberof Math
+ * @function gcd
  * @param {Number[]} nums
  * @returns {Number}
  * @example

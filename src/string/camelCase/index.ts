@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface String {
@@ -9,7 +9,8 @@ declare global {
 
 /**
  * Converts the string to camelcase
- * @memberof String
+ * @memberof String.prototype
+ * @function camelCase
  * @returns {String}
  * @example
  * "some_database_field_name".camelCase(); // "someDatabaseFieldName"
@@ -18,4 +19,4 @@ declare global {
  * "some-mixed_string with spaces_underscores-and-hyphens".camelCase();
  * // "someMixedStringWithSpacesUnderscoresAndHyphens"
  */
-String.prototype.camelCase = utils.methodToPrototype(method);
+addPrototype(String, "camelCase", method);

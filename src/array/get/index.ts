@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -9,7 +9,8 @@ declare global {
 
 /**
  * Returns the item at a given index. If the index does not exist, def is returned
- * @memberof Array
+ * @memberof Array.prototype
+ * @function get
  * @param {Number} index
  * @param {*} [def=undefined]
  * @returns {*}
@@ -17,4 +18,4 @@ declare global {
  * [1, 2, 3].get(0, 'default value'); // 1
  * [1, 2, 3].get(4, 0); // 0
  */
-Array.prototype.get = utils.methodToPrototype(method);
+addPrototype(Array, "get", method);

@@ -25,6 +25,4 @@ declare global {
  * };
  * object.$merge(other); // { a: [ { x: 2 }, { y: 4 }, { z: 3 } ], b: [ 1, 2, 3 ], c: "foo" }
  */
-addPrototype(Object, "$merge", function(this: object, ...objects: object[]) {
-  return method(this, ...objects);
-});
+addPrototype(Object, "$merge", method);

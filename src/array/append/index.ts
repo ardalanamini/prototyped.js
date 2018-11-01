@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -9,10 +9,11 @@ declare global {
 
 /**
  * Same as push but uses concat
- * @memberof Array
+ * @memberof Array.prototype
+ * @function append
  * @param {*} value
  * @example
  * var myArray = [1, 2, 3]
  * myArray.append(0); // myArray => [1, 2, 3, 0]
  */
-Array.prototype.append = utils.methodToPrototype(method);
+addPrototype(Array, "append", method);

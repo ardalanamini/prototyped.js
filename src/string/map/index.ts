@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 export { };
 
@@ -11,10 +11,11 @@ declare global {
 
 /**
  * Just like array.map
- * @memberof String
+ * @memberof String.prototype
+ * @function map
  * @param {Function} fn
  * @returns {String[]}
  * @example
  * 'Hello'.map((char) => char == 'o' ? 'O' : char); // 'HellO'
  */
-String.prototype.map = utils.methodToPrototype(method);
+addPrototype(String, "map", method);

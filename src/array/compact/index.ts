@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -9,9 +9,10 @@ declare global {
 
 /**
  * Removes falsey values from the array
- * @memberof Array
+ * @memberof Array.prototype
+ * @function compact
  * @returns {Array}
  * @example
  * [0, 1, false, 2, '', 3, 'a', 'e' * 23, NaN, 's', 34].compact(); // [ 1, 2, 3, 'a', 's', 34 ]
  */
-Array.prototype.compact = utils.methodToPrototype(method);
+addPrototype(Array, "compact", method);

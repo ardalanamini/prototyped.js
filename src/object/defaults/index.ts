@@ -16,6 +16,4 @@ declare global {
  * @example
  * ({ a: 0 }).$defaults({ a: 1, b: 2 }, { b: 3 }); // { a: 0, b: 2 }
  */
-addPrototype(Object, "$defaults", function(this: object, ...sources: object[]) {
-  return method(this, ...sources);
-});
+addPrototype(Object, "$defaults", method);

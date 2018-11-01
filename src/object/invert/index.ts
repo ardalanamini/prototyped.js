@@ -15,6 +15,4 @@ declare global {
  * @example
  * ({ name: "John", age: 20 }).$invert(); // { 20: "age", John: "name" }
  */
-addPrototype(Object, "$invert", function(this: object) {
-  return method(this);
-});
+addPrototype(Object, "$invert", method);

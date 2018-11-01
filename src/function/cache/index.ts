@@ -10,6 +10,7 @@ declare global {
 /**
  * Returns the cached function results if already runned with this method
  * @memberof Function
+ * @function cache
  * @param {Array} args
  * @returns {*}
  * @example

@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -9,10 +9,11 @@ declare global {
 
 /**
  * Returns every element that exists in any of the two arrays once
- * @memberof Array
+ * @memberof Array.prototype
+ * @function union
  * @param {Array} array
  * @returns {Array}
  * @example
  * [1, 2, 3].union([4, 3, 2]); // [1,2,3,4]
  */
-Array.prototype.union = utils.methodToPrototype(method);
+addPrototype(Array, "union", method);

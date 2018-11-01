@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -9,10 +9,11 @@ declare global {
 
 /**
  * Returns the cloned array
- * @memberof Array
+ * @memberof Array.prototype
+ * @function clone
  * @param {Boolean} [deep=false]
  * @returns {Array}
  * @example
  * [1, 2, 3].clone(); // [1, 2, 3]
  */
-Array.prototype.clone = utils.methodToPrototype(method);
+addPrototype(Array, "clone", method);

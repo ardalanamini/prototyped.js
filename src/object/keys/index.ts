@@ -15,6 +15,4 @@ declare global {
  * @example
  * ({ one: 1, two: 2, three: 3 }).$keys(); // ["one", "two", "three"]
  */
-addPrototype(Object, "$keys", function(this: object) {
-  return method(this);
-});
+addPrototype(Object, "$keys", method);

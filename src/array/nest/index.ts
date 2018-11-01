@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -9,7 +9,8 @@ declare global {
 
 /**
  * Given a flat array of objects linked to one another, it will nest them recursively
- * @memberof Array
+ * @memberof Array.prototype
+ * @function nest
  * @param {String} link
  * @param {String} key
  * @returns {Object[]}
@@ -23,4 +24,4 @@ declare global {
  * ];
  * comments.nest("comment_id"); // [{ id: 1, comment_id: null, children: [...] }]
  */
-Array.prototype.nest = utils.methodToPrototype(method);
+addPrototype(Array, "nest", method);

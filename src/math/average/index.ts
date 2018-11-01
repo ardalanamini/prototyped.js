@@ -10,6 +10,7 @@ declare global {
 /**
  * Returns the average of an of two or more numbers
  * @memberof Math
+ * @function average
  * @param {Number[]} nums
  * @returns {Number}
  * @example
@@ -21,6 +22,7 @@ Math.average = method;
 /**
  * Returns the average of an of two or more numbers
  * @memberof Math
+ * @function avg
  * @param {Number[]} nums
  * @returns {Number}
  * @example

@@ -1,5 +1,5 @@
 import * as method from "./method";
-import * as utils from "../../utils";
+import { addPrototype } from "../../utils";
 
 declare global {
   interface Array<T> {
@@ -10,7 +10,8 @@ declare global {
 
 /**
  * Filters the array
- * @memberof Array
+ * @memberof Array.prototype
+ * @function whereIn
  * @param {String|Array} field
  * @param {Array} [value]
  * @returns {Array}
@@ -18,4 +19,4 @@ declare global {
  * [1, 2, 2, 3, 4, 4, 5].whereIn([3,4]); // [3,4,4]
  * [{count:1}, {count:20}, {count:15}].whereIn("count", [1, 15]); // [{count:1},{count:15}]
  */
-Array.prototype.whereIn = utils.methodToPrototype(method);
+addPrototype(Array, "whereIn", method);

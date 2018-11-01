@@ -18,17 +18,6 @@ export const pathToKeys = (path: string) => path
   });
 
 /**
- * Converts method to prototype function
- * @private
- * @param {Function} method
- * @returns {Function}
- */
-export const methodToPrototype = (method: (...args: any[]) => any) => function (...args: any[]) {
-  // @ts-ignore
-  return method.apply(0, [this].concat(args));
-};
-
-/**
  *
  * @private
  * @param {*} obj
@@ -37,7 +26,7 @@ export const methodToPrototype = (method: (...args: any[]) => any) => function (
  * @example
  * addPrototype(Object, "$size", function() {return this;});
  */
-export const addPrototype = (obj: any, key: string, value: any) => {
+export const addPrototype = (obj: any, key: string, method: (...args: any[]) => any) => {
   const prototype = obj.prototype;
 
   if (prototype.hasOwnProperty(key)) return;
@@ -45,7 +34,12 @@ export const addPrototype = (obj: any, key: string, value: any) => {
   Object.defineProperty(
     prototype,
     key,
-    { value, writable: true }
+    {
+      value(...args: any[]) {
+        return method.apply(0, [this].concat(args));
+      },
+      writable: true,
+    }
   );
 };
 
