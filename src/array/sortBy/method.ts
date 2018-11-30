@@ -7,7 +7,7 @@ const method = <T = any>(arr: T[], fn: string | ((value: T) => number)) => {
   if (isString(fn)) {
     const keys = pathToKeys(fn);
 
-    reducer = (value) => keys.reduce((prev, cur) => (prev as any)[cur], value);
+    reducer = (value): number => keys.reduce((prev, cur) => (prev as any)[cur], value) as any;
   }
 
   return arr.sort((a, b) => reducer(a) - reducer(b));

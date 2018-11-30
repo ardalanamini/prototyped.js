@@ -12,6 +12,17 @@
 
 ---
 
+## [v0.21.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.21.0) - *(2018-12-01)*
+
+- `Array`
+  - `prototype`
+    - :zap: `toCSV` Added
+- `Date`
+  - :beetle: `isDate` Bug fixed
+- `Object`
+  - `prototype`
+    - :zap: `dig` Added
+
 ## [v0.20.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.20.0) - *(2018-09-30)*
 
 - `Array`
