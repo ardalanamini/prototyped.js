@@ -11,7 +11,6 @@ declare global {
  * Flattens the object into a single-depth object
  * @memberof Object.prototype
  * @function $flatten
- * @param {Object} obj
  * @returns {Object}
  * @example
  * ({ foo: 1, bar: { foo: 2 } }).$flatten(); // { foo: 1, "bar.foo": 2 }
