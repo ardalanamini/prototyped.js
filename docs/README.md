@@ -1580,7 +1580,7 @@ Number.isNumber(2); // true
         * [.$dig(target)](#Object+$dig) ⇒ <code>\*</code>
         * [.$empty()](#Object+$empty)
         * [.$equals(obj)](#Object+$equals) ⇒ [<code>Boolean</code>](#Boolean)
-        * [.$flatten(obj)](#Object+$flatten) ⇒ [<code>Object</code>](#Object)
+        * [.$flatten()](#Object+$flatten) ⇒ [<code>Object</code>](#Object)
         * [.$forEach(fn)](#Object+$forEach)
         * [.$get(key)](#Object+$get) ⇒ <code>\*</code>
         * [.$invert()](#Object+$invert) ⇒ [<code>Object</code>](#Object)
@@ -1712,15 +1712,10 @@ Performs a deep comparison between two values to determine if they are equivalen
 ```
 <a name="Object+$flatten"></a>
 
-### object.$flatten(obj) ⇒ [<code>Object</code>](#Object)
+### object.$flatten() ⇒ [<code>Object</code>](#Object)
 Flattens the object into a single-depth object
 
 **Kind**: instance method of [<code>Object</code>](#Object)  
-
-| Param | Type |
-| --- | --- |
-| obj | [<code>Object</code>](#Object) | 
-
 **Example**  
 ```javascript
 ({ foo: 1, bar: { foo: 2 } }).$flatten(); // { foo: 1, "bar.foo": 2 }
