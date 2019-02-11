@@ -7,6 +7,7 @@ import "./defaults";
 import "./dig";
 import "./empty";
 import "./equals";
+import "./flatten";
 import "./forEach";
 import "./get";
 import "./invert";

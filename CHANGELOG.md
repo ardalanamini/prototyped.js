@@ -12,6 +12,12 @@
 
 ---
 
+## [1.0.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v1.0.0) - *(2019-03-11)*
+
+- `Object`
+  - `prototype`
+    - :zap: `flatten` Added
+
 ## [v0.21.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.21.0) - *(2018-12-01)*
 
 - `Array`

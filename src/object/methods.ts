@@ -5,6 +5,7 @@ import * as defaults from "./defaults/method";
 import * as dig from "./dig/method";
 import * as empty from "./empty/method";
 import * as equals from "./equals/method";
+import * as flatten from "./flatten/method";
 import * as forEach from "./forEach/method";
 import * as get from "./get/method";
 import * as invert from "./invert/method";
@@ -34,6 +35,7 @@ export {
   dig,
   empty,
   equals,
+  flatten,
   forEach,
   get,
   invert,
