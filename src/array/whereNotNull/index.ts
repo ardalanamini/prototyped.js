@@ -1,10 +1,9 @@
-import * as method from "./method";
 import { addPrototype } from "../../utils";
+import method from "./method";
 
 declare global {
   interface Array<T> {
-    whereNotNull(): T[];
-    whereNotNull(field: string): T[];
+    whereNotNull(field?: string): T[];
   }
 }
 

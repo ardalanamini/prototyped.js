@@ -2,8 +2,13 @@ import * as utils from "./utils";
 
 describe("utils", () => {
   test("pathToKeys", () => {
-    expect(utils.pathToKeys("selector.to[0][11].value"))
-      .toEqual(["selector", "to", 0, 11, "value"]);
+    expect(utils.pathToKeys("selector.to[0][11].value")).toEqual([
+      "selector",
+      "to",
+      0,
+      11,
+      "value",
+    ]);
   });
 
   test("addPrototype to Object", () => {
@@ -35,7 +40,8 @@ describe("utils", () => {
   });
 
   test("deepClone Function", () => {
-    function a() { }
+    // tslint:disable-next-line: no-empty function-name
+    function a() {}
     expect(utils.deepClone(a)).toBe(a);
   });
 

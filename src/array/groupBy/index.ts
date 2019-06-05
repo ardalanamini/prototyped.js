@@ -1,9 +1,11 @@
-import * as method from "./method";
 import { addPrototype } from "../../utils";
+import method from "./method";
 
 declare global {
   interface Array<T> {
-    groupBy(fn: string | ((item: any, index: number, array: any[]) => any)): { [key: string]: T[] };
+    groupBy(
+      fn: string | ((item: any, index: number, array: any[]) => any),
+    ): { [key: string]: T[] };
   }
 }
 

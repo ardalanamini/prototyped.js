@@ -1,4 +1,4 @@
-import "./index";
+import ".";
 
 describe("Number.prototype.digitize", () => {
   test("(123).digitize() returns [1, 2, 3]", () => {

@@ -3,6 +3,7 @@ const method = (obj: { [key: string]: any }): object => {
     acc[obj[key]] = key;
 
     return acc;
+    // tslint:disable-next-line: align
   }, {});
 };
 

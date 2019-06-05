@@ -1,8 +1,7 @@
-import "./index";
+import ".";
 
 describe("String.prototype.swapCase", () => {
-  test("\"Hello\".swapCase() returns \"hELLO\"", () => {
-    expect("Hello".swapCase())
-      .toBe("hELLO");
+  test('"Hello".swapCase() returns "hELLO"', () => {
+    expect("Hello".swapCase()).toBe("hELLO");
   });
 });

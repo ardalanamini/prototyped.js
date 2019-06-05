@@ -1,9 +1,14 @@
-import * as reduce from "../reduce/method";
+import reduce from "../reduce/method";
 
-const method = (obj: object): any[] => reduce(obj, (prev, value) => {
-  prev.push(value);
+const method = <T extends object, K extends keyof T>(obj: T) =>
+  reduce<T, K, Array<T[K]>>(
+    obj,
+    (prev, value) => {
+      prev.push(value);
 
-  return prev;
-}, []);
+      return prev;
+    },
+    [],
+  );
 
 export = method;

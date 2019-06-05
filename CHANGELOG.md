@@ -12,13 +12,21 @@
 
 ---
 
-## [1.0.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v1.0.0) - *(2019-03-11)*
+## [1.0.1](https://github.com/ardalanamini/prototyped.js/releases/tag/v1.0.1) - _(2019-06-06)_
+
+- `Function`
+  - :beetle: `isFunction` bug fixed
+- :star2: Improved Typescript usage
+- :star2: Improved linting
+- :eyeglasses: Included Node.js `v11` and `v12` for `travis-ci` tests
+
+## [1.0.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v1.0.0) - _(2019-03-11)_
 
 - `Object`
   - `prototype`
     - :zap: `flatten` Added
 
-## [v0.21.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.21.0) - *(2018-12-01)*
+## [v0.21.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.21.0) - _(2018-12-01)_
 
 - `Array`
   - `prototype`
@@ -29,13 +37,13 @@
   - `prototype`
     - :zap: `dig` Added
 
-## [v0.20.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.20.0) - *(2018-09-30)*
+## [v0.20.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.20.0) - _(2018-09-30)_
 
 - `Array`
   - `prototype`
     - :zap: `unwind` Added
 
-## [v0.19.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.19.0) - *(2018-08-22)*
+## [v0.19.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.19.0) - _(2018-08-22)_
 
 - `Array`
   - `prototype`
@@ -45,7 +53,7 @@
 - :boom: Renamed `dist` path to `es5`
 - :boom: Set `es6` as default
 
-## [v0.18.1](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.18.1) - *(2018-08-18)*
+## [v0.18.1](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.18.1) - _(2018-08-18)_
 
 - `Array`
   - `prototype`
@@ -54,7 +62,7 @@
   - `prototype`
     - :beetle: Deep `cloning` empty array bug fix
 
-## [v0.18.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.18.0) - *(2018-08-18)*
+## [v0.18.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.18.0) - _(2018-08-18)_
 
 - `Object`
   - `prototype`
@@ -64,7 +72,7 @@
     - :boom: `singularize` Removed (use `pluralize(1)` instead)
 - :star2: Removed `pluralize` dependency (no more dependency :sunglasses:)
 
-## [v0.17.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.17.0) - *(2018-08-17)*
+## [v0.17.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.17.0) - _(2018-08-17)_
 
 - `Array`
   - `prototype`
@@ -80,7 +88,7 @@
     - :zap: `reduce` Added
 - :star2: Some general enhancements
 
-## [v0.16.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.16.0) - *(2018-08-15)*
+## [v0.16.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.16.0) - _(2018-08-15)_
 
 - `Array`
   - `prototype`
@@ -93,7 +101,7 @@
   - `prototype`
     - :beetle: `$clone` Fixed deep cloning bug
 
-## [v0.14.1](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.14.1) - *(2018-08-11)*
+## [v0.14.1](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.14.1) - _(2018-08-11)_
 
 - `String`
   - `prototype`
@@ -101,7 +109,7 @@
     - :beetle: `kebabCase` Fixed regex bug
     - :beetle: `snakeCase` Fixed regex bug
 
-## [v0.14.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.14.0) - *(2018-08-10)*
+## [v0.14.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.14.0) - _(2018-08-10)_
 
 - `Date`
   - :zap: `today` Added
@@ -125,7 +133,7 @@
     - :zap: `forEach` Added
 - :mortar_board: Improved documents
 
-## [v0.13.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.13.0) - *(2018-08-01)*
+## [v0.13.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.13.0) - _(2018-08-01)_
 
 - `String`
   - `prototype`
@@ -141,13 +149,13 @@
 - `Number`
   - :beetle: `isNumber` Fixed considering numeral strings as number
 
-## [v0.12.1](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.12.1) - *(2018-07-31)*
+## [v0.12.1](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.12.1) - _(2018-07-31)_
 
 - `Array`
   - `prototype`
     - :beetle: `nest` Fixed finding children of children bug
 
-## [v0.12.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.12.0) - *(2018-07-26)*
+## [v0.12.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.12.0) - _(2018-07-26)_
 
 - `Object`
   - `prototype`
@@ -155,7 +163,7 @@
     - :zap: `$defaults` Added
     - :zap: `$keys` Added
 
-## [v0.11.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.11.0) - *(2018-07-16)*
+## [v0.11.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.11.0) - _(2018-07-16)_
 
 - `Array`
   - `prototype`
@@ -174,7 +182,7 @@
     - :zap: `equals` Added
     - :zap: `parseInt` Added
 
-## [v0.10.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.10.0) - *(2018-06-01)*
+## [v0.10.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.10.0) - _(2018-06-01)_
 
 - `Array`
   - :boom: `isInstance` Removed
@@ -196,7 +204,7 @@
   - :boom: `isInstance` Renamed to `isString`
 - :star2: Better object value path handling
 
-## [v0.9.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.9.0) - *(2018-05-29)*
+## [v0.9.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.9.0) - _(2018-05-29)_
 
 - `Array`
   - `prototype`
@@ -212,7 +220,7 @@
     - :zap: `pad` Added
     - :zap: `repeat` Added
 
-## [v0.8.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.8.0) - *(2018-05-25)*
+## [v0.8.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.8.0) - _(2018-05-25)_
 
 - `Array`
   - `prototype`
@@ -225,7 +233,7 @@
     - :zap: `$get` Added
     - :zap: `$omit` Added
 
-## [v0.7.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.7.0) - *(2018-05-20)*
+## [v0.7.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.7.0) - _(2018-05-20)_
 
 - `Object`
   - `prototype`
@@ -233,7 +241,7 @@
     - :zap: `$kebabCaseKeys` Added
     - :zap: `$snakeCaseKeys` Added
 
-## [v0.6.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.6.0) - *(2018-05-11)*
+## [v0.6.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.6.0) - _(2018-05-11)_
 
 - `Array`
   - `prototype`
@@ -252,7 +260,7 @@
     - :zap: `whereNotNull` Added
     - :zap: `whereNull` Added
 
-## [v0.5.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.5.0) - *(2018-04-13)*
+## [v0.5.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.5.0) - _(2018-04-13)_
 
 - `Array`
   - `prototype`
@@ -274,7 +282,7 @@
 - :star2: Some general enhancements
 - :beetle: Typescript usage
 
-## [v0.4.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.4.0) - *(2018-01-28)*
+## [v0.4.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.4.0) - _(2018-01-28)_
 
 - `String`
   - `prototype`
@@ -284,7 +292,7 @@
     - :zap: `humanize` Added
 - :star2: More customizable usage
 
-## [v0.3.2](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.3.2) - *(2018-01-25)*
+## [v0.3.2](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.3.2) - _(2018-01-25)_
 
 - `Array`
   - `prototype`
@@ -295,12 +303,12 @@
   - `prototype`
     - :zap: `contains` Added
 
-## [v0.3.1](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.3.1) - *(2018-01-24)*
+## [v0.3.1](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.3.1) - _(2018-01-24)_
 
 - :star2: `es6` Usage is now available along side `es5` (`dist`)
 - :beetle: Typescript usage
 
-## [v0.3.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.3.0) - *(2018-01-24)*
+## [v0.3.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.3.0) - _(2018-01-24)_
 
 - `Array`
   - :zap: `isInstance` Added
@@ -334,7 +342,7 @@
   - :zap: `isEven` Added
   - :zap: `isPrime` Added
 
-## [v0.2.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.2.0) - *(2018-01-18)*
+## [v0.2.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.2.0) - _(2018-01-18)_
 
 - `Array`
   - `prototype`
@@ -357,14 +365,14 @@
     - :beetle: `decapitalize` Fixed returning the capitalized string
 - :eyeglasses: Added tests
 
-## [v0.1.2](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.1.2) - *(2018-01-15)*
+## [v0.1.2](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.1.2) - _(2018-01-15)_
 
 - :mortar_board: Fix project name in README.md
 
-## [v0.1.1](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.1.1) - *(2018-01-15)*
+## [v0.1.1](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.1.1) - _(2018-01-15)_
 
 - :mortar_board: Update README.md usage
 
-## [v0.1.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.1.0) - *(2018-01-15)*
+## [v0.1.0](https://github.com/ardalanamini/prototyped.js/releases/tag/v0.1.0) - _(2018-01-15)_
 
 - :tada: First release

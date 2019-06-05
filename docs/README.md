@@ -100,7 +100,8 @@
 <a name="Array+all"></a>
 
 ### array.all([fn]) ⇒ [<code>Boolean</code>](#Boolean)
-Returns `true` if the provided predicate function returns `true` for all elements in a collection, `false` otherwise
+Returns `true` if the provided predicate function
+returns `true` for all elements in a collection,`false` otherwise
 
 **Kind**: instance method of [<code>Array</code>](#Array)  
 
@@ -116,7 +117,8 @@ Returns `true` if the provided predicate function returns `true` for all element
 <a name="Array+any"></a>
 
 ### array.any([fn]) ⇒ [<code>Boolean</code>](#Boolean)
-Returns `true` if the provided predicate function returns `true` for at least one element in a collection,
+Returns `true` if the provided predicate function
+returns `true` for at least one element in a collection,
 `false` otherwise
 
 **Kind**: instance method of [<code>Array</code>](#Array)  
@@ -254,7 +256,8 @@ Counts the occurrences of a value in an array
 <a name="Array+countBy"></a>
 
 ### array.countBy(fn) ⇒ [<code>Object</code>](#Object)
-Groups the elements of an array based on the given function and returns the count of elements in each group
+Groups the elements of an array based on the given function and
+returns the count of elements in each group
 
 **Kind**: instance method of [<code>Array</code>](#Array)  
 
@@ -270,7 +273,8 @@ Groups the elements of an array based on the given function and returns the coun
 <a name="Array+crossJoin"></a>
 
 ### array.crossJoin(array) ⇒ [<code>Array.&lt;Array&gt;</code>](#Array)
-Cross joins the array's values among the given arrays, returning a Cartesian product with all possible permutations
+Cross joins the array's values among the given arrays,
+returning a Cartesian product with all possible permutations
 
 **Kind**: instance method of [<code>Array</code>](#Array)  
 
@@ -296,7 +300,8 @@ Deep flattens an array
 
 ### array.diff(array, [comp]) ⇒ [<code>Array</code>](#Array)
 Returns the difference between this and another array
-if `comp` is given, filters out all values from an array for which the comparator function does not return true
+if `comp` is given, filters out all values from an array for which the comparator function
+does not return true
 
 **Kind**: instance method of [<code>Array</code>](#Array)  
 
@@ -452,7 +457,8 @@ It's like join but u get to git it which keys to join
 
 **Example**  
 ```javascript
-[{a: {b: 'first'}}, {a: {b: 'second'}}, {a: {b: 'third'}}].implode('a.b', ', '); // 'first, second, third'
+[{a: {b: 'first'}}, {a: {b: 'second'}}, {a: {b: 'third'}}].implode('a.b', ', ');
+// 'first, second, third'
 ```
 <a name="Array+indexOfAll"></a>
 
@@ -673,7 +679,8 @@ FillS the array with the given value until the array reaches the specified size
 <a name="Array+partition"></a>
 
 ### array.partition(fn) ⇒ [<code>Array</code>](#Array)
-Groups the elements into two arrays, depending on the provided function's truthiness for each element
+Groups the elements into two arrays,
+depending on the provided function's truthiness for each element
 
 **Kind**: instance method of [<code>Array</code>](#Array)  
 
@@ -683,7 +690,9 @@ Groups the elements into two arrays, depending on the provided function's truthi
 
 **Example**  
 ```javascript
-const users = [{ user: 'barney', age: 36, active: false }, { user: 'fred', age: 40, active: true }];
+const users = [
+  { user: 'barney', age: 36, active: false }, { user: 'fred', age: 40, active: true }
+];
 users.partition(o => o.active); // [
   [{ 'user': 'fred',    'age': 40, 'active': true }],
   [{ 'user': 'barney',  'age': 36, 'active': false }]
@@ -791,7 +800,8 @@ An alias of Array.prototype.skip
 <a name="Array+sortBy"></a>
 
 ### array.sortBy(fn) ⇒ [<code>Array</code>](#Array)
-Groups the elements of an array based on the given function and returns the count of elements in each group
+Groups the elements of an array based on the given function and
+returns the count of elements in each group
 
 **Kind**: instance method of [<code>Array</code>](#Array)  
 
@@ -948,7 +958,8 @@ Filters the array
 **Example**  
 ```javascript
 ["foo", "bar", "hello", "world"].whereLike("o"); // ["foo","hello","world"]
-[{foo:"hello"}, {foo:"bar"}, {foo:"world"}].whereLike("foo", /o/i); // [{foo:"hello"},{foo:"world"}]
+[{foo:"hello"}, {foo:"bar"}, {foo:"world"}]
+  .whereLike("foo", /o/i); // [{foo:"hello"},{foo:"world"}]
 ```
 <a name="Array+whereNotBetween"></a>
 
@@ -2186,7 +2197,8 @@ Also removes beginning and ending whitespace
 **Kind**: instance method of [<code>String</code>](#String)  
 **Example**  
 ```javascript
-'  capitalize dash-CamelCase_underscore trim  '.humanize(); // 'Capitalize dash camel case underscore trim'
+'  capitalize dash-CamelCase_underscore trim  '.humanize();
+// 'Capitalize dash camel case underscore trim'
 ```
 <a name="String+isEmpty"></a>
 

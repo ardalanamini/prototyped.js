@@ -1,4 +1,4 @@
-import "./index";
+import ".";
 
 describe("Array.prototype.indexOfAll", () => {
   test("[1, 2, 3, 1, 2, 3].indexOfAll(1) returns [0,3]", () => {

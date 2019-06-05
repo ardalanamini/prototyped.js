@@ -1,4 +1,4 @@
-import "./index";
+import ".";
 
 describe("Array.prototype.empty", () => {
   test("[1,2].empty()", () => {

@@ -1,4 +1,4 @@
-import "./index";
+import ".";
 
 describe("Object.prototype.$dig", () => {
   const data = {
@@ -10,15 +10,15 @@ describe("Object.prototype.$dig", () => {
     },
   };
 
-  test("data.$dig(\"foo\") returns \"bar\"", () => {
+  test('data.$dig("foo") returns "bar"', () => {
     expect(data.$dig("foo")).toBe("bar");
   });
 
-  test("data.$dig(\"level3\") returns \"some data\"", () => {
+  test('data.$dig("level3") returns "some data"', () => {
     expect(data.$dig("level3")).toBe("some data");
   });
 
-  test("data.$dig(\"level4\") returns undefined", () => {
+  test('data.$dig("level4") returns undefined', () => {
     expect(data.$dig("level4")).toBe(undefined);
   });
 });

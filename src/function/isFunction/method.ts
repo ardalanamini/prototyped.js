@@ -1,4 +1,4 @@
 // tslint:disable-next-line:ban-types
-const method = (arg: any): arg is Function => arg instanceof Function;
+const method = (arg: any): arg is Function => typeof arg === "function";
 
 export = method;

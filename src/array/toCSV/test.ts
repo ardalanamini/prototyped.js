@@ -1,4 +1,4 @@
-import "./index";
+import ".";
 
 describe("Array.prototype.toCSV", () => {
   test("[['a', 'b'], ['c', 'd']].toCSV() returns '\"a\",\"b\"\\n\"c\",\"d\"'", () => {

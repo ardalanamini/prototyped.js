@@ -1,12 +1,12 @@
-import "./index";
+import ".";
 
 describe("Object.isObjectLike", () => {
   test("Object.isObjectLike(2) returns false", () => {
     expect(Object.isObjectLike(2)).toBe(false);
   });
 
-  test("Object.isObjectLike({foo: \"bar\"}) returns true", () => {
-    expect(Object.isObjectLike({foo: "bar"})).toBe(true);
+  test('Object.isObjectLike({foo: "bar"}) returns true', () => {
+    expect(Object.isObjectLike({ foo: "bar" })).toBe(true);
   });
 
   test("Object.isObjectLike([1, 2]) returns true", () => {

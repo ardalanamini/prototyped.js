@@ -1,4 +1,4 @@
-import * as isObject from "../isObject/method";
+import isObject from "../isObject/method";
 
 const method = (arg: any): arg is object => {
   if (!isObject(arg)) return false;

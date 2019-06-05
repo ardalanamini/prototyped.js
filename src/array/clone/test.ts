@@ -1,4 +1,4 @@
-import "./index";
+import ".";
 
 describe("Array.prototype.clone", () => {
   test("[].clone() returns []", () => {
@@ -24,7 +24,7 @@ describe("Array.prototype.clone", () => {
     expect(a).not.toEqual(b);
   });
 
-  test("[1, { foo: \"bar\" }, 3].clone(true) returns [1, { foo: \"bar\" }, 3]", () => {
+  test('[1, { foo: "bar" }, 3].clone(true) returns [1, { foo: "bar" }, 3]', () => {
     const a = [1, { foo: "bar" }, 3];
     const b = a.clone(true);
 

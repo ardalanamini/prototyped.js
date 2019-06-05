@@ -1,7 +1,7 @@
-import "./index";
+import ".";
 
 describe("Number.prototype.equals", () => {
-  test("(22).equals(\"22\") returns false", () => {
+  test('(22).equals("22") returns false', () => {
     expect((22).equals("22")).toBe(false);
   });
 

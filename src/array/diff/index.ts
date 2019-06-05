@@ -1,5 +1,5 @@
-import * as method from "./method";
 import { addPrototype } from "../../utils";
+import method from "./method";
 
 declare global {
   interface Array<T> {
@@ -9,7 +9,8 @@ declare global {
 
 /**
  * Returns the difference between this and another array
- * if `comp` is given, filters out all values from an array for which the comparator function does not return true
+ * if `comp` is given, filters out all values from an array for which the comparator function
+ * does not return true
  * @memberof Array.prototype
  * @function diff
  * @param {Array} array

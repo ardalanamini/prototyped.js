@@ -46,36 +46,34 @@ import all prototypes
 
 ```javascript
 // es6 (default)
-require('prototyped.js');
-import 'prototyped.js';
+import "prototyped.js";
 
-// es5
-require('prototyped.js/es5');
-import 'prototyped.js/es5';
+// or es5
+require("prototyped.js/es5");
 
-console.log('hello world!'.words()); // ['hello', 'world']
+console.log("hello world!".words()); // ['hello', 'world']
 ```
 
 or simply import the prototypes you want
 
 ```javascript
-require('prototyped.js/es6/string');
+require("prototyped.js/es6/string");
 // or
-require('prototyped.js/es5/string/words');
+require("prototyped.js/es5/string/words");
 
-console.log('hello world!'.words()); // ['hello', 'world']
+console.log("hello world!".words()); // ['hello', 'world']
 ```
 
 even better, just import the method you want
 
 ```javascript
-const words = require('prototyped.js/es6/string/words/method');
+const words = require("prototyped.js/es6/string/words/method");
 
-console.log(words('hello world!')); // ['hello', 'world']
+console.log(words("hello world!")); // ['hello', 'world']
 
-const methods = require('prototyped.js/es5/methods');
+const methods = require("prototyped.js/es5/methods");
 
-console.log(methods.string.words('hello world!')); // ['hello', 'world']
+console.log(methods.string.words("hello world!")); // ['hello', 'world']
 ```
 
 **All documents are available at [here](https://prototyped.js.org)**
@@ -86,7 +84,7 @@ We use [SemVer](http://semver.org) for versioning. For the versions available, s
 
 ## Authors
 
-- **Ardalan Amini** - *Owner/Developer* - [@ardalanamini](https://github.com/ardalanamini)
+- **Ardalan Amini** - _Core Maintainer_ - [@ardalanamini](https://github.com/ardalanamini)
 
 See also the list of [contributors](https://github.com/ardalanamini/prototyped.js/contributors) who participated in this project.
 

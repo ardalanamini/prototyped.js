@@ -1,11 +1,11 @@
-import "./index";
+import ".";
 
 describe("String.prototype.equals", () => {
-  test("\"hello\".lines(\"hello\") returns true", () => {
+  test('"hello".lines("hello") returns true', () => {
     expect("hello".equals("hello")).toBe(true);
   });
 
-  test("\"hello\".lines(\"Hello\") returns false", () => {
+  test('"hello".lines("Hello") returns false', () => {
     expect("hello".equals("Hello")).toBe(false);
   });
 });

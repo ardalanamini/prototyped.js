@@ -1,4 +1,4 @@
-import "./index";
+import ".";
 
 beforeAll(() => {
   // Jest creates virtual ones !

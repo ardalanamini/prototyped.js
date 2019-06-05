@@ -1,4 +1,5 @@
-import * as method from "./method";
+import { addPrototype } from "../../utils";
+import method from "./method";
 
 declare global {
   interface Function {
@@ -18,6 +19,6 @@ declare global {
  * test.cache(); // takes a second to log 'test'
  * test.cache(); // instantly logs the second 'test'
  */
-Function.prototype.cache = function(...args) {
+Function.prototype.cache = function cache(...args) {
   return method(this)(...args);
 };

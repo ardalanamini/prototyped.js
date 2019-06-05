@@ -1,5 +1,3 @@
-import * as isBrowser from "./isBrowser/method";
+import isBrowser from "./isBrowser/method";
 
-export {
-  isBrowser,
-};
+export { isBrowser };

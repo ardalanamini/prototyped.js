@@ -1,4 +1,4 @@
-import * as method from "./method";
+import method from "./method";
 
 declare global {
   namespace NodeJS {

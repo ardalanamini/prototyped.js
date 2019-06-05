@@ -1,8 +1,7 @@
-import "./index";
+import ".";
 
 describe("String.prototype.reverse", () => {
-  test("\"foobar\".reverse() returns \"raboof\"", () => {
-    expect("foobar".reverse())
-      .toBe("raboof");
+  test('"foobar".reverse() returns "raboof"', () => {
+    expect("foobar".reverse()).toBe("raboof");
   });
 });
