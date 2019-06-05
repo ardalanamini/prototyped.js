@@ -8,4 +8,8 @@ describe("Function.isFunction", () => {
   test("Function.isFunction((() => {})) returns true", () => {
     expect(Function.isFunction(() => {})).toBe(true);
   });
+
+  test("Function.isFunction(jest.fn()) returns true", () => {
+    expect(Function.isFunction(jest.fn())).toBe(true);
+  });
 });
