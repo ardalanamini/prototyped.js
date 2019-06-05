@@ -1,4 +1,4 @@
-import * as contains from "../../array/contains/method";
+import contains from "../../array/contains/method";
 
 const method = () => !contains([typeof window, typeof document], "undefined");
 

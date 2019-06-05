@@ -1,5 +1,5 @@
-import * as method from "./method";
 import { addPrototype } from "../../utils";
+import method from "./method";
 
 declare global {
   interface Array<T> {
@@ -8,7 +8,8 @@ declare global {
 }
 
 /**
- * Cross joins the array's values among the given arrays, returning a Cartesian product with all possible permutations
+ * Cross joins the array's values among the given arrays,
+ * returning a Cartesian product with all possible permutations
  * @memberof Array.prototype
  * @function crossJoin
  * @param {Array} array

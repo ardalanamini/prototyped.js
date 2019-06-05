@@ -8,14 +8,4 @@ import * as number from "./number/methods";
 import * as object from "./object/methods";
 import * as string from "./string/methods";
 
-export {
-  array,
-  boolean,
-  date,
-  func as function,
-  globals,
-  math,
-  number,
-  object,
-  string,
-};
+export { array, boolean, date, func, globals, math, number, object, string };

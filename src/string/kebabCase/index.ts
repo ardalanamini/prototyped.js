@@ -1,5 +1,6 @@
-import * as method from "./method";
+// tslint:disable: max-line-length
 import { addPrototype } from "../../utils";
+import method from "./method";
 
 declare global {
   interface String {

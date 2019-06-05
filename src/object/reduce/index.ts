@@ -1,9 +1,12 @@
 import { addPrototype } from "../../utils";
-import * as method from "./method";
+import method from "./method";
 
 declare global {
   interface Object {
-    $reduce<T = any>(fn: (prev: T, value: any, key: string, object: object) => T, initialValue?: T): any;
+    $reduce<T = any>(
+      fn: (prev: T, value: any, key: string, object: object) => T,
+      initialValue?: T,
+    ): any;
   }
 }
 

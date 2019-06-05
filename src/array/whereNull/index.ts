@@ -1,10 +1,10 @@
-import * as method from "./method";
 import { addPrototype } from "../../utils";
+import method from "./method";
 
 declare global {
   interface Array<T> {
     whereNull(): Array<null & undefined>;
-    whereNull(field: string): Array<null & undefined>;
+    whereNull(field: string): T[];
   }
 }
 

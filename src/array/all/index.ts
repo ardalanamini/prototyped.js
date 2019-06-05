@@ -1,5 +1,5 @@
-import * as method from "./method";
 import { addPrototype } from "../../utils";
+import method from "./method";
 
 declare global {
   interface Array<T> {
@@ -8,7 +8,8 @@ declare global {
 }
 
 /**
- * Returns `true` if the provided predicate function returns `true` for all elements in a collection, `false` otherwise
+ * Returns `true` if the provided predicate function
+ * returns `true` for all elements in a collection,`false` otherwise
  * @memberof Array.prototype
  * @function all
  * @param {Function} [fn=Boolean]

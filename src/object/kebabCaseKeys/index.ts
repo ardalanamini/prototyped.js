@@ -1,5 +1,5 @@
 import { addPrototype } from "../../utils";
-import * as method from "./method";
+import method from "./method";
 
 declare global {
   interface Object {

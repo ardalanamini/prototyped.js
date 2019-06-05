@@ -9,7 +9,8 @@ const method = <T = any>(arr: T[], path?: string): number => {
   if (path) {
     const keys = pathToKeys(path);
 
-    reducer = (item: T) => keys.reduce((prev, curr) => (prev && (prev as any)[curr]) || prev, item);
+    reducer = (item: T) =>
+      keys.reduce((prev, curr) => (prev && (prev as any)[curr]) || prev, item);
   }
 
   if (items.length % 2) return reducer(items[half]);

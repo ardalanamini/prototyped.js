@@ -1,4 +1,4 @@
-import "./index";
+import ".";
 
 describe("Object.prototype.$flatten", () => {
   test("1", () => {
@@ -19,9 +19,7 @@ describe("Object.prototype.$flatten", () => {
         [2],
       ],
       object: {
-        array: [
-          { number: 3 },
-        ],
+        array: [{ number: 3 }],
       },
       date: new Date(),
       buffer: Buffer.alloc(2),
@@ -29,15 +27,15 @@ describe("Object.prototype.$flatten", () => {
     };
 
     expect(obj.$flatten()).toEqual({
-      "string": "foo",
-      "number": 1,
+      string: "foo",
+      number: 1,
       "array[0]": "one",
       "array[1].string": "two",
       "array[2][0]": 2,
       "object.array[0].number": 3,
-      "date": obj.date,
-      "buffer": obj.buffer,
-      "class": obj.class,
+      date: obj.date,
+      buffer: obj.buffer,
+      class: obj.class,
     });
   });
 });

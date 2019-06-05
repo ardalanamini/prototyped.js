@@ -1,5 +1,5 @@
-import * as isPlainObject from "../isPlainObject/method";
-import * as forEach from "../forEach/method";
+import forEach from "../forEach/method";
+import isPlainObject from "../isPlainObject/method";
 
 const method = (obj: { [key: string]: any }): { [key: string]: any } => {
   const result: { [key: string]: any } = {};
@@ -18,7 +18,7 @@ const method = (obj: { [key: string]: any }): { [key: string]: any } => {
     if (isPlainObject(value)) {
       const flat = method(value);
 
-      forEach(flat, (subValue, subKey) => {
+      forEach(flat, (subValue, subKey: string) => {
         const separator = /^\[/.test(subKey) ? "" : ".";
 
         result[`${key}${separator}${subKey}`] = subValue;

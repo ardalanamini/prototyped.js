@@ -1,4 +1,4 @@
-import * as repeat from "../repeat/method";
+import repeat from "../repeat/method";
 
 const method = (str: string, size: number, value: string = " "): string => {
   const s = Math.abs(size);

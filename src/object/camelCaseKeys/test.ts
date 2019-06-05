@@ -1,11 +1,13 @@
-import "./index";
+import ".";
 
 describe("Object.prototype.$camelCaseKeys", () => {
   test(
-    "{ First_name: \"Adam\", \"last-name\": \"Smith\" }.$camelCaseKeys() returns " +
-    "{firstName: \"Adam\", lastName: \"Smith\"}",
+    '{ First_name: "Adam", "last-name": "Smith" }.$camelCaseKeys() returns ' +
+      '{firstName: "Adam", lastName: "Smith"}',
     () => {
-      expect({ "First_name": "Adam", "last-name": "Smith" }.$camelCaseKeys())
-        .toEqual({ firstName: "Adam", lastName: "Smith" });
-    });
+      expect(
+        { First_name: "Adam", "last-name": "Smith" }.$camelCaseKeys(),
+      ).toEqual({ firstName: "Adam", lastName: "Smith" });
+    },
+  );
 });

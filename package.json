@@ -2,7 +2,11 @@
   "name": "prototyped.js",
   "version": "1.0.0",
   "description": "Common typescript ready prototypes available in both es5 and es6",
-  "author": "Ardalan Amini <ardalanamini22@gmail.com> [https://ardalanamini.com]",
+  "author": {
+    "name": "Ardalan Amini",
+    "email": "ardalanamini22@gmail.com",
+    "url": "https://ardalanamini.com"
+  },
   "license": "MIT",
   "homepage": "https://prototyped.js.org",
   "repository": {
@@ -90,7 +94,7 @@
     "today",
     "tomorrow",
     "yesterday",
-    "function",
+    "func",
     "cache",
     "defer",
     "isFunction",
@@ -163,6 +167,8 @@
   "scripts": {
     "prepublishOnly": "npm test && npm run lint && npm run doc && npm run build && npm run regenerate:package.json",
     "build": "node scripts/build.js",
+    "build:tsc": "tsc",
+    "watch:tsc": "npm run build:tsc -- --watch",
     "doc": "node scripts/doc.js",
     "lint": "tslint -p tsconfig.json -c tslint.json --exclude '**/*.d.ts'",
     "test": "jest",
@@ -172,7 +178,7 @@
   },
   "devDependencies": {
     "@types/jest": "^24.0.13",
-    "@types/node": "^12.0.2",
+    "@types/node": "^12.0.4",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
     "codecov": "^3.5.0",
@@ -183,10 +189,9 @@
     "pre-commit": "^1.2.2",
     "rimraf": "^2.6.3",
     "ts-jest": "^24.0.2",
-    "tslint": "^5.16.0",
-    "typescript": "^3.4.5",
-    "uglify-es": "^3.3.9",
-    "uglify-js": "^3.5.15"
+    "tslint": "^5.17.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "typescript": "^3.5.1"
   },
   "jest": {
     "moduleFileExtensions": [

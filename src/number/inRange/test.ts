@@ -1,4 +1,4 @@
-import "./index";
+import ".";
 
 describe("Number.prototype.inRange", () => {
   test("(4).inRange(8) returns true", () => {

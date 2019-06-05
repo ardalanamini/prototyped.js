@@ -1,9 +1,15 @@
-import * as forEach from "../forEach/method";
+import forEach from "../forEach/method";
 
-const method = (obj: object, fn: (value: any, key: string, object: object) => string): object => {
+const method = <T extends object, K extends keyof T>(
+  obj: T,
+  fn: (value: T[K], key: K, object: T) => string,
+): object => {
   const result: { [key: string]: any } = {};
 
-  forEach(obj, (value, key, object) => result[fn(value, key, object)] = value);
+  forEach<T, K>(
+    obj,
+    (value, key, object) => (result[fn(value, key, object)] = value),
+  );
 
   return result;
 };

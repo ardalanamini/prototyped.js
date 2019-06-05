@@ -1,5 +1,5 @@
-import * as method from "./method";
 import { addPrototype } from "../../utils";
+import method from "./method";
 
 declare global {
   interface Array<T> {
@@ -8,7 +8,8 @@ declare global {
 }
 
 /**
- * Groups the elements of an array based on the given function and returns the count of elements in each group
+ * Groups the elements of an array based on the given function and
+ * returns the count of elements in each group
  * @memberof Array.prototype
  * @function countBy
  * @param {String|Function} fn

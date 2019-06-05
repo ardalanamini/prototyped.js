@@ -1,11 +1,6 @@
-import * as cache from "./cache/method";
-import * as defer from "./defer/method";
-import * as isFunction from "./isFunction/method";
-import * as once from "./once/method";
+import cache from "./cache/method";
+import defer from "./defer/method";
+import isFunction from "./isFunction/method";
+import once from "./once/method";
 
-export {
-  cache,
-  defer,
-  isFunction,
-  once,
-};
+export { cache, defer, isFunction, once };

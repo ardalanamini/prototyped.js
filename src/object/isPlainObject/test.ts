@@ -1,4 +1,4 @@
-import "./index";
+import ".";
 
 describe("Object.isPlainObject", () => {
   test("Object.isPlainObject(2) returns false", () => {
@@ -7,13 +7,13 @@ describe("Object.isPlainObject", () => {
 
   test("Object.isPlainObject(new Foo) returns false", () => {
     class Foo {
-       a = 1;
+      public a = 1;
     }
 
     expect(Object.isPlainObject(new Foo())).toBe(false);
   });
 
-  test("Object.isPlainObject({foo: \"bar\"}) returns true", () => {
+  test('Object.isPlainObject({foo: "bar"}) returns true', () => {
     expect(Object.isPlainObject({ foo: "bar" })).toBe(true);
   });
 

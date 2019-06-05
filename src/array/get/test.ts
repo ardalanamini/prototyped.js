@@ -1,7 +1,7 @@
-import "./index";
+import ".";
 
 describe("Array.prototype.get", () => {
-  test("[1, 2, 3].get(0, \"default value\") returns 1", () => {
+  test('[1, 2, 3].get(0, "default value") returns 1', () => {
     expect([1, 2, 3].get(0, "default value")).toBe(1);
   });
 

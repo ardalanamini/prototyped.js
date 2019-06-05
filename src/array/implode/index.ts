@@ -1,5 +1,5 @@
-import * as method from "./method";
 import { addPrototype } from "../../utils";
+import method from "./method";
 
 declare global {
   interface Array<T> {
@@ -15,6 +15,7 @@ declare global {
  * @param {String} [separator=", "]
  * @returns {String}
  * @example
- * [{a: {b: 'first'}}, {a: {b: 'second'}}, {a: {b: 'third'}}].implode('a.b', ', '); // 'first, second, third'
+ * [{a: {b: 'first'}}, {a: {b: 'second'}}, {a: {b: 'third'}}].implode('a.b', ', ');
+ * // 'first, second, third'
  */
 addPrototype(Array, "implode", method);

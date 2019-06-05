@@ -1,5 +1,5 @@
-import * as method from "./method";
 import { addPrototype } from "../../utils";
+import method from "./method";
 
 declare global {
   interface Array<T> {
@@ -17,6 +17,7 @@ declare global {
  * @returns {Array}
  * @example
  * ["foo", "bar", "hello", "world"].whereLike("o"); // ["foo","hello","world"]
- * [{foo:"hello"}, {foo:"bar"}, {foo:"world"}].whereLike("foo", /o/i); // [{foo:"hello"},{foo:"world"}]
+ * [{foo:"hello"}, {foo:"bar"}, {foo:"world"}]
+ *   .whereLike("foo", /o/i); // [{foo:"hello"},{foo:"world"}]
  */
 addPrototype(Array, "whereLike", method);

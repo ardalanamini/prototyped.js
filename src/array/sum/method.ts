@@ -4,7 +4,11 @@ const method = <T = any>(arr: T[], path?: string): number => {
   if (path) {
     const keys = pathToKeys(path);
 
-    const reducer = (item: T): number => keys.reduce((prev, cur) => (prev && (prev as any)[cur]) || 0, item) as any;
+    const reducer = (item: T): number =>
+      keys.reduce(
+        (prev, cur) => (prev && (prev as any)[cur]) || 0,
+        item,
+      ) as any;
 
     return arr.reduce((prev, cur) => prev + reducer(cur), 0);
   }

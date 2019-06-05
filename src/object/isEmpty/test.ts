@@ -1,4 +1,4 @@
-import "./index";
+import ".";
 
 describe("Object.prototype.$isEmpty", () => {
   test("{ a: 1 }.$isEmpty() returns false", () => {

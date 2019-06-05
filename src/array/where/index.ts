@@ -1,13 +1,13 @@
-import * as method from "./method";
-import * as types from "../../types";
-import { addPrototype } from "../../utils";
+import { addPrototype, Operator } from "../../utils";
+import method from "./method";
 
 declare global {
   interface Array<T> {
     where(value: any): T[];
     where(field: string, value: any): T[];
-    where(operator: types.Operator, value: any): T[];
-    where(field: string, operator: types.Operator, value: any): T[];
+    // tslint:disable-next-line: unified-signatures
+    where(operator: Operator, value: any): T[];
+    where(field: string, operator: Operator, value: any): T[];
   }
 }
 

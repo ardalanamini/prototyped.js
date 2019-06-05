@@ -1,24 +1,58 @@
-import * as isString from "../isString/method";
+import isString from "../isString/method";
 
 const IRREGULAR_RULES = [
   // Pronouns.
-  ["I", "we"], ["me", "us"], ["he", "they"], ["she", "they"], ["them", "them"], ["myself", "ourselves"],
-  ["yourself", "yourselves"], ["itself", "themselves"], ["herself", "themselves"],
-  ["himself", "themselves"], ["themself", "themselves"], ["is", "are"], ["was", "were"], ["has", "have"],
-  ["this", "these"], ["that", "those"],
+  ["I", "we"],
+  ["me", "us"],
+  ["he", "they"],
+  ["she", "they"],
+  ["them", "them"],
+  ["myself", "ourselves"],
+  ["yourself", "yourselves"],
+  ["itself", "themselves"],
+  ["herself", "themselves"],
+  ["himself", "themselves"],
+  ["themself", "themselves"],
+  ["is", "are"],
+  ["was", "were"],
+  ["has", "have"],
+  ["this", "these"],
+  ["that", "those"],
   // Words ending in with a consonant and `o`.
-  ["echo", "echoes"], ["dingo", "dingoes"], ["volcano", "volcanoes"], ["tornado", "tornadoes"],
+  ["echo", "echoes"],
+  ["dingo", "dingoes"],
+  ["volcano", "volcanoes"],
+  ["tornado", "tornadoes"],
   ["torpedo", "torpedoes"],
   // Ends with `us`.
-  ["genus", "genera"], ["viscus", "viscera"],
+  ["genus", "genera"],
+  ["viscus", "viscera"],
   // Ends with `ma`.
-  ["stigma", "stigmata"], ["stoma", "stomata"], ["dogma", "dogmata"], ["lemma", "lemmata"],
-  ["schema", "schemata"], ["anathema", "anathemata"],
+  ["stigma", "stigmata"],
+  ["stoma", "stomata"],
+  ["dogma", "dogmata"],
+  ["lemma", "lemmata"],
+  ["schema", "schemata"],
+  ["anathema", "anathemata"],
   // Other irregular rules.
-  ["ox", "oxen"], ["axe", "axes"], ["die", "dice"], ["yes", "yeses"], ["foot", "feet"], ["eave", "eaves"],
-  ["goose", "geese"], ["tooth", "teeth"], ["quiz", "quizzes"], ["human", "humans"], ["proof", "proofs"],
-  ["carve", "carves"], ["valve", "valves"], ["looey", "looies"], ["thief", "thieves"], ["groove", "grooves"],
-  ["pickaxe", "pickaxes"], ["whiskey", "whiskies"],
+  ["ox", "oxen"],
+  ["axe", "axes"],
+  ["die", "dice"],
+  ["yes", "yeses"],
+  ["foot", "feet"],
+  ["eave", "eaves"],
+  ["goose", "geese"],
+  ["tooth", "teeth"],
+  ["quiz", "quizzes"],
+  ["human", "humans"],
+  ["proof", "proofs"],
+  ["carve", "carves"],
+  ["valve", "valves"],
+  ["looey", "looies"],
+  ["thief", "thieves"],
+  ["groove", "grooves"],
+  ["pickaxe", "pickaxes"],
+  ["whiskey", "whiskies"],
 ];
 
 const PLURALIZATION_RUES: Array<[RegExp | string, string]> = [
@@ -29,13 +63,23 @@ const PLURALIZATION_RUES: Array<[RegExp | string, string]> = [
   [/(alias|[^aou]us|t[lm]as|gas|ris)$/i, "$1es"],
   [/(e[mn]u)s?$/i, "$1s"],
   [/([^l]ias|[aeiou]las|[ejzr]as|[iu]am)$/i, "$1"],
-  [/(alumn|syllab|octop|vir|radi|nucle|fung|cact|stimul|termin|bacill|foc|uter|loc|strat)(?:us|i)$/i, "$1i"],
+  [
+    // tslint:disable-next-line: max-line-length
+    /(alumn|syllab|octop|vir|radi|nucle|fung|cact|stimul|termin|bacill|foc|uter|loc|strat)(?:us|i)$/i,
+    "$1i",
+  ],
   [/(alumn|alg|vertebr)(?:a|ae)$/i, "$1ae"],
   [/(seraph|cherub)(?:im)?$/i, "$1im"],
   [/(her|at|gr)o$/i, "$1oes"],
-  // tslint:disable:max-line-length
-  [/(agend|addend|millenni|dat|extrem|bacteri|desiderat|strat|candelabr|errat|ov|symposi|curricul|automat|quor)(?:a|um)$/i, "$1a"],
-  [/(apheli|hyperbat|periheli|asyndet|noumen|phenomen|criteri|organ|prolegomen|hedr|automat)(?:a|on)$/i, "$1a"],
+  [
+    // tslint:disable:max-line-length
+    /(agend|addend|millenni|dat|extrem|bacteri|desiderat|strat|candelabr|errat|ov|symposi|curricul|automat|quor)(?:a|um)$/i,
+    "$1a",
+  ],
+  [
+    /(apheli|hyperbat|periheli|asyndet|noumen|phenomen|criteri|organ|prolegomen|hedr|automat)(?:a|on)$/i,
+    "$1a",
+  ],
   [/sis$/i, "ses"],
   [/(?:(kni|wi|li)fe|(ar|l|ea|eo|oa|hoo)f)$/i, "$1$2ves"],
   [/([^aeiouy]|qu)y$/i, "$1ies"],
@@ -56,17 +100,35 @@ const SINGULARIZATION_RULES: Array<[RegExp, string]> = [
   [/(wi|kni|(?:after|half|high|low|mid|non|night|[^\w]|^)li)ves$/i, "$1fe"],
   [/(ar|(?:wo|[ae])l|[eo][ao])ves$/i, "$1f"],
   [/ies$/i, "y"],
-  [/\b([pl]|zomb|(?:neck|cross)?t|coll|faer|food|gen|goon|group|lass|talk|goal|cut)ies$/i, "$1ie"],
+  [
+    /\b([pl]|zomb|(?:neck|cross)?t|coll|faer|food|gen|goon|group|lass|talk|goal|cut)ies$/i,
+    "$1ie",
+  ],
   [/\b(mon|smil)ies$/i, "$1ey"],
   [/\b((?:tit)?m|l)ice$/i, "$1ouse"],
   [/(seraph|cherub)im$/i, "$1"],
-  [/(x|ch|ss|sh|zz|tto|go|cho|alias|[^aou]us|t[lm]as|gas|(?:her|at|gr)o|ris)(?:es)?$/i, "$1"],
-  [/(analy|ba|diagno|parenthe|progno|synop|the|empha|cri)(?:sis|ses)$/i, "$1sis"],
+  [
+    /(x|ch|ss|sh|zz|tto|go|cho|alias|[^aou]us|t[lm]as|gas|(?:her|at|gr)o|ris)(?:es)?$/i,
+    "$1",
+  ],
+  [
+    /(analy|ba|diagno|parenthe|progno|synop|the|empha|cri)(?:sis|ses)$/i,
+    "$1sis",
+  ],
   [/(movie|twelve|abuse|e[mn]u)s$/i, "$1"],
   [/(test)(?:is|es)$/i, "$1is"],
-  [/(alumn|syllab|octop|vir|radi|nucle|fung|cact|stimul|termin|bacill|foc|uter|loc|strat)(?:us|i)$/i, "$1us"],
-  [/(agend|addend|millenni|dat|extrem|bacteri|desiderat|strat|candelabr|errat|ov|symposi|curricul|quor)a$/i, "$1um"],
-  [/(apheli|hyperbat|periheli|asyndet|noumen|phenomen|criteri|organ|prolegomen|hedr|automat)a$/i, "$1on"],
+  [
+    /(alumn|syllab|octop|vir|radi|nucle|fung|cact|stimul|termin|bacill|foc|uter|loc|strat)(?:us|i)$/i,
+    "$1us",
+  ],
+  [
+    /(agend|addend|millenni|dat|extrem|bacteri|desiderat|strat|candelabr|errat|ov|symposi|curricul|quor)a$/i,
+    "$1um",
+  ],
+  [
+    /(apheli|hyperbat|periheli|asyndet|noumen|phenomen|criteri|organ|prolegomen|hedr|automat)a$/i,
+    "$1on",
+  ],
   [/(alumn|alg|vertebr)ae$/i, "$1a"],
   [/(cod|mur|sil|vert|ind)ices$/i, "$1ex"],
   [/(matr|append)ices$/i, "$1ix"],
@@ -78,15 +140,93 @@ const SINGULARIZATION_RULES: Array<[RegExp, string]> = [
 
 const UNCOUNTABLE_RULES = [
   // Singular words with no plurals.
-  "adulthood", "advice", "agenda", "aid", "alcohol", "ammo", "anime", "athletics", "audio", "bison",
-  "blood", "bream", "buffalo", "butter", "carp", "cash", "chassis", "chess", "clothing", "cod", "commerce",
-  "cooperation", "corps", "debris", "diabetes", "digestion", "elk", "energy", "equipment", "excretion",
-  "expertise", "flounder", "fun", "gallows", "garbage", "graffiti", "headquarters", "health", "herpes",
-  "highjinks", "homework", "housework", "information", "jeans", "justice", "kudos", "labour", "literature",
-  "machinery", "mackerel", "mail", "media", "mews", "moose", "music", "mud", "manga", "news", "pike",
-  "plankton", "pliers", "police", "pollution", "premises", "rain", "research", "rice", "salmon", "scissors",
-  "series", "sewage", "shambles", "shrimp", "species", "staff", "swine", "tennis", "traffic", "transportation",
-  "trout", "tuna", "wealth", "welfare", "whiting", "wildebeest", "wildlife", "you",
+  "adulthood",
+  "advice",
+  "agenda",
+  "aid",
+  "alcohol",
+  "ammo",
+  "anime",
+  "athletics",
+  "audio",
+  "bison",
+  "blood",
+  "bream",
+  "buffalo",
+  "butter",
+  "carp",
+  "cash",
+  "chassis",
+  "chess",
+  "clothing",
+  "cod",
+  "commerce",
+  "cooperation",
+  "corps",
+  "debris",
+  "diabetes",
+  "digestion",
+  "elk",
+  "energy",
+  "equipment",
+  "excretion",
+  "expertise",
+  "flounder",
+  "fun",
+  "gallows",
+  "garbage",
+  "graffiti",
+  "headquarters",
+  "health",
+  "herpes",
+  "highjinks",
+  "homework",
+  "housework",
+  "information",
+  "jeans",
+  "justice",
+  "kudos",
+  "labour",
+  "literature",
+  "machinery",
+  "mackerel",
+  "mail",
+  "media",
+  "mews",
+  "moose",
+  "music",
+  "mud",
+  "manga",
+  "news",
+  "pike",
+  "plankton",
+  "pliers",
+  "police",
+  "pollution",
+  "premises",
+  "rain",
+  "research",
+  "rice",
+  "salmon",
+  "scissors",
+  "series",
+  "sewage",
+  "shambles",
+  "shrimp",
+  "species",
+  "staff",
+  "swine",
+  "tennis",
+  "traffic",
+  "transportation",
+  "trout",
+  "tuna",
+  "wealth",
+  "welfare",
+  "whiting",
+  "wildebeest",
+  "wildlife",
+  "you",
   // RegExes.
   /[^aeiou]ese$/i, // "chinese", "japanese"
   /deer$/i, // "deer", "reindeer"
@@ -112,7 +252,8 @@ const irregularSingles: { [keys: string]: string } = {};
  * @param {RegExp|String} rule
  * @return {RegExp}
  */
-const sanitizeRule = (rule: RegExp | string) => isString(rule) ? new RegExp(`^${rule}$`, "i") : rule;
+const sanitizeRule = (rule: RegExp | string) =>
+  isString(rule) ? new RegExp(`^${rule}$`, "i") : rule;
 
 /**
  * Pass in a word token to produce a function that can replicate the case on
@@ -131,8 +272,9 @@ const restoreCase = (word: string, token: string) => {
   if (word === word.toUpperCase()) return token.toUpperCase();
 
   // Title cased words. E.g. "Title".
-  if (word[0] === word[0].toUpperCase())
+  if (word[0] === word[0].toUpperCase()) {
     return token.charAt(0).toUpperCase() + token.substr(1).toLowerCase();
+  }
 
   // Lower cased words. E.g. "test".
   return token.toLowerCase();
@@ -147,40 +289,46 @@ const restoreCase = (word: string, token: string) => {
  * @param {Array} rules
  * @return {Function}
  */
-const replaceWord = (replaceMap: { [keys: string]: string }, keepMap: { [keys: string]: string }, rules: Array<[RegExp, string]>) =>
-  (word: string) => {
-    // Get the correct token and case restoration functions.
-    const token = word.toLowerCase();
+const replaceWord = (
+  replaceMap: { [keys: string]: string },
+  keepMap: { [keys: string]: string },
+  rules: Array<[RegExp, string]>,
+) => (word: string) => {
+  // Get the correct token and case restoration functions.
+  const token = word.toLowerCase();
 
-    // Check against the keep object map.
-    if (keepMap.hasOwnProperty(token)) return restoreCase(word, token);
+  // Check against the keep object map.
+  if (keepMap.hasOwnProperty(token)) return restoreCase(word, token);
 
-    // Check against the replacement map for a direct word replacement.
-    if (replaceMap.hasOwnProperty(token)) return restoreCase(word, replaceMap[token]);
+  // Check against the replacement map for a direct word replacement.
+  if (replaceMap.hasOwnProperty(token)) {
+    return restoreCase(word, replaceMap[token]);
+  }
 
-    // Run all the rules against the word.
+  // Run all the rules against the word.
 
-    if (!token.length || uncountables.hasOwnProperty(token)) return word;
+  if (!token.length || uncountables.hasOwnProperty(token)) return word;
 
-    let len = rules.length;
+  let len = rules.length;
 
-    // Iterate over the sanitization rules and use the first one to match.
-    while (len--) {
-      const rule = rules[len];
+  // Iterate over the sanitization rules and use the first one to match.
+  while (len--) {
+    const rule = rules[len];
 
-      if (rule[0].test(word))
-        return word.replace(rule[0], (match, index, ...rest) => {
-          const args = [match, index].concat(rest);
-          const result = rule[1].replace(/\$(\d{1,2})/g, (match, index) => args[index] || "");
+    if (rule[0].test(word)) {
+      return word.replace(rule[0], (match, index, ...rest) => {
+        const args = [match, index].concat(rest);
+        const result = rule[1].replace(/\$(\d{1,2})/g, (_, i) => args[i] || "");
 
-          if (match === "") return restoreCase(word[index - 1], result);
+        if (match === "") return restoreCase(word[index - 1], result);
 
-          return restoreCase(match, result);
-        });
+        return restoreCase(match, result);
+      });
     }
+  }
 
-    return word;
-  };
+  return word;
+};
 
 /**
  * Add a pluralization rule to the collection.
@@ -190,7 +338,7 @@ const replaceWord = (replaceMap: { [keys: string]: string }, keepMap: { [keys: s
  * @param {String} replacement
  */
 const addPluralRule = (rule: string | RegExp, replacement: string) =>
-  pluralRules.push([sanitizeRule(rule), replacement]);
+  pluralRules.push([sanitizeRule(rule) as any, replacement]);
 
 /**
  * Add a singularization rule to the collection.
@@ -200,21 +348,21 @@ const addPluralRule = (rule: string | RegExp, replacement: string) =>
  * @param {String} replacement
  */
 const addSingularRule = (rule: string | RegExp, replacement: string) =>
-  singularRules.push([sanitizeRule(rule), replacement]);
+  singularRules.push([sanitizeRule(rule) as any, replacement]);
 
-IRREGULAR_RULES.forEach((rule) => {
-  const plural = rule[1].toLowerCase();
+IRREGULAR_RULES.forEach(rule => {
+  const pl = rule[1].toLowerCase();
   const single = rule[0].toLowerCase();
 
-  irregularSingles[single] = plural;
-  irregularPlurals[plural] = single;
+  irregularSingles[single] = pl;
+  irregularPlurals[pl] = single;
 });
 
-PLURALIZATION_RUES.forEach((rule) => addPluralRule(rule[0], rule[1]));
+PLURALIZATION_RUES.forEach(rule => addPluralRule(rule[0], rule[1]));
 
-SINGULARIZATION_RULES.forEach((rule) => addSingularRule(rule[0], rule[1]));
+SINGULARIZATION_RULES.forEach(rule => addSingularRule(rule[0], rule[1]));
 
-UNCOUNTABLE_RULES.forEach((word) => {
+UNCOUNTABLE_RULES.forEach(word => {
   if (isString(word)) {
     uncountables[word.toLowerCase()] = true;
 

@@ -1,11 +1,11 @@
-import "./index";
+import ".";
 
 describe("String.prototype.isEmpty", () => {
-  test("\"123\".isEmpty() returns false", () => {
+  test('"123".isEmpty() returns false', () => {
     expect("123".isEmpty()).toBe(false);
   });
 
-  test("\"\".isEmpty() returns true", () => {
+  test('"".isEmpty() returns true', () => {
     expect("".isEmpty()).toBe(true);
   });
 });

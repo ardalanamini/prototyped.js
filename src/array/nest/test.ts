@@ -1,4 +1,4 @@
-import "./index";
+import ".";
 
 describe("Array.prototype.nest", () => {
   test("Array.prototype.nest (1)", () => {

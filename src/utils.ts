@@ -6,16 +6,17 @@
  * @example
  * pathToKeys("selector.to[0][11].value"); // ["selector", "to", 0, 11, "value"]
  */
-export const pathToKeys = (path: string) => path
-  .replace(/([^\.])\[/g, (m, match) => `${match}.[`)
-  .split(".")
-  .map((key) => {
-    const match = key.match(/^\[(\d+)\]$/);
+export const pathToKeys = (path: string) =>
+  path
+    .replace(/([^\.])\[/g, (m, match) => `${match}.[`)
+    .split(".")
+    .map(key => {
+      const match = key.match(/^\[(\d+)\]$/);
 
-    if (match) return +match[1];
+      if (match) return +match[1];
 
-    return key;
-  });
+      return key;
+    });
 
 /**
  *
@@ -26,21 +27,21 @@ export const pathToKeys = (path: string) => path
  * @example
  * addPrototype(Object, "$size", function() {return this;});
  */
-export const addPrototype = (obj: any, key: string, method: (...args: any[]) => any) => {
+export const addPrototype = (
+  obj: any,
+  key: string,
+  method: (...args: any[]) => any,
+) => {
   const prototype = obj.prototype;
 
   if (prototype.hasOwnProperty(key)) return;
 
-  Object.defineProperty(
-    prototype,
-    key,
-    {
-      value(...args: any[]) {
-        return method.apply(0, [this].concat(args));
-      },
-      writable: true,
-    }
-  );
+  Object.defineProperty(prototype, key, {
+    value(...args: any[]) {
+      return method.apply(0, [this].concat(args));
+    },
+    writable: true,
+  });
 };
 
 /**
@@ -54,12 +55,15 @@ export const addPrototype = (obj: any, key: string, method: (...args: any[]) => 
  * filter([1, 2, 3], undefined, (value) => value > 1);
  */
 export const filter = <T = any>(
-  arr: T[], path: string | undefined, fn: (value: T, index: number, array: T[]) => any
+  arr: T[],
+  path: string | undefined,
+  fn: (value: T, index: number, array: T[]) => any,
 ) => {
   if (path) {
     const keys = pathToKeys(path);
 
-    const reducer = (item: T) => keys.reduce((prev, curr) => (prev as any)[curr], item);
+    const reducer = (item: T) =>
+      keys.reduce((prev, curr) => (prev as any)[curr], item);
 
     return arr.filter((item, index, items) => fn(reducer(item), index, items));
   }
@@ -82,11 +86,13 @@ export const deepClone = <T = any>(value: T): T => {
 
   const clone: any = Object.assign({}, value);
 
-  Object.keys(clone)
-    .forEach((key) => (clone[key] = typeof (value as any)[key] === "object" ?
-      deepClone((value as any)[key]) :
-      (value as any)[key])
-    );
+  Object.keys(clone).forEach(
+    key =>
+      (clone[key] =
+        typeof (value as any)[key] === "object"
+          ? deepClone((value as any)[key])
+          : (value as any)[key]),
+  );
 
   if (Array.isArray(value)) {
     clone.length = value.length;
@@ -96,3 +102,14 @@ export const deepClone = <T = any>(value: T): T => {
 
   return clone;
 };
+
+export type Operator = "<" | "<=" | "=" | "<>" | ">=" | ">";
+
+export const enum OPERATOR {
+  LT = "<",
+  LTE = "<=",
+  EQ = "=",
+  NE = "<>",
+  GTE = ">=",
+  GT = ">",
+}

@@ -1,12 +1,12 @@
-import "./index";
+import ".";
 
 describe("Object.isObject", () => {
   test("Object.isObject(2) returns false", () => {
     expect(Object.isObject(2)).toBe(false);
   });
 
-  test("Object.isObject({foo: \"bar\"}) returns true", () => {
-    expect(Object.isObject({foo: "bar"})).toBe(true);
+  test('Object.isObject({foo: "bar"}) returns true', () => {
+    expect(Object.isObject({ foo: "bar" })).toBe(true);
   });
 
   test("Object.isObject([1, 2]) returns true", () => {

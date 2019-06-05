@@ -5,9 +5,11 @@ os:
   - osx
 
 node_js:
-  - "10"
-  - "9"
   - "8"
+  - "9"
+  - "10"
+  - "11"
+  - "12"
 
 script:
   - npm run codecov

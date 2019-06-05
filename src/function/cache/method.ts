@@ -5,7 +5,9 @@ const method = (func: Function): any => {
   const cached = (...args: any[]) => {
     const key = JSON.stringify(args);
 
-    return cache.has(key) ? cache.get(key) : cache.set(key, func.call(func, ...args)) && cache.get(key);
+    return cache.has(key)
+      ? cache.get(key)
+      : cache.set(key, func.call(func, ...args)) && cache.get(key);
   };
 
   func.cached = cache;

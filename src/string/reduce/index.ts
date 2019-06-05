@@ -1,9 +1,12 @@
-import * as method from "./method";
 import { addPrototype } from "../../utils";
+import method from "./method";
 
 declare global {
   interface String {
-    reduce<T = any>(fn: (prev: T, char: string, index: number, chars: string[]) => T, initialValue?: T): any;
+    reduce<T = any>(
+      fn: (prev: T, char: string, index: number, chars: string[]) => T,
+      initialValue?: T,
+    ): any;
   }
 }
 

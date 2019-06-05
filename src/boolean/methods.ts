@@ -1,5 +1,3 @@
-import * as isBoolean from "./isBoolean/method";
+import isBoolean from "./isBoolean/method";
 
-export {
-  isBoolean,
-};
+export { isBoolean };

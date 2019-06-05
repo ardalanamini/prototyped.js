@@ -1,14 +1,14 @@
-import * as average from "./average/method";
-import * as degreesToRads from "./degreesToRads/method";
-import * as factorial from "./factorial/method";
-import * as fibonacci from "./fibonacci/method";
-import * as gcd from "./gcd/method";
-import * as isDivisible from "./isDivisible/method";
-import * as isEven from "./isEven/method";
-import * as isPrime from "./isPrime/method";
-import * as lcm from "./lcm/method";
-import * as primes from "./primes/method";
-import * as radsToDegrees from "./radsToDegrees/method";
+import average from "./average/method";
+import degreesToRads from "./degreesToRads/method";
+import factorial from "./factorial/method";
+import fibonacci from "./fibonacci/method";
+import gcd from "./gcd/method";
+import isDivisible from "./isDivisible/method";
+import isEven from "./isEven/method";
+import isPrime from "./isPrime/method";
+import lcm from "./lcm/method";
+import primes from "./primes/method";
+import radsToDegrees from "./radsToDegrees/method";
 
 export {
   average,

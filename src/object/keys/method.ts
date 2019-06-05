@@ -1,3 +1,3 @@
-const method = (obj: object): string[] => Object.keys(obj);
+const method = <T extends object>(obj: T): Array<keyof T> => Object.keys(obj) as any;
 
 export = method;

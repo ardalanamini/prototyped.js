@@ -1,8 +1,8 @@
-import * as method from "./method";
+import method from "./method";
 
 declare global {
   interface ArrayConstructor {
-    repeat(n: number, value?: any): any[];
+    repeat<T = 0>(n: number, value?: T): T[];
   }
 }
 

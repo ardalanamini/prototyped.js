@@ -1,9 +1,11 @@
 import { addPrototype } from "../../utils";
-import * as method from "./method";
+import method from "./method";
 
 declare global {
   interface Object {
-    $map(fn: (value: any, key: string, object: object) => { [key: string]: any }): object;
+    $map(
+      fn: (value: any, key: string, object: object) => { [key: string]: any },
+    ): object;
   }
 }
 
