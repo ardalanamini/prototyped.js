@@ -1,7 +1,7 @@
-require("../es6");
+require("../dist");
 const path = require("path");
 const fs = require("fs");
-const methods = require("../es6/methods");
+const methods = require("../dist/methods");
 
 const generateKeywords = (obj = {}) => {
   const keywords = [];
@@ -13,9 +13,9 @@ const generateKeywords = (obj = {}) => {
   });
 
   return keywords;
-}
+};
 
-const PATH = path.join(__dirname, "..", "package.json")
+const PATH = path.join(__dirname, "..", "package.json");
 
 const package = JSON.parse(fs.readFileSync(PATH, "utf8"));
 
@@ -23,8 +23,6 @@ package.keywords = [
   "server-side",
   "client-side",
   "common",
-  "es5",
-  "es6",
   "typescript",
   "prototype",
   ...generateKeywords(methods).distinct(),

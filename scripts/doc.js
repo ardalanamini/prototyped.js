@@ -2,7 +2,7 @@
 
 const path = require("path");
 // const rimraf = require("rimraf");
-const {execSync} = require("child_process");
+const { execSync } = require("child_process");
 const fs = require("fs");
 
 const startTime = new Date().getTime();
@@ -19,7 +19,10 @@ const DOCS_PATH = path.resolve(DOCS_DIR, "README.md");
 
 execSync(path.resolve(__dirname, "..", "node_modules", ".bin", "tsc"));
 
-const DOCS = execSync(path.resolve(__dirname, "..", "node_modules", ".bin", "jsdoc2md") + " es6/*.js es6/**/*.js es6/**/**/*.js --example-lang javascript");
+const DOCS = execSync(
+  path.resolve(__dirname, "..", "node_modules", ".bin", "jsdoc2md") +
+    " dist/*.js dist/**/*.js dist/**/**/*.js --example-lang javascript",
+);
 
 fs.writeFileSync(DOCS_PATH, `# Documents\n\n${DOCS.toString()}`, "utf8");
 

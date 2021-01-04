@@ -20,8 +20,6 @@
     "server-side",
     "client-side",
     "common",
-    "es5",
-    "es6",
     "typescript",
     "prototype",
     "array",
@@ -158,16 +156,14 @@
     "truncate",
     "words"
   ],
-  "main": "es6/index.js",
-  "types": "es6/index.d.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.js",
   "files": [
-    "es5",
-    "es6"
+    "dist",
+    "src"
   ],
   "scripts": {
-    "prepublishOnly": "npm test && npm run lint && npm run doc && npm run build && npm run regenerate:package.json",
-    "build": "node scripts/build.js",
-    "build:tsc": "tsc",
+    "build": "tsc",
     "build:watch": "tsc --watch",
     "doc": "node scripts/doc.js",
     "lint": "eslint src __tests__",
