@@ -9,7 +9,6 @@ describe("Array.prototype.whereLike", () => {
     ]);
   });
 
-  // tslint:disable-next-line: max-line-length
   test('[{foo:"hello"},{foo:"bar"},{foo:"world"}].whereLike("foo",/o/i) returns [{foo:"hello"},{foo:"world"}]', () => {
     expect(
       [{ foo: "hello" }, { foo: "bar" }, { foo: "world" }].whereLike(

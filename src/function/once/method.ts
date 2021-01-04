@@ -1,4 +1,4 @@
-// tslint:disable-next-line:ban-types
+// eslint-disable-next-line @typescript-eslint/ban-types
 const method = (func: Function, ...args: any[]): any => {
   if (func.called) return;
 

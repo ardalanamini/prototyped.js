@@ -15,7 +15,7 @@ const method = (obj: { [key: string]: any }, obj2: any): boolean => {
 
   if (keys.length !== Object.keys(obj2).length) return false;
 
-  return keys.every(k => method(obj[k], (obj2 as any)[k]));
+  return keys.every((k) => method(obj[k], (obj2 as any)[k]));
 };
 
 export = method;

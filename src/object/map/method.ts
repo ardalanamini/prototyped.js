@@ -1,10 +1,10 @@
 import forEach from "../forEach/method";
 import keys from "../keys/method";
 
-const method = <T extends object, K extends keyof T>(
+const method = <T extends Record<string, unknown>, K extends keyof T>(
   obj: T,
   fn: (value: T[K], key: K, object: T) => { [key: string]: any },
-): object => {
+): Record<string, unknown> => {
   return keys(obj).reduce((prev: { [key: string]: any }, k) => {
     forEach(
       fn((obj as any)[k], k as K, obj),
@@ -12,7 +12,6 @@ const method = <T extends object, K extends keyof T>(
     );
 
     return prev;
-    // tslint:disable-next-line: align
   }, {});
 };
 

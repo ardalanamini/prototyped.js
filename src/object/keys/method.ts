@@ -1,3 +1,4 @@
-const method = <T extends object>(obj: T): Array<keyof T> => Object.keys(obj) as any;
+const method = <T extends Record<string, unknown>>(obj: T): Array<keyof T> =>
+  Object.keys(obj) as any;
 
 export = method;

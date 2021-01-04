@@ -3,7 +3,9 @@ import method from "./method";
 
 declare global {
   interface Object {
-    $mapKeys(fn: (value: any, key: string, object: object) => string): object;
+    $mapKeys(
+      fn: (value: any, key: string, object: Record<string, unknown>) => string,
+    ): Record<string, unknown>;
   }
 }
 

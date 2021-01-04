@@ -4,8 +4,12 @@ import method from "./method";
 declare global {
   interface Object {
     $map(
-      fn: (value: any, key: string, object: object) => { [key: string]: any },
-    ): object;
+      fn: (
+        value: any,
+        key: string,
+        object: Record<string, unknown>,
+      ) => { [key: string]: any },
+    ): Record<string, unknown>;
   }
 }
 

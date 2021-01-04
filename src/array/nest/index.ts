@@ -3,7 +3,7 @@ import method from "./method";
 
 declare global {
   interface Array<T> {
-    nest(link?: string, key?: string): object[];
+    nest(link?: string, key?: string): Record<string, unknown>[];
   }
 }
 

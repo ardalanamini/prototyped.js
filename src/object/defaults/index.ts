@@ -3,7 +3,7 @@ import method from "./method";
 
 declare global {
   interface Object {
-    $defaults(...sources: object[]): any;
+    $defaults(...sources: Record<string, unknown>[]): Record<string, unknown>;
   }
 }
 

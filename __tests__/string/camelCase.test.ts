@@ -7,7 +7,6 @@ describe("String.prototype.camelCase", () => {
     );
   });
 
-  // tslint:disable-next-line: max-line-length
   test('"Some label that needs to be camelized".camelCase() returns "someLabelThatNeedsToBeCamelized"', () => {
     expect("Some label that needs to be camelized".camelCase()).toBe(
       "someLabelThatNeedsToBeCamelized",

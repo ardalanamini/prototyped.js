@@ -40,7 +40,7 @@ describe("utils", () => {
   });
 
   test("deepClone Function", () => {
-    // tslint:disable-next-line: no-empty function-name
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
     function a() {}
     expect(utils.deepClone(a)).toBe(a);
   });

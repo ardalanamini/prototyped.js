@@ -4,7 +4,12 @@ import method from "./method";
 declare global {
   interface Object {
     $reduce<T = any>(
-      fn: (prev: T, value: any, key: string, object: object) => T,
+      fn: (
+        prev: T,
+        value: any,
+        key: string,
+        object: Record<string, unknown>,
+      ) => T,
       initialValue?: T,
     ): any;
   }

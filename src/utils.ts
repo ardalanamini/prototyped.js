@@ -1,3 +1,5 @@
+const hasOwnProperty = Object.prototype.hasOwnProperty;
+
 /**
  * convert key path string to key array
  * @private
@@ -8,9 +10,9 @@
  */
 export const pathToKeys = (path: string) =>
   path
-    .replace(/([^\.])\[/g, (m, match) => `${match}.[`)
+    .replace(/([^.])\[/g, (m, match) => `${match}.[`)
     .split(".")
-    .map(key => {
+    .map((key) => {
       const match = key.match(/^\[(\d+)\]$/);
 
       if (match) return +match[1];
@@ -34,7 +36,7 @@ export const addPrototype = (
 ) => {
   const prototype = obj.prototype;
 
-  if (prototype.hasOwnProperty(key)) return;
+  if (hasOwnProperty.call(prototype, key)) return;
 
   Object.defineProperty(prototype, key, {
     value(...args: any[]) {
@@ -87,7 +89,7 @@ export const deepClone = <T = any>(value: T): T => {
   const clone: any = Object.assign({}, value);
 
   Object.keys(clone).forEach(
-    key =>
+    (key) =>
       (clone[key] =
         typeof (value as any)[key] === "object"
           ? deepClone((value as any)[key])

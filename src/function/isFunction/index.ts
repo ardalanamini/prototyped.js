@@ -2,7 +2,7 @@ import method from "./method";
 
 declare global {
   interface FunctionConstructor {
-    // tslint:disable-next-line:ban-types
+    // eslint-disable-next-line @typescript-eslint/ban-types
     isFunction(arg: any): arg is Function;
   }
 }

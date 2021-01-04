@@ -1,5 +1,7 @@
 import isString from "../isString/method";
 
+const hasOwnProperty = Object.prototype.hasOwnProperty;
+
 const IRREGULAR_RULES = [
   // Pronouns.
   ["I", "we"],
@@ -57,6 +59,7 @@ const IRREGULAR_RULES = [
 
 const PLURALIZATION_RUES: Array<[RegExp | string, string]> = [
   [/s?$/i, "s"],
+  // eslint-disable-next-line no-control-regex
   [/[^\u0000-\u007F]$/i, "$0"],
   [/([^aeiou]ese)$/i, "$1"],
   [/(ax|test)is$/i, "$1es"],
@@ -64,7 +67,6 @@ const PLURALIZATION_RUES: Array<[RegExp | string, string]> = [
   [/(e[mn]u)s?$/i, "$1s"],
   [/([^l]ias|[aeiou]las|[ejzr]as|[iu]am)$/i, "$1"],
   [
-    // tslint:disable-next-line: max-line-length
     /(alumn|syllab|octop|vir|radi|nucle|fung|cact|stimul|termin|bacill|foc|uter|loc|strat)(?:us|i)$/i,
     "$1i",
   ],
@@ -72,7 +74,6 @@ const PLURALIZATION_RUES: Array<[RegExp | string, string]> = [
   [/(seraph|cherub)(?:im)?$/i, "$1im"],
   [/(her|at|gr)o$/i, "$1oes"],
   [
-    // tslint:disable:max-line-length
     /(agend|addend|millenni|dat|extrem|bacteri|desiderat|strat|candelabr|errat|ov|symposi|curricul|automat|quor)(?:a|um)$/i,
     "$1a",
   ],
@@ -298,16 +299,16 @@ const replaceWord = (
   const token = word.toLowerCase();
 
   // Check against the keep object map.
-  if (keepMap.hasOwnProperty(token)) return restoreCase(word, token);
+  if (hasOwnProperty.call(keepMap, token)) return restoreCase(word, token);
 
   // Check against the replacement map for a direct word replacement.
-  if (replaceMap.hasOwnProperty(token)) {
+  if (hasOwnProperty.call(replaceMap, token)) {
     return restoreCase(word, replaceMap[token]);
   }
 
   // Run all the rules against the word.
 
-  if (!token.length || uncountables.hasOwnProperty(token)) return word;
+  if (!token.length || hasOwnProperty.call(uncountables, token)) return word;
 
   let len = rules.length;
 
@@ -350,7 +351,7 @@ const addPluralRule = (rule: string | RegExp, replacement: string) =>
 const addSingularRule = (rule: string | RegExp, replacement: string) =>
   singularRules.push([sanitizeRule(rule) as any, replacement]);
 
-IRREGULAR_RULES.forEach(rule => {
+IRREGULAR_RULES.forEach((rule) => {
   const pl = rule[1].toLowerCase();
   const single = rule[0].toLowerCase();
 
@@ -358,11 +359,11 @@ IRREGULAR_RULES.forEach(rule => {
   irregularPlurals[pl] = single;
 });
 
-PLURALIZATION_RUES.forEach(rule => addPluralRule(rule[0], rule[1]));
+PLURALIZATION_RUES.forEach((rule) => addPluralRule(rule[0], rule[1]));
 
-SINGULARIZATION_RULES.forEach(rule => addSingularRule(rule[0], rule[1]));
+SINGULARIZATION_RULES.forEach((rule) => addSingularRule(rule[0], rule[1]));
 
-UNCOUNTABLE_RULES.forEach(word => {
+UNCOUNTABLE_RULES.forEach((word) => {
   if (isString(word)) {
     uncountables[word.toLowerCase()] = true;
 

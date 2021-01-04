@@ -6,6 +6,7 @@ describe("Function.isFunction", () => {
   });
 
   test("Function.isFunction((() => {})) returns true", () => {
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
     expect(Function.isFunction(() => {})).toBe(true);
   });
 

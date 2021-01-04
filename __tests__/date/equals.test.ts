@@ -9,6 +9,7 @@ describe("Date.prototype.equals", () => {
 
   test("(new Date()).equals(new Date()) returns false", () => {
     const date1 = new Date();
+    // eslint-disable-next-line no-empty
     while (new Date().getTime() === date1.getTime()) {}
     const date2 = new Date();
     expect(date1.equals(date2)).toBe(false);

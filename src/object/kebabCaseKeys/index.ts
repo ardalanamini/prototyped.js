@@ -3,7 +3,7 @@ import method from "./method";
 
 declare global {
   interface Object {
-    $kebabCaseKeys(): object;
+    $kebabCaseKeys(): Record<string, unknown>;
   }
 }
 

@@ -10,7 +10,6 @@ describe("Number.isNumber", () => {
   });
 
   test("Number.isNumber(new Number(2)) returns true", () => {
-    // tslint:disable-next-line
     expect(Number.isNumber(new Number(2))).toBe(true);
   });
 

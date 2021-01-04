@@ -3,7 +3,7 @@ import method from "./method";
 
 declare global {
   interface Array<T> {
-    zipObject(array: any[]): object;
+    zipObject(array: any[]): Record<string, unknown>;
   }
 }
 

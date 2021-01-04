@@ -1,6 +1,6 @@
 import repeat from "../repeat/method";
 
-const method = (str: string, size: number, value: string = " "): string => {
+const method = (str: string, size: number, value = " "): string => {
   const s = Math.abs(size);
 
   if (s <= str.length) return str;

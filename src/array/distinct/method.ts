@@ -10,7 +10,7 @@ const method = <T = any>(
   if (isString(fn)) {
     const keys = pathToKeys(fn);
 
-    fn = value => keys.reduce((prev: any, cur) => prev[cur], value);
+    fn = (value) => keys.reduce((prev: any, cur) => prev[cur], value);
   }
 
   const length = arr.length;

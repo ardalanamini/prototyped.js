@@ -41,7 +41,7 @@ describe("Array.prototype.where", () => {
     expect(() =>
       [{ count: 1 }, { count: 20 }, { count: 15 }].where(
         "count",
-        "like" as any,
+        "like" as never,
         15,
       ),
     ).toThrowError(TypeError);

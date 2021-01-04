@@ -643,7 +643,7 @@ const PLURAL_TESTS = [
 
 describe("String.prototype.pluralize", () => {
   describe("pluralize()", () => {
-    BASIC_TESTS.concat(PLURAL_TESTS).forEach(test => {
+    BASIC_TESTS.concat(PLURAL_TESTS).forEach((test) => {
       it(`${test[0]} -> ${test[1]}`, () => {
         expect(test[0].pluralize()).toEqual(test[1]);
       });
@@ -652,7 +652,7 @@ describe("String.prototype.pluralize", () => {
 
   describe("automatically convert", () => {
     describe("pluralize(5)", () => {
-      BASIC_TESTS.concat(PLURAL_TESTS).forEach(test => {
+      BASIC_TESTS.concat(PLURAL_TESTS).forEach((test) => {
         // Make sure the word stays pluralized.
         it(`5 ${test[1]} -> ${test[1]}`, () => {
           expect(test[1].pluralize(5)).toEqual(test[1]);
@@ -668,7 +668,7 @@ describe("String.prototype.pluralize", () => {
     });
 
     describe("pluralize(1)", () => {
-      BASIC_TESTS.concat(SINGULAR_TESTS).forEach(test => {
+      BASIC_TESTS.concat(SINGULAR_TESTS).forEach((test) => {
         // Make sure the word stays singular.
         it(`1 ${test[0]} -> ${test[0]}`, () => {
           expect(test[0].pluralize(1)).toEqual(test[0]);

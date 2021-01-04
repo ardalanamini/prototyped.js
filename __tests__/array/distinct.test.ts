@@ -5,7 +5,6 @@ describe("Array.prototype.distinct", () => {
     expect([1, 2, 2, 3, 4, 4, 5].distinct()).toEqual([1, 2, 3, 4, 5]);
   });
 
-  // tslint:disable-next-line: max-line-length
   test('[{foo:{bar:[0,1]}}, {foo:{bar:[4,1]}}].distinct("foo.bar[1]") returns [{foo:{bar:[0,1]}}]', () => {
     expect(
       [{ foo: { bar: [0, 1] } }, { foo: { bar: [4, 1] } }].distinct(

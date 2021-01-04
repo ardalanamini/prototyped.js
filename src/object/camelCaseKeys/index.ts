@@ -3,7 +3,7 @@ import method from "./method";
 
 declare global {
   interface Object {
-    $camelCaseKeys(): object;
+    $camelCaseKeys(): Record<string, unknown>;
   }
 }
 

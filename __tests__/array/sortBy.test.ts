@@ -9,9 +9,8 @@ describe("Array.prototype.sortBy", () => {
     ]);
   });
 
-  // tslint:disable-next-line: max-line-length
   test("['five', 'three', 'one'].sortBy((value) => -value.length) returns ['three', 'five', 'one']", () => {
-    expect(["five", "three", "one"].sortBy(value => -value.length)).toEqual([
+    expect(["five", "three", "one"].sortBy((value) => -value.length)).toEqual([
       "three",
       "five",
       "one",

@@ -3,7 +3,7 @@ import method from "./method";
 
 declare global {
   interface Object {
-    $flatten(): object;
+    $flatten(): Record<string, unknown>;
   }
 }
 

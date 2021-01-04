@@ -8,7 +8,6 @@ describe("Array.prototype.whereNull", () => {
     ]);
   });
 
-  // tslint:disable-next-line: max-line-length
   test('[{count:1}, {count:null}, {foo:15}].whereNull("count") returns [{count:null},{foo:15}]', () => {
     expect(
       [{ count: 1 }, { count: null }, { foo: 15 }].whereNull("count"),

@@ -2,7 +2,7 @@ import method from "./method";
 
 declare global {
   interface ObjectConstructor {
-    isPlainObject(arg: any): arg is object;
+    isPlainObject(arg: any): arg is Record<string, unknown>;
   }
 }
 

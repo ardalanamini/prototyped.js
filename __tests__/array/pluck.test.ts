@@ -1,7 +1,6 @@
 import "../../src/array/pluck";
 
 describe("Array.prototype.pluck", () => {
-  // tslint:disable-next-line: max-line-length
   test('[{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].pluck("a") returns [{b: 1}, {b: 2}, {b: 3}]', () => {
     expect(
       [{ a: { b: 1 } }, { a: { b: 2 } }, { a: { b: 3 } }].pluck("a"),
@@ -14,7 +13,6 @@ describe("Array.prototype.pluck", () => {
     ).toEqual([1, 2, 3]);
   });
 
-  // tslint:disable-next-line: max-line-length
   test('[{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].pluck("a.c") returns [undefined, undefined, undefined]', () => {
     expect(
       [{ a: { b: 1 } }, { a: { b: 2 } }, { a: { b: 3 } }].pluck("a.c"),

@@ -2,7 +2,7 @@ import "../../src/array/clone";
 
 describe("Array.prototype.clone", () => {
   test("[].clone() returns []", () => {
-    const a: any[] = [];
+    const a: unknown[] = [];
     const b = a.clone(true);
 
     expect(a).not.toBe(b);

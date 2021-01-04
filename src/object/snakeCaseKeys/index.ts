@@ -3,7 +3,7 @@ import method from "./method";
 
 declare global {
   interface Object {
-    $snakeCaseKeys(): object;
+    $snakeCaseKeys(): Record<string, unknown>;
   }
 }
 

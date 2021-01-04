@@ -1,6 +1,8 @@
 import { deepClone } from "../../utils";
 
-const method = (obj: object, deep: boolean = false): object =>
-  deep ? deepClone(obj) : Object.assign({}, obj);
+const method = <Value extends Record<string, unknown>>(
+  obj: Value,
+  deep = false,
+): Value => (deep ? deepClone(obj) : Object.assign({}, obj));
 
 export = method;

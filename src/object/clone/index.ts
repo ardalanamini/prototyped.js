@@ -3,7 +3,7 @@ import method from "./method";
 
 declare global {
   interface Object {
-    $clone(deep?: boolean): object;
+    $clone(deep?: boolean): Record<string, unknown>;
   }
 }
 

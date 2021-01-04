@@ -3,7 +3,9 @@ import method from "./method";
 
 declare global {
   interface Object {
-    $forEach(fn: (value: any, key: string, object: object) => void): void;
+    $forEach(
+      fn: (value: any, key: string, object: Record<string, unknown>) => void,
+    ): void;
   }
 }
 

@@ -1,3 +1,6 @@
 {
-  "trailingComma": "all"
+  "semi": true,
+  "singleQuote": false,
+  "trailingComma": "all",
+  "endOfLine": "lf"
 }

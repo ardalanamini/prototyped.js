@@ -2,7 +2,7 @@ import method from "./method";
 
 declare global {
   interface ObjectConstructor {
-    isObjectLike(arg: any): arg is object;
+    isObjectLike(arg: any): arg is Record<string, unknown>;
   }
 }
 

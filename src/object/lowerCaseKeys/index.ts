@@ -3,7 +3,7 @@ import method from "./method";
 
 declare global {
   interface Object {
-    $lowerCaseKeys(): object;
+    $lowerCaseKeys(): Record<string, unknown>;
   }
 }
 

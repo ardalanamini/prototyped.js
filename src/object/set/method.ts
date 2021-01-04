@@ -1,6 +1,10 @@
 import { pathToKeys } from "../../utils";
 
-const method = (obj: object, path: string, value: any): any => {
+const method = (
+  obj: Record<string, unknown>,
+  path: string,
+  value: any,
+): any => {
   const keys = pathToKeys(path);
   const length = keys.length;
   let i = 0;

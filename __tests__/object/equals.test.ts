@@ -1,7 +1,6 @@
 import "../../src/object/equals";
 
 describe("Object.prototype.$equals", () => {
-  // tslint:disable-next-line: max-line-length
   test("{ a: [2, { e: 3 }], b: [4], c: 'foo' }.$equals({ a: [2, { e: 3 }], b: [4], c: 'foo' }) returns true", () => {
     expect(
       { a: [2, { e: 3 }], b: [4], c: "foo" }.$equals({

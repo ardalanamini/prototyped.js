@@ -3,7 +3,7 @@ import method from "./method";
 
 declare global {
   interface Object {
-    $invert(): object;
+    $invert(): Record<string, unknown>;
   }
 }
 

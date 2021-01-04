@@ -1,6 +1,6 @@
 import isObjectLike from "../isObjectLike/method";
 
-const method = (arg: any): arg is object => {
+const method = (arg: any): arg is Record<string, unknown> => {
   if (!isObjectLike(arg)) return false;
 
   let proto = arg;

@@ -33,28 +33,28 @@ const method = <T = any>(
 
   let iterator: (item: any) => boolean;
   switch (operator) {
-    case OPERATOR.LT:
-      iterator = item => item < value;
-      break;
-    case OPERATOR.LTE:
-      iterator = item => item <= value;
-      break;
-    case OPERATOR.EQ:
-      iterator = item => item === value;
-      break;
-    case OPERATOR.NE:
-      iterator = item => item !== value;
-      break;
-    case OPERATOR.GTE:
-      iterator = item => item >= value;
-      break;
-    case OPERATOR.GT:
-      iterator = item => item > value;
-      break;
-    default:
-      throw new TypeError(
-        `Expected 'operator' to be one of ${OPERATORS}, got ${operator}`,
-      );
+  case OPERATOR.LT:
+    iterator = (item) => item < value;
+    break;
+  case OPERATOR.LTE:
+    iterator = (item) => item <= value;
+    break;
+  case OPERATOR.EQ:
+    iterator = (item) => item === value;
+    break;
+  case OPERATOR.NE:
+    iterator = (item) => item !== value;
+    break;
+  case OPERATOR.GTE:
+    iterator = (item) => item >= value;
+    break;
+  case OPERATOR.GT:
+    iterator = (item) => item > value;
+    break;
+  default:
+    throw new TypeError(
+      `Expected 'operator' to be one of ${OPERATORS}, got ${operator}`,
+    );
   }
 
   return filter(arr, field, iterator);

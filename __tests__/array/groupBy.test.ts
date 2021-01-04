@@ -8,7 +8,6 @@ describe("Array.prototype.groupBy", () => {
     });
   });
 
-  // tslint:disable-next-line: max-line-length
   test('["one", "two", "three"].groupBy("length") returns {3: ["one", "two"], 5: ["three"]}', () => {
     expect(["one", "two", "three"].groupBy("length")).toEqual({
       3: ["one", "two"],

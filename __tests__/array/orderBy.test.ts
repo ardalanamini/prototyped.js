@@ -9,7 +9,6 @@ describe("Array.prototype.orderBy", () => {
     expect([2, 1, 2, 5].orderBy("desc")).toEqual([5, 2, 2, 1]);
   });
 
-  // tslint:disable-next-line: max-line-length
   test('[{count:1},{count:20},{count:15}].orderBy("count","asc") returns [{count:1},{count:15},{count:20}]', () => {
     expect(
       [{ count: 1 }, { count: 20 }, { count: 15 }].orderBy("count", "asc"),

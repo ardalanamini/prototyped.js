@@ -3,7 +3,7 @@ import method from "./method";
 
 declare global {
   interface Object {
-    $merge(...objects: object[]): object;
+    $merge(...objects: Record<string, unknown>[]): Record<string, unknown>;
   }
 }
 

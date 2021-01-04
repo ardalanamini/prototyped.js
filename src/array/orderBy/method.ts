@@ -7,7 +7,7 @@ const method = <T = any>(
   order: "asc" | "desc" = "asc",
 ) => {
   if (field && contains(["asc", "desc"], field)) {
-    order = field as ("asc" | "desc");
+    order = field as "asc" | "desc";
     field = undefined;
   }
 

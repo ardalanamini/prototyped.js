@@ -11,7 +11,6 @@ describe("Array.prototype.equals", () => {
     ).toBe(true);
   });
 
-  // tslint:disable-next-line: max-line-length
   test('[1,2,{hello: ["world", true]}].equals([1,2,{hello: ["world", null]}]) returns false', () => {
     expect(
       [1, 2, { hello: ["world", true] }].equals([

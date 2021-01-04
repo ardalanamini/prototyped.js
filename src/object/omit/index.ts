@@ -3,7 +3,9 @@ import method from "./method";
 
 declare global {
   interface Object {
-    $omit(arr: string[] | ((value: any, key: string) => any)): object;
+    $omit(
+      arr: string[] | ((value: any, key: string) => any),
+    ): Record<string, unknown>;
   }
 }
 
