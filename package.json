@@ -168,12 +168,11 @@
     "prepublishOnly": "npm test && npm run lint && npm run doc && npm run build && npm run regenerate:package.json",
     "build": "node scripts/build.js",
     "build:tsc": "tsc",
-    "watch:tsc": "npm run build:tsc -- --watch",
+    "build:watch": "tsc --watch",
     "doc": "node scripts/doc.js",
     "lint": "tslint -p tsconfig.json -c tslint.json --exclude '**/*.d.ts'",
     "test": "jest",
-    "coverage": "npm test -- --coverage",
-    "codecov": "npm run coverage -- --runInBand && codecov",
+    "test:coverage": "jest --coverage",
     "regenerate:package.json": "node scripts/regenerate-package-json.js"
   },
   "devDependencies": {
