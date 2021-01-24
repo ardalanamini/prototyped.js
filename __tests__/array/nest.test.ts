@@ -1,4 +1,4 @@
-import "../../src/array/nest";
+import "../../src/shim";
 
 describe("Array.prototype.nest", () => {
   test("Array.prototype.nest (1)", () => {

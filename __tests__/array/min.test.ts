@@ -1,4 +1,4 @@
-import "../../src/array/min";
+import "../../src/shim";
 
 describe("Array.prototype.min", () => {
   test("[1, 2, 3].min() returns 1", () => {
@@ -10,7 +10,7 @@ describe("Array.prototype.min", () => {
   });
 
   test('[{a: 1}, {a: 2}, {a: 3}].min("b") returns +Infinity', () => {
-    expect([{ a: 1 }, { a: 2 }, { a: 3 }].min("b")).toBe(+Infinity);
+    expect([{ a: 1 }, { a: 2 }, { a: 3 }].min("b" as never)).toBe(+Infinity);
   });
 
   test('[{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].min("a.b") returns 1', () => {

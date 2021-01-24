@@ -1,4 +1,4 @@
-import "../../src/array/unwind";
+import "../../src/shim";
 
 describe("Array.prototype.unwind", () => {
   test('[{foo: ["bar 1", "bar 2"]}, {foo: ["bar 3", "bar 4", "bar 5"]}].unwind("foo")', () => {

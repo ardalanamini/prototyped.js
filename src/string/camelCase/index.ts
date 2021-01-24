@@ -1,22 +1,11 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
+export default function camelCase(str: string): string {
+  str = (
+    str.match(
+      /[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+|[A-Z]|[0-9]+/g,
+    ) || [""]
+  )
+    .map((x) => x.slice(0, 1).toUpperCase() + x.slice(1).toLowerCase())
+    .join("");
 
-declare global {
-  interface String {
-    camelCase(): string;
-  }
+  return str.slice(0, 1).toLowerCase() + str.slice(1);
 }
-
-/**
- * Converts the string to camelcase
- * @memberof String.prototype
- * @function camelCase
- * @returns {String}
- * @example
- * "some_database_field_name".camelCase(); // "someDatabaseFieldName"
- * "Some label that needs to be camelized".camelCase(); // "someLabelThatNeedsToBeCamelized"
- * "some-javascript-property".camelCase(); // "someJavascriptProperty"
- * "some-mixed_string with spaces_underscores-and-hyphens".camelCase();
- * // "someMixedStringWithSpacesUnderscoresAndHyphens"
- */
-addPrototype(String, "camelCase", method);

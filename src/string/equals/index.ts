@@ -1,19 +1,3 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
-
-declare global {
-  interface String {
-    equals(value: any): boolean;
-  }
+export default function equals(str: string, value: unknown): boolean {
+  return str === value;
 }
-
-/**
- * Checks if the string is equal to the given value
- * @memberof String.prototype
- * @function equals
- * @param {*} value
- * @returns {Boolean}
- * @example
- * "hello".equals("Hello"); // false
- */
-addPrototype(String, "equals", method);

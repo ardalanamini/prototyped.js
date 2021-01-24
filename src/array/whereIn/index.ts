@@ -1,22 +1,16 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
+import { filter } from "../../utils";
 
-declare global {
-  interface Array<T> {
-    whereIn(value: T[]): T[];
-    whereIn(field: string, value: any[]): T[];
+export default whereIn;
+
+function whereIn<T>(arr: T[], value: T[]): T[];
+function whereIn<T>(arr: T[], field: string, value: unknown[]): T[];
+function whereIn<T>(arr: T[], field: string | any[], value?: any[]): T[] {
+  if (value === undefined) {
+    value = field as any[];
+    field = undefined as any;
   }
-}
 
-/**
- * Filters the array
- * @memberof Array.prototype
- * @function whereIn
- * @param {String|Array} field
- * @param {Array} [value]
- * @returns {Array}
- * @example
- * [1, 2, 2, 3, 4, 4, 5].whereIn([3,4]); // [3,4,4]
- * [{count:1}, {count:20}, {count:15}].whereIn("count", [1, 15]); // [{count:1},{count:15}]
- */
-addPrototype(Array, "whereIn", method);
+  const iterator = (item: T) => value!.indexOf(item) !== -1;
+
+  return filter(arr, field as string, iterator);
+}

@@ -1,20 +1,5 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
+export default function decapitalize(str: string, allWords = false): string {
+  if (allWords) return str.replace(/\b[A-Z]/g, (char) => char.toLowerCase());
 
-declare global {
-  interface String {
-    decapitalize(allWords?: boolean): string;
-  }
+  return str.replace(/^[A-Z]/, (char) => char.toLowerCase());
 }
-
-/**
- * Returns the decapitalized string
- * @memberof String.prototype
- * @function decapitalize
- * @param {Boolean} [allWords=false]
- * @returns {String}
- * @example
- * 'Foo Bar'.decapitalize(); // 'foo Bar'
- * 'Hello World'.decapitalize(true); // 'hello world'
- */
-addPrototype(String, "decapitalize", method);

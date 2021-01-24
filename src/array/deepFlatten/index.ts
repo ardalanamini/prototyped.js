@@ -1,18 +1,11 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
-
-declare global {
-  interface Array<T> {
-    deepFlatten(): any[];
-  }
+export default function deepFlatten<Value>(
+  array: NestedArrayT<Value>,
+): Value[] {
+  return ([] as Value[]).concat(
+    ...array.map((value) =>
+      Array.isArray(value) ? deepFlatten(value) : value,
+    ),
+  );
 }
 
-/**
- * Deep flattens an array
- * @memberof Array.prototype
- * @function deepFlatten
- * @returns {Array}
- * @example
- * [1, [2], [[3], 4], 5].deepFlatten(); // [1,2,3,4,5]
- */
-addPrototype(Array, "deepFlatten", method);
+export type NestedArrayT<Value> = (Value | NestedArrayT<Value>)[];

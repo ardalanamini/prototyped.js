@@ -1,4 +1,4 @@
-import "../../src/array/orderBy";
+import "../../src/shim";
 
 describe("Array.prototype.orderBy", () => {
   test("[2, 1, 2, 5].orderBy() returns [1,2,2,5]", () => {

@@ -1,27 +1,18 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
-
-declare global {
-  interface Array<T> {
-    nest(link?: string, key?: string): Record<string, unknown>[];
-  }
+export default function nest<T extends Record<string, unknown>>(
+  arr: T[],
+  link = "parent_id",
+  key = "id",
+): Record<string, unknown>[] {
+  return filter(arr, link, key);
 }
 
-/**
- * Given a flat array of objects linked to one another, it will nest them recursively
- * @memberof Array.prototype
- * @function nest
- * @param {String} link
- * @param {String} key
- * @returns {Object[]}
- * @example
- * const comments = [
- *   { id: 1, comment_id: null },
- *   { id: 2, comment_id: 1 },
- *   { id: 3, comment_id: 1 },
- *   { id: 4, comment_id: 2 },
- *   { id: 5, comment_id: 4 }
- * ];
- * comments.nest("comment_id"); // [{ id: 1, comment_id: null, children: [...] }]
- */
-addPrototype(Array, "nest", method);
+function filter(
+  arr: Record<string, unknown>[],
+  link: string,
+  key: string,
+  id: unknown = null,
+): Record<string, unknown>[] {
+  return arr
+    .filter((item) => item[link] === id)
+    .map((item) => ({ ...item, children: filter(arr, link, key, item[key]) }));
+}

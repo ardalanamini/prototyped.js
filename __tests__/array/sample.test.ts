@@ -1,4 +1,4 @@
-import "../../src/array/sample";
+import "../../src/shim";
 
 describe("Array.prototype.sample", () => {
   test('["a", "b", "c", "d"].sample() returns "a" or "b" or "c" or "d"', () => {

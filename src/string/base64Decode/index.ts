@@ -1,18 +1,3 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
-
-declare global {
-  interface String {
-    base64Decode(): string;
-  }
+export default function base64Decode(str: string): string {
+  return Buffer.from(str, "base64").toString();
 }
-
-/**
- * Decodes data encoded with MIME base64
- * @memberof String.prototype
- * @function base64Decode
- * @returns {String}
- * @example
- * "cHJvdG90eXBlZC5qcw==".base64Decode(); // "prototyped.js"
- */
-addPrototype(String, "base64Decode", method);

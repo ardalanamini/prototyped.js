@@ -1,27 +1,15 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
+import values from "../values";
 
-declare global {
-  interface Object {
-    $dig(target: string): any;
-  }
+export default function dig(
+  obj: Record<string, unknown>,
+  target: string,
+): unknown {
+  if (target in obj) return obj[target];
+
+  return values(obj).reduce((acc, val) => {
+    if (acc !== undefined) return acc;
+
+    if (typeof val === "object")
+      return dig(val as Record<string, unknown>, target);
+  }, undefined);
 }
-
-/**
- * Returns the target value in a nested JSON object, based on the given key
- * @memberof Object.prototype
- * @function $dig
- * @param {String} target
- * @returns {*}
- * @example
- * const data = {
- *  level1: {
- *   level2: {
- *    level3: 'some data'
- *   }
- *  }
- * };
- * dig(data, 'level3'); // 'some data'
- * dig(data, 'level4'); // undefined
- */
-addPrototype(Object, "$dig", method);

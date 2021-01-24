@@ -1,21 +1,9 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
+export default function contains(
+  str: string,
+  str2: string,
+  sensitive = false,
+): boolean {
+  if (sensitive) return str.indexOf(str2) !== -1;
 
-declare global {
-  interface String {
-    contains(str: string, sensitive?: boolean): boolean;
-  }
+  return str.toLowerCase().indexOf(str2.toLowerCase()) !== -1;
 }
-
-/**
- * Find out if the string contains the argument at any position
- * @memberof String.prototype
- * @function contains
- * @param {String} str
- * @param {Boolean} [sensitive=false]
- * @returns {Boolean}
- * @example
- * 'javaScript & typescript'.contains('Typescript'); // true
- * 'javaScript & typescript'.contains('Typescript', true); // false
- */
-addPrototype(String, "contains", method);

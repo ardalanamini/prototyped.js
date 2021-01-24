@@ -1,21 +1,7 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
-
-declare global {
-  interface Array<T> {
-    get(index: number, def?: any): T | null;
-  }
+export default function get<T extends unknown[], I extends number, F = null>(
+  array: T,
+  index: I,
+  fallback: F = null as never,
+): T[I] | F {
+  return index >= array.length ? fallback : array[index];
 }
-
-/**
- * Returns the item at a given index. If the index does not exist, def is returned
- * @memberof Array.prototype
- * @function get
- * @param {Number} index
- * @param {*} [def=undefined]
- * @returns {*}
- * @example
- * [1, 2, 3].get(0, 'default value'); // 1
- * [1, 2, 3].get(4, 0); // 0
- */
-addPrototype(Array, "get", method);

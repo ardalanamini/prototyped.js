@@ -1,21 +1,24 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
+import { PathT, pathToKeys } from "../../utils";
 
-declare global {
-  interface Array<T> {
-    max(path?: string): number;
+export default max;
+
+function max<
+  Value extends Record<string, unknown>,
+  Path extends PathT<Value> = never
+>(array: Value[], path?: Path): number;
+function max<Value>(array: Value[]): number;
+function max<Value>(arr: Value[], path?: string): number {
+  let reducer = (item: Value): any => item;
+
+  if (path) {
+    const keys = pathToKeys(path);
+
+    reducer = (item: Value) =>
+      keys.reduce(
+        (prev, curr) => (prev && (prev as any)[curr]) || -Infinity,
+        item,
+      );
   }
-}
 
-/**
- * Returns the maximum value of a given path
- * @memberof Array.prototype
- * @function max
- * @param {String} [path]
- * @returns {Number}
- * @example
- * [1, 2, 3].max(); // 3
- * [{a: 1}, {a: 2}, {a: 3}].max('a'); // 3
- * [{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].max('a.b'); // 3
- */
-addPrototype(Array, "max", method);
+  return arr.reduce((prev, cur) => Math.max(prev, reducer(cur)), -Infinity);
+}

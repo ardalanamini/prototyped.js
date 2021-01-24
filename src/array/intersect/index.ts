@@ -1,19 +1,5 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
+export default function intersect<T>(arr: T[], array: unknown[]): T[] {
+  const set = new Set(array);
 
-declare global {
-  interface Array<T> {
-    intersect(array: any[]): T[];
-  }
+  return arr.filter((item) => set.has(item));
 }
-
-/**
- * Returns a list of elements that exist in both arrays
- * @memberof Array.prototype
- * @function intersect
- * @param {Array} array
- * @returns {Array}
- * @example
- * [1, 2, 3].intersect([4, 3, 2]); // [2,3]
- */
-addPrototype(Array, "intersect", method);

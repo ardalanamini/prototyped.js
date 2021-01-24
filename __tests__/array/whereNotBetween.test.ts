@@ -1,4 +1,4 @@
-import "../../src/array/whereNotBetween";
+import "../../src/shim";
 
 describe("Array.prototype.whereNotBetween", () => {
   test("[1, 2, 2, 3, 4, 4, 5].whereNotBetween(3,4) returns [1,2,2,5]", () => {

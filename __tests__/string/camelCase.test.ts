@@ -1,4 +1,4 @@
-import "../../src/string/camelCase";
+import "../../src/shim";
 
 describe("String.prototype.camelCase", () => {
   test('"some_database_field_name".camelCase() returns "someDatabaseFieldName"', () => {

@@ -1,4 +1,4 @@
-import "../../src/string/kebabCase";
+import "../../src/shim";
 
 describe("String.prototype.kebabCase", () => {
   test('"camelCase".kebabCase() returns "camel-case"', () => {

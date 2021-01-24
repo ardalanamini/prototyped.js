@@ -1,4 +1,4 @@
-import "../../src/array/deepFlatten";
+import "../../src/shim";
 
 describe("Array.prototype.deepFlatten", () => {
   test("[1, [2], [[3], 4], 5].deepFlatten() returns [1,2,3,4,5]", () => {

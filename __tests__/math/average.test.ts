@@ -1,4 +1,4 @@
-import "../../src/math/average";
+import "../../src/shim";
 
 describe("Math.average", () => {
   test("Math.average(1, 2, 3) returns 2", () => {

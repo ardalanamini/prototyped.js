@@ -1,19 +1,3 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
-
-declare global {
-  interface String {
-    parseInt(radix?: number): number;
-  }
+export default function parseInt(str: string, radix?: number): number {
+  return Number.parseInt(str, radix);
 }
-
-/**
- * Converts string to an integer of the specified radix
- * @memberof String.prototype
- * @function parseInt
- * @param {Number} [radix]
- * @returns {Number}
- * @example
- * "08".parseInt(); // 8
- */
-addPrototype(String, "parseInt", method);

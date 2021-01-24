@@ -1,20 +1,6 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
-
-declare global {
-  interface Function {
-    defer(...args: any[]): any;
-  }
+export default function defer<
+  Args extends unknown[],
+  F extends (...args: Args) => unknown
+>(func: F, ...args: Args): number {
+  return setTimeout(func, 1, ...args);
 }
-
-/**
- * Defers invoking the function until the current call stack has cleared
- * @memberof Function.prototype
- * @function defer
- * @param {Array} args
- * @returns {*}
- * @example
- * const test = (msg) => console.log(msg);
- * test.defer('a'), test('b'); // logs 'b' then 'a'
- */
-addPrototype(Function, "defer", method);

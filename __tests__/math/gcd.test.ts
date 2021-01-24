@@ -1,4 +1,4 @@
-import "../../src/math/gcd";
+import "../../src/shim";
 
 describe("Math.gcd", () => {
   test("Math.gcd(...[12, 8, 32]) returns 4", () => {

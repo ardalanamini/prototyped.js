@@ -1,4 +1,4 @@
-import "../../src/object/assign";
+import "../../src/shim";
 
 describe("Object.prototype.$assign", () => {
   test("{ a: 0 }.$assign({ a: 1 }, { b: 2 }) returns { a: 1, b: 2 }", () => {

@@ -1,4 +1,4 @@
-import "../../src/function/cache";
+import "../../src/shim";
 
 describe("Function.prototype.cache", () => {
   test("Math.max.cache(1, 22, 15) returns 22", () => {

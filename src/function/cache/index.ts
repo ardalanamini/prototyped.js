@@ -1,24 +1,19 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
+export default function cache<F extends (...args: unknown[]) => unknown>(
+  func: F,
+): F {
+  const cacheMap = func.cached || (func.cached = new Map());
 
-declare global {
-  interface Function {
-    cached?: Map<string, any>;
-    cache(...args: any[]): any;
+  function cached(...args: unknown[]) {
+    const key = JSON.stringify(args);
+
+    if (cacheMap.has(key)) return cacheMap.get(key);
+
+    const result = func.call(func, ...args);
+
+    cacheMap.set(key, result);
+
+    return result;
   }
-}
 
-/**
- * Returns the cached function results if already runned with this method
- * @memberof Function
- * @function cache
- * @param {Array} args
- * @returns {*}
- * @example
- * const test = () => setTimeout(console.log, 1000, `test`);
- * test.cache(); // takes a second to log 'test'
- * test.cache(); // instantly logs the second 'test'
- */
-Function.prototype.cache = function cache(...args) {
-  return method(this)(...args);
-};
+  return cached as F;
+}

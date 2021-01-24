@@ -1,4 +1,4 @@
-import "../../src/number/isNumber";
+import "../../src/shim";
 
 describe("Number.isNumber", () => {
   test('Number.isNumber("foo bar") returns false', () => {

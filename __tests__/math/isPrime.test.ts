@@ -1,4 +1,4 @@
-import "../../src/math/isPrime";
+import "../../src/shim";
 
 describe("Math.isPrime", () => {
   test("Math.isPrime(4) returns false", () => {

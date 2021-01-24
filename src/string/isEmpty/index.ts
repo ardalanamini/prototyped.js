@@ -1,19 +1,3 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
-
-declare global {
-  interface String {
-    isEmpty(): boolean;
-  }
+export default function isEmpty(str: string): boolean {
+  return str.length === 0;
 }
-
-/**
- * Checks if the string is empty
- * @memberof String.prototype
- * @function isEmpty
- * @returns {Boolean}
- * @example
- * "123".isEmpty(); // false
- * "".isEmpty(); // true
- */
-addPrototype(String, "isEmpty", method);

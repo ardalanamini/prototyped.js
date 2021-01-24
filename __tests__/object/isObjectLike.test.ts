@@ -1,4 +1,4 @@
-import "../../src/object/isObjectLike";
+import "../../src/shim";
 
 describe("Object.isObjectLike", () => {
   test("Object.isObjectLike(2) returns false", () => {

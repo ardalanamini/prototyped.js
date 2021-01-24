@@ -1,19 +1,5 @@
-import method from "./method";
+import arrayRepeat from "../../array/repeat";
 
-declare global {
-  interface StringConstructor {
-    repeat(n: number, value?: string): string;
-  }
+export default function repeat(n: number, value = " "): string {
+  return arrayRepeat(n, value).join("");
 }
-
-/**
- * Initializes and fills an string with the specified value
- * @memberof String
- * @function repeat
- * @param {Number} n
- * @param {String} [value=" "]
- * @returns {String}
- * @example
- * String.repeat(5, "2"); // "22222"
- */
-String.repeat = method;

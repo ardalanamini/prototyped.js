@@ -1,19 +1,12 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
+import objectEquals from "../../object/equals";
+import range from "../range";
 
-declare global {
-  interface Array<T> {
-    equals(value: any): boolean;
-  }
+export default function equals<T>(arr: T[], value: unknown): value is T[] {
+  if (!Array.isArray(value)) return false;
+
+  if (arr.length !== value.length) return false;
+
+  return range(arr.length - 1).every((key) =>
+    objectEquals(arr[key] as Record<string, unknown>, value[key]),
+  );
 }
-
-/**
- * Checks if the array is equal to the given value
- * @memberof Array.prototype
- * @function equals
- * @param {*} value
- * @returns {Boolean}
- * @example
- * [1,2,3].equals([2,1,3]); // false
- */
-addPrototype(Array, "equals", method);

@@ -1,19 +1,11 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
+export default function shuffle<T>(arr: T[]): T[] {
+  let m = arr.length;
 
-declare global {
-  interface Array<T> {
-    shuffle(): T[];
+  while (m) {
+    const i = Math.floor(Math.random() * m--);
+
+    [arr[m], arr[i]] = [arr[i], arr[m]];
   }
-}
 
-/**
- * Randomizes the order of the values of an array, returning a new array
- * @memberof Array.prototype
- * @function shuffle
- * @returns {Array}
- * @example
- * const foo = [1, 2, 3];
- * foo.shuffle(); // [2,3,1], foo = [1,2,3]
- */
-addPrototype(Array, "shuffle", method);
+  return arr;
+}

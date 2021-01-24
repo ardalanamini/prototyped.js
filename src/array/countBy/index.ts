@@ -1,21 +1,12 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
+export default function countBy<Value>(
+  array: Value[],
+  fn: string | ((value: Value, index: number, array: Value[]) => any),
+): { [key: string]: number } {
+  return array
+    .map(typeof fn === "function" ? fn : (value: any) => value[fn])
+    .reduce((prev, value: string) => {
+      prev[value] = (prev[value] || 0) + 1;
 
-declare global {
-  interface Array<T> {
-    countBy(fn: string | ((value: any) => any)): { [key: string]: any };
-  }
+      return prev;
+    }, {});
 }
-
-/**
- * Groups the elements of an array based on the given function and
- * returns the count of elements in each group
- * @memberof Array.prototype
- * @function countBy
- * @param {String|Function} fn
- * @returns {Object}
- * @example
- * [6.1, 4.2, 6.3].countBy(Math.floor); // {4: 1, 6: 2}
- * ['one', 'two', 'three'].countBy('length'); // {3: 2, 5: 1}
- */
-addPrototype(Array, "countBy", method);

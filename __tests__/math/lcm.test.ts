@@ -1,4 +1,4 @@
-import "../../src/math/lcm";
+import "../../src/shim";
 
 describe("Math.lcm", () => {
   test("Math.lcm(12, 7) returns 84", () => {

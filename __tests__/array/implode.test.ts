@@ -1,4 +1,4 @@
-import "../../src/array/implode";
+import "../../src/shim";
 
 describe("Array.prototype.implode", () => {
   test(
@@ -24,7 +24,7 @@ describe("Array.prototype.implode", () => {
           { a: { b: "first" } },
           { a: { b: "second" } },
           { a: { b: "third" } },
-        ].implode("a.c"),
+        ].implode("a.c" as never),
       ).toBe("");
     },
   );

@@ -1,19 +1,9 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
+import ObjectKeys from "../keys";
 
-declare global {
-  interface Object {
-    $empty(): void;
+export default function empty(obj: Record<string, unknown>): void {
+  const keys = ObjectKeys(obj);
+
+  for (let i = 0; i < keys.length; i++) {
+    delete obj[keys[i]];
   }
 }
-
-/**
- * Empty the object
- * @memberof Object.prototype
- * @function $empty
- * @example
- * const obj = { a: 1 };
- * obj.$empty();
- * // obj = {};
- */
-addPrototype(Object, "$empty", method);

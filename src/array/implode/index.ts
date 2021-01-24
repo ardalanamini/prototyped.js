@@ -1,21 +1,21 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
+import { PathT, pathToKeys } from "../../utils";
 
-declare global {
-  interface Array<T> {
-    implode(path: string, separator?: string): string;
-  }
+export default implode;
+
+function implode<
+  Value extends Record<string, unknown>,
+  Path extends PathT<Value> = never
+>(array: Value[], path: Path, separator?: string): string;
+function implode<Value>(arr: Value[], path: string, separator = ", "): string {
+  const keys = pathToKeys(path);
+
+  return arr
+    .map((item) =>
+      keys.reduce(
+        (prev, cur) => (prev && (prev as any)[cur]) || undefined,
+        item,
+      ),
+    )
+    .filter(Boolean)
+    .join(separator);
 }
-
-/**
- * It's like join but u get to git it which keys to join
- * @memberof Array.prototype
- * @function implode
- * @param {String} path
- * @param {String} [separator=", "]
- * @returns {String}
- * @example
- * [{a: {b: 'first'}}, {a: {b: 'second'}}, {a: {b: 'third'}}].implode('a.b', ', ');
- * // 'first, second, third'
- */
-addPrototype(Array, "implode", method);

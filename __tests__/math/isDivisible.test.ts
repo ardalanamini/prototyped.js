@@ -1,4 +1,4 @@
-import "../../src/math/isDivisible";
+import "../../src/shim";
 
 describe("Math.isDivisible", () => {
   test("Math.isDivisible(6, 3) returns true", () => {

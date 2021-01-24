@@ -1,4 +1,4 @@
-import "../../src/object/clone";
+import "../../src/shim";
 
 describe("Object.prototype.$clone", () => {
   test("{ foo: 'bar', obj: { a: 1, b: 2 } }.$clone()", () => {

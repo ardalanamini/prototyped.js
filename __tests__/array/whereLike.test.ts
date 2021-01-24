@@ -1,4 +1,4 @@
-import "../../src/array/whereLike";
+import "../../src/shim";
 
 describe("Array.prototype.whereLike", () => {
   test('["foo", "bar", "hello", "world"].whereLike("o") returns ["foo","hello","world"]', () => {

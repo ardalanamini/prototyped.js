@@ -1,18 +1,5 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
-
-declare global {
-  interface Object {
-    $keys(): string[];
-  }
+export default function keys<T extends Record<string, unknown>>(
+  obj: T,
+): Array<keyof T> {
+  return Object.keys(obj);
 }
-
-/**
- * Get keys of the object
- * @memberof Object.prototype
- * @function $keys
- * @returns {Object}
- * @example
- * ({ one: 1, two: 2, three: 3 }).$keys(); // ["one", "two", "three"]
- */
-addPrototype(Object, "$keys", method);

@@ -1,20 +1,7 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
+import { filter } from "../../utils";
 
-declare global {
-  interface Array<T> {
-    whereNotNull(field?: string): T[];
-  }
+export default function whereNotNull<T>(arr: T[], field?: string): T[] {
+  const iterator = (item: any) => item !== null && item !== undefined;
+
+  return filter(arr, field, iterator);
 }
-
-/**
- * Filters the array
- * @memberof Array.prototype
- * @function whereNotNull
- * @param {String} [field]
- * @returns {Array}
- * @example
- * [1, 2, 2, 3, null, undefined, 5].whereNotNull(); // [1,2,2,3,5]
- * [{count:1}, {count:null}, {foo:15}].whereNotNull("count"); // [{count:1}]
- */
-addPrototype(Array, "whereNotNull", method);

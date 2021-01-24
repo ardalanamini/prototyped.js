@@ -1,24 +1,9 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
-
-declare global {
-  interface String {
-    kebabCase(): string;
-  }
+export default function kebabCase(str: string): string {
+  return (
+    str.match(
+      /[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+|[A-Z]|[0-9]+/g,
+    ) || [""]
+  )
+    .map((x) => x.toLowerCase())
+    .join("-");
 }
-
-/**
- * Converts a string to kebab case
- * @memberof String.prototype
- * @function kebabCase
- * @returns {String}
- * @example
- * "camelCase".kebabCase(); // "camel-case"
- * "some text".kebabCase(); // "some-text"
- * "some-mixed_string With spaces_underscores-and-hyphens".kebabCase();
- * // "some-mixed-string-with-spaces-underscores-and-hyphens"
- * "AllThe-small Things".kebabCase(); // "all-the-small-things"
- * "IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML".kebabCase();
- * // "i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-some-xml-and-html"
- */
-addPrototype(String, "kebabCase", method);

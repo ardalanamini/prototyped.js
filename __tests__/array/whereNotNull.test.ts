@@ -1,4 +1,4 @@
-import "../../src/array/whereNotNull";
+import "../../src/shim";
 
 describe("Array.prototype.whereNotNull", () => {
   test("[1, 2, 2, 3, null, undefined, 5].whereNotNull() returns [1,2,2,3,5]", () => {

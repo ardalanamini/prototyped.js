@@ -1,28 +1,20 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
+import keys from "../keys";
 
-declare global {
-  interface Object {
-    $merge(...objects: Record<string, unknown>[]): Record<string, unknown>;
-  }
+const hasOwnProperty = Object.prototype.hasOwnProperty;
+
+export default function merge(
+  obj: Record<string, unknown>,
+  ...objects: Record<string, unknown>[]
+): Record<string, unknown> {
+  return [obj, ...objects].reduce(
+    (prev: Record<string, unknown>, obj2: Record<string, unknown>) =>
+      keys(obj2).reduce((a, k) => {
+        prev[k] = hasOwnProperty.call(prev, k)
+          ? [].concat(prev[k] as never).concat(obj2[k] as never)
+          : obj2[k];
+
+        return prev;
+      }, {}),
+    {},
+  );
 }
-
-/**
- * Creates a new object from the combination of two or more objects
- * @memberof Object.prototype
- * @function $merge
- * @param {...Object} objects
- * @returns {Object}
- * @example
- * const object = {
- *   a: [{ x: 2 }, { y: 4 }],
- *   b: 1
- * };
- * const other = {
- *   a: { z: 3 },
- *   b: [2, 3],
- *   c: "foo"
- * };
- * object.$merge(other); // { a: [ { x: 2 }, { y: 4 }, { z: 3 } ], b: [ 1, 2, 3 ], c: "foo" }
- */
-addPrototype(Object, "$merge", method);

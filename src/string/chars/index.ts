@@ -1,18 +1,3 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
-
-declare global {
-  interface String {
-    chars(): string[];
-  }
+export default function chars(str: string): string[] {
+  return str.split("");
 }
-
-/**
- * Returns an array of the string's character
- * @memberof String.prototype
- * @function chars
- * @returns {String[]}
- * @example
- * "Hello".chars(); // ["H", "e", "l", "l", "o"]
- */
-addPrototype(String, "chars", method);

@@ -1,4 +1,4 @@
-import "../../src/string/parseInt";
+import "../../src/shim";
 
 describe("String.prototype.parseInt", () => {
   test('"08".parseInt() returns 8', () => {

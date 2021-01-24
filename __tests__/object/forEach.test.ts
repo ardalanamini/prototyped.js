@@ -1,4 +1,4 @@
-import "../../src/object/forEach";
+import "../../src/shim";
 
 describe("Object.prototype.$forEach", () => {
   test(
@@ -11,7 +11,7 @@ describe("Object.prototype.$forEach", () => {
       };
       const result: any = {};
 
-      obj.$forEach((u, k) => (result[k] = u.age));
+      obj.$forEach((u: any, k) => (result[k] = u.age));
 
       expect(result).toEqual({ fred: 40, pebbles: 1 });
     },

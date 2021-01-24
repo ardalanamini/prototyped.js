@@ -1,19 +1,3 @@
-import method from "./method";
-
-declare global {
-  interface NumberConstructor {
-    isNumber(arg: any): arg is number;
-  }
+export default function isNumber(arg: unknown): arg is number {
+  return typeof arg === "number" || arg instanceof Number;
 }
-
-/**
- * Returns true if the given argument is a number
- * @memberof Number
- * @function isNumber
- * @param {*} arg
- * @returns {Boolean}
- * @example
- * Number.isNumber('foo bar'); // false
- * Number.isNumber(2); // true
- */
-Number.isNumber = method;

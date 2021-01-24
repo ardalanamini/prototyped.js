@@ -1,18 +1,5 @@
-import method from "./method";
+const PI = Math.PI;
 
-declare global {
-  interface Math {
-    radsToDegrees(num: number): number;
-  }
+export default function radsToDegrees(num: number): number {
+  return (num * 180.0) / PI;
 }
-
-/**
- * Converts a radians to decimal degree
- * @memberof Math
- * @function radsToDegrees
- * @param {Number} num
- * @returns {Number}
- * @example
- * Math.radsToDegrees(Math.PI / 2); // 90
- */
-Math.radsToDegrees = method;

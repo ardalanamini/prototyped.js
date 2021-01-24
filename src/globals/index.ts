@@ -1,3 +1,1 @@
-/** @namespace global */
-
-import "./isBrowser";
+export { default as isBrowser } from "./isBrowser";

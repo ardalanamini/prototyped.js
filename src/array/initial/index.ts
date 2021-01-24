@@ -1,18 +1,5 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
-
-declare global {
-  interface Array<T> {
-    initial(): T[];
-  }
+export default function initial<T extends unknown[]>(
+  array: T,
+): T extends [...infer F, unknown] ? F : T {
+  return array.slice(0, -1) as never;
 }
-
-/**
- * Returns all the elements of an array except the last one
- * @memberof Array.prototype
- * @function initial
- * @returns {Array}
- * @example
- * [1, 2, 3].initial(); // [1, 2]
- */
-addPrototype(Array, "initial", method);

@@ -1,4 +1,4 @@
-import "../../src/array/isEmpty";
+import "../../src/shim";
 
 describe("Array.prototype.isEmpty", () => {
   test("[1,2].isEmpty() returns false", () => {

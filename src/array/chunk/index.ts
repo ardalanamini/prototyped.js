@@ -1,19 +1,8 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
-
-declare global {
-  interface Array<T> {
-    chunk(size: number): T[][];
-  }
+export default function chunk<Value>(array: Value[], size: number): Value[][] {
+  return Array.from(
+    {
+      length: Math.ceil(array.length / size),
+    },
+    (value, index) => array.slice(index * size, index * size + size),
+  );
 }
-
-/**
- * Chunks the array into smaller arrays of a specified size
- * @memberof Array.prototype
- * @function chunk
- * @param {Number} size
- * @returns {Array[]}
- * @example
- * [1, 2, 3, 4, 5].chunk(2); // [[1,2],[3,4],[5]]
- */
-addPrototype(Array, "chunk", method);

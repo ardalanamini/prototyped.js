@@ -1,18 +1,11 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
+import keys from "../keys";
 
-declare global {
-  interface Object {
-    $invert(): Record<string, unknown>;
-  }
+export default function invert(
+  obj: Record<string, unknown>,
+): Record<string, unknown> {
+  return keys(obj).reduce((acc, key) => {
+    acc[obj[key] as string] = key;
+
+    return acc;
+  }, {} as Record<string, unknown>);
 }
-
-/**
- * Inverts the key-value pairs of the object, without mutating it
- * @memberof Object.prototype
- * @function $invert
- * @returns {Object}
- * @example
- * ({ name: "John", age: 20 }).$invert(); // { 20: "age", John: "name" }
- */
-addPrototype(Object, "$invert", method);

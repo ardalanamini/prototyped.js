@@ -1,19 +1,5 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
+import size from "../size";
 
-declare global {
-  interface Object {
-    $isEmpty(): boolean;
-  }
+export default function isEmpty(obj: Record<string, unknown>): boolean {
+  return size(obj) === 0;
 }
-
-/**
- * Checks if the object is empty
- * @memberof Object.prototype
- * @function $isEmpty
- * @returns {Boolean}
- * @example
- * ({ a: 1 }).$isEmpty(); // false
- * ({}).$isEmpty(); // true
- */
-addPrototype(Object, "$isEmpty", method);

@@ -1,19 +1,7 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
+export default function append<T>(array: T[], value: T): number {
+  const newArray = array.concat([value]);
 
-declare global {
-  interface Array<T> {
-    append(value: T): void;
-  }
+  array.length = 0;
+
+  return array.push(...newArray);
 }
-
-/**
- * Same as push but uses concat
- * @memberof Array.prototype
- * @function append
- * @param {*} value
- * @example
- * var myArray = [1, 2, 3]
- * myArray.append(0); // myArray => [1, 2, 3, 0]
- */
-addPrototype(Array, "append", method);

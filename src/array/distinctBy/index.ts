@@ -1,19 +1,22 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
+export default function distinctBy<T>(
+  array: T[],
+  fn: (a: T, b: T) => boolean,
+): T[] {
+  const distinct: T[] = [];
 
-declare global {
-  interface Array<T> {
-    distinctBy(fn: (a: T, b: T) => boolean): T[];
-  }
+  array.forEach((a) => {
+    let had = false;
+
+    for (let i = 0; i < distinct.length; i++) {
+      if (!fn(a, distinct[i])) continue;
+
+      had = true;
+
+      break;
+    }
+
+    if (!had) distinct.push(a);
+  });
+
+  return distinct;
 }
-
-/**
- * Returns all the distinct values of an array
- * @memberof Array.prototype
- * @function distinctBy
- * @param {Function} fn
- * @returns {Array}
- * @example
- * [1, 2, 2, 3, 4, 4, 5].distinctBy((a, b) => a === b); // [1,2,3,4,5]
- */
-addPrototype(Array, "distinctBy", method);

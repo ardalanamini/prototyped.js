@@ -1,22 +1,23 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
+import isString from "../../string/isString";
+import { filter } from "../../utils";
 
-declare global {
-  interface Array<T> {
-    whereNotLike(value: string | RegExp): T[];
-    whereNotLike(field: string, value: string | RegExp): T[];
+export default whereNotLike;
+
+function whereNotLike<T>(arr: T[], value: string | RegExp): T[];
+function whereNotLike<T>(arr: T[], field: string, value: string | RegExp): T[];
+function whereNotLike<T>(
+  arr: T[],
+  field: string | RegExp,
+  value?: string | RegExp,
+): T[] {
+  if (value === undefined) {
+    value = field as string | RegExp;
+    field = undefined as any;
   }
-}
 
-/**
- * Filters the array
- * @memberof Array.prototype
- * @function whereNotLike
- * @param {String|RegExp} field
- * @param {String|RegExp} [value]
- * @returns {Array}
- * @example
- * ["foo", "bar", "hello", "world"].whereNotLike("o"); // ["bar"]
- * [{foo:"hello"}, {foo:"bar"}, {foo:"world"}].whereNotLike("foo", /o/i); // [{foo:"bar"}]
- */
-addPrototype(Array, "whereNotLike", method);
+  if (isString(value)) value = new RegExp(value, "i");
+
+  const iterator = (item: any) => !(value as RegExp).test(item);
+
+  return filter(arr, field as string, iterator);
+}

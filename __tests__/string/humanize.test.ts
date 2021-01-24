@@ -1,4 +1,4 @@
-import "../../src/string/humanize";
+import "../../src/shim";
 
 describe("String.prototype.humanize", () => {
   test(

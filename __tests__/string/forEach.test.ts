@@ -1,4 +1,4 @@
-import "../../src/string/forEach";
+import "../../src/shim";
 
 describe("String.prototype.forEach", () => {
   test('"Hello".forEach((char, i) => char == "o" && (index = i)); // index === 4', () => {

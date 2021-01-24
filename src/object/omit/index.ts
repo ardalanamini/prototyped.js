@@ -1,24 +1,27 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
+import keys from "../keys";
 
-declare global {
-  interface Object {
-    $omit(
-      arr: string[] | ((value: any, key: string) => any),
-    ): Record<string, unknown>;
-  }
+export default function omit(
+  obj: Record<string, unknown>,
+  arr:
+    | string[]
+    | ((
+        value: unknown,
+        key: string,
+        object: Record<string, unknown>,
+      ) => unknown),
+): Record<string, unknown> {
+  let fn = arr as (
+    value: unknown,
+    key: string,
+    object: Record<string, unknown>,
+  ) => unknown;
+
+  if (Array.isArray(arr)) fn = (v, k) => arr.indexOf(k) !== -1;
+
+  return keys(obj)
+    .filter((k) => !fn(obj[k], k, obj))
+    .reduce(
+      (acc, key) => ((acc[key] = obj[key]), acc),
+      {} as Record<string, unknown>,
+    );
 }
-
-/**
- * Omits the key-value pairs corresponding to the given keys from an object; or
- * Creates an object composed of the properties the given function returns falsey for.
- * The function is invoked with two arguments: (value, key)
- * @memberof Object.prototype
- * @function $omit
- * @param {String[]|Function} arr
- * @returns {Object}
- * @example
- * { a: 1, b: '2', c: 3 }.$omit(['b']); // { a: 1, c: 3 }
- * { a: 1, b: '2', c: 3 }.$omit((x) => typeof x === 'number'); // { b: '2' }
- */
-addPrototype(Object, "$omit", method);

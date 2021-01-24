@@ -1,21 +1,11 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
+export default function truncate(
+  str: string,
+  num: number,
+  truncateString = "...",
+): string {
+  const length = truncateString.length;
 
-declare global {
-  interface String {
-    truncate(num: number, truncateString?: string): string;
-  }
+  return str.length > num
+    ? str.slice(0, num > length ? num - length : num) + truncateString
+    : str;
 }
-
-/**
- * Truncates a string up to a specified length
- * @memberof String.prototype
- * @function truncate
- * @param {Number} num
- * @param {String} [truncateString="..."]
- * @returns {String}
- * @example
- * 'boomerang'.truncate(7); // 'boom...'
- * 'boomerang'.truncate(7, '....'); // 'boo....'
- */
-addPrototype(String, "truncate", method);

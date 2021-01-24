@@ -1,4 +1,4 @@
-import "../../src/string/pluralize";
+import "../../src/shim";
 
 /**
  * Standard singular/plural matches.

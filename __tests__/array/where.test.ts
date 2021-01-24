@@ -1,4 +1,4 @@
-import "../../src/array/where";
+import "../../src/shim";
 
 describe("Array.prototype.where", () => {
   test("[1, 2, 2, 3, 4, 4, 5].where(4) returns [4,4]", () => {

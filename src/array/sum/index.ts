@@ -1,21 +1,24 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
+import { PathT, pathToKeys } from "../../utils";
 
-declare global {
-  interface Array<T> {
-    sum(path?: string): number;
+export default sum;
+
+function sum<
+  Value extends Record<string, unknown>,
+  Path extends PathT<Value> = never
+>(arr: Value[], path?: Path): number;
+function sum<Value>(arr: Value[]): number;
+function sum<Value>(arr: Value[], path?: string): number {
+  if (path) {
+    const keys = pathToKeys(path);
+
+    const reducer = (item: Value): number =>
+      keys.reduce(
+        (prev, cur) => (prev && (prev as any)[cur]) || 0,
+        item,
+      ) as any;
+
+    return arr.reduce((prev, cur) => prev + reducer(cur), 0);
   }
-}
 
-/**
- * Returns the minimum value of a given path
- * @memberof Array.prototype
- * @function sum
- * @param {String} [path]
- * @returns {Number}
- * @example
- * [1, 2, 3].sum(); // 6
- * [{a: 1}, {a: 2}, {a: 3}].sum('a'); // 6
- * [{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].sum('a.b'); // 6
- */
-addPrototype(Array, "sum", method);
+  return arr.reduce((prev: any, cur) => prev + cur, 0);
+}

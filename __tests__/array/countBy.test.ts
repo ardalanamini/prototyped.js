@@ -1,4 +1,4 @@
-import "../../src/array/countBy";
+import "../../src/shim";
 
 describe("Array.prototype.countBy", () => {
   test("[6.1, 4.2, 6.3].countBy(Math.floor) returns {4: 1, 6: 2}", () => {

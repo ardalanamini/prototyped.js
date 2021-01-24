@@ -1,4 +1,4 @@
-import "../../src/array/max";
+import "../../src/shim";
 
 describe("Array.prototype.max", () => {
   test("[1, 2, 3].max() returns 3", () => {
@@ -10,7 +10,7 @@ describe("Array.prototype.max", () => {
   });
 
   test('[{a: 1}, {a: 2}, {a: 3}].max("b") returns -Infinity', () => {
-    expect([{ a: 1 }, { a: 2 }, { a: 3 }].max("b")).toBe(-Infinity);
+    expect([{ a: 1 }, { a: 2 }, { a: 3 }].max("b" as never)).toBe(-Infinity);
   });
 
   test('[{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].max("a.b") returns 3', () => {

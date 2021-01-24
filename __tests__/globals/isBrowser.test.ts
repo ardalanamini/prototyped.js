@@ -1,4 +1,4 @@
-import "../../src/globals/isBrowser";
+import "../../src/shim";
 
 beforeAll(() => {
   // Jest creates virtual ones !

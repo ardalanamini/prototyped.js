@@ -1,4 +1,4 @@
-import "../../src/math/primes";
+import "../../src/shim";
 
 describe("Math.primes", () => {
   test("Math.primes(10) returns [2, 3, 5, 7]", () => {

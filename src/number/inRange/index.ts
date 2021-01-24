@@ -1,20 +1,3 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
-
-declare global {
-  interface Number {
-    inRange(end: number, start?: number): boolean;
-  }
+export default function inRange(num: number, end: number, start = 0): boolean {
+  return start <= num && num <= end;
 }
-
-/**
- * Checks if n is between start and up to end
- * @memberof Number.prototype
- * @function inRange
- * @param {Number} end
- * @param {Number} [start=0]
- * @returns {Boolean}
- * @example
- * (4).inRange(8); // true
- */
-addPrototype(Number, "inRange", method);

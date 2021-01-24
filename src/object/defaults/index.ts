@@ -1,19 +1,6 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
-
-declare global {
-  interface Object {
-    $defaults(...sources: Record<string, unknown>[]): Record<string, unknown>;
-  }
+export default function defaults(
+  obj: Record<string, unknown>,
+  ...sources: Record<string, unknown>[]
+): Record<string, unknown> {
+  return Object.assign(sources.pop()!, ...sources.reverse(), obj);
 }
-
-/**
- * Assigns object in reverse by Object.assign
- * @memberof Object.prototype
- * @function $defaults
- * @param {...Object} sources
- * @returns {Object}
- * @example
- * ({ a: 0 }).$defaults({ a: 1, b: 2 }, { b: 3 }); // { a: 0, b: 2 }
- */
-addPrototype(Object, "$defaults", method);

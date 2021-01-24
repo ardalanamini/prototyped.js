@@ -1,23 +1,41 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
+import { PathT, pathToKeys } from "../../utils";
+import contains from "../contains";
 
-declare global {
-  interface Array<T> {
-    orderBy(order?: "asc" | "desc"): T[];
-    orderBy(field: string, order?: "asc" | "desc"): T[];
+export default orderBy;
+
+function orderBy<Value>(arr: Value[], order?: OrderT): Value[];
+function orderBy<
+  Value extends Record<string, unknown>,
+  Path extends PathT<Value> = never
+>(array: Value[], field: Path, order?: OrderT): Value[];
+function orderBy<Value>(
+  arr: Value[],
+  field?: string,
+  order: OrderT = ORDER.ASC,
+): Value[] {
+  if (field && contains([ORDER.ASC, ORDER.DESC], field)) {
+    order = field as OrderT;
+    field = undefined;
   }
+
+  const iterator: (a: any, b: any) => number =
+    order === ORDER.ASC
+      ? (a, b) => (a > b ? 1 : a < b ? -1 : 0)
+      : (a, b) => (a < b ? 1 : a > b ? -1 : 0);
+
+  if (field) {
+    const keys = pathToKeys(field);
+    const reducer = (item: any) => keys.reduce((prev, cur) => prev[cur], item);
+
+    return arr.sort((a, b) => iterator(reducer(a), reducer(b)));
+  }
+
+  return arr.sort(iterator);
 }
 
-/**
- * sorts the array
- * @memberof Array.prototype
- * @function orderBy
- * @param {String} [field]
- * @param {"asc"|"desc"} [order="asc"]
- * @returns {Array}
- * @example
- * [2, 1, 2, 5].orderBy(); // [1,2,2,5]
- * [2, 1, 2, 5].orderBy("desc"); // [5,2,2,1]
- * [{count:1}, {count:20}, {count:15}].orderBy("count", "asc"); // [{count:1},{count:15},{count:20}]
- */
-addPrototype(Array, "orderBy", method);
+export const enum ORDER {
+  ASC = "asc",
+  DESC = "desc",
+}
+
+export type OrderT = "asc" | "desc";

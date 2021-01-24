@@ -1,4 +1,4 @@
-import "../../src/object/isPlainObject";
+import "../../src/shim";
 
 describe("Object.isPlainObject", () => {
   test("Object.isPlainObject(2) returns false", () => {

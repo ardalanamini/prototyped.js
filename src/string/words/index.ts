@@ -1,20 +1,3 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
-
-declare global {
-  interface String {
-    words(pattern?: RegExp): string[];
-  }
+export default function words(str: string, pattern = /[^a-zA-Z-]+/): string[] {
+  return str.split(pattern).filter(Boolean);
 }
-
-/**
- * Converts a given string into an array of words
- * @memberof String.prototype
- * @function words
- * @param {RegExp} [pattern=/[^a-zA-Z-]+/]
- * @returns {String[]}
- * @example
- * 'I love javaScript!!'.words(); // ["I", "love", "javaScript"]
- * 'python, javaScript & coffee'.words(); // ["python", "javaScript", "coffee"]
- */
-addPrototype(String, "words", method);

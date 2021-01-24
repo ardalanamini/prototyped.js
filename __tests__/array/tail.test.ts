@@ -1,4 +1,4 @@
-import "../../src/array/tail";
+import "../../src/shim";
 
 describe("Array.prototype.tail", () => {
   test("[1, 2, 3].tail() returns [2, 3]", () => {

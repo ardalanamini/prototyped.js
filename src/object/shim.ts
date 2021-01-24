@@ -1,0 +1,30 @@
+/** @namespace Object */
+
+import "./assign/shim";
+import "./camelCaseKeys/shim";
+import "./clone/shim";
+import "./defaults/shim";
+import "./dig/shim";
+import "./empty/shim";
+import "./equals/shim";
+import "./flatten/shim";
+import "./forEach/shim";
+import "./get/shim";
+import "./invert/shim";
+import "./isEmpty/shim";
+import "./isObject/shim";
+import "./isObjectLike/shim";
+import "./isPlainObject/shim";
+import "./kebabCaseKeys/shim";
+import "./keys/shim";
+import "./lowerCaseKeys/shim";
+import "./map/shim";
+import "./mapKeys/shim";
+import "./mapValues/shim";
+import "./merge/shim";
+import "./omit/shim";
+import "./reduce/shim";
+import "./set/shim";
+import "./size/shim";
+import "./snakeCaseKeys/shim";
+import "./values/shim";

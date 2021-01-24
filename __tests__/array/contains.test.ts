@@ -1,4 +1,4 @@
-import "../../src/array/contains";
+import "../../src/shim";
 
 describe("Array.prototype.contains", () => {
   test("[1, 2, 3].contains(2) returns true", () => {

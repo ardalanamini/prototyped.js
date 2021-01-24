@@ -1,6 +1,4 @@
-/** @namespace Number */
-
-import "./digitize";
-import "./equals";
-import "./inRange";
-import "./isNumber";
+export { default as digitize } from "./digitize";
+export { default as equals } from "./equals";
+export { default as inRange } from "./inRange";
+export { default as isNumber } from "./isNumber";

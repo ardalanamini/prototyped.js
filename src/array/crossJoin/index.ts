@@ -1,20 +1,9 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
+export default function crossJoin<T, P>(array1: T[], array2: P[]): [T, P][] {
+  const joined: [T, P][] = [];
 
-declare global {
-  interface Array<T> {
-    crossJoin<P = any>(array: P[]): Array<[T, P]>;
-  }
+  array1.forEach((item) =>
+    array2.forEach((value) => joined.push([item, value])),
+  );
+
+  return joined;
 }
-
-/**
- * Cross joins the array's values among the given arrays,
- * returning a Cartesian product with all possible permutations
- * @memberof Array.prototype
- * @function crossJoin
- * @param {Array} array
- * @returns {Array[]}
- * @example
- * [1, 2].crossJoin(['a', 'b']); // [[1, 'a'], [1, 'b'], [2, 'a'], [2, 'b']]
- */
-addPrototype(Array, "crossJoin", method);

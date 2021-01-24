@@ -1,21 +1,13 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
+import repeat from "../repeat";
 
-declare global {
-  interface String {
-    pad(size: number, value?: string): string;
-  }
+export default function pad(str: string, size: number, value = " "): string {
+  const s = Math.abs(size);
+
+  if (s <= str.length) return str;
+
+  const padStr = repeat(s - str.length, value);
+
+  if (size < 0) return `${padStr}${str}`;
+
+  return `${str}${padStr}`;
 }
-
-/**
- * FillS the string with the given value until the string reaches the specified size
- * @memberof String.prototype
- * @function pad
- * @param {Number} size
- * @param {String} [value=" "]
- * @returns {String}
- * @example
- * "123".pad(5, 0); // "12300"
- * "123".pad(-5, 0); // "00123"
- */
-addPrototype(String, "pad", method);

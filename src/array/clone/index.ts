@@ -1,19 +1,5 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
+import { deepClone } from "../../utils";
 
-declare global {
-  interface Array<T> {
-    clone(deep?: boolean): T[];
-  }
+export default function clone<Value>(array: Value[], deep = false): Value[] {
+  return deep ? deepClone(array) : [...array];
 }
-
-/**
- * Returns the cloned array
- * @memberof Array.prototype
- * @function clone
- * @param {Boolean} [deep=false]
- * @returns {Array}
- * @example
- * [1, 2, 3].clone(); // [1, 2, 3]
- */
-addPrototype(Array, "clone", method);

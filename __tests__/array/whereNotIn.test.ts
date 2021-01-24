@@ -1,4 +1,4 @@
-import "../../src/array/whereNotIn";
+import "../../src/shim";
 
 describe("Array.prototype.whereNotIn", () => {
   test("[1, 2, 2, 3, 4, 4, 5].whereNotIn([3,4]) returns [1,2,2,5]", () => {

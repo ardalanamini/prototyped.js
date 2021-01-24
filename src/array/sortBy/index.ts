@@ -1,21 +1,18 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
+import isString from "../../string/isString";
+import { pathToKeys } from "../../utils";
 
-declare global {
-  interface Array<T> {
-    sortBy(fn: string | ((value: any) => number)): T[];
+export default function sortBy<T>(
+  arr: T[],
+  fn: string | ((value: T) => number),
+): T[] {
+  let reducer = fn as (value: T) => number;
+
+  if (isString(fn)) {
+    const keys = pathToKeys(fn);
+
+    reducer = (value): number =>
+      keys.reduce((prev, cur) => (prev as any)[cur], value) as any;
   }
-}
 
-/**
- * Groups the elements of an array based on the given function and
- * returns the count of elements in each group
- * @memberof Array.prototype
- * @function sortBy
- * @param {String|Function} fn
- * @returns {Array}
- * @example
- * ['five', 'three', 'one'].sortBy('length'); // ['one', 'five', 'three']
- * ['five', 'three', 'one'].sortBy((value) => -value.length); // ['three', 'five', 'one']
- */
-addPrototype(Array, "sortBy", method);
+  return arr.sort((a, b) => reducer(a) - reducer(b));
+}

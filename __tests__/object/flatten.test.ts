@@ -1,4 +1,4 @@
-import "../../src/object/flatten";
+import "../../src/shim";
 
 describe("Object.prototype.$flatten", () => {
   test("1", () => {

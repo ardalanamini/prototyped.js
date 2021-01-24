@@ -1,20 +1,5 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
-
-declare global {
-  interface Array<T> {
-    count(value?: T): number;
-  }
+export default function count<Value>(array: Value[], value?: Value): number {
+  return value
+    ? array.reduce((a, v) => a + Number(v === value), 0)
+    : array.length;
 }
-
-/**
- * Counts the occurrences of a value in an array
- * @memberof Array.prototype
- * @function count
- * @param {*} [value]
- * @returns {Number}
- * @example
- * [1, 1, 2, 1, 2, 3].count(); // 6
- * [1, 1, 2, 1, 2, 3].count(1); // 3
- */
-addPrototype(Array, "count", method);

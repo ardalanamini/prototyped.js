@@ -1,29 +1,20 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
+import forEach from "../forEach";
 
-declare global {
-  interface Object {
-    $reduce<T = any>(
-      fn: (
-        prev: T,
-        value: any,
-        key: string,
-        object: Record<string, unknown>,
-      ) => T,
-      initialValue?: T,
-    ): any;
-  }
+export default function reduce<
+  T extends Record<string, unknown>,
+  K extends keyof T,
+  P = unknown
+>(
+  obj: T,
+  fn: (prev: P, value: T[K], key: K, object: T) => P,
+  initialValue: P = undefined as never,
+): P {
+  let reduced = initialValue;
+
+  forEach<T, K>(
+    obj,
+    (value, key, object) => (reduced = fn(reduced, value, key, object)),
+  );
+
+  return reduced;
 }
-
-/**
- * Just like array.reduce
- * @memberof Object.prototype
- * @function $reduce
- * @param {Function} fn
- * @param {*} initialValue
- * @returns {*}
- * @example
- * ({foo: 1, bar: 2}).$reduce((prev, value, key) => [...prev, key + ":" + value], []);
- * // ["foo:1", "bar:2"]
- */
-addPrototype(Object, "$reduce", method);

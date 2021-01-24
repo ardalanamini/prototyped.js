@@ -1,20 +1,11 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
-
-declare global {
-  interface Array<T> {
-    flatten(depth?: number): any[];
+export default function flatten<T>(arr: T[], depth = 1): unknown[] {
+  if (depth === 1) {
+    return arr.reduce((prev, value) => prev.concat(value), [] as unknown[]);
   }
-}
 
-/**
- * Flattens an array up to the specified depth
- * @memberof Array.prototype
- * @function flatten
- * @param {Number} [depth=1]
- * @returns {Array}
- * @example
- * [1, [2], 3, 4].flatten(); // [1, 2, 3, 4]
- * [1, [2, [3, [4, 5], 6], 7], 8].flatten(2); // [1, 2, 3, [4, 5], 6, 7, 8]
- */
-addPrototype(Array, "flatten", method);
+  return arr.reduce(
+    (prev, value) =>
+      prev.concat(Array.isArray(value) ? flatten(value, depth - 1) : value),
+    [] as unknown[],
+  );
+}

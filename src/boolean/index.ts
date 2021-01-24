@@ -1,3 +1,1 @@
-/** @namespace Boolean */
-
-import "./isBoolean";
+export { default as isBoolean } from "./isBoolean";

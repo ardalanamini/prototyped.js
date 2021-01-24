@@ -1,4 +1,4 @@
-import "../../src/array/pull";
+import "../../src/shim";
 
 describe("Array.prototype.pull", () => {
   test(

@@ -1,20 +1,5 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
+export default function capitalize(str: string, allWords = false): string {
+  if (allWords) return str.replace(/\b[a-z]/g, (char) => char.toUpperCase());
 
-declare global {
-  interface String {
-    capitalize(allWords?: boolean): string;
-  }
+  return str.replace(/^[a-z]/, (char) => char.toUpperCase());
 }
-
-/**
- * Returns the capitalized string
- * @memberof String.prototype
- * @function capitalize
- * @param {Boolean} [allWords=false]
- * @returns {String}
- * @example
- * 'foo bar'.capitalize(); // 'Foo bar'
- * 'hello world'.capitalize(true); // 'Hello World'
- */
-addPrototype(String, "capitalize", method);

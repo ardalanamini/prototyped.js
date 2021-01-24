@@ -1,21 +1,17 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
+import { pathToKeys } from "../../utils";
 
-declare global {
-  interface Object {
-    $set(path: string, value: any): any;
+export default function set(
+  obj: Record<string, unknown>,
+  path: string,
+  value: unknown,
+): void {
+  const keys = pathToKeys(path);
+  const length = keys.length;
+  let i = 0;
+
+  for (; i < length - 1; i++) {
+    obj = obj[keys[i]] as never;
   }
-}
 
-/**
- * Puts the property value indicated by the given selector into the object
- * @memberof Object.prototype
- * @function $set
- * @param {String} path
- * @param {*} value
- * @example
- * const obj = { selector: { to: { val: 'val to select' } } };
- * obj.$set('selector.to.val');
- * // obj -> { selector: { to: { val: 'val to select' } } }
- */
-addPrototype(Object, "$set", method);
+  obj[keys[i]] = value;
+}

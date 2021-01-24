@@ -1,4 +1,4 @@
-import "../../src/object/dig";
+import "../../src/shim";
 
 describe("Object.prototype.$dig", () => {
   const data = {

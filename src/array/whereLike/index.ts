@@ -1,23 +1,23 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
+import isString from "../../string/isString";
+import { filter } from "../../utils";
 
-declare global {
-  interface Array<T> {
-    whereLike(value: string | RegExp): T[];
-    whereLike(field: string, value: string | RegExp): T[];
+export default whereLike;
+
+function whereLike<T>(arr: T[], value: string | RegExp): T[];
+function whereLike<T>(arr: T[], field: string, value: string | RegExp): T[];
+function whereLike<T>(
+  arr: T[],
+  field: string | RegExp,
+  value?: string | RegExp,
+): T[] {
+  if (value === undefined) {
+    value = field as string | RegExp;
+    field = undefined as any;
   }
-}
 
-/**
- * Filters the array
- * @memberof Array.prototype
- * @function whereLike
- * @param {String|RegExp} field
- * @param {String|RegExp} [value]
- * @returns {Array}
- * @example
- * ["foo", "bar", "hello", "world"].whereLike("o"); // ["foo","hello","world"]
- * [{foo:"hello"}, {foo:"bar"}, {foo:"world"}]
- *   .whereLike("foo", /o/i); // [{foo:"hello"},{foo:"world"}]
- */
-addPrototype(Array, "whereLike", method);
+  if (isString(value)) value = new RegExp(value, "i");
+
+  const iterator = (item: any) => (value as RegExp).test(item);
+
+  return filter(arr, field as string, iterator);
+}

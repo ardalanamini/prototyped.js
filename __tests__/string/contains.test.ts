@@ -1,4 +1,4 @@
-import "../../src/string/contains";
+import "../../src/shim";
 
 describe("String.prototype.contains", () => {
   test('"javaScript & typescript".contains("Typescript"); // true', () => {

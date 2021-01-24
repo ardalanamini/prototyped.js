@@ -1,19 +1,5 @@
-import method from "./method";
+export default function gcd(...nums: number[]): number {
+  const _gcd = (x: number, y: number) => (!y ? x : gcd(y, x % y));
 
-declare global {
-  interface Math {
-    gcd(...nums: number[]): number;
-  }
+  return nums.reduce((a, b) => _gcd(a, b));
 }
-
-/**
- * Calculates the greatest common divisor between two or more numbers
- * @memberof Math
- * @function gcd
- * @param {Number[]} nums
- * @returns {Number}
- * @example
- * Math.gcd(8, 36); // 4
- * Math.gcd(...[12, 8, 32]); // 4
- */
-Math.gcd = method;

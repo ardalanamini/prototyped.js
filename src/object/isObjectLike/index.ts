@@ -1,19 +1,9 @@
-import method from "./method";
+import isObject from "../isObject";
 
-declare global {
-  interface ObjectConstructor {
-    isObjectLike(arg: any): arg is Record<string, unknown>;
-  }
+export default function isObjectLike(
+  arg: unknown,
+): arg is Record<string, unknown> {
+  if (!isObject(arg)) return false;
+
+  return typeof arg !== "function";
 }
-
-/**
- * Returns true if the given argument is object like
- * @memberof Object
- * @function isObjectLike
- * @param {*} arg
- * @returns {Boolean}
- * @example
- * Object.isObjectLike(2); // false
- * Object.isObjectLike({foo: 'bar'}); // true
- */
-Object.isObjectLike = method;

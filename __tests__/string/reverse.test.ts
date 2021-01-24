@@ -1,4 +1,4 @@
-import "../../src/string/reverse";
+import "../../src/shim";
 
 describe("String.prototype.reverse", () => {
   test('"foobar".reverse() returns "raboof"', () => {

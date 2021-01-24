@@ -1,4 +1,4 @@
-import "../../src/object/snakeCaseKeys";
+import "../../src/shim";
 
 describe("Object.prototype.$snakeCaseKeys", () => {
   test(

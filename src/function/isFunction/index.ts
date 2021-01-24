@@ -1,20 +1,5 @@
-import method from "./method";
-
-declare global {
-  interface FunctionConstructor {
-    // eslint-disable-next-line @typescript-eslint/ban-types
-    isFunction(arg: any): arg is Function;
-  }
+export default function isFunction(
+  arg: unknown,
+): arg is (...args: unknown[]) => unknown {
+  return typeof arg === "function";
 }
-
-/**
- * Returns true if the given argument is a function
- * @memberof Function
- * @function isFunction
- * @param {*} arg
- * @returns {Boolean}
- * @example
- * Function.isFunction(2); // false
- * Function.isFunction((() => {})); // true
- */
-Function.isFunction = method;

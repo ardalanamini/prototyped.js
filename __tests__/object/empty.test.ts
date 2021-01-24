@@ -1,4 +1,4 @@
-import "../../src/object/empty";
+import "../../src/shim";
 
 describe("Object.prototype.$empty", () => {
   test("{ a: 1 }.$empty()", () => {

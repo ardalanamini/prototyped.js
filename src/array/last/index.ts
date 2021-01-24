@@ -1,18 +1,5 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
-
-declare global {
-  interface Array<T> {
-    last(): T;
-  }
+export default function last<T extends unknown[]>(
+  array: T,
+): T extends [...infer I, infer L] ? L : T extends Array<infer P> ? P : never {
+  return array[array.length - 1] as never;
 }
-
-/**
- * Returns the last item of the array
- * @memberof Array.prototype
- * @function last
- * @returns {*}
- * @example
- * [1, 2, 3].last(); // 3
- */
-addPrototype(Array, "last", method);

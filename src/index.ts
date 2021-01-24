@@ -1,9 +1,9 @@
-import "./array";
-import "./boolean";
-import "./date";
-import "./function";
-import "./globals";
-import "./math";
-import "./number";
-import "./object";
-import "./string";
+export * as array from "./array";
+export * as boolean from "./boolean";
+export * as date from "./date";
+export * as func from "./function";
+export * as globals from "./globals";
+export * as math from "./math";
+export * as number from "./number";
+export * as object from "./object";
+export * as string from "./string";

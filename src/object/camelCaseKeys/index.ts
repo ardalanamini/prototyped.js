@@ -1,19 +1,12 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
+import camelCase from "../../string/camelCase";
+import forEach from "../forEach";
 
-declare global {
-  interface Object {
-    $camelCaseKeys(): Record<string, unknown>;
-  }
+export default function camelCaseKeys(
+  obj: Record<string, unknown>,
+): Record<string, unknown> {
+  const result: Record<string, unknown> = {};
+
+  forEach(obj, (value, key) => (result[camelCase(key)] = value));
+
+  return result;
 }
-
-/**
- * Creates a new object from the specified object, where all the keys are in camel-case
- * @memberof Object.prototype
- * @function $camelCaseKeys
- * @returns {Object}
- * @example
- * const myObj = { First_name: "Adam", "last-name": "Smith" };
- * const myObjLower = myObj.$camelCaseKeys(); // {firstName: "Adam", lastName: "Smith"}
- */
-addPrototype(Object, "$camelCaseKeys", method);

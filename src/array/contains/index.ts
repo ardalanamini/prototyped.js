@@ -1,19 +1,7 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
-
-declare global {
-  interface Array<T> {
-    contains(value: any): boolean;
-  }
+export default function contains<Value>(
+  array: Value[],
+  value: Value,
+  fromIndex?: number,
+): boolean {
+  return array.includes(value, fromIndex);
 }
-
-/**
- * Determines whether the collection contains a given item
- * @memberof Array.prototype
- * @function contains
- * @param {*} value
- * @returns {Boolean}
- * @example
- * [1, 2, 3].contains(2); // true
- */
-addPrototype(Array, "contains", method);

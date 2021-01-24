@@ -1,4 +1,4 @@
-import "../../src/string/decapitalize";
+import "../../src/shim";
 
 describe("String.prototype.decapitalize", () => {
   test('"Foo Bar".decapitalize() returns "foo Bar"', () => {

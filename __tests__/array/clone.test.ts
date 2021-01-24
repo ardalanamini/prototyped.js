@@ -1,4 +1,4 @@
-import "../../src/array/clone";
+import "../../src/shim";
 
 describe("Array.prototype.clone", () => {
   test("[].clone() returns []", () => {

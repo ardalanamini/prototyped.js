@@ -1,4 +1,4 @@
-import "../../src/string/swapCase";
+import "../../src/shim";
 
 describe("String.prototype.swapCase", () => {
   test('"Hello".swapCase() returns "hELLO"', () => {

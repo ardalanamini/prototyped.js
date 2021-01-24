@@ -1,18 +1,7 @@
-import method from "./method";
+export default function isPrime(num: number): boolean {
+  const boundary = Math.floor(Math.sqrt(num));
 
-declare global {
-  interface Math {
-    isPrime(num: number): boolean;
-  }
+  for (let i = 2; i <= boundary; i++) if (num % i === 0) return false;
+
+  return num >= 2;
 }
-
-/**
- * Checks if the provided integer is a prime number
- * @memberof Math
- * @function isPrime
- * @param {Number} num
- * @returns {Boolean}
- * @example
- * Math.isPrime(11); // true
- */
-Math.isPrime = method;

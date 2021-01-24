@@ -1,18 +1,11 @@
-import method from "./method";
+import range from "../../array/range";
 
-declare global {
-  interface Math {
-    primes(num: number): number[];
-  }
+export default function primes(num: number): number[] {
+  let arr = range(num, 2);
+
+  range(Math.floor(Math.sqrt(num)), 2).forEach(
+    (x) => (arr = arr.filter((y) => y % x !== 0 || y === x)),
+  );
+
+  return arr;
 }
-
-/**
- * Generates primes up to a given number, using the Sieve of Eratosthenes
- * @memberof Math
- * @function primes
- * @param {Number} num
- * @returns {Number[]}
- * @example
- * Math.primes(10); // [2, 3, 5, 7]
- */
-Math.primes = method;

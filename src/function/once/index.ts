@@ -1,22 +1,11 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
+export default function once<
+  Args extends unknown[],
+  Return,
+  F extends (...args: Args) => Return
+>(func: F, ...args: Args): Return | void {
+  if (func.called) return;
 
-declare global {
-  interface Function {
-    called?: boolean;
-    once(...args: any[]): any;
-  }
+  func.called = true;
+
+  return func.call(func, ...args);
 }
-
-/**
- * Ensures a function is called only once
- * @memberof Function.prototype
- * @function once
- * @param {Array} args
- * @returns {*}
- * @example
- * const test = (msg) => console.log(msg);
- * test.once('a'); // logs 'a'
- * test.once('b'); // no log this time
- */
-addPrototype(Function, "once", method);

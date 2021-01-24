@@ -1,19 +1,6 @@
-import method from "./method";
-
-declare global {
-  interface Math {
-    isDivisible(dividend: number, divisor: number): boolean;
-  }
+export default function isDivisible(
+  dividend: number,
+  divisor: number,
+): boolean {
+  return dividend % divisor === 0;
 }
-
-/**
- * Checks if the first numeric argument is divisible by the second one
- * @memberof Math
- * @function isDivisible
- * @param {Number} dividend
- * @param {Number} divisor
- * @returns {Boolean}
- * @example
- * Math.isDivisible(6, 3); // true
- */
-Math.isDivisible = method;

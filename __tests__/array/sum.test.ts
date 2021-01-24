@@ -1,4 +1,4 @@
-import "../../src/array/sum";
+import "../../src/shim";
 
 describe("Array.prototype.sum", () => {
   test("[1, 2, 3].sum() returns 6", () => {
@@ -16,6 +16,6 @@ describe("Array.prototype.sum", () => {
   });
 
   test('[{a: 1}, {a: 2}, {a: 3}].sum("b") returns 0', () => {
-    expect([{ a: 1 }, { a: 2 }, { a: 3 }].sum("b")).toBe(0);
+    expect([{ a: 1 }, { a: 2 }, { a: 3 }].sum("b" as never)).toBe(0);
   });
 });

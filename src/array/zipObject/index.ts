@@ -1,21 +1,9 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
-
-declare global {
-  interface Array<T> {
-    zipObject(array: any[]): Record<string, unknown>;
-  }
+export default function zipObject<T>(
+  arr: T[],
+  array: any[],
+): Record<string, unknown> {
+  return arr.reduce(
+    (obj: any, prop, index) => ((obj[prop] = array[index]), obj),
+    {},
+  );
 }
-
-/**
- * Given an array of valid property identifiers and an array of values,
- * return an object associating the properties to the values
- * @memberof Array.prototype
- * @function zipObject
- * @param {Array} array
- * @returns {Object}
- * @example
- * ['a', 'b', 'c'].zipObject([1, 2]); // {a: 1, b: 2, c: undefined}
- * ['a', 'b'].zipObject([1, 2, 3]); // {a: 1, b: 2}
- */
-addPrototype(Array, "zipObject", method);

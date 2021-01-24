@@ -1,19 +1,15 @@
-import method from "./method";
+import isObjectLike from "../isObjectLike";
 
-declare global {
-  interface ObjectConstructor {
-    isPlainObject(arg: any): arg is Record<string, unknown>;
+export default function isPlainObject(
+  arg: unknown,
+): arg is Record<string, unknown> {
+  if (!isObjectLike(arg)) return false;
+
+  let proto = arg;
+
+  while (Object.getPrototypeOf(proto) !== null) {
+    proto = Object.getPrototypeOf(proto);
   }
-}
 
-/**
- * Returns true if the given argument is a plain object
- * @memberof Object
- * @function isPlainObject
- * @param {*} arg
- * @returns {Boolean}
- * @example
- * Object.isPlainObject(2); // false
- * Object.isPlainObject({foo: 'bar'}); // true
- */
-Object.isPlainObject = method;
+  return Object.getPrototypeOf(arg) === proto;
+}

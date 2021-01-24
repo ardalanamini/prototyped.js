@@ -1,4 +1,4 @@
-import "../../src/function/isFunction";
+import "../../src/shim";
 
 describe("Function.isFunction", () => {
   test("Function.isFunction(2) returns false", () => {

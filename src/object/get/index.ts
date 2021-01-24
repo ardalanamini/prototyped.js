@@ -1,19 +1,11 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
+import { PathT, pathToKeys } from "../../utils";
 
-declare global {
-  interface Object {
-    $get(key: string): any;
-  }
+export default function get<
+  Value extends Record<string, unknown>,
+  Path extends PathT<Value> = never
+>(obj: Record<string, unknown>, key: Path): unknown {
+  return pathToKeys(key).reduce(
+    (prev, cur) => prev[cur] as Record<string, unknown>,
+    obj,
+  );
 }
-
-/**
- * Retrieve the property indicated by the given selector from the object
- * @memberof Object.prototype
- * @function $get
- * @param {String} key
- * @returns {*}
- * @example
- * { selector: { to: { val: 'val to select' } } }.$get('selector.to.val'); // 'val to select'
- */
-addPrototype(Object, "$get", method);

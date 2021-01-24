@@ -1,4 +1,4 @@
-import "../../src/object/merge";
+import "../../src/shim";
 
 describe("Object.prototype.$merge", () => {
   test(

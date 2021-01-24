@@ -1,4 +1,4 @@
-import "../../src/object/map";
+import "../../src/shim";
 
 describe("Object.prototype.$map", () => {
   test(
@@ -9,7 +9,7 @@ describe("Object.prototype.$map", () => {
         {
           fred: { user: "fred", age: 40 },
           pebbles: { user: "pebbles", age: 1 },
-        }.$map((u, k) => ({ [k]: u.age })),
+        }.$map((u: any, k) => ({ [k]: u.age })),
       ).toEqual({ fred: 40, pebbles: 1 });
     },
   );

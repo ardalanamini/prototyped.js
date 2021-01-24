@@ -1,4 +1,4 @@
-import "../../src/string/pad";
+import "../../src/shim";
 
 describe("String.prototype.pad", () => {
   test('"123".pad(2) returns "123"', () => {

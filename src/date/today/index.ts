@@ -1,17 +1,11 @@
-import method from "./method";
+import pad from "../../string/pad";
 
-declare global {
-  interface DateConstructor {
-    today(): string;
-  }
+export default function today(): string {
+  const now = new Date();
+
+  return `${now.getFullYear()}-${pad(`${now.getMonth() + 1}`, -2, "0")}-${pad(
+    `${now.getDate()}`,
+    -2,
+    "0",
+  )}`;
 }
-
-/**
- * Returns today's date in `YYYY-MM-DD` format
- * @memberof Date
- * @function today
- * @returns {String}
- * @example
- * Date.today(); // "2018-08-10"
- */
-Date.today = method;

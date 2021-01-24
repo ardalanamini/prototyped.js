@@ -1,19 +1,7 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
+export default function pull<T>(arr: T[], ...args: T[]): void {
+  const pulled = arr.filter((value) => !args.includes(value));
 
-declare global {
-  interface Array<T> {
-    pull(...args: T[]): void;
-  }
+  arr.length = 0;
+
+  pulled.forEach((value) => arr.push(value));
 }
-
-/**
- * Mutates the original array to filter out the values specified
- * @memberof Array.prototype
- * @function pull
- * @param {Array} args
- * @example
- * let myArray = ['a', 'b', 'c', 'a', 'b', 'c'];
- * myArray.pull('a', 'c'); // myArray = [ 'b', 'b' ];
- */
-addPrototype(Array, "pull", method);

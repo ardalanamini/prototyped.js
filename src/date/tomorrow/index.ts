@@ -1,17 +1,13 @@
-import method from "./method";
+import pad from "../../string/pad";
 
-declare global {
-  interface DateConstructor {
-    tomorrow(): string;
-  }
+export default function tomorrow(): string {
+  const now = new Date();
+
+  now.setDate(now.getDate() + 1);
+
+  return `${now.getFullYear()}-${pad(`${now.getMonth() + 1}`, -2, "0")}-${pad(
+    `${now.getDate()}`,
+    -2,
+    "0",
+  )}`;
 }
-
-/**
- * Returns tomorrow's date in `YYYY-MM-DD` format
- * @memberof Date
- * @function tomorrow
- * @returns {String}
- * @example
- * Date.tomorrow(); // "2018-08-11"
- */
-Date.tomorrow = method;

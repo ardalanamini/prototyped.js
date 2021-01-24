@@ -1,18 +1,5 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
+import keys from "../keys";
 
-declare global {
-  interface Object {
-    $size(): number;
-  }
+export default function size(obj: Record<string, unknown>): number {
+  return (obj.size as number) || (obj.length as number) || keys(obj).length;
 }
-
-/**
- * Get size of the object
- * @memberof Object.prototype
- * @function $size
- * @returns {Object}
- * @example
- * { one: 1, two: 2, three: 3 }.$size(); // 3
- */
-addPrototype(Object, "$size", method);

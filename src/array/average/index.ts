@@ -1,35 +1,14 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
+import { PathT } from "../../utils";
+import sum from "../sum";
 
-declare global {
-  interface Array<T> {
-    average(path?: string): number;
-    avg(path?: string): number;
-  }
+export default average;
+
+function average<
+  Value extends Record<string, unknown>,
+  Path extends PathT<Value> = never
+>(array: Value[], path?: Path): number;
+function average<Value>(array: Value[]): number;
+function average<Value>(array: Value[], path?: string): number {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  return sum(array as any[], path) / array.length;
 }
-
-/**
- * Returns the average value of a given path
- * @memberof Array.prototype
- * @function average
- * @param {String} [path]
- * @returns {Number}
- * @example
- * [1, 2, 3].average(); // 2
- * [{a: 1}, {a: 2}, {a: 3}].average("a"); // 2
- * [{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].average("a.b"); // 2
- */
-addPrototype(Array, "average", method);
-
-/**
- * An alias of Array.prototype.average
- * @memberof Array.prototype
- * @function avg
- * @param {String} [path]
- * @returns {Number}
- * @example
- * [1, 2, 3].avg(); // 2
- * [{a: 1}, {a: 2}, {a: 3}].avg("a"); // 2
- * [{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].avg("a.b"); // 2
- */
-Array.prototype.avg = Array.prototype.average;

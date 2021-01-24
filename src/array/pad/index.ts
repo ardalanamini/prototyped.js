@@ -1,21 +1,17 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
+import repeat from "../repeat";
 
-declare global {
-  interface Array<T> {
-    pad(size: number, value?: any): any[];
-  }
+export default function pad<T>(
+  arr: T[],
+  size: number,
+  value: T = 0 as never,
+): T[] {
+  const length = Math.abs(size) - arr.length;
+
+  if (length <= 0) return arr;
+
+  const array = repeat(length, value);
+
+  if (size < 0) return array.concat(arr);
+
+  return arr.concat(array);
 }
-
-/**
- * FillS the array with the given value until the array reaches the specified size
- * @memberof Array.prototype
- * @function pad
- * @param {Number} size
- * @param {*} [value=0]
- * @returns {Array}
- * @example
- * [1, 2, 3].pad(5, 0); // [1, 2, 3, 0, 0]
- * [1, 2, 3].pad(-5, 0); // [0, 0, 1, 2, 3]
- */
-addPrototype(Array, "pad", method);

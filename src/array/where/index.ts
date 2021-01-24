@@ -1,27 +1,72 @@
-import { addPrototype, Operator } from "../../utils";
-import method from "./method";
+import { filter, Operator, OPERATOR } from "../../utils";
+import contains from "../contains";
 
-declare global {
-  interface Array<T> {
-    where(value: any): T[];
-    where(field: string, value: any): T[];
-    where(operator: Operator, value: any): T[];
-    where(field: string, operator: Operator, value: any): T[];
+export default where;
+
+function where<T>(arr: T[], value: unknown): T[];
+function where<T>(arr: T[], field: string, value: unknown): T[];
+function where<T>(arr: T[], operator: Operator, value: unknown): T[];
+function where<T>(
+  arr: T[],
+  field: string,
+  operator: Operator,
+  value: unknown,
+): T[];
+function where<T>(
+  arr: T[],
+  field: string | Operator | any,
+  operator?: Operator | any,
+  value?: any,
+): T[] {
+  if (operator === undefined) {
+    value = field;
+    field = undefined;
+    operator = OPERATOR.EQ;
+  } else if (value === undefined) {
+    if (!contains(OPERATORS, field)) {
+      value = operator;
+      operator = OPERATOR.EQ;
+    } else {
+      value = operator;
+      operator = field as Operator;
+      field = undefined;
+    }
   }
+
+  let iterator: (item: any) => boolean;
+  switch (operator) {
+    case OPERATOR.LT:
+      iterator = (item) => item < value;
+      break;
+    case OPERATOR.LTE:
+      iterator = (item) => item <= value;
+      break;
+    case OPERATOR.EQ:
+      iterator = (item) => item === value;
+      break;
+    case OPERATOR.NE:
+      iterator = (item) => item !== value;
+      break;
+    case OPERATOR.GTE:
+      iterator = (item) => item >= value;
+      break;
+    case OPERATOR.GT:
+      iterator = (item) => item > value;
+      break;
+    default:
+      throw new TypeError(
+        `Expected 'operator' to be one of ${OPERATORS}, got ${operator}`,
+      );
+  }
+
+  return filter(arr, field, iterator);
 }
 
-/**
- * Filters the array
- * @memberof Array.prototype
- * @function where
- * @param {String|*} field
- * @param {String|*} [operator]
- * @param {*} [value]
- * @returns {Array}
- * @example
- * [1, 2, 2, 3, 4, 4, 5].where(4); // [4,4]
- * [{count:1}, {count:20}, {count:15}].where("count", 15); // [{count:15}]
- * [1, 2, 2, 3, 4, 4, 5].where("<", 4); // [1,2,2,3]
- * [{count:1}, {count:20}, {count:15}].where("count", ">=", 15); // [{count:20},{count:15}]
- */
-addPrototype(Array, "where", method);
+const OPERATORS = [
+  OPERATOR.LT,
+  OPERATOR.LTE,
+  OPERATOR.EQ,
+  OPERATOR.NE,
+  OPERATOR.GTE,
+  OPERATOR.GT,
+];

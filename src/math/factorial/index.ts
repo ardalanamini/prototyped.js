@@ -1,18 +1,3 @@
-import method from "./method";
-
-declare global {
-  interface Math {
-    factorial(n: number): number;
-  }
+export default function factorial(n: number): number {
+  return n <= 1 ? 1 : n * factorial(n - 1);
 }
-
-/**
- * Calculates the factorial of a number
- * @memberof Math
- * @function factorial
- * @param {Number} num
- * @returns {Number}
- * @example
- * Math.factorial(6); // 720
- */
-Math.factorial = method;

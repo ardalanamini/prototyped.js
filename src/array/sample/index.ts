@@ -1,18 +1,3 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
-
-declare global {
-  interface Array<T> {
-    sample(): T;
-  }
+export default function sample<T>(arr: T[]): T {
+  return arr[Math.floor(Math.random() * arr.length)];
 }
-
-/**
- * Returns a random element from an array
- * @memberof Array.prototype
- * @function sample
- * @returns {*}
- * @example
- * [3, 7, 9, 11].sample(); // 9
- */
-addPrototype(Array, "sample", method);

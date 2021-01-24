@@ -1,13 +1,11 @@
-/** @namespace Math */
-
-import "./average";
-import "./degreesToRads";
-import "./factorial";
-import "./fibonacci";
-import "./gcd";
-import "./isDivisible";
-import "./isEven";
-import "./isPrime";
-import "./lcm";
-import "./primes";
-import "./radsToDegrees";
+export { default as average } from "./average";
+export { default as degreesToRads } from "./degreesToRads";
+export { default as factorial } from "./factorial";
+export { default as fibonacci } from "./fibonacci";
+export { default as gcd } from "./gcd";
+export { default as isDivisible } from "./isDivisible";
+export { default as isEven } from "./isEven";
+export { default as isPrime } from "./isPrime";
+export { default as lcm } from "./lcm";
+export { default as primes } from "./primes";
+export { default as radsToDegrees } from "./radsToDegrees";

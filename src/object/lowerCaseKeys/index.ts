@@ -1,19 +1,11 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
+import forEach from "../forEach";
 
-declare global {
-  interface Object {
-    $lowerCaseKeys(): Record<string, unknown>;
-  }
+export default function lowerCaseKeys(
+  obj: Record<string, unknown>,
+): Record<string, unknown> {
+  const result: Record<string, unknown> = {};
+
+  forEach(obj, (value, key) => (result[key.toLowerCase()] = value));
+
+  return result;
 }
-
-/**
- * Creates a new object from the specified object, where all the keys are in lowercase
- * @memberof Object.prototype
- * @function $lowerCaseKeys
- * @returns {Object}
- * @example
- * const myObj = { Name: "Adam", sUrnAME: "Smith" };
- * const myObjLower = myObj.$lowerCaseKeys(); // {name: "Adam", surname: "Smith"}
- */
-addPrototype(Object, "$lowerCaseKeys", method);

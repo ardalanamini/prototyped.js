@@ -1,5 +1,5 @@
-import "../../src/date/today";
-import pad from "../../src/string/pad/method";
+import "../../src/shim";
+import pad from "../../src/string/pad";
 
 describe("Date.today", () => {
   test("Date.today() returns today's date", () => {

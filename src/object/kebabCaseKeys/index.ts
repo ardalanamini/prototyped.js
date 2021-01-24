@@ -1,19 +1,12 @@
-import { addPrototype } from "../../utils";
-import method from "./method";
+import kebabCase from "../../string/kebabCase";
+import forEach from "../forEach";
 
-declare global {
-  interface Object {
-    $kebabCaseKeys(): Record<string, unknown>;
-  }
+export default function kebabCaseKeys(
+  obj: Record<string, unknown>,
+): Record<string, unknown> {
+  const result: Record<string, unknown> = {};
+
+  forEach(obj, (value, key) => (result[kebabCase(key)] = value));
+
+  return result;
 }
-
-/**
- * Creates a new object from the specified object, where all the keys are in kebab-case
- * @memberof Object.prototype
- * @function $kebabCaseKeys
- * @returns {Object}
- * @example
- * const myObj = { First_name: "Adam", lastName: "Smith" };
- * const myObjLower = myObj.$kebabCaseKeys(); // {first-name: "Adam", last-name: "Smith"}
- */
-addPrototype(Object, "$kebabCaseKeys", method);
