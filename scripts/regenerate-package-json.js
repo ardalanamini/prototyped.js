@@ -1,7 +1,7 @@
-require("../dist");
+require("../dist/shim");
 const path = require("path");
 const fs = require("fs");
-const methods = require("../dist/methods");
+const methods = require("../dist");
 
 const generateKeywords = (obj = {}) => {
   const keywords = [];

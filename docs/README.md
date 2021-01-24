@@ -32,7 +32,7 @@
     * _instance_
         * [.all([fn])](#Array+all) ⇒ [<code>Boolean</code>](#Boolean)
         * [.any([fn])](#Array+any) ⇒ [<code>Boolean</code>](#Boolean)
-        * [.append(value)](#Array+append)
+        * [.append(value)](#Array+append) ⇒ [<code>Number</code>](#Number)
         * [.average([path])](#Array+average) ⇒ [<code>Number</code>](#Number)
         * [.avg([path])](#Array+avg) ⇒ [<code>Number</code>](#Number)
         * [.chunk(size)](#Array+chunk) ⇒ [<code>Array.&lt;Array&gt;</code>](#Array)
@@ -134,7 +134,7 @@ returns `true` for at least one element in a collection,
 ```
 <a name="Array+append"></a>
 
-### array.append(value)
+### array.append(value) ⇒ [<code>Number</code>](#Number)
 Same as push but uses concat
 
 **Kind**: instance method of [<code>Array</code>](#Array)  
@@ -446,7 +446,7 @@ Groups the elements of an array based on the given function
 <a name="Array+implode"></a>
 
 ### array.implode(path, [separator]) ⇒ [<code>String</code>](#String)
-It's like join but u get to git it which keys to join
+It's like join but u get to tell it which keys to join
 
 **Kind**: instance method of [<code>Array</code>](#Array)  
 
