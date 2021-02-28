@@ -10,7 +10,13 @@ export default function set(
   let i = 0;
 
   for (; i < length - 1; i++) {
-    obj = obj[keys[i]] as never;
+    const key = keys[i];
+
+    if (key === "__proto__" || key === "constructor" || key === "prototype") {
+      return;
+    }
+
+    obj = obj[key] as never;
   }
 
   obj[keys[i]] = value;
