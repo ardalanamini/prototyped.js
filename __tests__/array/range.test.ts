@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 describe("Array.range", () => {
   test("Array.range(5) returns [0,1,2,3,4,5]", () => {

@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 describe("Array.prototype.intersect", () => {
   test("[1, 2, 3].intersect([4, 3, 2]) returns [2,3]", () => {

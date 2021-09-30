@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 describe("Object.prototype.$omit", () => {
   test("{ a: 1, b: '2', c: 3 }.$omit(['b']) returns { a: 1, c: 3 }", () => {

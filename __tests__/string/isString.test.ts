@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 describe("String.isString", () => {
   test("String.isString(2) returns false", () => {

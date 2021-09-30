@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 describe("String.prototype.chars", () => {
   test('"Hello".chars() returns ["H", "e", "l", "l", "o"]', () => {

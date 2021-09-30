@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 describe("Object.prototype.$reduce", () => {
   test("({foo:1, bar:2}).$reduce((prev, value, key) => [...prev, key + ':'' + value], []); ['foo:1', 'bar:2']", () => {

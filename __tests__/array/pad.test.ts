@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 describe("Array.prototype.pad", () => {
   test("[1, 2, 3].pad(2) returns [1, 2, 3]", () => {

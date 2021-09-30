@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 /**
  * Standard singular/plural matches.
@@ -617,7 +617,7 @@ const BASIC_TESTS = [
  * @private
  * @type {Array}
  */
-const SINGULAR_TESTS = [
+const SINGULAR_TESTS = BASIC_TESTS.concat([
   ["dingo", "dingos"],
   ["mango", "mangoes"],
   ["echo", "echos"],
@@ -625,7 +625,7 @@ const SINGULAR_TESTS = [
   ["nucleus", "nucleuses"],
   ["bureau", "bureaux"],
   ["seraph", "seraphs"],
-];
+]);
 
 /**
  * Odd singular to plural tests.
@@ -633,53 +633,39 @@ const SINGULAR_TESTS = [
  * @private
  * @type {Array}
  */
-const PLURAL_TESTS = [
+const PLURAL_TESTS = BASIC_TESTS.concat([
   ["whisky", "whiskies"],
   ["plateaux", "plateaux"],
   ["axis", "axes"],
   ["automatum", "automata"],
   ["thou", "you"],
-];
+]);
 
 describe("String.prototype.pluralize", () => {
   describe("pluralize()", () => {
-    BASIC_TESTS.concat(PLURAL_TESTS).forEach((test) => {
-      it(`${test[0]} -> ${test[1]}`, () => {
-        expect(test[0].pluralize()).toEqual(test[1]);
-      });
+    it.each(PLURAL_TESTS)("%s -> %s", (singular, plural) => {
+      expect(singular.pluralize()).toEqual(plural);
     });
   });
 
   describe("automatically convert", () => {
     describe("pluralize(5)", () => {
-      BASIC_TESTS.concat(PLURAL_TESTS).forEach((test) => {
-        // Make sure the word stays pluralized.
-        it(`5 ${test[1]} -> ${test[1]}`, () => {
-          expect(test[1].pluralize(5)).toEqual(test[1]);
-        });
+      it.each(PLURAL_TESTS)("5 %s -> %s", (singular, plural) => {
+        // Make sure the plural stays plural.
+        expect(plural.pluralize(5)).toEqual(plural);
 
-        // Make sure the word becomes a plural.
-        if (test[0] !== test[1]) {
-          it(`5 ${test[0]} -> ${test[1]}`, () => {
-            expect(test[0].pluralize(5)).toEqual(test[1]);
-          });
-        }
+        // Make sure the singular becomes plural.
+        expect(singular.pluralize(5)).toEqual(plural);
       });
     });
 
     describe("pluralize(1)", () => {
-      BASIC_TESTS.concat(SINGULAR_TESTS).forEach((test) => {
-        // Make sure the word stays singular.
-        it(`1 ${test[0]} -> ${test[0]}`, () => {
-          expect(test[0].pluralize(1)).toEqual(test[0]);
-        });
+      it.each(SINGULAR_TESTS)("1 %s -> %s", (singular, plural) => {
+        // Make sure the singular stays singular.
+        expect(singular.pluralize(1)).toEqual(singular);
 
-        // Make sure the word becomes singular.
-        if (test[0] !== test[1]) {
-          it(`1 ${test[1]} -> ${test[0]}`, () => {
-            expect(test[1].pluralize(1)).toEqual(test[0]);
-          });
-        }
+        // Make sure the plural becomes singular.
+        expect(plural.pluralize(1)).toEqual(singular);
       });
     });
   });

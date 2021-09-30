@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 describe("String.prototype.equals", () => {
   test('"hello".lines("hello") returns true', () => {

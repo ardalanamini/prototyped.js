@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 describe("Date.isDate", () => {
   test('Date.isDate("foo bar") returns false', () => {

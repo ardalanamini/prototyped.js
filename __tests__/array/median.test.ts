@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 describe("Array.prototype.median", () => {
   test("[1, 1, 2, 4].median() returns 1.5", () => {

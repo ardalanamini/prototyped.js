@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 describe("Array.prototype.empty", () => {
   test("[1,2].empty()", () => {

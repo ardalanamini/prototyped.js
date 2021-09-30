@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 describe("Array.prototype.all", () => {
   test("[4, 2, 3].all((x) => x > 1) returns true", () => {

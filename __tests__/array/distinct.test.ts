@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 describe("Array.prototype.distinct", () => {
   test("[1, 2, 2, 3, 4, 4, 5].distinct() returns [1,2,3,4,5]", () => {

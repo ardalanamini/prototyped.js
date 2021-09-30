@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 describe("Array.prototype.max", () => {
   test("[1, 2, 3].max() returns 3", () => {

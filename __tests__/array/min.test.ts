@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 describe("Array.prototype.min", () => {
   test("[1, 2, 3].min() returns 1", () => {

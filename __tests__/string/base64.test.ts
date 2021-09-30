@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 describe("String.prototype.base64", () => {
   test('"prototyped.js".base64() returns "cHJvdG90eXBlZC5qcw=="', () => {

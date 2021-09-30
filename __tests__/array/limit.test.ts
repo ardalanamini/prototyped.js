@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 describe("Array.prototype.limit", () => {
   test("[2, 1, 2, 5].limit(2) returns [2,1]", () => {

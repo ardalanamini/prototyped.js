@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 describe("String.prototype.capitalize", () => {
   test('"foo bar".capitalize() returns "Foo bar"', () => {

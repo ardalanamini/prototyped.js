@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 describe("Math.degreesToRads", () => {
   test("Math.degreesToRads(180) returns 3.141592653589793", () => {

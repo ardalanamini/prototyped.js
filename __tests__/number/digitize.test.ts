@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 describe("Number.prototype.digitize", () => {
   test("(123).digitize() returns [1, 2, 3]", () => {

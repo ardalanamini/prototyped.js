@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 describe("Object.prototype.$isEmpty", () => {
   test("{ a: 1 }.$isEmpty() returns false", () => {

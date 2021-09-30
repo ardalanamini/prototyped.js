@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 describe("String.prototype.lines", () => {
   test('"This\nis a\nmultiline\nstring.\n".lines() returns ["This", "is a", "multiline", "string." , ""]', () => {

@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 describe("Array.prototype.zip", () => {
   test('["a", "b"].zip([1, 2], [true, false]) returns [["a", 1, true], ["b", 2, false]]', () => {

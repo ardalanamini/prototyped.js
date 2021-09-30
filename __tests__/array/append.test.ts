@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 describe("Array.prototype.append", () => {
   test("myArray = [1, 2, 3] & myArray.append(0) results myArray to be [1, 2, 3, 0]", () => {

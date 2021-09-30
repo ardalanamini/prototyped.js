@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 describe("String.prototype.snakeCase", () => {
   test('"camelCase".snakeCase() returns "camel_case"', () => {

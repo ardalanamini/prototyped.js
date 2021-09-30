@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 describe("Array.prototype.diff", () => {
   test("[1, 2, 3].diff([1, 2, 4]) returns [3]", () => {

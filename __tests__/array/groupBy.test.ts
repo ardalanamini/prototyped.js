@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 describe("Array.prototype.groupBy", () => {
   test("[6.1, 4.2, 6.3].groupBy(Math.floor) returns {4: [4.2], 6: [6.1, 6.3]}", () => {

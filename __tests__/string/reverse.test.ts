@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 describe("String.prototype.reverse", () => {
   test('"foobar".reverse() returns "raboof"', () => {

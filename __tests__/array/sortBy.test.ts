@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 describe("Array.prototype.sortBy", () => {
   test("['five', 'three', 'one'].sortBy('length') returns ['one', 'five', 'three']", () => {

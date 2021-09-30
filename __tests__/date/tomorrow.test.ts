@@ -1,5 +1,5 @@
-import "../../src/shim";
-import pad from "../../src/string/pad";
+import "@src/shim";
+import pad from "@src/string/pad";
 
 describe("Date.tomorrow", () => {
   test("Date.tomorrow() returns tomorrow's date", () => {

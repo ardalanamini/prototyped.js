@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 describe("Array.prototype.whereNull", () => {
   test("[1, 2, 2, 3, null, undefined, 5].whereNull() returns [null, undefined]", () => {

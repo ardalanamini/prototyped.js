@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 describe("Array.prototype.partition", () => {
   test('[{ user: "barney", active: false }, { user: "fred", active: true }].partition(o => o.active) returns [[{ user: "fred", active: true }],[{ user: "barney", active: false }]]', () => {

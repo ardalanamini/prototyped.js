@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 beforeAll(() => {
   // Jest creates virtual ones !

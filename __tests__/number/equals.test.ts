@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 describe("Number.prototype.equals", () => {
   test('(22).equals("22") returns false', () => {

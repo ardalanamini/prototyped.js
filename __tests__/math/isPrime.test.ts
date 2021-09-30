@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 describe("Math.isPrime", () => {
   test("Math.isPrime(4) returns false", () => {

@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 describe("Boolean.isBoolean", () => {
   test('Boolean.isBoolean("foo bar") returns false', () => {

@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 describe("Array.prototype.pluck", () => {
   test('[{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].pluck("a") returns [{b: 1}, {b: 2}, {b: 3}]', () => {

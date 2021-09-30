@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 describe("Math.factorial", () => {
   test("Math.factorial(6) returns 720", () => {

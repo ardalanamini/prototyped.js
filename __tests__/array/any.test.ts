@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 describe("Array.prototype.any", () => {
   test("[0, 1, 2, 0].any((x) => x >= 2) returns true", () => {

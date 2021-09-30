@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 describe("String.prototype.map", () => {
   test('"Hello".map((char) => char == "o" ? "O" : char) returns "HellO"', () => {

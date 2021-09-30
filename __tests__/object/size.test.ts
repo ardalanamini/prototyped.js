@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 describe("Object.prototype.$size", () => {
   test("{ one: 1, two: 2, three: 3 }.$size() returns 3", () => {

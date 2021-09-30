@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 describe("Math.isEven", () => {
   test("Math.isEven(3) returns false", () => {

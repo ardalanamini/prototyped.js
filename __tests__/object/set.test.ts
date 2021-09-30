@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 describe("Object.prototype.$set", () => {
   test("{ selector: { to: { val: 'val to select' } } }.$set('selector.to.val', 'new value')", () => {

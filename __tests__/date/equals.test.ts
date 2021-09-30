@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 describe("Date.prototype.equals", () => {
   test("date1.equals(new Date(date1)) returns true", () => {

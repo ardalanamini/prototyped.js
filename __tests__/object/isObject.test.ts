@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 describe("Object.isObject", () => {
   test("Object.isObject(2) returns false", () => {

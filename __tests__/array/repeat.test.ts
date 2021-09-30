@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 describe("Array.repeat", () => {
   test("Array.repeat(5, 2) returns [2,2,2,2,2]", () => {

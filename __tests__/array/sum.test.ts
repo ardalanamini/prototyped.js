@@ -1,4 +1,4 @@
-import "../../src/shim";
+import "@src/shim";
 
 describe("Array.prototype.sum", () => {
   test("[1, 2, 3].sum() returns 6", () => {
