@@ -168,7 +168,7 @@
     "doc": "node scripts/doc.js",
     "lint": "eslint src __tests__",
     "lint:format": "prettier -w src __tests__ && eslint --fix src __tests__",
-    "test": "node --expose-gc node_modules/.bin/jest --runInBand --logHeapUsage",
+    "test": "node --expose-gc node_modules/jest/bin/jest --runInBand --logHeapUsage",
     "test:coverage": "npm test -- --coverage",
     "test:ci": "npm run test:coverage -- --no-cache --ci",
     "regenerate:package.json": "node scripts/regenerate-package-json.js"
