@@ -92,14 +92,6 @@ See also the list of [contributors][contributors-url] who participated in this p
 
 This project is licensed under the MIT License - see the [LICENSE][license-url] file for details
 
-## Support
-
-If my work helps you, please consider
-
-[![Become A Patron](https://c5.patreon.com/external/logo/become_a_patron_button.png)](https://www.patreon.com/ardalanamini)
-
-[![Buy Me A Coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/ardalanamini)
-
 
 [documents-url]: https://prototyped.js.org
 
