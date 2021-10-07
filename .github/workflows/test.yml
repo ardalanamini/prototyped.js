@@ -4,6 +4,8 @@
 name: Test
 
 on:
+  schedule:
+    - cron: "0 0 * * *"
   push:
     branches:
       - master
@@ -51,7 +53,7 @@ jobs:
         run: npm run test:ci
 
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v1
+        uses: codecov/codecov-action@v2
         with:
           env_vars: OS,NODE_VERSION
           fail_ci_if_error: true
