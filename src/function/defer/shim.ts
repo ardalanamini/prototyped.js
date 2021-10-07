@@ -3,7 +3,7 @@ import { addPrototype } from "../../utils";
 
 declare global {
   interface Function {
-    defer(...args: unknown[]): number;
+    defer(...args: unknown[]): NodeJS.Timeout;
   }
 }
 
