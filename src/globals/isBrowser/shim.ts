@@ -2,13 +2,9 @@ import isBrowser from ".";
 
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-namespace
-  namespace NodeJS {
-    interface Global {
-      isBrowser(): boolean;
-    }
+  namespace globalThis {
+    function isBrowser(): boolean;
   }
-
-  const isBrowser: () => boolean;
 }
 
 /**
