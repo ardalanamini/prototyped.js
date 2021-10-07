@@ -164,7 +164,7 @@
   ],
   "scripts": {
     "build": "tsc",
-    "build:watch": "tsc --watch",
+    "build:watch": "npm run build -- --watch",
     "doc": "node scripts/doc.js",
     "lint": "eslint src __tests__",
     "lint:format": "prettier -w src __tests__ && eslint --fix src __tests__",
@@ -174,18 +174,18 @@
     "regenerate:package.json": "node scripts/regenerate-package-json.js"
   },
   "peerDependencies": {
-    "@types/node": "^14"
+    "@types/node": "16.x"
   },
   "devDependencies": {
     "@types/jest": "^27.0.2",
-    "@types/node": "^14.14.31",
-    "@typescript-eslint/eslint-plugin": "^4.15.2",
-    "@typescript-eslint/parser": "^4.15.2",
-    "eslint": "^7.21.0",
+    "@types/node": "^16.10.3",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "eslint": "^7.32.0",
     "jest": "^27.2.4",
-    "jsdoc-to-markdown": "^5.0.3",
-    "prettier": "^2.2.1",
+    "jsdoc-to-markdown": "^7.0.1",
+    "prettier": "^2.4.1",
     "ts-jest": "^27.0.5",
-    "typescript": "^4.2.4"
+    "typescript": "^4.4.3"
   }
 }
