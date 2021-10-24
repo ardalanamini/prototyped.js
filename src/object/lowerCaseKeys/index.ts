@@ -1,4 +1,4 @@
-import forEach from "../forEach";
+import forEach from "../forEach/index.js";
 
 export default function lowerCaseKeys(
   obj: Record<string, unknown>,

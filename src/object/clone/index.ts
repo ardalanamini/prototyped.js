@@ -1,4 +1,4 @@
-import { deepClone } from "../../utils";
+import { deepClone } from "../../utils.js";
 
 export default function clone<Value extends Record<string, unknown>>(
   obj: Value,

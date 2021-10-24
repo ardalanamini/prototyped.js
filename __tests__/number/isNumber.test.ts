@@ -1,4 +1,4 @@
-import "@src/shim";
+import "prototyped.js/shim";
 
 describe("Number.isNumber", () => {
   test('Number.isNumber("foo bar") returns false', () => {

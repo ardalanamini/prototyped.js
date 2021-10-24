@@ -1,14 +1,14 @@
-import keys from "../keys";
+import keys from "../keys/index.js";
 
 export default function omit(
   obj: Record<string, unknown>,
   arr:
-    | string[]
-    | ((
-        value: unknown,
-        key: string,
-        object: Record<string, unknown>,
-      ) => unknown),
+  | string[]
+  | ((
+    value: unknown,
+    key: string,
+    object: Record<string, unknown>,
+  ) => unknown),
 ): Record<string, unknown> {
   let fn = arr as (
     value: unknown,

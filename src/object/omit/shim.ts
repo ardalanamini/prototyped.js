@@ -1,5 +1,5 @@
-import omit from ".";
-import { addPrototype } from "../../utils";
+import omit from "./index.js";
+import { addPrototype } from "../../utils.js";
 
 declare global {
   interface Object {

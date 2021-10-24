@@ -1,4 +1,4 @@
-import today from ".";
+import today from "./index.js";
 
 declare global {
   interface DateConstructor {

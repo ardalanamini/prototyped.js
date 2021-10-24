@@ -1,5 +1,5 @@
-import pluralize from ".";
-import { addPrototype } from "../../utils";
+import pluralize from "./index.js";
+import { addPrototype } from "../../utils.js";
 
 declare global {
   interface String {

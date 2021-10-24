@@ -1,4 +1,4 @@
-import isObject from ".";
+import isObject from "./index.js";
 
 declare global {
   interface ObjectConstructor {

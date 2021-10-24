@@ -1,4 +1,4 @@
-import "@src/shim";
+import "prototyped.js/shim";
 
 describe("Array.prototype.isEmpty", () => {
   test("[1,2].isEmpty() returns false", () => {

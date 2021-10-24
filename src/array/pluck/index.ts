@@ -1,8 +1,8 @@
-import { PathT, pathToKeys } from "../../utils";
+import { PathT, pathToKeys } from "../../utils.js";
 
 export default function pluck<
   Value extends Record<string, unknown>,
-  Path extends PathT<Value>
+  Path extends PathT<Value>,
 >(array: Value[], path: Path): unknown[] {
   const keys = pathToKeys(path);
 

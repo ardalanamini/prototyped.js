@@ -1,4 +1,4 @@
-import "@src/shim";
+import "prototyped.js/shim";
 
 describe("Math.degreesToRads", () => {
   test("Math.degreesToRads(180) returns 3.141592653589793", () => {

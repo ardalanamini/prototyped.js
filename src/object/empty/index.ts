@@ -1,4 +1,4 @@
-import ObjectKeys from "../keys";
+import ObjectKeys from "../keys/index.js";
 
 export default function empty(obj: Record<string, unknown>): void {
   const keys = ObjectKeys(obj);

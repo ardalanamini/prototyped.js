@@ -1,4 +1,4 @@
-import "@src/shim";
+import "prototyped.js/shim";
 
 describe("Array.prototype.equals", () => {
   test('[1,2,{hello: ["world", true]}].equals([1,2,{hello: ["world", true]}]) returns true', () => {

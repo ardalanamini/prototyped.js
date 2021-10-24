@@ -1,5 +1,5 @@
-import flatten from ".";
-import { addPrototype } from "../../utils";
+import flatten from "./index.js";
+import { addPrototype } from "../../utils.js";
 
 declare global {
   interface Object {

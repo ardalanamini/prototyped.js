@@ -118,22 +118,22 @@ export const enum OPERATOR {
 
 export type PathsToStringPropsT<Value> = Value extends Record<string, unknown>
   ? {
-      [Key in keyof Value]: [Key] | [Key, ...PathsToStringPropsT<Value[Key]>];
-    }[keyof Value]
+    [Key in keyof Value]: [Key] | [Key, ...PathsToStringPropsT<Value[Key]>];
+  }[keyof Value]
   : [];
 
 export type JoinT<Value extends string[]> = Value extends []
   ? never
   : Value extends [infer F]
-  ? F
-  : Value extends [infer F, ...infer R]
-  ? F extends string
-    ? string extends F
-      ? string
-      : `${F}.${JoinT<Extract<R, string[]>>}`
-    : never
-  : string;
+    ? F
+    : Value extends [infer F, ...infer R]
+      ? F extends string
+        ? string extends F
+          ? string
+          : `${F}.${JoinT<Extract<R, string[]>>}`
+        : never
+      : string;
 
 export type PathT<Value extends Record<string, unknown>> = JoinT<
-  Extract<PathsToStringPropsT<Value>, string[]>
+Extract<PathsToStringPropsT<Value>, string[]>
 >;

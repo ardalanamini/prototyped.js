@@ -1,5 +1,5 @@
-import indexOfAll from ".";
-import { addPrototype } from "../../utils";
+import indexOfAll from "./index.js";
+import { addPrototype } from "../../utils.js";
 
 declare global {
   interface Array<T> {

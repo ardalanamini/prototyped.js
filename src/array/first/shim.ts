@@ -1,5 +1,5 @@
-import first from ".";
-import { addPrototype } from "../../utils";
+import first from "./index.js";
+import { addPrototype } from "../../utils.js";
 
 declare global {
   interface Array<T> {

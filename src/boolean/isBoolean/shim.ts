@@ -1,4 +1,4 @@
-import isBoolean from ".";
+import isBoolean from "./index.js";
 
 declare global {
   interface BooleanConstructor {

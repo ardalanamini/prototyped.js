@@ -1,4 +1,4 @@
-import range from ".";
+import range from "./index.js";
 
 declare global {
   interface ArrayConstructor {

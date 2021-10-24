@@ -1,1 +1,1 @@
-export { default as isBoolean } from "./isBoolean";
+export { default as isBoolean } from "./isBoolean/index.js";

@@ -1,4 +1,4 @@
-import { filter } from "../../utils";
+import { filter } from "../../utils.js";
 
 export default whereNotIn;
 

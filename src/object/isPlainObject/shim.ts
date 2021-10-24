@@ -1,4 +1,4 @@
-import isPlainObject from ".";
+import isPlainObject from "./index.js";
 
 declare global {
   interface ObjectConstructor {

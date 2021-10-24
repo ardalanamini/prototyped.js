@@ -1,5 +1,5 @@
-import prepend from ".";
-import { addPrototype } from "../../utils";
+import prepend from "./index.js";
+import { addPrototype } from "../../utils.js";
 
 declare global {
   interface Array<T> {

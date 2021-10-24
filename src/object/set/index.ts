@@ -1,4 +1,4 @@
-import { pathToKeys } from "../../utils";
+import { pathToKeys } from "../../utils.js";
 
 export default function set(
   obj: Record<string, unknown>,

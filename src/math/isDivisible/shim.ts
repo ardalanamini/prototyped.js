@@ -1,4 +1,4 @@
-import isDivisible from ".";
+import isDivisible from "./index.js";
 
 declare global {
   interface Math {

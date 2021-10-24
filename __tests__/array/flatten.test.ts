@@ -1,4 +1,4 @@
-import "@src/shim";
+import "prototyped.js/shim";
 
 describe("Array.prototype.flatten", () => {
   test("[1, [2], 3, 4].flatten() returns [1, 2, 3, 4]", () => {

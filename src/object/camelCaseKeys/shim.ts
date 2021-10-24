@@ -1,5 +1,5 @@
-import camelCaseKeys from ".";
-import { addPrototype } from "../../utils";
+import camelCaseKeys from "./index.js";
+import { addPrototype } from "../../utils.js";
 
 declare global {
   interface Object {

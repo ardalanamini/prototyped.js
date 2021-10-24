@@ -1,5 +1,5 @@
-import kebabCase from "../../string/kebabCase";
-import forEach from "../forEach";
+import kebabCase from "../../string/kebabCase/index.js";
+import forEach from "../forEach/index.js";
 
 export default function kebabCaseKeys(
   obj: Record<string, unknown>,

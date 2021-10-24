@@ -1,5 +1,5 @@
-import { addPrototype } from "../../utils";
-import sortBy from ".";
+import { addPrototype } from "../../utils.js";
+import sortBy from "./index.js";
 
 declare global {
   interface Array<T> {

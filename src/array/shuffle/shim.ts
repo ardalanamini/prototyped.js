@@ -1,5 +1,5 @@
-import { addPrototype } from "../../utils";
-import shuffle from ".";
+import { addPrototype } from "../../utils.js";
+import shuffle from "./index.js";
 
 declare global {
   interface Array<T> {

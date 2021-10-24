@@ -1,5 +1,5 @@
-import whereNotIn from ".";
-import { addPrototype } from "../../utils";
+import whereNotIn from "./index.js";
+import { addPrototype } from "../../utils.js";
 
 declare global {
   interface Array<T> {

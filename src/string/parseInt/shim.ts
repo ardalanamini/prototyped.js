@@ -1,5 +1,5 @@
-import parseInt from ".";
-import { addPrototype } from "../../utils";
+import parseInt from "./index.js";
+import { addPrototype } from "../../utils.js";
 
 declare global {
   interface String {

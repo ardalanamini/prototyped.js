@@ -1,5 +1,5 @@
-import forEach from ".";
-import { addPrototype } from "../../utils";
+import forEach from "./index.js";
+import { addPrototype } from "../../utils.js";
 
 declare global {
   interface Object {

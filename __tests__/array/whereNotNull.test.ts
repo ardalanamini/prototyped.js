@@ -1,13 +1,9 @@
-import "@src/shim";
+import "prototyped.js/shim";
 
 describe("Array.prototype.whereNotNull", () => {
   test("[1, 2, 2, 3, null, undefined, 5].whereNotNull() returns [1,2,2,3,5]", () => {
     expect([1, 2, 2, 3, null, undefined, 5].whereNotNull()).toEqual([
-      1,
-      2,
-      2,
-      3,
-      5,
+      1, 2, 2, 3, 5,
     ]);
   });
 

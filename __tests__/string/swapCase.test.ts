@@ -1,4 +1,4 @@
-import "@src/shim";
+import "prototyped.js/shim";
 
 describe("String.prototype.swapCase", () => {
   test('"Hello".swapCase() returns "hELLO"', () => {

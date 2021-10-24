@@ -1,4 +1,4 @@
-import isEven from ".";
+import isEven from "./index.js";
 
 declare global {
   interface Math {

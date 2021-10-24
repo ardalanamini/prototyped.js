@@ -1,5 +1,5 @@
-import size from ".";
-import { addPrototype } from "../../utils";
+import size from "./index.js";
+import { addPrototype } from "../../utils.js";
 
 declare global {
   interface Object {

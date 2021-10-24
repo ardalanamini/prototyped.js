@@ -1,4 +1,4 @@
-import "@src/shim";
+import "prototyped.js/shim";
 
 describe("Math.isPrime", () => {
   test("Math.isPrime(4) returns false", () => {

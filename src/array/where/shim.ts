@@ -1,5 +1,5 @@
-import where from ".";
-import { addPrototype, Operator } from "../../utils";
+import where from "./index.js";
+import { addPrototype, Operator } from "../../utils.js";
 
 declare global {
   interface Array<T> {

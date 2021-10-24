@@ -1,5 +1,5 @@
-import { addPrototype } from "../../utils";
-import map from ".";
+import { addPrototype } from "../../utils.js";
+import map from "./index.js";
 
 declare global {
   interface Object {

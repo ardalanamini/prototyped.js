@@ -1,4 +1,4 @@
-import repeat from "../repeat";
+import repeat from "../repeat/index.js";
 
 export default function pad(str: string, size: number, value = " "): string {
   const s = Math.abs(size);

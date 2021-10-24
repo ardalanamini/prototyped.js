@@ -1,4 +1,4 @@
-import repeat from ".";
+import repeat from "./index.js";
 
 declare global {
   interface StringConstructor {

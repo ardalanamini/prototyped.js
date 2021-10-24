@@ -1,5 +1,5 @@
-import snakeCase from "../../string/snakeCase";
-import forEach from "../forEach";
+import snakeCase from "../../string/snakeCase/index.js";
+import forEach from "../forEach/index.js";
 
 export default function snakeCaseKeys(
   obj: Record<string, unknown>,

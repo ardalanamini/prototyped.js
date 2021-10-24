@@ -1,4 +1,4 @@
-import "@src/shim";
+import "prototyped.js/shim";
 
 describe("Array.prototype.distinct", () => {
   test("[1, 2, 2, 3, 4, 4, 5].distinct() returns [1,2,3,4,5]", () => {
@@ -15,11 +15,7 @@ describe("Array.prototype.distinct", () => {
 
   test("[1, 2, 2.2, 3, 4.9, 4, 5].distinct(Math.floor) returns [1,2,3,4.9,5]", () => {
     expect([1, 2, 2.2, 3, 4.9, 4, 5].distinct(Math.floor)).toEqual([
-      1,
-      2,
-      3,
-      4.9,
-      5,
+      1, 2, 3, 4.9, 5,
     ]);
   });
 });

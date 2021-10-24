@@ -1,4 +1,4 @@
-import "@src/shim";
+import "prototyped.js/shim";
 
 beforeAll(() => {
   // Jest creates virtual ones !

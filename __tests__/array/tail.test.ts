@@ -1,4 +1,4 @@
-import "@src/shim";
+import "prototyped.js/shim";
 
 describe("Array.prototype.tail", () => {
   test("[1, 2, 3].tail() returns [2, 3]", () => {

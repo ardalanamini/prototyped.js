@@ -1,4 +1,4 @@
-import "@src/shim";
+import "prototyped.js/shim";
 
 describe("Number.prototype.inRange", () => {
   test("(4).inRange(8) returns true", () => {

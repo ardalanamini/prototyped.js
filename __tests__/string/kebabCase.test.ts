@@ -1,4 +1,4 @@
-import "@src/shim";
+import "prototyped.js/shim";
 
 describe("String.prototype.kebabCase", () => {
   test('"camelCase".kebabCase() returns "camel-case"', () => {
@@ -23,7 +23,9 @@ describe("String.prototype.kebabCase", () => {
     expect("AllThe-small Things".kebabCase()).toBe("all-the-small-things");
   });
 
-  test('"IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML".kebabCase() returns "i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-some-xml-and-html"', () => {
+  test('"IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML".kebabCase()' +
+    " returns " +
+    '"i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-some-xml-and-html"', () => {
     expect(
       "IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML".kebabCase(),
     ).toBe(

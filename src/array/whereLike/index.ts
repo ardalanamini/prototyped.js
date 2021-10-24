@@ -1,5 +1,5 @@
-import isString from "../../string/isString";
-import { filter } from "../../utils";
+import isString from "../../string/isString/index.js";
+import { filter } from "../../utils.js";
 
 export default whereLike;
 

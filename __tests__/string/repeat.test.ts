@@ -1,4 +1,4 @@
-import "@src/shim";
+import "prototyped.js/shim";
 
 describe("String.repeat", () => {
   test('String.repeat(5, "2") returns "22222"', () => {

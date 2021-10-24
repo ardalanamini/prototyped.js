@@ -1,5 +1,5 @@
-import objectEquals from "../../object/equals";
-import range from "../range";
+import objectEquals from "../../object/equals/index.js";
+import range from "../range/index.js";
 
 export default function equals<T>(arr: T[], value: unknown): value is T[] {
   if (!Array.isArray(value)) return false;

@@ -1,5 +1,5 @@
-import intersect from ".";
-import { addPrototype } from "../../utils";
+import intersect from "./index.js";
+import { addPrototype } from "../../utils.js";
 
 declare global {
   interface Array<T> {

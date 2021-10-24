@@ -37,45 +37,67 @@ npm i -s prototyped.js
 
 ## Usage
 
-import all prototypes
+**All documents are available at [here][documents-url]**
 
-```javascript
-// es6
-import "prototyped.js/dist/shim";
+### ECMAScript
 
-// or es5
-require("prototyped.js/dist/shim");
+Apply prototypes:
 
-console.log("hello world!".words()); // ['hello', 'world']
-```
-
-or simply import the prototypes you want
-
-```javascript
-require("prototyped.js/dist/string/shim");
-// or
-require("prototyped.js/dist/string/words/shim");
+```typescript
+import "prototyped.js/shim";
+// or more specificaly...
+import "prototyped.js/string/shim";
+// or even more specificaly!
+import "prototyped.js/string/words/shim";
 
 console.log("hello world!".words()); // ['hello', 'world']
 ```
 
-even better, just import the method you want
+Or just import the methods without causing any side effect:
 
-```javascript
-const words = require("prototyped.js/dist/string/words");
+```typescript
+import words from "prototyped.js/string/words";
 
 console.log(words("hello world!")); // ['hello', 'world']
 
-const string = require("prototyped.js/dist/string");
+import string from "prototyped.js/string";
 
 console.log(string.words("hello world!")); // ['hello', 'world']
 
-const pt = require("prototyped.js");
+import pt from "prototyped.js";
 
 console.log(pt.string.words("hello world!")); // ['hello', 'world']
 ```
 
-**All documents are available at [here][documents-url]**
+### CommonJS
+
+Apply prototypes:
+
+```typescript
+require("prototyped.js/shim");
+// or more specificaly...
+require("prototyped.js/string/shim");
+// or even more specificaly!
+require("prototyped.js/string/words/shim");
+
+console.log("hello world!".words()); // ['hello', 'world']
+```
+
+Or just import the methods without causing any side effect:
+
+```typescript
+const words = require("prototyped.js/string/words").default;
+
+console.log(words("hello world!")); // ['hello', 'world']
+
+const string = require("prototyped.js/string").default;
+
+console.log(string.words("hello world!")); // ['hello', 'world']
+
+const pt = require("prototyped.js").default;
+
+console.log(pt.string.words("hello world!")); // ['hello', 'world']
+```
 
 ## Versioning
 

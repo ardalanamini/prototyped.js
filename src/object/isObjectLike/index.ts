@@ -1,4 +1,4 @@
-import isObject from "../isObject";
+import isObject from "../isObject/index.js";
 
 export default function isObjectLike(
   arg: unknown,

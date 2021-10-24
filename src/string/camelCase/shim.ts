@@ -1,5 +1,5 @@
-import camelCase from ".";
-import { addPrototype } from "../../utils";
+import camelCase from "./index.js";
+import { addPrototype } from "../../utils.js";
 
 declare global {
   interface String {

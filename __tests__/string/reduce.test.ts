@@ -1,4 +1,4 @@
-import "@src/shim";
+import "prototyped.js/shim";
 
 describe("String.prototype.reduce", () => {
   test("'123'.reduce((prev, char) => prev + (+char), 0) returns 6", () => {

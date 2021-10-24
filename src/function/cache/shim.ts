@@ -1,4 +1,4 @@
-import method from ".";
+import method from "./index.js";
 
 declare global {
   interface Function {

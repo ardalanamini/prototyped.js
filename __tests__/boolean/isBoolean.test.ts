@@ -1,4 +1,4 @@
-import "@src/shim";
+import "prototyped.js/shim";
 
 describe("Boolean.isBoolean", () => {
   test('Boolean.isBoolean("foo bar") returns false', () => {

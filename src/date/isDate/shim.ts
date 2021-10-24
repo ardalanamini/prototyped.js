@@ -1,4 +1,4 @@
-import isDate from ".";
+import isDate from "./index.js";
 
 declare global {
   interface DateConstructor {

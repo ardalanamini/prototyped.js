@@ -1,5 +1,5 @@
-import whereBetween from ".";
-import { addPrototype } from "../../utils";
+import whereBetween from "./index.js";
+import { addPrototype } from "../../utils.js";
 
 declare global {
   interface Array<T> {

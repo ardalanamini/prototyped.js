@@ -1,5 +1,5 @@
-import everyNth from ".";
-import { addPrototype } from "../../utils";
+import everyNth from "./index.js";
+import { addPrototype } from "../../utils.js";
 
 declare global {
   interface Array<T> {

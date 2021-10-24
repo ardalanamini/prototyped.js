@@ -1,4 +1,4 @@
-import lcm from ".";
+import lcm from "./index.js";
 
 declare global {
   interface Math {

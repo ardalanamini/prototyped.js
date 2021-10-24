@@ -1,4 +1,4 @@
-import "@src/shim";
+import "prototyped.js/shim";
 
 describe("Array.prototype.get", () => {
   test('[1, 2, 3].get(0, "default value") returns 1', () => {

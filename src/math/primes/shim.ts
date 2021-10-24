@@ -1,4 +1,4 @@
-import primes from ".";
+import primes from "./index.js";
 
 declare global {
   interface Math {

@@ -1,5 +1,5 @@
-import whereLike from ".";
-import { addPrototype } from "../../utils";
+import whereLike from "./index.js";
+import { addPrototype } from "../../utils.js";
 
 declare global {
   interface Array<T> {

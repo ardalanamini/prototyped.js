@@ -21,8 +21,15 @@ jobs:
 
     strategy:
       matrix:
-        os: [ macos-latest, windows-latest, ubuntu-latest ]
-        node-version: [ 14, 16 ]
+        os:
+          - ubuntu-latest
+          - macos-latest
+          - windows-latest
+        node-version:
+          - 14
+          - 15
+          - 16
+          - 17
 
     env:
       OS: ${{ matrix.os }}
@@ -43,13 +50,16 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install packages
-        run: npm ci
+        run: npm i
 
       - name: Lint
         run: npm run lint
 
-      - name: Build
+      - name: Build CommonJS
         run: npm run build
+
+      - name: Build ECMAScript
+        run: npm run build:es
 
       - name: Test
         run: npm run test:ci

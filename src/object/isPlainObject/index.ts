@@ -1,4 +1,4 @@
-import isObjectLike from "../isObjectLike";
+import isObjectLike from "../isObjectLike/index.js";
 
 export default function isPlainObject(
   arg: unknown,

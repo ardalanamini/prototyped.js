@@ -1,4 +1,4 @@
-import gcd from ".";
+import gcd from "./index.js";
 
 declare global {
   interface Math {

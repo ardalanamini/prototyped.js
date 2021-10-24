@@ -1,5 +1,5 @@
-import map from ".";
-import { addPrototype } from "../../utils";
+import map from "./index.js";
+import { addPrototype } from "../../utils.js";
 
 export {};
 

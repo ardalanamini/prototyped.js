@@ -1,4 +1,4 @@
-import "@src/shim";
+import "prototyped.js/shim";
 
 describe("Object.prototype.$invert", () => {
   test('{ name: "John", age: 20 }.$invert() returns { 20: "age", John: "name" }', () => {

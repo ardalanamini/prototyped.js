@@ -1,4 +1,4 @@
-import average from ".";
+import average from "./index.js";
 
 declare global {
   interface Math {

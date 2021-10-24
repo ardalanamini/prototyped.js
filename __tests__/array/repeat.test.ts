@@ -1,4 +1,4 @@
-import "@src/shim";
+import "prototyped.js/shim";
 
 describe("Array.repeat", () => {
   test("Array.repeat(5, 2) returns [2,2,2,2,2]", () => {

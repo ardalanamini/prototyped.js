@@ -1,5 +1,5 @@
-import min from ".";
-import { addPrototype, PathT } from "../../utils";
+import min from "./index.js";
+import { addPrototype, PathT } from "../../utils.js";
 
 declare global {
   interface Array<T> {

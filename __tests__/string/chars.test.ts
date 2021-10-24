@@ -1,4 +1,4 @@
-import "@src/shim";
+import "prototyped.js/shim";
 
 describe("String.prototype.chars", () => {
   test('"Hello".chars() returns ["H", "e", "l", "l", "o"]', () => {

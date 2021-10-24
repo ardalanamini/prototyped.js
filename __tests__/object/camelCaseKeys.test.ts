@@ -1,4 +1,4 @@
-import "@src/shim";
+import "prototyped.js/shim";
 
 describe("Object.prototype.$camelCaseKeys", () => {
   test(

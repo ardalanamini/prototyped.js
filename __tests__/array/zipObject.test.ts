@@ -1,4 +1,4 @@
-import "@src/shim";
+import "prototyped.js/shim";
 
 describe("Array.prototype.zipObject", () => {
   test('["a", "b", "c"].zipObject([1, 2]) returns {a: 1, b: 2, c: undefined}', () => {

@@ -1,5 +1,5 @@
-import camelCase from "../../string/camelCase";
-import forEach from "../forEach";
+import camelCase from "../../string/camelCase/index.js";
+import forEach from "../forEach/index.js";
 
 export default function camelCaseKeys(
   obj: Record<string, unknown>,

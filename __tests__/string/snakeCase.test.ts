@@ -1,4 +1,4 @@
-import "@src/shim";
+import "prototyped.js/shim";
 
 describe("String.prototype.snakeCase", () => {
   test('"camelCase".snakeCase() returns "camel_case"', () => {
@@ -23,7 +23,9 @@ describe("String.prototype.snakeCase", () => {
     expect("AllThe-small Things".snakeCase()).toBe("all_the_small_things");
   });
 
-  test('"IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML".snakeCase() returns "i_am_listening_to_fm_while_loading_different_url_on_my_browser_and_also_editing_some_xml_and_html"', () => {
+  test('"IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML".snakeCase()' +
+    " returns " +
+    '"i_am_listening_to_fm_while_loading_different_url_on_my_browser_and_also_editing_some_xml_and_html"', () => {
     expect(
       "IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML".snakeCase(),
     ).toBe(

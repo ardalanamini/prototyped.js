@@ -1,4 +1,4 @@
-import "@src/shim";
+import "prototyped.js/shim";
 
 describe("String.prototype.pad", () => {
   test('"123".pad(2) returns "123"', () => {

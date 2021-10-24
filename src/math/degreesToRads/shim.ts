@@ -1,4 +1,4 @@
-import degreesToRads from ".";
+import degreesToRads from "./index.js";
 
 declare global {
   interface Math {

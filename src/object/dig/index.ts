@@ -1,4 +1,4 @@
-import values from "../values";
+import values from "../values/index.js";
 
 export default function dig(
   obj: Record<string, unknown>,

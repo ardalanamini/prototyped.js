@@ -1,4 +1,4 @@
-import "@src/shim";
+import "prototyped.js/shim";
 
 describe("Array.prototype.last", () => {
   test("[1, 2, 3].last() returns 3", () => {

@@ -1,4 +1,4 @@
-import "@src/shim";
+import "prototyped.js/shim";
 
 describe("Math.factorial", () => {
   test("Math.factorial(6) returns 720", () => {

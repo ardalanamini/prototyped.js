@@ -1,5 +1,5 @@
-import chars from ".";
-import { addPrototype } from "../../utils";
+import chars from "./index.js";
+import { addPrototype } from "../../utils.js";
 
 declare global {
   interface String {

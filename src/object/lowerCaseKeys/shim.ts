@@ -1,5 +1,5 @@
-import lowerCaseKeys from ".";
-import { addPrototype } from "../../utils";
+import lowerCaseKeys from "./index.js";
+import { addPrototype } from "../../utils.js";
 
 declare global {
   interface Object {

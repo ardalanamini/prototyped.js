@@ -1,4 +1,4 @@
-import isNumber from ".";
+import isNumber from "./index.js";
 
 declare global {
   interface NumberConstructor {

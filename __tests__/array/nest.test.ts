@@ -1,4 +1,4 @@
-import "@src/shim";
+import "prototyped.js/shim";
 
 describe("Array.prototype.nest", () => {
   test("Array.prototype.nest (1)", () => {

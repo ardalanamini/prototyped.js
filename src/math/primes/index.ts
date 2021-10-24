@@ -1,4 +1,4 @@
-import range from "../../array/range";
+import range from "../../array/range/index.js";
 
 export default function primes(num: number): number[] {
   let arr = range(num, 2);

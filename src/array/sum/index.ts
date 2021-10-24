@@ -1,10 +1,10 @@
-import { PathT, pathToKeys } from "../../utils";
+import { PathT, pathToKeys } from "../../utils.js";
 
 export default sum;
 
 function sum<
   Value extends Record<string, unknown>,
-  Path extends PathT<Value> = never
+  Path extends PathT<Value> = never,
 >(arr: Value[], path?: Path): number;
 function sum<Value>(arr: Value[]): number;
 function sum<Value>(arr: Value[], path?: string): number {

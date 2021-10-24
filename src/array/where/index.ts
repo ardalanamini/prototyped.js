@@ -1,5 +1,5 @@
-import { filter, Operator, OPERATOR } from "../../utils";
-import contains from "../contains";
+import { filter, Operator, OPERATOR } from "../../utils.js";
+import contains from "../contains/index.js";
 
 export default where;
 

@@ -1,5 +1,5 @@
-import "@src/shim";
-import pad from "@src/string/pad";
+import "prototyped.js/shim";
+import pad from "prototyped.js/string/pad";
 
 describe("Date.tomorrow", () => {
   test("Date.tomorrow() returns tomorrow's date", () => {

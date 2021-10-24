@@ -1,7 +1,7 @@
 export default function once<
   Args extends unknown[],
   Return,
-  F extends (...args: Args) => Return
+  F extends (...args: Args) => Return,
 >(func: F, ...args: Args): Return | void {
   if (func.called) return;
 

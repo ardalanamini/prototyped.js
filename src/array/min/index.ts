@@ -1,10 +1,10 @@
-import { PathT, pathToKeys } from "../../utils";
+import { PathT, pathToKeys } from "../../utils.js";
 
 export default min;
 
 function min<
   Value extends Record<string, unknown>,
-  Path extends PathT<Value> = never
+  Path extends PathT<Value> = never,
 >(array: Value[], path?: Path): number;
 function min<Value>(array: Value[]): number;
 function min<Value>(arr: Value[], path?: string): number {

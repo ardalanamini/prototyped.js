@@ -1,4 +1,4 @@
-import "@src/shim";
+import "prototyped.js/shim";
 
 describe("Array.prototype.max", () => {
   test("[1, 2, 3].max() returns 3", () => {

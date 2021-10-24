@@ -1,4 +1,4 @@
-import "@src/shim";
+import "prototyped.js/shim";
 
 describe("Array.prototype.whereNotLike", () => {
   test('["foo", "bar", "hello", "world"].whereNotLike("o") returns ["bar"]', () => {

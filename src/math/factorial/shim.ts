@@ -1,4 +1,4 @@
-import factorial from ".";
+import factorial from "./index.js";
 
 declare global {
   interface Math {

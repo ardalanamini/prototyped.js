@@ -1,5 +1,5 @@
-import inRange from ".";
-import { addPrototype } from "../../utils";
+import inRange from "./index.js";
+import { addPrototype } from "../../utils.js";
 
 declare global {
   interface Number {

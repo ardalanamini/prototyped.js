@@ -1,5 +1,5 @@
-import implode from ".";
-import { addPrototype, PathT } from "../../utils";
+import implode from "./index.js";
+import { addPrototype, PathT } from "../../utils.js";
 
 declare global {
   interface Array<T> {

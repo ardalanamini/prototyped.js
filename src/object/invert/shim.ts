@@ -1,5 +1,5 @@
-import invert from ".";
-import { addPrototype } from "../../utils";
+import invert from "./index.js";
+import { addPrototype } from "../../utils.js";
 
 declare global {
   interface Object {

@@ -1,5 +1,5 @@
-import once from ".";
-import { addPrototype } from "../../utils";
+import once from "./index.js";
+import { addPrototype } from "../../utils.js";
 
 declare global {
   interface Function {

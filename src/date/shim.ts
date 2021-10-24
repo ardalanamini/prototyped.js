@@ -1,7 +1,7 @@
 /** @namespace Date */
 
-import "./equals/shim";
-import "./isDate/shim";
-import "./today/shim";
-import "./tomorrow/shim";
-import "./yesterday/shim";
+import "./equals/shim.js";
+import "./isDate/shim.js";
+import "./today/shim.js";
+import "./tomorrow/shim.js";
+import "./yesterday/shim.js";

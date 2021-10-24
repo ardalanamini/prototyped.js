@@ -1,4 +1,4 @@
-import isString from ".";
+import isString from "./index.js";
 
 declare global {
   interface StringConstructor {

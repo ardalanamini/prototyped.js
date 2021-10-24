@@ -1,5 +1,5 @@
-import snakeCase from ".";
-import { addPrototype } from "../../utils";
+import snakeCase from "./index.js";
+import { addPrototype } from "../../utils.js";
 
 declare global {
   interface String {

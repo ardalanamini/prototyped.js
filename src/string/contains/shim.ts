@@ -1,5 +1,5 @@
-import contains from ".";
-import { addPrototype } from "../../utils";
+import contains from "./index.js";
+import { addPrototype } from "../../utils.js";
 
 declare global {
   interface String {

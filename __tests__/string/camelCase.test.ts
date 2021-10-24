@@ -1,4 +1,4 @@
-import "@src/shim";
+import "prototyped.js/shim";
 
 describe("String.prototype.camelCase", () => {
   test('"some_database_field_name".camelCase() returns "someDatabaseFieldName"', () => {

@@ -1,5 +1,5 @@
-import { addPrototype, PathT } from "../../utils";
-import sum from ".";
+import { addPrototype, PathT } from "../../utils.js";
+import sum from "./index.js";
 
 declare global {
   interface Array<T> {

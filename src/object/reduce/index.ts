@@ -1,10 +1,8 @@
-import forEach from "../forEach";
+import forEach from "../forEach/index.js";
 
-export default function reduce<
-  T extends Record<string, unknown>,
+export default function reduce<T extends Record<string, unknown>,
   K extends keyof T,
-  P = unknown
->(
+  P = unknown>(
   obj: T,
   fn: (prev: P, value: T[K], key: K, object: T) => P,
   initialValue: P = undefined as never,

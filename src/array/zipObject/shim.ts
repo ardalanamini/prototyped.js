@@ -1,5 +1,5 @@
-import zipObject from ".";
-import { addPrototype } from "../../utils";
+import zipObject from "./index.js";
+import { addPrototype } from "../../utils.js";
 
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars

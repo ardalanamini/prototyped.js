@@ -1,4 +1,4 @@
-import "@src/shim";
+import "prototyped.js/shim";
 
 describe("Array.prototype.count", () => {
   test("[1, 1, 2, 1, 2, 3].count() returns 6", () => {

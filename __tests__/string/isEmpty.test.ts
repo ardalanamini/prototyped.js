@@ -1,4 +1,4 @@
-import "@src/shim";
+import "prototyped.js/shim";
 
 describe("String.prototype.isEmpty", () => {
   test('"123".isEmpty() returns false', () => {

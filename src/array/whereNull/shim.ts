@@ -1,5 +1,5 @@
-import whereNull from ".";
-import { addPrototype } from "../../utils";
+import whereNull from "./index.js";
+import { addPrototype } from "../../utils.js";
 
 declare global {
   interface Array<T> {

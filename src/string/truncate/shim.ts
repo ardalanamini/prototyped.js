@@ -1,5 +1,5 @@
-import truncate from ".";
-import { addPrototype } from "../../utils";
+import truncate from "./index.js";
+import { addPrototype } from "../../utils.js";
 
 declare global {
   interface String {

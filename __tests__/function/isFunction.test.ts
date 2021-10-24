@@ -1,4 +1,4 @@
-import "@src/shim";
+import "prototyped.js/shim";
 
 describe("Function.isFunction", () => {
   test("Function.isFunction(2) returns false", () => {

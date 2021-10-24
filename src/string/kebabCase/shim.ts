@@ -1,5 +1,5 @@
-import kebabCase from ".";
-import { addPrototype } from "../../utils";
+import kebabCase from "./index.js";
+import { addPrototype } from "../../utils.js";
 
 declare global {
   interface String {

@@ -1,4 +1,4 @@
-import pad from "../../string/pad";
+import pad from "../../string/pad/index.js";
 
 export default function yesterday(): string {
   const now = new Date();

@@ -1,5 +1,5 @@
-import capitalize from ".";
-import { addPrototype } from "../../utils";
+import capitalize from "./index.js";
+import { addPrototype } from "../../utils.js";
 
 declare global {
   interface String {

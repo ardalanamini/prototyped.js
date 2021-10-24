@@ -1,3 +1,3 @@
 /** @namespace Boolean */
 
-import "./isBoolean/shim";
+import "./isBoolean/shim.js";

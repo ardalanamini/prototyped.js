@@ -1,5 +1,5 @@
-import get from ".";
-import { addPrototype } from "../../utils";
+import get from "./index.js";
+import { addPrototype } from "../../utils.js";
 
 declare global {
   interface Object {

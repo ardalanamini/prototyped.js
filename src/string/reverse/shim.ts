@@ -1,5 +1,5 @@
-import reverse from ".";
-import { addPrototype } from "../../utils";
+import reverse from "./index.js";
+import { addPrototype } from "../../utils.js";
 
 declare global {
   interface String {

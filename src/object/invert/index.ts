@@ -1,4 +1,4 @@
-import keys from "../keys";
+import keys from "../keys/index.js";
 
 export default function invert(
   obj: Record<string, unknown>,

@@ -1,4 +1,4 @@
-import "@src/shim";
+import "prototyped.js/shim";
 
 describe("Math.average", () => {
   test("Math.average(1, 2, 3) returns 2", () => {

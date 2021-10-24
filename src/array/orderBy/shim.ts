@@ -1,5 +1,5 @@
-import orderBy, { OrderT } from ".";
-import { addPrototype, PathT } from "../../utils";
+import orderBy, { OrderT } from "./index.js";
+import { addPrototype, PathT } from "../../utils.js";
 
 declare global {
   interface Array<T> {

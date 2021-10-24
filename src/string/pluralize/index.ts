@@ -1,4 +1,4 @@
-import isString from "../isString";
+import isString from "../isString/index.js";
 
 export default function pluralize(str: string, count?: number): string {
   if (count === 1) return singular(str);
@@ -80,6 +80,7 @@ const PLURALIZATION_RUES: Array<[RegExp | string, string]> = [
   [/(seraph|cherub)(?:im)?$/i, "$1im"],
   [/(her|at|gr)o$/i, "$1oes"],
   [
+    // eslint-disable-next-line max-len
     /(agend|addend|millenni|dat|extrem|bacteri|desiderat|strat|candelabr|errat|ov|symposi|curricul|automat|quor)(?:a|um)$/i,
     "$1a",
   ],

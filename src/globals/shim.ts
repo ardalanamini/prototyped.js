@@ -1,3 +1,3 @@
 /** @namespace global */
 
-import "./isBrowser/shim";
+import "./isBrowser/shim.js";

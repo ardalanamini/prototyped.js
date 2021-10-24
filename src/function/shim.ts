@@ -1,6 +1,6 @@
 /** @namespace Function */
 
-import "./cache/shim";
-import "./defer/shim";
-import "./isFunction/shim";
-import "./once/shim";
+import "./cache/shim.js";
+import "./defer/shim.js";
+import "./isFunction/shim.js";
+import "./once/shim.js";

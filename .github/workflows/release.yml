@@ -9,14 +9,21 @@ jobs:
   test:
     name: Test
 
-    timeout-minutes: 15
+    timeout-minutes: 20
 
     runs-on: ${{ matrix.os }}
 
     strategy:
       matrix:
-        os: [ macos-latest, windows-latest, ubuntu-latest ]
-        node-version: [ 14, 16 ]
+        os:
+          - ubuntu-latest
+          - macos-latest
+          - windows-latest
+        node-version:
+          - 14
+          - 15
+          - 16
+          - 17
 
     env:
       OS: ${{ matrix.os }}
@@ -25,12 +32,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-
-      - name: Setup Cache
-        uses: actions/cache@v2
-        with:
-          path: '**/node_modules'
-          key: ${{ matrix.os }}-${{ matrix.node-version }}-modules-${{ hashFiles('**/package-lock.json') }}
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
@@ -43,8 +44,11 @@ jobs:
       - name: Lint
         run: npm run lint
 
-      - name: Build
+      - name: Build CommonJS
         run: npm run build
+
+      - name: Build ECMAScript
+        run: npm run build:es
 
       - name: Test
         run: npm run test:ci
@@ -71,7 +75,7 @@ jobs:
 
       - name: Changelog
         id: changelog
-        uses: ardalanamini/auto-changelog@v1.2.0
+        uses: ardalanamini/auto-changelog@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -99,7 +103,7 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run build
+      - run: npm run build:hybrid
 
       - run: npm publish
         env:
@@ -107,6 +111,10 @@ jobs:
 
   publish-gpr:
     name: Publish to GitHub
+
+    permissions:
+      contents: read
+      packages: write
 
     runs-on: ubuntu-latest
 
@@ -120,10 +128,13 @@ jobs:
         with:
           node-version: 14
           registry-url: https://npm.pkg.github.com/
+          scope: '@ardalanamini'
+
+      - run: sed -i 's/"name":\ "prototyped.js"/"name":\ "@ardalanamini\/prototyped.js"/g' package.json package-lock.json
 
       - run: npm ci
 
-      - run: npm run build
+      - run: npm run build:hybrid
 
       - run: npm publish
         env:

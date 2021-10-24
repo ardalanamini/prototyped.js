@@ -1,4 +1,4 @@
-import "@src/shim";
+import "prototyped.js/shim";
 
 describe("Array.prototype.whereBetween", () => {
   test("[1, 2, 2, 3, 4, 4, 5].whereBetween(3,4) returns [3,4,4]", () => {

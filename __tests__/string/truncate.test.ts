@@ -1,4 +1,4 @@
-import "@src/shim";
+import "prototyped.js/shim";
 
 describe("String.prototype.truncate", () => {
   test('"boomerang".truncate(7) returns "boom..."', () => {

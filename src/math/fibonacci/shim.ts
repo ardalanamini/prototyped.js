@@ -1,4 +1,4 @@
-import fibonacci from ".";
+import fibonacci from "./index.js";
 
 declare global {
   interface Math {

@@ -1,4 +1,4 @@
-import "@src/shim";
+import "prototyped.js/shim";
 
 describe("String.prototype.words", () => {
   test('"I love javaScript!!".words() returns ["I", "love", "javaScript"]', () => {

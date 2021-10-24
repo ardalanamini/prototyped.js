@@ -1,5 +1,5 @@
-import base64 from ".";
-import { addPrototype } from "../../utils";
+import base64 from "./index.js";
+import { addPrototype } from "../../utils.js";
 
 declare global {
   interface String {

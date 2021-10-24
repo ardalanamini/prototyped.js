@@ -1,4 +1,4 @@
-import "@src/shim";
+import "prototyped.js/shim";
 
 describe("Array.prototype.prepend", () => {
   test("myArray = [1, 2, 3] & myArray.prepend(0) results myArray to be [0, 1, 2, 3]", () => {

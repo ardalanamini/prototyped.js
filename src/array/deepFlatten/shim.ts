@@ -1,5 +1,5 @@
-import deepFlatten, { NestedArrayT } from ".";
-import { addPrototype } from "../../utils";
+import deepFlatten, { NestedArrayT } from "./index.js";
+import { addPrototype } from "../../utils.js";
 
 declare global {
   interface Array<T> {

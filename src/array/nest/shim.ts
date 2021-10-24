@@ -1,5 +1,5 @@
-import nest from ".";
-import { addPrototype } from "../../utils";
+import nest from "./index.js";
+import { addPrototype } from "../../utils.js";
 
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars

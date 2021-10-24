@@ -1,4 +1,4 @@
-import "@src/shim";
+import "prototyped.js/shim";
 
 describe("Array.prototype.everyNth", () => {
   test("[1, 2, 3, 4, 5, 6].everyNth() returns [ 2, 4, 6 ]", () => {

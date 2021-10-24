@@ -1,10 +1,10 @@
-import { PathT, pathToKeys } from "../../utils";
+import { PathT, pathToKeys } from "../../utils.js";
 
 export default implode;
 
 function implode<
   Value extends Record<string, unknown>,
-  Path extends PathT<Value> = never
+  Path extends PathT<Value> = never,
 >(array: Value[], path: Path, separator?: string): string;
 function implode<Value>(arr: Value[], path: string, separator = ", "): string {
   const keys = pathToKeys(path);

@@ -1,7 +1,7 @@
-import dateEquals from "../../date/equals";
-import isDate from "../../date/isDate";
-import isObject from "../isObject";
-import ObjectKeys from "../keys";
+import dateEquals from "../../date/equals/index.js";
+import isDate from "../../date/isDate/index.js";
+import isObject from "../isObject/index.js";
+import ObjectKeys from "../keys/index.js";
 
 export default function equals(
   obj: Record<string, unknown>,

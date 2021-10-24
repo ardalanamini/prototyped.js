@@ -1,5 +1,5 @@
-import pluck from ".";
-import { addPrototype, PathT } from "../../utils";
+import pluck from "./index.js";
+import { addPrototype, PathT } from "../../utils.js";
 
 declare global {
   interface Array<T> {

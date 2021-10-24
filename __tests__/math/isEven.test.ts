@@ -1,4 +1,4 @@
-import "@src/shim";
+import "prototyped.js/shim";
 
 describe("Math.isEven", () => {
   test("Math.isEven(3) returns false", () => {

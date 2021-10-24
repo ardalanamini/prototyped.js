@@ -1,4 +1,4 @@
-import "@src/shim";
+import "prototyped.js/shim";
 
 describe("Math.isDivisible", () => {
   test("Math.isDivisible(6, 3) returns true", () => {

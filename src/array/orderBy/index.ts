@@ -1,12 +1,12 @@
-import { PathT, pathToKeys } from "../../utils";
-import contains from "../contains";
+import { PathT, pathToKeys } from "../../utils.js";
+import contains from "../contains/index.js";
 
 export default orderBy;
 
 function orderBy<Value>(arr: Value[], order?: OrderT): Value[];
 function orderBy<
   Value extends Record<string, unknown>,
-  Path extends PathT<Value> = never
+  Path extends PathT<Value> = never,
 >(array: Value[], field: Path, order?: OrderT): Value[];
 function orderBy<Value>(
   arr: Value[],

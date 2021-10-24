@@ -13,7 +13,7 @@ execSync(path.resolve(__dirname, "..", "node_modules", ".bin", "tsc"));
 
 const DOCS = execSync(
   path.resolve(__dirname, "..", "node_modules", ".bin", "jsdoc2md") +
-    " dist/*.js dist/**/*.js dist/**/**/*.js --example-lang javascript",
+    " cjs/*.js cjs/**/*.js cjs/**/**/*.js --example-lang javascript",
 );
 
 fs.writeFileSync(DOCS_PATH, `# Documents\n\n${DOCS.toString()}`, "utf8");

@@ -1,4 +1,4 @@
-import isBrowser from ".";
+import isBrowser from "./index.js";
 
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-namespace

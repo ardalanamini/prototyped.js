@@ -1,5 +1,5 @@
-import forEach from "../forEach";
-import isPlainObject from "../isPlainObject";
+import forEach from "../forEach/index.js";
+import isPlainObject from "../isPlainObject/index.js";
 
 export default function flatten(
   obj: Record<string, unknown>,

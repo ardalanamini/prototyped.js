@@ -1,4 +1,4 @@
-import "@src/shim";
+import "prototyped.js/shim";
 
 describe("Object.prototype.$keys", () => {
   test('{ one: 1, two: 2, three: 3 }.$keys() returns ["one", "two", "three"]', () => {

@@ -1,4 +1,4 @@
-import isPrime from ".";
+import isPrime from "./index.js";
 
 declare global {
   interface Math {

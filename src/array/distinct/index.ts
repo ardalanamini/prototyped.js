@@ -1,5 +1,5 @@
-import isString from "../../string/isString";
-import { pathToKeys } from "../../utils";
+import isString from "../../string/isString/index.js";
+import { pathToKeys } from "../../utils.js";
 
 export default function distinct<T>(
   array: T[],

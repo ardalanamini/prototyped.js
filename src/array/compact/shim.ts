@@ -1,5 +1,5 @@
-import compact, { CompactT } from ".";
-import { addPrototype } from "../../utils";
+import compact, { CompactT } from "./index.js";
+import { addPrototype } from "../../utils.js";
 
 declare global {
   interface Array<T> {

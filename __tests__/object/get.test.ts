@@ -1,4 +1,4 @@
-import "@src/shim";
+import "prototyped.js/shim";
 
 describe("Object.prototype.$get", () => {
   test("{ selector: { to: { val: 'val to select' } } }.$get('selector.to.val') returns 'val to select'", () => {

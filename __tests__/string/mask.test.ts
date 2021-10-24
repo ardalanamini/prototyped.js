@@ -1,4 +1,4 @@
-import "@src/shim";
+import "prototyped.js/shim";
 
 describe("String.prototype.mask", () => {
   test('"1234567890".mask() returns "******7890"', () => {

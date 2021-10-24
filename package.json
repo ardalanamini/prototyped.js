@@ -1,12 +1,8 @@
 {
   "name": "prototyped.js",
-  "version": "2.0.2",
-  "description": "Common typescript ready prototypes available in both es5 and es6",
-  "author": {
-    "name": "Ardalan Amini",
-    "email": "ardalanamini22@gmail.com",
-    "url": "https://ardalanamini.com"
-  },
+  "version": "3.0.0",
+  "description": "Common typescript ready prototypes available in both CommonJS and ECMAScript",
+  "author": "Ardalan Amini <ardalanamini22@gmail.com> (https://ardalanamini.com)",
   "license": "MIT",
   "homepage": "https://prototyped.js.org",
   "repository": {
@@ -156,17 +152,1239 @@
     "truncate",
     "words"
   ],
-  "main": "dist/index.js",
-  "types": "dist/index.d.js",
-  "files": [
-    "dist",
-    "src"
+  "main": "cjs/index.js",
+  "types": "cjs/index.d.js",
+  "module": "es/index.js",
+  "exports": {
+    ".": {
+      "import": "./es/index.js",
+      "default": "./cjs/index.js"
+    },
+    "./shim": {
+      "import": "./es/shim.js",
+      "default": "./cjs/shim.js"
+    },
+    "./array": {
+      "import": "./es/array/index.js",
+      "default": "./cjs/array/index.js"
+    },
+    "./array/shim": {
+      "import": "./es/array/shim.js",
+      "default": "./cjs/array/shim.js"
+    },
+    "./array/all": {
+      "import": "./es/array/all/index.js",
+      "default": "./cjs/array/all/index.js"
+    },
+    "./array/all/shim": {
+      "import": "./es/array/all/shim.js",
+      "default": "./cjs/array/all/shim.js"
+    },
+    "./array/any": {
+      "import": "./es/array/any/index.js",
+      "default": "./cjs/array/any/index.js"
+    },
+    "./array/any/shim": {
+      "import": "./es/array/any/shim.js",
+      "default": "./cjs/array/any/shim.js"
+    },
+    "./array/append": {
+      "import": "./es/array/append/index.js",
+      "default": "./cjs/array/append/index.js"
+    },
+    "./array/append/shim": {
+      "import": "./es/array/append/shim.js",
+      "default": "./cjs/array/append/shim.js"
+    },
+    "./array/average": {
+      "import": "./es/array/average/index.js",
+      "default": "./cjs/array/average/index.js"
+    },
+    "./array/average/shim": {
+      "import": "./es/array/average/shim.js",
+      "default": "./cjs/array/average/shim.js"
+    },
+    "./array/chunk": {
+      "import": "./es/array/chunk/index.js",
+      "default": "./cjs/array/chunk/index.js"
+    },
+    "./array/chunk/shim": {
+      "import": "./es/array/chunk/shim.js",
+      "default": "./cjs/array/chunk/shim.js"
+    },
+    "./array/clone": {
+      "import": "./es/array/clone/index.js",
+      "default": "./cjs/array/clone/index.js"
+    },
+    "./array/clone/shim": {
+      "import": "./es/array/clone/shim.js",
+      "default": "./cjs/array/clone/shim.js"
+    },
+    "./array/compact": {
+      "import": "./es/array/compact/index.js",
+      "default": "./cjs/array/compact/index.js"
+    },
+    "./array/compact/shim": {
+      "import": "./es/array/compact/shim.js",
+      "default": "./cjs/array/compact/shim.js"
+    },
+    "./array/contains": {
+      "import": "./es/array/contains/index.js",
+      "default": "./cjs/array/contains/index.js"
+    },
+    "./array/contains/shim": {
+      "import": "./es/array/contains/shim.js",
+      "default": "./cjs/array/contains/shim.js"
+    },
+    "./array/count": {
+      "import": "./es/array/count/index.js",
+      "default": "./cjs/array/count/index.js"
+    },
+    "./array/count/shim": {
+      "import": "./es/array/count/shim.js",
+      "default": "./cjs/array/count/shim.js"
+    },
+    "./array/countBy": {
+      "import": "./es/array/countBy/index.js",
+      "default": "./cjs/array/countBy/index.js"
+    },
+    "./array/countBy/shim": {
+      "import": "./es/array/countBy/shim.js",
+      "default": "./cjs/array/countBy/shim.js"
+    },
+    "./array/crossJoin": {
+      "import": "./es/array/crossJoin/index.js",
+      "default": "./cjs/array/crossJoin/index.js"
+    },
+    "./array/crossJoin/shim": {
+      "import": "./es/array/crossJoin/shim.js",
+      "default": "./cjs/array/crossJoin/shim.js"
+    },
+    "./array/deepFlatten": {
+      "import": "./es/array/deepFlatten/index.js",
+      "default": "./cjs/array/deepFlatten/index.js"
+    },
+    "./array/deepFlatten/shim": {
+      "import": "./es/array/deepFlatten/shim.js",
+      "default": "./cjs/array/deepFlatten/shim.js"
+    },
+    "./array/diff": {
+      "import": "./es/array/diff/index.js",
+      "default": "./cjs/array/diff/index.js"
+    },
+    "./array/diff/shim": {
+      "import": "./es/array/diff/shim.js",
+      "default": "./cjs/array/diff/shim.js"
+    },
+    "./array/distinct": {
+      "import": "./es/array/distinct/index.js",
+      "default": "./cjs/array/distinct/index.js"
+    },
+    "./array/distinct/shim": {
+      "import": "./es/array/distinct/shim.js",
+      "default": "./cjs/array/distinct/shim.js"
+    },
+    "./array/distinctBy": {
+      "import": "./es/array/distinctBy/index.js",
+      "default": "./cjs/array/distinctBy/index.js"
+    },
+    "./array/distinctBy/shim": {
+      "import": "./es/array/distinctBy/shim.js",
+      "default": "./cjs/array/distinctBy/shim.js"
+    },
+    "./array/empty": {
+      "import": "./es/array/empty/index.js",
+      "default": "./cjs/array/empty/index.js"
+    },
+    "./array/empty/shim": {
+      "import": "./es/array/empty/shim.js",
+      "default": "./cjs/array/empty/shim.js"
+    },
+    "./array/equals": {
+      "import": "./es/array/equals/index.js",
+      "default": "./cjs/array/equals/index.js"
+    },
+    "./array/equals/shim": {
+      "import": "./es/array/equals/shim.js",
+      "default": "./cjs/array/equals/shim.js"
+    },
+    "./array/everyNth": {
+      "import": "./es/array/everyNth/index.js",
+      "default": "./cjs/array/everyNth/index.js"
+    },
+    "./array/everyNth/shim": {
+      "import": "./es/array/everyNth/shim.js",
+      "default": "./cjs/array/everyNth/shim.js"
+    },
+    "./array/first": {
+      "import": "./es/array/first/index.js",
+      "default": "./cjs/array/first/index.js"
+    },
+    "./array/first/shim": {
+      "import": "./es/array/first/shim.js",
+      "default": "./cjs/array/first/shim.js"
+    },
+    "./array/flatten": {
+      "import": "./es/array/flatten/index.js",
+      "default": "./cjs/array/flatten/index.js"
+    },
+    "./array/flatten/shim": {
+      "import": "./es/array/flatten/shim.js",
+      "default": "./cjs/array/flatten/shim.js"
+    },
+    "./array/get": {
+      "import": "./es/array/get/index.js",
+      "default": "./cjs/array/get/index.js"
+    },
+    "./array/get/shim": {
+      "import": "./es/array/get/shim.js",
+      "default": "./cjs/array/get/shim.js"
+    },
+    "./array/groupBy": {
+      "import": "./es/array/groupBy/index.js",
+      "default": "./cjs/array/groupBy/index.js"
+    },
+    "./array/groupBy/shim": {
+      "import": "./es/array/groupBy/shim.js",
+      "default": "./cjs/array/groupBy/shim.js"
+    },
+    "./array/implode": {
+      "import": "./es/array/implode/index.js",
+      "default": "./cjs/array/implode/index.js"
+    },
+    "./array/implode/shim": {
+      "import": "./es/array/implode/shim.js",
+      "default": "./cjs/array/implode/shim.js"
+    },
+    "./array/indexOfAll": {
+      "import": "./es/array/indexOfAll/index.js",
+      "default": "./cjs/array/indexOfAll/index.js"
+    },
+    "./array/indexOfAll/shim": {
+      "import": "./es/array/indexOfAll/shim.js",
+      "default": "./cjs/array/indexOfAll/shim.js"
+    },
+    "./array/initial": {
+      "import": "./es/array/initial/index.js",
+      "default": "./cjs/array/initial/index.js"
+    },
+    "./array/initial/shim": {
+      "import": "./es/array/initial/shim.js",
+      "default": "./cjs/array/initial/shim.js"
+    },
+    "./array/intersect": {
+      "import": "./es/array/intersect/index.js",
+      "default": "./cjs/array/intersect/index.js"
+    },
+    "./array/intersect/shim": {
+      "import": "./es/array/intersect/shim.js",
+      "default": "./cjs/array/intersect/shim.js"
+    },
+    "./array/isEmpty": {
+      "import": "./es/array/isEmpty/index.js",
+      "default": "./cjs/array/isEmpty/index.js"
+    },
+    "./array/isEmpty/shim": {
+      "import": "./es/array/isEmpty/shim.js",
+      "default": "./cjs/array/isEmpty/shim.js"
+    },
+    "./array/last": {
+      "import": "./es/array/last/index.js",
+      "default": "./cjs/array/last/index.js"
+    },
+    "./array/last/shim": {
+      "import": "./es/array/last/shim.js",
+      "default": "./cjs/array/last/shim.js"
+    },
+    "./array/limit": {
+      "import": "./es/array/limit/index.js",
+      "default": "./cjs/array/limit/index.js"
+    },
+    "./array/limit/shim": {
+      "import": "./es/array/limit/shim.js",
+      "default": "./cjs/array/limit/shim.js"
+    },
+    "./array/max": {
+      "import": "./es/array/max/index.js",
+      "default": "./cjs/array/max/index.js"
+    },
+    "./array/max/shim": {
+      "import": "./es/array/max/shim.js",
+      "default": "./cjs/array/max/shim.js"
+    },
+    "./array/median": {
+      "import": "./es/array/median/index.js",
+      "default": "./cjs/array/median/index.js"
+    },
+    "./array/median/shim": {
+      "import": "./es/array/median/shim.js",
+      "default": "./cjs/array/median/shim.js"
+    },
+    "./array/merge": {
+      "import": "./es/array/merge/index.js",
+      "default": "./cjs/array/merge/index.js"
+    },
+    "./array/merge/shim": {
+      "import": "./es/array/merge/shim.js",
+      "default": "./cjs/array/merge/shim.js"
+    },
+    "./array/min": {
+      "import": "./es/array/min/index.js",
+      "default": "./cjs/array/min/index.js"
+    },
+    "./array/min/shim": {
+      "import": "./es/array/min/shim.js",
+      "default": "./cjs/array/min/shim.js"
+    },
+    "./array/nest": {
+      "import": "./es/array/nest/index.js",
+      "default": "./cjs/array/nest/index.js"
+    },
+    "./array/nest/shim": {
+      "import": "./es/array/nest/shim.js",
+      "default": "./cjs/array/nest/shim.js"
+    },
+    "./array/orderBy": {
+      "import": "./es/array/orderBy/index.js",
+      "default": "./cjs/array/orderBy/index.js"
+    },
+    "./array/orderBy/shim": {
+      "import": "./es/array/orderBy/shim.js",
+      "default": "./cjs/array/orderBy/shim.js"
+    },
+    "./array/pad": {
+      "import": "./es/array/pad/index.js",
+      "default": "./cjs/array/pad/index.js"
+    },
+    "./array/pad/shim": {
+      "import": "./es/array/pad/shim.js",
+      "default": "./cjs/array/pad/shim.js"
+    },
+    "./array/partition": {
+      "import": "./es/array/partition/index.js",
+      "default": "./cjs/array/partition/index.js"
+    },
+    "./array/partition/shim": {
+      "import": "./es/array/partition/shim.js",
+      "default": "./cjs/array/partition/shim.js"
+    },
+    "./array/pluck": {
+      "import": "./es/array/pluck/index.js",
+      "default": "./cjs/array/pluck/index.js"
+    },
+    "./array/pluck/shim": {
+      "import": "./es/array/pluck/shim.js",
+      "default": "./cjs/array/pluck/shim.js"
+    },
+    "./array/prepend": {
+      "import": "./es/array/prepend/index.js",
+      "default": "./cjs/array/prepend/index.js"
+    },
+    "./array/prepend/shim": {
+      "import": "./es/array/prepend/shim.js",
+      "default": "./cjs/array/prepend/shim.js"
+    },
+    "./array/pull": {
+      "import": "./es/array/pull/index.js",
+      "default": "./cjs/array/pull/index.js"
+    },
+    "./array/pull/shim": {
+      "import": "./es/array/pull/shim.js",
+      "default": "./cjs/array/pull/shim.js"
+    },
+    "./array/range": {
+      "import": "./es/array/range/index.js",
+      "default": "./cjs/array/range/index.js"
+    },
+    "./array/range/shim": {
+      "import": "./es/array/range/shim.js",
+      "default": "./cjs/array/range/shim.js"
+    },
+    "./array/repeat": {
+      "import": "./es/array/repeat/index.js",
+      "default": "./cjs/array/repeat/index.js"
+    },
+    "./array/repeat/shim": {
+      "import": "./es/array/repeat/shim.js",
+      "default": "./cjs/array/repeat/shim.js"
+    },
+    "./array/sample": {
+      "import": "./es/array/sample/index.js",
+      "default": "./cjs/array/sample/index.js"
+    },
+    "./array/sample/shim": {
+      "import": "./es/array/sample/shim.js",
+      "default": "./cjs/array/sample/shim.js"
+    },
+    "./array/shuffle": {
+      "import": "./es/array/shuffle/index.js",
+      "default": "./cjs/array/shuffle/index.js"
+    },
+    "./array/shuffle/shim": {
+      "import": "./es/array/shuffle/shim.js",
+      "default": "./cjs/array/shuffle/shim.js"
+    },
+    "./array/skip": {
+      "import": "./es/array/skip/index.js",
+      "default": "./cjs/array/skip/index.js"
+    },
+    "./array/skip/shim": {
+      "import": "./es/array/skip/shim.js",
+      "default": "./cjs/array/skip/shim.js"
+    },
+    "./array/sortBy": {
+      "import": "./es/array/sortBy/index.js",
+      "default": "./cjs/array/sortBy/index.js"
+    },
+    "./array/sortBy/shim": {
+      "import": "./es/array/sortBy/shim.js",
+      "default": "./cjs/array/sortBy/shim.js"
+    },
+    "./array/sum": {
+      "import": "./es/array/sum/index.js",
+      "default": "./cjs/array/sum/index.js"
+    },
+    "./array/sum/shim": {
+      "import": "./es/array/sum/shim.js",
+      "default": "./cjs/array/sum/shim.js"
+    },
+    "./array/tail": {
+      "import": "./es/array/tail/index.js",
+      "default": "./cjs/array/tail/index.js"
+    },
+    "./array/tail/shim": {
+      "import": "./es/array/tail/shim.js",
+      "default": "./cjs/array/tail/shim.js"
+    },
+    "./array/toCSV": {
+      "import": "./es/array/toCSV/index.js",
+      "default": "./cjs/array/toCSV/index.js"
+    },
+    "./array/toCSV/shim": {
+      "import": "./es/array/toCSV/shim.js",
+      "default": "./cjs/array/toCSV/shim.js"
+    },
+    "./array/union": {
+      "import": "./es/array/union/index.js",
+      "default": "./cjs/array/union/index.js"
+    },
+    "./array/union/shim": {
+      "import": "./es/array/union/shim.js",
+      "default": "./cjs/array/union/shim.js"
+    },
+    "./array/unwind": {
+      "import": "./es/array/unwind/index.js",
+      "default": "./cjs/array/unwind/index.js"
+    },
+    "./array/unwind/shim": {
+      "import": "./es/array/unwind/shim.js",
+      "default": "./cjs/array/unwind/shim.js"
+    },
+    "./array/where": {
+      "import": "./es/array/where/index.js",
+      "default": "./cjs/array/where/index.js"
+    },
+    "./array/where/shim": {
+      "import": "./es/array/where/shim.js",
+      "default": "./cjs/array/where/shim.js"
+    },
+    "./array/whereBetween": {
+      "import": "./es/array/whereBetween/index.js",
+      "default": "./cjs/array/whereBetween/index.js"
+    },
+    "./array/whereBetween/shim": {
+      "import": "./es/array/whereBetween/shim.js",
+      "default": "./cjs/array/whereBetween/shim.js"
+    },
+    "./array/whereIn": {
+      "import": "./es/array/whereIn/index.js",
+      "default": "./cjs/array/whereIn/index.js"
+    },
+    "./array/whereIn/shim": {
+      "import": "./es/array/whereIn/shim.js",
+      "default": "./cjs/array/whereIn/shim.js"
+    },
+    "./array/whereLike": {
+      "import": "./es/array/whereLike/index.js",
+      "default": "./cjs/array/whereLike/index.js"
+    },
+    "./array/whereLike/shim": {
+      "import": "./es/array/whereLike/shim.js",
+      "default": "./cjs/array/whereLike/shim.js"
+    },
+    "./array/whereNotBetween": {
+      "import": "./es/array/whereNotBetween/index.js",
+      "default": "./cjs/array/whereNotBetween/index.js"
+    },
+    "./array/whereNotBetween/shim": {
+      "import": "./es/array/whereNotBetween/shim.js",
+      "default": "./cjs/array/whereNotBetween/shim.js"
+    },
+    "./array/whereNotIn": {
+      "import": "./es/array/whereNotIn/index.js",
+      "default": "./cjs/array/whereNotIn/index.js"
+    },
+    "./array/whereNotIn/shim": {
+      "import": "./es/array/whereNotIn/shim.js",
+      "default": "./cjs/array/whereNotIn/shim.js"
+    },
+    "./array/whereNotLike": {
+      "import": "./es/array/whereNotLike/index.js",
+      "default": "./cjs/array/whereNotLike/index.js"
+    },
+    "./array/whereNotLike/shim": {
+      "import": "./es/array/whereNotLike/shim.js",
+      "default": "./cjs/array/whereNotLike/shim.js"
+    },
+    "./array/whereNotNull": {
+      "import": "./es/array/whereNotNull/index.js",
+      "default": "./cjs/array/whereNotNull/index.js"
+    },
+    "./array/whereNotNull/shim": {
+      "import": "./es/array/whereNotNull/shim.js",
+      "default": "./cjs/array/whereNotNull/shim.js"
+    },
+    "./array/whereNull": {
+      "import": "./es/array/whereNull/index.js",
+      "default": "./cjs/array/whereNull/index.js"
+    },
+    "./array/whereNull/shim": {
+      "import": "./es/array/whereNull/shim.js",
+      "default": "./cjs/array/whereNull/shim.js"
+    },
+    "./array/zip": {
+      "import": "./es/array/zip/index.js",
+      "default": "./cjs/array/zip/index.js"
+    },
+    "./array/zip/shim": {
+      "import": "./es/array/zip/shim.js",
+      "default": "./cjs/array/zip/shim.js"
+    },
+    "./array/zipObject": {
+      "import": "./es/array/zipObject/index.js",
+      "default": "./cjs/array/zipObject/index.js"
+    },
+    "./array/zipObject/shim": {
+      "import": "./es/array/zipObject/shim.js",
+      "default": "./cjs/array/zipObject/shim.js"
+    },
+    "./boolean": {
+      "import": "./es/boolean/index.js",
+      "default": "./cjs/boolean/index.js"
+    },
+    "./boolean/shim": {
+      "import": "./es/boolean/shim.js",
+      "default": "./cjs/boolean/shim.js"
+    },
+    "./boolean/isBoolean": {
+      "import": "./es/boolean/isBoolean/index.js",
+      "default": "./cjs/boolean/isBoolean/index.js"
+    },
+    "./boolean/isBoolean/shim": {
+      "import": "./es/boolean/isBoolean/shim.js",
+      "default": "./cjs/boolean/isBoolean/shim.js"
+    },
+    "./date": {
+      "import": "./es/date/index.js",
+      "default": "./cjs/date/index.js"
+    },
+    "./date/shim": {
+      "import": "./es/date/shim.js",
+      "default": "./cjs/date/shim.js"
+    },
+    "./date/equals": {
+      "import": "./es/date/equals/index.js",
+      "default": "./cjs/date/equals/index.js"
+    },
+    "./date/equals/shim": {
+      "import": "./es/date/equals/shim.js",
+      "default": "./cjs/date/equals/shim.js"
+    },
+    "./date/isDate": {
+      "import": "./es/date/isDate/index.js",
+      "default": "./cjs/date/isDate/index.js"
+    },
+    "./date/isDate/shim": {
+      "import": "./es/date/isDate/shim.js",
+      "default": "./cjs/date/isDate/shim.js"
+    },
+    "./date/today": {
+      "import": "./es/date/today/index.js",
+      "default": "./cjs/date/today/index.js"
+    },
+    "./date/today/shim": {
+      "import": "./es/date/today/shim.js",
+      "default": "./cjs/date/today/shim.js"
+    },
+    "./date/tomorrow": {
+      "import": "./es/date/tomorrow/index.js",
+      "default": "./cjs/date/tomorrow/index.js"
+    },
+    "./date/tomorrow/shim": {
+      "import": "./es/date/tomorrow/shim.js",
+      "default": "./cjs/date/tomorrow/shim.js"
+    },
+    "./date/yesterday": {
+      "import": "./es/date/yesterday/index.js",
+      "default": "./cjs/date/yesterday/index.js"
+    },
+    "./date/yesterday/shim": {
+      "import": "./es/date/yesterday/shim.js",
+      "default": "./cjs/date/yesterday/shim.js"
+    },
+    "./func": {
+      "import": "./es/func/index.js",
+      "default": "./cjs/func/index.js"
+    },
+    "./func/shim": {
+      "import": "./es/func/shim.js",
+      "default": "./cjs/func/shim.js"
+    },
+    "./func/cache": {
+      "import": "./es/func/cache/index.js",
+      "default": "./cjs/func/cache/index.js"
+    },
+    "./func/cache/shim": {
+      "import": "./es/func/cache/shim.js",
+      "default": "./cjs/func/cache/shim.js"
+    },
+    "./func/defer": {
+      "import": "./es/func/defer/index.js",
+      "default": "./cjs/func/defer/index.js"
+    },
+    "./func/defer/shim": {
+      "import": "./es/func/defer/shim.js",
+      "default": "./cjs/func/defer/shim.js"
+    },
+    "./func/isFunction": {
+      "import": "./es/func/isFunction/index.js",
+      "default": "./cjs/func/isFunction/index.js"
+    },
+    "./func/isFunction/shim": {
+      "import": "./es/func/isFunction/shim.js",
+      "default": "./cjs/func/isFunction/shim.js"
+    },
+    "./func/once": {
+      "import": "./es/func/once/index.js",
+      "default": "./cjs/func/once/index.js"
+    },
+    "./func/once/shim": {
+      "import": "./es/func/once/shim.js",
+      "default": "./cjs/func/once/shim.js"
+    },
+    "./globals": {
+      "import": "./es/globals/index.js",
+      "default": "./cjs/globals/index.js"
+    },
+    "./globals/shim": {
+      "import": "./es/globals/shim.js",
+      "default": "./cjs/globals/shim.js"
+    },
+    "./globals/isBrowser": {
+      "import": "./es/globals/isBrowser/index.js",
+      "default": "./cjs/globals/isBrowser/index.js"
+    },
+    "./globals/isBrowser/shim": {
+      "import": "./es/globals/isBrowser/shim.js",
+      "default": "./cjs/globals/isBrowser/shim.js"
+    },
+    "./math": {
+      "import": "./es/math/index.js",
+      "default": "./cjs/math/index.js"
+    },
+    "./math/shim": {
+      "import": "./es/math/shim.js",
+      "default": "./cjs/math/shim.js"
+    },
+    "./math/average": {
+      "import": "./es/math/average/index.js",
+      "default": "./cjs/math/average/index.js"
+    },
+    "./math/average/shim": {
+      "import": "./es/math/average/shim.js",
+      "default": "./cjs/math/average/shim.js"
+    },
+    "./math/degreesToRads": {
+      "import": "./es/math/degreesToRads/index.js",
+      "default": "./cjs/math/degreesToRads/index.js"
+    },
+    "./math/degreesToRads/shim": {
+      "import": "./es/math/degreesToRads/shim.js",
+      "default": "./cjs/math/degreesToRads/shim.js"
+    },
+    "./math/factorial": {
+      "import": "./es/math/factorial/index.js",
+      "default": "./cjs/math/factorial/index.js"
+    },
+    "./math/factorial/shim": {
+      "import": "./es/math/factorial/shim.js",
+      "default": "./cjs/math/factorial/shim.js"
+    },
+    "./math/fibonacci": {
+      "import": "./es/math/fibonacci/index.js",
+      "default": "./cjs/math/fibonacci/index.js"
+    },
+    "./math/fibonacci/shim": {
+      "import": "./es/math/fibonacci/shim.js",
+      "default": "./cjs/math/fibonacci/shim.js"
+    },
+    "./math/gcd": {
+      "import": "./es/math/gcd/index.js",
+      "default": "./cjs/math/gcd/index.js"
+    },
+    "./math/gcd/shim": {
+      "import": "./es/math/gcd/shim.js",
+      "default": "./cjs/math/gcd/shim.js"
+    },
+    "./math/isDivisible": {
+      "import": "./es/math/isDivisible/index.js",
+      "default": "./cjs/math/isDivisible/index.js"
+    },
+    "./math/isDivisible/shim": {
+      "import": "./es/math/isDivisible/shim.js",
+      "default": "./cjs/math/isDivisible/shim.js"
+    },
+    "./math/isEven": {
+      "import": "./es/math/isEven/index.js",
+      "default": "./cjs/math/isEven/index.js"
+    },
+    "./math/isEven/shim": {
+      "import": "./es/math/isEven/shim.js",
+      "default": "./cjs/math/isEven/shim.js"
+    },
+    "./math/isPrime": {
+      "import": "./es/math/isPrime/index.js",
+      "default": "./cjs/math/isPrime/index.js"
+    },
+    "./math/isPrime/shim": {
+      "import": "./es/math/isPrime/shim.js",
+      "default": "./cjs/math/isPrime/shim.js"
+    },
+    "./math/lcm": {
+      "import": "./es/math/lcm/index.js",
+      "default": "./cjs/math/lcm/index.js"
+    },
+    "./math/lcm/shim": {
+      "import": "./es/math/lcm/shim.js",
+      "default": "./cjs/math/lcm/shim.js"
+    },
+    "./math/primes": {
+      "import": "./es/math/primes/index.js",
+      "default": "./cjs/math/primes/index.js"
+    },
+    "./math/primes/shim": {
+      "import": "./es/math/primes/shim.js",
+      "default": "./cjs/math/primes/shim.js"
+    },
+    "./math/radsToDegrees": {
+      "import": "./es/math/radsToDegrees/index.js",
+      "default": "./cjs/math/radsToDegrees/index.js"
+    },
+    "./math/radsToDegrees/shim": {
+      "import": "./es/math/radsToDegrees/shim.js",
+      "default": "./cjs/math/radsToDegrees/shim.js"
+    },
+    "./number": {
+      "import": "./es/number/index.js",
+      "default": "./cjs/number/index.js"
+    },
+    "./number/shim": {
+      "import": "./es/number/shim.js",
+      "default": "./cjs/number/shim.js"
+    },
+    "./number/digitize": {
+      "import": "./es/number/digitize/index.js",
+      "default": "./cjs/number/digitize/index.js"
+    },
+    "./number/digitize/shim": {
+      "import": "./es/number/digitize/shim.js",
+      "default": "./cjs/number/digitize/shim.js"
+    },
+    "./number/equals": {
+      "import": "./es/number/equals/index.js",
+      "default": "./cjs/number/equals/index.js"
+    },
+    "./number/equals/shim": {
+      "import": "./es/number/equals/shim.js",
+      "default": "./cjs/number/equals/shim.js"
+    },
+    "./number/inRange": {
+      "import": "./es/number/inRange/index.js",
+      "default": "./cjs/number/inRange/index.js"
+    },
+    "./number/inRange/shim": {
+      "import": "./es/number/inRange/shim.js",
+      "default": "./cjs/number/inRange/shim.js"
+    },
+    "./number/isNumber": {
+      "import": "./es/number/isNumber/index.js",
+      "default": "./cjs/number/isNumber/index.js"
+    },
+    "./number/isNumber/shim": {
+      "import": "./es/number/isNumber/shim.js",
+      "default": "./cjs/number/isNumber/shim.js"
+    },
+    "./object": {
+      "import": "./es/object/index.js",
+      "default": "./cjs/object/index.js"
+    },
+    "./object/shim": {
+      "import": "./es/object/shim.js",
+      "default": "./cjs/object/shim.js"
+    },
+    "./object/assign": {
+      "import": "./es/object/assign/index.js",
+      "default": "./cjs/object/assign/index.js"
+    },
+    "./object/assign/shim": {
+      "import": "./es/object/assign/shim.js",
+      "default": "./cjs/object/assign/shim.js"
+    },
+    "./object/camelCaseKeys": {
+      "import": "./es/object/camelCaseKeys/index.js",
+      "default": "./cjs/object/camelCaseKeys/index.js"
+    },
+    "./object/camelCaseKeys/shim": {
+      "import": "./es/object/camelCaseKeys/shim.js",
+      "default": "./cjs/object/camelCaseKeys/shim.js"
+    },
+    "./object/clone": {
+      "import": "./es/object/clone/index.js",
+      "default": "./cjs/object/clone/index.js"
+    },
+    "./object/clone/shim": {
+      "import": "./es/object/clone/shim.js",
+      "default": "./cjs/object/clone/shim.js"
+    },
+    "./object/defaults": {
+      "import": "./es/object/defaults/index.js",
+      "default": "./cjs/object/defaults/index.js"
+    },
+    "./object/defaults/shim": {
+      "import": "./es/object/defaults/shim.js",
+      "default": "./cjs/object/defaults/shim.js"
+    },
+    "./object/dig": {
+      "import": "./es/object/dig/index.js",
+      "default": "./cjs/object/dig/index.js"
+    },
+    "./object/dig/shim": {
+      "import": "./es/object/dig/shim.js",
+      "default": "./cjs/object/dig/shim.js"
+    },
+    "./object/empty": {
+      "import": "./es/object/empty/index.js",
+      "default": "./cjs/object/empty/index.js"
+    },
+    "./object/empty/shim": {
+      "import": "./es/object/empty/shim.js",
+      "default": "./cjs/object/empty/shim.js"
+    },
+    "./object/equals": {
+      "import": "./es/object/equals/index.js",
+      "default": "./cjs/object/equals/index.js"
+    },
+    "./object/equals/shim": {
+      "import": "./es/object/equals/shim.js",
+      "default": "./cjs/object/equals/shim.js"
+    },
+    "./object/flatten": {
+      "import": "./es/object/flatten/index.js",
+      "default": "./cjs/object/flatten/index.js"
+    },
+    "./object/flatten/shim": {
+      "import": "./es/object/flatten/shim.js",
+      "default": "./cjs/object/flatten/shim.js"
+    },
+    "./object/forEach": {
+      "import": "./es/object/forEach/index.js",
+      "default": "./cjs/object/forEach/index.js"
+    },
+    "./object/forEach/shim": {
+      "import": "./es/object/forEach/shim.js",
+      "default": "./cjs/object/forEach/shim.js"
+    },
+    "./object/get": {
+      "import": "./es/object/get/index.js",
+      "default": "./cjs/object/get/index.js"
+    },
+    "./object/get/shim": {
+      "import": "./es/object/get/shim.js",
+      "default": "./cjs/object/get/shim.js"
+    },
+    "./object/invert": {
+      "import": "./es/object/invert/index.js",
+      "default": "./cjs/object/invert/index.js"
+    },
+    "./object/invert/shim": {
+      "import": "./es/object/invert/shim.js",
+      "default": "./cjs/object/invert/shim.js"
+    },
+    "./object/isEmpty": {
+      "import": "./es/object/isEmpty/index.js",
+      "default": "./cjs/object/isEmpty/index.js"
+    },
+    "./object/isEmpty/shim": {
+      "import": "./es/object/isEmpty/shim.js",
+      "default": "./cjs/object/isEmpty/shim.js"
+    },
+    "./object/isObject": {
+      "import": "./es/object/isObject/index.js",
+      "default": "./cjs/object/isObject/index.js"
+    },
+    "./object/isObject/shim": {
+      "import": "./es/object/isObject/shim.js",
+      "default": "./cjs/object/isObject/shim.js"
+    },
+    "./object/isObjectLike": {
+      "import": "./es/object/isObjectLike/index.js",
+      "default": "./cjs/object/isObjectLike/index.js"
+    },
+    "./object/isObjectLike/shim": {
+      "import": "./es/object/isObjectLike/shim.js",
+      "default": "./cjs/object/isObjectLike/shim.js"
+    },
+    "./object/isPlainObject": {
+      "import": "./es/object/isPlainObject/index.js",
+      "default": "./cjs/object/isPlainObject/index.js"
+    },
+    "./object/isPlainObject/shim": {
+      "import": "./es/object/isPlainObject/shim.js",
+      "default": "./cjs/object/isPlainObject/shim.js"
+    },
+    "./object/kebabCaseKeys": {
+      "import": "./es/object/kebabCaseKeys/index.js",
+      "default": "./cjs/object/kebabCaseKeys/index.js"
+    },
+    "./object/kebabCaseKeys/shim": {
+      "import": "./es/object/kebabCaseKeys/shim.js",
+      "default": "./cjs/object/kebabCaseKeys/shim.js"
+    },
+    "./object/keys": {
+      "import": "./es/object/keys/index.js",
+      "default": "./cjs/object/keys/index.js"
+    },
+    "./object/keys/shim": {
+      "import": "./es/object/keys/shim.js",
+      "default": "./cjs/object/keys/shim.js"
+    },
+    "./object/lowerCaseKeys": {
+      "import": "./es/object/lowerCaseKeys/index.js",
+      "default": "./cjs/object/lowerCaseKeys/index.js"
+    },
+    "./object/lowerCaseKeys/shim": {
+      "import": "./es/object/lowerCaseKeys/shim.js",
+      "default": "./cjs/object/lowerCaseKeys/shim.js"
+    },
+    "./object/map": {
+      "import": "./es/object/map/index.js",
+      "default": "./cjs/object/map/index.js"
+    },
+    "./object/map/shim": {
+      "import": "./es/object/map/shim.js",
+      "default": "./cjs/object/map/shim.js"
+    },
+    "./object/mapKeys": {
+      "import": "./es/object/mapKeys/index.js",
+      "default": "./cjs/object/mapKeys/index.js"
+    },
+    "./object/mapKeys/shim": {
+      "import": "./es/object/mapKeys/shim.js",
+      "default": "./cjs/object/mapKeys/shim.js"
+    },
+    "./object/mapValues": {
+      "import": "./es/object/mapValues/index.js",
+      "default": "./cjs/object/mapValues/index.js"
+    },
+    "./object/mapValues/shim": {
+      "import": "./es/object/mapValues/shim.js",
+      "default": "./cjs/object/mapValues/shim.js"
+    },
+    "./object/merge": {
+      "import": "./es/object/merge/index.js",
+      "default": "./cjs/object/merge/index.js"
+    },
+    "./object/merge/shim": {
+      "import": "./es/object/merge/shim.js",
+      "default": "./cjs/object/merge/shim.js"
+    },
+    "./object/omit": {
+      "import": "./es/object/omit/index.js",
+      "default": "./cjs/object/omit/index.js"
+    },
+    "./object/omit/shim": {
+      "import": "./es/object/omit/shim.js",
+      "default": "./cjs/object/omit/shim.js"
+    },
+    "./object/reduce": {
+      "import": "./es/object/reduce/index.js",
+      "default": "./cjs/object/reduce/index.js"
+    },
+    "./object/reduce/shim": {
+      "import": "./es/object/reduce/shim.js",
+      "default": "./cjs/object/reduce/shim.js"
+    },
+    "./object/set": {
+      "import": "./es/object/set/index.js",
+      "default": "./cjs/object/set/index.js"
+    },
+    "./object/set/shim": {
+      "import": "./es/object/set/shim.js",
+      "default": "./cjs/object/set/shim.js"
+    },
+    "./object/size": {
+      "import": "./es/object/size/index.js",
+      "default": "./cjs/object/size/index.js"
+    },
+    "./object/size/shim": {
+      "import": "./es/object/size/shim.js",
+      "default": "./cjs/object/size/shim.js"
+    },
+    "./object/snakeCaseKeys": {
+      "import": "./es/object/snakeCaseKeys/index.js",
+      "default": "./cjs/object/snakeCaseKeys/index.js"
+    },
+    "./object/snakeCaseKeys/shim": {
+      "import": "./es/object/snakeCaseKeys/shim.js",
+      "default": "./cjs/object/snakeCaseKeys/shim.js"
+    },
+    "./object/values": {
+      "import": "./es/object/values/index.js",
+      "default": "./cjs/object/values/index.js"
+    },
+    "./object/values/shim": {
+      "import": "./es/object/values/shim.js",
+      "default": "./cjs/object/values/shim.js"
+    },
+    "./string": {
+      "import": "./es/string/index.js",
+      "default": "./cjs/string/index.js"
+    },
+    "./string/shim": {
+      "import": "./es/string/shim.js",
+      "default": "./cjs/string/shim.js"
+    },
+    "./string/base64": {
+      "import": "./es/string/base64/index.js",
+      "default": "./cjs/string/base64/index.js"
+    },
+    "./string/base64/shim": {
+      "import": "./es/string/base64/shim.js",
+      "default": "./cjs/string/base64/shim.js"
+    },
+    "./string/base64Decode": {
+      "import": "./es/string/base64Decode/index.js",
+      "default": "./cjs/string/base64Decode/index.js"
+    },
+    "./string/base64Decode/shim": {
+      "import": "./es/string/base64Decode/shim.js",
+      "default": "./cjs/string/base64Decode/shim.js"
+    },
+    "./string/camelCase": {
+      "import": "./es/string/camelCase/index.js",
+      "default": "./cjs/string/camelCase/index.js"
+    },
+    "./string/camelCase/shim": {
+      "import": "./es/string/camelCase/shim.js",
+      "default": "./cjs/string/camelCase/shim.js"
+    },
+    "./string/capitalize": {
+      "import": "./es/string/capitalize/index.js",
+      "default": "./cjs/string/capitalize/index.js"
+    },
+    "./string/capitalize/shim": {
+      "import": "./es/string/capitalize/shim.js",
+      "default": "./cjs/string/capitalize/shim.js"
+    },
+    "./string/chars": {
+      "import": "./es/string/chars/index.js",
+      "default": "./cjs/string/chars/index.js"
+    },
+    "./string/chars/shim": {
+      "import": "./es/string/chars/shim.js",
+      "default": "./cjs/string/chars/shim.js"
+    },
+    "./string/contains": {
+      "import": "./es/string/contains/index.js",
+      "default": "./cjs/string/contains/index.js"
+    },
+    "./string/contains/shim": {
+      "import": "./es/string/contains/shim.js",
+      "default": "./cjs/string/contains/shim.js"
+    },
+    "./string/decapitalize": {
+      "import": "./es/string/decapitalize/index.js",
+      "default": "./cjs/string/decapitalize/index.js"
+    },
+    "./string/decapitalize/shim": {
+      "import": "./es/string/decapitalize/shim.js",
+      "default": "./cjs/string/decapitalize/shim.js"
+    },
+    "./string/equals": {
+      "import": "./es/string/equals/index.js",
+      "default": "./cjs/string/equals/index.js"
+    },
+    "./string/equals/shim": {
+      "import": "./es/string/equals/shim.js",
+      "default": "./cjs/string/equals/shim.js"
+    },
+    "./string/forEach": {
+      "import": "./es/string/forEach/index.js",
+      "default": "./cjs/string/forEach/index.js"
+    },
+    "./string/forEach/shim": {
+      "import": "./es/string/forEach/shim.js",
+      "default": "./cjs/string/forEach/shim.js"
+    },
+    "./string/humanize": {
+      "import": "./es/string/humanize/index.js",
+      "default": "./cjs/string/humanize/index.js"
+    },
+    "./string/humanize/shim": {
+      "import": "./es/string/humanize/shim.js",
+      "default": "./cjs/string/humanize/shim.js"
+    },
+    "./string/isEmpty": {
+      "import": "./es/string/isEmpty/index.js",
+      "default": "./cjs/string/isEmpty/index.js"
+    },
+    "./string/isEmpty/shim": {
+      "import": "./es/string/isEmpty/shim.js",
+      "default": "./cjs/string/isEmpty/shim.js"
+    },
+    "./string/isString": {
+      "import": "./es/string/isString/index.js",
+      "default": "./cjs/string/isString/index.js"
+    },
+    "./string/isString/shim": {
+      "import": "./es/string/isString/shim.js",
+      "default": "./cjs/string/isString/shim.js"
+    },
+    "./string/kebabCase": {
+      "import": "./es/string/kebabCase/index.js",
+      "default": "./cjs/string/kebabCase/index.js"
+    },
+    "./string/kebabCase/shim": {
+      "import": "./es/string/kebabCase/shim.js",
+      "default": "./cjs/string/kebabCase/shim.js"
+    },
+    "./string/lines": {
+      "import": "./es/string/lines/index.js",
+      "default": "./cjs/string/lines/index.js"
+    },
+    "./string/lines/shim": {
+      "import": "./es/string/lines/shim.js",
+      "default": "./cjs/string/lines/shim.js"
+    },
+    "./string/map": {
+      "import": "./es/string/map/index.js",
+      "default": "./cjs/string/map/index.js"
+    },
+    "./string/map/shim": {
+      "import": "./es/string/map/shim.js",
+      "default": "./cjs/string/map/shim.js"
+    },
+    "./string/mask": {
+      "import": "./es/string/mask/index.js",
+      "default": "./cjs/string/mask/index.js"
+    },
+    "./string/mask/shim": {
+      "import": "./es/string/mask/shim.js",
+      "default": "./cjs/string/mask/shim.js"
+    },
+    "./string/pad": {
+      "import": "./es/string/pad/index.js",
+      "default": "./cjs/string/pad/index.js"
+    },
+    "./string/pad/shim": {
+      "import": "./es/string/pad/shim.js",
+      "default": "./cjs/string/pad/shim.js"
+    },
+    "./string/parseInt": {
+      "import": "./es/string/parseInt/index.js",
+      "default": "./cjs/string/parseInt/index.js"
+    },
+    "./string/parseInt/shim": {
+      "import": "./es/string/parseInt/shim.js",
+      "default": "./cjs/string/parseInt/shim.js"
+    },
+    "./string/pluralize": {
+      "import": "./es/string/pluralize/index.js",
+      "default": "./cjs/string/pluralize/index.js"
+    },
+    "./string/pluralize/shim": {
+      "import": "./es/string/pluralize/shim.js",
+      "default": "./cjs/string/pluralize/shim.js"
+    },
+    "./string/reduce": {
+      "import": "./es/string/reduce/index.js",
+      "default": "./cjs/string/reduce/index.js"
+    },
+    "./string/reduce/shim": {
+      "import": "./es/string/reduce/shim.js",
+      "default": "./cjs/string/reduce/shim.js"
+    },
+    "./string/repeat": {
+      "import": "./es/string/repeat/index.js",
+      "default": "./cjs/string/repeat/index.js"
+    },
+    "./string/repeat/shim": {
+      "import": "./es/string/repeat/shim.js",
+      "default": "./cjs/string/repeat/shim.js"
+    },
+    "./string/reverse": {
+      "import": "./es/string/reverse/index.js",
+      "default": "./cjs/string/reverse/index.js"
+    },
+    "./string/reverse/shim": {
+      "import": "./es/string/reverse/shim.js",
+      "default": "./cjs/string/reverse/shim.js"
+    },
+    "./string/snakeCase": {
+      "import": "./es/string/snakeCase/index.js",
+      "default": "./cjs/string/snakeCase/index.js"
+    },
+    "./string/snakeCase/shim": {
+      "import": "./es/string/snakeCase/shim.js",
+      "default": "./cjs/string/snakeCase/shim.js"
+    },
+    "./string/swapCase": {
+      "import": "./es/string/swapCase/index.js",
+      "default": "./cjs/string/swapCase/index.js"
+    },
+    "./string/swapCase/shim": {
+      "import": "./es/string/swapCase/shim.js",
+      "default": "./cjs/string/swapCase/shim.js"
+    },
+    "./string/truncate": {
+      "import": "./es/string/truncate/index.js",
+      "default": "./cjs/string/truncate/index.js"
+    },
+    "./string/truncate/shim": {
+      "import": "./es/string/truncate/shim.js",
+      "default": "./cjs/string/truncate/shim.js"
+    },
+    "./string/words": {
+      "import": "./es/string/words/index.js",
+      "default": "./cjs/string/words/index.js"
+    },
+    "./string/words/shim": {
+      "import": "./es/string/words/shim.js",
+      "default": "./cjs/string/words/shim.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "sideEffects": [
+    "**/shim.js"
   ],
   "scripts": {
     "build": "tsc",
     "build:watch": "npm run build -- --watch",
+    "build:es": "tsc -p tsconfig.es.json",
+    "build:hybrid": "scripts/pre-build.sh && npm run build && npm run build:es && scripts/post-build.sh",
     "lint": "eslint src __tests__",
     "lint:format": "prettier -w src __tests__ && eslint --fix src __tests__",
+    "lint:fix": "npm run lint -- --fix",
     "test": "node --expose-gc node_modules/jest/bin/jest --runInBand --logHeapUsage",
     "test:coverage": "npm test -- --coverage",
     "test:ci": "npm run test:coverage -- --no-cache --ci --verbose",
@@ -182,6 +1400,7 @@
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
     "eslint": "^7.32.0",
+    "eslint-plugin-import": "^2.25.2",
     "jest": "^27.2.4",
     "jsdoc-to-markdown": "^7.0.1",
     "prettier": "^2.4.1",

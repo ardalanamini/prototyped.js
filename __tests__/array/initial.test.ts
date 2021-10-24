@@ -1,4 +1,4 @@
-import "@src/shim";
+import "prototyped.js/shim";
 
 describe("Array.prototype.initial", () => {
   test("[1, 2, 3].initial() returns [1, 2]", () => {

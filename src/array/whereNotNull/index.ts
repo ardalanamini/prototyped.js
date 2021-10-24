@@ -1,4 +1,4 @@
-import { filter } from "../../utils";
+import { filter } from "../../utils.js";
 
 export default function whereNotNull<T>(arr: T[], field?: string): T[] {
   const iterator = (item: any) => item !== null && item !== undefined;

@@ -1,9 +1,9 @@
-import forEach from "../forEach";
-import keys from "../keys";
+import forEach from "../forEach/index.js";
+import keys from "../keys/index.js";
 
 export default function map<
   T extends Record<string, unknown>,
-  K extends keyof T
+  K extends keyof T,
 >(
   obj: T,
   fn: (value: T[K], key: K, object: T) => Record<string, unknown>,
