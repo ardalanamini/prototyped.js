@@ -1,0 +1,7 @@
+{
+  "entryPoints": ["src/"],
+  "exclude": [],
+  "entryPointStrategy": "expand",
+  "out": "docs",
+  "includeVersion": true
+}
