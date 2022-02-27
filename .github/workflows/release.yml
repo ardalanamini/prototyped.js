@@ -3,72 +3,25 @@ name: Release
 on:
   push:
     tags:
-      - 'v*'
+      - 'v[0-9]+.[0-9]+.[0-9]+*'
 
 jobs:
   test:
-    name: Test
-
-    timeout-minutes: 20
-
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      matrix:
-        os:
-          - ubuntu-latest
-          - macos-latest
-          - windows-latest
-        node-version:
-          - 14
-          - 15
-          - 16
-          - 17
-
-    env:
-      OS: ${{ matrix.os }}
-      NODE_VERSION: ${{ matrix.node-version }}
-      RELEASE: ${{ github.ref }}
-
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node-version }}
-
-      - name: Install packages
-        run: npm ci
-
-      - name: Lint
-        run: npm run lint
-
-      - name: Build CommonJS
-        run: npm run build
-
-      - name: Build ECMAScript
-        run: npm run build:es
-
-      - name: Test
-        run: npm run test:ci
-
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v2
-        with:
-          env_vars: OS,NODE_VERSION,RELEASE
-          fail_ci_if_error: true
+    uses: ./.github/workflows/test.yml
 
   release:
     name: Create Release
+
+    concurrency: github-release
+
+    environment:
+      name: release
+      url: https://github.com/ardalanamini/prototyped.js/releases
 
     runs-on: ubuntu-latest
 
     needs:
       - test
-
-    env:
-      RELEASE: ${{ github.ref }}
 
     steps:
       - uses: actions/checkout@v2
@@ -88,6 +41,12 @@ jobs:
   publish-npm:
     name: Publish to NPM
 
+    concurrency: npm-release
+
+    environment:
+      name: release
+      url: https://www.npmjs.com/package/prototyped.js
+
     runs-on: ubuntu-latest
 
     needs:
@@ -98,7 +57,7 @@ jobs:
 
       - uses: actions/setup-node@v2
         with:
-          node-version: 14
+          node-version: 16
           registry-url: https://registry.npmjs.org/
 
       - run: npm ci
@@ -110,7 +69,13 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   publish-gpr:
-    name: Publish to GitHub
+    name: Publish to GitHub Packages
+
+    concurrency: gpr-release
+
+    environment:
+      name: release
+      url: https://github.com/ardalanamini/prototyped.js/packages
 
     permissions:
       contents: read
@@ -126,7 +91,7 @@ jobs:
 
       - uses: actions/setup-node@v2
         with:
-          node-version: 14
+          node-version: 16
           registry-url: https://npm.pkg.github.com/
           scope: '@ardalanamini'
 
