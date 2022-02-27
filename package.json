@@ -1393,11 +1393,11 @@
     "regenerate:package.json": "node scripts/regenerate-package-json.js"
   },
   "peerDependencies": {
-    "@types/node": "16.x"
+    "@types/node": ">=16.11.26"
   },
   "devDependencies": {
-    "@types/jest": "^27.0.2",
-    "@types/node": "^16.10.3",
+    "@types/jest": "^27.4.1",
+    "@types/node": "^16.11.26",
     "@typescript-eslint/eslint-plugin": "^5.12.1",
     "@typescript-eslint/parser": "^5.12.1",
     "eslint": "^8.10.0",
