@@ -1385,9 +1385,9 @@
     "lint": "eslint src __tests__",
     "lint:format": "prettier -w src __tests__ && eslint --fix src __tests__",
     "lint:fix": "npm run lint -- --fix",
-    "test": "node --expose-gc node_modules/jest/bin/jest --runInBand --logHeapUsage",
+    "test": "node --expose-gc node_modules/jest/bin/jest",
     "test:coverage": "npm test -- --coverage",
-    "test:ci": "npm run test:coverage -- --no-cache --ci --verbose",
+    "test:ci": "npm run test:coverage -- --no-cache --ci --verbose --runInBand --logHeapUsage",
     "doc": "node scripts/doc.js",
     "regenerate:package.json": "node scripts/regenerate-package-json.js"
   },
