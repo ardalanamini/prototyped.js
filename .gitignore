@@ -121,6 +121,5 @@ dist
 .vscode/
 
 # Build
-cjs/
-es/
+build/
 

@@ -152,1225 +152,1298 @@
     "truncate",
     "words"
   ],
-  "main": "cjs/index.js",
-  "types": "cjs/index.d.js",
-  "module": "es/index.js",
+  "main": "build/cjs/index.js",
+  "types": "build/types/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "index.d.ts": [
+        "build/types/index.d.ts"
+      ],
+      "shim": [
+        "build/types/shim.d.ts"
+      ],
+      "array": [
+        "build/types/array/index.d.ts"
+      ],
+      "array/*": [
+        "build/types/array/*",
+        "build/types/array/*/index.d.ts"
+      ],
+      "boolean": [
+        "build/types/boolean/index.d.ts"
+      ],
+      "boolean/*": [
+        "build/types/boolean/*",
+        "build/types/boolean/*/index.d.ts"
+      ],
+      "date": [
+        "build/types/date/index.d.ts"
+      ],
+      "date/*": [
+        "build/types/date/*",
+        "build/types/date/*/index.d.ts"
+      ],
+      "func": [
+        "build/types/func/index.d.ts"
+      ],
+      "func/*": [
+        "build/types/func/*",
+        "build/types/func/*/index.d.ts"
+      ],
+      "globals": [
+        "build/types/globals/index.d.ts"
+      ],
+      "globals/*": [
+        "build/types/globals/*",
+        "build/types/globals/*/index.d.ts"
+      ],
+      "math": [
+        "build/types/math/index.d.ts"
+      ],
+      "math/*": [
+        "build/types/math/*",
+        "build/types/math/*/index.d.ts"
+      ],
+      "number": [
+        "build/types/number/index.d.ts"
+      ],
+      "number/*": [
+        "build/types/number/*",
+        "build/types/number/*/index.d.ts"
+      ],
+      "object": [
+        "build/types/object/index.d.ts"
+      ],
+      "object/*": [
+        "build/types/object/*",
+        "build/types/object/*/index.d.ts"
+      ],
+      "string": [
+        "build/types/string/index.d.ts"
+      ],
+      "string/*": [
+        "build/types/string/*",
+        "build/types/string/*/index.d.ts"
+      ]
+    }
+  },
+  "module": "build/esm/index.js",
   "exports": {
     ".": {
-      "import": "./es/index.js",
-      "default": "./cjs/index.js"
+      "import": "./build/esm/index.js",
+      "default": "./build/cjs/index.js"
     },
     "./shim": {
-      "import": "./es/shim.js",
-      "default": "./cjs/shim.js"
+      "import": "./build/esm/shim.js",
+      "default": "./build/cjs/shim.js"
     },
     "./array": {
-      "import": "./es/array/index.js",
-      "default": "./cjs/array/index.js"
+      "import": "./build/esm/array/index.js",
+      "default": "./build/cjs/array/index.js"
     },
     "./array/shim": {
-      "import": "./es/array/shim.js",
-      "default": "./cjs/array/shim.js"
+      "import": "./build/esm/array/shim.js",
+      "default": "./build/cjs/array/shim.js"
     },
     "./array/all": {
-      "import": "./es/array/all/index.js",
-      "default": "./cjs/array/all/index.js"
+      "import": "./build/esm/array/all/index.js",
+      "default": "./build/cjs/array/all/index.js"
     },
     "./array/all/shim": {
-      "import": "./es/array/all/shim.js",
-      "default": "./cjs/array/all/shim.js"
+      "import": "./build/esm/array/all/shim.js",
+      "default": "./build/cjs/array/all/shim.js"
     },
     "./array/any": {
-      "import": "./es/array/any/index.js",
-      "default": "./cjs/array/any/index.js"
+      "import": "./build/esm/array/any/index.js",
+      "default": "./build/cjs/array/any/index.js"
     },
     "./array/any/shim": {
-      "import": "./es/array/any/shim.js",
-      "default": "./cjs/array/any/shim.js"
+      "import": "./build/esm/array/any/shim.js",
+      "default": "./build/cjs/array/any/shim.js"
     },
     "./array/append": {
-      "import": "./es/array/append/index.js",
-      "default": "./cjs/array/append/index.js"
+      "import": "./build/esm/array/append/index.js",
+      "default": "./build/cjs/array/append/index.js"
     },
     "./array/append/shim": {
-      "import": "./es/array/append/shim.js",
-      "default": "./cjs/array/append/shim.js"
+      "import": "./build/esm/array/append/shim.js",
+      "default": "./build/cjs/array/append/shim.js"
     },
     "./array/average": {
-      "import": "./es/array/average/index.js",
-      "default": "./cjs/array/average/index.js"
+      "import": "./build/esm/array/average/index.js",
+      "default": "./build/cjs/array/average/index.js"
     },
     "./array/average/shim": {
-      "import": "./es/array/average/shim.js",
-      "default": "./cjs/array/average/shim.js"
+      "import": "./build/esm/array/average/shim.js",
+      "default": "./build/cjs/array/average/shim.js"
     },
     "./array/chunk": {
-      "import": "./es/array/chunk/index.js",
-      "default": "./cjs/array/chunk/index.js"
+      "import": "./build/esm/array/chunk/index.js",
+      "default": "./build/cjs/array/chunk/index.js"
     },
     "./array/chunk/shim": {
-      "import": "./es/array/chunk/shim.js",
-      "default": "./cjs/array/chunk/shim.js"
+      "import": "./build/esm/array/chunk/shim.js",
+      "default": "./build/cjs/array/chunk/shim.js"
     },
     "./array/clone": {
-      "import": "./es/array/clone/index.js",
-      "default": "./cjs/array/clone/index.js"
+      "import": "./build/esm/array/clone/index.js",
+      "default": "./build/cjs/array/clone/index.js"
     },
     "./array/clone/shim": {
-      "import": "./es/array/clone/shim.js",
-      "default": "./cjs/array/clone/shim.js"
+      "import": "./build/esm/array/clone/shim.js",
+      "default": "./build/cjs/array/clone/shim.js"
     },
     "./array/compact": {
-      "import": "./es/array/compact/index.js",
-      "default": "./cjs/array/compact/index.js"
+      "import": "./build/esm/array/compact/index.js",
+      "default": "./build/cjs/array/compact/index.js"
     },
     "./array/compact/shim": {
-      "import": "./es/array/compact/shim.js",
-      "default": "./cjs/array/compact/shim.js"
+      "import": "./build/esm/array/compact/shim.js",
+      "default": "./build/cjs/array/compact/shim.js"
     },
     "./array/contains": {
-      "import": "./es/array/contains/index.js",
-      "default": "./cjs/array/contains/index.js"
+      "import": "./build/esm/array/contains/index.js",
+      "default": "./build/cjs/array/contains/index.js"
     },
     "./array/contains/shim": {
-      "import": "./es/array/contains/shim.js",
-      "default": "./cjs/array/contains/shim.js"
+      "import": "./build/esm/array/contains/shim.js",
+      "default": "./build/cjs/array/contains/shim.js"
     },
     "./array/count": {
-      "import": "./es/array/count/index.js",
-      "default": "./cjs/array/count/index.js"
+      "import": "./build/esm/array/count/index.js",
+      "default": "./build/cjs/array/count/index.js"
     },
     "./array/count/shim": {
-      "import": "./es/array/count/shim.js",
-      "default": "./cjs/array/count/shim.js"
+      "import": "./build/esm/array/count/shim.js",
+      "default": "./build/cjs/array/count/shim.js"
     },
     "./array/countBy": {
-      "import": "./es/array/countBy/index.js",
-      "default": "./cjs/array/countBy/index.js"
+      "import": "./build/esm/array/countBy/index.js",
+      "default": "./build/cjs/array/countBy/index.js"
     },
     "./array/countBy/shim": {
-      "import": "./es/array/countBy/shim.js",
-      "default": "./cjs/array/countBy/shim.js"
+      "import": "./build/esm/array/countBy/shim.js",
+      "default": "./build/cjs/array/countBy/shim.js"
     },
     "./array/crossJoin": {
-      "import": "./es/array/crossJoin/index.js",
-      "default": "./cjs/array/crossJoin/index.js"
+      "import": "./build/esm/array/crossJoin/index.js",
+      "default": "./build/cjs/array/crossJoin/index.js"
     },
     "./array/crossJoin/shim": {
-      "import": "./es/array/crossJoin/shim.js",
-      "default": "./cjs/array/crossJoin/shim.js"
+      "import": "./build/esm/array/crossJoin/shim.js",
+      "default": "./build/cjs/array/crossJoin/shim.js"
     },
     "./array/deepFlatten": {
-      "import": "./es/array/deepFlatten/index.js",
-      "default": "./cjs/array/deepFlatten/index.js"
+      "import": "./build/esm/array/deepFlatten/index.js",
+      "default": "./build/cjs/array/deepFlatten/index.js"
     },
     "./array/deepFlatten/shim": {
-      "import": "./es/array/deepFlatten/shim.js",
-      "default": "./cjs/array/deepFlatten/shim.js"
+      "import": "./build/esm/array/deepFlatten/shim.js",
+      "default": "./build/cjs/array/deepFlatten/shim.js"
     },
     "./array/diff": {
-      "import": "./es/array/diff/index.js",
-      "default": "./cjs/array/diff/index.js"
+      "import": "./build/esm/array/diff/index.js",
+      "default": "./build/cjs/array/diff/index.js"
     },
     "./array/diff/shim": {
-      "import": "./es/array/diff/shim.js",
-      "default": "./cjs/array/diff/shim.js"
+      "import": "./build/esm/array/diff/shim.js",
+      "default": "./build/cjs/array/diff/shim.js"
     },
     "./array/distinct": {
-      "import": "./es/array/distinct/index.js",
-      "default": "./cjs/array/distinct/index.js"
+      "import": "./build/esm/array/distinct/index.js",
+      "default": "./build/cjs/array/distinct/index.js"
     },
     "./array/distinct/shim": {
-      "import": "./es/array/distinct/shim.js",
-      "default": "./cjs/array/distinct/shim.js"
+      "import": "./build/esm/array/distinct/shim.js",
+      "default": "./build/cjs/array/distinct/shim.js"
     },
     "./array/distinctBy": {
-      "import": "./es/array/distinctBy/index.js",
-      "default": "./cjs/array/distinctBy/index.js"
+      "import": "./build/esm/array/distinctBy/index.js",
+      "default": "./build/cjs/array/distinctBy/index.js"
     },
     "./array/distinctBy/shim": {
-      "import": "./es/array/distinctBy/shim.js",
-      "default": "./cjs/array/distinctBy/shim.js"
+      "import": "./build/esm/array/distinctBy/shim.js",
+      "default": "./build/cjs/array/distinctBy/shim.js"
     },
     "./array/empty": {
-      "import": "./es/array/empty/index.js",
-      "default": "./cjs/array/empty/index.js"
+      "import": "./build/esm/array/empty/index.js",
+      "default": "./build/cjs/array/empty/index.js"
     },
     "./array/empty/shim": {
-      "import": "./es/array/empty/shim.js",
-      "default": "./cjs/array/empty/shim.js"
+      "import": "./build/esm/array/empty/shim.js",
+      "default": "./build/cjs/array/empty/shim.js"
     },
     "./array/equals": {
-      "import": "./es/array/equals/index.js",
-      "default": "./cjs/array/equals/index.js"
+      "import": "./build/esm/array/equals/index.js",
+      "default": "./build/cjs/array/equals/index.js"
     },
     "./array/equals/shim": {
-      "import": "./es/array/equals/shim.js",
-      "default": "./cjs/array/equals/shim.js"
+      "import": "./build/esm/array/equals/shim.js",
+      "default": "./build/cjs/array/equals/shim.js"
     },
     "./array/everyNth": {
-      "import": "./es/array/everyNth/index.js",
-      "default": "./cjs/array/everyNth/index.js"
+      "import": "./build/esm/array/everyNth/index.js",
+      "default": "./build/cjs/array/everyNth/index.js"
     },
     "./array/everyNth/shim": {
-      "import": "./es/array/everyNth/shim.js",
-      "default": "./cjs/array/everyNth/shim.js"
+      "import": "./build/esm/array/everyNth/shim.js",
+      "default": "./build/cjs/array/everyNth/shim.js"
     },
     "./array/first": {
-      "import": "./es/array/first/index.js",
-      "default": "./cjs/array/first/index.js"
+      "import": "./build/esm/array/first/index.js",
+      "default": "./build/cjs/array/first/index.js"
     },
     "./array/first/shim": {
-      "import": "./es/array/first/shim.js",
-      "default": "./cjs/array/first/shim.js"
+      "import": "./build/esm/array/first/shim.js",
+      "default": "./build/cjs/array/first/shim.js"
     },
     "./array/flatten": {
-      "import": "./es/array/flatten/index.js",
-      "default": "./cjs/array/flatten/index.js"
+      "import": "./build/esm/array/flatten/index.js",
+      "default": "./build/cjs/array/flatten/index.js"
     },
     "./array/flatten/shim": {
-      "import": "./es/array/flatten/shim.js",
-      "default": "./cjs/array/flatten/shim.js"
+      "import": "./build/esm/array/flatten/shim.js",
+      "default": "./build/cjs/array/flatten/shim.js"
     },
     "./array/get": {
-      "import": "./es/array/get/index.js",
-      "default": "./cjs/array/get/index.js"
+      "import": "./build/esm/array/get/index.js",
+      "default": "./build/cjs/array/get/index.js"
     },
     "./array/get/shim": {
-      "import": "./es/array/get/shim.js",
-      "default": "./cjs/array/get/shim.js"
+      "import": "./build/esm/array/get/shim.js",
+      "default": "./build/cjs/array/get/shim.js"
     },
     "./array/groupBy": {
-      "import": "./es/array/groupBy/index.js",
-      "default": "./cjs/array/groupBy/index.js"
+      "import": "./build/esm/array/groupBy/index.js",
+      "default": "./build/cjs/array/groupBy/index.js"
     },
     "./array/groupBy/shim": {
-      "import": "./es/array/groupBy/shim.js",
-      "default": "./cjs/array/groupBy/shim.js"
+      "import": "./build/esm/array/groupBy/shim.js",
+      "default": "./build/cjs/array/groupBy/shim.js"
     },
     "./array/implode": {
-      "import": "./es/array/implode/index.js",
-      "default": "./cjs/array/implode/index.js"
+      "import": "./build/esm/array/implode/index.js",
+      "default": "./build/cjs/array/implode/index.js"
     },
     "./array/implode/shim": {
-      "import": "./es/array/implode/shim.js",
-      "default": "./cjs/array/implode/shim.js"
+      "import": "./build/esm/array/implode/shim.js",
+      "default": "./build/cjs/array/implode/shim.js"
     },
     "./array/indexOfAll": {
-      "import": "./es/array/indexOfAll/index.js",
-      "default": "./cjs/array/indexOfAll/index.js"
+      "import": "./build/esm/array/indexOfAll/index.js",
+      "default": "./build/cjs/array/indexOfAll/index.js"
     },
     "./array/indexOfAll/shim": {
-      "import": "./es/array/indexOfAll/shim.js",
-      "default": "./cjs/array/indexOfAll/shim.js"
+      "import": "./build/esm/array/indexOfAll/shim.js",
+      "default": "./build/cjs/array/indexOfAll/shim.js"
     },
     "./array/initial": {
-      "import": "./es/array/initial/index.js",
-      "default": "./cjs/array/initial/index.js"
+      "import": "./build/esm/array/initial/index.js",
+      "default": "./build/cjs/array/initial/index.js"
     },
     "./array/initial/shim": {
-      "import": "./es/array/initial/shim.js",
-      "default": "./cjs/array/initial/shim.js"
+      "import": "./build/esm/array/initial/shim.js",
+      "default": "./build/cjs/array/initial/shim.js"
     },
     "./array/intersect": {
-      "import": "./es/array/intersect/index.js",
-      "default": "./cjs/array/intersect/index.js"
+      "import": "./build/esm/array/intersect/index.js",
+      "default": "./build/cjs/array/intersect/index.js"
     },
     "./array/intersect/shim": {
-      "import": "./es/array/intersect/shim.js",
-      "default": "./cjs/array/intersect/shim.js"
+      "import": "./build/esm/array/intersect/shim.js",
+      "default": "./build/cjs/array/intersect/shim.js"
     },
     "./array/isEmpty": {
-      "import": "./es/array/isEmpty/index.js",
-      "default": "./cjs/array/isEmpty/index.js"
+      "import": "./build/esm/array/isEmpty/index.js",
+      "default": "./build/cjs/array/isEmpty/index.js"
     },
     "./array/isEmpty/shim": {
-      "import": "./es/array/isEmpty/shim.js",
-      "default": "./cjs/array/isEmpty/shim.js"
+      "import": "./build/esm/array/isEmpty/shim.js",
+      "default": "./build/cjs/array/isEmpty/shim.js"
     },
     "./array/last": {
-      "import": "./es/array/last/index.js",
-      "default": "./cjs/array/last/index.js"
+      "import": "./build/esm/array/last/index.js",
+      "default": "./build/cjs/array/last/index.js"
     },
     "./array/last/shim": {
-      "import": "./es/array/last/shim.js",
-      "default": "./cjs/array/last/shim.js"
+      "import": "./build/esm/array/last/shim.js",
+      "default": "./build/cjs/array/last/shim.js"
     },
     "./array/limit": {
-      "import": "./es/array/limit/index.js",
-      "default": "./cjs/array/limit/index.js"
+      "import": "./build/esm/array/limit/index.js",
+      "default": "./build/cjs/array/limit/index.js"
     },
     "./array/limit/shim": {
-      "import": "./es/array/limit/shim.js",
-      "default": "./cjs/array/limit/shim.js"
+      "import": "./build/esm/array/limit/shim.js",
+      "default": "./build/cjs/array/limit/shim.js"
     },
     "./array/max": {
-      "import": "./es/array/max/index.js",
-      "default": "./cjs/array/max/index.js"
+      "import": "./build/esm/array/max/index.js",
+      "default": "./build/cjs/array/max/index.js"
     },
     "./array/max/shim": {
-      "import": "./es/array/max/shim.js",
-      "default": "./cjs/array/max/shim.js"
+      "import": "./build/esm/array/max/shim.js",
+      "default": "./build/cjs/array/max/shim.js"
     },
     "./array/median": {
-      "import": "./es/array/median/index.js",
-      "default": "./cjs/array/median/index.js"
+      "import": "./build/esm/array/median/index.js",
+      "default": "./build/cjs/array/median/index.js"
     },
     "./array/median/shim": {
-      "import": "./es/array/median/shim.js",
-      "default": "./cjs/array/median/shim.js"
+      "import": "./build/esm/array/median/shim.js",
+      "default": "./build/cjs/array/median/shim.js"
     },
     "./array/merge": {
-      "import": "./es/array/merge/index.js",
-      "default": "./cjs/array/merge/index.js"
+      "import": "./build/esm/array/merge/index.js",
+      "default": "./build/cjs/array/merge/index.js"
     },
     "./array/merge/shim": {
-      "import": "./es/array/merge/shim.js",
-      "default": "./cjs/array/merge/shim.js"
+      "import": "./build/esm/array/merge/shim.js",
+      "default": "./build/cjs/array/merge/shim.js"
     },
     "./array/min": {
-      "import": "./es/array/min/index.js",
-      "default": "./cjs/array/min/index.js"
+      "import": "./build/esm/array/min/index.js",
+      "default": "./build/cjs/array/min/index.js"
     },
     "./array/min/shim": {
-      "import": "./es/array/min/shim.js",
-      "default": "./cjs/array/min/shim.js"
+      "import": "./build/esm/array/min/shim.js",
+      "default": "./build/cjs/array/min/shim.js"
     },
     "./array/nest": {
-      "import": "./es/array/nest/index.js",
-      "default": "./cjs/array/nest/index.js"
+      "import": "./build/esm/array/nest/index.js",
+      "default": "./build/cjs/array/nest/index.js"
     },
     "./array/nest/shim": {
-      "import": "./es/array/nest/shim.js",
-      "default": "./cjs/array/nest/shim.js"
+      "import": "./build/esm/array/nest/shim.js",
+      "default": "./build/cjs/array/nest/shim.js"
     },
     "./array/orderBy": {
-      "import": "./es/array/orderBy/index.js",
-      "default": "./cjs/array/orderBy/index.js"
+      "import": "./build/esm/array/orderBy/index.js",
+      "default": "./build/cjs/array/orderBy/index.js"
     },
     "./array/orderBy/shim": {
-      "import": "./es/array/orderBy/shim.js",
-      "default": "./cjs/array/orderBy/shim.js"
+      "import": "./build/esm/array/orderBy/shim.js",
+      "default": "./build/cjs/array/orderBy/shim.js"
     },
     "./array/pad": {
-      "import": "./es/array/pad/index.js",
-      "default": "./cjs/array/pad/index.js"
+      "import": "./build/esm/array/pad/index.js",
+      "default": "./build/cjs/array/pad/index.js"
     },
     "./array/pad/shim": {
-      "import": "./es/array/pad/shim.js",
-      "default": "./cjs/array/pad/shim.js"
+      "import": "./build/esm/array/pad/shim.js",
+      "default": "./build/cjs/array/pad/shim.js"
     },
     "./array/partition": {
-      "import": "./es/array/partition/index.js",
-      "default": "./cjs/array/partition/index.js"
+      "import": "./build/esm/array/partition/index.js",
+      "default": "./build/cjs/array/partition/index.js"
     },
     "./array/partition/shim": {
-      "import": "./es/array/partition/shim.js",
-      "default": "./cjs/array/partition/shim.js"
+      "import": "./build/esm/array/partition/shim.js",
+      "default": "./build/cjs/array/partition/shim.js"
     },
     "./array/pluck": {
-      "import": "./es/array/pluck/index.js",
-      "default": "./cjs/array/pluck/index.js"
+      "import": "./build/esm/array/pluck/index.js",
+      "default": "./build/cjs/array/pluck/index.js"
     },
     "./array/pluck/shim": {
-      "import": "./es/array/pluck/shim.js",
-      "default": "./cjs/array/pluck/shim.js"
+      "import": "./build/esm/array/pluck/shim.js",
+      "default": "./build/cjs/array/pluck/shim.js"
     },
     "./array/prepend": {
-      "import": "./es/array/prepend/index.js",
-      "default": "./cjs/array/prepend/index.js"
+      "import": "./build/esm/array/prepend/index.js",
+      "default": "./build/cjs/array/prepend/index.js"
     },
     "./array/prepend/shim": {
-      "import": "./es/array/prepend/shim.js",
-      "default": "./cjs/array/prepend/shim.js"
+      "import": "./build/esm/array/prepend/shim.js",
+      "default": "./build/cjs/array/prepend/shim.js"
     },
     "./array/pull": {
-      "import": "./es/array/pull/index.js",
-      "default": "./cjs/array/pull/index.js"
+      "import": "./build/esm/array/pull/index.js",
+      "default": "./build/cjs/array/pull/index.js"
     },
     "./array/pull/shim": {
-      "import": "./es/array/pull/shim.js",
-      "default": "./cjs/array/pull/shim.js"
+      "import": "./build/esm/array/pull/shim.js",
+      "default": "./build/cjs/array/pull/shim.js"
     },
     "./array/range": {
-      "import": "./es/array/range/index.js",
-      "default": "./cjs/array/range/index.js"
+      "import": "./build/esm/array/range/index.js",
+      "default": "./build/cjs/array/range/index.js"
     },
     "./array/range/shim": {
-      "import": "./es/array/range/shim.js",
-      "default": "./cjs/array/range/shim.js"
+      "import": "./build/esm/array/range/shim.js",
+      "default": "./build/cjs/array/range/shim.js"
     },
     "./array/repeat": {
-      "import": "./es/array/repeat/index.js",
-      "default": "./cjs/array/repeat/index.js"
+      "import": "./build/esm/array/repeat/index.js",
+      "default": "./build/cjs/array/repeat/index.js"
     },
     "./array/repeat/shim": {
-      "import": "./es/array/repeat/shim.js",
-      "default": "./cjs/array/repeat/shim.js"
+      "import": "./build/esm/array/repeat/shim.js",
+      "default": "./build/cjs/array/repeat/shim.js"
     },
     "./array/sample": {
-      "import": "./es/array/sample/index.js",
-      "default": "./cjs/array/sample/index.js"
+      "import": "./build/esm/array/sample/index.js",
+      "default": "./build/cjs/array/sample/index.js"
     },
     "./array/sample/shim": {
-      "import": "./es/array/sample/shim.js",
-      "default": "./cjs/array/sample/shim.js"
+      "import": "./build/esm/array/sample/shim.js",
+      "default": "./build/cjs/array/sample/shim.js"
     },
     "./array/shuffle": {
-      "import": "./es/array/shuffle/index.js",
-      "default": "./cjs/array/shuffle/index.js"
+      "import": "./build/esm/array/shuffle/index.js",
+      "default": "./build/cjs/array/shuffle/index.js"
     },
     "./array/shuffle/shim": {
-      "import": "./es/array/shuffle/shim.js",
-      "default": "./cjs/array/shuffle/shim.js"
+      "import": "./build/esm/array/shuffle/shim.js",
+      "default": "./build/cjs/array/shuffle/shim.js"
     },
     "./array/skip": {
-      "import": "./es/array/skip/index.js",
-      "default": "./cjs/array/skip/index.js"
+      "import": "./build/esm/array/skip/index.js",
+      "default": "./build/cjs/array/skip/index.js"
     },
     "./array/skip/shim": {
-      "import": "./es/array/skip/shim.js",
-      "default": "./cjs/array/skip/shim.js"
+      "import": "./build/esm/array/skip/shim.js",
+      "default": "./build/cjs/array/skip/shim.js"
     },
     "./array/sortBy": {
-      "import": "./es/array/sortBy/index.js",
-      "default": "./cjs/array/sortBy/index.js"
+      "import": "./build/esm/array/sortBy/index.js",
+      "default": "./build/cjs/array/sortBy/index.js"
     },
     "./array/sortBy/shim": {
-      "import": "./es/array/sortBy/shim.js",
-      "default": "./cjs/array/sortBy/shim.js"
+      "import": "./build/esm/array/sortBy/shim.js",
+      "default": "./build/cjs/array/sortBy/shim.js"
     },
     "./array/sum": {
-      "import": "./es/array/sum/index.js",
-      "default": "./cjs/array/sum/index.js"
+      "import": "./build/esm/array/sum/index.js",
+      "default": "./build/cjs/array/sum/index.js"
     },
     "./array/sum/shim": {
-      "import": "./es/array/sum/shim.js",
-      "default": "./cjs/array/sum/shim.js"
+      "import": "./build/esm/array/sum/shim.js",
+      "default": "./build/cjs/array/sum/shim.js"
     },
     "./array/tail": {
-      "import": "./es/array/tail/index.js",
-      "default": "./cjs/array/tail/index.js"
+      "import": "./build/esm/array/tail/index.js",
+      "default": "./build/cjs/array/tail/index.js"
     },
     "./array/tail/shim": {
-      "import": "./es/array/tail/shim.js",
-      "default": "./cjs/array/tail/shim.js"
+      "import": "./build/esm/array/tail/shim.js",
+      "default": "./build/cjs/array/tail/shim.js"
     },
     "./array/toCSV": {
-      "import": "./es/array/toCSV/index.js",
-      "default": "./cjs/array/toCSV/index.js"
+      "import": "./build/esm/array/toCSV/index.js",
+      "default": "./build/cjs/array/toCSV/index.js"
     },
     "./array/toCSV/shim": {
-      "import": "./es/array/toCSV/shim.js",
-      "default": "./cjs/array/toCSV/shim.js"
+      "import": "./build/esm/array/toCSV/shim.js",
+      "default": "./build/cjs/array/toCSV/shim.js"
     },
     "./array/union": {
-      "import": "./es/array/union/index.js",
-      "default": "./cjs/array/union/index.js"
+      "import": "./build/esm/array/union/index.js",
+      "default": "./build/cjs/array/union/index.js"
     },
     "./array/union/shim": {
-      "import": "./es/array/union/shim.js",
-      "default": "./cjs/array/union/shim.js"
+      "import": "./build/esm/array/union/shim.js",
+      "default": "./build/cjs/array/union/shim.js"
     },
     "./array/unwind": {
-      "import": "./es/array/unwind/index.js",
-      "default": "./cjs/array/unwind/index.js"
+      "import": "./build/esm/array/unwind/index.js",
+      "default": "./build/cjs/array/unwind/index.js"
     },
     "./array/unwind/shim": {
-      "import": "./es/array/unwind/shim.js",
-      "default": "./cjs/array/unwind/shim.js"
+      "import": "./build/esm/array/unwind/shim.js",
+      "default": "./build/cjs/array/unwind/shim.js"
     },
     "./array/where": {
-      "import": "./es/array/where/index.js",
-      "default": "./cjs/array/where/index.js"
+      "import": "./build/esm/array/where/index.js",
+      "default": "./build/cjs/array/where/index.js"
     },
     "./array/where/shim": {
-      "import": "./es/array/where/shim.js",
-      "default": "./cjs/array/where/shim.js"
+      "import": "./build/esm/array/where/shim.js",
+      "default": "./build/cjs/array/where/shim.js"
     },
     "./array/whereBetween": {
-      "import": "./es/array/whereBetween/index.js",
-      "default": "./cjs/array/whereBetween/index.js"
+      "import": "./build/esm/array/whereBetween/index.js",
+      "default": "./build/cjs/array/whereBetween/index.js"
     },
     "./array/whereBetween/shim": {
-      "import": "./es/array/whereBetween/shim.js",
-      "default": "./cjs/array/whereBetween/shim.js"
+      "import": "./build/esm/array/whereBetween/shim.js",
+      "default": "./build/cjs/array/whereBetween/shim.js"
     },
     "./array/whereIn": {
-      "import": "./es/array/whereIn/index.js",
-      "default": "./cjs/array/whereIn/index.js"
+      "import": "./build/esm/array/whereIn/index.js",
+      "default": "./build/cjs/array/whereIn/index.js"
     },
     "./array/whereIn/shim": {
-      "import": "./es/array/whereIn/shim.js",
-      "default": "./cjs/array/whereIn/shim.js"
+      "import": "./build/esm/array/whereIn/shim.js",
+      "default": "./build/cjs/array/whereIn/shim.js"
     },
     "./array/whereLike": {
-      "import": "./es/array/whereLike/index.js",
-      "default": "./cjs/array/whereLike/index.js"
+      "import": "./build/esm/array/whereLike/index.js",
+      "default": "./build/cjs/array/whereLike/index.js"
     },
     "./array/whereLike/shim": {
-      "import": "./es/array/whereLike/shim.js",
-      "default": "./cjs/array/whereLike/shim.js"
+      "import": "./build/esm/array/whereLike/shim.js",
+      "default": "./build/cjs/array/whereLike/shim.js"
     },
     "./array/whereNotBetween": {
-      "import": "./es/array/whereNotBetween/index.js",
-      "default": "./cjs/array/whereNotBetween/index.js"
+      "import": "./build/esm/array/whereNotBetween/index.js",
+      "default": "./build/cjs/array/whereNotBetween/index.js"
     },
     "./array/whereNotBetween/shim": {
-      "import": "./es/array/whereNotBetween/shim.js",
-      "default": "./cjs/array/whereNotBetween/shim.js"
+      "import": "./build/esm/array/whereNotBetween/shim.js",
+      "default": "./build/cjs/array/whereNotBetween/shim.js"
     },
     "./array/whereNotIn": {
-      "import": "./es/array/whereNotIn/index.js",
-      "default": "./cjs/array/whereNotIn/index.js"
+      "import": "./build/esm/array/whereNotIn/index.js",
+      "default": "./build/cjs/array/whereNotIn/index.js"
     },
     "./array/whereNotIn/shim": {
-      "import": "./es/array/whereNotIn/shim.js",
-      "default": "./cjs/array/whereNotIn/shim.js"
+      "import": "./build/esm/array/whereNotIn/shim.js",
+      "default": "./build/cjs/array/whereNotIn/shim.js"
     },
     "./array/whereNotLike": {
-      "import": "./es/array/whereNotLike/index.js",
-      "default": "./cjs/array/whereNotLike/index.js"
+      "import": "./build/esm/array/whereNotLike/index.js",
+      "default": "./build/cjs/array/whereNotLike/index.js"
     },
     "./array/whereNotLike/shim": {
-      "import": "./es/array/whereNotLike/shim.js",
-      "default": "./cjs/array/whereNotLike/shim.js"
+      "import": "./build/esm/array/whereNotLike/shim.js",
+      "default": "./build/cjs/array/whereNotLike/shim.js"
     },
     "./array/whereNotNull": {
-      "import": "./es/array/whereNotNull/index.js",
-      "default": "./cjs/array/whereNotNull/index.js"
+      "import": "./build/esm/array/whereNotNull/index.js",
+      "default": "./build/cjs/array/whereNotNull/index.js"
     },
     "./array/whereNotNull/shim": {
-      "import": "./es/array/whereNotNull/shim.js",
-      "default": "./cjs/array/whereNotNull/shim.js"
+      "import": "./build/esm/array/whereNotNull/shim.js",
+      "default": "./build/cjs/array/whereNotNull/shim.js"
     },
     "./array/whereNull": {
-      "import": "./es/array/whereNull/index.js",
-      "default": "./cjs/array/whereNull/index.js"
+      "import": "./build/esm/array/whereNull/index.js",
+      "default": "./build/cjs/array/whereNull/index.js"
     },
     "./array/whereNull/shim": {
-      "import": "./es/array/whereNull/shim.js",
-      "default": "./cjs/array/whereNull/shim.js"
+      "import": "./build/esm/array/whereNull/shim.js",
+      "default": "./build/cjs/array/whereNull/shim.js"
     },
     "./array/zip": {
-      "import": "./es/array/zip/index.js",
-      "default": "./cjs/array/zip/index.js"
+      "import": "./build/esm/array/zip/index.js",
+      "default": "./build/cjs/array/zip/index.js"
     },
     "./array/zip/shim": {
-      "import": "./es/array/zip/shim.js",
-      "default": "./cjs/array/zip/shim.js"
+      "import": "./build/esm/array/zip/shim.js",
+      "default": "./build/cjs/array/zip/shim.js"
     },
     "./array/zipObject": {
-      "import": "./es/array/zipObject/index.js",
-      "default": "./cjs/array/zipObject/index.js"
+      "import": "./build/esm/array/zipObject/index.js",
+      "default": "./build/cjs/array/zipObject/index.js"
     },
     "./array/zipObject/shim": {
-      "import": "./es/array/zipObject/shim.js",
-      "default": "./cjs/array/zipObject/shim.js"
+      "import": "./build/esm/array/zipObject/shim.js",
+      "default": "./build/cjs/array/zipObject/shim.js"
     },
     "./boolean": {
-      "import": "./es/boolean/index.js",
-      "default": "./cjs/boolean/index.js"
+      "import": "./build/esm/boolean/index.js",
+      "default": "./build/cjs/boolean/index.js"
     },
     "./boolean/shim": {
-      "import": "./es/boolean/shim.js",
-      "default": "./cjs/boolean/shim.js"
+      "import": "./build/esm/boolean/shim.js",
+      "default": "./build/cjs/boolean/shim.js"
     },
     "./boolean/isBoolean": {
-      "import": "./es/boolean/isBoolean/index.js",
-      "default": "./cjs/boolean/isBoolean/index.js"
+      "import": "./build/esm/boolean/isBoolean/index.js",
+      "default": "./build/cjs/boolean/isBoolean/index.js"
     },
     "./boolean/isBoolean/shim": {
-      "import": "./es/boolean/isBoolean/shim.js",
-      "default": "./cjs/boolean/isBoolean/shim.js"
+      "import": "./build/esm/boolean/isBoolean/shim.js",
+      "default": "./build/cjs/boolean/isBoolean/shim.js"
     },
     "./date": {
-      "import": "./es/date/index.js",
-      "default": "./cjs/date/index.js"
+      "import": "./build/esm/date/index.js",
+      "default": "./build/cjs/date/index.js"
     },
     "./date/shim": {
-      "import": "./es/date/shim.js",
-      "default": "./cjs/date/shim.js"
+      "import": "./build/esm/date/shim.js",
+      "default": "./build/cjs/date/shim.js"
     },
     "./date/equals": {
-      "import": "./es/date/equals/index.js",
-      "default": "./cjs/date/equals/index.js"
+      "import": "./build/esm/date/equals/index.js",
+      "default": "./build/cjs/date/equals/index.js"
     },
     "./date/equals/shim": {
-      "import": "./es/date/equals/shim.js",
-      "default": "./cjs/date/equals/shim.js"
+      "import": "./build/esm/date/equals/shim.js",
+      "default": "./build/cjs/date/equals/shim.js"
     },
     "./date/isDate": {
-      "import": "./es/date/isDate/index.js",
-      "default": "./cjs/date/isDate/index.js"
+      "import": "./build/esm/date/isDate/index.js",
+      "default": "./build/cjs/date/isDate/index.js"
     },
     "./date/isDate/shim": {
-      "import": "./es/date/isDate/shim.js",
-      "default": "./cjs/date/isDate/shim.js"
+      "import": "./build/esm/date/isDate/shim.js",
+      "default": "./build/cjs/date/isDate/shim.js"
     },
     "./date/today": {
-      "import": "./es/date/today/index.js",
-      "default": "./cjs/date/today/index.js"
+      "import": "./build/esm/date/today/index.js",
+      "default": "./build/cjs/date/today/index.js"
     },
     "./date/today/shim": {
-      "import": "./es/date/today/shim.js",
-      "default": "./cjs/date/today/shim.js"
+      "import": "./build/esm/date/today/shim.js",
+      "default": "./build/cjs/date/today/shim.js"
     },
     "./date/tomorrow": {
-      "import": "./es/date/tomorrow/index.js",
-      "default": "./cjs/date/tomorrow/index.js"
+      "import": "./build/esm/date/tomorrow/index.js",
+      "default": "./build/cjs/date/tomorrow/index.js"
     },
     "./date/tomorrow/shim": {
-      "import": "./es/date/tomorrow/shim.js",
-      "default": "./cjs/date/tomorrow/shim.js"
+      "import": "./build/esm/date/tomorrow/shim.js",
+      "default": "./build/cjs/date/tomorrow/shim.js"
     },
     "./date/yesterday": {
-      "import": "./es/date/yesterday/index.js",
-      "default": "./cjs/date/yesterday/index.js"
+      "import": "./build/esm/date/yesterday/index.js",
+      "default": "./build/cjs/date/yesterday/index.js"
     },
     "./date/yesterday/shim": {
-      "import": "./es/date/yesterday/shim.js",
-      "default": "./cjs/date/yesterday/shim.js"
+      "import": "./build/esm/date/yesterday/shim.js",
+      "default": "./build/cjs/date/yesterday/shim.js"
     },
     "./func": {
-      "import": "./es/func/index.js",
-      "default": "./cjs/func/index.js"
+      "import": "./build/esm/func/index.js",
+      "default": "./build/cjs/func/index.js"
     },
     "./func/shim": {
-      "import": "./es/func/shim.js",
-      "default": "./cjs/func/shim.js"
+      "import": "./build/esm/func/shim.js",
+      "default": "./build/cjs/func/shim.js"
     },
     "./func/cache": {
-      "import": "./es/func/cache/index.js",
-      "default": "./cjs/func/cache/index.js"
+      "import": "./build/esm/func/cache/index.js",
+      "default": "./build/cjs/func/cache/index.js"
     },
     "./func/cache/shim": {
-      "import": "./es/func/cache/shim.js",
-      "default": "./cjs/func/cache/shim.js"
+      "import": "./build/esm/func/cache/shim.js",
+      "default": "./build/cjs/func/cache/shim.js"
     },
     "./func/defer": {
-      "import": "./es/func/defer/index.js",
-      "default": "./cjs/func/defer/index.js"
+      "import": "./build/esm/func/defer/index.js",
+      "default": "./build/cjs/func/defer/index.js"
     },
     "./func/defer/shim": {
-      "import": "./es/func/defer/shim.js",
-      "default": "./cjs/func/defer/shim.js"
+      "import": "./build/esm/func/defer/shim.js",
+      "default": "./build/cjs/func/defer/shim.js"
     },
     "./func/isFunction": {
-      "import": "./es/func/isFunction/index.js",
-      "default": "./cjs/func/isFunction/index.js"
+      "import": "./build/esm/func/isFunction/index.js",
+      "default": "./build/cjs/func/isFunction/index.js"
     },
     "./func/isFunction/shim": {
-      "import": "./es/func/isFunction/shim.js",
-      "default": "./cjs/func/isFunction/shim.js"
+      "import": "./build/esm/func/isFunction/shim.js",
+      "default": "./build/cjs/func/isFunction/shim.js"
     },
     "./func/once": {
-      "import": "./es/func/once/index.js",
-      "default": "./cjs/func/once/index.js"
+      "import": "./build/esm/func/once/index.js",
+      "default": "./build/cjs/func/once/index.js"
     },
     "./func/once/shim": {
-      "import": "./es/func/once/shim.js",
-      "default": "./cjs/func/once/shim.js"
+      "import": "./build/esm/func/once/shim.js",
+      "default": "./build/cjs/func/once/shim.js"
     },
     "./globals": {
-      "import": "./es/globals/index.js",
-      "default": "./cjs/globals/index.js"
+      "import": "./build/esm/globals/index.js",
+      "default": "./build/cjs/globals/index.js"
     },
     "./globals/shim": {
-      "import": "./es/globals/shim.js",
-      "default": "./cjs/globals/shim.js"
+      "import": "./build/esm/globals/shim.js",
+      "default": "./build/cjs/globals/shim.js"
     },
     "./globals/isBrowser": {
-      "import": "./es/globals/isBrowser/index.js",
-      "default": "./cjs/globals/isBrowser/index.js"
+      "import": "./build/esm/globals/isBrowser/index.js",
+      "default": "./build/cjs/globals/isBrowser/index.js"
     },
     "./globals/isBrowser/shim": {
-      "import": "./es/globals/isBrowser/shim.js",
-      "default": "./cjs/globals/isBrowser/shim.js"
+      "import": "./build/esm/globals/isBrowser/shim.js",
+      "default": "./build/cjs/globals/isBrowser/shim.js"
     },
     "./math": {
-      "import": "./es/math/index.js",
-      "default": "./cjs/math/index.js"
+      "import": "./build/esm/math/index.js",
+      "default": "./build/cjs/math/index.js"
     },
     "./math/shim": {
-      "import": "./es/math/shim.js",
-      "default": "./cjs/math/shim.js"
+      "import": "./build/esm/math/shim.js",
+      "default": "./build/cjs/math/shim.js"
     },
     "./math/average": {
-      "import": "./es/math/average/index.js",
-      "default": "./cjs/math/average/index.js"
+      "import": "./build/esm/math/average/index.js",
+      "default": "./build/cjs/math/average/index.js"
     },
     "./math/average/shim": {
-      "import": "./es/math/average/shim.js",
-      "default": "./cjs/math/average/shim.js"
+      "import": "./build/esm/math/average/shim.js",
+      "default": "./build/cjs/math/average/shim.js"
     },
     "./math/degreesToRads": {
-      "import": "./es/math/degreesToRads/index.js",
-      "default": "./cjs/math/degreesToRads/index.js"
+      "import": "./build/esm/math/degreesToRads/index.js",
+      "default": "./build/cjs/math/degreesToRads/index.js"
     },
     "./math/degreesToRads/shim": {
-      "import": "./es/math/degreesToRads/shim.js",
-      "default": "./cjs/math/degreesToRads/shim.js"
+      "import": "./build/esm/math/degreesToRads/shim.js",
+      "default": "./build/cjs/math/degreesToRads/shim.js"
     },
     "./math/factorial": {
-      "import": "./es/math/factorial/index.js",
-      "default": "./cjs/math/factorial/index.js"
+      "import": "./build/esm/math/factorial/index.js",
+      "default": "./build/cjs/math/factorial/index.js"
     },
     "./math/factorial/shim": {
-      "import": "./es/math/factorial/shim.js",
-      "default": "./cjs/math/factorial/shim.js"
+      "import": "./build/esm/math/factorial/shim.js",
+      "default": "./build/cjs/math/factorial/shim.js"
     },
     "./math/fibonacci": {
-      "import": "./es/math/fibonacci/index.js",
-      "default": "./cjs/math/fibonacci/index.js"
+      "import": "./build/esm/math/fibonacci/index.js",
+      "default": "./build/cjs/math/fibonacci/index.js"
     },
     "./math/fibonacci/shim": {
-      "import": "./es/math/fibonacci/shim.js",
-      "default": "./cjs/math/fibonacci/shim.js"
+      "import": "./build/esm/math/fibonacci/shim.js",
+      "default": "./build/cjs/math/fibonacci/shim.js"
     },
     "./math/gcd": {
-      "import": "./es/math/gcd/index.js",
-      "default": "./cjs/math/gcd/index.js"
+      "import": "./build/esm/math/gcd/index.js",
+      "default": "./build/cjs/math/gcd/index.js"
     },
     "./math/gcd/shim": {
-      "import": "./es/math/gcd/shim.js",
-      "default": "./cjs/math/gcd/shim.js"
+      "import": "./build/esm/math/gcd/shim.js",
+      "default": "./build/cjs/math/gcd/shim.js"
     },
     "./math/isDivisible": {
-      "import": "./es/math/isDivisible/index.js",
-      "default": "./cjs/math/isDivisible/index.js"
+      "import": "./build/esm/math/isDivisible/index.js",
+      "default": "./build/cjs/math/isDivisible/index.js"
     },
     "./math/isDivisible/shim": {
-      "import": "./es/math/isDivisible/shim.js",
-      "default": "./cjs/math/isDivisible/shim.js"
+      "import": "./build/esm/math/isDivisible/shim.js",
+      "default": "./build/cjs/math/isDivisible/shim.js"
     },
     "./math/isEven": {
-      "import": "./es/math/isEven/index.js",
-      "default": "./cjs/math/isEven/index.js"
+      "import": "./build/esm/math/isEven/index.js",
+      "default": "./build/cjs/math/isEven/index.js"
     },
     "./math/isEven/shim": {
-      "import": "./es/math/isEven/shim.js",
-      "default": "./cjs/math/isEven/shim.js"
+      "import": "./build/esm/math/isEven/shim.js",
+      "default": "./build/cjs/math/isEven/shim.js"
     },
     "./math/isPrime": {
-      "import": "./es/math/isPrime/index.js",
-      "default": "./cjs/math/isPrime/index.js"
+      "import": "./build/esm/math/isPrime/index.js",
+      "default": "./build/cjs/math/isPrime/index.js"
     },
     "./math/isPrime/shim": {
-      "import": "./es/math/isPrime/shim.js",
-      "default": "./cjs/math/isPrime/shim.js"
+      "import": "./build/esm/math/isPrime/shim.js",
+      "default": "./build/cjs/math/isPrime/shim.js"
     },
     "./math/lcm": {
-      "import": "./es/math/lcm/index.js",
-      "default": "./cjs/math/lcm/index.js"
+      "import": "./build/esm/math/lcm/index.js",
+      "default": "./build/cjs/math/lcm/index.js"
     },
     "./math/lcm/shim": {
-      "import": "./es/math/lcm/shim.js",
-      "default": "./cjs/math/lcm/shim.js"
+      "import": "./build/esm/math/lcm/shim.js",
+      "default": "./build/cjs/math/lcm/shim.js"
     },
     "./math/primes": {
-      "import": "./es/math/primes/index.js",
-      "default": "./cjs/math/primes/index.js"
+      "import": "./build/esm/math/primes/index.js",
+      "default": "./build/cjs/math/primes/index.js"
     },
     "./math/primes/shim": {
-      "import": "./es/math/primes/shim.js",
-      "default": "./cjs/math/primes/shim.js"
+      "import": "./build/esm/math/primes/shim.js",
+      "default": "./build/cjs/math/primes/shim.js"
     },
     "./math/radsToDegrees": {
-      "import": "./es/math/radsToDegrees/index.js",
-      "default": "./cjs/math/radsToDegrees/index.js"
+      "import": "./build/esm/math/radsToDegrees/index.js",
+      "default": "./build/cjs/math/radsToDegrees/index.js"
     },
     "./math/radsToDegrees/shim": {
-      "import": "./es/math/radsToDegrees/shim.js",
-      "default": "./cjs/math/radsToDegrees/shim.js"
+      "import": "./build/esm/math/radsToDegrees/shim.js",
+      "default": "./build/cjs/math/radsToDegrees/shim.js"
     },
     "./number": {
-      "import": "./es/number/index.js",
-      "default": "./cjs/number/index.js"
+      "import": "./build/esm/number/index.js",
+      "default": "./build/cjs/number/index.js"
     },
     "./number/shim": {
-      "import": "./es/number/shim.js",
-      "default": "./cjs/number/shim.js"
+      "import": "./build/esm/number/shim.js",
+      "default": "./build/cjs/number/shim.js"
     },
     "./number/digitize": {
-      "import": "./es/number/digitize/index.js",
-      "default": "./cjs/number/digitize/index.js"
+      "import": "./build/esm/number/digitize/index.js",
+      "default": "./build/cjs/number/digitize/index.js"
     },
     "./number/digitize/shim": {
-      "import": "./es/number/digitize/shim.js",
-      "default": "./cjs/number/digitize/shim.js"
+      "import": "./build/esm/number/digitize/shim.js",
+      "default": "./build/cjs/number/digitize/shim.js"
     },
     "./number/equals": {
-      "import": "./es/number/equals/index.js",
-      "default": "./cjs/number/equals/index.js"
+      "import": "./build/esm/number/equals/index.js",
+      "default": "./build/cjs/number/equals/index.js"
     },
     "./number/equals/shim": {
-      "import": "./es/number/equals/shim.js",
-      "default": "./cjs/number/equals/shim.js"
+      "import": "./build/esm/number/equals/shim.js",
+      "default": "./build/cjs/number/equals/shim.js"
     },
     "./number/inRange": {
-      "import": "./es/number/inRange/index.js",
-      "default": "./cjs/number/inRange/index.js"
+      "import": "./build/esm/number/inRange/index.js",
+      "default": "./build/cjs/number/inRange/index.js"
     },
     "./number/inRange/shim": {
-      "import": "./es/number/inRange/shim.js",
-      "default": "./cjs/number/inRange/shim.js"
+      "import": "./build/esm/number/inRange/shim.js",
+      "default": "./build/cjs/number/inRange/shim.js"
     },
     "./number/isNumber": {
-      "import": "./es/number/isNumber/index.js",
-      "default": "./cjs/number/isNumber/index.js"
+      "import": "./build/esm/number/isNumber/index.js",
+      "default": "./build/cjs/number/isNumber/index.js"
     },
     "./number/isNumber/shim": {
-      "import": "./es/number/isNumber/shim.js",
-      "default": "./cjs/number/isNumber/shim.js"
+      "import": "./build/esm/number/isNumber/shim.js",
+      "default": "./build/cjs/number/isNumber/shim.js"
     },
     "./object": {
-      "import": "./es/object/index.js",
-      "default": "./cjs/object/index.js"
+      "import": "./build/esm/object/index.js",
+      "default": "./build/cjs/object/index.js"
     },
     "./object/shim": {
-      "import": "./es/object/shim.js",
-      "default": "./cjs/object/shim.js"
+      "import": "./build/esm/object/shim.js",
+      "default": "./build/cjs/object/shim.js"
     },
     "./object/assign": {
-      "import": "./es/object/assign/index.js",
-      "default": "./cjs/object/assign/index.js"
+      "import": "./build/esm/object/assign/index.js",
+      "default": "./build/cjs/object/assign/index.js"
     },
     "./object/assign/shim": {
-      "import": "./es/object/assign/shim.js",
-      "default": "./cjs/object/assign/shim.js"
+      "import": "./build/esm/object/assign/shim.js",
+      "default": "./build/cjs/object/assign/shim.js"
     },
     "./object/camelCaseKeys": {
-      "import": "./es/object/camelCaseKeys/index.js",
-      "default": "./cjs/object/camelCaseKeys/index.js"
+      "import": "./build/esm/object/camelCaseKeys/index.js",
+      "default": "./build/cjs/object/camelCaseKeys/index.js"
     },
     "./object/camelCaseKeys/shim": {
-      "import": "./es/object/camelCaseKeys/shim.js",
-      "default": "./cjs/object/camelCaseKeys/shim.js"
+      "import": "./build/esm/object/camelCaseKeys/shim.js",
+      "default": "./build/cjs/object/camelCaseKeys/shim.js"
     },
     "./object/clone": {
-      "import": "./es/object/clone/index.js",
-      "default": "./cjs/object/clone/index.js"
+      "import": "./build/esm/object/clone/index.js",
+      "default": "./build/cjs/object/clone/index.js"
     },
     "./object/clone/shim": {
-      "import": "./es/object/clone/shim.js",
-      "default": "./cjs/object/clone/shim.js"
+      "import": "./build/esm/object/clone/shim.js",
+      "default": "./build/cjs/object/clone/shim.js"
     },
     "./object/defaults": {
-      "import": "./es/object/defaults/index.js",
-      "default": "./cjs/object/defaults/index.js"
+      "import": "./build/esm/object/defaults/index.js",
+      "default": "./build/cjs/object/defaults/index.js"
     },
     "./object/defaults/shim": {
-      "import": "./es/object/defaults/shim.js",
-      "default": "./cjs/object/defaults/shim.js"
+      "import": "./build/esm/object/defaults/shim.js",
+      "default": "./build/cjs/object/defaults/shim.js"
     },
     "./object/dig": {
-      "import": "./es/object/dig/index.js",
-      "default": "./cjs/object/dig/index.js"
+      "import": "./build/esm/object/dig/index.js",
+      "default": "./build/cjs/object/dig/index.js"
     },
     "./object/dig/shim": {
-      "import": "./es/object/dig/shim.js",
-      "default": "./cjs/object/dig/shim.js"
+      "import": "./build/esm/object/dig/shim.js",
+      "default": "./build/cjs/object/dig/shim.js"
     },
     "./object/empty": {
-      "import": "./es/object/empty/index.js",
-      "default": "./cjs/object/empty/index.js"
+      "import": "./build/esm/object/empty/index.js",
+      "default": "./build/cjs/object/empty/index.js"
     },
     "./object/empty/shim": {
-      "import": "./es/object/empty/shim.js",
-      "default": "./cjs/object/empty/shim.js"
+      "import": "./build/esm/object/empty/shim.js",
+      "default": "./build/cjs/object/empty/shim.js"
     },
     "./object/equals": {
-      "import": "./es/object/equals/index.js",
-      "default": "./cjs/object/equals/index.js"
+      "import": "./build/esm/object/equals/index.js",
+      "default": "./build/cjs/object/equals/index.js"
     },
     "./object/equals/shim": {
-      "import": "./es/object/equals/shim.js",
-      "default": "./cjs/object/equals/shim.js"
+      "import": "./build/esm/object/equals/shim.js",
+      "default": "./build/cjs/object/equals/shim.js"
     },
     "./object/flatten": {
-      "import": "./es/object/flatten/index.js",
-      "default": "./cjs/object/flatten/index.js"
+      "import": "./build/esm/object/flatten/index.js",
+      "default": "./build/cjs/object/flatten/index.js"
     },
     "./object/flatten/shim": {
-      "import": "./es/object/flatten/shim.js",
-      "default": "./cjs/object/flatten/shim.js"
+      "import": "./build/esm/object/flatten/shim.js",
+      "default": "./build/cjs/object/flatten/shim.js"
     },
     "./object/forEach": {
-      "import": "./es/object/forEach/index.js",
-      "default": "./cjs/object/forEach/index.js"
+      "import": "./build/esm/object/forEach/index.js",
+      "default": "./build/cjs/object/forEach/index.js"
     },
     "./object/forEach/shim": {
-      "import": "./es/object/forEach/shim.js",
-      "default": "./cjs/object/forEach/shim.js"
+      "import": "./build/esm/object/forEach/shim.js",
+      "default": "./build/cjs/object/forEach/shim.js"
     },
     "./object/get": {
-      "import": "./es/object/get/index.js",
-      "default": "./cjs/object/get/index.js"
+      "import": "./build/esm/object/get/index.js",
+      "default": "./build/cjs/object/get/index.js"
     },
     "./object/get/shim": {
-      "import": "./es/object/get/shim.js",
-      "default": "./cjs/object/get/shim.js"
+      "import": "./build/esm/object/get/shim.js",
+      "default": "./build/cjs/object/get/shim.js"
     },
     "./object/invert": {
-      "import": "./es/object/invert/index.js",
-      "default": "./cjs/object/invert/index.js"
+      "import": "./build/esm/object/invert/index.js",
+      "default": "./build/cjs/object/invert/index.js"
     },
     "./object/invert/shim": {
-      "import": "./es/object/invert/shim.js",
-      "default": "./cjs/object/invert/shim.js"
+      "import": "./build/esm/object/invert/shim.js",
+      "default": "./build/cjs/object/invert/shim.js"
     },
     "./object/isEmpty": {
-      "import": "./es/object/isEmpty/index.js",
-      "default": "./cjs/object/isEmpty/index.js"
+      "import": "./build/esm/object/isEmpty/index.js",
+      "default": "./build/cjs/object/isEmpty/index.js"
     },
     "./object/isEmpty/shim": {
-      "import": "./es/object/isEmpty/shim.js",
-      "default": "./cjs/object/isEmpty/shim.js"
+      "import": "./build/esm/object/isEmpty/shim.js",
+      "default": "./build/cjs/object/isEmpty/shim.js"
     },
     "./object/isObject": {
-      "import": "./es/object/isObject/index.js",
-      "default": "./cjs/object/isObject/index.js"
+      "import": "./build/esm/object/isObject/index.js",
+      "default": "./build/cjs/object/isObject/index.js"
     },
     "./object/isObject/shim": {
-      "import": "./es/object/isObject/shim.js",
-      "default": "./cjs/object/isObject/shim.js"
+      "import": "./build/esm/object/isObject/shim.js",
+      "default": "./build/cjs/object/isObject/shim.js"
     },
     "./object/isObjectLike": {
-      "import": "./es/object/isObjectLike/index.js",
-      "default": "./cjs/object/isObjectLike/index.js"
+      "import": "./build/esm/object/isObjectLike/index.js",
+      "default": "./build/cjs/object/isObjectLike/index.js"
     },
     "./object/isObjectLike/shim": {
-      "import": "./es/object/isObjectLike/shim.js",
-      "default": "./cjs/object/isObjectLike/shim.js"
+      "import": "./build/esm/object/isObjectLike/shim.js",
+      "default": "./build/cjs/object/isObjectLike/shim.js"
     },
     "./object/isPlainObject": {
-      "import": "./es/object/isPlainObject/index.js",
-      "default": "./cjs/object/isPlainObject/index.js"
+      "import": "./build/esm/object/isPlainObject/index.js",
+      "default": "./build/cjs/object/isPlainObject/index.js"
     },
     "./object/isPlainObject/shim": {
-      "import": "./es/object/isPlainObject/shim.js",
-      "default": "./cjs/object/isPlainObject/shim.js"
+      "import": "./build/esm/object/isPlainObject/shim.js",
+      "default": "./build/cjs/object/isPlainObject/shim.js"
     },
     "./object/kebabCaseKeys": {
-      "import": "./es/object/kebabCaseKeys/index.js",
-      "default": "./cjs/object/kebabCaseKeys/index.js"
+      "import": "./build/esm/object/kebabCaseKeys/index.js",
+      "default": "./build/cjs/object/kebabCaseKeys/index.js"
     },
     "./object/kebabCaseKeys/shim": {
-      "import": "./es/object/kebabCaseKeys/shim.js",
-      "default": "./cjs/object/kebabCaseKeys/shim.js"
+      "import": "./build/esm/object/kebabCaseKeys/shim.js",
+      "default": "./build/cjs/object/kebabCaseKeys/shim.js"
     },
     "./object/keys": {
-      "import": "./es/object/keys/index.js",
-      "default": "./cjs/object/keys/index.js"
+      "import": "./build/esm/object/keys/index.js",
+      "default": "./build/cjs/object/keys/index.js"
     },
     "./object/keys/shim": {
-      "import": "./es/object/keys/shim.js",
-      "default": "./cjs/object/keys/shim.js"
+      "import": "./build/esm/object/keys/shim.js",
+      "default": "./build/cjs/object/keys/shim.js"
     },
     "./object/lowerCaseKeys": {
-      "import": "./es/object/lowerCaseKeys/index.js",
-      "default": "./cjs/object/lowerCaseKeys/index.js"
+      "import": "./build/esm/object/lowerCaseKeys/index.js",
+      "default": "./build/cjs/object/lowerCaseKeys/index.js"
     },
     "./object/lowerCaseKeys/shim": {
-      "import": "./es/object/lowerCaseKeys/shim.js",
-      "default": "./cjs/object/lowerCaseKeys/shim.js"
+      "import": "./build/esm/object/lowerCaseKeys/shim.js",
+      "default": "./build/cjs/object/lowerCaseKeys/shim.js"
     },
     "./object/map": {
-      "import": "./es/object/map/index.js",
-      "default": "./cjs/object/map/index.js"
+      "import": "./build/esm/object/map/index.js",
+      "default": "./build/cjs/object/map/index.js"
     },
     "./object/map/shim": {
-      "import": "./es/object/map/shim.js",
-      "default": "./cjs/object/map/shim.js"
+      "import": "./build/esm/object/map/shim.js",
+      "default": "./build/cjs/object/map/shim.js"
     },
     "./object/mapKeys": {
-      "import": "./es/object/mapKeys/index.js",
-      "default": "./cjs/object/mapKeys/index.js"
+      "import": "./build/esm/object/mapKeys/index.js",
+      "default": "./build/cjs/object/mapKeys/index.js"
     },
     "./object/mapKeys/shim": {
-      "import": "./es/object/mapKeys/shim.js",
-      "default": "./cjs/object/mapKeys/shim.js"
+      "import": "./build/esm/object/mapKeys/shim.js",
+      "default": "./build/cjs/object/mapKeys/shim.js"
     },
     "./object/mapValues": {
-      "import": "./es/object/mapValues/index.js",
-      "default": "./cjs/object/mapValues/index.js"
+      "import": "./build/esm/object/mapValues/index.js",
+      "default": "./build/cjs/object/mapValues/index.js"
     },
     "./object/mapValues/shim": {
-      "import": "./es/object/mapValues/shim.js",
-      "default": "./cjs/object/mapValues/shim.js"
+      "import": "./build/esm/object/mapValues/shim.js",
+      "default": "./build/cjs/object/mapValues/shim.js"
     },
     "./object/merge": {
-      "import": "./es/object/merge/index.js",
-      "default": "./cjs/object/merge/index.js"
+      "import": "./build/esm/object/merge/index.js",
+      "default": "./build/cjs/object/merge/index.js"
     },
     "./object/merge/shim": {
-      "import": "./es/object/merge/shim.js",
-      "default": "./cjs/object/merge/shim.js"
+      "import": "./build/esm/object/merge/shim.js",
+      "default": "./build/cjs/object/merge/shim.js"
     },
     "./object/omit": {
-      "import": "./es/object/omit/index.js",
-      "default": "./cjs/object/omit/index.js"
+      "import": "./build/esm/object/omit/index.js",
+      "default": "./build/cjs/object/omit/index.js"
     },
     "./object/omit/shim": {
-      "import": "./es/object/omit/shim.js",
-      "default": "./cjs/object/omit/shim.js"
+      "import": "./build/esm/object/omit/shim.js",
+      "default": "./build/cjs/object/omit/shim.js"
     },
     "./object/reduce": {
-      "import": "./es/object/reduce/index.js",
-      "default": "./cjs/object/reduce/index.js"
+      "import": "./build/esm/object/reduce/index.js",
+      "default": "./build/cjs/object/reduce/index.js"
     },
     "./object/reduce/shim": {
-      "import": "./es/object/reduce/shim.js",
-      "default": "./cjs/object/reduce/shim.js"
+      "import": "./build/esm/object/reduce/shim.js",
+      "default": "./build/cjs/object/reduce/shim.js"
     },
     "./object/set": {
-      "import": "./es/object/set/index.js",
-      "default": "./cjs/object/set/index.js"
+      "import": "./build/esm/object/set/index.js",
+      "default": "./build/cjs/object/set/index.js"
     },
     "./object/set/shim": {
-      "import": "./es/object/set/shim.js",
-      "default": "./cjs/object/set/shim.js"
+      "import": "./build/esm/object/set/shim.js",
+      "default": "./build/cjs/object/set/shim.js"
     },
     "./object/size": {
-      "import": "./es/object/size/index.js",
-      "default": "./cjs/object/size/index.js"
+      "import": "./build/esm/object/size/index.js",
+      "default": "./build/cjs/object/size/index.js"
     },
     "./object/size/shim": {
-      "import": "./es/object/size/shim.js",
-      "default": "./cjs/object/size/shim.js"
+      "import": "./build/esm/object/size/shim.js",
+      "default": "./build/cjs/object/size/shim.js"
     },
     "./object/snakeCaseKeys": {
-      "import": "./es/object/snakeCaseKeys/index.js",
-      "default": "./cjs/object/snakeCaseKeys/index.js"
+      "import": "./build/esm/object/snakeCaseKeys/index.js",
+      "default": "./build/cjs/object/snakeCaseKeys/index.js"
     },
     "./object/snakeCaseKeys/shim": {
-      "import": "./es/object/snakeCaseKeys/shim.js",
-      "default": "./cjs/object/snakeCaseKeys/shim.js"
+      "import": "./build/esm/object/snakeCaseKeys/shim.js",
+      "default": "./build/cjs/object/snakeCaseKeys/shim.js"
     },
     "./object/values": {
-      "import": "./es/object/values/index.js",
-      "default": "./cjs/object/values/index.js"
+      "import": "./build/esm/object/values/index.js",
+      "default": "./build/cjs/object/values/index.js"
     },
     "./object/values/shim": {
-      "import": "./es/object/values/shim.js",
-      "default": "./cjs/object/values/shim.js"
+      "import": "./build/esm/object/values/shim.js",
+      "default": "./build/cjs/object/values/shim.js"
     },
     "./string": {
-      "import": "./es/string/index.js",
-      "default": "./cjs/string/index.js"
+      "import": "./build/esm/string/index.js",
+      "default": "./build/cjs/string/index.js"
     },
     "./string/shim": {
-      "import": "./es/string/shim.js",
-      "default": "./cjs/string/shim.js"
+      "import": "./build/esm/string/shim.js",
+      "default": "./build/cjs/string/shim.js"
     },
     "./string/base64": {
-      "import": "./es/string/base64/index.js",
-      "default": "./cjs/string/base64/index.js"
+      "import": "./build/esm/string/base64/index.js",
+      "default": "./build/cjs/string/base64/index.js"
     },
     "./string/base64/shim": {
-      "import": "./es/string/base64/shim.js",
-      "default": "./cjs/string/base64/shim.js"
+      "import": "./build/esm/string/base64/shim.js",
+      "default": "./build/cjs/string/base64/shim.js"
     },
     "./string/base64Decode": {
-      "import": "./es/string/base64Decode/index.js",
-      "default": "./cjs/string/base64Decode/index.js"
+      "import": "./build/esm/string/base64Decode/index.js",
+      "default": "./build/cjs/string/base64Decode/index.js"
     },
     "./string/base64Decode/shim": {
-      "import": "./es/string/base64Decode/shim.js",
-      "default": "./cjs/string/base64Decode/shim.js"
+      "import": "./build/esm/string/base64Decode/shim.js",
+      "default": "./build/cjs/string/base64Decode/shim.js"
     },
     "./string/camelCase": {
-      "import": "./es/string/camelCase/index.js",
-      "default": "./cjs/string/camelCase/index.js"
+      "import": "./build/esm/string/camelCase/index.js",
+      "default": "./build/cjs/string/camelCase/index.js"
     },
     "./string/camelCase/shim": {
-      "import": "./es/string/camelCase/shim.js",
-      "default": "./cjs/string/camelCase/shim.js"
+      "import": "./build/esm/string/camelCase/shim.js",
+      "default": "./build/cjs/string/camelCase/shim.js"
     },
     "./string/capitalize": {
-      "import": "./es/string/capitalize/index.js",
-      "default": "./cjs/string/capitalize/index.js"
+      "import": "./build/esm/string/capitalize/index.js",
+      "default": "./build/cjs/string/capitalize/index.js"
     },
     "./string/capitalize/shim": {
-      "import": "./es/string/capitalize/shim.js",
-      "default": "./cjs/string/capitalize/shim.js"
+      "import": "./build/esm/string/capitalize/shim.js",
+      "default": "./build/cjs/string/capitalize/shim.js"
     },
     "./string/chars": {
-      "import": "./es/string/chars/index.js",
-      "default": "./cjs/string/chars/index.js"
+      "import": "./build/esm/string/chars/index.js",
+      "default": "./build/cjs/string/chars/index.js"
     },
     "./string/chars/shim": {
-      "import": "./es/string/chars/shim.js",
-      "default": "./cjs/string/chars/shim.js"
+      "import": "./build/esm/string/chars/shim.js",
+      "default": "./build/cjs/string/chars/shim.js"
     },
     "./string/contains": {
-      "import": "./es/string/contains/index.js",
-      "default": "./cjs/string/contains/index.js"
+      "import": "./build/esm/string/contains/index.js",
+      "default": "./build/cjs/string/contains/index.js"
     },
     "./string/contains/shim": {
-      "import": "./es/string/contains/shim.js",
-      "default": "./cjs/string/contains/shim.js"
+      "import": "./build/esm/string/contains/shim.js",
+      "default": "./build/cjs/string/contains/shim.js"
     },
     "./string/decapitalize": {
-      "import": "./es/string/decapitalize/index.js",
-      "default": "./cjs/string/decapitalize/index.js"
+      "import": "./build/esm/string/decapitalize/index.js",
+      "default": "./build/cjs/string/decapitalize/index.js"
     },
     "./string/decapitalize/shim": {
-      "import": "./es/string/decapitalize/shim.js",
-      "default": "./cjs/string/decapitalize/shim.js"
+      "import": "./build/esm/string/decapitalize/shim.js",
+      "default": "./build/cjs/string/decapitalize/shim.js"
     },
     "./string/equals": {
-      "import": "./es/string/equals/index.js",
-      "default": "./cjs/string/equals/index.js"
+      "import": "./build/esm/string/equals/index.js",
+      "default": "./build/cjs/string/equals/index.js"
     },
     "./string/equals/shim": {
-      "import": "./es/string/equals/shim.js",
-      "default": "./cjs/string/equals/shim.js"
+      "import": "./build/esm/string/equals/shim.js",
+      "default": "./build/cjs/string/equals/shim.js"
     },
     "./string/forEach": {
-      "import": "./es/string/forEach/index.js",
-      "default": "./cjs/string/forEach/index.js"
+      "import": "./build/esm/string/forEach/index.js",
+      "default": "./build/cjs/string/forEach/index.js"
     },
     "./string/forEach/shim": {
-      "import": "./es/string/forEach/shim.js",
-      "default": "./cjs/string/forEach/shim.js"
+      "import": "./build/esm/string/forEach/shim.js",
+      "default": "./build/cjs/string/forEach/shim.js"
     },
     "./string/humanize": {
-      "import": "./es/string/humanize/index.js",
-      "default": "./cjs/string/humanize/index.js"
+      "import": "./build/esm/string/humanize/index.js",
+      "default": "./build/cjs/string/humanize/index.js"
     },
     "./string/humanize/shim": {
-      "import": "./es/string/humanize/shim.js",
-      "default": "./cjs/string/humanize/shim.js"
+      "import": "./build/esm/string/humanize/shim.js",
+      "default": "./build/cjs/string/humanize/shim.js"
     },
     "./string/isEmpty": {
-      "import": "./es/string/isEmpty/index.js",
-      "default": "./cjs/string/isEmpty/index.js"
+      "import": "./build/esm/string/isEmpty/index.js",
+      "default": "./build/cjs/string/isEmpty/index.js"
     },
     "./string/isEmpty/shim": {
-      "import": "./es/string/isEmpty/shim.js",
-      "default": "./cjs/string/isEmpty/shim.js"
+      "import": "./build/esm/string/isEmpty/shim.js",
+      "default": "./build/cjs/string/isEmpty/shim.js"
     },
     "./string/isString": {
-      "import": "./es/string/isString/index.js",
-      "default": "./cjs/string/isString/index.js"
+      "import": "./build/esm/string/isString/index.js",
+      "default": "./build/cjs/string/isString/index.js"
     },
     "./string/isString/shim": {
-      "import": "./es/string/isString/shim.js",
-      "default": "./cjs/string/isString/shim.js"
+      "import": "./build/esm/string/isString/shim.js",
+      "default": "./build/cjs/string/isString/shim.js"
     },
     "./string/kebabCase": {
-      "import": "./es/string/kebabCase/index.js",
-      "default": "./cjs/string/kebabCase/index.js"
+      "import": "./build/esm/string/kebabCase/index.js",
+      "default": "./build/cjs/string/kebabCase/index.js"
     },
     "./string/kebabCase/shim": {
-      "import": "./es/string/kebabCase/shim.js",
-      "default": "./cjs/string/kebabCase/shim.js"
+      "import": "./build/esm/string/kebabCase/shim.js",
+      "default": "./build/cjs/string/kebabCase/shim.js"
     },
     "./string/lines": {
-      "import": "./es/string/lines/index.js",
-      "default": "./cjs/string/lines/index.js"
+      "import": "./build/esm/string/lines/index.js",
+      "default": "./build/cjs/string/lines/index.js"
     },
     "./string/lines/shim": {
-      "import": "./es/string/lines/shim.js",
-      "default": "./cjs/string/lines/shim.js"
+      "import": "./build/esm/string/lines/shim.js",
+      "default": "./build/cjs/string/lines/shim.js"
     },
     "./string/map": {
-      "import": "./es/string/map/index.js",
-      "default": "./cjs/string/map/index.js"
+      "import": "./build/esm/string/map/index.js",
+      "default": "./build/cjs/string/map/index.js"
     },
     "./string/map/shim": {
-      "import": "./es/string/map/shim.js",
-      "default": "./cjs/string/map/shim.js"
+      "import": "./build/esm/string/map/shim.js",
+      "default": "./build/cjs/string/map/shim.js"
     },
     "./string/mask": {
-      "import": "./es/string/mask/index.js",
-      "default": "./cjs/string/mask/index.js"
+      "import": "./build/esm/string/mask/index.js",
+      "default": "./build/cjs/string/mask/index.js"
     },
     "./string/mask/shim": {
-      "import": "./es/string/mask/shim.js",
-      "default": "./cjs/string/mask/shim.js"
+      "import": "./build/esm/string/mask/shim.js",
+      "default": "./build/cjs/string/mask/shim.js"
     },
     "./string/pad": {
-      "import": "./es/string/pad/index.js",
-      "default": "./cjs/string/pad/index.js"
+      "import": "./build/esm/string/pad/index.js",
+      "default": "./build/cjs/string/pad/index.js"
     },
     "./string/pad/shim": {
-      "import": "./es/string/pad/shim.js",
-      "default": "./cjs/string/pad/shim.js"
+      "import": "./build/esm/string/pad/shim.js",
+      "default": "./build/cjs/string/pad/shim.js"
     },
     "./string/parseInt": {
-      "import": "./es/string/parseInt/index.js",
-      "default": "./cjs/string/parseInt/index.js"
+      "import": "./build/esm/string/parseInt/index.js",
+      "default": "./build/cjs/string/parseInt/index.js"
     },
     "./string/parseInt/shim": {
-      "import": "./es/string/parseInt/shim.js",
-      "default": "./cjs/string/parseInt/shim.js"
+      "import": "./build/esm/string/parseInt/shim.js",
+      "default": "./build/cjs/string/parseInt/shim.js"
     },
     "./string/pluralize": {
-      "import": "./es/string/pluralize/index.js",
-      "default": "./cjs/string/pluralize/index.js"
+      "import": "./build/esm/string/pluralize/index.js",
+      "default": "./build/cjs/string/pluralize/index.js"
     },
     "./string/pluralize/shim": {
-      "import": "./es/string/pluralize/shim.js",
-      "default": "./cjs/string/pluralize/shim.js"
+      "import": "./build/esm/string/pluralize/shim.js",
+      "default": "./build/cjs/string/pluralize/shim.js"
     },
     "./string/reduce": {
-      "import": "./es/string/reduce/index.js",
-      "default": "./cjs/string/reduce/index.js"
+      "import": "./build/esm/string/reduce/index.js",
+      "default": "./build/cjs/string/reduce/index.js"
     },
     "./string/reduce/shim": {
-      "import": "./es/string/reduce/shim.js",
-      "default": "./cjs/string/reduce/shim.js"
+      "import": "./build/esm/string/reduce/shim.js",
+      "default": "./build/cjs/string/reduce/shim.js"
     },
     "./string/repeat": {
-      "import": "./es/string/repeat/index.js",
-      "default": "./cjs/string/repeat/index.js"
+      "import": "./build/esm/string/repeat/index.js",
+      "default": "./build/cjs/string/repeat/index.js"
     },
     "./string/repeat/shim": {
-      "import": "./es/string/repeat/shim.js",
-      "default": "./cjs/string/repeat/shim.js"
+      "import": "./build/esm/string/repeat/shim.js",
+      "default": "./build/cjs/string/repeat/shim.js"
     },
     "./string/reverse": {
-      "import": "./es/string/reverse/index.js",
-      "default": "./cjs/string/reverse/index.js"
+      "import": "./build/esm/string/reverse/index.js",
+      "default": "./build/cjs/string/reverse/index.js"
     },
     "./string/reverse/shim": {
-      "import": "./es/string/reverse/shim.js",
-      "default": "./cjs/string/reverse/shim.js"
+      "import": "./build/esm/string/reverse/shim.js",
+      "default": "./build/cjs/string/reverse/shim.js"
     },
     "./string/snakeCase": {
-      "import": "./es/string/snakeCase/index.js",
-      "default": "./cjs/string/snakeCase/index.js"
+      "import": "./build/esm/string/snakeCase/index.js",
+      "default": "./build/cjs/string/snakeCase/index.js"
     },
     "./string/snakeCase/shim": {
-      "import": "./es/string/snakeCase/shim.js",
-      "default": "./cjs/string/snakeCase/shim.js"
+      "import": "./build/esm/string/snakeCase/shim.js",
+      "default": "./build/cjs/string/snakeCase/shim.js"
     },
     "./string/swapCase": {
-      "import": "./es/string/swapCase/index.js",
-      "default": "./cjs/string/swapCase/index.js"
+      "import": "./build/esm/string/swapCase/index.js",
+      "default": "./build/cjs/string/swapCase/index.js"
     },
     "./string/swapCase/shim": {
-      "import": "./es/string/swapCase/shim.js",
-      "default": "./cjs/string/swapCase/shim.js"
+      "import": "./build/esm/string/swapCase/shim.js",
+      "default": "./build/cjs/string/swapCase/shim.js"
     },
     "./string/truncate": {
-      "import": "./es/string/truncate/index.js",
-      "default": "./cjs/string/truncate/index.js"
+      "import": "./build/esm/string/truncate/index.js",
+      "default": "./build/cjs/string/truncate/index.js"
     },
     "./string/truncate/shim": {
-      "import": "./es/string/truncate/shim.js",
-      "default": "./cjs/string/truncate/shim.js"
+      "import": "./build/esm/string/truncate/shim.js",
+      "default": "./build/cjs/string/truncate/shim.js"
     },
     "./string/words": {
-      "import": "./es/string/words/index.js",
-      "default": "./cjs/string/words/index.js"
+      "import": "./build/esm/string/words/index.js",
+      "default": "./build/cjs/string/words/index.js"
     },
     "./string/words/shim": {
-      "import": "./es/string/words/shim.js",
-      "default": "./cjs/string/words/shim.js"
+      "import": "./build/esm/string/words/shim.js",
+      "default": "./build/cjs/string/words/shim.js"
     },
     "./package.json": "./package.json"
   },
@@ -1380,8 +1453,8 @@
   "scripts": {
     "build": "tsc",
     "build:watch": "npm run build -- --watch",
-    "build:es": "tsc -p tsconfig.es.json",
-    "build:hybrid": "scripts/pre-build.sh && npm run build && npm run build:es && scripts/post-build.sh",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:hybrid": "scripts/pre-build.sh && npm run build && npm run build:esm && scripts/post-build.sh",
     "lint": "eslint src __tests__",
     "lint:fix": "npm run lint -- --fix",
     "lint:prettier": "prettier -w src __tests__",

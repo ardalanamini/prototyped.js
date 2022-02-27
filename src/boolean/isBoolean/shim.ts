@@ -14,6 +14,6 @@ declare global {
  * @returns {Boolean}
  * @example
  * Boolean.isBoolean('foo bar'); // false
- * Boolean.isBoolean(flase); // true
+ * Boolean.isBoolean(false); // true
  */
 Boolean.isBoolean = isBoolean;
