@@ -27,10 +27,8 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Changelog
+        uses: ardalanamini/auto-changelog@v2
         id: changelog
-        uses: ardalanamini/auto-changelog@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
