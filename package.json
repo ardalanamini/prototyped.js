@@ -1471,7 +1471,7 @@
   "devDependencies": {
     "@types/jest": "^27.4.1",
     "@types/node": "^16.11.26",
-    "@typescript-eslint/eslint-plugin": "^5.12.1",
+    "@typescript-eslint/eslint-plugin": "^5.17.0",
     "@typescript-eslint/parser": "^5.17.0",
     "eslint": "^8.10.0",
     "eslint-plugin-import": "^2.25.4",
