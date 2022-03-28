@@ -44,7 +44,12 @@ jobs:
         uses: actions/cache@v3
         with:
           path: '**/node_modules'
-          key: ${{ matrix.os }}-${{ matrix.node-version }}-modules-${{ hashFiles('**/package-lock.json') }}
+          key: node-modules-${{ matrix.os }}-${{ github.ref_name }}-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            node-modules-${{ matrix.os }}-${{ github.ref_name }}-${{ matrix.node-version }}
+            node-modules-${{ matrix.os }}-master-${{ matrix.node-version }}
+            node-modules-${{ matrix.os }}-${{ github.ref_name }}-
+            node-modules-${{ matrix.os }}-master-
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
