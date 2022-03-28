@@ -1459,7 +1459,7 @@
     "lint:fix": "npm run lint -- --fix",
     "lint:prettier": "prettier -w src __tests__",
     "lint:format": "npm run lint:prettier && npm run lint:fix",
-    "test": "node --expose-gc node_modules/jest/bin/jest",
+    "test": "node --no-compilation-cache --expose-gc node_modules/.bin/jest",
     "test:coverage": "npm test -- --coverage",
     "test:ci": "npm run test:coverage -- --no-cache --ci --verbose --runInBand --logHeapUsage",
     "docs": "typedoc && node scripts/docs.js",
