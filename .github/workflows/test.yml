@@ -13,8 +13,7 @@ on:
   workflow_call:
 
 env:
-  MAIN_NODE_VERSION: 16
-  MAIN_OS: ubuntu-latest
+  NODE_LTS_VERSION: 16
 
 jobs:
   dependencies:
@@ -66,7 +65,7 @@ jobs:
 
     timeout-minutes: 5
 
-    runs-on: ${{ env.MAIN_OS }}
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
@@ -75,12 +74,12 @@ jobs:
         uses: actions/cache@v3
         with:
           path: '**/node_modules'
-          key: node-modules-${{ env.MAIN_OS }}-${{ github.ref_name }}-${{ env.MAIN_NODE_VERSION }}-${{ hashFiles('**/package-lock.json') }}
+          key: node-modules-ubuntu-latest-${{ github.ref_name }}-${{ env.NODE_LTS_VERSION }}-${{ hashFiles('**/package-lock.json') }}
 
-      - name: Use Node.js ${{ env.MAIN_NODE_VERSION }}
+      - name: Use Node.js ${{ env.NODE_LTS_VERSION }}
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ env.MAIN_NODE_VERSION }}
+          node-version: ${{ env.NODE_LTS_VERSION }}
 
       - name: Check code styles
         run: npm run lint
@@ -171,7 +170,7 @@ jobs:
 
     timeout-minutes: 5
 
-    runs-on: ${{ env.MAIN_OS }}
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
@@ -180,12 +179,12 @@ jobs:
         uses: actions/cache@v3
         with:
           path: '**/node_modules'
-          key: node-modules-${{ env.MAIN_OS }}-${{ github.ref_name }}-${{ env.MAIN_NODE_VERSION }}-${{ hashFiles('**/package-lock.json') }}
+          key: node-modules-ubuntu-latest-${{ github.ref_name }}-${{ env.NODE_LTS_VERSION }}-${{ hashFiles('**/package-lock.json') }}
 
-      - name: Use Node.js ${{ env.MAIN_NODE_VERSION }}
+      - name: Use Node.js ${{ env.NODE_LTS_VERSION }}
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ env.MAIN_NODE_VERSION }}
+          node-version: ${{ env.NODE_LTS_VERSION }}
 
       - name: Generate documents
         run: npm run docs
