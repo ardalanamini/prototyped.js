@@ -12,9 +12,189 @@ on:
   pull_request:
   workflow_call:
 
+env:
+  MAIN_NODE_VERSION: 16
+  MAIN_OS: ubuntu-latest
+
 jobs:
+  dependencies:
+    name: Install Dependecies
+
+    timeout-minutes: 5
+
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - macos-latest
+          - windows-latest
+        node-version:
+          - 14
+          - 15
+          - 16
+          - 17
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Cache
+        uses: actions/cache@v3
+        with:
+          path: '**/node_modules'
+          key: node-modules-${{ matrix.os }}-${{ github.ref_name }}-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            node-modules-${{ matrix.os }}-${{ github.ref_name }}-${{ matrix.node-version }}
+            node-modules-${{ matrix.os }}-master-${{ matrix.node-version }}
+            node-modules-${{ matrix.os }}-${{ github.ref_name }}-
+            node-modules-${{ matrix.os }}-master-
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies
+        run: npm i --no-fund
+
+  lint:
+    name: Check code styles
+
+    needs:
+      - dependecies
+
+    timeout-minutes: 5
+
+    runs-on: ${{ env.MAIN_OS }}
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Cache
+        uses: actions/cache@v3
+        with:
+          path: '**/node_modules'
+          key: node-modules-${{ env.MAIN_OS }}-${{ github.ref_name }}-${{ env.MAIN_NODE_VERSION }}-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Use Node.js ${{ env.MAIN_NODE_VERSION }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.MAIN_NODE_VERSION }}
+
+      - name: Check code styles
+        run: npm run lint
+
+  build_cjs:
+    name: Build CommonJS
+
+    needs:
+      - dependecies
+
+    timeout-minutes: 5
+
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - macos-latest
+          - windows-latest
+        node-version:
+          - 14
+          - 15
+          - 16
+          - 17
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Cache
+        uses: actions/cache@v3
+        with:
+          path: '**/node_modules'
+          key: node-modules-${{ matrix.os }}-${{ github.ref_name }}-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Build CommonJS
+        run: npm run build
+
+  build_esm:
+    name: Build ECMAScript
+
+    needs:
+      - dependecies
+
+    timeout-minutes: 5
+
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - macos-latest
+          - windows-latest
+        node-version:
+          - 14
+          - 15
+          - 16
+          - 17
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Cache
+        uses: actions/cache@v3
+        with:
+          path: '**/node_modules'
+          key: node-modules-${{ matrix.os }}-${{ github.ref_name }}-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Build ECMAScript
+        run: npm run build:esm
+
+  documents:
+    name: Generate documents
+
+    needs:
+      - dependecies
+
+    timeout-minutes: 5
+
+    runs-on: ${{ env.MAIN_OS }}
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Cache
+        uses: actions/cache@v3
+        with:
+          path: '**/node_modules'
+          key: node-modules-${{ env.MAIN_OS }}-${{ github.ref_name }}-${{ env.MAIN_NODE_VERSION }}-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Use Node.js ${{ env.MAIN_NODE_VERSION }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.MAIN_NODE_VERSION }}
+
+      - name: Generate documents
+        run: npm run docs
+
   test:
     name: Test
+
+    needs:
+      - dependecies
 
     timeout-minutes: 15
 
@@ -45,31 +225,11 @@ jobs:
         with:
           path: '**/node_modules'
           key: node-modules-${{ matrix.os }}-${{ github.ref_name }}-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            node-modules-${{ matrix.os }}-${{ github.ref_name }}-${{ matrix.node-version }}
-            node-modules-${{ matrix.os }}-master-${{ matrix.node-version }}
-            node-modules-${{ matrix.os }}-${{ github.ref_name }}-
-            node-modules-${{ matrix.os }}-master-
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-
-      - name: Install dependencies
-        run: npm i --no-fund
-
-      - name: Check code styles
-        run: npm run lint
-
-      - name: Build CommonJS
-        run: npm run build
-
-      - name: Build ECMAScript
-        run: npm run build:esm
-
-      - name: Generate documents
-        run: npm run docs
 
       - name: Test the project
         run: npm run test:ci
