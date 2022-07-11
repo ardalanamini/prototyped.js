@@ -1,5 +1,5 @@
 import where from "./index.js";
-import { addPrototype, Operator } from "../../utils.js";
+import { addPrototype, OperatorT } from "../../utils.js";
 
 declare global {
   interface Array<T> {
@@ -7,9 +7,9 @@ declare global {
 
     where(field: string, value: unknown): T[];
 
-    where(operator: Operator, value: unknown): T[];
+    where(operator: OperatorT, value: unknown): T[];
 
-    where(field: string, operator: Operator, value: unknown): T[];
+    where(field: string, operator: OperatorT, value: unknown): T[];
   }
 }
 

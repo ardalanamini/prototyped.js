@@ -30,8 +30,10 @@ export const pathToKeys = (path: string) =>
  * addPrototype(Object, "$size", function() {return this;});
  */
 export const addPrototype = (
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   obj: any,
   key: string,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   method: (...args: any[]) => any,
 ) => {
   const prototype = obj.prototype;
@@ -39,7 +41,7 @@ export const addPrototype = (
   if (hasOwnProperty.call(prototype, key)) return;
 
   Object.defineProperty(prototype, key, {
-    value(...args: any[]) {
+    value(...args: unknown[]) {
       return method.apply(0, [this].concat(args));
     },
     writable: true,
@@ -59,12 +61,14 @@ export const addPrototype = (
 export const filter = <T>(
   arr: T[],
   path: string | undefined,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   fn: (value: T, index: number, array: T[]) => any,
 ) => {
   if (path) {
     const keys = pathToKeys(path);
 
     const reducer = (item: T) =>
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       keys.reduce((prev, curr) => (prev as any)[curr], item);
 
     return arr.filter((item, index, items) => fn(reducer(item), index, items));
@@ -84,28 +88,34 @@ export const filter = <T>(
 export const deepClone = <T>(value: T): T => {
   if (typeof value !== "object") return value;
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   if (value instanceof Date) return new Date(value.getTime()) as any;
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const clone: any = Object.assign({}, value);
 
   Object.keys(clone).forEach(
     (key) =>
       (clone[key] =
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         typeof (value as any)[key] === "object"
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           ? deepClone((value as any)[key])
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           : (value as any)[key]),
   );
 
   if (Array.isArray(value)) {
     clone.length = value.length;
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     return Array.from(clone) as any;
   }
 
   return clone;
 };
 
-export type Operator = "<" | "<=" | "=" | "<>" | ">=" | ">";
+export type OperatorT = "<" | "<=" | "=" | "<>" | ">=" | ">";
 
 export const enum OPERATOR {
   LT = "<",
@@ -115,6 +125,9 @@ export const enum OPERATOR {
   GTE = ">=",
   GT = ">",
 }
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type RecordT = Record<string, any>;
 
 export type PathsToStringPropsT<Value> = Value extends Record<string, unknown>
   ? {
@@ -134,6 +147,4 @@ export type JoinT<Value extends string[]> = Value extends []
         : never
       : string;
 
-export type PathT<Value extends Record<string, unknown>> = JoinT<
-Extract<PathsToStringPropsT<Value>, string[]>
->;
+export type PathT<Value> = Value extends RecordT ? JoinT<Extract<PathsToStringPropsT<Value>, string[]>> : never;

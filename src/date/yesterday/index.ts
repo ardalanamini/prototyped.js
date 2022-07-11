@@ -1,5 +1,10 @@
 import pad from "../../string/pad/index.js";
 
+/**
+ * Returns yesterday's date in `YYYY-MM-DD` format
+ * @example
+ * yesterday(); // "2018-08-11"
+ */
 export default function yesterday(): string {
   const now = new Date();
 

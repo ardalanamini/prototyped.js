@@ -2,6 +2,15 @@ import { PathT, pathToKeys } from "../../utils.js";
 
 export default implode;
 
+/**
+ * It's like join but u get to tell it which keys to join
+ * @param array
+ * @param path
+ * @param [separator=", "]
+ * @example
+ * implode([{a: {b: 'first'}}, {a: {b: 'second'}}, {a: {b: 'third'}}], 'a.b', ', ');
+ * // 'first, second, third'
+ */
 function implode<
   Value extends Record<string, unknown>,
   Path extends PathT<Value> = never,

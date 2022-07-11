@@ -1,21 +1,21 @@
-import { filter, Operator, OPERATOR } from "../../utils.js";
+import { filter, OperatorT, OPERATOR } from "../../utils.js";
 import contains from "../contains/index.js";
 
 export default where;
 
 function where<T>(arr: T[], value: unknown): T[];
 function where<T>(arr: T[], field: string, value: unknown): T[];
-function where<T>(arr: T[], operator: Operator, value: unknown): T[];
+function where<T>(arr: T[], operator: OperatorT, value: unknown): T[];
 function where<T>(
   arr: T[],
   field: string,
-  operator: Operator,
+  operator: OperatorT,
   value: unknown,
 ): T[];
 function where<T>(
   arr: T[],
-  field: string | Operator | any,
-  operator?: Operator | any,
+  field: string | OperatorT | any,
+  operator?: OperatorT | any,
   value?: any,
 ): T[] {
   if (operator === undefined) {
@@ -28,7 +28,7 @@ function where<T>(
       operator = OPERATOR.EQ;
     } else {
       value = operator;
-      operator = field as Operator;
+      operator = field as OperatorT;
       field = undefined;
     }
   }

@@ -1,7 +1,8 @@
 {
-  "entryPoints": ["src/"],
+  "entryPoints": ["src/index.ts"],
   "exclude": [],
-  "entryPointStrategy": "expand",
+  "entryPointStrategy": "resolve",
   "out": "docs",
-  "includeVersion": true
+  "includeVersion": true,
+  "plugin": ["typedoc-plugin-example-tag"]
 }

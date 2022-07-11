@@ -1,14 +1,17 @@
 import { PathT } from "../../utils.js";
 import sum from "../sum/index.js";
 
-export default average;
-
-function average<
-  Value extends Record<string, unknown>,
-  Path extends PathT<Value> = never,
->(array: Value[], path?: Path): number;
-function average<Value>(array: Value[]): number;
-function average<Value>(array: Value[], path?: string): number {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  return sum(array as any[], path) / array.length;
+/**
+ * Returns the average value of a given path
+ * @param array
+ * @param [path]
+ * @example
+ * average([1, 2, 3]); // 2
+ * @example
+ * average([{a: 1}, {a: 2}, {a: 3}], "a"); // 2
+ * @example
+ * average([{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}], "a.b"); // 2
+ */
+export default function average<Value, Path extends PathT<Value> = PathT<Value>>(array: Value[], path?: Path): number {
+  return sum(array, path) / array.length;
 }

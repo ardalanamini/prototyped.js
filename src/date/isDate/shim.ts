@@ -2,18 +2,16 @@ import isDate from "./index.js";
 
 declare global {
   interface DateConstructor {
+    /**
+     * Returns true if the given argument is an instance of Date
+     * @param arg
+     * @example
+     * Date.isDate('foo bar'); // false
+     * @example
+     * Date.isDate(new Date()); // true
+     */
     isDate(arg: unknown): arg is Date;
   }
 }
 
-/**
- * Returns true if the given argument is an instance of Date
- * @memberof Date
- * @function isDate
- * @param {*} arg
- * @returns {Boolean}
- * @example
- * Date.isDate('foo bar'); // false
- * Date.isDate(new Date()); // true
- */
 Date.isDate = isDate;

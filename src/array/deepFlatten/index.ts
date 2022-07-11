@@ -1,3 +1,9 @@
+/**
+ * Deep flattens an array
+ * @param array
+ * @example
+ * deepFlatten([1, [2], [[3], 4], 5]); // [1,2,3,4,5]
+ */
 export default function deepFlatten<Value>(
   array: NestedArrayT<Value>,
 ): Value[] {

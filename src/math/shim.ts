@@ -1,5 +1,3 @@
-/** @namespace Math */
-
 import "./average/shim.js";
 import "./degreesToRads/shim.js";
 import "./factorial/shim.js";

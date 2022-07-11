@@ -1,5 +1,3 @@
-/** @namespace Number */
-
 import "./digitize/shim.js";
 import "./equals/shim.js";
 import "./inRange/shim.js";

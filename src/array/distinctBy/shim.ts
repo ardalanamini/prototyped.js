@@ -1,19 +1,16 @@
-import distinctBy from "./index.js";
 import { addPrototype } from "../../utils.js";
+import distinctBy from "./index.js";
 
 declare global {
   interface Array<T> {
+    /**
+     * Returns all the distinct values of an array
+     * @param fn
+     * @example
+     * [1, 2, 2, 3, 4, 4, 5].distinctBy((a, b) => a === b); // [1,2,3,4,5]
+     */
     distinctBy(fn: (a: T, b: T) => boolean): T[];
   }
 }
 
-/**
- * Returns all the distinct values of an array
- * @memberof Array.prototype
- * @function distinctBy
- * @param {Function} fn
- * @returns {Array}
- * @example
- * [1, 2, 2, 3, 4, 4, 5].distinctBy((a, b) => a === b); // [1,2,3,4,5]
- */
 addPrototype(Array, "distinctBy", distinctBy);

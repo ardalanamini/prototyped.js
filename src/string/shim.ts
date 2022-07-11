@@ -1,5 +1,3 @@
-/** @namespace String */
-
 import "./base64/shim.js";
 import "./base64Decode/shim.js";
 import "./camelCase/shim.js";

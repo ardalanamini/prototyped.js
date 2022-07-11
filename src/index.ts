@@ -7,3 +7,5 @@ export * as math from "./math/index.js";
 export * as number from "./number/index.js";
 export * as object from "./object/index.js";
 export * as string from "./string/index.js";
+
+export { OPERATOR, OperatorT, RecordT, PathT, PathsToStringPropsT, JoinT } from "./utils.js";

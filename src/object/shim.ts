@@ -1,5 +1,3 @@
-/** @namespace Object */
-
 import "./assign/shim.js";
 import "./camelCaseKeys/shim.js";
 import "./clone/shim.js";
