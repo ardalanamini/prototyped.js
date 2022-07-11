@@ -2,17 +2,14 @@ import factorial from "./index.js";
 
 declare global {
   interface Math {
+    /**
+     * Calculates the factorial of a number
+     * @param n
+     * @example
+     * Math.factorial(6); // 720
+     */
     factorial(n: number): number;
   }
 }
 
-/**
- * Calculates the factorial of a number
- * @memberof Math
- * @function factorial
- * @param {Number} num
- * @returns {Number}
- * @example
- * Math.factorial(6); // 720
- */
 Math.factorial = factorial;

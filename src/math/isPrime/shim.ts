@@ -2,17 +2,14 @@ import isPrime from "./index.js";
 
 declare global {
   interface Math {
+    /**
+     * Checks if the provided integer is a prime number
+     * @param num
+     * @example
+     * Math.isPrime(11); // true
+     */
     isPrime(num: number): boolean;
   }
 }
 
-/**
- * Checks if the provided integer is a prime number
- * @memberof Math
- * @function isPrime
- * @param {Number} num
- * @returns {Boolean}
- * @example
- * Math.isPrime(11); // true
- */
 Math.isPrime = isPrime;

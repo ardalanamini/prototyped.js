@@ -2,32 +2,28 @@ import average from "./index.js";
 
 declare global {
   interface Math {
+    /**
+     * Returns the average of an of two or more numbers
+     * @alias avg
+     * @param nums
+     * @example
+     * Math.average(...[1, 2, 3]); // 2
+     * @example
+     * Math.average(1, 2, 3); // 2
+     */
     average(...nums: number[]): number;
 
+    /**
+     * Returns the average of an of two or more numbers
+     * @alias average
+     * @param nums
+     * @example
+     * Math.avg(...[1, 2, 3]); // 2
+     * @example
+     * Math.avg(1, 2, 3); // 2
+     */
     avg(...nums: number[]): number;
   }
 }
 
-/**
- * Returns the average of an of two or more numbers
- * @memberof Math
- * @function average
- * @param {Number[]} nums
- * @returns {Number}
- * @example
- * Math.average(...[1, 2, 3]); // 2
- * Math.average(1, 2, 3); // 2
- */
-Math.average = average;
-
-/**
- * Returns the average of an of two or more numbers
- * @memberof Math
- * @function avg
- * @param {Number[]} nums
- * @returns {Number}
- * @example
- * Math.avg(...[1, 2, 3]); // 2
- * Math.avg(1, 2, 3); // 2
- */
-Math.avg = average;
+Math.average = Math.avg = average;
