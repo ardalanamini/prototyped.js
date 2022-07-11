@@ -1459,9 +1459,9 @@
     "lint:fix": "npm run lint -- --fix",
     "lint:prettier": "prettier -w src __tests__",
     "lint:format": "npm run lint:prettier && npm run lint:fix",
-    "test": "node --no-compilation-cache --expose-gc node_modules/jest/bin/jest",
+    "test": "node --no-compilation-cache --expose-gc node_modules/jest/bin/jest --logHeapUsage",
     "test:coverage": "npm test -- --coverage",
-    "test:ci": "npm run test:coverage -- --no-cache --ci --verbose --runInBand --logHeapUsage",
+    "test:ci": "npm run test:coverage -- --no-cache --ci --verbose --maxWorkers=2",
     "docs": "typedoc && node scripts/docs.js",
     "regenerate:package.json": "node scripts/regenerate-package-json.js"
   },
