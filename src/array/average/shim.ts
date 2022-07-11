@@ -1,5 +1,5 @@
-import average from "./index.js";
 import { addPrototype, PathT } from "../../utils.js";
+import average from "./index.js";
 
 declare global {
   interface Array<T> {
@@ -31,6 +31,4 @@ declare global {
   }
 }
 
-addPrototype(Array, "average", average);
-
-addPrototype(Array, "avg", average);
+addPrototype(Array, ["average", "avg"], average);

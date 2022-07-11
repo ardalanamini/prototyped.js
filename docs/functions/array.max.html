@@ -18,6 +18,14 @@
 <ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
 <li class="tsd-signature tsd-anchor-link" id="max">max<span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type" data-tsd-kind="Type parameter">Value</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type" data-tsd-kind="Type parameter">Path</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">(</span>array<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type" data-tsd-kind="Type parameter">Value</span><span class="tsd-signature-symbol">[]</span>, path<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type" data-tsd-kind="Type parameter">Path</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><a href="#max" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" id="icon-anchor-a"></path><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" id="icon-anchor-b"></path><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" id="icon-anchor-c"></path></svg></a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Returns the maximum value of a given path</p>
+
+<h3>Example</h3><pre><code class="language-ts"><span class="hl-5">max</span><span class="hl-0">([{</span><span class="hl-4">a:</span><span class="hl-0"> </span><span class="hl-8">1</span><span class="hl-0">}, {</span><span class="hl-4">a:</span><span class="hl-0"> </span><span class="hl-8">2</span><span class="hl-0">}, {</span><span class="hl-4">a:</span><span class="hl-0"> </span><span class="hl-8">3</span><span class="hl-0">}], </span><span class="hl-2">&#39;a&#39;</span><span class="hl-0">); </span><span class="hl-3">// 3</span>
+</code></pre>
+
+<h3>Example</h3><pre><code class="language-ts"><span class="hl-5">max</span><span class="hl-0">([{</span><span class="hl-4">a:</span><span class="hl-0"> {</span><span class="hl-4">b:</span><span class="hl-0"> </span><span class="hl-8">1</span><span class="hl-0">}}, {</span><span class="hl-4">a:</span><span class="hl-0"> {</span><span class="hl-4">b:</span><span class="hl-0"> </span><span class="hl-8">2</span><span class="hl-0">}}, {</span><span class="hl-4">a:</span><span class="hl-0"> {</span><span class="hl-4">b:</span><span class="hl-0"> </span><span class="hl-8">3</span><span class="hl-0">}}], </span><span class="hl-2">&#39;a.b&#39;</span><span class="hl-0">); </span><span class="hl-3">// 3</span>
+</code></pre>
+</div>
 <div class="tsd-type-parameters">
 <h4 class="tsd-type-parameters-title">Type Parameters</h4>
 <ul class="tsd-type-parameters">
@@ -35,6 +43,11 @@
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4></li>
 <li class="tsd-signature tsd-anchor-link" id="max-1">max<span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type" data-tsd-kind="Type parameter">Value</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">(</span>array<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type" data-tsd-kind="Type parameter">Value</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><a href="#max-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Returns the maximum value of a given path</p>
+
+<h3>Example</h3><pre><code class="language-ts"><span class="hl-5">max</span><span class="hl-0">([</span><span class="hl-8">1</span><span class="hl-0">, </span><span class="hl-8">2</span><span class="hl-0">, </span><span class="hl-8">3</span><span class="hl-0">]); </span><span class="hl-3">// 3</span>
+</code></pre>
+</div>
 <div class="tsd-type-parameters">
 <h4 class="tsd-type-parameters-title">Type Parameters</h4>
 <ul class="tsd-type-parameters">

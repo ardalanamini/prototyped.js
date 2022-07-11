@@ -1,18 +1,15 @@
-import sample from "./index.js";
 import { addPrototype } from "../../utils.js";
+import sample from "./index.js";
 
 declare global {
   interface Array<T> {
+    /**
+     * Returns a random element from an array
+     * @example
+     * [3, 7, 9, 11].sample(); // 9
+     */
     sample(): T;
   }
 }
 
-/**
- * Returns a random element from an array
- * @memberof Array.prototype
- * @function sample
- * @returns {*}
- * @example
- * [3, 7, 9, 11].sample(); // 9
- */
 addPrototype(Array, "sample", sample);

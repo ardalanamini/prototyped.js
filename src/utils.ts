@@ -3,8 +3,7 @@ const hasOwnProperty = Object.prototype.hasOwnProperty;
 /**
  * convert key path string to key array
  * @private
- * @param {String} path
- * @returns {Array}
+ * @param path
  * @example
  * pathToKeys("selector.to[0][11].value"); // ["selector", "to", 0, 11, "value"]
  */
@@ -23,24 +22,26 @@ export const pathToKeys = (path: string) =>
 /**
  *
  * @private
- * @param {*} obj
- * @param {String} key
- * @param {*} method
+ * @param obj
+ * @param keys
+ * @param method
  * @example
  * addPrototype(Object, "$size", function() {return this;});
  */
 export const addPrototype = (
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   obj: any,
-  key: string,
+  keys: string | string[],
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   method: (...args: any[]) => any,
-) => {
+): void => {
+  if (Array.isArray(keys)) return keys.forEach(key => addPrototype(obj, key, method));
+
   const prototype = obj.prototype;
 
-  if (hasOwnProperty.call(prototype, key)) return;
+  if (hasOwnProperty.call(prototype, keys)) return;
 
-  Object.defineProperty(prototype, key, {
+  Object.defineProperty(prototype, keys, {
     value(...args: unknown[]) {
       return method.apply(0, [this].concat(args));
     },
@@ -51,10 +52,9 @@ export const addPrototype = (
 /**
  *
  * @private
- * @param {Array} arr
- * @param {String} [path]
- * @param {Function} fn
- * @returns {*}
+ * @param arr
+ * @param [path]
+ * @param fn
  * @example
  * filter([1, 2, 3], undefined, (value) => value > 1);
  */
@@ -80,8 +80,7 @@ export const filter = <T>(
 /**
  *
  * @private
- * @param {*} value
- * @returns {*}
+ * @param value
  * @example
  * deepClone([1, 2, 3]);
  */
