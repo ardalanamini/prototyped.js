@@ -1,6 +1,3 @@
-# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-
 name: Test
 
 on:
@@ -12,13 +9,13 @@ on:
   pull_request:
   workflow_call:
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/master' }}
+
 jobs:
   test:
     name: Test
-
-    timeout-minutes: 15
-
-    runs-on: ${{ matrix.os }}
 
     strategy:
       matrix:
@@ -31,6 +28,11 @@ jobs:
           - 15
           - 16
           - 17
+          - 18
+
+    runs-on: ${{ matrix.os }}
+
+    timeout-minutes: 15
 
     env:
       OS: ${{ matrix.os }}
@@ -41,15 +43,14 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Setup Cache
+        id: node-modules-cache
         uses: actions/cache@v3
         with:
           path: '**/node_modules'
-          key: node-modules-${{ matrix.os }}-${{ github.ref_name }}-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
+          key: node-modules-${{ matrix.os }}-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            node-modules-${{ matrix.os }}-${{ github.ref_name }}-${{ matrix.node-version }}
-            node-modules-${{ matrix.os }}-master-${{ matrix.node-version }}
-            node-modules-${{ matrix.os }}-${{ github.ref_name }}-
-            node-modules-${{ matrix.os }}-master-
+            node-modules-${{ matrix.os }}-${{ matrix.node-version }}-
+            node-modules-${{ matrix.os }}-
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
@@ -57,6 +58,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install dependencies
+        if: ${{ steps.node-modules-cache.outputs.cache-hit != 'true' }}
         run: npm i --no-fund
 
       - name: Check code styles
