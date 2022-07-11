@@ -1,5 +1,10 @@
 import pad from "../../string/pad/index.js";
 
+/**
+ * Returns today's date in `YYYY-MM-DD` format
+ * @example
+ * today(); // "2018-08-10"
+ */
 export default function today(): string {
   const now = new Date();
 

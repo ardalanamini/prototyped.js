@@ -2,23 +2,16 @@ import { PathT, pathToKeys } from "../../utils.js";
 
 export default sum;
 
-function sum<
-  Value extends Record<string, unknown>,
-  Path extends PathT<Value> = never,
->(arr: Value[], path?: Path): number;
-function sum<Value>(arr: Value[]): number;
-function sum<Value>(arr: Value[], path?: string): number {
-  if (path) {
-    const keys = pathToKeys(path);
+function sum<Value, Path extends PathT<Value> = PathT<Value>>(arr: Value[], path?: Path): number {
+  if (path === undefined) return arr.reduce((prev, cur: any) => prev + cur, 0);
 
-    const reducer = (item: Value): number =>
-      keys.reduce(
-        (prev, cur) => (prev && (prev as any)[cur]) || 0,
-        item,
-      ) as any;
+  const keys = pathToKeys(path);
 
-    return arr.reduce((prev, cur) => prev + reducer(cur), 0);
-  }
+  const reducer = (item: Value): number =>
+    keys.reduce(
+      (prev, cur) => (prev && (prev as any)[cur]) || 0,
+      item,
+    ) as any;
 
-  return arr.reduce((prev: any, cur) => prev + cur, 0);
+  return arr.reduce((prev, cur) => prev + reducer(cur), 0);
 }

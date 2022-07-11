@@ -1,6 +1,17 @@
 import isString from "../../string/isString/index.js";
 import { pathToKeys } from "../../utils.js";
 
+/**
+ * Returns all the distinct values of an array
+ * @param array
+ * @param [fn]
+ * @example
+ * distinct([1, 2, 2, 3, 4, 4, 5]); // [1,2,3,4,5]
+ * @example
+ * distinct([{foo:{bar:[0,1]}}, {foo:{bar:[4,1]}}], "foo.bar[1]"); // [{foo:{bar:[0,1]}}]
+ * @example
+ * distinct([1, 2, 2.2, 3, 4.9, 4, 5], Math.floor); // [1,2,3,4.9,5]
+ */
 export default function distinct<T>(
   array: T[],
   fn?: string | ((value: T, index: number, array: T[]) => any),

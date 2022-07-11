@@ -2,18 +2,16 @@ import isBoolean from "./index.js";
 
 declare global {
   interface BooleanConstructor {
+    /**
+     * Returns true if the given argument is a boolean
+     * @param arg
+     * @example
+     * Boolean.isBoolean('foo bar'); // false
+     * @example
+     * Boolean.isBoolean(false); // true
+     */
     isBoolean(arg: unknown): arg is boolean;
   }
 }
 
-/**
- * Returns true if the given argument is a boolean
- * @memberof Boolean
- * @function isBoolean
- * @param {*} arg
- * @returns {Boolean}
- * @example
- * Boolean.isBoolean('foo bar'); // false
- * Boolean.isBoolean(false); // true
- */
 Boolean.isBoolean = isBoolean;
