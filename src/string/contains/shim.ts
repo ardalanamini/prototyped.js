@@ -1,21 +1,19 @@
-import contains from "./index.js";
 import { addPrototype } from "../../utils.js";
+import contains from "./index.js";
 
 declare global {
   interface String {
+    /**
+     * Find out if the string contains the argument at any position
+     * @param str
+     * @param [sensitive=false]
+     * @example
+     * 'javaScript & typescript'.contains('Typescript'); // true
+     * @example
+     * 'javaScript & typescript'.contains('Typescript', true); // false
+     */
     contains(str: string, sensitive?: boolean): boolean;
   }
 }
 
-/**
- * Find out if the string contains the argument at any position
- * @memberof String.prototype
- * @function contains
- * @param {String} str
- * @param {Boolean} [sensitive=false]
- * @returns {Boolean}
- * @example
- * 'javaScript & typescript'.contains('Typescript'); // true
- * 'javaScript & typescript'.contains('Typescript', true); // false
- */
 addPrototype(String, "contains", contains);

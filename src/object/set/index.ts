@@ -1,5 +1,15 @@
 import { pathToKeys } from "../../utils.js";
 
+/**
+ * Puts the property value indicated by the given selector into the object
+ * @param obj
+ * @param path
+ * @param value
+ * @example
+ * const obj = { selector: { to: { val: 'val to select' } } };
+ * set(obj, 'selector.to.val', 'new value');
+ * // obj -> { selector: { to: { val: 'new value' } } }
+ */
 export default function set(
   obj: Record<string, unknown>,
   path: string,

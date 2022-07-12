@@ -1,18 +1,15 @@
-import reverse from "./index.js";
 import { addPrototype } from "../../utils.js";
+import reverse from "./index.js";
 
 declare global {
   interface String {
+    /**
+     * Reverses the string
+     * @example
+     * "foobar".reverse(); // "raboof"
+     */
     reverse(): string;
   }
 }
 
-/**
- * Reverses the string
- * @memberof String.prototype
- * @function reverse
- * @returns {String}
- * @example
- * "foobar".reverse(); // "raboof"
- */
 addPrototype(String, "reverse", reverse);

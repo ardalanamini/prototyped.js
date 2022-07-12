@@ -1,3 +1,12 @@
+/**
+ * Ensures a function is called only once
+ * @param func
+ * @param args
+ * @example
+ * const test = (msg) => console.log(msg);
+ * once(test, 'a'); // logs 'a'
+ * once(test, 'b'); // no log this time
+ */
 export default function once<
   Args extends unknown[],
   Return,

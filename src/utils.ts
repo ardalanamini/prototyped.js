@@ -1,10 +1,9 @@
-const hasOwnProperty = Object.prototype.hasOwnProperty;
+export const hasOwnProperty = Object.prototype.hasOwnProperty;
 
 /**
  * convert key path string to key array
  * @private
- * @param {String} path
- * @returns {Array}
+ * @param path
  * @example
  * pathToKeys("selector.to[0][11].value"); // ["selector", "to", 0, 11, "value"]
  */
@@ -23,23 +22,27 @@ export const pathToKeys = (path: string) =>
 /**
  *
  * @private
- * @param {*} obj
- * @param {String} key
- * @param {*} method
+ * @param obj
+ * @param keys
+ * @param method
  * @example
  * addPrototype(Object, "$size", function() {return this;});
  */
 export const addPrototype = (
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   obj: any,
-  key: string,
+  keys: string | string[],
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   method: (...args: any[]) => any,
-) => {
+): void => {
+  if (Array.isArray(keys)) return keys.forEach(key => addPrototype(obj, key, method));
+
   const prototype = obj.prototype;
 
-  if (hasOwnProperty.call(prototype, key)) return;
+  if (hasOwnProperty.call(prototype, keys)) return;
 
-  Object.defineProperty(prototype, key, {
-    value(...args: any[]) {
+  Object.defineProperty(prototype, keys, {
+    value(...args: unknown[]) {
       return method.apply(0, [this].concat(args));
     },
     writable: true,
@@ -49,22 +52,23 @@ export const addPrototype = (
 /**
  *
  * @private
- * @param {Array} arr
- * @param {String} [path]
- * @param {Function} fn
- * @returns {*}
+ * @param arr
+ * @param [path]
+ * @param fn
  * @example
  * filter([1, 2, 3], undefined, (value) => value > 1);
  */
 export const filter = <T>(
   arr: T[],
   path: string | undefined,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   fn: (value: T, index: number, array: T[]) => any,
 ) => {
   if (path) {
     const keys = pathToKeys(path);
 
     const reducer = (item: T) =>
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       keys.reduce((prev, curr) => (prev as any)[curr], item);
 
     return arr.filter((item, index, items) => fn(reducer(item), index, items));
@@ -76,36 +80,41 @@ export const filter = <T>(
 /**
  *
  * @private
- * @param {*} value
- * @returns {*}
+ * @param value
  * @example
  * deepClone([1, 2, 3]);
  */
 export const deepClone = <T>(value: T): T => {
   if (typeof value !== "object") return value;
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   if (value instanceof Date) return new Date(value.getTime()) as any;
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const clone: any = Object.assign({}, value);
 
   Object.keys(clone).forEach(
     (key) =>
       (clone[key] =
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         typeof (value as any)[key] === "object"
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           ? deepClone((value as any)[key])
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           : (value as any)[key]),
   );
 
   if (Array.isArray(value)) {
     clone.length = value.length;
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     return Array.from(clone) as any;
   }
 
   return clone;
 };
 
-export type Operator = "<" | "<=" | "=" | "<>" | ">=" | ">";
+export type OperatorT = "<" | "<=" | "=" | "<>" | ">=" | ">";
 
 export const enum OPERATOR {
   LT = "<",
@@ -115,6 +124,9 @@ export const enum OPERATOR {
   GTE = ">=",
   GT = ">",
 }
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type RecordT = Record<string, any>;
 
 export type PathsToStringPropsT<Value> = Value extends Record<string, unknown>
   ? {
@@ -134,6 +146,4 @@ export type JoinT<Value extends string[]> = Value extends []
         : never
       : string;
 
-export type PathT<Value extends Record<string, unknown>> = JoinT<
-Extract<PathsToStringPropsT<Value>, string[]>
->;
+export type PathT<Value> = Value extends RecordT ? JoinT<Extract<PathsToStringPropsT<Value>, string[]>> : never;

@@ -1,5 +1,3 @@
-/** @namespace Function */
-
 import "./cache/shim.js";
 import "./defer/shim.js";
 import "./isFunction/shim.js";

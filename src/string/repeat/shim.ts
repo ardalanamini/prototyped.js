@@ -2,18 +2,15 @@ import repeat from "./index.js";
 
 declare global {
   interface StringConstructor {
+    /**
+     * Initializes and fills an string with the specified value
+     * @param n
+     * @param [value=" "]
+     * @example
+     * String.repeat(5, "2"); // "22222"
+     */
     repeat(n: number, value?: string): string;
   }
 }
 
-/**
- * Initializes and fills an string with the specified value
- * @memberof String
- * @function repeat
- * @param {Number} n
- * @param {String} [value=" "]
- * @returns {String}
- * @example
- * String.repeat(5, "2"); // "22222"
- */
 String.repeat = repeat;

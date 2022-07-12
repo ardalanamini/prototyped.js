@@ -1,19 +1,16 @@
-import assign from "./index.js";
 import { addPrototype } from "../../utils.js";
+import assign from "./index.js";
 
 declare global {
   interface Object {
+    /**
+     * Assigns object like Object.assign
+     * @param sources
+     * @example
+     * ({ a: 0 }).$assign({ a: 1 }, { b: 2 }); // { a: 1, b: 2 }
+     */
     $assign(...sources: Record<string, unknown>[]): Record<string, unknown>;
   }
 }
 
-/**
- * Assigns object like Object.assign
- * @memberof Object.prototype
- * @function $assign
- * @param {...Object} sources
- * @returns {Object}
- * @example
- * ({ a: 0 }).$assign({ a: 1 }, { b: 2 }); // { a: 1, b: 2 }
- */
 addPrototype(Object, "$assign", assign);

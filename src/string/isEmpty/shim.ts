@@ -1,19 +1,17 @@
-import isEmpty from "./index.js";
 import { addPrototype } from "../../utils.js";
+import isEmpty from "./index.js";
 
 declare global {
   interface String {
+    /**
+     * Checks if the string is empty
+     * @example
+     * "123".isEmpty(); // false
+     * @example
+     * "".isEmpty(); // true
+     */
     isEmpty(): boolean;
   }
 }
 
-/**
- * Checks if the string is empty
- * @memberof String.prototype
- * @function isEmpty
- * @returns {Boolean}
- * @example
- * "123".isEmpty(); // false
- * "".isEmpty(); // true
- */
 addPrototype(String, "isEmpty", isEmpty);

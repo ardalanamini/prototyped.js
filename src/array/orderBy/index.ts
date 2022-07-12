@@ -3,7 +3,24 @@ import contains from "../contains/index.js";
 
 export default orderBy;
 
+/**
+ * sorts the array
+ * @param arr
+ * @param [order="asc"]
+ * @example
+ * orderBy([2, 1, 2, 5]); // [1,2,2,5]
+ * @example
+ * orderBy([2, 1, 2, 5], "desc"); // [5,2,2,1]
+ */
 function orderBy<Value>(arr: Value[], order?: OrderT): Value[];
+/**
+ * sorts the array
+ * @param array
+ * @param field
+ * @param [order="asc"]
+ * @example
+ * orderBy([{count:1}, {count:20}, {count:15}], "count", "asc"); // [{count:1},{count:15},{count:20}]
+ */
 function orderBy<
   Value extends Record<string, unknown>,
   Path extends PathT<Value> = never,

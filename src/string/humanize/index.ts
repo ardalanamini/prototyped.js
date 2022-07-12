@@ -1,3 +1,11 @@
+/**
+ * Converts an underscored, camelized, or dasherized string into a humanized one.
+ * Also removes beginning and ending whitespace
+ * @param str
+ * @example
+ * humanize('  capitalize dash-CamelCase_underscore trim  ');
+ * // 'Capitalize dash camel case underscore trim'
+ */
 export default function humanize(str: string): string {
   return (
     str.match(

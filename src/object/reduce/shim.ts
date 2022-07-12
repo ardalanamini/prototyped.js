@@ -1,8 +1,15 @@
-import reduce from "./index.js";
 import { addPrototype } from "../../utils.js";
+import reduce from "./index.js";
 
 declare global {
   interface Object {
+    /**
+     * Just like array.reduce
+     * @param fn
+     * @param [initialValue=undefined]
+     * @example
+     * ({foo: 1, bar: 2}).$reduce((prev, value, key) => [...prev, key + ":" + value], []); // ["foo:1", "bar:2"]
+     */
     $reduce<T = any>(
       fn: (
         prev: T,
@@ -15,15 +22,4 @@ declare global {
   }
 }
 
-/**
- * Just like array.reduce
- * @memberof Object.prototype
- * @function $reduce
- * @param {Function} fn
- * @param {*} initialValue
- * @returns {*}
- * @example
- * ({foo: 1, bar: 2}).$reduce((prev, value, key) => [...prev, key + ":" + value], []);
- * // ["foo:1", "bar:2"]
- */
 addPrototype(Object, "$reduce", reduce);

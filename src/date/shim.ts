@@ -1,5 +1,3 @@
-/** @namespace Date */
-
 import "./equals/shim.js";
 import "./isDate/shim.js";
 import "./today/shim.js";

@@ -3,7 +3,22 @@ import { filter } from "../../utils.js";
 
 export default whereNotLike;
 
+/**
+ * Filters the array
+ * @param arr
+ * @param value
+ * @example
+ * whereNotLike(["foo", "bar", "hello", "world"], "o"); // ["bar"]
+ */
 function whereNotLike<T>(arr: T[], value: string | RegExp): T[];
+/**
+ * Filters the array
+ * @param arr
+ * @param field
+ * @param value
+ * @example
+ * whereNotLike([{foo:"hello"}, {foo:"bar"}, {foo:"world"}], "foo", /o/i); // [{foo:"bar"}]
+ */
 function whereNotLike<T>(arr: T[], field: string, value: string | RegExp): T[];
 function whereNotLike<T>(
   arr: T[],

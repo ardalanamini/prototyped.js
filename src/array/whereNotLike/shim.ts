@@ -1,23 +1,25 @@
-import whereNotLike from "./index.js";
 import { addPrototype } from "../../utils.js";
+import whereNotLike from "./index.js";
 
 declare global {
   interface Array<T> {
+    /**
+     * Filters the array
+     * @param value
+     * @example
+     * ["foo", "bar", "hello", "world"].whereNotLike("o"); // ["bar"]
+     */
     whereNotLike(value: string | RegExp): T[];
 
+    /**
+     * Filters the array
+     * @param field
+     * @param value
+     * @example
+     * [{foo:"hello"}, {foo:"bar"}, {foo:"world"}].whereNotLike("foo", /o/i); // [{foo:"bar"}]
+     */
     whereNotLike(field: string, value: string | RegExp): T[];
   }
 }
 
-/**
- * Filters the array
- * @memberof Array.prototype
- * @function whereNotLike
- * @param {String|RegExp} field
- * @param {String|RegExp} [value]
- * @returns {Array}
- * @example
- * ["foo", "bar", "hello", "world"].whereNotLike("o"); // ["bar"]
- * [{foo:"hello"}, {foo:"bar"}, {foo:"world"}].whereNotLike("foo", /o/i); // [{foo:"bar"}]
- */
 addPrototype(Array, "whereNotLike", whereNotLike);

@@ -1,19 +1,17 @@
-import prepend from "./index.js";
 import { addPrototype } from "../../utils.js";
+import prepend from "./index.js";
 
 declare global {
   interface Array<T> {
+    /**
+     * Adds an item to the beginning of the array
+     * @param value
+     * @example
+     * let myArray = [1, 2, 3]
+     * myArray.prepend(0); // myArray => [0, 1, 2, 3]
+     */
     prepend(value: T): number;
   }
 }
 
-/**
- * Adds an item to the beginning of the array
- * @memberof Array.prototype
- * @function prepend
- * @param {*} value
- * @example
- * var myArray = [1, 2, 3]
- * myArray.prepend(0); // myArray => [0, 1, 2, 3]
- */
 addPrototype(Array, "prepend", prepend);

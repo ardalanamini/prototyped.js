@@ -1,22 +1,23 @@
-import whereNull from "./index.js";
 import { addPrototype } from "../../utils.js";
+import whereNull from "./index.js";
 
 declare global {
   interface Array<T> {
+    /**
+     * Filters the array
+     * @example
+     * [1, 2, 2, 3, null, undefined, 5].whereNull(); // [null, undefined]
+     */
     whereNull(): Array<null & undefined>;
 
+    /**
+     * Filters the array
+     * @param field
+     * @example
+     * [{count:1}, {count:null}, {foo:15}].whereNull("count"); // [{count:null},{foo:15}]
+     */
     whereNull(field: string): T[];
   }
 }
 
-/**
- * Filters the array
- * @memberof Array.prototype
- * @function whereNull
- * @param {String} [field]
- * @returns {Array}
- * @example
- * [1, 2, 2, 3, null, undefined, 5].whereNull(); // [null, undefined]
- * [{count:1}, {count:null}, {foo:15}].whereNull("count"); // [{count:null},{foo:15}]
- */
 addPrototype(Array, "whereNull", whereNull);

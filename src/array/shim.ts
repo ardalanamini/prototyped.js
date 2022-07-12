@@ -1,5 +1,3 @@
-/** @namespace Array */
-
 import "./all/shim.js";
 import "./any/shim.js";
 import "./append/shim.js";

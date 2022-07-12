@@ -1,19 +1,16 @@
-import snakeCaseKeys from "./index.js";
 import { addPrototype } from "../../utils.js";
+import snakeCaseKeys from "./index.js";
 
 declare global {
   interface Object {
+    /**
+     * Creates a new object from the specified object, where all the keys are in snake-case
+     * @example
+     * const myObj = { FirstName: "Adam", "last-name": "Smith" };
+     * const myObjLower = myObj.$snakeCaseKeys(); // {first_name: "Adam", last_name: "Smith"}
+     */
     $snakeCaseKeys(): Record<string, unknown>;
   }
 }
 
-/**
- * Creates a new object from the specified object, where all the keys are in snake-case
- * @memberof Object.prototype
- * @function $snakeCaseKeys
- * @returns {Object}
- * @example
- * const myObj = { FirstName: "Adam", "last-name": "Smith" };
- * const myObjLower = myObj.$snakeCaseKeys(); // {first_name: "Adam", last_name: "Smith"}
- */
 addPrototype(Object, "$snakeCaseKeys", snakeCaseKeys);

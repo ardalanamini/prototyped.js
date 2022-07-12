@@ -1,12 +1,28 @@
+import { hasOwnProperty } from "../../utils.js";
 import isString from "../isString/index.js";
 
+/**
+ * Returns the singular or plural form of the word based on the input number
+ * @param str
+ * @param [count]
+ * @example
+ * pluralize('apple'); // 'apples'
+ * @example
+ * pluralize('apple', 0); // 'apples'
+ * @example
+ * pluralize('apple', 1); // 'apple'
+ * @example
+ * pluralize('apple', 2); // 'apples'
+ * @example
+ * pluralize('person', 2); // 'people'
+ * @example
+ * pluralize('people', 1); // 'person'
+ */
 export default function pluralize(str: string, count?: number): string {
   if (count === 1) return singular(str);
 
   return plural(str);
 }
-
-const hasOwnProperty = Object.prototype.hasOwnProperty;
 
 const IRREGULAR_RULES = [
   // Pronouns.

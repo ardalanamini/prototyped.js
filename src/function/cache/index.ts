@@ -1,3 +1,11 @@
+/**
+ * Returns the cached function results if already runned with this method
+ * @param func
+ * @example
+ * const test = cache(() => setTimeout(console.log, 1000, `test`));
+ * test(); // takes a second to log 'test'
+ * test(); // instantly logs the second 'test'
+ */
 export default function cache<F extends (...args: unknown[]) => unknown>(
   func: F,
 ): F {

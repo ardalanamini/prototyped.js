@@ -2,18 +2,16 @@ import isPlainObject from "./index.js";
 
 declare global {
   interface ObjectConstructor {
+    /**
+     * Returns true if the given argument is a plain object
+     * @param arg
+     * @example
+     * Object.isPlainObject(2); // false
+     * @example
+     * Object.isPlainObject({foo: 'bar'}); // true
+     */
     isPlainObject(arg: unknown): arg is Record<string, unknown>;
   }
 }
 
-/**
- * Returns true if the given argument is a plain object
- * @memberof Object
- * @function isPlainObject
- * @param {*} arg
- * @returns {Boolean}
- * @example
- * Object.isPlainObject(2); // false
- * Object.isPlainObject({foo: 'bar'}); // true
- */
 Object.isPlainObject = isPlainObject;
