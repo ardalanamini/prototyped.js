@@ -1,18 +1,15 @@
-import chars from "./index.js";
 import { addPrototype } from "../../utils.js";
+import chars from "./index.js";
 
 declare global {
   interface String {
+    /**
+     * Returns an array of the string's character
+     * @example
+     * "Hello".chars(); // ["H", "e", "l", "l", "o"]
+     */
     chars(): string[];
   }
 }
 
-/**
- * Returns an array of the string's character
- * @memberof String.prototype
- * @function chars
- * @returns {String[]}
- * @example
- * "Hello".chars(); // ["H", "e", "l", "l", "o"]
- */
 addPrototype(String, "chars", chars);

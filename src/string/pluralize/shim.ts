@@ -1,24 +1,26 @@
-import pluralize from "./index.js";
 import { addPrototype } from "../../utils.js";
+import pluralize from "./index.js";
 
 declare global {
   interface String {
+    /**
+     * Returns the singular or plural form of the word based on the input number
+     * @param [count]
+     * @example
+     * 'apple'.pluralize(); // 'apples'
+     * @example
+     * 'apple'.pluralize(0); // 'apples'
+     * @example
+     * 'apple'.pluralize(1); // 'apple'
+     * @example
+     * 'apple'.pluralize(2); // 'apples'
+     * @example
+     * 'person'.pluralize(2); // 'people'
+     * @example
+     * 'people'.pluralize(1); // 'person'
+     */
     pluralize(count?: number): string;
   }
 }
 
-/**
- * Returns the singular or plural form of the word based on the input number
- * @memberof String.prototype
- * @function pluralize
- * @param {Number} [count]
- * @returns {String}
- * @example
- * 'apple'.pluralize(); // 'apples'
- * 'apple'.pluralize(0); // 'apples'
- * 'apple'.pluralize(1); // 'apple'
- * 'apple'.pluralize(2); // 'apples'
- * 'person'.pluralize(2); // 'people'
- * 'people'.pluralize(1); // 'person'
- */
 addPrototype(String, "pluralize", pluralize);

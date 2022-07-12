@@ -1,21 +1,19 @@
-import truncate from "./index.js";
 import { addPrototype } from "../../utils.js";
+import truncate from "./index.js";
 
 declare global {
   interface String {
+    /**
+     * Truncates a string up to a specified length
+     * @param num
+     * @param [truncateString="..."]
+     * @example
+     * 'boomerang'.truncate(7); // 'boom...'
+     * @example
+     * 'boomerang'.truncate(7, '....'); // 'boo....'
+     */
     truncate(num: number, truncateString?: string): string;
   }
 }
 
-/**
- * Truncates a string up to a specified length
- * @memberof String.prototype
- * @function truncate
- * @param {Number} num
- * @param {String} [truncateString="..."]
- * @returns {String}
- * @example
- * 'boomerang'.truncate(7); // 'boom...'
- * 'boomerang'.truncate(7, '....'); // 'boo....'
- */
 addPrototype(String, "truncate", truncate);

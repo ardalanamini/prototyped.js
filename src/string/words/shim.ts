@@ -1,20 +1,18 @@
-import words from "./index.js";
 import { addPrototype } from "../../utils.js";
+import words from "./index.js";
 
 declare global {
   interface String {
+    /**
+     * Converts a given string into an array of words
+     * @param [pattern=/[^a-zA-Z-]+/]
+     * @example
+     * 'I love javaScript!!'.words(); // ["I", "love", "javaScript"]
+     * @example
+     * 'python, javaScript & coffee'.words(); // ["python", "javaScript", "coffee"]
+     */
     words(pattern?: RegExp): string[];
   }
 }
 
-/**
- * Converts a given string into an array of words
- * @memberof String.prototype
- * @function words
- * @param {RegExp} [pattern=/[^a-zA-Z-]+/]
- * @returns {String[]}
- * @example
- * 'I love javaScript!!'.words(); // ["I", "love", "javaScript"]
- * 'python, javaScript & coffee'.words(); // ["python", "javaScript", "coffee"]
- */
 addPrototype(String, "words", words);

@@ -1,20 +1,18 @@
-import capitalize from "./index.js";
 import { addPrototype } from "../../utils.js";
+import capitalize from "./index.js";
 
 declare global {
   interface String {
+    /**
+     * Returns the capitalized string
+     * @param [allWords=false]
+     * @example
+     * 'foo bar'.capitalize(); // 'Foo bar'
+     * @example
+     * 'hello world'.capitalize(true); // 'Hello World'
+     */
     capitalize(allWords?: boolean): string;
   }
 }
 
-/**
- * Returns the capitalized string
- * @memberof String.prototype
- * @function capitalize
- * @param {Boolean} [allWords=false]
- * @returns {String}
- * @example
- * 'foo bar'.capitalize(); // 'Foo bar'
- * 'hello world'.capitalize(true); // 'Hello World'
- */
 addPrototype(String, "capitalize", capitalize);

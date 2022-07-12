@@ -1,3 +1,15 @@
+/**
+ * Converts the string to camelcase
+ * @example
+ * camelCase("some_database_field_name"); // "someDatabaseFieldName"
+ * @example
+ * camelCase("Some label that needs to be camelized"); // "someLabelThatNeedsToBeCamelized"
+ * @example
+ * camelCase("some-javascript-property"); // "someJavascriptProperty"
+ * @example
+ * camelCase("some-mixed_string with spaces_underscores-and-hyphens");
+ * // "someMixedStringWithSpacesUnderscoresAndHyphens"
+ */
 export default function camelCase(str: string): string {
   str = (
     str.match(

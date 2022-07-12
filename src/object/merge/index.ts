@@ -1,6 +1,5 @@
+import { hasOwnProperty } from "../../utils.js";
 import keys from "../keys/index.js";
-
-const hasOwnProperty = Object.prototype.hasOwnProperty;
 
 /**
  * Creates a new object from the combination of two or more objects

@@ -1,21 +1,16 @@
-import map from "./index.js";
 import { addPrototype } from "../../utils.js";
-
-export {};
+import map from "./index.js";
 
 declare global {
   interface String {
+    /**
+     * Just like array.map
+     * @param fn
+     * @example
+     * 'Hello'.map((char) => char == 'o' ? 'O' : char); // 'HellO'
+     */
     map(fn: (char: string, index: number, chars: string[]) => string): string;
   }
 }
 
-/**
- * Just like array.map
- * @memberof String.prototype
- * @function map
- * @param {Function} fn
- * @returns {String[]}
- * @example
- * 'Hello'.map((char) => char == 'o' ? 'O' : char); // 'HellO'
- */
 addPrototype(String, "map", map);

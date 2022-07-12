@@ -1,18 +1,15 @@
-import lines from "./index.js";
 import { addPrototype } from "../../utils.js";
+import lines from "./index.js";
 
 declare global {
   interface String {
+    /**
+     * Splits a multiline string into an array of lines
+     * @example
+     * 'This\nis a\nmultiline\nstring.\n'.lines(); // ['This', 'is a', 'multiline', 'string.' , '']
+     */
     lines(): string[];
   }
 }
 
-/**
- * Splits a multiline string into an array of lines
- * @memberof String.prototype
- * @function lines
- * @returns {String[]}
- * @example
- * 'This\nis a\nmultiline\nstring.\n'.lines(); // ['This', 'is a', 'multiline', 'string.' , '']
- */
 addPrototype(String, "lines", lines);
