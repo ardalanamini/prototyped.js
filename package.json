@@ -1462,7 +1462,7 @@
     "test": "node --no-compilation-cache --expose-gc node_modules/jest/bin/jest --logHeapUsage",
     "test:coverage": "npm test -- --coverage",
     "test:ci": "npm run test:coverage -- --no-cache --ci --verbose --maxWorkers=2",
-    "docs": "typedoc && node scripts/docs.js",
+    "docs": "typedoc",
     "regenerate:package.json": "node scripts/regenerate-package-json.js"
   },
   "peerDependencies": {
