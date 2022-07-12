@@ -1,5 +1,20 @@
 import values from "../values/index.js";
 
+/**
+ * Returns the target value in a nested JSON object, based on the given key
+ * @param obj
+ * @param target
+ * @example
+ * const data = {
+ *  level1: {
+ *   level2: {
+ *    level3: 'some data'
+ *   }
+ *  }
+ * };
+ * dig(data, 'level3'); // 'some data'
+ * dig(data, 'level4'); // undefined
+ */
 export default function dig(
   obj: Record<string, unknown>,
   target: string,

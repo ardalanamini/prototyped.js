@@ -3,6 +3,13 @@ import isDate from "../../date/isDate/index.js";
 import isObject from "../isObject/index.js";
 import ObjectKeys from "../keys/index.js";
 
+/**
+ * Performs a deep comparison between two values to determine if they are equivalent
+ * @param obj
+ * @param obj2
+ * @example
+ * equals({ a: [2, { e: 3 }], b: [4], c: 'foo' }, { a: [2, { e: 3 }], b: [4], c: 'foo' }); // true
+ */
 export default function equals(
   obj: Record<string, unknown>,
   obj2: unknown,

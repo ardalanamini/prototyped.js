@@ -1,5 +1,13 @@
 import forEach from "../forEach/index.js";
 
+/**
+ * Just like array.reduce
+ * @param obj
+ * @param fn
+ * @param [initialValue=undefined]
+ * @example
+ * reduce({foo: 1, bar: 2}, (prev, value, key) => [...prev, key + ":" + value], []); // ["foo:1", "bar:2"]
+ */
 export default function reduce<T extends Record<string, unknown>,
   K extends keyof T,
   P = unknown>(

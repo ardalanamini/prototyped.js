@@ -1,5 +1,16 @@
 import keys from "../keys/index.js";
 
+/**
+ * Omits the key-value pairs corresponding to the given keys from an object; or
+ * Creates an object composed of the properties the given function returns falsey for.
+ * The function is invoked with two arguments: (value, key)
+ * @param obj
+ * @param arr
+ * @example
+ * omit({ a: 1, b: '2', c: 3 }, ['b']); // { a: 1, c: 3 }
+ * @example
+ * omit({ a: 1, b: '2', c: 3 }, (x) => typeof x === 'number'); // { b: '2' }
+ */
 export default function omit(
   obj: Record<string, unknown>,
   arr:
