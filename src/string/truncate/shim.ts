@@ -3,6 +3,7 @@ import truncate from "./index.js";
 
 declare global {
   interface String {
+
     /**
      * Truncates a string up to a specified length
      * @param num

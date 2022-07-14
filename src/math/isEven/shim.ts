@@ -2,6 +2,7 @@ import isEven from "./index.js";
 
 declare global {
   interface Math {
+
     /**
      * Returns true if the given number is even, false otherwise
      * @param num

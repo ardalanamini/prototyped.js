@@ -4,6 +4,7 @@ import empty from "./index.js";
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   interface Array<T> {
+
     /**
      * Empty the array
      * @example

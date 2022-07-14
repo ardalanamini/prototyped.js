@@ -3,6 +3,7 @@ import words from "./index.js";
 
 declare global {
   interface String {
+
     /**
      * Converts a given string into an array of words
      * @param [pattern=/[^a-zA-Z-]+/]

@@ -15,7 +15,6 @@ export default function pluck<
 >(array: Value[], path: Path): unknown[] {
   const keys = pathToKeys(path);
 
-  return array.map((item) =>
-    keys.reduce((prev, cur) => (prev && (prev as any)[cur]) || undefined, item),
-  );
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition,no-undefined
+  return array.map(item => keys.reduce((prev, cur) => (prev && (prev as any)[cur]) || undefined, item));
 }

@@ -1,8 +1,9 @@
-import all from "./index.js";
 import { addPrototype } from "../../utils.js";
+import all from "./index.js";
 
 declare global {
   interface Array<T> {
+
     /**
      * Returns `true` if the provided predicate function
      * returns `true` for all elements in a collection,`false` otherwise

@@ -3,6 +3,7 @@ import keys from "./index.js";
 
 declare global {
   interface Object {
+
     /**
      * Get keys of the object
      * @example

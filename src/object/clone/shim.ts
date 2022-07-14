@@ -3,6 +3,7 @@ import clone from "./index.js";
 
 declare global {
   interface Object {
+
     /**
      * Creates a (deep) clone of the object
      * @param [deep=false]

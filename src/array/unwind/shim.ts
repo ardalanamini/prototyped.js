@@ -4,6 +4,7 @@ import unwind from "./index.js";
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   interface Array<T> {
+
     /**
      * Returns the item at a given index. If the index does not exist, def is returned
      * @param path

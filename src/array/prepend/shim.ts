@@ -3,6 +3,7 @@ import prepend from "./index.js";
 
 declare global {
   interface Array<T> {
+
     /**
      * Adds an item to the beginning of the array
      * @param value

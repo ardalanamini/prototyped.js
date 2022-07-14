@@ -1,7 +1,5 @@
 import { PathT, pathToKeys } from "../../utils.js";
 
-export default median;
-
 /**
  * Returns the median value of a given path
  * @param array
@@ -13,6 +11,7 @@ function median<
   Value extends Record<string, unknown>,
   Path extends PathT<Value> = never,
 >(array: Value[], path?: Path): number;
+
 /**
  * Returns the median value of a given path
  * @param array
@@ -29,11 +28,12 @@ function median<Value>(arr: Value[], path?: string): number {
   if (path) {
     const keys = pathToKeys(path);
 
-    reducer = (item: Value) =>
-      keys.reduce((prev, curr) => (prev && (prev as any)[curr]) || prev, item);
+    reducer = (item: Value): any => keys.reduce((prev, curr) => (prev && (prev as any)[curr]) || prev, item);
   }
 
   if (items.length % 2) return reducer(items[half]);
 
   return (reducer(items[half - 1]) + reducer(items[half])) / 2;
 }
+
+export default median;

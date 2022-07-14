@@ -10,7 +10,5 @@ import { filter } from "../../utils.js";
  * whereNotNull([{count:1}, {count:null}, {foo:15}], "count"); // [{count:1}]
  */
 export default function whereNotNull<T>(arr: T[], field?: string): T[] {
-  const iterator = (item: any) => item !== null && item !== undefined;
-
-  return filter(arr, field, iterator);
+  return filter(arr, field, item => item != null);
 }

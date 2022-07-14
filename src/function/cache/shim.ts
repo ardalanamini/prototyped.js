@@ -16,6 +16,6 @@ declare global {
   }
 }
 
-Function.prototype.cache = function cache(...args) {
+Function.prototype.cache = function cache(...args): unknown {
   return method(this as any)(...args);
 };

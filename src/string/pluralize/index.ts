@@ -1,28 +1,6 @@
+/* eslint-disable prefer-named-capture-group */
 import { hasOwnProperty } from "../../utils.js";
 import isString from "../isString/index.js";
-
-/**
- * Returns the singular or plural form of the word based on the input number
- * @param str
- * @param [count]
- * @example
- * pluralize('apple'); // 'apples'
- * @example
- * pluralize('apple', 0); // 'apples'
- * @example
- * pluralize('apple', 1); // 'apple'
- * @example
- * pluralize('apple', 2); // 'apples'
- * @example
- * pluralize('person', 2); // 'people'
- * @example
- * pluralize('people', 1); // 'person'
- */
-export default function pluralize(str: string, count?: number): string {
-  if (count === 1) return singular(str);
-
-  return plural(str);
-}
 
 const IRREGULAR_RULES = [
   // Pronouns.
@@ -42,15 +20,18 @@ const IRREGULAR_RULES = [
   ["has", "have"],
   ["this", "these"],
   ["that", "those"],
+
   // Words ending in with a consonant and `o`.
   ["echo", "echoes"],
   ["dingo", "dingoes"],
   ["volcano", "volcanoes"],
   ["tornado", "tornadoes"],
   ["torpedo", "torpedoes"],
+
   // Ends with `us`.
   ["genus", "genera"],
   ["viscus", "viscera"],
+
   // Ends with `ma`.
   ["stigma", "stigmata"],
   ["stoma", "stomata"],
@@ -58,6 +39,7 @@ const IRREGULAR_RULES = [
   ["lemma", "lemmata"],
   ["schema", "schemata"],
   ["anathema", "anathemata"],
+
   // Other irregular rules.
   ["ox", "oxen"],
   ["axe", "axes"],
@@ -251,44 +233,54 @@ const UNCOUNTABLE_RULES = [
   "wildebeest",
   "wildlife",
   "you",
+
   // RegExes.
-  /[^aeiou]ese$/i, // "chinese", "japanese"
-  /deer$/i, // "deer", "reindeer"
-  /fish$/i, // "fish", "blowfish", "angelfish"
+
+  // "chinese", "japanese"
+  /[^aeiou]ese$/i,
+
+  // "deer", "reindeer"
+  /deer$/i,
+
+  // "fish", "blowfish", "angelfish"
+  /fish$/i,
   /measles$/i,
-  /o[iu]s$/i, // "carnivorous"
-  /pox$/i, // "chickpox", "smallpox"
+
+  // "carnivorous"
+  /o[iu]s$/i,
+
+  // "chickpox", "smallpox"
+  /pox$/i,
   /sheep$/i,
 ];
 
-// Rule storage - pluralize and singularize need to be run sequentially,
-// while other rules can be optimized using an object for instant lookups.
+/*
+ * Rule storage - pluralize and singularize need to be run sequentially,
+ * while other rules can be optimized using an object for instant lookups.
+ */
 const pluralRules: Array<[RegExp, string]> = [];
 const singularRules: Array<[RegExp, string]> = [];
-const uncountables: { [keys: string]: boolean } = {};
-const irregularPlurals: { [keys: string]: string } = {};
-const irregularSingles: { [keys: string]: string } = {};
+const uncountables: Record<string, boolean> = {};
+const irregularPlurals: Record<string, string> = {};
+const irregularSingles: Record<string, string> = {};
 
 /**
  * Sanitize a pluralization rule to a usable regular expression.
  *
  * @private
- * @param {RegExp|String} rule
- * @return {RegExp}
+ * @param rule
  */
-const sanitizeRule = (rule: RegExp | string) =>
-  isString(rule) ? new RegExp(`^${rule}$`, "i") : rule;
+const sanitizeRule = (rule: RegExp | string): RegExp => (isString(rule) ? new RegExp(`^${ rule }$`, "i") : rule);
 
 /**
  * Pass in a word token to produce a function that can replicate the case on
  * another word.
  *
  * @private
- * @param {String} word
- * @param {String} token
- * @return {Function}
+ * @param word
+ * @param token
  */
-const restoreCase = (word: string, token: string) => {
+const restoreCase = (word: string, token: string): string => {
   // Tokens are an exact match.
   if (word === token) return token;
 
@@ -296,9 +288,8 @@ const restoreCase = (word: string, token: string) => {
   if (word === word.toUpperCase()) return token.toUpperCase();
 
   // Title cased words. E.g. "Title".
-  if (word[0] === word[0].toUpperCase()) {
-    return token.charAt(0).toUpperCase() + token.substr(1).toLowerCase();
-  }
+  if (word.startsWith(word[0].toUpperCase())) return token.charAt(0).toUpperCase() + token.substr(1).toLowerCase();
+
 
   // Lower cased words. E.g. "test".
   return token.toLowerCase();
@@ -308,16 +299,15 @@ const restoreCase = (word: string, token: string) => {
  * Replace a word with the updated word.
  *
  * @private
- * @param {Object} replaceMap
- * @param {Object} keepMap
- * @param {Array} rules
- * @return {Function}
+ * @param replaceMap
+ * @param keepMap
+ * @param rules
  */
 const replaceWord = (
-  replaceMap: { [keys: string]: string },
-  keepMap: { [keys: string]: string },
+  replaceMap: Record<string, string>,
+  keepMap: Record<string, string>,
   rules: Array<[RegExp, string]>,
-) => (word: string) => {
+) => (word: string): string => {
   // Get the correct token and case restoration functions.
   const token = word.toLowerCase();
 
@@ -325,9 +315,8 @@ const replaceWord = (
   if (hasOwnProperty.call(keepMap, token)) return restoreCase(word, token);
 
   // Check against the replacement map for a direct word replacement.
-  if (hasOwnProperty.call(replaceMap, token)) {
-    return restoreCase(word, replaceMap[token]);
-  }
+  if (hasOwnProperty.call(replaceMap, token)) return restoreCase(word, replaceMap[token]);
+
 
   // Run all the rules against the word.
 
@@ -342,7 +331,7 @@ const replaceWord = (
     if (rule[0].test(word)) {
       return word.replace(rule[0], (match, index, ...rest) => {
         const args = [match, index].concat(rest);
-        const result = rule[1].replace(/\$(\d{1,2})/g, (_, i) => args[i] || "");
+        const result = rule[1].replace(/\$(?<digits>\d{1,2})/g, (_, i) => args[i] || "");
 
         if (match === "") return restoreCase(word[index - 1], result);
 
@@ -358,11 +347,11 @@ const replaceWord = (
  * Add a pluralization rule to the collection.
  *
  * @private
- * @param {String|RegExp} rule
- * @param {String} replacement
+ * @param rule
+ * @param replacement
  */
-const addPluralRule = (rule: string | RegExp, replacement: string) =>
-  pluralRules.push([sanitizeRule(rule) as any, replacement]);
+const addPluralRule = (rule: RegExp | string, replacement: string): void => void pluralRules
+  .push([sanitizeRule(rule) as any, replacement]);
 
 /**
  * Add a singularization rule to the collection.
@@ -371,8 +360,8 @@ const addPluralRule = (rule: string | RegExp, replacement: string) =>
  * @param {String|RegExp} rule
  * @param {String} replacement
  */
-const addSingularRule = (rule: string | RegExp, replacement: string) =>
-  singularRules.push([sanitizeRule(rule) as any, replacement]);
+const addSingularRule = (rule: RegExp | string, replacement: string): void => void singularRules
+  .push([sanitizeRule(rule) as any, replacement]);
 
 IRREGULAR_RULES.forEach((rule) => {
   const pl = rule[1].toLowerCase();
@@ -382,9 +371,9 @@ IRREGULAR_RULES.forEach((rule) => {
   irregularPlurals[pl] = single;
 });
 
-PLURALIZATION_RUES.forEach((rule) => addPluralRule(rule[0], rule[1]));
+PLURALIZATION_RUES.forEach(rule => addPluralRule(rule[0], rule[1]));
 
-SINGULARIZATION_RULES.forEach((rule) => addSingularRule(rule[0], rule[1]));
+SINGULARIZATION_RULES.forEach(rule => addSingularRule(rule[0], rule[1]));
 
 UNCOUNTABLE_RULES.forEach((word) => {
   if (isString(word)) {
@@ -413,3 +402,26 @@ const plural = replaceWord(irregularSingles, irregularPlurals, pluralRules);
  * @type {Function}
  */
 const singular = replaceWord(irregularPlurals, irregularSingles, singularRules);
+
+/**
+ * Returns the singular or plural form of the word based on the input number
+ * @param str
+ * @param [count]
+ * @example
+ * pluralize('apple'); // 'apples'
+ * @example
+ * pluralize('apple', 0); // 'apples'
+ * @example
+ * pluralize('apple', 1); // 'apple'
+ * @example
+ * pluralize('apple', 2); // 'apples'
+ * @example
+ * pluralize('person', 2); // 'people'
+ * @example
+ * pluralize('people', 1); // 'person'
+ */
+export default function pluralize(str: string, count?: number): string {
+  if (count === 1) return singular(str);
+
+  return plural(str);
+}

@@ -7,16 +7,15 @@
  * test(); // instantly logs the second 'test'
  */
 export default function cache<F extends (...args: unknown[]) => unknown>(
-  func: F,
-): F {
-  const cacheMap = func.cached || (func.cached = new Map());
+  func: F): F {
+  const cacheMap = func.cached ?? (func.cached = (new Map));
 
-  function cached(...args: unknown[]) {
+  function cached(...args: unknown[]): ReturnType<F> {
     const key = JSON.stringify(args);
 
     if (cacheMap.has(key)) return cacheMap.get(key);
 
-    const result = func.call(func, ...args);
+    const result = func.call(func, ...args) as ReturnType<F>;
 
     cacheMap.set(key, result);
 

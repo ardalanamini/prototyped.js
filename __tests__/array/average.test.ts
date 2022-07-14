@@ -10,9 +10,7 @@ describe("Array.prototype.average", () => {
   });
 
   test('[{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].average("a.b") returns 2', () => {
-    expect(
-      [{ a: { b: 1 } }, { a: { b: 2 } }, { a: { b: 3 } }].average("a.b"),
-    ).toBe(2);
+    expect([{ a: { b: 1 } }, { a: { b: 2 } }, { a: { b: 3 } }].average("a.b")).toBe(2);
   });
 });
 
@@ -26,8 +24,6 @@ describe("Array.prototype.avg", () => {
   });
 
   test('[{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].avg("a.b") returns 2', () => {
-    expect([{ a: { b: 1 } }, { a: { b: 2 } }, { a: { b: 3 } }].avg("a.b")).toBe(
-      2,
-    );
+    expect([{ a: { b: 1 } }, { a: { b: 2 } }, { a: { b: 3 } }].avg("a.b")).toBe(2);
   });
 });

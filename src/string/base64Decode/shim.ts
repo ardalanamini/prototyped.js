@@ -3,6 +3,7 @@ import base64Decode from "./index.js";
 
 declare global {
   interface String {
+
     /**
      * Decodes data encoded with MIME base64
      * @example

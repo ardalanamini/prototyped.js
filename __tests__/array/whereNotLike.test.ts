@@ -6,11 +6,9 @@ describe("Array.prototype.whereNotLike", () => {
   });
 
   test('[{foo:"hello"}, {foo:"bar"}, {foo:"world"}].whereNotLike("foo", /o/i) returns [{foo:"bar"}]', () => {
-    expect(
-      [{ foo: "hello" }, { foo: "bar" }, { foo: "world" }].whereNotLike(
-        "foo",
-        /o/i,
-      ),
-    ).toEqual([{ foo: "bar" }]);
+    expect([{ foo: "hello" }, { foo: "bar" }, { foo: "world" }].whereNotLike(
+      "foo",
+      /o/i,
+    )).toEqual([{ foo: "bar" }]);
   });
 });

@@ -30,8 +30,10 @@ const BASIC_TESTS = [
   ["STAFF", "STAFF"],
   ["turquois", "turquois"],
   ["carnivorous", "carnivorous"],
+
   // Latin.
   ["veniam", "veniam"],
+
   // Pluralization.
   ["this", "these"],
   ["that", "those"],
@@ -107,17 +109,23 @@ const BASIC_TESTS = [
   ["lady", "ladies"],
   ["bath", "baths"],
   ["professional", "professionals"],
-  ["dwarf", "dwarves"], // Proper spelling is "dwarfs".
+
+  // Proper spelling is "dwarfs".
+  ["dwarf", "dwarves"],
   ["encyclopedia", "encyclopedias"],
   ["louse", "lice"],
   ["roof", "roofs"],
   ["woman", "women"],
   ["formula", "formulas"],
   ["polyhedron", "polyhedra"],
-  ["index", "indices"], // Maybe "indexes".
+
+  // Maybe "indexes".
+  ["index", "indices"],
   ["matrix", "matrices"],
   ["vertex", "vertices"],
-  ["axe", "axes"], // Could also be plural of "ax".
+
+  // Could also be plural of "ax".
+  ["axe", "axes"],
   ["pickaxe", "pickaxes"],
   ["crisis", "crises"],
   ["criterion", "criteria"],
@@ -596,8 +604,10 @@ const BASIC_TESTS = [
   ["amice", "amices"],
   ["titmouse", "titmice"],
   ["slice", "slices"],
+
   // Prototype inheritance.
   ["constructor", "constructors"],
+
   // Non-standard case.
   ["randomWord", "randomWords"],
   ["camelCase", "camelCases"],
@@ -650,6 +660,7 @@ describe("String.prototype.pluralize", () => {
 
   describe("automatically convert", () => {
     describe("pluralize(5)", () => {
+      // eslint-disable-next-line max-nested-callbacks
       it.each(PLURAL_TESTS)("5 %s -> %s", (singular, plural) => {
         // Make sure the plural stays plural.
         expect(plural.pluralize(5)).toEqual(plural);
@@ -660,6 +671,7 @@ describe("String.prototype.pluralize", () => {
     });
 
     describe("pluralize(1)", () => {
+      // eslint-disable-next-line max-nested-callbacks
       it.each(SINGULAR_TESTS)("1 %s -> %s", (singular, plural) => {
         // Make sure the singular stays singular.
         expect(singular.pluralize(1)).toEqual(singular);

@@ -1,8 +1,9 @@
-import count from "./index.js";
 import { addPrototype } from "../../utils.js";
+import count from "./index.js";
 
 declare global {
   interface Array<T> {
+
     /**
      * Counts the occurrences of a value in an array
      * @param [value]

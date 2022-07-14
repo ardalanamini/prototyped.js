@@ -3,6 +3,7 @@ import pad from "./index.js";
 
 declare global {
   interface String {
+
     /**
      * FillS the string with the given value until the string reaches the specified size
      * @param size

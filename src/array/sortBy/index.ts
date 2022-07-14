@@ -20,8 +20,7 @@ export default function sortBy<T>(
   if (isString(fn)) {
     const keys = pathToKeys(fn);
 
-    reducer = (value): number =>
-      keys.reduce((prev, cur) => (prev as any)[cur], value) as any;
+    reducer = (value): number => keys.reduce((prev, cur) => (prev as any)[cur], value) as any;
   }
 
   return arr.sort((a, b) => reducer(a) - reducer(b));

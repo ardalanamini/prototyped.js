@@ -3,6 +3,7 @@ import forEach from "./index.js";
 
 declare global {
   interface Object {
+
     /**
      * Iterates the object by keys
      * @param fn

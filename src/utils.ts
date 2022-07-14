@@ -1,23 +1,26 @@
+export const STRAIGHT_ANGLE_DEGREE = 180.0;
+
+export const PI = Math.PI;
+
 export const hasOwnProperty = Object.prototype.hasOwnProperty;
 
 /**
- * convert key path string to key array
+ * Convert key path string to key array
  * @private
  * @param path
  * @example
  * pathToKeys("selector.to[0][11].value"); // ["selector", "to", 0, 11, "value"]
  */
-export const pathToKeys = (path: string) =>
-  path
-    .replace(/([^.])\[/g, (m, match) => `${match}.[`)
-    .split(".")
-    .map((key) => {
-      const match = key.match(/^\[(\d+)]$/);
+export const pathToKeys = (path: string): Array<number | string> => path
+  .replace(/(?<key>[^.])\[/g, (m, match) => `${ match }.[`)
+  .split(".")
+  .map((key) => {
+    const match = key.match(/^\[(?<digits>\d+)]$/);
 
-      if (match) return +match[1];
+    if (match?.groups) return +match.groups.digits;
 
-      return key;
-    });
+    return key;
+  });
 
 /**
  *
@@ -29,15 +32,18 @@ export const pathToKeys = (path: string) =>
  * addPrototype(Object, "$size", function() {return this;});
  */
 export const addPrototype = (
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  obj: any,
-  keys: string | string[],
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  obj: unknown,
+  keys: string[] | string,
   method: (...args: any[]) => any,
 ): void => {
-  if (Array.isArray(keys)) return keys.forEach(key => addPrototype(obj, key, method));
+  if (Array.isArray(keys)) {
+    keys.forEach(key => addPrototype(obj, key, method));
 
-  const prototype = obj.prototype;
+    return;
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const prototype = (obj as any).prototype;
 
   if (hasOwnProperty.call(prototype, keys)) return;
 
@@ -63,13 +69,12 @@ export const filter = <T>(
   path: string | undefined,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   fn: (value: T, index: number, array: T[]) => any,
-) => {
+): T[] => {
   if (path) {
     const keys = pathToKeys(path);
 
-    const reducer = (item: T) =>
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      keys.reduce((prev, curr) => (prev as any)[curr], item);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const reducer = (item: T): any => keys.reduce((prev, curr) => (prev as any)[curr], item);
 
     return arr.filter((item, index, items) => fn(reducer(item), index, items));
   }
@@ -91,18 +96,15 @@ export const deepClone = <T>(value: T): T => {
   if (value instanceof Date) return new Date(value.getTime()) as any;
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const clone: any = Object.assign({}, value);
+  const clone: any = { ...value };
 
-  Object.keys(clone).forEach(
-    (key) =>
-      (clone[key] =
+  Object.keys(clone).forEach(key => (clone[key]
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        typeof (value as any)[key] === "object"
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          ? deepClone((value as any)[key])
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          : (value as any)[key]),
-  );
+        = typeof (value as any)[key] === "object"
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      ? deepClone((value as any)[key])
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      : (value as any)[key]));
 
   if (Array.isArray(value)) {
     clone.length = value.length;
@@ -114,7 +116,7 @@ export const deepClone = <T>(value: T): T => {
   return clone;
 };
 
-export type OperatorT = "<" | "<=" | "=" | "<>" | ">=" | ">";
+export type OperatorT = "<" | "<=" | "<>" | "=" | ">" | ">=";
 
 export const enum OPERATOR {
   LT = "<",
@@ -130,8 +132,8 @@ export type RecordT = Record<string, any>;
 
 export type PathsToStringPropsT<Value> = Value extends Record<string, unknown>
   ? {
-    [Key in keyof Value]: [Key] | [Key, ...PathsToStringPropsT<Value[Key]>];
-  }[keyof Value]
+      [Key in keyof Value]: [Key, ...PathsToStringPropsT<Value[Key]>] | [Key];
+    }[keyof Value]
   : [];
 
 export type JoinT<Value extends string[]> = Value extends []
@@ -142,7 +144,7 @@ export type JoinT<Value extends string[]> = Value extends []
       ? F extends string
         ? string extends F
           ? string
-          : `${F}.${JoinT<Extract<R, string[]>>}`
+          : `${ F }.${ JoinT<Extract<R, string[]>> }`
         : never
       : string;
 

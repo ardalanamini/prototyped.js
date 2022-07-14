@@ -10,7 +10,8 @@
 export default function once<
   Args extends unknown[],
   Return,
-  F extends (...args: Args) => Return,
+  F extends (...a: Args) => Return,
+// eslint-disable-next-line @typescript-eslint/no-invalid-void-type
 >(func: F, ...args: Args): Return | void {
   if (func.called) return;
 

@@ -3,6 +3,7 @@ import decapitalize from "./index.js";
 
 declare global {
   interface String {
+
     /**
      * Returns the decapitalized string
      * @param [allWords=false]

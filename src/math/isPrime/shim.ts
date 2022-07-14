@@ -2,6 +2,7 @@ import isPrime from "./index.js";
 
 declare global {
   interface Math {
+
     /**
      * Checks if the provided integer is a prime number
      * @param num

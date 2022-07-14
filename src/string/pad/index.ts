@@ -17,7 +17,7 @@ export default function pad(str: string, size: number, value = " "): string {
 
   const padStr = repeat(s - str.length, value);
 
-  if (size < 0) return `${padStr}${str}`;
+  if (size < 0) return `${ padStr }${ str }`;
 
-  return `${str}${padStr}`;
+  return `${ str }${ padStr }`;
 }

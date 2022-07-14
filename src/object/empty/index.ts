@@ -1,4 +1,4 @@
-import ObjectKeys from "../keys/index.js";
+import objectKeys from "../keys/index.js";
 
 /**
  * Empty the object
@@ -9,9 +9,7 @@ import ObjectKeys from "../keys/index.js";
  * // obj = {};
  */
 export default function empty(obj: Record<string, unknown>): void {
-  const keys = ObjectKeys(obj);
+  const keys = objectKeys(obj);
 
-  for (let i = 0; i < keys.length; i++) {
-    delete obj[keys[i]];
-  }
+  for (const key of keys) delete obj[key];
 }

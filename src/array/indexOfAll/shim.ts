@@ -3,6 +3,7 @@ import indexOfAll from "./index.js";
 
 declare global {
   interface Array<T> {
+
     /**
      * Returns all indices of value in the array. If value never occurs, returns []
      * @param value

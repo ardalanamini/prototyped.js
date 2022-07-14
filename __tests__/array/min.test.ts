@@ -14,8 +14,6 @@ describe("Array.prototype.min", () => {
   });
 
   test('[{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].min("a.b") returns 1', () => {
-    expect([{ a: { b: 1 } }, { a: { b: 2 } }, { a: { b: 3 } }].min("a.b")).toBe(
-      1,
-    );
+    expect([{ a: { b: 1 } }, { a: { b: 2 } }, { a: { b: 3 } }].min("a.b")).toBe(1);
   });
 });

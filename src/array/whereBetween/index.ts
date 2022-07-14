@@ -1,7 +1,5 @@
 import { filter } from "../../utils.js";
 
-export default whereBetween;
-
 /**
  * Filters the array
  * @param arr
@@ -11,6 +9,7 @@ export default whereBetween;
  * whereBetween([1, 2, 2, 3, 4, 4, 5], 3,4); // [3,4,4]
  */
 function whereBetween<T>(arr: T[], start: T, end: T): T[];
+
 /**
  * Filters the array
  * @param arr
@@ -26,19 +25,23 @@ function whereBetween<T>(
   start: unknown,
   end: unknown,
 ): T[];
+// eslint-disable-next-line
 function whereBetween<T>(
   arr: T[],
-  field: string | any,
+  field: any | string,
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   start: any,
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   end?: any,
 ): T[] {
-  if (end === undefined) {
+  if (end == null) {
     end = start;
     start = field;
+    // eslint-disable-next-line no-undefined
     field = undefined;
   }
 
-  const iterator = (item: any) => item >= start && item <= end;
-
-  return filter(arr, field, iterator);
+  return filter(arr, field, item => item >= start && item <= end);
 }
+
+export default whereBetween;

@@ -3,6 +3,7 @@ import distinct from "./index.js";
 
 declare global {
   interface Array<T> {
+
     /**
      * Returns all the distinct values of an array
      * @param [fn]

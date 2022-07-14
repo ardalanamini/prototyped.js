@@ -13,7 +13,5 @@ export default function equals<T>(arr: T[], value: unknown): value is T[] {
 
   if (arr.length !== value.length) return false;
 
-  return range(arr.length - 1).every((key) =>
-    objectEquals(arr[key] as Record<string, unknown>, value[key]),
-  );
+  return range(arr.length - 1).every(key => objectEquals(arr[key] as Record<string, unknown>, value[key]));
 }

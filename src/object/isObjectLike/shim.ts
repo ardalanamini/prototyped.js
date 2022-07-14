@@ -2,6 +2,7 @@ import isObjectLike from "./index.js";
 
 declare global {
   interface ObjectConstructor {
+
     /**
      * Returns true if the given argument is object like
      * @param arg

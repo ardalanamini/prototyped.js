@@ -3,6 +3,7 @@ import humanize from "./index.js";
 
 declare global {
   interface String {
+
     /**
      * Converts an underscored, camelized, or dasherized string into a humanized one.
      * Also removes beginning and ending whitespace

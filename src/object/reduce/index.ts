@@ -13,6 +13,7 @@ export default function reduce<T extends Record<string, unknown>,
   P = unknown>(
   obj: T,
   fn: (prev: P, value: T[K], key: K, object: T) => P,
+  // eslint-disable-next-line no-undefined
   initialValue: P = undefined as never,
 ): P {
   let reduced = initialValue;

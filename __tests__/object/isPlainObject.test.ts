@@ -7,10 +7,12 @@ describe("Object.isPlainObject", () => {
 
   test("Object.isPlainObject(new Foo) returns false", () => {
     class Foo {
+
       public a = 1;
+
     }
 
-    expect(Object.isPlainObject(new Foo())).toBe(false);
+    expect(Object.isPlainObject((new Foo))).toBe(false);
   });
 
   test('Object.isPlainObject({foo: "bar"}) returns true', () => {

@@ -3,6 +3,7 @@ import countBy from "./index.js";
 
 declare global {
   interface Array<T> {
+
     /**
      * Groups the elements of an array based on the given function and
      * returns the count of elements in each group
@@ -14,7 +15,7 @@ declare global {
      */
     countBy(
       fn: string | ((value: T, index: number, arr: T[]) => any),
-    ): { [key: string]: number };
+    ): Record<string, number>;
   }
 }
 

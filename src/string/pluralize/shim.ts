@@ -3,6 +3,7 @@ import pluralize from "./index.js";
 
 declare global {
   interface String {
+
     /**
      * Returns the singular or plural form of the word based on the input number
      * @param [count]

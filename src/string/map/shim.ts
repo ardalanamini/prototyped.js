@@ -3,6 +3,7 @@ import map from "./index.js";
 
 declare global {
   interface String {
+
     /**
      * Just like array.map
      * @param fn

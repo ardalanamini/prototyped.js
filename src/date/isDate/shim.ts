@@ -2,6 +2,7 @@ import isDate from "./index.js";
 
 declare global {
   interface DateConstructor {
+
     /**
      * Returns true if the given argument is an instance of Date
      * @param arg

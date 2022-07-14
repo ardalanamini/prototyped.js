@@ -3,6 +3,7 @@ import snakeCase from "./index.js";
 
 declare global {
   interface String {
+
     /**
      * Converts a string to snake case
      * @example

@@ -3,6 +3,7 @@ import isEmpty from "./index.js";
 
 declare global {
   interface Object {
+
     /**
      * Checks if the object is empty
      * @example

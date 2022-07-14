@@ -2,6 +2,7 @@ import range from "./index.js";
 
 declare global {
   interface ArrayConstructor {
+
     /**
      * Initializes an array containing the numbers in the specified range where start
      * and end are inclusive with there common difference step

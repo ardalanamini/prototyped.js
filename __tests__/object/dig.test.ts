@@ -19,6 +19,7 @@ describe("Object.prototype.$dig", () => {
   });
 
   test('data.$dig("level4") returns undefined', () => {
+    // eslint-disable-next-line no-undefined
     expect(data.$dig("level4")).toBe(undefined);
   });
 });

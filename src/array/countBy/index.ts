@@ -11,9 +11,9 @@
 export default function countBy<Value>(
   array: Value[],
   fn: string | ((value: Value, index: number, array: Value[]) => any),
-): { [key: string]: number } {
+): Record<string, number> {
   return array
-    .map(typeof fn === "function" ? fn : (value: any) => value[fn])
+    .map(typeof fn === "function" ? fn : (value: any): any => value[fn])
     .reduce((prev, value: string) => {
       prev[value] = (prev[value] || 0) + 1;
 

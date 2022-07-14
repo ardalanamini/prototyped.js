@@ -2,6 +2,7 @@ import fibonacci from "./index.js";
 
 declare global {
   interface Math {
+
     /**
      * Generates an array, containing the Fibonacci sequence, up until the nth term
      * @param nth

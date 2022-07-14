@@ -10,10 +10,12 @@ describe("Object.prototype.$set", () => {
   });
 
   it("shouldn't set/overwrite prototype/constructor keys", () => {
+    // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
     expect(({} as Record<string, unknown>).foo).toBeUndefined();
 
     ({}.$set("__proto__.foo", "bar"));
 
+    // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
     expect(({} as Record<string, unknown>).foo).toBeUndefined();
   });
 });

@@ -3,6 +3,7 @@ import reduce from "./index.js";
 
 declare global {
   interface Object {
+
     /**
      * Just like array.reduce
      * @param fn

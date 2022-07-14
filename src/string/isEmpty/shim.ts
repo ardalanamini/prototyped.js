@@ -3,6 +3,7 @@ import isEmpty from "./index.js";
 
 declare global {
   interface String {
+
     /**
      * Checks if the string is empty
      * @example

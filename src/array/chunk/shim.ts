@@ -1,8 +1,9 @@
-import chunk from "./index.js";
 import { addPrototype } from "../../utils.js";
+import chunk from "./index.js";
 
 declare global {
   interface Array<T> {
+
     /**
      * Chunks the array into smaller arrays of a specified size
      * @param size

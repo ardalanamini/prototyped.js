@@ -41,12 +41,12 @@ describe("utils", () => {
 
   test("deepClone Function", () => {
     // eslint-disable-next-line @typescript-eslint/no-empty-function
-    function a() {}
+    function a(): void {}
     expect(utils.deepClone(a)).toBe(a);
   });
 
   test("deepClone Date", () => {
-    const base = new Date();
+    const base = (new Date);
     const date = new Date(base.getTime());
 
     const cloned = utils.deepClone(date);

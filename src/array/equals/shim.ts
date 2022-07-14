@@ -3,6 +3,7 @@ import equals from "./index.js";
 
 declare global {
   interface Array<T> {
+
     /**
      * Checks if the array is equal to the given value
      * @param value

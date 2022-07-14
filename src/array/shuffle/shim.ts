@@ -3,6 +3,7 @@ import shuffle from "./index.js";
 
 declare global {
   interface Array<T> {
+
     /**
      * Randomizes the order of the values of an array, returning a new array
      * @example

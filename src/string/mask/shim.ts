@@ -3,6 +3,7 @@ import mask from "./index.js";
 
 declare global {
   interface String {
+
     /**
      * Replaces all but the last num of characters with the specified mask character
      * @param [num=4]

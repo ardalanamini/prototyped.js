@@ -3,6 +3,7 @@ import invert from "./index.js";
 
 declare global {
   interface Object {
+
     /**
      * Inverts the key-value pairs of the object, without mutating it
      * @example

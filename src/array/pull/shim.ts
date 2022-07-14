@@ -3,6 +3,7 @@ import pull from "./index.js";
 
 declare global {
   interface Array<T> {
+
     /**
      * Mutates the original array to filter out the values specified
      * @param args

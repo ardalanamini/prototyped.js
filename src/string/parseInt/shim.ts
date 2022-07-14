@@ -3,6 +3,7 @@ import parseInt from "./index.js";
 
 declare global {
   interface String {
+
     /**
      * Converts string to an integer of the specified radix
      * @param [radix]

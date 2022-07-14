@@ -3,6 +3,7 @@ import sample from "./index.js";
 
 declare global {
   interface Array<T> {
+
     /**
      * Returns a random element from an array
      * @example

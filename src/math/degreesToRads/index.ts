@@ -1,4 +1,4 @@
-const PI = Math.PI;
+import { PI, STRAIGHT_ANGLE_DEGREE } from "../../utils.js";
 
 /**
  * Converts a decimal degree to radians
@@ -7,5 +7,5 @@ const PI = Math.PI;
  * degreesToRads(180); // 3.141592653589793
  */
 export default function degreesToRads(num: number): number {
-  return (num * PI) / 180.0;
+  return (num * PI) / STRAIGHT_ANGLE_DEGREE;
 }

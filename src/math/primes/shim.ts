@@ -2,6 +2,7 @@ import primes from "./index.js";
 
 declare global {
   interface Math {
+
     /**
      * Generates primes up to a given number, using the Sieve of Eratosthenes
      * @param num

@@ -4,6 +4,7 @@ import toCSV from "./index.js";
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   interface Array<T> {
+
     /**
      * Converts a 2D array to a comma-separated values (CSV) string
      * @param [delimiter=","]

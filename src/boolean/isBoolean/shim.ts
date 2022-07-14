@@ -2,6 +2,7 @@ import isBoolean from "./index.js";
 
 declare global {
   interface BooleanConstructor {
+
     /**
      * Returns true if the given argument is a boolean
      * @param arg

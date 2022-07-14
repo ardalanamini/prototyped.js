@@ -3,6 +3,7 @@ import defer from "./index.js";
 
 declare global {
   interface Function {
+
     /**
      * Defers invoking the function until the current call stack has cleared
      * @param args

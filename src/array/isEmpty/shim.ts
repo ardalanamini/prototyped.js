@@ -4,6 +4,7 @@ import isEmpty from "./index.js";
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   interface Array<T> {
+
     /**
      * Checks if the array is empty
      * @example

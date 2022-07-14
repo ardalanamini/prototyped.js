@@ -3,6 +3,7 @@ import merge from "./index.js";
 
 declare global {
   interface Object {
+
     /**
      * Creates a new object from the combination of two or more objects
      * @param objects
@@ -18,7 +19,7 @@ declare global {
      * };
      * object.$merge(other); // { a: [ { x: 2 }, { y: 4 }, { z: 3 } ], b: [ 1, 2, 3 ], c: "foo" }
      */
-    $merge(...objects: Record<string, unknown>[]): Record<string, unknown>;
+    $merge(...objects: Array<Record<string, unknown>>): Record<string, unknown>;
   }
 }
 

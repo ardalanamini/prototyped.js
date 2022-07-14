@@ -6,8 +6,6 @@
  * @example
  * isFunction(() => {}); // true
  */
-export default function isFunction(
-  arg: unknown,
-): arg is (...args: unknown[]) => unknown {
+export default function isFunction(arg: unknown): arg is (...args: unknown[]) => unknown {
   return typeof arg === "function";
 }

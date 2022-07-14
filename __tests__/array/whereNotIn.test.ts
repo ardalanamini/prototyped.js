@@ -6,8 +6,6 @@ describe("Array.prototype.whereNotIn", () => {
   });
 
   test('[{count:1}, {count:20}, {count:15}].whereNotIn("count", [1, 15]) returns [{count:20}]', () => {
-    expect(
-      [{ count: 1 }, { count: 20 }, { count: 15 }].whereNotIn("count", [1, 15]),
-    ).toEqual([{ count: 20 }]);
+    expect([{ count: 1 }, { count: 20 }, { count: 15 }].whereNotIn("count", [1, 15])).toEqual([{ count: 20 }]);
   });
 });

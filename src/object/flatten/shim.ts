@@ -3,6 +3,7 @@ import flatten from "./index.js";
 
 declare global {
   interface Object {
+
     /**
      * Flattens the object into a single-depth object
      * @example

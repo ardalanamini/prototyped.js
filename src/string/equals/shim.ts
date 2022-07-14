@@ -3,6 +3,7 @@ import equals from "./index.js";
 
 declare global {
   interface String {
+
     /**
      * Checks if the string is equal to the given value
      * @param value

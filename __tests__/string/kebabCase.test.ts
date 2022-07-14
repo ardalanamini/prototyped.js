@@ -10,12 +10,11 @@ describe("String.prototype.kebabCase", () => {
   });
 
   test(
-    '"some-mixed_string With spaces_underscores-and-hyphens".kebabCase() returns ' +
-      '"some-mixed-string-with-spaces-underscores-and-hyphens"',
+    '"some-mixed_string With spaces_underscores-and-hyphens".kebabCase() returns '
+      + '"some-mixed-string-with-spaces-underscores-and-hyphens"',
     () => {
-      expect(
-        "some-mixed_string With spaces_underscores-and-hyphens".kebabCase(),
-      ).toBe("some-mixed-string-with-spaces-underscores-and-hyphens");
+      expect("some-mixed_string With spaces_underscores-and-hyphens".kebabCase())
+        .toBe("some-mixed-string-with-spaces-underscores-and-hyphens");
     },
   );
 
@@ -23,14 +22,11 @@ describe("String.prototype.kebabCase", () => {
     expect("AllThe-small Things".kebabCase()).toBe("all-the-small-things");
   });
 
-  test('"IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML".kebabCase()' +
-    " returns " +
-    '"i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-some-xml-and-html"', () => {
-    expect(
-      "IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML".kebabCase(),
-    ).toBe(
-      "i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-some-xml-and-html",
-    );
+  test('"IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML".kebabCase()'
+    + " returns "
+    + '"i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-some-xml-and-html"', () => {
+    expect("IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML".kebabCase())
+      .toBe("i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-some-xml-and-html");
   });
 
   test('"foo_Bar22".kebabCase() returns "foo-bar-22"', () => {

@@ -10,6 +10,6 @@ export default function chunk<Value>(array: Value[], size: number): Value[][] {
     {
       length: Math.ceil(array.length / size),
     },
-    (value, index) => array.slice(index * size, index * size + size),
+    (value, index) => array.slice(index * size, (index * size) + size),
   );
 }

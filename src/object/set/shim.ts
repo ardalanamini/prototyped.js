@@ -3,6 +3,7 @@ import set from "./index.js";
 
 declare global {
   interface Object {
+
     /**
      * Puts the property value indicated by the given selector into the object
      * @param path

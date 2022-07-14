@@ -3,6 +3,7 @@ import kebabCase from "./index.js";
 
 declare global {
   interface String {
+
     /**
      * Converts a string to kebab case
      * @example
