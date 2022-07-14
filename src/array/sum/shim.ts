@@ -1,8 +1,9 @@
-import { addPrototype, PathT } from "../../utils.js";
+import { PathT, addPrototype } from "../../utils.js";
 import sum from "./index.js";
 
 declare global {
   interface Array<T> {
+
     /**
      * Returns the sum value of a given path
      * @param [path]

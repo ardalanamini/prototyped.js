@@ -3,6 +3,7 @@ import values from "./index.js";
 
 declare global {
   interface Object {
+
     /**
      * Get values of the object
      * @example

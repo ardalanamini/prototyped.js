@@ -4,6 +4,7 @@ import zip from "./index.js";
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   interface Array<T> {
+
     /**
      * Creates an array of elements, grouped based on the position in the original arrays
      * @param arrays

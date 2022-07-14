@@ -2,6 +2,7 @@ import gcd from "./index.js";
 
 declare global {
   interface Math {
+
     /**
      * Calculates the greatest common divisor between two or more numbers
      * @param nums

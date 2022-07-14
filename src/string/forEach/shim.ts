@@ -3,6 +3,7 @@ import forEach from "./index.js";
 
 declare global {
   interface String {
+
     /**
      * Just like array.forEach
      * @param fn

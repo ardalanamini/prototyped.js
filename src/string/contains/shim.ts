@@ -3,6 +3,7 @@ import contains from "./index.js";
 
 declare global {
   interface String {
+
     /**
      * Find out if the string contains the argument at any position
      * @param str

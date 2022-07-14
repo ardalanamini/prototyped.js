@@ -3,6 +3,7 @@ import initial from "./index.js";
 
 declare global {
   interface Array<T> {
+
     /**
      * Returns all the elements of an array except the last one
      * @example

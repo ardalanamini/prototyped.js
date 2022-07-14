@@ -4,6 +4,7 @@ import merge from "./index.js";
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   interface Array<T> {
+
     /**
      * Merges array with the given array
      * @param arr

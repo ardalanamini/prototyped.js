@@ -3,6 +3,7 @@ import everyNth from "./index.js";
 
 declare global {
   interface Array<T> {
+
     /**
      * Returns every nth element in an array
      * @param n

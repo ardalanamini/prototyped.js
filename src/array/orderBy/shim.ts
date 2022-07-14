@@ -1,10 +1,11 @@
-import { addPrototype, PathT } from "../../utils.js";
+import { PathT, addPrototype } from "../../utils.js";
 import orderBy, { OrderT } from "./index.js";
 
 declare global {
   interface Array<T> {
+
     /**
-     * sorts the array
+     * Sorts the array
      * @param [order="asc"]
      * @example
      * [2, 1, 2, 5].orderBy(); // [1,2,2,5]
@@ -14,7 +15,7 @@ declare global {
     orderBy(order?: OrderT): T[];
 
     /**
-     * sorts the array
+     * Sorts the array
      * @param field
      * @param [order="asc"]
      * @example

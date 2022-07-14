@@ -1,8 +1,9 @@
-import { addPrototype, PathT } from "../../utils.js";
+import { PathT, addPrototype } from "../../utils.js";
 import implode from "./index.js";
 
 declare global {
   interface Array<T> {
+
     /**
      * It's like join but u get to tell it which keys to join
      * @param path

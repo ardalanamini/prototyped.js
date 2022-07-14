@@ -3,6 +3,7 @@ import tail from "./index.js";
 
 declare global {
   interface Array<T> {
+
     /**
      * Returns all elements in an array except for the first one
      * @example

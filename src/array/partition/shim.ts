@@ -3,6 +3,7 @@ import partition from "./index.js";
 
 declare global {
   interface Array<T> {
+
     /**
      * Groups the elements into two arrays,
      * depending on the provided function's truthiness for each element

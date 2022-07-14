@@ -8,11 +8,9 @@
  */
 export default function humanize(str: string): string {
   return (
-    str.match(
-      /[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g,
-    ) || [""]
+    str.match(/[A-Z]{2,}(?=[A-Z][a-z]+\d*|\b)|[A-Z]?[a-z]+\d*|[A-Z]|\d+/g) ?? [""]
   )
-    .map((x) => x.toLowerCase())
+    .map(x => x.toLowerCase())
     .join(" ")
-    .replace(/^[a-z]/, (char) => char.toUpperCase());
+    .replace(/^[a-z]/, char => char.toUpperCase());
 }

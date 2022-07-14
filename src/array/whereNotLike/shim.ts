@@ -3,13 +3,14 @@ import whereNotLike from "./index.js";
 
 declare global {
   interface Array<T> {
+
     /**
      * Filters the array
      * @param value
      * @example
      * ["foo", "bar", "hello", "world"].whereNotLike("o"); // ["bar"]
      */
-    whereNotLike(value: string | RegExp): T[];
+    whereNotLike(value: RegExp | string): T[];
 
     /**
      * Filters the array
@@ -18,7 +19,7 @@ declare global {
      * @example
      * [{foo:"hello"}, {foo:"bar"}, {foo:"world"}].whereNotLike("foo", /o/i); // [{foo:"bar"}]
      */
-    whereNotLike(field: string, value: string | RegExp): T[];
+    whereNotLike(field: string, value: RegExp | string): T[];
   }
 }
 

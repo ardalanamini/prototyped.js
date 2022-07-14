@@ -3,6 +3,7 @@ import get from "./index.js";
 
 declare global {
   interface Object {
+
     /**
      * Retrieve the property indicated by the given selector from the object
      * @param key

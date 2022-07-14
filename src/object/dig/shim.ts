@@ -3,6 +3,7 @@ import dig from "./index.js";
 
 declare global {
   interface Object {
+
     /**
      * Returns the target value in a nested JSON object, based on the given key
      * @param target

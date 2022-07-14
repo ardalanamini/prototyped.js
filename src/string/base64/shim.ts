@@ -3,6 +3,7 @@ import base64 from "./index.js";
 
 declare global {
   interface String {
+
     /**
      * Encodes data with MIME base64
      * @example

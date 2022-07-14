@@ -4,6 +4,7 @@ import nest from "./index.js";
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   interface Array<T> {
+
     /**
      * Given a flat array of objects linked to one another, it will nest them recursively
      * @param [link="parent_id"]
@@ -18,7 +19,7 @@ declare global {
      * ];
      * comments.nest("comment_id"); // [{ id: 1, comment_id: null, children: [...] }]
      */
-    nest(link?: string, key?: string): Record<string, unknown>[];
+    nest(link?: string, key?: string): Array<Record<string, unknown>>;
   }
 }
 

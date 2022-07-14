@@ -14,12 +14,12 @@ export default function distinctBy<T>(
   array.forEach((a) => {
     let had = false;
 
-    for (let i = 0; i < distinct.length; i++) {
-      if (!fn(a, distinct[i])) continue;
+    for (const d of distinct) {
+      if (fn(a, d)) {
+        had = true;
 
-      had = true;
-
-      break;
+        break;
+      }
     }
 
     if (!had) distinct.push(a);

@@ -21,12 +21,13 @@ export default function distinct<T>(
   if (isString(fn)) {
     const keys = pathToKeys(fn);
 
-    fn = (value) => keys.reduce((prev: any, cur) => prev[cur], value);
+    // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+    fn = value => keys.reduce((prev: any, cur) => prev[cur], value);
   }
 
   const length = array.length;
-  const found: { [value: string]: true | undefined } = {};
-  const distinct: T[] = [];
+  const found: Record<string, true | undefined> = {};
+  const result: T[] = [];
 
   for (let i = 0; i < length; i++) {
     const value = array[i];
@@ -36,8 +37,8 @@ export default function distinct<T>(
 
     found[generatedValue] = true;
 
-    distinct.push(value);
+    result.push(value);
   }
 
-  return distinct;
+  return result;
 }

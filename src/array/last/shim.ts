@@ -3,6 +3,7 @@ import last from "./index.js";
 
 declare global {
   interface Array<T> {
+
     /**
      * Returns the last item of the array
      * @example

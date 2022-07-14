@@ -3,6 +3,7 @@ import empty from "./index.js";
 
 declare global {
   interface Object {
+
     /**
      * Empty the object
      * @example

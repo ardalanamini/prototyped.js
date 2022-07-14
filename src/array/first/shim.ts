@@ -3,6 +3,7 @@ import first from "./index.js";
 
 declare global {
   interface Array<T> {
+
     /**
      * Returns the first item of the array
      * @example

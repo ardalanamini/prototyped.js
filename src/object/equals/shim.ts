@@ -3,6 +3,7 @@ import equals from "./index.js";
 
 declare global {
   interface Object {
+
     /**
      * Performs a deep comparison between two values to determine if they are equivalent
      * @param obj

@@ -3,6 +3,7 @@ import intersect from "./index.js";
 
 declare global {
   interface Array<T> {
+
     /**
      * Returns a list of elements that exist in both arrays
      * @param array

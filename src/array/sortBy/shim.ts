@@ -3,6 +3,7 @@ import sortBy from "./index.js";
 
 declare global {
   interface Array<T> {
+
     /**
      * Groups the elements of an array based on the given function and
      * returns the count of elements in each group

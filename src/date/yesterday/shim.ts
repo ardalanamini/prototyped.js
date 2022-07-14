@@ -2,6 +2,7 @@ import yesterday from "./index.js";
 
 declare global {
   interface DateConstructor {
+
     /**
      * Returns yesterday's date in `YYYY-MM-DD` format
      * @example

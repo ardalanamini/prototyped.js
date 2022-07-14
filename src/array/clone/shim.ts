@@ -1,8 +1,9 @@
-import clone from "./index.js";
 import { addPrototype } from "../../utils.js";
+import clone from "./index.js";
 
 declare global {
   interface Array<T> {
+
     /**
      * Returns the cloned array
      * @param [deep=false]

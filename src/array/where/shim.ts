@@ -1,8 +1,9 @@
-import { addPrototype, OperatorT } from "../../utils.js";
+import { OperatorT, addPrototype } from "../../utils.js";
 import where from "./index.js";
 
 declare global {
   interface Array<T> {
+
     /**
      * Filters the array
      * @param value

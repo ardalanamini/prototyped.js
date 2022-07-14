@@ -22,9 +22,9 @@ export default function dig(
   if (target in obj) return obj[target];
 
   return values(obj).reduce((acc, val) => {
-    if (acc !== undefined) return acc;
+    if (acc != null) return acc;
 
-    if (typeof val === "object")
-      return dig(val as Record<string, unknown>, target);
+    if (typeof val === "object") return dig(val as Record<string, unknown>, target);
+    // eslint-disable-next-line no-undefined
   }, undefined);
 }

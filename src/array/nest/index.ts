@@ -1,3 +1,18 @@
+// eslint-disable-next-line max-params
+function filter(
+  arr: Array<Record<string, unknown>>,
+  link: string,
+  key: string,
+  id: unknown = null,
+): Array<Record<string, unknown>> {
+  return arr
+    .filter(item => item[link] === id)
+    .map(item => ({
+      ...item,
+      children: filter(arr, link, key, item[key]),
+    }));
+}
+
 /**
  * Given a flat array of objects linked to one another, it will nest them recursively
  * @param arr
@@ -17,17 +32,6 @@ export default function nest<T extends Record<string, unknown>>(
   arr: T[],
   link = "parent_id",
   key = "id",
-): Record<string, unknown>[] {
+): Array<Record<string, unknown>> {
   return filter(arr, link, key);
-}
-
-function filter(
-  arr: Record<string, unknown>[],
-  link: string,
-  key: string,
-  id: unknown = null,
-): Record<string, unknown>[] {
-  return arr
-    .filter((item) => item[link] === id)
-    .map((item) => ({ ...item, children: filter(arr, link, key, item[key]) }));
 }

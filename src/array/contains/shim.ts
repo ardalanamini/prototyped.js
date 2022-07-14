@@ -1,8 +1,9 @@
-import contains from "./index.js";
 import { addPrototype } from "../../utils.js";
+import contains from "./index.js";
 
 declare global {
   interface Array<T> {
+
     /**
      * Determines whether the collection contains a given item
      * @param value

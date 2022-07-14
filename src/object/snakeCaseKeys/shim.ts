@@ -3,6 +3,7 @@ import snakeCaseKeys from "./index.js";
 
 declare global {
   interface Object {
+
     /**
      * Creates a new object from the specified object, where all the keys are in snake-case
      * @example

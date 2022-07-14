@@ -3,6 +3,7 @@ import diff from "./index.js";
 
 declare global {
   interface Array<T> {
+
     /**
      * Returns the difference between this and another array
      * if `comp` is given, filters out all values from an array for which the comparator function

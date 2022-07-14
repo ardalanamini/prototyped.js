@@ -3,6 +3,7 @@ import capitalize from "./index.js";
 
 declare global {
   interface String {
+
     /**
      * Returns the capitalized string
      * @param [allWords=false]

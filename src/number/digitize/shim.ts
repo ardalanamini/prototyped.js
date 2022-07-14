@@ -3,6 +3,7 @@ import digitize from "./index.js";
 
 declare global {
   interface Number {
+
     /**
      * Converts the number to an array of digits
      * @example

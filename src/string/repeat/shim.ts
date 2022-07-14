@@ -2,6 +2,7 @@ import repeat from "./index.js";
 
 declare global {
   interface StringConstructor {
+
     /**
      * Initializes and fills an string with the specified value
      * @param n

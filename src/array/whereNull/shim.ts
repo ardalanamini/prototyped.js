@@ -3,6 +3,7 @@ import whereNull from "./index.js";
 
 declare global {
   interface Array<T> {
+
     /**
      * Filters the array
      * @example

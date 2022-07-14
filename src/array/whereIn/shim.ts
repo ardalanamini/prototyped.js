@@ -3,6 +3,7 @@ import whereIn from "./index.js";
 
 declare global {
   interface Array<T> {
+
     /**
      * Filters the array
      * @param value

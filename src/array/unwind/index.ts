@@ -7,13 +7,14 @@
  * // [{ foo: "bar 1" }, { foo: "bar 2" }, { foo: "bar 3" }, { foo: "bar 4" }, { foo: "bar 5" }]
  */
 export default function unwind<T>(arr: T[], path: string): unknown[] {
-  return arr.reduce((prev, cur) => {
+  return arr.reduce<any[]>((prev, cur) => {
     const values: any[] = (cur as any)[path];
 
-    values.forEach((value) =>
-      prev.push(Object.assign({}, cur, { [path]: value }) as any),
-    );
+    values.forEach(value => prev.push(({
+      ...cur,
+      [path]: value,
+    }) as any));
 
     return prev;
-  }, [] as any[]);
+  }, []);
 }

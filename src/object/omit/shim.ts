@@ -3,6 +3,7 @@ import omit from "./index.js";
 
 declare global {
   interface Object {
+
     /**
      * Omits the key-value pairs corresponding to the given keys from an object; or
      * Creates an object composed of the properties the given function returns falsey for.

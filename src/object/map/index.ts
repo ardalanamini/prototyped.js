@@ -20,12 +20,12 @@ export default function map<
   obj: T,
   fn: (value: T[K], key: K, object: T) => Record<string, unknown>,
 ): Record<string, unknown> {
-  return keys(obj).reduce((prev, k) => {
+  return keys(obj).reduce<Record<string, unknown>>((prev, k) => {
     forEach(
       fn(obj[k] as never, k as K, obj),
       (value, key) => (prev[key] = value),
     );
 
     return prev;
-  }, {} as Record<string, unknown>);
+  }, {});
 }

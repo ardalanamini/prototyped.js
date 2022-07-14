@@ -6,12 +6,10 @@ import keys from "../keys/index.js";
  * @example
  * invert({ name: "John", age: 20 }); // { 20: "age", John: "name" }
  */
-export default function invert(
-  obj: Record<string, unknown>,
-): Record<string, unknown> {
-  return keys(obj).reduce((acc, key) => {
+export default function invert(obj: Record<string, unknown>): Record<string, unknown> {
+  return keys(obj).reduce<Record<string, unknown>>((acc, key) => {
     acc[obj[key] as string] = key;
 
     return acc;
-  }, {} as Record<string, unknown>);
+  }, {});
 }

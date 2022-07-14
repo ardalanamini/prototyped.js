@@ -7,7 +7,6 @@
  * gcd(...[12, 8, 32]); // 4
  */
 export default function gcd(...nums: number[]): number {
-  const _gcd = (x: number, y: number) => (!y ? x : gcd(y, x % y));
-
-  return nums.reduce((a, b) => _gcd(a, b));
+  // eslint-disable-next-line no-negated-condition
+  return nums.reduce((x, y) => (!y ? x : gcd(y, x % y)));
 }

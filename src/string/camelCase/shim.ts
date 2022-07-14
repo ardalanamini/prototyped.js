@@ -3,6 +3,7 @@ import camelCase from "./index.js";
 
 declare global {
   interface String {
+
     /**
      * Converts the string to camelcase
      * @example

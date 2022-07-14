@@ -2,6 +2,7 @@ import isPlainObject from "./index.js";
 
 declare global {
   interface ObjectConstructor {
+
     /**
      * Returns true if the given argument is a plain object
      * @param arg

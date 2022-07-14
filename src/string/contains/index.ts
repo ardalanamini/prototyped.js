@@ -13,7 +13,7 @@ export default function contains(
   str2: string,
   sensitive = false,
 ): boolean {
-  if (sensitive) return str.indexOf(str2) !== -1;
+  if (sensitive) return str.includes(str2);
 
-  return str.toLowerCase().indexOf(str2.toLowerCase()) !== -1;
+  return str.toLowerCase().includes(str2.toLowerCase());
 }

@@ -3,6 +3,7 @@ import get from "./index.js";
 
 declare global {
   interface Array<T> {
+
     /**
      * Returns the item at a given index. If the index does not exist, def is returned
      * @param index
@@ -12,7 +13,7 @@ declare global {
      * @example
      * [1, 2, 3].get(4, 0); // 0
      */
-    get<F = null>(index: number, fallback?: F): T | F;
+    get<F = null>(index: number, fallback?: F): F | T;
   }
 }
 

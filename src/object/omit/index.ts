@@ -27,12 +27,16 @@ export default function omit(
     object: Record<string, unknown>,
   ) => unknown;
 
-  if (Array.isArray(arr)) fn = (v, k) => arr.indexOf(k) !== -1;
+  if (Array.isArray(arr)) fn = (v, k): boolean => arr.includes(k);
 
   return keys(obj)
-    .filter((k) => !fn(obj[k], k, obj))
-    .reduce(
-      (acc, key) => ((acc[key] = obj[key]), acc),
-      {} as Record<string, unknown>,
-    );
+    .filter(k => !fn(obj[k], k, obj))
+    .reduce<Record<string, unknown>>(
+    (acc, key) => {
+      acc[key] = obj[key];
+
+      return acc;
+    },
+    {},
+  );
 }

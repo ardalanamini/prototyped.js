@@ -15,10 +15,10 @@ export default function diff<T, P>(
   array2: P[],
   comp?: (a: T, b: P) => boolean,
 ): T[] {
-  if (comp)
-    return array1.filter((a) => array2.findIndex((b) => comp(a, b)) === -1);
+  // eslint-disable-next-line @typescript-eslint/no-magic-numbers
+  if (comp) return array1.filter(a => array2.findIndex(b => comp(a, b)) === -1);
 
   const set = new Set(array2);
 
-  return array1.filter((item) => !set.has(item as never));
+  return array1.filter(item => !set.has(item as never));
 }

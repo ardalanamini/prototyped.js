@@ -8,9 +8,7 @@ import isObject from "../isObject/index.js";
  * @example
  * isObjectLike({foo: 'bar'}); // true
  */
-export default function isObjectLike(
-  arg: unknown,
-): arg is Record<string, unknown> {
+export default function isObjectLike(arg: unknown): arg is Record<string, unknown> {
   if (!isObject(arg)) return false;
 
   return typeof arg !== "function";

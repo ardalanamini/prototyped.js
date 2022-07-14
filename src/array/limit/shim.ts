@@ -3,8 +3,9 @@ import limit from "./index.js";
 
 declare global {
   interface Array<T> {
+
     /**
-     * limits the array
+     * Limits the array
      * @alias take
      * @param [limit]
      * @example
@@ -13,7 +14,7 @@ declare global {
     limit(limit?: number): T[];
 
     /**
-     limits the array
+     * Limits the array
      * @alias limit
      * @param [limit]
      * @example

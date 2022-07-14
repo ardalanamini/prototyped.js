@@ -1,5 +1,5 @@
 /**
- * skips the array
+ * Skips the array
  * @param arr
  * @param [offset]
  * @example

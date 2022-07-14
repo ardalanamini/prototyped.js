@@ -22,9 +22,8 @@ export default function set(
   for (; i < length - 1; i++) {
     const key = keys[i];
 
-    if (key === "__proto__" || key === "constructor" || key === "prototype") {
-      return;
-    }
+    if (key === "__proto__" || key === "constructor" || key === "prototype") return;
+
 
     obj = obj[key] as never;
   }

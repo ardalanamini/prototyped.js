@@ -1,8 +1,6 @@
 import isString from "../../string/isString/index.js";
 import { filter } from "../../utils.js";
 
-export default whereNotLike;
-
 /**
  * Filters the array
  * @param arr
@@ -10,7 +8,8 @@ export default whereNotLike;
  * @example
  * whereNotLike(["foo", "bar", "hello", "world"], "o"); // ["bar"]
  */
-function whereNotLike<T>(arr: T[], value: string | RegExp): T[];
+function whereNotLike<T>(arr: T[], value: RegExp | string): T[];
+
 /**
  * Filters the array
  * @param arr
@@ -19,20 +18,21 @@ function whereNotLike<T>(arr: T[], value: string | RegExp): T[];
  * @example
  * whereNotLike([{foo:"hello"}, {foo:"bar"}, {foo:"world"}], "foo", /o/i); // [{foo:"bar"}]
  */
-function whereNotLike<T>(arr: T[], field: string, value: string | RegExp): T[];
+function whereNotLike<T>(arr: T[], field: string, value: RegExp | string): T[];
 function whereNotLike<T>(
   arr: T[],
-  field: string | RegExp,
-  value?: string | RegExp,
+  field: RegExp | string,
+  value?: RegExp | string,
 ): T[] {
-  if (value === undefined) {
-    value = field as string | RegExp;
+  if (value == null) {
+    value = field as RegExp | string;
+    // eslint-disable-next-line no-undefined
     field = undefined as any;
   }
 
   if (isString(value)) value = new RegExp(value, "i");
 
-  const iterator = (item: any) => !(value as RegExp).test(item);
-
-  return filter(arr, field as string, iterator);
+  return filter(arr, field as string, item => !(value as RegExp).test(item as any));
 }
+
+export default whereNotLike;

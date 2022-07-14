@@ -3,6 +3,7 @@ import inRange from "./index.js";
 
 declare global {
   interface Number {
+
     /**
      * Checks if n is between start and up to end
      * @param end

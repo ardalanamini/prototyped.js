@@ -2,6 +2,7 @@ import isDivisible from "./index.js";
 
 declare global {
   interface Math {
+
     /**
      * Checks if the first numeric argument is divisible by the second one
      * @param dividend

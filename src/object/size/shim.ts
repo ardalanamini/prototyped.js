@@ -3,6 +3,7 @@ import size from "./index.js";
 
 declare global {
   interface Object {
+
     /**
      * Get size of the object
      * @example

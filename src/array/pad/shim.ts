@@ -3,6 +3,7 @@ import pad from "./index.js";
 
 declare global {
   interface Array<T> {
+
     /**
      * FillS the array with the given value until the array reaches the specified size
      * @param size

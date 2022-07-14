@@ -3,6 +3,7 @@ import lines from "./index.js";
 
 declare global {
   interface String {
+
     /**
      * Splits a multiline string into an array of lines
      * @example

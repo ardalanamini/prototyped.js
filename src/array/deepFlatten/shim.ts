@@ -3,6 +3,7 @@ import deepFlatten, { NestedArrayT } from "./index.js";
 
 declare global {
   interface Array<T> {
+
     /**
      * Deep flattens an array
      * @example

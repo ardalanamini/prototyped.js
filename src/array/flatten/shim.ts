@@ -2,7 +2,9 @@ import { addPrototype } from "../../utils.js";
 import flatten from "./index.js";
 
 declare global {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   interface Array<T> {
+
     /**
      * Flattens an array up to the specified depth
      * @param [depth=1]

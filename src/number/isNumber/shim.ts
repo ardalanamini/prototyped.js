@@ -2,6 +2,7 @@ import isNumber from "./index.js";
 
 declare global {
   interface NumberConstructor {
+
     /**
      * Returns true if the given argument is a number
      * @param arg

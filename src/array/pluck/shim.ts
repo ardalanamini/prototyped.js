@@ -1,8 +1,9 @@
-import { addPrototype, PathT } from "../../utils.js";
+import { PathT, addPrototype } from "../../utils.js";
 import pluck from "./index.js";
 
 declare global {
   interface Array<T> {
+
     /**
      * Returns all of the values for the given path
      * @param path

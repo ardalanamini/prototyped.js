@@ -3,6 +3,7 @@ import reverse from "./index.js";
 
 declare global {
   interface String {
+
     /**
      * Reverses the string
      * @example

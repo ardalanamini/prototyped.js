@@ -3,6 +3,7 @@ import chars from "./index.js";
 
 declare global {
   interface String {
+
     /**
      * Returns an array of the string's character
      * @example

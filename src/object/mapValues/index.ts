@@ -18,7 +18,7 @@ export default function mapValues<T extends Record<string, unknown>,
   obj: T,
   fn: (value: T[K], key: K, object: T) => unknown,
 ): Record<string, unknown> {
-  const result = {} as Record<K, unknown>;
+  const result: Record<K, unknown> = {} as any;
 
   forEach<T, K>(
     obj,

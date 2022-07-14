@@ -2,6 +2,7 @@ import average from "./index.js";
 
 declare global {
   interface Math {
+
     /**
      * Returns the average of an of two or more numbers
      * @alias avg

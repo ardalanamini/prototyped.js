@@ -3,6 +3,7 @@ import equals from "./index.js";
 
 declare global {
   interface Date {
+
     /**
      * Checks if the date is equal to the given value
      * @param value

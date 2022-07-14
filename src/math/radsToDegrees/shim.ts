@@ -2,6 +2,7 @@ import radsToDegrees from "./index.js";
 
 declare global {
   interface Math {
+
     /**
      * Converts a radians to decimal degree
      * @param num

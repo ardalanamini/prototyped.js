@@ -2,6 +2,7 @@ import repeat from "./index.js";
 
 declare global {
   interface ArrayConstructor {
+
     /**
      * Initializes and fills an array with the specified value
      * @param n

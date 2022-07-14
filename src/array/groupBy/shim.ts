@@ -3,6 +3,7 @@ import groupBy from "./index.js";
 
 declare global {
   interface Array<T> {
+
     /**
      * Groups the elements of an array based on the given function
      * @param fn
@@ -13,7 +14,7 @@ declare global {
      */
     groupBy(
       fn: string | ((item: T, index: number, array: T[]) => any),
-    ): { [key: string]: T[] };
+    ): Record<string, T[]>;
   }
 }
 

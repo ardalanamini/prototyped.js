@@ -2,6 +2,7 @@ import today from "./index.js";
 
 declare global {
   interface DateConstructor {
+
     /**
      * Returns today's date in `YYYY-MM-DD` format
      * @example
