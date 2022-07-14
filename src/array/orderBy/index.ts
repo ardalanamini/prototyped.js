@@ -42,9 +42,7 @@ function orderBy<Value>(
 
   const iterator: (a: any, b: any) => number
     = order === ORDER.ASC
-    // eslint-disable-next-line @typescript-eslint/no-magic-numbers
       ? (a, b): number => (a > b ? 1 : a < b ? -1 : 0)
-    // eslint-disable-next-line @typescript-eslint/no-magic-numbers
       : (a, b): number => (a < b ? 1 : a > b ? -1 : 0);
 
   if (field) {

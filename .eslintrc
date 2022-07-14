@@ -5,10 +5,11 @@ env:
 extends:
   - noir/all
 parserOptions:
-  project: ./tsconfig.json
+  project: ./tsconfig.eslint.json
   ecmaVersion: latest
   sourceType: module
 rules:
+  "@typescript-eslint/no-magic-numbers": off
   import/no-relative-parent-imports: off
   import/extensions: off
 #  import/extensions:

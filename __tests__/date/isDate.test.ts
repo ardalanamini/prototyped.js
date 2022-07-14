@@ -6,6 +6,6 @@ describe("Date.isDate", () => {
   });
 
   test("Date.isDate(new Date()) returns true", () => {
-    expect(Date.isDate(new Date())).toBe(true);
+    expect(Date.isDate((new Date))).toBe(true);
   });
 });

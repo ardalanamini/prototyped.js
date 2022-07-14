@@ -11,6 +11,7 @@ describe("Array.prototype.zip", () => {
   test('["a"].zip([1, 2], [true, false]) returns [["a", 1, true], [undefined, 2, false]]', () => {
     expect(["a"].zip([1, 2], [true, false])).toEqual([
       ["a", 1, true],
+      // eslint-disable-next-line no-undefined
       [undefined, 2, false],
     ]);
   });

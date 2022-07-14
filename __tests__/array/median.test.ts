@@ -10,17 +10,11 @@ describe("Array.prototype.median", () => {
   });
 
   test('[{foo: 10}, {foo: 10}, {foo: 20}, {foo: 40}].median("foo") returns 15', () => {
-    expect(
-      [{ foo: 10 }, { foo: 10 }, { foo: 20 }, { foo: 40 }].median("foo"),
-    ).toBe(15);
+    expect([{ foo: 10 }, { foo: 10 }, { foo: 20 }, { foo: 40 }].median("foo")).toBe(15);
   });
 
   test('[{foo: 10}, {foo: 10}, {foo: 20}, {foo: 40}].median("bar") returns NaN', () => {
-    expect(
-      [{ foo: 10 }, { foo: 10 }, { foo: 20 }, { foo: 40 }].median(
-        "bar" as never,
-      ),
-    ).toBeNaN();
+    expect([{ foo: 10 }, { foo: 10 }, { foo: 20 }, { foo: 40 }].median("bar" as never)).toBeNaN();
   });
 
   test('[{foo: 10}, {foo: 10}, {foo: 20}].median("foo") returns 10', () => {

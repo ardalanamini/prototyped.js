@@ -3,15 +3,18 @@ import "prototyped.js/shim";
 describe("Object.prototype.$flatten", () => {
   test("1", () => {
     class Cls {
-      foo() {
+
+      // eslint-disable-next-line class-methods-use-this
+      public foo(): string {
         return "bar";
       }
+
     }
 
     const obj = {
       string: "foo",
       number: 1,
-      array: [
+      array : [
         "one",
         {
           string: "two",
@@ -21,21 +24,21 @@ describe("Object.prototype.$flatten", () => {
       object: {
         array: [{ number: 3 }],
       },
-      date: new Date(),
+      date  : (new Date),
       buffer: Buffer.alloc(2),
-      class: Cls,
+      class : Cls,
     };
 
     expect(obj.$flatten()).toEqual({
-      string: "foo",
-      number: 1,
-      "array[0]": "one",
-      "array[1].string": "two",
-      "array[2][0]": 2,
+      string                  : "foo",
+      number                  : 1,
+      "array[0]"              : "one",
+      "array[1].string"       : "two",
+      "array[2][0]"           : 2,
       "object.array[0].number": 3,
-      date: obj.date,
-      buffer: obj.buffer,
-      class: obj.class,
+      date                    : obj.date,
+      buffer                  : obj.buffer,
+      class                   : obj.class,
     });
   });
 });

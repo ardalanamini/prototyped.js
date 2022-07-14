@@ -14,8 +14,6 @@ describe("Array.prototype.max", () => {
   });
 
   test('[{a: {b: 1}}, {a: {b: 2}}, {a: {b: 3}}].max("a.b") returns 3', () => {
-    expect([{ a: { b: 1 } }, { a: { b: 2 } }, { a: { b: 3 } }].max("a.b")).toBe(
-      3,
-    );
+    expect([{ a: { b: 1 } }, { a: { b: 2 } }, { a: { b: 3 } }].max("a.b")).toBe(3);
   });
 });

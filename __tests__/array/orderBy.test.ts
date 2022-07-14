@@ -10,8 +10,7 @@ describe("Array.prototype.orderBy", () => {
   });
 
   test('[{count:1},{count:20},{count:15}].orderBy("count","asc") returns [{count:1},{count:15},{count:20}]', () => {
-    expect(
-      [{ count: 1 }, { count: 20 }, { count: 15 }].orderBy("count", "asc"),
-    ).toEqual([{ count: 1 }, { count: 15 }, { count: 20 }]);
+    expect([{ count: 1 }, { count: 20 }, { count: 15 }].orderBy("count", "asc"))
+      .toEqual([{ count: 1 }, { count: 15 }, { count: 20 }]);
   });
 });
