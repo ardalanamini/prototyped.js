@@ -64,7 +64,7 @@ jobs:
         run: npm run lint
 
       - name: Build CommonJS
-        run: npm run build
+        run: npm run build:cjs
 
       - name: Build ECMAScript
         run: npm run build:esm

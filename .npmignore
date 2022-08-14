@@ -1,0 +1,29 @@
+# IDE
+.idea/
+.vscode/
+
+# Sources
+src/
+
+# Tests
+__tests__/
+
+# Documents
+docs/
+
+# Build
+.github/
+scripts/
+build/*.tsbuildinfo
+.gitattributes
+.eslintrc
+.prettierrc
+typedoc.json
+tsconfig.json
+tsconfig.esm.json
+tsconfig.eslint.json
+jest.config.js
+stale.yml
+
+# Comunity
+CODE_OF_CONDUCT.md
