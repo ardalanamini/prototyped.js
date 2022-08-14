@@ -3215,11 +3215,11 @@
     "regenerate:package.json": "node scripts/regenerate-package-json.js"
   },
   "peerDependencies": {
-    "@types/node": "^18.0.4"
+    "@types/node": "^18.7.3"
   },
   "devDependencies": {
     "@types/jest": "^28.1.5",
-    "@types/node": "^18.0.4",
+    "@types/node": "^18.7.3",
     "@typescript-eslint/eslint-plugin": "^5.30.6",
     "@typescript-eslint/parser": "^5.30.6",
     "eslint": "^8.19.0",
