@@ -7,6 +7,5 @@
   "searchInComments": true,
   "githubPages": true,
   "cname": "prototyped.js.org",
-  "gaID": "G-4PFF2BZCH3",
-  "plugin": ["typedoc-plugin-example-tag"]
+  "gaID": "G-4PFF2BZCH3"
 }
