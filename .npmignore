@@ -7,6 +7,7 @@ src/
 
 # Tests
 __tests__/
+coverage/
 
 # Documents
 docs/
