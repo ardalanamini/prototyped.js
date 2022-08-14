@@ -3222,7 +3222,7 @@
     "@types/node": "^18.0.4",
     "@typescript-eslint/eslint-plugin": "^5.30.6",
     "@typescript-eslint/parser": "^5.30.6",
-    "eslint": "^8.19.0",
+    "eslint": "^8.22.0",
     "eslint-config-noir": "^1.2.1",
     "eslint-import-resolver-typescript": "^3.2.5",
     "eslint-plugin-import": "^2.26.0",
