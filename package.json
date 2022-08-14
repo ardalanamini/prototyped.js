@@ -3227,7 +3227,7 @@
     "eslint-import-resolver-typescript": "^3.2.5",
     "eslint-plugin-import": "^2.26.0",
     "jest": "^28.1.3",
-    "ts-jest": "^28.0.6",
+    "ts-jest": "^28.0.7",
     "typedoc": "^0.23.7",
     "typescript": "^4.7.4"
   }
