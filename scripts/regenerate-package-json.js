@@ -26,26 +26,27 @@ const generateExports = (obj = {}, prefix = "") => {
     if (key.toUpperCase() === key) return prev;
 
     const path = `${prefix}${key}`;
+    const sourcePath = path.replace(/^func(?=\/|$)/, "function");
 
     prev[`./${path}`] = {
       import: {
-        types: `./build/esm/${path}/index.d.ts`,
-        default: `./build/esm/${path}/index.js`,
+        types: `./build/esm/${sourcePath}/index.d.ts`,
+        default: `./build/esm/${sourcePath}/index.js`,
       },
       default: {
-        types: `./build/cjs/${path}/index.d.ts`,
-        default: `./build/cjs/${path}/index.js`,
+        types: `./build/cjs/${sourcePath}/index.d.ts`,
+        default: `./build/cjs/${sourcePath}/index.js`,
       },
     };
 
     prev[`./${path}/shim`] = {
       import: {
-        types: `./build/esm/${path}/shim.d.ts`,
-        default: `./build/esm/${path}/shim.js`,
+        types: `./build/esm/${sourcePath}/shim.d.ts`,
+        default: `./build/esm/${sourcePath}/shim.js`,
       },
       default: {
-        types: `./build/cjs/${path}/shim.d.ts`,
-        default: `./build/cjs/${path}/shim.js`,
+        types: `./build/cjs/${sourcePath}/shim.d.ts`,
+        default: `./build/cjs/${sourcePath}/shim.js`,
       },
     };
 
