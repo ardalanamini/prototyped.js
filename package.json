@@ -3214,6 +3214,7 @@
     "docs": "typedoc",
     "regenerate:package.json": "node scripts/regenerate-package-json.js"
   },
+  "packageManager": "pnpm@12.16.1",
   "peerDependencies": {
     "@types/node": "^18.7.3"
   },
