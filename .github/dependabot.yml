@@ -8,10 +8,10 @@ updates:
     schedule:
       interval: monthly
       day: monday
+    cooldown:
+      default-days: 1
     commit-message:
       prefix: deps(CI)
-    reviewers:
-      - ardalanamini
 
   # Maintain dependencies for NPM
   - package-ecosystem: npm
@@ -19,9 +19,9 @@ updates:
     schedule:
       interval: monthly
       day: monday
+    cooldown:
+      default-days: 1
     versioning-strategy: increase
     commit-message:
       prefix: deps
       prefix-development: deps(Dev)
-    reviewers:
-      - ardalanamini

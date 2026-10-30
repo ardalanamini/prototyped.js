@@ -23,6 +23,8 @@ Common **Typescript ready** helpers & prototypes available for both **Server-Sid
 ## Table of Content <!-- omit in toc -->
 
 - [Installation](#installation)
+- [Development](#development)
+- [Releasing](#releasing)
 - [Usage](#usage)
 - [Versioning](#versioning)
 - [Authors](#authors)
@@ -34,6 +36,30 @@ Common **Typescript ready** helpers & prototypes available for both **Server-Sid
 ```bash
 npm i -s prototyped.js
 ```
+
+The compatibility matrix covers Node.js **14, 16, 18, 20, 22, 24, and 26** on Linux, macOS, and Windows, using the latest patch release of each major. Both CommonJS and native ECMAScript imports are checked against the packed package.
+
+## Development
+
+Use the Node.js version in `.node-version` and the pnpm version pinned in `package.json` for development and release builds. Consumer compatibility is tested separately from this tooling runtime.
+
+```bash
+pnpm install --frozen-lockfile
+pnpm lint
+pnpm build
+pnpm run docs
+pnpm test:ci
+pnpm pack --out artifacts/package.tgz
+pnpm test:package
+```
+
+The full build uses POSIX shell scripts and runs on Ubuntu in CI. Each compatibility job runs the full unit suite and loads every public JavaScript export from the tarball in CommonJS and native ESM. Codecov uploads are informational; lint, build, test, and package-check failures block releases.
+
+## Releasing
+
+Set `package.json` to the intended version, then push the matching `v<version>` tag. The release workflow validates the tag, runs all checks, and publishes the tested tarball to npm before creating the GitHub release. Stable releases use npm's `latest` channel and deploy the generated documentation to GitHub Pages. Prereleases use `next`, create a GitHub prerelease, and leave stable documentation unchanged.
+
+Publishing uses [npm trusted publishing](https://docs.npmjs.com/trusted-publishers/), not `NPM_TOKEN`. Before the first release, configure the package's GitHub Actions trusted publisher with owner `ardalanamini`, repository `prototyped.js`, workflow filename `release.yml`, and environment `npm`. Allow direct publishing if npm offers a staged-publishing option. Existing approval requirements on the `npm`, `release`, and `documents` GitHub environments remain in effect. GitHub Packages is no longer a release destination.
 
 ## Usage
 
