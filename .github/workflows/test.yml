@@ -107,9 +107,27 @@ jobs:
           package-manager-cache: false
 
       - uses: pnpm/setup@v1
+        if: runner.os != 'macOS'
         with:
           cache: true
           install: false
+
+      # The standalone pnpm binary is unavailable for Intel macOS:
+      # https://github.com/pnpm/pnpm/issues/11423
+      - name: Install pnpm on Intel macOS
+        if: runner.os == 'macOS'
+        run: |
+          task_package_manager=$(node -p 'require("./package.json").packageManager')
+          npm install --global "$task_package_manager"
+
+      - name: Cache the pnpm store on Intel macOS
+        if: runner.os == 'macOS'
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .node-version
+          package-manager-cache: false
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
 
       - name: Install dependencies using the tooling runtime
         run: pnpm install --frozen-lockfile
@@ -126,7 +144,7 @@ jobs:
           package-manager-cache: false
 
       - name: Run the full unit suite
-        run: pnpm test --ci --maxWorkers=2
+        run: node --no-compilation-cache --expose-gc node_modules/jest/bin/jest --logHeapUsage --ci --maxWorkers=2
 
       - name: Check packed CommonJS and ECMAScript exports
-        run: pnpm test:package
+        run: node scripts/check-package.js artifacts/package.tgz

@@ -55,6 +55,8 @@ pnpm test:package
 
 The full build uses POSIX shell scripts and runs on Ubuntu in CI. Each compatibility job runs the full unit suite and loads every public JavaScript export from the tarball in CommonJS and native ESM. Codecov uploads are informational; lint, build, test, and package-check failures block releases.
 
+Intel macOS installs the pinned pnpm version through npm because pnpm's standalone installer does not support that platform. Dependencies are installed with the tooling runtime before switching Node versions; compatibility checks invoke Node directly so the package manager's runtime requirements do not limit consumer compatibility.
+
 ## Releasing
 
 Set `package.json` to the intended version, then push the matching `v<version>` tag. The release workflow validates the tag, runs all checks, and publishes the tested tarball to npm before creating the GitHub release. Stable releases use npm's `latest` channel and deploy the generated documentation to GitHub Pages. Prereleases use `next`, create a GitHub prerelease, and leave stable documentation unchanged.
