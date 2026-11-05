@@ -29,16 +29,9 @@ jobs:
         env:
           RELEASE_TAG: ${{ github.ref_name }}
 
-  ci:
-    needs: prepare
-    permissions:
-      contents: read
-      id-token: write
-    uses: ./.github/workflows/ci.yml
-
   publish-npm:
     name: Publish to NPM
-    needs: [prepare, ci]
+    needs: prepare
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
@@ -61,14 +54,19 @@ jobs:
 
       - uses: pnpm/setup@v1
         with:
+          cache: true
           install: false
 
-      - uses: actions/download-artifact@v8
-        with:
-          name: package
-          path: artifacts/
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
 
-      - name: Publish the tested tarball using trusted publishing
+      - name: Build the package
+        run: pnpm build
+
+      - name: Pack the release artifact
+        run: pnpm pack --out artifacts/package.tgz
+
+      - name: Publish the package using trusted publishing
         run: pnpm publish artifacts/package.tgz --no-git-checks --access public --provenance --tag "$NPM_DIST_TAG"
         env:
           NPM_DIST_TAG: ${{ needs.prepare.outputs.dist-tag }}
@@ -123,12 +121,25 @@ jobs:
       cancel-in-progress: false
 
     steps:
-      - uses: actions/configure-pages@v6
+      - uses: actions/checkout@v7
 
-      - uses: actions/download-artifact@v8
+      - uses: actions/setup-node@v7
         with:
-          name: documentation
-          path: docs/
+          node-version-file: .node-version
+          package-manager-cache: false
+
+      - uses: pnpm/setup@v1
+        with:
+          cache: true
+          install: false
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Generate documents
+        run: pnpm run docs
+
+      - uses: actions/configure-pages@v6
 
       - uses: actions/upload-pages-artifact@v5
         with:
