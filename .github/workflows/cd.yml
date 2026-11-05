@@ -29,8 +29,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v7
-        with:
-          fetch-depth: 0
 
       - name: Changelog
         uses: ardalanamini/auto-changelog@v5
@@ -70,11 +68,8 @@ jobs:
       - name: Build the package
         run: pnpm build
 
-      - name: Pack the release artifact
-        run: pnpm pack --out artifacts/package.tgz
-
       - name: Publish the package using trusted publishing
-        run: pnpm publish artifacts/package.tgz --no-git-checks --access public --provenance --tag "${{ needs.changelog.outputs.release-id }}"
+        run: pnpm publish --no-git-checks --access public --provenance --tag "${{ needs.changelog.outputs.release-id }}"
 
   release:
     name: Create Release
