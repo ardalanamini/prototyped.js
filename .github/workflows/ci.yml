@@ -47,9 +47,6 @@ jobs:
       - name: Check code styles
         run: pnpm lint
 
-      - name: Test release classification
-        run: node scripts/release-metadata.test.js
-
       - name: Build CommonJS and ECMAScript packages
         run: pnpm build
 

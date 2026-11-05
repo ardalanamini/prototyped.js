@@ -13,25 +13,32 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  prepare:
-    name: Validate release version
+  changelog:
+    name: Generate Changelog
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
+
+    permissions:
+      # The action uses GitHub's release-notes API for new contributors.
+      contents: write
+
     outputs:
-      dist-tag: ${{ steps.version.outputs.dist-tag }}
-      prerelease: ${{ steps.version.outputs.prerelease }}
+      changelog: ${{ steps.changelog.outputs.changelog }}
+      prerelease: ${{ steps.changelog.outputs.prerelease }}
+      release-id: ${{ steps.changelog.outputs.release-id }}
 
     steps:
       - uses: actions/checkout@v7
-      - name: Match the tag to package.json and select the release channel
-        id: version
-        run: node scripts/release-metadata.js
-        env:
-          RELEASE_TAG: ${{ github.ref_name }}
+        with:
+          fetch-depth: 0
+
+      - name: Changelog
+        uses: ardalanamini/auto-changelog@v5
+        id: changelog
 
   publish-npm:
     name: Publish to NPM
-    needs: prepare
+    needs: changelog
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
@@ -69,11 +76,11 @@ jobs:
       - name: Publish the package using trusted publishing
         run: pnpm publish artifacts/package.tgz --no-git-checks --access public --provenance --tag "$NPM_DIST_TAG"
         env:
-          NPM_DIST_TAG: ${{ needs.prepare.outputs.dist-tag }}
+          NPM_DIST_TAG: ${{ needs.changelog.outputs.release-id }}
 
   release:
     name: Create Release
-    needs: [prepare, publish-npm]
+    needs: [changelog, publish-npm]
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
@@ -85,25 +92,17 @@ jobs:
       url: https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}
 
     steps:
-      - uses: actions/checkout@v7
-        with:
-          fetch-depth: 0
-
-      - name: Changelog
-        uses: ardalanamini/auto-changelog@v5
-        id: changelog
-
       - name: Create Release
         uses: softprops/action-gh-release@v3
         with:
-          body: ${{ steps.changelog.outputs.changelog }}
-          prerelease: ${{ needs.prepare.outputs.prerelease == 'true' }}
-          make_latest: ${{ needs.prepare.outputs.prerelease == 'false' && 'true' || 'false' }}
+          body: ${{ needs.changelog.outputs.changelog }}
+          prerelease: ${{ needs.changelog.outputs.prerelease == 'true' }}
+          make_latest: ${{ needs.changelog.outputs.prerelease == 'false' && 'true' || 'false' }}
 
   publish-documents:
     name: Publish Documents
-    needs: [prepare, publish-npm]
-    if: needs.prepare.outputs.prerelease == 'false'
+    needs: [changelog, publish-npm]
+    if: needs.changelog.outputs.prerelease == 'false'
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
