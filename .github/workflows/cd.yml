@@ -74,9 +74,7 @@ jobs:
         run: pnpm pack --out artifacts/package.tgz
 
       - name: Publish the package using trusted publishing
-        run: pnpm publish artifacts/package.tgz --no-git-checks --access public --provenance --tag "$NPM_DIST_TAG"
-        env:
-          NPM_DIST_TAG: ${{ needs.changelog.outputs.release-id }}
+        run: pnpm publish artifacts/package.tgz --no-git-checks --access public --provenance --tag "${{ needs.changelog.outputs.release-id }}"
 
   release:
     name: Create Release
@@ -96,8 +94,8 @@ jobs:
         uses: softprops/action-gh-release@v3
         with:
           body: ${{ needs.changelog.outputs.changelog }}
-          prerelease: ${{ needs.changelog.outputs.prerelease == 'true' }}
-          make_latest: ${{ needs.changelog.outputs.prerelease == 'false' && 'true' || 'false' }}
+          prerelease: ${{ needs.changelog.outputs.prerelease }}
+          make_latest: ${{ needs.changelog.outputs.prerelease == 'false' }}
 
   publish-documents:
     name: Publish Documents
