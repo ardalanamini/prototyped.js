@@ -1,0 +1,10 @@
+injectWorkspacePackages: true
+
+minimumReleaseAge: 1440
+minimumReleaseAgeStrict: true
+
+autoDedupe: true
+
+lockfile:
+  includeResolutionSettings: true
+

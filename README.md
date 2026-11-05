@@ -23,6 +23,8 @@ Common **Typescript ready** helpers & prototypes available for both **Server-Sid
 ## Table of Content <!-- omit in toc -->
 
 - [Installation](#installation)
+- [Development](#development)
+- [Releasing](#releasing)
 - [Usage](#usage)
 - [Versioning](#versioning)
 - [Authors](#authors)
@@ -34,6 +36,34 @@ Common **Typescript ready** helpers & prototypes available for both **Server-Sid
 ```bash
 npm i -s prototyped.js
 ```
+
+The compatibility matrix covers Node.js **14, 16, 18, 20, 22, 24, and 26** on Linux, macOS, and Windows, using the latest patch release of each major. Both CommonJS and native ECMAScript imports are checked against the packed package.
+
+## Development
+
+Use the Node.js version in `.node-version` and the pnpm version pinned in `package.json` for development and release builds. Consumer compatibility is tested separately from this tooling runtime.
+
+```bash
+pnpm install --frozen-lockfile
+pnpm lint
+pnpm build
+pnpm run docs
+pnpm test:ci
+pnpm pack --out artifacts/package.tgz
+pnpm test:package
+```
+
+The full build uses POSIX shell scripts and runs on Ubuntu in CI and CD. Each compatibility job runs the full unit suite and loads every public JavaScript export from the tarball in CommonJS and native ESM. Codecov uploads are informational; lint, build, test, and package-check failures fail CI.
+
+Intel macOS installs the pinned pnpm version through npm because pnpm's standalone installer does not support that platform. Dependencies are installed with the tooling runtime before switching Node versions; compatibility checks invoke Node directly so the package manager's runtime requirements do not limit consumer compatibility.
+
+## Releasing
+
+Set `package.json` to the intended version, then push the matching `v<version>` tag. CI runs on pull requests, pushes to `master`, and version tags. CI and CD run independently on version tags; CD does not wait for CI to finish or pass.
+
+The CD workflow starts with a `changelog` job using `ardalanamini/auto-changelog`. It generates release notes once and exposes the `changelog`, `prerelease`, and `release-id` outputs before requesting publishing approval. The action validates the tag's SemVer format. CD builds the tagged source and runs `pnpm publish`, which handles packing and publishes to npm using `release-id` as the distribution tag: `latest` for stable versions, or the prerelease identifier such as `alpha`, `beta`, or `rc` for prereleases. The GitHub release reuses those release notes and the prerelease flag. Stable releases regenerate and deploy documentation to GitHub Pages; prereleases leave stable documentation unchanged. CD builds its own package and documentation without downloading CI artifacts.
+
+Publishing uses [npm trusted publishing](https://docs.npmjs.com/trusted-publishers/), not `NPM_TOKEN`. Before the first release, configure the package's GitHub Actions trusted publisher with owner `ardalanamini`, repository `prototyped.js`, workflow filename `cd.yml`, and environment `npm`. Allow direct publishing if npm offers a staged-publishing option. Existing approval requirements on the `npm`, `release`, and `documents` GitHub environments remain in effect. GitHub Packages is no longer a release destination.
 
 ## Usage
 
@@ -131,7 +161,7 @@ This project is licensed under the MIT License - see the [LICENSE][license-url] 
 
 [npm-url]: https://www.npmjs.com/package/prototyped.js
 
-[build-badge]: https://github.com/ardalanamini/prototyped.js/workflows/Test/badge.svg
+[build-badge]: https://github.com/ardalanamini/prototyped.js/actions/workflows/ci.yml/badge.svg
 
 [build-url]: https://github.com/ardalanamini/prototyped.js/actions
 

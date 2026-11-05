@@ -1,0 +1,142 @@
+name: CD
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cd-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  changelog:
+    name: Generate Changelog
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    permissions:
+      # The action uses GitHub's release-notes API for new contributors.
+      contents: write
+
+    outputs:
+      changelog: ${{ steps.changelog.outputs.changelog }}
+      prerelease: ${{ steps.changelog.outputs.prerelease }}
+      release-id: ${{ steps.changelog.outputs.release-id }}
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Changelog
+        uses: ardalanamini/auto-changelog@v5
+        id: changelog
+
+  publish-npm:
+    name: Publish to NPM
+    needs: changelog
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    permissions:
+      contents: read
+      id-token: write
+
+    environment:
+      name: npm
+      url: https://www.npmjs.com/package/prototyped.js
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .node-version
+          package-manager-cache: false
+          registry-url: https://registry.npmjs.org/
+
+      - uses: pnpm/setup@v1
+        with:
+          cache: true
+          install: false
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build the package
+        run: pnpm build
+
+      - name: Publish the package using trusted publishing
+        run: pnpm publish --no-git-checks --access public --provenance --tag "${{ needs.changelog.outputs.release-id }}"
+
+  release:
+    name: Create Release
+    needs: [changelog, publish-npm]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    permissions:
+      contents: write
+
+    environment:
+      name: release
+      url: https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}
+
+    steps:
+      - name: Create Release
+        uses: softprops/action-gh-release@v3
+        with:
+          body: ${{ needs.changelog.outputs.changelog }}
+          prerelease: ${{ needs.changelog.outputs.prerelease }}
+          make_latest: ${{ needs.changelog.outputs.prerelease == 'false' }}
+
+  publish-documents:
+    name: Publish Documents
+    needs: [changelog, publish-npm]
+    if: needs.changelog.outputs.prerelease == 'false'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    environment:
+      name: documents
+      url: ${{ steps.github-pages-deployment.outputs.page_url }}
+
+    concurrency:
+      group: github-pages
+      cancel-in-progress: false
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .node-version
+          package-manager-cache: false
+
+      - uses: pnpm/setup@v1
+        with:
+          cache: true
+          install: false
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Generate documents
+        run: pnpm run docs
+
+      - uses: actions/configure-pages@v6
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: docs/
+
+      - name: Deploy to GitHub Pages
+        id: github-pages-deployment
+        uses: actions/deploy-pages@v5
