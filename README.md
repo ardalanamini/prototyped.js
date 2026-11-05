@@ -61,7 +61,7 @@ Intel macOS installs the pinned pnpm version through npm because pnpm's standalo
 
 Set `package.json` to the intended version, then push the matching `v<version>` tag. The release workflow validates the tag, runs all checks, and publishes the tested tarball to npm before creating the GitHub release. Stable releases use npm's `latest` channel and deploy the generated documentation to GitHub Pages. Prereleases use `next`, create a GitHub prerelease, and leave stable documentation unchanged.
 
-Publishing uses [npm trusted publishing](https://docs.npmjs.com/trusted-publishers/), not `NPM_TOKEN`. Before the first release, configure the package's GitHub Actions trusted publisher with owner `ardalanamini`, repository `prototyped.js`, workflow filename `release.yml`, and environment `npm`. Allow direct publishing if npm offers a staged-publishing option. Existing approval requirements on the `npm`, `release`, and `documents` GitHub environments remain in effect. GitHub Packages is no longer a release destination.
+Publishing uses [npm trusted publishing](https://docs.npmjs.com/trusted-publishers/), not `NPM_TOKEN`. Before the first release, configure the package's GitHub Actions trusted publisher with owner `ardalanamini`, repository `prototyped.js`, workflow filename `cd.yml`, and environment `npm`. Allow direct publishing if npm offers a staged-publishing option. Existing approval requirements on the `npm`, `release`, and `documents` GitHub environments remain in effect. GitHub Packages is no longer a release destination.
 
 ## Usage
 
@@ -159,7 +159,7 @@ This project is licensed under the MIT License - see the [LICENSE][license-url] 
 
 [npm-url]: https://www.npmjs.com/package/prototyped.js
 
-[build-badge]: https://github.com/ardalanamini/prototyped.js/workflows/Test/badge.svg
+[build-badge]: https://github.com/ardalanamini/prototyped.js/actions/workflows/ci.yml/badge.svg
 
 [build-url]: https://github.com/ardalanamini/prototyped.js/actions
 

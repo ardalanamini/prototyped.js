@@ -1,4 +1,4 @@
-name: Test
+name: CI
 
 on:
   schedule:
@@ -13,7 +13,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: test-${{ github.workflow }}-${{ github.ref }}
+  group: ci-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: ${{ github.ref != 'refs/heads/master' && github.ref_type != 'tag' }}
 
 jobs:

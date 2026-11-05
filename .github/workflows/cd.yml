@@ -1,4 +1,4 @@
-name: Release
+name: CD
 
 on:
   push:
@@ -9,7 +9,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: release-${{ github.ref }}
+  group: cd-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
@@ -29,16 +29,16 @@ jobs:
         env:
           RELEASE_TAG: ${{ github.ref_name }}
 
-  test:
+  ci:
     needs: prepare
     permissions:
       contents: read
       id-token: write
-    uses: ./.github/workflows/test.yml
+    uses: ./.github/workflows/ci.yml
 
   publish-npm:
     name: Publish to NPM
-    needs: [prepare, test]
+    needs: [prepare, ci]
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
