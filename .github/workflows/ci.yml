@@ -35,7 +35,7 @@ jobs:
           node-version-file: .node-version
           package-manager-cache: false
 
-      - uses: pnpm/setup@v1
+      - uses: pnpm/setup@v3
         with:
           cache: true
           install: false
@@ -95,7 +95,7 @@ jobs:
           node-version-file: .node-version
           package-manager-cache: false
 
-      - uses: pnpm/setup@v1
+      - uses: pnpm/setup@v3
         if: runner.os != 'macOS'
         with:
           cache: true
