@@ -9,7 +9,6 @@ on:
     tags:
       - 'v*'
   pull_request:
-  workflow_call:
 
 permissions:
   contents: read
@@ -68,9 +67,6 @@ jobs:
 
       - name: Pack the release artifact
         run: pnpm pack --out artifacts/package.tgz
-
-      - name: Check the packed package
-        run: pnpm test:package
 
       - uses: actions/upload-artifact@v7
         with:

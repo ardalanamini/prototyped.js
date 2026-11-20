@@ -30,6 +30,16 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
+      - name: Check that the tag matches the package version
+        run: |
+          node -e '
+            const expectedTag = `v${require("./package.json").version}`;
+            const actualTag = process.env.GITHUB_REF_NAME;
+            require("node:assert/strict").equal(
+              actualTag, expectedTag, `Expected tag ${expectedTag}, got ${actualTag}`
+            );
+          '
+
       - name: Changelog
         uses: ardalanamini/auto-changelog@v5
         id: changelog
