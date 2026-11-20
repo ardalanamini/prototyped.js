@@ -23,9 +23,17 @@ export default function merge(
 ): Record<string, unknown> {
   return [obj, ...objects].reduce(
     (prev: Record<string, unknown>, obj2: Record<string, unknown>) => keys(obj2).reduce((a, k) => {
-      prev[k] = hasOwnProperty.call(prev, k)
-        ? [].concat(prev[k] as never).concat(obj2[k] as never)
-        : obj2[k];
+      const descriptor = {
+        __proto__   : null,
+        configurable: true,
+        enumerable  : true,
+        writable    : true,
+        value       : hasOwnProperty.call(prev, k)
+          ? [].concat(prev[k] as never).concat(obj2[k] as never)
+          : obj2[k],
+      };
+
+      Object.defineProperty(prev, k, descriptor);
 
       return prev;
     }, {}),
